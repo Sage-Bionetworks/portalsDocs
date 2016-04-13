@@ -9,7 +9,8 @@ other ClojureWerkz projects.
 
 With Bundler:
 
-    bundle install --binstubs
+    bundle install 
+    npm install
 
 ### How to run a development server
 
