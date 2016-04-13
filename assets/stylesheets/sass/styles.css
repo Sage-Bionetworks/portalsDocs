@@ -11,6 +11,9 @@
   .clearfix:after {
     clear: both; }
 
+.line-height-45 > li {
+  line-height: 45px;
+}
 .fixed-container {
   width: 1200px;
   margin-left: auto;
