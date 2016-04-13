@@ -8,3 +8,6 @@ gem "jekyll", "~> 2.5.3"
 gem "iconv"
 gem "albino"
 gem "therubyracer"
+gem "nokogiri"
+gem "jekyll-code-example-tag"
+

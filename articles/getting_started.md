@@ -7,16 +7,46 @@ layout: article
 
 Import the synapse R client and log in to Synapse using locally stored credentials. New users have to supply username and password or their Synapse session API key
 
+{% tabs %}
+
+{% tab Python %}
+{% highlight python %}
+
+import synapseClient
+syn = synpaseclient.Synapse()
+syn.login()
+myProj = syn.store(Project(name = "My uniquely named project"))
+
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
 {% highlight r %}
 
 library(synapseClient)
 synapseLogin()
-{% endhighlight %}
 
+{% endhighlight %}
+{% endtab %}
+
+{% endtabs %}
 
 
 #### Create a Synapse Project to store your work:
 
+{% tabs %}
+{% tab Python %}
+{% highlight python %}
+
+import synapseClient
+syn = synpaseclient.Synapse()
+syn.login()
+myProj = syn.store(Project(name = "My uniquely named project"))
+
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
 {% highlight r %}
 random_string <- paste(sample(LETTERS,4),collapse="")
 proj_name <- paste('Demo Synapse Project',random_string,sep='-')
@@ -24,7 +54,8 @@ myProject <- Project(name=proj_name)
 myProject <- synStore(myProject)
 print(paste('Created a project with Synapse id', myProject$properties$id, sep = ' '))
 {% endhighlight %}
-
+{% endtab %}
+{% endtabs %}
 #### Or, start with an existing project, such as the one created above:
 
 
