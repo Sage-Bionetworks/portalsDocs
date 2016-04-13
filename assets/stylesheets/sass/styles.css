@@ -24,9 +24,6 @@
   .fixed-container:after {
     clear: both; }
 
-body {
-  background-image: url(/assets/images/escheresque.png); }
-
 article pre {
   font-size: 13px !important; }
 

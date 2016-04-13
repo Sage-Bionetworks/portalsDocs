@@ -6,11 +6,12 @@
     <meta content='Clojure graph library built on top of Aurelius Titan and the Tinkerpop stack' name='description' />
     <meta content='The ClojureWerkz Team' name='author' />
     <link href='/assets/stylesheets/bootstrap.css' media='screen' rel='stylesheet' type='text/css' />
+    <link href='//www.synapse.org/Portal/css/bootstrap-paper-theme.min.css' media='screen' rel='stylesheet' type='text/css' />
     <link href='/assets/stylesheets/bootstrap-responsive.css' media='screen' rel='stylesheet' type='text/css' />
     <link href='/assets/stylesheets/bootstrap-docs.css' media='screen' rel='stylesheet' type='text/css' />
     <link href='/assets/stylesheets/pygments.css' media='screen' rel='stylesheet' type='text/css' />
     <link href='/assets/stylesheets/sass/styles.css' media='screen' rel='stylesheet' type='text/css' />
-    <link href='/assets/stylesheets/portal.css' media='screen' rel='stylesheet' type='text/css' />
+    <link href='//www.synapse.org/Portal.css' media='screen' rel='stylesheet' type='text/css' />
 	
 
     <link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,400,600' rel='stylesheet' type='text/css' />
@@ -27,7 +28,7 @@
     <meta content='text/html;charset=utf-8' http-equiv='Content-Type' />
 
     <script type="text/javascript">
-      if(!(window.location.hostname === "localhost")) {
+      if(!(window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")) {
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-31282324-11']);
       _gaq.push(['_trackPageview']);
@@ -51,26 +52,26 @@
             <span class='icon-bar'></span>
           </a>
           <div class='nav-collapse'>
-            <ul class='nav'>
-	      <li>
-		<a href='/'><img src="/assets/images/synapse_logo_white_small.png" alt="Synapse Logo"></a> 
-	      </li>
-              <li>
+            <ul class='nav font-size-1-5x'>
+    	      <li>
+    		        <a href='/'><img src="/assets/images/synapse_logo_white_small.png" alt="Synapse Logo"></a> 
+    	      </li>
+              <li style="line-height: 45px;">
                 <a href='/'>Home</a>
               </li>
-              <li>
+              <li style="line-height: 45px;">
                 <a href="/articles/getting_started.html">Getting Started</a>
               </li>
-              <li>
+              <li style="line-height: 45px;">
                 <a href='http://r-docs.synapse.org/'>R Docs</a>
               </li>
-              <li>
+              <li style="line-height: 45px;">
                 <a href='http://python-docs.synapse.org'>Python Docs</a>
               </li>
-              <li>
+              <li style="line-height: 45px;">
                 <a href='https://www.synapse.org/#!SynapseForum:default'>Forum</a>
               </li>
-              <li>
+              <li style="line-height: 45px;">
                 <a href='https://docs.google.com/document/d/1kZ7j7xMRNHFENVW-BvykiA9g5-KKpHvzQpX3uwgMa9g/edit'>FAQ</a>
               </li>
             </ul>
@@ -82,10 +83,10 @@
     <div class='container-fluid'>
       <div class='row-fluid'>
         <div class='span3'>
-          <div class='well sidebar-nav'></div>
+          <div class='well sidebar-nav panel panel-default padding-left-30 padding-right-15 font-size-14'></div>
         </div>
-        <div class='span7'>
-          <div class='well'>
+        <div class='span9'>
+          <div class='panel panel-default padding-15'>
           {{ content }}
           <h2 id="tell_us_what_you_think">Need More help!</h2>
           <p>Try posting a question to our                 <a href='https://www.synapse.org/#!SynapseForum:default'>Forum</a>
@@ -99,10 +100,14 @@
         </div>
       </div>
     </div>
-    <footer class='footer'>
-      <div class='container'>
-	<tr><td style="padding-right: 2px;">| <a href="http://sagebase.org/" class="margin-top-5 margin-bottom-5 color-white">2016 Sage Bionetworks</a></td><td class="text-align-center" style="padding-right: 2px;"> | <a href="mailto:synapseInfo@sagebase.org" class="color-white margin-left-10">Contact us</a></td><td class="text-align-center" style="padding-right: 2px;"> | <a href="http://creativecommons.org/licenses/by/3.0/legalcode" class="color-white margin-left-10">Creative Commons License</a></td><td class="text-align-right" style="padding-right: 2px;"> | </td></tr>
-      </div>
-    </footer>
+    <div class='synapse-blue-bg font-size-14'>
+      <table style="height:70px; margin: 20px;">
+	         <tr>
+            <td style="padding-right: 15px;"><a href="http://sagebase.org/" class="margin-top-5 margin-bottom-5 color-white">2016 Sage Bionetworks</a></td>
+            <td class="text-align-center" style="padding-right: 15px;"> <a href="mailto:synapseInfo@sagebase.org" class="color-white margin-left-10">Contact us</a></td>
+            <td class="text-align-center" style="padding-right: 15px;"> <a href="http://creativecommons.org/licenses/by/3.0/legalcode" class="color-white margin-left-10">Creative Commons License</a></td>
+          </tr>
+      </table>
+    </div>
   </body>
 </html>
