@@ -22,11 +22,6 @@
     "lint": "eslint ./js",
     "test": "jscs ./js"
   },
-  "pre-commit": [
-    "lint",
-    "validate",
-    "test"
-  ],
   "devDependencies": {
     "react":"0.13.1",
     "babel-eslint": "4.1.6",
