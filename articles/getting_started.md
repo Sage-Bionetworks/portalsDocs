@@ -31,7 +31,6 @@ synapseLogin()
 
 {% endtabs %}
 
-
 #### Create a Synapse Project to store your work:
 
 {% tabs %}
