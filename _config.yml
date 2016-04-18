@@ -3,6 +3,7 @@ destination: ./_site
 plugins_dir:     ./_plugins
 include: ['_pages']
 exclude: [bin, CNAME, Gemfile, Gemfile.lock, README.md, Dockerfile, fig.yml]
+encoding: utf-8
 permalink: /:title
 highlighter: pygments
 redcarpet:
