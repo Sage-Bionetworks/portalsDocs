@@ -12,13 +12,9 @@ With Bundler:
     bundle install 
     npm install
 
-## To generate the static site files, run:
-
-    bundle exec jekyll serve
-
 ### How to run a development server
 
-    ./bin/jekyll serve
+    bundle exec jekyll serve
 
 then navigate to [localhost:4000](http://localhost:4000)
 
