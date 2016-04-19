@@ -2,7 +2,7 @@ source:      .
 destination: ./_site
 plugins_dir:     ./_plugins
 include: ['_pages']
-exclude: [bin, CNAME, Gemfile, Gemfile.lock, README.md, Dockerfile, fig.yml]
+exclude: [bin, CNAME, Gemfile, Gemfile.lock, README.md, Dockerfile, fig.yml, node_modules]
 permalink: /:title
 highlighter: pygments
 redcarpet:
