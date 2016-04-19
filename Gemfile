@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 2.5.3"
+gem "jekyll", "~> 3.1.2"
 # On OS X, you may need to install
 # it manually with --with-iconv-dir:
 #
@@ -10,4 +10,5 @@ gem "albino"
 gem "therubyracer"
 gem "nokogiri"
 gem "jekyll-code-example-tag"
-
+gem "redcarpet"
+gem "pygments.rb"
