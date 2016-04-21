@@ -27,6 +27,12 @@
   .fixed-container:after {
     clear: both; }
 
+.btn-inactive {
+  color : lightgrey;
+  background-color: white;
+}
+
+
 article pre {
   font-size: 13px !important; }
 
