@@ -3,7 +3,10 @@ title: "Getting Started with Synapse"
 layout: article
 ---
 
-##Get Started with Synapse 
+
+## Get Started with Synapse 
+
+
 
 This getting started is for non-technical users who are interested in learning about Synapse. By following this getting started, you’ll learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
 
@@ -40,10 +43,12 @@ Synapse is built on a number of RESTful web APIs that allow users to interact wi
 
 {% tabs %}
 {% tab Command %}
-	In a terminal window type the following command and hit enter. (For alternative methods of installation see the Python client installation instructions.)
-	{% highlight bash %}
+
+In a terminal window type the following command and hit enter. (For alternative methods of installation see the Python client installation instructions.)
+
+{% highlight bash %}
 pip install synapseclient
-	{% endhighlight %}
+{% endhighlight %}
 {% endtab %}
 
     {% tab Python %}

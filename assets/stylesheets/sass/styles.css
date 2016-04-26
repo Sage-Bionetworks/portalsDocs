@@ -27,6 +27,12 @@
   .fixed-container:after {
     clear: both; }
 
+.btn-inactive {
+  color : black;
+  background-color: white;
+}
+
+
 article pre {
   font-size: 13px !important; }
 
@@ -131,3 +137,8 @@ h2 {
 
 .row-fluid {
   padding-top: 55px; }
+
+#bootstrap-overrides .alert {
+  text-shadow: 0 0px 0;
+}
+

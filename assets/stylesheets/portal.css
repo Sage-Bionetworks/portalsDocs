@@ -93,6 +93,17 @@ a.btn-primary {
 	color: #fff !important;
 }
 
+.alert-warning {
+	background-color:#df9379;
+}
+
+.alert-success {
+	background-color:#0ea862;
+}
+
+.alert-danger {
+	background-color:#68b2bb;
+}
 /***************
 End Synapse color scheme
 ****************/
