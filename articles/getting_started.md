@@ -3,14 +3,6 @@ title: "Getting Started with Synapse"
 layout: article
 ---
 
-{% include note.html content="Don't panic." %}
-
-{% include tip.html content="It is a mistake to think you can solve any major problems just with potatoes." %}
-
-{% include warning.html content="In the beginning the Universe was created.<br/>This has made a lot of people very angry and been widely regarded as a bad move." %}
-
-{% include important.html content="42." %}
-
 
 ## Get Started with Synapse 
 
