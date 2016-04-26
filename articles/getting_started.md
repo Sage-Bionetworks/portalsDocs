@@ -3,7 +3,6 @@ title: "Getting Started with Synapse"
 layout: article
 ---
 
-
 ## Get Started with Synapse 
 
 
@@ -287,7 +286,7 @@ click the **Upload or Link to File** button on the Files tab. Go through the dia
 **Local Folder and File Sharing Settings**<br>
 Access to `files, tables`, and `folders` is controlled by the `Sharing setting` that you select for your project. You may also set individual `Sharing settings` for specific `files, tables`, or `folders` within a project.
 
-##Provenance and Tracking Content
+## Provenance and Tracking Content
 
 <img style="float: right" src="/assets/images/example_provenance.png" >
 
