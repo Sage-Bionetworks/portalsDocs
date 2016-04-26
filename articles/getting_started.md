@@ -6,6 +6,8 @@ layout: article
 
 ## Get Started with Synapse 
 
+
+
 This getting started is for non-technical users who are interested in learning about Synapse. By following this getting started, you’ll learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
 
 * Create your own project and add content to Synapse
