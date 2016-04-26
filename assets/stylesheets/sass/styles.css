@@ -137,3 +137,7 @@ h2 {
 
 .row-fluid {
   padding-top: 55px; }
+
+#bootstrap-overrides .alert {
+  text-shadow: 0 0px 0;
+}
