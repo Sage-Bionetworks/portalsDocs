@@ -36,13 +36,13 @@ There are four types of alert highlighting to inform users: note, tip, warning, 
 
 {% include tip.html content="This is a tip." %}
 
-![alert example](/assets/images/warning_important_alerts.png)
+![alert example](/assets/images/note_tip_alerts.png)
 
-To include new paragraphs, just add the <br/> tag within the content, like this:
+To include new paragraphs, just add the `<br/>` tag within the content, like this:
 
-{% include warning.html content="This is a warning. <br/> This is the second line of the warning." %}
+{% include warning.html content="This is a warning. `<br/>` This is the second line of the warning." %}
 
 {% include important.html content="This is for an important message." %}
 
-![alert example2](/assets/images/note_tip_alerts.png)
+![alert example2](/assets/images/warning_important_alerts.png)
 
