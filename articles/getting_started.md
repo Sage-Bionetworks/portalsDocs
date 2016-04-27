@@ -50,22 +50,22 @@ pip install synapseclient
 {% endhighlight %}
 {% endtab %}
 
-    {% tab Python %}
-	{% highlight bash %}
+{% tab Python %}
+{% highlight python %}
 pip install synapseclient
-	{% endhighlight %}
-	{% endtab %}
+{% endhighlight %}
+{% endtab %}
 
-    {% tab R %}
-	{% highlight r %}
+{% tab R %}
+{% highlight r %}
 source("http://depot.sagebase.org/CRAN.R")
 pkgInstall("synapseClient")
-	{%endhighlight %}
-	{% endtab %}
+{%endhighlight %}
+{% endtab %}
 
-    {% tab Web %}
+{% tab Web %}
 	Nothing to Install
-	{% endtab %}
+{% endtab %}
 
 {% endtabs %}
 
@@ -296,13 +296,13 @@ Provenance is easiest specified when you are uploading or editing a file in Syna
 
 {% tabs %}
 
-	{% tab Command %}
-	{% highlight bash %}
-	synapse add images/plot_2.png --parentId=syn123  \
-	--used raw_data_file  \
-	--executed https://github.com/Sage-Bionetworks/synapseTutorials
-	{% endhighlight %}
-	{% endtab %}
+{% tab Command %}
+{% highlight bash %}
+synapse add images/plot_2.png --parentId=syn123  \
+--used raw_data_file  \
+--executed https://github.com/Sage-Bionetworks/synapseTutorials
+{% endhighlight %}
+{% endtab %}
 
     {% tab Python %}
 	{% highlight python %}
