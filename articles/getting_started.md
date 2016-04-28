@@ -3,7 +3,6 @@ title: "Getting Started with Synapse"
 layout: article
 ---
 
-
 ## Get Started with Synapse 
 
 
@@ -51,22 +50,22 @@ pip install synapseclient
 {% endhighlight %}
 {% endtab %}
 
-    {% tab Python %}
-	{% highlight bash %}
+{% tab Python %}
+{% highlight python %}
 pip install synapseclient
-	{% endhighlight %}
-	{% endtab %}
+{% endhighlight %}
+{% endtab %}
 
-    {% tab R %}
-	{% highlight r %}
+{% tab R %}
+{% highlight r %}
 source("http://depot.sagebase.org/CRAN.R")
 pkgInstall("synapseClient")
-	{%endhighlight %}
-	{% endtab %}
+{%endhighlight %}
+{% endtab %}
 
-    {% tab Web %}
+{% tab Web %}
 	Nothing to Install
-	{% endtab %}
+{% endtab %}
 
 {% endtabs %}
 
@@ -287,7 +286,7 @@ click the **Upload or Link to File** button on the Files tab. Go through the dia
 **Local Folder and File Sharing Settings**<br>
 Access to `files, tables`, and `folders` is controlled by the `Sharing setting` that you select for your project. You may also set individual `Sharing settings` for specific `files, tables`, or `folders` within a project.
 
-##Provenance and Tracking Content
+## Provenance and Tracking Content
 
 <img style="float: right" src="/assets/images/example_provenance.png" >
 
@@ -297,13 +296,13 @@ Provenance is easiest specified when you are uploading or editing a file in Syna
 
 {% tabs %}
 
-	{% tab Command %}
-	{% highlight bash %}
-	synapse add images/plot_2.png --parentId=syn123  \
-	--used raw_data_file  \
-	--executed https://github.com/Sage-Bionetworks/synapseTutorials
-	{% endhighlight %}
-	{% endtab %}
+{% tab Command %}
+{% highlight bash %}
+synapse add images/plot_2.png --parentId=syn123  \
+--used raw_data_file  \
+--executed https://github.com/Sage-Bionetworks/synapseTutorials
+{% endhighlight %}
+{% endtab %}
 
     {% tab Python %}
 	{% highlight python %}
