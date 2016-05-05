@@ -1,7 +1,7 @@
 source:      .
 destination: ./_site
 plugins_dir:     ./_plugins
-include: ["_build", "_static", "_templates"]
+include: ["_static", "_templates", "_build"]
 encoding: utf-8
 exclude: [bin, CNAME, Gemfile, Gemfile.lock, README.md, Dockerfile, fig.yml, node_modules]
 permalink: /:title
