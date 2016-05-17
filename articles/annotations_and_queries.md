@@ -18,15 +18,13 @@ SELECT * FROM <data type> [LIMIT <#>] [OFFSET <#>]
 
 Currently supported data types:
 
+{:.markdown-table}
 | \<data type\> | 
 | --------- | 
 | project   | 
 | folder    |
 | file      |
 | entity    |
-
-
-
 
 ##### **'Order By' Query**
 
@@ -49,6 +47,7 @@ SELECT * FROM <data type> WHERE <expression> (AND <expression>)* [LIMIT <#>] [OF
 \<value\> should be in quotes for strings, but not numbers (i.e. name == "Smith" AND size > 10)
 Currently supported <operators> with their required URL escape codes:
 
+{:.markdown-table}
 | Operator               |     Value    |  URL Escape Code |
 | :--------------------- | :----------- | :--------------- |
 | Equal                  |     ==       |     %3D%3D       |
@@ -72,6 +71,7 @@ SELECT * FROM <data type> WHERE <expression> (AND <expression>)* [LIMIT <#>] [OF
 \<value\> should be in quotes for strings, but not numbers (i.e. name == "Smith" AND size > 10)
 Currently supported <operators> with their required URL escape codes:
 
+{:.markdown-table}
 | Operator               |     Value    |  URL Escape Code |
 | :--------------------- | :----------- | :--------------- |
 | Equal                  |     ==       |     %3D%3D       |
@@ -113,7 +113,7 @@ SELECT * FROM <data type> WHERE <expression> (AND <expression>)* [LIMIT <#>] [OF
 \<value\> should be in quotes for strings, but not numbers (i.e. name == "Smith" AND size > 10)
 Currently supported <operators> with their required URL escape codes:
 
-
+{:.markdown-table}
 | Operator               |     Value    |  URL Escape Code |
 | :--------------------- | :----------- | :--------------- |
 | Equal                  |     ==       |     %3D%3D       |
