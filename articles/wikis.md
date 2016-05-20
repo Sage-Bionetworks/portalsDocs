@@ -10,7 +10,7 @@ Wikis are available to:
   * Update results
   * Share results
 
-###Editing Wiki in Synpase
+###Updating Wiki Content
 A wiki is created by default for every project, folder and file. For folders and files, the wikis are not visible until there is content. 
 
 {% tabs %} {% tab Command %}
@@ -31,14 +31,13 @@ placeholderText <- "* Cell growth look normally distributed\n* There is evidence
 
 {% endtabs %}
 
-###Editing the Wiki
-
-The easiest way to edit the wiki is through the web interface, though the Python and R clients can also be used. Each client requires formatting the text using the Wiki Markdown langage.  
+###Available Wiki Features
+Synapse wikis provide the ability to richly describe project, files and folders within synapse.  
 
 ####Markdown langauge
 Wiki markdown language has many capabilities to customize the layout and text of the wiki. For full capabilities of the markdown language see the [help document](https://www.synapse.org/#!Wiki:syn2467792/ENTITY).
 
-###Synapse Widgets
+####Synapse Widgets
 In addition to textual descriptions of a project Synapse also provides the ability to customize a wiki with specific widgets.  
 
  * Table of contents
@@ -73,4 +72,11 @@ Sage is involved in many DREAM challenges that require specific functionality bu
   * Submit for Evaluation
   * Team Badge
 
+###Wiki Versioning
+We should describe how to revert back to older versions of the wiki, if possible.  I don't know enougha bout this!
+
+###Deleting a wiki
+It is possible to remove a wiki from a File or Folder. There are two ways to do this:
+1. Select *Tools* and select *Delete Wiki Page*
+2. Select *Tools* and select *Edit wiki* and then click the red 'Delete page' button.
 
