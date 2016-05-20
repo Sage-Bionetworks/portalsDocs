@@ -15,52 +15,62 @@ A wiki is created by default for every project, folder and file. For folders and
 
 {% tabs %} {% tab Command %}
 
-Command line creation of wiki
+{% highlight bash %} 
+The command line client does not support the creation of wiki content. We suggest using (to get to the webpage of the project) synapse onweb syn### where syn### is the Synapse Id of your created project. Then editing the wiki using the web client. {% endhighlight %} {% endtab %}
 
-{% highlight bash %} here {% endhighlight %} {% endtab %}
+{% tab Python %} {% highlight python %}
+projWiki = Wiki(title='Data Summary', owner = myProj ) markdown = '''* Cell growth look normally distributed
+There is evidence of inverse growth between these two cell lines ''' projWiki['markdown'] = markdown projWiki = syn.store(projWiki) 
+{% endhighlight %} {% endtab %}
 
-{% tab Python %} {% highlight python %}python wiki creation {% endhighlight %} {% endtab %}
+{% tab R %} {% highlight r %} library(synapseClient); 
+placeholderText <- "* Cell growth look normally distributed\n* There is evidence of inverse growth between these two cell lines." wiki <- WikiPage(owner=myProject, title="Analysis summary", markdown=placeholderText) wiki <- synStore(wiki) 
+{%endhighlight %} {% endtab %}
 
-{% tab R %} {% highlight r %} library(synapseClient); synapseLogin(); ##command here {%endhighlight %} {% endtab %}
-
-{% tab Web %} Select "Tools" then select "Edit Project/Folder/File wiki" {% endtab %}
+{% tab Web %} Select **Tools** then select **Edit Project/Folder/File wiki** {% endtab %}
 
 {% endtabs %}
 
 ###Editing the Wiki
-There are various ways to edit the wiki.
+
+The easiest way to edit the wiki is through the web interface, though the Python and R clients can also be used. Each client requires formatting the text using the Wiki Markdown langage.  
 
 ####Markdown langauge
-Link to existing help
-https://www.synapse.org/#!Wiki:syn2467792/ENTITY
+Wiki markdown language has many capabilities to customize the layout and text of the wiki. For full capabilities of the markdown language see the [help document](https://www.synapse.org/#!Wiki:syn2467792/ENTITY).
 
 ###Synapse Widgets
-There are numerous widgets that can be added to customize a wiki.
+In addition to textual descriptions of a project Synapse also provides the ability to customize a wiki with specific widgets.  
 
-####Table of contents
+ * Table of contents
+To summarize the contents of a wiki.
 
-####Table Widgets
-#####Paste tabular data
-#####Query on Synapse table
-#####Query on files/folers
+ * Table Widgets
+ There are many ways to add tabular data to the wiki.
+  * Paste tabular data
+  The easiest way.
+  * Query on Synapse table
+  More detail, link to Synapse table.
+  * Query on files/folers
+  Even more complex.
 
-####Genome Browser 
+ * Genome Browser 
+ Genome browser data can also be added.
+ 
+ * File Preview
+ To preview a file, use this.
+ 
+ * User
+ To link to a specific user. 
+ * Provenance graph
 
-####File Preview
+ * Button Link
 
-####User
-
-####Provenance graph
-
-####Button Link
-
-####Entity List
-
-
+ * Entity List
 
 ####Challenge-specific widgets
-#####Join Team
-#####Submit for Evaluation
-#####Team Badge
+Sage is involved in many DREAM challenges that require specific functionality built into the Synapse Wiki. 
+  * Join Team
+  * Submit for Evaluation
+  * Team Badge
 
 
