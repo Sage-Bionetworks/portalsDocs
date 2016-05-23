@@ -31,11 +31,10 @@ We allow groups to get started for free by subsidizing relatively moderate amoun
 Not directly. Synapse helps you manage data, analysis and results. However, using the programmatic interfaces built into Synapse makes it easy to set up analytical pipelines and *ad hoc* analysis that interacts with Synapse. By default Synapse uses Amazon’s cloud infrastructure (S3) for storage, making it simple to allocate large compute resources and collocate them next to data storage.
 
 #### Who uses Synapse?
-Anyone may use Synapse.  We have highlighted a series of [research communities](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) that are currently using Synapse for their collaborative work and some [open resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) hosted in Synapse.
+Anyone may use Synapse. We have highlighted a series of [research communities](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) that are currently using Synapse for their collaborative work and some [open resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) hosted in Synapse.
 
 #### Is there someone that can help me use Synapse in my collaboration?
- Our [Discussion Forum](https://www.synapse.org/#!SynapseForum:default) is a great place to reach out to the broader Synapse community to find others that may be interested in a collaboration. You can also reach us directly via email at SynapseInfo@sagebase.org
-
+ Our [Discussion Forum](https://www.synapse.org/#!SynapseForum:default) is a great place to reach out to the broader Synapse community to find others that may be interested in a collaboration. You can also reach us directly via email at [SynapseInfo@sagebase.org](mailto:SynapseInfo@sagebase.org).
 
 #### What are the Synapse Terms  of Use?
 In order to register on Synapse, you must review and agree to the terms of the Synapse Awareness and Ethics Pledge. These terms are described in more detail in the Synapse [Terms and Conditions of Use document](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4). By using Synapse you must further consent to the Synapse [Governance policies](https://www.synapse.org/#!Help:Governance)
