@@ -16,7 +16,7 @@ Synapse is a collaborative informatics platform dedicated to supporting large-sc
 
 
 #### What does Synapse do?
-Synapse allows researchers to share and describe data, analyses, and other content.  Data and analyses can be stored in many types of locations, including private servers, local hard drives, or cloud storage.  Synapse provides a common interface to describe these data or analyses, where they come from,how to use themand mechanisms for adding and retrieving data, analyses, and their respective descriptions. 
+Synapse allows researchers to share and describe data, analyses, and other content.  Data and analyses can be stored in many types of locations, including private servers, local hard drives, or cloud storage.  Synapse provides a common interface to describe these data or analyses, where they come from,how to use themand mechanisms for adding and retrieving data, analyses, and their respective descriptions.
 
 #### No, seriously what does Synapse do?
 For a more comprehensive introduction to Synapse see our getting started guide [TODO:link?].
@@ -30,7 +30,7 @@ We allow groups to get started for free by subsidizing relatively moderate amoun
 #### Is Synapse a data analysis platform?
 Not directly. Synapse helps you manage data, analysis and results.  However, using the programmatic interfaces built into Synapse makes it easy to set upanalytical pipelines and ad-hoc analysis that interacts with the system.   By default Synapse uses Amazon’s cloud infrastructure for storage making it simple to allocate large compute resources and to collocate compute next to data storage.
 
-#### Who uses Synapse? 
+#### Who uses Synapse?
 Anyone may use Synapse.  We have highlighted a series of [research communities](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) that are currently using Synapse for their collaborative work and some [open resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) hosted in Synapse.
 
 #### Is there someone that can help me use Synapse in my collaboration?
@@ -49,7 +49,7 @@ Yes, Synapse is built on top of a RESTful service that is automatically (documen
 #### How do I set up my own instance of Synapse?
 Synapse was developed with the philosophy to encourage collaboration across institutional boundaries and is therefore provided as “Software As A Service” with a single instance used by all users.  This makes it easy both to discover new content and share with new collaborators.  We do support private project spaces where contentsharing is controlled by the individual user.  In addition, Synapse has the ability to reference resources that are stored elsewhere.  This allows Synapse to store metadata about the content such as annotations, descriptive wiki pages and provenance but none of the actual data.  Currently Synapse has specific support for files stored at URLs, in sftp servers, on AWS S3 and arbitrary file servers (TODO: add links to each one of these on how to setup).
 
-#### What do I do if I find a bug? 
+#### What do I do if I find a bug?
 You may browse open issues or file a bug through our jira tracker system. To file a bug, use the blue “Create” button in the top center of the page. Please be sure to include your email address in your submission so we may follow up with you.
 
 #### How do I get started?
@@ -66,10 +66,10 @@ All public data is queryable (for more information see [help on querying](TODO l
 Synapse hosts multiple research communities that generate data which is released to the public. A description of some of these communities can be found on the [Synapse Research Communities Page](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [public resources page](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects)
 
 #### What does a Synapse account let me do than I can’t do without it?
-You can browse public content in Synapse without a login. However, without an account you cannot add new  content to Synapse, nor can you upload or download Files or Tables. With an account you can create Projects and Wikis and download non-controlled content like data, code, and results, and request access to Controlled Use content. Further, an account lets you collaborate with other Synapse users and create user teams. 
+You can browse public content in Synapse without a login. However, without an account you cannot add new  content to Synapse, nor can you upload or download Files or Tables. With an account you can create Projects and Wikis and download non-controlled content like data, code, and results, and request access to Controlled Use content. Further, an account lets you collaborate with other Synapse users and create user teams.
 
 #### What is a validated profile?
-A validated profile is a process where your identity is established through a combination of your profile information, your ORCID, a signed oath, and an external credential. Thisprovides greater transparency of who you are. A validated profile is needed for access to specific datasets, and is currently requiredfor access to data collected through Sage Bionetworks’ research apps (http://sagebase.org/bridge/). Profile validation instructions can be found on your profile page. Click on the ‘Request Profile Validation’ link to see all steps required 
+A validated profile is a process where your identity is established through a combination of your profile information, your ORCID, a signed oath, and an external credential. Thisprovides greater transparency of who you are. A validated profile is needed for access to specific datasets, and is currently requiredfor access to data collected through Sage Bionetworks’ research apps (http://sagebase.org/bridge/). Profile validation instructions can be found on your profile page. Click on the ‘Request Profile Validation’ link to see all steps required
 
 
 
@@ -80,7 +80,7 @@ A validated profile is a process where your identity is established through a co
 User certification ensures that you understand your responsibilities for sharing data through Synapse, especially data derived from human participants.  These responsibilities include making sure that data derived from human participants is de-identified according to HIPAA standards, and that all applicable privacy laws and regulations are observed.  See the Data Use Procedure for moreinformation.
 
 #### How do I get certified?
-To become a certified user, you will need to pass a brief quiz  that may accessedhere. 
+To become a certified user, you will need to pass a brief quiz  that may accessedhere.
 
 #### Is everything I share on Synapse Public?
 No. You can share your content which whomever you chose. By default, Projects and  project content are visible only to the user who created it.You have the ability to grant other Synapse users, Synapse Teams, or the public access to your Project content.
@@ -97,4 +97,3 @@ By default, Synapse stores files in Amazon Simple Storage Services (S3). However
 
 #### I have my research results - How can Synapse help me share them ?
 Synapse makes it easy to share files of any sort, with whomever you choose whether a small group of collaborators or the general public. You may share raw data, summarized data, analysis results, or anything in between. We recommend using “Getting started with Synapse guide” for more details on how to upload files and content and manage access permissions.
-
