@@ -88,7 +88,7 @@ Yes. Synapse has an IRB-approved data governance procedure that provides mechani
 Synapse stores content in Amazon Web Services, which provides a layer of security measures designed and implemented by Amazon (TODO: link to Amazon security documentation). While Synapse is an open access site, each user has control over who may access their content. Only users with whom you share content will see it. You can set different sharing settings for all individual Files and Folders in your Project.
 
 #### Where are my files stored?
-By default, Synapse stores files in Amazon Simple Storage Services (S3). However it is possible to set up Synapse to store files in different locations such as your local SFTP server. For files stored outside of S3, Synapse can be used to organize, manage, and access files through the use of the Synapse annotations system to store file-specific metadata.  (link to an example)
+By default, Synapse stores files in Amazon Simple Storage Services (S3). However it is possible to set up Synapse to store files in different locations such as your local SFTP server. For files stored outside of S3, Synapse can be used to organize, manage, and access files through the use of Synapse annotations to store file-specific metadata.  (link to an example)
 
 #### I have my research results - How can Synapse help me share them ?
 Synapse makes it easy to share files of any sort, with whomever you choose whether a small group of collaborators or the general public. You may share raw data, summarized data, analysis results, or anything in between. We recommend using “Getting started with Synapse guide” for more details on how to upload files and content and manage access permissions.
