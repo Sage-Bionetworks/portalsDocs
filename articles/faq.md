@@ -40,9 +40,9 @@ Anyone may use Synapse. We have highlighted a series of [research communities](h
 In order to register on Synapse, you must review and agree to the terms of the Synapse Awareness and Ethics Pledge. These terms are described in more detail in the Synapse [Terms and Conditions of Use document](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4). By using Synapse you must further consent to the Synapse [Governance policies](https://www.synapse.org/#!Help:Governance).
 
 #### Is Synapse open source?
-Yes, Synapse is published under [The MIT Licence](https://github.com/Sage-Bionetworks/file-proxy/blob/develop/LICENSE) The source code is available on the [Sage Bionetworks GitHub page](https://github.com/Sage-Bionetworks/).  Synapse also offered free of charge as a hosted Software as a Service (SaaS).
+Yes, Synapse is published under [The MIT Licence](https://github.com/Sage-Bionetworks/file-proxy/blob/develop/LICENSE) The source code is available on the [Sage Bionetworks GitHub page](https://github.com/Sage-Bionetworks/). Synapse is also offered free of charge as a hosted Software as a Service (SaaS).
 
-#### I am a developer - is there  Application Programmatic Interface (API) documentation?
+#### I am a developer - is there Application Programmatic Interface (API) documentation?
 Yes, Synapse is built on top of a RESTful service that is automatically (documented)(TODO update link: http://hud.rel.rest.doc.sagebase.org.s3-website-us-east-1.amazonaws.com). In addition, we have purpose built APIs for (Python)[TODO: Link], (R )[TODO: R documentation), (Java)[TODO java docs) and a (command line)[TODO: command line docs] interface.
 
 #### How do I set up my own instance of Synapse?
