@@ -78,9 +78,8 @@ User certification ensures that you understand your responsibilities for sharing
 #### How do I get certified?
 To become a certified user, you will need to pass a brief quiz that may accessed here.
 
-#### Is everything I share on Synapse Public?
-No. You can share your content which whomever you chose. By default, Projects and  project content are visible only to the user who created it.You have the ability to grant other Synapse users, Synapse Teams, or the public access to your Project content.
-
+#### Is everything I share on Synapse public?
+No. You can share your content which whomever you chose. By default, Projects and their content are visible only to the user who created it. You have the ability to grant other Synapse users, Synapse Teams, or the public access to your Project content.
 
 #### Can I store sensitive information about human subjects in Synapse?
 Yes.  Synapse has an IRB-approved data governance procedure that provides mechanisms to share sensitive data in a controlled manner.  You can learn more by reading our Data Use Procedure documentation.  For further inquires or help in understanding how to apply these procedures to your data, please contact the Synapse Access and Compliance Team: act@sagebase.org
