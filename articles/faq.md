@@ -82,10 +82,10 @@ To become a certified user, you will need to pass a brief quiz that may accessed
 No. You can share your content which whomever you chose. By default, Projects and their content are visible only to the user who created it. You have the ability to grant other Synapse users, Synapse Teams, or the public access to your Project content.
 
 #### Can I store sensitive information about human subjects in Synapse?
-Yes.  Synapse has an IRB-approved data governance procedure that provides mechanisms to share sensitive data in a controlled manner.  You can learn more by reading our Data Use Procedure documentation.  For further inquires or help in understanding how to apply these procedures to your data, please contact the Synapse Access and Compliance Team: act@sagebase.org
+Yes. Synapse has an IRB-approved data governance procedure that provides mechanisms to share sensitive data in a controlled manner. You can learn more by reading our Data Use Procedure documentation. For further inquires or help in understanding how to apply these procedures to your data, please contact the Synapse Access and Compliance Team at [act@sagebase.org](mailto:act@sagebase.org).
 
-#### How do I know the content I put in Synapse will be secure (what security measures does Synapse have?)
-Synapse stores content in Amazon Web Services, which provides a layer of security measures designed and implemented by Amazon (TODO: link to Amazon security documentation). While Synapse is an open access site, each user has control over who may access their content . Only users whoyou share content with see it.You can set different sharing settings for individual files anf folders in your project.
+#### How do I know the content I put in Synapse will be secure? What security measures does Synapse have?
+Synapse stores content in Amazon Web Services, which provides a layer of security measures designed and implemented by Amazon (TODO: link to Amazon security documentation). While Synapse is an open access site, each user has control over who may access their content. Only users with whom you share content will see it. You can set different sharing settings for all individual Files and Folders in your Project.
 
 #### Where are my files stored?
 By default, Synapse stores files in Amazon Simple Storage Services (S3). However it is possible to set up Synapse to store files in different locations such as your local SFTP server. For files stored outside of S3, Synapse can be used to organize, manage, and access files through the use of the Synapse annotations system to store file-specific metadata.  (link to an example)
