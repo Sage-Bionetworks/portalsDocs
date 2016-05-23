@@ -3,15 +3,12 @@ title: "Synapse Wikis"
 layout: article
 ---
 
-##Synapse Wikis
+##Synapse Wiki pages
 
-Wikis are available to:
-  * Describe a project
-  * Update results
-  * Share results
+Wiki pages contain highly customized content including, but not limited to images, tables, code blocks, LaTeX formatted equations, and scholarly references. Synapse-specific widgets also allow users to embed dynamic content based on other resources stored in Synapse 
 
-###Updating Wiki Content
-A wiki is created by default for every project, folder and file. For folders and files, the wikis are not visible until there is content. 
+###Creating Wiki Content
+It is possible to have a wiki page for every project, folder and file. For folders and files, the wikis are not visible until there is content. 
 
 {% tabs %} {% tab Command %}
 
@@ -41,30 +38,44 @@ Wiki markdown language has many capabilities to customize the layout and text of
 In addition to textual descriptions of a project Synapse also provides the ability to customize a wiki with specific widgets.  
 
  * Table of contents
-To summarize the contents of a wiki.
+To summarize the contents of a wiki. This will, by default, include the primary wiki page and any subpages added to the primary wiki page. The Table of Contents will be displayed on the left and can be re-ordered by clicking 'Edit Order' under the table of contents. 
 
  * Table Widgets
  There are many ways to add tabular data to the wiki.
   * Paste tabular data
-  The easiest way.
+  
+  The easiest way [add how to, I have never figured it out]
+  
   * Query on Synapse table
-  More detail, link to Synapse table.
-  * Query on files/folers
-  Even more complex.
+  
+If you have an existing Synapse table related to this project you can query selected columns using this Synapse table widget.  To do so select 'Edit Project Wiki' from the 'Tools' directory and from the 'Insert' directory select 'Query on Synapse Table'. Once the widget opens you can type the query according the the [Synapse table query language](ISTHEREALINKFORTHIS?). 
+
+  * Query on files/folders
+
+You can also query specific files and folderst.  To do so select 'Edit Project Wiki' from the 'Tools' directory and from the 'Insert' directory select 'Query on Files/Folders'. Once the widget opens you can type the query according the the [Synapse query language](). 
 
  * Genome Browser 
- Genome browser data can also be added.
+To add a genome browser region to the wiki page, select 'Edit Project Wiki' from the 'Tools' directory and from the 'Insert' directory select 'Genome Browser'. 
  
  * File Preview
- To preview a file, use this.
- 
+
+To preview a file on the wiki page, select 'Edit Project Wiki' from the 'Tools' directory and from the 'Insert' directory select 'File Preview'. 
+
  * User
- To link to a specific user. 
- * Provenance graph
+
+To link to a specific user profile on a wiki page select 'Edit Project Wiki' from the 'Tools' directory and from the 'Insert' directory select 'User'. 
+
+* Provenance graph
+
+To show file provenance on a wiki, select 'Edit Project Wiki' from the 'Tools' directory and from the 'Insert' directory select 'Provenance Graph'. 
 
  * Button Link
 
+To use a button link on the wiki page, select 'Edit Project Wiki' from the 'Tools' directory and from the 'Insert' directory select 'Button Link'. 
+
  * Entity List
+ 
+To list a number of entities in a wikis select 'Edit Project Wiki' from the 'Tools' directory and from the 'Insert' directory select 'Entity List'. 
 
 ####Challenge-specific widgets
 Sage is involved in many DREAM challenges that require specific functionality built into the Synapse Wiki. 
@@ -73,7 +84,7 @@ Sage is involved in many DREAM challenges that require specific functionality bu
   * Team Badge
 
 ###Wiki Versioning
-We should describe how to revert back to older versions of the wiki, if possible.  I don't know enougha bout this!
+We should describe how to revert back to older versions of the wiki, if possible.  [I do not know enougha bout this!]
 
 ###Deleting a wiki
 It is possible to remove a wiki from a File or Folder. There are two ways to do this:
