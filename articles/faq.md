@@ -76,7 +76,7 @@ Validating your profile is a process where your identity is established through 
 User certification ensures that you understand your responsibilities for sharing data through Synapse, especially data derived from human participants. These responsibilities include making sure that data derived from human participants is de-identified according to [HIPAA standards](http://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html), and that all applicable privacy laws and regulations are observed.  See the Data Use Procedure for more information.
 
 #### How do I get certified?
-To become a certified user, you will need to pass a brief quiz  that may accessedhere.
+To become a certified user, you will need to pass a brief quiz that may accessed here.
 
 #### Is everything I share on Synapse Public?
 No. You can share your content which whomever you chose. By default, Projects and  project content are visible only to the user who created it.You have the ability to grant other Synapse users, Synapse Teams, or the public access to your Project content.
