@@ -70,13 +70,10 @@ You can browse public content in Synapse without registering. However, without a
 #### What is a validated profile?
 Validating your profile is a process where your identity is established through a combination of your profile information, your [ORCID](http://orcid.org/), a signed oath, and an external credential. This provides greater transparency of who you are. A validated profile is needed for access to specific datasets, and is currently required for access to data collected through Sage Bionetworks’ research apps (http://sagebase.org/bridge/). Profile validation instructions can be found on your profile page. Click on the ‘Request Profile Validation’ link to see the required steps.
 
-
-
-
 ## Adding Content
 
 #### Why do I have to be a certified user to upload content?
-User certification ensures that you understand your responsibilities for sharing data through Synapse, especially data derived from human participants.  These responsibilities include making sure that data derived from human participants is de-identified according to HIPAA standards, and that all applicable privacy laws and regulations are observed.  See the Data Use Procedure for moreinformation.
+User certification ensures that you understand your responsibilities for sharing data through Synapse, especially data derived from human participants. These responsibilities include making sure that data derived from human participants is de-identified according to [HIPAA standards](http://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html), and that all applicable privacy laws and regulations are observed.  See the Data Use Procedure for more information.
 
 #### How do I get certified?
 To become a certified user, you will need to pass a brief quiz  that may accessedhere.
