@@ -68,7 +68,7 @@ Synapse hosts multiple research communities that generate data which is released
 You can browse public content in Synapse without registering. However, without an account you cannot add new content to Synapse, nor can you upload or download Files or Tables. With an account you can create Projects and Wikis, download non-controlled content like data, code, and results, and request access to Controlled Use content. Further, an account lets you collaborate with other Synapse users and create user teams.
 
 #### What is a validated profile?
-A validated profile is a process where your identity is established through a combination of your profile information, your ORCID, a signed oath, and an external credential. Thisprovides greater transparency of who you are. A validated profile is needed for access to specific datasets, and is currently requiredfor access to data collected through Sage Bionetworks’ research apps (http://sagebase.org/bridge/). Profile validation instructions can be found on your profile page. Click on the ‘Request Profile Validation’ link to see all steps required
+Validating your profile is a process where your identity is established through a combination of your profile information, your [ORCID](http://orcid.org/), a signed oath, and an external credential. This provides greater transparency of who you are. A validated profile is needed for access to specific datasets, and is currently required for access to data collected through Sage Bionetworks’ research apps (http://sagebase.org/bridge/). Profile validation instructions can be found on your profile page. Click on the ‘Request Profile Validation’ link to see the required steps.
 
 
 
