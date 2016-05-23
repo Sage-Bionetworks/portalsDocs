@@ -16,7 +16,7 @@ Synapse is a collaborative informatics platform dedicated to supporting large-sc
 
 
 #### What does Synapse do?
-Synapse allows researchers to share and describe data, analyses, and other content.  Data and analyses can be stored in many types of locations, including private servers, local hard drives, or cloud storage.  Synapse provides a common interface to describe these data or analyses, where they come from,how to use themand mechanisms for adding and retrieving data, analyses, and their respective descriptions.
+Synapse allows researchers to share and describe data, analyses, and other content. Data and analyses can be stored in many types of locations, including private servers, local hard drives, or cloud storage. Synapse provides a common interface to describe these data or analyses, where they come from, and how to use them. Synapse also provides mechanisms for adding and retrieving data, analyses, and their respective descriptions.
 
 #### No, seriously what does Synapse do?
 For a more comprehensive introduction to Synapse see our getting started guide [TODO:link?].
