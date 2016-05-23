@@ -57,12 +57,12 @@ Whether you are looking to access content or use Synapse to track your own work,
 ## Accessing Content
 
 #### My colleague put some content in Synapse.  How do I find it?
-This will depend if the content is public or private. If private, you will need to make sure your colleague has shared this content with you. Shared content is visible from your “Dashboard page” under the tab “Shared directly with me”. If you favorite the content it will appear under your list of favorites visible on any Synapse page.
+This will depend if the content is public or private. If private, you will need to make sure your colleague has shared this content with you. Shared content is visible from your “Dashboard page” under the tab “Shared directly with me”. If you favorite the content (using the yellow star) it will appear under your list of favorites visible from the top of any Synapse page.
 
-All public data is queryable (for more information see [help on querying](TODO link to query docs) or from the “Search” box in the top right corner of any Synapse page.
+All public data is queryable. For more information see [help on querying](TODO link to query docs) or from the “Search” box in the top right corner of any Synapse page.
 
-#### I hear Synapse hosts several public datasets.  How do I find them?
-Synapse hosts multiple research communities that generate data which is released to the public. A description of some of these communities can be found on the [Synapse Research Communities Page](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [public resources page](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects)
+#### I have heard Synapse hosts several public datasets. How do I find them?
+Synapse hosts multiple research communities that generate data which is released to the public. A description of some of these communities can be found on the [Synapse Research Communities Page](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [public resources page](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects).
 
 #### What does a Synapse account let me do than I can’t do without it?
 You can browse public content in Synapse without a login. However, without an account you cannot add new  content to Synapse, nor can you upload or download Files or Tables. With an account you can create Projects and Wikis and download non-controlled content like data, code, and results, and request access to Controlled Use content. Further, an account lets you collaborate with other Synapse users and create user teams.
