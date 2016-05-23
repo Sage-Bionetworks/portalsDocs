@@ -42,8 +42,8 @@ In order to register on Synapse, you must review and agree to the terms of the S
 #### Is Synapse open source?
 Yes, Synapse is published under [The MIT Licence](https://github.com/Sage-Bionetworks/file-proxy/blob/develop/LICENSE) The source code is available on the [Sage Bionetworks GitHub page](https://github.com/Sage-Bionetworks/). Synapse is also offered free of charge as a hosted Software as a Service (SaaS).
 
-#### I am a developer - is there Application Programmatic Interface (API) documentation?
-Yes, Synapse is built on top of a RESTful service that is automatically (documented)(TODO update link: http://hud.rel.rest.doc.sagebase.org.s3-website-us-east-1.amazonaws.com). In addition, we have purpose built APIs for (Python)[TODO: Link], (R )[TODO: R documentation), (Java)[TODO java docs) and a (command line)[TODO: command line docs] interface.
+#### I am a developer - is there API documentation?
+Yes, Synapse is built on top of a RESTful service that is automatically [documented](http://rest.synapse.org). In addition, we have purpose built APIs for [Python](TODO: Link), [R](TODO: R documentation), [Java](TODO java docs) and a [command line](TODO: command line docs) interface.
 
 #### How do I set up my own instance of Synapse?
 Synapse was developed with the philosophy to encourage collaboration across institutional boundaries and is therefore provided as “Software As A Service” with a single instance used by all users.  This makes it easy both to discover new content and share with new collaborators.  We do support private project spaces where contentsharing is controlled by the individual user.  In addition, Synapse has the ability to reference resources that are stored elsewhere.  This allows Synapse to store metadata about the content such as annotations, descriptive wiki pages and provenance but none of the actual data.  Currently Synapse has specific support for files stored at URLs, in sftp servers, on AWS S3 and arbitrary file servers (TODO: add links to each one of these on how to setup).
