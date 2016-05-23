@@ -22,7 +22,7 @@ Synapse allows researchers to share and describe data, analyses, and other conte
 For a comprehensive introduction to Synapse see our getting started guide [TODO:link?].
 
 #### How much does it cost to use Synapse?
-We allow groups to get started for free by subsidizing relatively moderate amounts of of internal Synapse cloud storage (e.g. 10s of GB).  If your needs will greatly exceed these we suggest contacting (SynapseInfo@sagebase.org) as we have multiple solutions including the ability for groups to host their own content either in cloud storage, proxied from local file servers [TODO: add link to storage solutions] or as external links.
+We allow groups to get started for free by subsidizing relatively moderate amounts of internal Synapse cloud storage (e.g. 10s of GB). If your needs will exceed this limit we suggest contacting [SynapseInfo@sagebase.org](mailto:SynapseInfo@sagebase.org) for other solutions, including the ability for groups to host their own content either in cloud storage, proxied from local file servers [TODO: add link to storage solutions] or as external links.
 
 #### How is Synapse funded?
 [Sage Bionetworks](http://www.sagebase.org) provides Synapse services free of charge to the scientific community through generous support from the [*National Cancer Institute (NCI)*](http://www.cancer.gov), the [*National Heart, Lung, and Blood Institute (NIH NHLBI)*](http://www.nhlbi.nih.gov), the [Children’s Tumor Foundation (CTF)](http://www.ctf.org/), the [Alfred P. Sloan Foundation](http://www.sloan.org/), the [National Insitute on Aging (NIH)](https://www.nia.nih.gov/), and the [National Institue of Mental Health (NIMH)](http://www.nimh.nih.gov/index.shtml).  
