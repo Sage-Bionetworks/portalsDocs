@@ -6,7 +6,7 @@ layout: article
 
 There are three levels of user credentials in Synapse: anonymous, registered, and certified. The table below summarizes the user privileges for each level.  
 
-<table class="border text-align-center">
+<table class="markdown-table border text-align-center">
 <tr><th></th><th>  Anonymous  </th><th> Registered  </th><th> Certified</th></tr>
 <tr><td>Browse Public Project Catalog  </td><td>  X </td><td>  X  </td><td> X </td></tr>
 <tr><td>Browse Public File Catalog  </td><td>  X </td><td>  X  </td><td> X</td></tr>

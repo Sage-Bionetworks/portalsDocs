@@ -142,3 +142,64 @@ h2 {
   text-shadow: 0 0px 0;
 }
 
+/* 
+Nav-bar table of contents css
+*/
+
+#toc .toc-h2 {
+     padding-left: 0px;
+}
+
+#toc .toc-h3 {
+     padding-left: 10px;
+}
+
+#toc .toc-h4 {
+     padding-left: 20px;
+}
+
+#toc .toc-h5 {
+     padding-left: 30px;
+}
+
+#toc ul {
+    margin: 0;
+    padding: 0;
+   list-style-type: none;
+   font-size: 1.0em;
+}
+
+#toc li {
+    padding: 10px 10px;
+}
+
+/*
+Tables render with borders in markdown
+*/
+
+table.markdown-table {
+  padding: 0; }
+ .markdown-table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+  .markdown-table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+   .markdown-table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      text-align: left;
+      margin: 0;
+      padding: 6px 13px; }
+  .markdown-table tr td {
+      border: 1px solid #cccccc;
+      text-align: left;
+      margin: 0;
+      padding: 6px 13px; }
+    .markdown-table tr th :first-child, .markdown-table tr td :first-child {
+      margin-top: 0; }
+    .markdown-table tr th :last-child, .markdown-table tr td :last-child {
+      margin-bottom: 0; }
+
+
