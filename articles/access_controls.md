@@ -2,7 +2,7 @@
 title: "Access and Content restrictions"
 layout: article
 ---
-## Access and Content Restricitons
+## Access and Content Restrictions
 
 Synapse content is subject to two control settings: the `Sharing setting` and `Conditions for Use.` The `Sharing setting` determines _with whom_ content is shared. `Conditions for Use` govern _how_ content can be used. 
 
