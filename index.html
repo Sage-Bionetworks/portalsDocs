@@ -2,39 +2,50 @@
 title: Synapse Documentation, Welcome to Synapse Documentation
 layout: default
 ---
-<div class='headline'>
-  <div class='logo'>
-    <h2>    Welcome To the Synapse Docs </h2>
-  </div>
-  <div class='clear' style=''></div>
-  <div class='row-fluid'>
-    <div class='span6'>
-    <p>
-    Newcomer? Get started with the <a href='/articles/getting_started.html'>User Guide</a> . Already using Synapse? Check out our <a href='articles/howtos.html'>How-Tos</a> to get code snippets that make you more productive. Have a specific question See our <a href='https://www.synapse.org/#!SynapseForum:default'>Forum</a>
-  </p>
-  </div>
-  <div class='span6'>
-  <img src='/assets/images/screenshots.png' alt='screenshots' height='30>
-  </div>
-  </div>
-</div>
-  <div class='clear' style=''></div>
 
-<div class='row-fluid'>
-  <div class='span3'>
-    <h2><a href='/articles/getting_started.html'>Getting Started</a></h2>
-    <p> "I am new to Synapse..."</p>
-  </div>
-  <div class='span3'>
-    <h2>How-To</h2>
-    <p>"How do I..? Find out what Synapse has to offer and how to use it.".</p>
-  </div>
-  <div class='span3'>
-    <h2><a href='/articles/api_docs.html'>API Docs</a></h2>
-    <p>Interact with Syanpse directly from programming languages.</p>
-  </div>
-  <div class='span3'>
-    <h2><a href='https://www.synapse.org/#!SynapseForum:default'>Forum</a> </h2>
-    <p>Ask questions or share your knowledge.  Search our knowledgebase.</p>
-  </div>
-</div> 
+<div class="row-fluid">
+   <div class="span12">
+      <div class="row">
+         <div class="span3">
+            <div class="sidebar-nav padding-left-30 padding-right-15 font-size-14">
+               <ul class="nav">
+                  {% for page in site.pages %}
+                  {% if page.layout == 'article' %}
+                     <li><a href="{{ page.url }}.html">{{ page.title }}</a></li>
+                  {% endif %}
+                  {% endfor %} <!-- page --> 
+               </ul>
+            <div class='clear'></div>
+         </div>
+      </div>
+      <div class='headline'>
+         <h2>    Welcome To the Synapse Docs </h2>
+            <p>
+                Newcomer? Get started with the <a href='/articles/getting_started.html'>User Guide</a> . Already using Synapse? Check out our <a href='articles/howtos.html'>How-Tos</a> to get code snippets that make you more productive. Have a specific question See our <a href='https://www.synapse.org/#!SynapseForum:default'>Forum.</a>
+	    </p>
+      </div>
+     <div class='span6'><img src='/assets/images/screenshots.png' alt='screenshots' height='30'></div>
+   </div>
+   <div class='clear' style=''></div>
+</div>
+</div>
+
+
+<div class="row-fluid">
+   <div class='span2 offset3'>
+      <h2><a href='/articles/getting_started.html'>Getting Started</a></h2>
+      <p> "I am new to Synapse..."</p>
+   </div>
+   <div class='span2'>
+      <h2>How-To</h2>
+      <p>"How do I..? Find out what Synapse has to offer and how to use it.".</p>
+   </div>
+   <div class='span2'>
+      <h2><a href='/articles/api_docs.html'>API Docs</a></h2>
+      <p>Interact with Syanpse directly from programming languages.</p>
+   </div>
+   <div class='span2'>
+      <h2><a href='https://www.synapse.org/#!SynapseForum:default'>Forum</a> </h2>
+      <p>Ask questions or share your knowledge.  Search our knowledgebase.</p>
+   </div>
+</div>
