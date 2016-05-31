@@ -3,13 +3,15 @@ title: "Synapse Wikis"
 layout: article
 ---
 
-##Synapse Wiki pages
+##Overview
 
-Wiki pages contain highly customized content including, but not limited to images, tables, code blocks, LaTeX formatted equations, and scholarly references. Synapse-specific widgets also allow users to embed dynamic content based on other resources stored in Synapse 
+Wikis are used in Synapse projects to provide a space to build narrative content to describe the research. Every project has a Wiki tab where you can build pages and a hierarchy of subpages as you would with any website. Wikis can also be added to folders and files allowing additional content documentation. Wikis, whether they are under the Wiki tab or on a folder, are built in the same way and enables incorporation of highly customized content including, but not limited to: images, tables, code blocks, LaTeX formatted equations, and scholarly references. In addition, Synapse-specific widgets lets you embed dynamic content based on other resources stored in Synapse.
 
-###Creating Wiki Content
-It is possible to have a Wiki page for every project, folder and file. For folders and files, the Wiki pages are not visible until there is content. 
+##Starting and editing a Wiki
+###Using the Synapse web portal
+After creating a new project select the Wiki tab. Start a Wiki through the Tools menu. Select 'Edit Project Wiki'. Content in this first Wiki will become the project home page. Add additional pages 
 
+###Using R/Pyton
 {% tabs %} {% tab Command %}
 
 {% highlight bash %} 
