@@ -19,7 +19,7 @@ Synapse is a collaborative informatics platform dedicated to supporting large-sc
 Synapse allows researchers to share and describe data, analyses, and other content. Data and analyses can be stored in many types of locations, including private servers, local hard drives, or cloud storage. Synapse provides a common interface to describe these data or analyses, where they come from, and how to use them. Synapse also provides mechanisms for adding and retrieving data, analyses, and their respective descriptions.
 
 #### No, seriously what does Synapse do?
-For a comprehensive introduction to Synapse see our getting started guide [TODO:link?].
+For a comprehensive introduction to Synapse see our [Getting Started guide](/articles/getting_started.html).
 
 #### How much does it cost to use Synapse?
 We allow groups to get started for free by subsidizing relatively moderate amounts of internal Synapse cloud storage (e.g. 10s of GB). If your needs will exceed this limit we suggest contacting [SynapseInfo@sagebase.org](mailto:SynapseInfo@sagebase.org) for other solutions, including the ability for groups to host their own content either in cloud storage, proxied from [local file servers](/articles/custom_storage_location.html) or as external links.
