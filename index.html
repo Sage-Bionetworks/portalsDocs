@@ -4,45 +4,6 @@ layout: default
 ---
 
 <style type="text/css">
-.navstripe {
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.26);
-  padding: 6px;
-  margin-top: 32px;
-  margin-left: -10px;
-  margin-right: -10px;
-}
-.navstripe .nav.nav-primary {
-  display: inline-block;
-  color: white;
-  margin: 0;
-  margin-top: 0;
-}
-.navstripe .nav.nav-primary a {
-  color: white;
-}
-.navstripe .nav.nav-primary a:hover {
-  color: #F0F0F0;
-}
-.navstripe .nav.nav-primary ul {
-  margin: 0;
-}
-.navstripe .nav.nav-primary ul li {
-  display: inline-block;
-  padding: 1px 12px;
-  margin: 0;
-}
-.visible-xxs {
-  display: none;
-}
-@media (max-width: 700px) {
-  .navstripe .nav.nav-primary ul li {
-    padding: 1px 0;
-  }
-  .visible-xxs {
-    display: block;
-  }
-}
 
 h3 {
   font-size: 28px;
@@ -64,13 +25,6 @@ h3 {
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
-}
-.fa-faded {
-  color: #DDD;
-}
-.action .fa {
-  display: block;
-  margin-bottom: 8px;
 }
 .action a {
   text-decoration: none;
@@ -94,14 +48,21 @@ section:last-child, .section:last-child, section.last, .section.last {
 .header {
   padding: 80px 10px 0px 10px;
   height: 100%;
+  float: left;
 }
 .header h1 {
   font-size: 120px;
   margin-bottom: 0;
+  float: left;
 }
+.header h2 {
+  text-align:left;
+}
+
 .header h5 {
   font-weight: 200;
   font-size: 17px;
+  text-align: left;
 }
 .header h5.first {
   font-weight: 600;
@@ -113,60 +74,19 @@ section:last-child, .section:last-child, section.last, .section.last {
   color: grey;
   font-size: 18px;
 }
-#example1-container {
-  padding: 24px 0 0 12px;
-  border: 1px solid #d9d9d9;
-  border-radius: 4px;
-}
-iframe#example1 {
-  border: none;
-  width: 600px;
-  height: 480px;
-}
-#example1-code {
-  padding-top: 16px;
-}
-#example1-code pre, #example1-code code {
-  text-align: left;
-  font-size: 11px;
-  line-height: 1.2;
-  overflow: auto;
-  white-space: pre;
-}
-
-.narrow {
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-h6#main-credits {
-  display: block;
-  font-size: 28px;
-  font-weight: 200;
-  margin-top: -4px;
-  margin-bottom: 32px;
-}
-.slideshow-container {
-  max-width: 500px;
-  margin: 0 auto;
-}
-.bx-wrapper .bx-viewport {
-  left: 0;
-}
-.slide {
-  width: 490px;
-}
 </style>
-
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
-
 <div class="header">
+<div class="col-xs-7">
   <h2>Welcome To the Synapse Docs</h2>
   <h5>Newcomer? Get started with the <a href='/articles/getting_started.html'>Getting Started</a>.</h5> 
    <h5>Already using Synapse? Check out our <a href='articles/howtos.html'>User Guide</a> to get</h5>
    <h5> code snippets that make you more productive.</h5>
    <h5>Have a specific question See our <a href='https://www.synapse.org/#!SynapseForum:default'>Forum.</a></h5>
+</div>
+<div class="col-md-5">
+  <img src="/assets/images/screenshots.png" alt="screenshots" height="30" style="float:right; padding-top:25px">
+</div>
 </div>
 
 <div class="header">
@@ -176,7 +96,6 @@ h6#main-credits {
         <div class="action">
           <h3>
             <a href="/articles/getting_started.html">
-                <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
               <i class="fa fa-picture-o fa-3x"></i>
                 Getting Started<br/>
             </a>
@@ -188,7 +107,6 @@ h6#main-credits {
         <div class="action">
           <h3>
             <a href="/articles/api_docs.html">
-              <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
               <i class="fa fa-road fa-3x"></i>
                 API Docs<br/>
             </a>
@@ -199,8 +117,7 @@ h6#main-credits {
       <div class="col-xs-3">
         <div class="action">
           <h3>
-            <a href="/articles/user_guide.html">
-              <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+            <a href="/articles/">
               <i class="fa fa-book fa-3x"></i>
                 User Guide<br/>
             </a>
@@ -212,7 +129,6 @@ h6#main-credits {
         <div class="action">
           <h3>
             <a href="https://www.synapse.org/#!SynapseForum:default">
-              <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
               <i class="fa fa-book fa-3x"></i>
               Forum<br/>
             </a>
