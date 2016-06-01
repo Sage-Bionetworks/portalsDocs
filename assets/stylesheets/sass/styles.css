@@ -268,8 +268,7 @@ change size of glyphicons on index page
   text-align: center;
 }
 section, .section {
-  margin-bottom: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
   background-repeat: no-repeat;
   background-position: bottom center;
 }
@@ -285,8 +284,8 @@ section:last-child, .section:last-child, section.last, .section.last {
   float: left;
 }
 .middle {
-  padding: 70px 50px 0px 50px;
-  height: 100%;
+  padding: 20px 50px 0px 50px;
+  height: 50%;
   width: 100%;
   float: left;
   background-color: #ddebf2;
