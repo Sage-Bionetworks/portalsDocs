@@ -254,3 +254,37 @@ By default, it uses Synapse storage.  To use the external bucket configured abov
 ____
 
 
+##Synapse Proxy for access to restricted filesystem
+
+###Connecting synapse to the restricted filesystem
+```python
+import synapseclient
+import json
+syn = synapseclient.login()
+PROJECT = 'syn12345'
+destination = {"uploadType":"SFTP", 
+               "secretKey":"your_sftp_key", 
+               "proxyUrl":"https://your-proxy.prod.sagebase.org", 
+               "concreteType":"org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings"}
+destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
+project_destination ={"concreteType": "org.sagebionetworks.repo.model.project.UploadDestinationListSetting", 
+                      "settingsType": "upload"}
+project_destination['locations'] = destination['storageLocationId']
+project_destination['projectId'] = PROJECT
+project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
+```
+
+####Create a fileHandle
+```python
+path='/path/to/your/file.txt'
+fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.ProxyFileHandle',
+              'fileName'    : os.path.split(path)[-1],
+              'contentSize' : "2252439673",
+              'filePath' : path,
+              'contentType' : "application/octet-stream",
+              'contentMd5' :  '67a3688466ad3f606e2cc7b42df4d4bb',
+              'storageLocationId':"4759"}
+fileHandle = syn.restPOST('/externalFileHandle/proxy', json.dumps(fileHandle), endpoint=syn.fileHandleEndpoint)
+f = synapseclient.File(parentId=PROJECT, dataFileHandleId = fileHandle['id'])
+f = syn.store(f)
+```
