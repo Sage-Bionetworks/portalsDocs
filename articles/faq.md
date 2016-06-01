@@ -59,7 +59,7 @@ Whether you are looking to access content or use Synapse to track your own work,
 #### My colleague put some content in Synapse.  How do I find it?
 This will depend if the content is public or private. If private, you will need to make sure your colleague has shared this content with you. Shared content is visible from your “Dashboard page” under the tab “Shared directly with me”. If you favorite the content (using the yellow star) it will appear under your list of favorites visible from the top of any Synapse page.
 
-All public data is queryable. For more information see [help on querying](TODO link to query docs) or from the “Search” box in the top right corner of any Synapse page.
+All public data is queryable. For more information see [help on querying](/articles/annotation_and_query.html) or from the “Search” box in the top right corner of any Synapse page.
 
 #### I have heard Synapse hosts several public datasets. How do I find them?
 Synapse hosts multiple research communities that generate data which is released to the public. A description of some of these communities can be found on the [Synapse Research Communities Page](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [public resources page](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects).
