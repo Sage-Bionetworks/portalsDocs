@@ -257,6 +257,7 @@ ____
 ##Synapse Proxy for access to restricted filesystem
 
 ###Connecting synapse to the restricted filesystem
+You must have a key "your_sftp_key" to allow synapse to interact with the filesystem
 ```python
 import synapseclient
 import json
@@ -275,6 +276,7 @@ project_destination = syn.restPOST('/projectSettings', body = json.dumps(project
 ```
 
 ####Create a fileHandle
+A filehandle is merely a synapse representation of the file, therefore you will have to specify all the metadata below for synapse to recognize it.
 ```python
 path='/path/to/your/file.txt'
 fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.ProxyFileHandle',
@@ -283,7 +285,7 @@ fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.ProxyFileHand
               'filePath' : path,
               'contentType' : "application/octet-stream",
               'contentMd5' :  '67a3688466ad3f606e2cc7b42df4d4bb',
-              'storageLocationId':"4759"}
+              'storageLocationId': destination['storageLocationId']}
 fileHandle = syn.restPOST('/externalFileHandle/proxy', json.dumps(fileHandle), endpoint=syn.fileHandleEndpoint)
 f = synapseclient.File(parentId=PROJECT, dataFileHandleId = fileHandle['id'])
 f = syn.store(f)
