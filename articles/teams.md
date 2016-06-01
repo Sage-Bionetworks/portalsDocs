@@ -37,7 +37,7 @@ A listing of all teams to which you belong is available on the **Teams** tab of 
 
 You may search for Synapse Teams using the **Search All Teams** button on the **Teams** tab of your User Profile Page. You may also search teams using the general search box in the header of each Synapse page by prefacing the search with **@** (e.g. @PCBC).
 
-For teams to which you do not belong, you may view the team members and contact information, as well as request to join the team via the **Request to Join Team** button.
+For teams to which you do not belong, you may view the team members and contact information, as well as request to join the team via the **Request to Join Team** button. You may also search among team members using the search box on the upper right side of the page.
 
 
 ###Communications and Project Permissions
