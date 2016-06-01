@@ -52,7 +52,7 @@ Synapse was developed with the philosophy to encourage collaboration across inst
 You may browse open issues or file a bug through our [Jira](https://sagebionetworks.jira.com/) tracker system. To file a bug, use the blue “Create” button in the top center of the page. Please be sure to include your email address in your submission so we may follow up with you.
 
 #### How do I get started?
-Whether you are looking to access content or use Synapse to track your own work, start by [registering](https://www.synapse.org/#!RegisterAccount:0) for a Synapse user account. Before uploading files, you will need to take a short [certification quiz](https://www.synapse.org/#!Quiz:Certification) that demonstrates your understanding of the ethical considerations in sharing data and the manner in which data is managed and shared in Synapse. See the Getting Started guide (TODO: link) for tips on how to access data, create your own project and share content with others.
+Whether you are looking to access content or use Synapse to track your own work, start by [registering](https://www.synapse.org/#!RegisterAccount:0) for a Synapse user account. Before uploading files, you will need to take a short [certification quiz](https://www.synapse.org/#!Quiz:Certification) that demonstrates your understanding of the ethical considerations in sharing data and the manner in which data is managed and shared in Synapse. See the [Getting Started guide](/articles/getting_started.html) for tips on how to access data, create your own project and share content with others.
 
 ## Accessing Content
 
