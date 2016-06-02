@@ -48,7 +48,7 @@ Each team has an email address which can be used to message the team members. Th
 
 You may use teams to manage Sharing Settings on Files, Folders and Projects. From the **Share** button you may add teams in addition to individuals. Each member of the team will receive the **Sharing Setting** specified for the team.
 
-##Submitting to a Challenge as a Team
+###Submitting to a Challenge as a Team
 
 When participating in a Challenge, you may submit solutions as an individual or as a Team. The team must be registered with the challenge, which can be done by clicking the **Register a Team** button, typically on the **Forming a Team** page on the challenge wiki. When submitting a file to a challenge from the Web Client, you will be given the option to submit the file as part of a team. You will then be asked to select from the registered teams of which you are a member, or register an existing team with the challenge, and to verify which team members contributed to the solution. Note that only members who have already registered with the challenge may be selected. 
 
