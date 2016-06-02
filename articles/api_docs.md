@@ -45,9 +45,9 @@ layout: default
             <div class="col-xs-12 col-sm-3">
                 <div class="action">
                     <h3>
-                        <a href="https://docs.synapse.org/rest">
+                        <a href="http://docs.synapse.org/rest">
                             <img src="/assets/images/api_gears.png" alt="rstudio_icon" style="width: 2.0em;"/></a>
-                        <a href="https://docs.synapse.org/rest">
+                        <a href="http://docs.synapse.org/rest">
                             <br><br>REST API
                           <h6><span class="subaction">Build your own client using the Synapse REST APIs.</span></h6>
                         </a>
