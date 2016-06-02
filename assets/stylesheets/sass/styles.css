@@ -230,6 +230,7 @@ index footer
     left: 0;
     right: 0;
     width: 100%;
+    background-color: #1e7098;
 }
 
 /* 
@@ -237,26 +238,92 @@ change size of glyphicons on index page
 */
 
 .glyphicon.glyphicon-ok-circle {
-    font-size: 65px;
-    margin-bottom: 10px;
+    font-size: 35px;
+    margin-bottom: 20px;
 }
 .glyphicon.glyphicon-file {
-    font-size: 65px;
-    margin-bottom: 10px;
+    font-size: 35px;
+    margin-bottom: 20px;
 }
 
 .glyphicon.glyphicon-comment {
-    font-size: 65px;
-    margin-bottom: 10px;
+    font-size: 35px;
+    margin-bottom: 20px;
 }
 
 .glyphicon.glyphicon-book {
-    font-size: 65px;
-    margin-bottom: 10px;
+    font-size: 35px;
+    margin-bottom: 20px;
     color: #1e7098
 }
+
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.action a {
+  text-decoration: none;
+}
+.header, section, .section {
+  text-align: center;
+}
+section, .section {
+  padding-bottom: 10px;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+section:last-child, .section:last-child, section.last, .section.last {
+  background-image: none;
+}
+.section-intro {
+  margin-bottom: 36px;
+}
+.header {
+  padding: 100px 10px 70px 100px;
+  height: 100%;
+  float: left;
+}
+.middle {
+  padding: 20px 50px 0px 50px;
+  height: 50%;
+  width: 100%;
+  float: left;
+  background-color: #ddebf2;
+}
+.header h1 {
+  font-size: 120px;
+  margin-bottom: 0;
+  float: left;
+}
+.header h2 {
+  text-align:left;
+}
+.header h5 {
+  font-weight: 200;
+  font-size: 17px;
+  text-align: left;
+  color: #2f4f4f;
+}
+.header h5.first {
+  font-weight: 600;
+}
+.header a {
+  color: #1e7098;
+}
+.subaction {
+  color: black;
+  font-size: 12px;
+}
+.action small {
+   color: #1e7098;
+}
+
 
 
 .nav li a{
 color: white !important;
+}
+
+.nav_articles li a{
+ color:black !important;
 }
