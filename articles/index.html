@@ -1,0 +1,22 @@
+---
+title: User Guide
+layout: default
+---
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+<div class="header">
+  <h2>User Guide</h2>
+</div>
+
+
+<div class="container">
+      <ul class="nav_articles">
+        {% for page in site.pages %}
+        {% if page.layout == 'article' %}
+        <li><a href="{{ page.url }}.html">{{ page.title }}</a></li>
+        {% endif %}
+        {% endfor %} <!-- page -->
+</div>
+
