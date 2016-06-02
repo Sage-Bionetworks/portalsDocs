@@ -16,6 +16,7 @@ Teams are a way to easily manage groups of users for the purposes of project acc
 
 From your Profile Page, which can be accessed by clicking your name in the top right corner, click on the **Teams** tab as seen below.
 
+<img style="float: right;" src="/assets/images/Teams_user_list.png">
 
 Enter a team name in the dialog box and click **Create Team**. If the team name already exists, you will be prompted to enter a new team name.
 
@@ -39,6 +40,7 @@ You may search for Synapse Teams using the **Search All Teams** button on the **
 
 For teams to which you do not belong, you may view the team members and contact information, as well as request to join the team via the **Request to Join Team** button. You may also search among team members using the search box on the upper right side of the page.
 
+<img style="float: right;" src="/assets/images/Teams_teamscreenshot.png">
 
 ###Communications and Project Permissions
 
