@@ -256,8 +256,12 @@ ____
 
 ##Synapse Proxy for access to restricted filesystem
 
+While Synapse provides physical storage for files (using Amazon's S3), not all data 'in' Synapse is stored on Synapse controlled buckets. For files stored outside of Amazon, an additional proxy is needed to validate the pre-signed URL and then proxy the requested file contents. The primary purpose of this project is to provide such validation and file proxying.  View more information [here](https://github.com/Sage-Bionetworks/file-proxy/wiki) about setting up file-proxy.
+
 ###Connecting synapse to the restricted filesystem
+
 You must have a key "your_sftp_key" to allow synapse to interact with the filesystem
+
 ```python
 import synapseclient
 import json
@@ -278,12 +282,14 @@ project_destination = syn.restPOST('/projectSettings', body = json.dumps(project
 ####Create a fileHandle
 A filehandle is merely a synapse representation of the file, therefore you will have to specify all the metadata below for synapse to recognize it.
 ```python
+import mimetypes
 path='/path/to/your/file.txt'
+fileType = mimetypes.guess_type(path,strict=False)[0]
 fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.ProxyFileHandle',
-              'fileName'    : os.path.split(path)[-1],
+              'fileName'    : os.path.basename(path),
               'contentSize' : "2252439673",
               'filePath' : path,
-              'contentType' : "application/octet-stream",
+              'contentType' : fileType,
               'contentMd5' :  '67a3688466ad3f606e2cc7b42df4d4bb',
               'storageLocationId': destination['storageLocationId']}
 fileHandle = syn.restPOST('/externalFileHandle/proxy', json.dumps(fileHandle), endpoint=syn.fileHandleEndpoint)
