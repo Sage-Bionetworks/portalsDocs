@@ -1,36 +1,62 @@
 ---
 title: API Documentation
-layout: article
+layout: default
 ---
 
-<h2> 
-    <img src="/assets/images/python_icon.jpeg" alt="python_icon" style="width: 0.75em;"/>  
-    <strong>Python Docs</strong>
-</h2>
-
-Some text explaining python docs  
-
-
-<h2> 
-    <img src="/assets/images/rstudio_icon.jpeg" alt="rstudio_icon" style="width: 0.75em;"/>
-    <strong>R Docs</strong>
-</h2>
-
-Some text explaining r docs
-
-
-<h2> 
-    <strong>REST Docs</strong>
-</h2>
-
-Some text explaining REST APIs
-
-<h2> 
-    <img src="/assets/images/bash_icon.png" alt="bash_icon" style="width: 0.75em;"/>
-    <strong>Command Line</strong>
-</h2>
-
-Some text explaining command line
+<div class="container">
+    <div class="row">
+        <div class="header" style="padding:150px 0 150px 0">
+            <div class="col-xs-12 col-sm-3">
+                <div class="action">
+                    <h3>
+                        <a href="http://docs.synapse.org/python">
+                            <img src="/assets/images/python_icon.jpeg" alt="python_icon" style="width: 2.0em;"/></a>
+                        <a href="http://docs.synapse.org/python">
+                            <br><br>Python Docs
+                            <h6><span class="subaction">Interact with Synapse using the Python Synapse client.</span></h6>
+                        </a>
+                    </h3>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div class="action">
+                    <h3>
+                        <a href="http://r-docs.synapse.org/">
+                            <img src="/assets/images/rstudio_icon.jpeg" alt="rstudio_icon" style="width: 2.0em;"/></a>
+                        <a href="http://r-docs.synapse.org/">
+                            <br><br>R Docs
+                            <h6><span class="subaction">Use the R client to interact with Synapse from scripts or interactive R sessions.</span></h6>
+                        </a>
+                    </h3>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div class="action">
+                    <h3>
+                        <a href="http://docs.synapse.org/python/CommandLineClient.html">
+                            <img src="/assets/images/bash_icon.png" alt="rstudio_icon" style="width: 2.5em;"/></a>
+                        <a href="http://docs.synapse.org/python/CommandLineClient.html">
+                            <br><br> Command Line
+                          <h6><span class="subaction">Connect and interact with Synpase directly using the Synapse command line client.</span></h6>
+                        </a>
+                    </h3>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div class="action">
+                    <h3>
+                        <a href="https://docs.synapse.org/rest">
+                            <img src="/assets/images/api_gears.png" alt="rstudio_icon" style="width: 2.0em;"/></a>
+                        <a href="https://docs.synapse.org/rest">
+                            <br><br>REST API
+                          <h6><span class="subaction">Build your own client using the Synapse REST APIs.</span></h6>
+                        </a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
