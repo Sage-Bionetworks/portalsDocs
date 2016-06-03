@@ -142,3 +142,188 @@ h2 {
   text-shadow: 0 0px 0;
 }
 
+/* 
+Nav-bar table of contents css
+*/
+
+#toc .toc-h2 {
+     padding-left: 0px;
+}
+
+#toc .toc-h3 {
+     padding-left: 10px;
+}
+
+#toc .toc-h4 {
+     padding-left: 20px;
+}
+
+#toc .toc-h5 {
+     padding-left: 30px;
+}
+
+#toc ul {
+    margin: 0;
+    padding: 0;
+   list-style-type: none;
+   font-size: 1.0em;
+}
+
+#toc li {
+    padding: 10px 10px;
+}
+
+/*
+Tables render with borders in markdown
+*/
+
+table.markdown-table {
+  padding: 0; }
+ .markdown-table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+  .markdown-table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+   .markdown-table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      text-align: left;
+      margin: 0;
+      padding: 6px 13px; }
+  .markdown-table tr td {
+      border: 1px solid #cccccc;
+      text-align: left;
+      margin: 0;
+      padding: 6px 13px; }
+    .markdown-table tr th :first-child, .markdown-table tr td :first-child {
+      margin-top: 0; }
+    .markdown-table tr th :last-child, .markdown-table tr td :last-child {
+      margin-bottom: 0; }
+
+/*
+index.html sidebar
+*/
+
+.sidebar {
+  display: block;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 75px;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    padding: 10px;
+    background-color: #E8E8EE;
+  }
+}
+
+/*
+index footer
+*/
+
+#footer-index {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #1e7098;
+}
+
+/* 
+change size of glyphicons on index page
+*/
+
+.glyphicon.glyphicon-ok-circle {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+.glyphicon.glyphicon-file {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.glyphicon.glyphicon-comment {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.glyphicon.glyphicon-book {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #1e7098
+}
+
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.action a {
+  text-decoration: none;
+}
+.header, section, .section {
+  text-align: center;
+}
+section, .section {
+  padding-bottom: 10px;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+section:last-child, .section:last-child, section.last, .section.last {
+  background-image: none;
+}
+.section-intro {
+  margin-bottom: 36px;
+}
+.header {
+  padding: 100px 10px 70px 100px;
+  height: 100%;
+  float: left;
+}
+.middle {
+  padding: 20px 50px 0px 50px;
+  height: 50%;
+  width: 100%;
+  float: left;
+  background-color: #ddebf2;
+}
+.header h1 {
+  font-size: 120px;
+  margin-bottom: 0;
+  float: left;
+}
+.header h2 {
+  text-align:left;
+}
+.header h5 {
+  font-weight: 200;
+  font-size: 17px;
+  text-align: left;
+  color: #2f4f4f;
+}
+.header h5.first {
+  font-weight: 600;
+}
+.header a {
+  color: #1e7098;
+}
+.subaction {
+  color: black;
+  font-size: 12px;
+}
+.action small {
+   color: #1e7098;
+}
+
+
+
+.nav li a{
+color: white !important;
+}
+
+.nav_articles li a{
+ color:black !important;
+}

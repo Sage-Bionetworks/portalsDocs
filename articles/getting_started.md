@@ -7,11 +7,10 @@ layout: article
 
 ## Get Started with Synapse
 
-
 This getting started is for non-technical users who are interested in learning about Synapse. By following this getting started, you’ll learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
 
 * Create your own project and add content to Synapse
-* Install one of the Synapse clients (R, Python or comand line)
+* Install one of the Synapse clients (R, Python or command line)
 * Incorporate Synapse in your workflows to read shared content and upload analysis results
 * Find content in Synapse
 * Understand and use provenance
@@ -24,7 +23,7 @@ With Synapse, you can:
 * create your own personal project workspaces
 * populate your projects with files and tables such as data, code, and results as well as the provenance relationships that tie these resources together
 * richly annotate files and tables to increase discoverability and aid in programmatic querying of these resources
-* provide a project narrative which lives right along side the scientific artifacts of your work, via the Synapse wiki engine
+* provide a project narrative which lives right along side the scientific artifacts of your work, via the Synapse Wiki engine
 * create a [DOI](http://en.wikipedia.org/wiki/Digital_object_identifier) for any resource for easy citation of your work
 * share your work with other Synapse users, teams of users, or make your work public
 * Discuss with researchers in a project using group email and group chat.
@@ -37,7 +36,7 @@ Synapse operates under a complete [governance process](https://www.synapse.org/#
 ## Installing Synapse Clients
 <img style="float: right;" src="/assets/images/synapse_apis.png">
 
-Synapse is built on a number of RESTful web APIs that allow users to interact with the system via a number of _clients_. One of these _clients_ is the web client, i.e. the website www.synapse.org. Synapse also provides three programmatic clients (R, Python, and Command Line). Content can be uploaded, downloaded, annotated, and queried from any of these interfaces. In the getting started guide we will run through examples using all three programmatic interfaces.  At any point you can pick the language you would like to see examples in by clicking the corresponding tab at the bottom of every example.  Unless otherwise noted the examples are can be typed into the respective environment.  That is a shell prompt for the command line examples, a python session such as an ipython notbook of script, and an R session for the R examples.
+Synapse is built on a number of RESTful web APIs that allow users to interact with the system via a number of _clients_. One of these _clients_ is the web client, i.e. the website www.synapse.org. Synapse also provides three programmatic clients (R, Python, and Command Line). Content can be uploaded, downloaded, annotated, and queried from any of these interfaces. In the getting started guide we will run through examples using all three programmatic interfaces.  At any point you can pick the language you would like to see examples in by clicking the corresponding tab at the bottom of every example.  Unless otherwise noted the examples are can be typed into the respective environment.  That is a shell prompt for the command line examples, a Python session such as an ipython notbook of script, and an R session for the R examples.
 
 
 
@@ -72,7 +71,7 @@ pkgInstall("synapseClient")
 
 ## Becoming a Certified User
 
-Anyone can browse public content in Synapse but in order to download and create content you will need to at the very least register for an account:
+Anyone can browse public content in Synapse but in order to download and create content you will need to register for an account:
 
 <form action="https://www.synapse.org/#!RegisterAccount:0">
     <input type="submit" value="Register">
@@ -141,12 +140,12 @@ Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the **C
 
 By default, your newly created `Project` is private; you are the only person who can access it and any content you include in it.  Later on we will share your created project with other users.
 
-As you create content in Synapse the items are associated with unique accession ids.  That are used to unqiuelly reference your content.  For example your newly created project will have a syanpse Id with the format syn1234.
+As you create content in Synapse the items are associated with unique accession ids.  That are used to uniquely reference your content.  For example your newly created project will have a Synapse Id with the format syn1234.
 
 
-**synapse Ids are used to uniquely identify `Files`, `Folders`, `Projects` and `Tables` in Synapse**
+**Synapse Ids are used to uniquely identify `Files`, `Folders`, `Projects` and `Tables` in Synapse**
 
-You can view what you have created in the Synapse web client with:
+You can view what you have created in Synapse on the web with:
 
 {% tabs %}
 {% tab Command %}
@@ -173,7 +172,7 @@ Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the pro
 
 
 
-## Adding a wiki to your Project
+## Adding a Wiki to your Project
 
 <img style="float: right" src="/assets/images/project_2.png" >
 
@@ -181,8 +180,7 @@ The `Wiki` tab in a project provides a space for you to build narrative content 
 
 `Wiki` pages can contain highly customized content including, but not limited to images, tables, code blocks, LaTeX formatted equations, and scholarly references. Synapse-specific widgets also allow users to embed dynamic content based on other resources stored in Synapse (e.g., Entity List, User/Team badge, Query Table, or Provenance Graph).
 
-Here we will create a small wiki
-
+Here we will create a small Wiki:
 
 {% tabs %}
 {% tab Command %}
@@ -220,15 +218,15 @@ Go to project page and click the **Tool button** and chose **Edit Project Wiki**
 
 
 
-## Organizing Data: creating files and folders
+## Organizing Data: creating Files and Folders
 
 <img style="float: right" src="/assets/images/project_4.png" >
 
-The `Files` tab houses a remote file system that you can utilize to share your project's data, code, results, and any other information pertinent to your research. Unlike the file system on your local computer, Synapse folders and files are identified by a unique identifier, are versioned, and can be linked to one another using the Synapse `Provenance` services. These folders and files, like all Synapse content, can be accessed either through the web or through one of our analytical clients using this unique Synapse ID.
+The `Files` tab houses a remote file system that you can utilize to share your project's data, code, results, and any other information pertinent to your research. Unlike the file system on your local computer, Synapse Files and Folders are identified by a unique identifier, are versioned, and can be linked to one another using the Synapse `Provenance` services. These Files and Folders, like all Synapse content, can be accessed either through the web or through one of our analytical clients using their unique Synapse ID.
 
-Synapse `folders` are used just as folders are on a local file system -- to organize and segment content. `Folders` can also contain (or be *parents* of) any number of other folders and files.
+Synapse `Folders` are used just as folders are on a local file system -- to organize and segment content. `Folders` can also contain (or be *parents* of) any number of other folders and files.
 
-To add a folder
+To add a Folder:
 
 {% tabs %}
 
@@ -259,9 +257,9 @@ click the **Add Folder** button on the Files tab.
 {% endtabs %}
 <br>
 
-Synapse `files` are also much like files on a local file system -- except they are web-accessible to anyone who has access, can be richly annotated (and queried on), can be imbedded as links or images within a Synapse `Wiki`, and can be associated with a [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier). Files carry the `Conditions for Use` of the `folder` they are placed into in addition to additional specific `Conditions for Use` they carry on their own.
+Synapse `Files` are also much like files on a local file system -- except they are web-accessible to anyone who has access, can be richly annotated (and queried on), can be embedded as links or images within a Synapse `Wiki`, and can be associated with a [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier). `Files` carry the `Conditions for Use` of the `Folder` they are placed into in addition to additional specific `Conditions for Use` they have on their own.
 
-Lets upload a local file data/cell_lines_raw_data.csv into this newly created folder.  To follow along you can pick any file you have and replace the name with your chosen file.  We will also attach some annotations to this file describing the content of the file.  In the example we will assocatie the value key foo with bar and add two numerical annotations.
+Lets upload a local file `data/cell_lines_raw_data.csv` into this newly created Folder. To follow along you can pick any file you have and replace the name with your chosen file. We will also attach some annotations to this file describing the content of the file. In the example we will associate the key `foo` with the value `bar` along with two numerical annotations.
 
 {% tabs %}
 
@@ -305,7 +303,7 @@ Access to `files, tables`, and `folders` is controlled by the `Sharing setting` 
 
 Synapse provides advanced capabilities for formally tracking the relationship between digital assets (e.g. data, code, analytical results) stored within the system through the Synapse provenance system in order to aide in disseminating their work in ways that others can reproduce and reuse. The Synapse provenance system allows users to formally track their analysis history by aiding in the communication and sharing of a sequence of processing steps. Provenance relationships can, for example, be specified between raw data, analysis code and results that occur in a complex processing pipeline, regardless of where it is run.  Synapse’s web services for managing provenance expose a very general data model based on the [W3C Prov spec](http://www.w3.org/2011/prov/wiki/Main_Page). Central to the design, users are not required to use a particular execution environment or workflow tool. Instead, provenance can be specified by inserting calls to the Synapse web service layer into their normal workflows to record activity; pipelines may be created through simple scripting or by using workflow execution engines. The provenance system allows users to branch off workflows at any point in prior analyses, while maintaining detailed records of data, code, and environment versions needed to reproduce the work.
 
-Provenance is easiest specified when you are uploading or editing a file in Synapse.  To specify the provenance you specify the files used as input and any files that were executed to generate the file.  Both used and executed can be either an arbitrary URL such as a reference to a code commit on github, a file stored on an ftp site or references to items in Synapse.  Here we are going to add a figure to Synapse and indicate that the code https://github.com/Sage-Bionetworks/synapseTutorials was used to generate the figure from the data in the file data/cell_lines_raw_data.csv that we uploaded previously
+Provenance is easiest specified when you are uploading or editing a file in Synapse.  To specify the provenance you specify the files used as input and any files that were executed to generate the file.  Both used and executed can be either an arbitrary URL such as a reference to a code commit on github, a file stored on an ftp site or references to items in Synapse.  Here we are going to add a figure to Synapse and indicate that the code https://github.com/Sage-Bionetworks/synapseTutorials was used to generate the figure from the data in the file `data/cell_lines_raw_data.csv` that we uploaded previously
 
 {% tabs %}
 
