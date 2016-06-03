@@ -318,12 +318,8 @@ section:last-child, .section:last-child, section.last, .section.last {
    color: #1e7098;
 }
 
-
-
-.nav li a{
-color: white !important;
-}
-
-.nav_articles li a{
- color:black !important;
+#bootstrap-overrides .navbar-inverse .brand,
+.navbar-inverse .nav > li > a {
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
