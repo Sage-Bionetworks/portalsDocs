@@ -3,9 +3,9 @@ title: "Getting Started with Synapse"
 layout: article
 ---
 
+<script src='/assets/javascripts/words.js'></script>
+
 ## Get Started with Synapse
-
-
 
 This getting started is for non-technical users who are interested in learning about Synapse. By following this getting started, you’ll learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
 
@@ -94,6 +94,18 @@ Now that you have your Synapse account we can start creating content. All Synaps
 
 As an exercise we are going to create an example project to store some cell line analysis.
 
+Since Project names must be unique in Synapse, let me suggest a project name for you: **<span id='random_proj_name'>Foo</span>**<br/>
+
+<script type="text/javascript">
+var chance = window.Chance.Chance();
+var myadj = chance.capitalize(chance.pickone(adjectives));
+var mynoun = chance.capitalize(chance.pickone(nouns));
+var new_random_string = "Project ".concat(myadj, " ", mynoun);
+
+var randomProjNameElement = document.getElementById("random_proj_name");
+randomProjNameElement.innerHTML = new_random_string;
+</script>
+
 {% tabs %}
 {% tab Command %}
 	{% highlight bash %}
@@ -169,7 +181,6 @@ The `Wiki` tab in a project provides a space for you to build narrative content 
 `Wiki` pages can contain highly customized content including, but not limited to images, tables, code blocks, LaTeX formatted equations, and scholarly references. Synapse-specific widgets also allow users to embed dynamic content based on other resources stored in Synapse (e.g., Entity List, User/Team badge, Query Table, or Provenance Graph).
 
 Here we will create a small Wiki:
-
 
 {% tabs %}
 {% tab Command %}

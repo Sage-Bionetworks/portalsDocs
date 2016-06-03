@@ -64,6 +64,3 @@ DEPENDENCIES
   pygments.rb
   redcarpet
   therubyracer
-
-BUNDLED WITH
-   1.11.2
