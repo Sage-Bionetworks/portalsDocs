@@ -2,14 +2,15 @@
 title: "Synapse Wikis"
 layout: article
 ---
-##Overview
+
+## Overview
 Wikis are available in Synapse projects to provide a space to build narrative content to describe the research. Every project has a Wiki tab where you can build pages and a hierarchy of subpages as you would with any website. These pages can be reordered through the Edit Order button below the Wiki pages. Wikis can also be added to folders and files allowing additional content documentation. Wikis, whether they are under the Wiki tab or on a folder, are built in the same way and enables incorporation of highly customized content including, but not limited to: images, tables, code blocks, LaTeX formatted equations, and scholarly references. In addition, Synapse-specific widgets lets you embed dynamic content based on other resources stored in Synapse. (needs highlight). 
 
-##Starting, editing and deleting a Wiki
-###Using the Synapse web portal
+## Starting, editing and deleting a Wiki
+### Using the Synapse web portal
 After creating a new project select the Wiki tab. Start a Wiki through the Tools menu by selecting the 'Edit Project Wiki'function. Content in this first Wiki becomes your projects home page. Go to the Tools menu to add subpages to your Wiki. These will appear as links on the left side of your home page (Image?). Adding a wiki to a folder or file is done in a similar manner by selecting 'Edit Folder/File Wiki'. Content added to a Wiki can be Previewed before Saving. Each version of a saved Wiki is visible under Wiki History where older versions can be restored. To delete a Wiki select 'Delete Wiki Page' under Tools.  
 
-###Using R/Pyton (need someone to complete this)
+### Using R/Pyton (need someone to complete this)
 {% tabs %} {% tab Command %}
 
 {% highlight bash %} 
@@ -28,17 +29,17 @@ placeholderText <- "* Cell growth look normally distributed\n* There is evidence
 
 {% endtabs %}
 
-##Governance
+## Governance
 Access Controls are not available for Wiki pages. Protected human data should therfore not be shared through Wikis unless it is embedded content stored in Synapse, such as files and tables, that have the appropriate access controls in place. Only people with the appropriate access permission will be able to see the embedded content. See the Synapse Data Use Procedure document for details (https://s3.amazonaws.com/static.synapse.org/governance/SynapseCommonsDataUseProcedure.pdf?v=4)
 
-##Wiki Features
-###Markdown langauge
+## Wiki Features
+### Markdown langauge
 The layout and text of a Wiki can be customized using Wiki markdown language. A Formating Guide is available within the Wiki editing window. For additional markdown functions see (need link). Useful markdown shortcuts are available as separate tools, including: heading, bold, italic, strike-through, code block, sub and supescript. 
 
-###Attachements, links and tagging
+### Attachements, links and tagging
 Files, images and videos can be attached to a Wiki. This may be content on from the web, your desktop, or files already uploaded to Synapse. Links can be added to content available from any source with a url or to a Synapse users profile through the Tag someone widget, or by typing @ - just enter the Synapse username in the dialog that appears.
 
-###Additional Widgets
+### Additional Widgets
 See the 'Insert' list for the following widgets to customize your Wiki design. Tip: to edit widgets after they have been added to the wiki see the widget edit button in the upper left hand corner of the Wiki editing window (image?)
 
 *References
