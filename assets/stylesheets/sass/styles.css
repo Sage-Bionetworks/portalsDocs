@@ -322,7 +322,20 @@ section:last-child, .section:last-child, section.last, .section.last {
 .navbar-inverse .nav > li > a {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+  font-size: 0.70em;
+    font-weight: bold;
+    margin-left: 1.0em;
 }
+
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle {
+    color: white;
+    background-color: #666666;
+}
+
+/*
+sidebar navigates to topic
+*/
 
 *[id]:before {
     display: block;
@@ -332,3 +345,41 @@ section:last-child, .section:last-child, section.last, .section.last {
     visibility: hidden;
 }
 
+/*
+Google search bar styling
+*/
+
+.cse .gsc-search-button input.gsc-search-button-v2,
+input.gsc-search-button-v2 {
+    height: 26px;
+    margin-top: 0;
+    min-width: 0px;
+    padding: 5px 12px;
+    width: 40px;
+}
+
+.cse .gsc-control-cse, .gsc-control-cse {
+    background-color: transparent;
+    border: transparent;
+    float: right;
+    min-width: 10px;
+    max-width: 20%;
+    padding: 20px 0 0 0;
+}
+
+.cse input.gsc-input, input.gsc-input {
+    background-image: none !important;
+    padding: 1px 6px;
+    width: 99%;
+    box-shadow: none;
+}
+.cse input.gsc-search-button, input.gsc-search-button {
+    color: #1e7098;
+    background-color: white;
+    left: -14px;
+    position: relative;
+}
+
+.gsc-search-box-tools .gsc-search-box .gsc-input {
+    box-shadow: none;
+}
