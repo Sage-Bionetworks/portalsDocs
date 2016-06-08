@@ -1,16 +1,22 @@
 ---
 title: User Guide
-layout: article
+layout: default
 ---
 
-
-<div class="container">
-<h2>User Guide</h2>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="panel panel-default padding-15">
+      <h2>User Guide</h2>
       <ul class="nav">
         {% for page in site.pages %}
         {% if page.layout == 'article' %}
-        <li><a href="{{ page.url }}.html">{{ page.title }}</a></li>
+        <li><a href="{{ page.url }}.html"><h4 style="color:#185a7a">{{ page.title }}</h4></a></li>
+        <p style="font-size: 1.25em">{{ page.content | split:'<!-- excerpt end -->' | first | split:'<!-- excerpt start -->' | last | strip_html | truncate:300 }}
+        {% if page.content | size > 300 %}
+        <a href="{{ page.url }}.html"><strong>...Read more</strong></a></p>
+        {% endif %}
         {% endif %}
         {% endfor %} <!-- page -->
+    </div>
+  </div>
 </div>
-
