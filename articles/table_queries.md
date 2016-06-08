@@ -3,12 +3,13 @@ title: Table Queries
 layout: article
 ---
 
-
 ## **Synapse REST API**
 
 ### Basics Table Query
 
+<!-- excerpt start -->
 Select all columns from the table identified by 'syn123'.
+<!-- excerpt end -->
 
 ````
 select * from syn123

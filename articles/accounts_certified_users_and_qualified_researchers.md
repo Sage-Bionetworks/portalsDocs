@@ -1,10 +1,12 @@
 ---
-title: "Accounts, certified users and qualified researchers"
+title: "Accounts, Certified Users and Qualified Researchers"
 layout: article
 ---
 ### About Accounts, Certification and Qualified Researchers
-
-There are three levels of user credentials in Synapse: anonymous, registered, and certified. The table below summarizes the user privileges for each level.  
+<!-- excerpt start -->
+There are three levels of user credentials in Synapse: anonymous, registered, and certified. 
+The table below summarizes the user privileges for each level.  
+<!-- excerpt end -->
 
 <table class="markdown-table border text-align-center">
 <tr><th></th><th>  Anonymous  </th><th> Registered  </th><th> Certified</th></tr>
