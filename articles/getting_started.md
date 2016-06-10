@@ -15,7 +15,7 @@ This getting started is for non-technical users who are interested in learning a
 * Find content in Synapse
 * Understand and use provenance
 
-### What is Synapse
+### What is Synapse?
 Synapse is an open source software platform that data scientists can use to carry out, track, and communicate their research in real time. Synapse enables co-location of scientific content (data, code, results) and narrative descriptions of that work. Synapse has seeded a growing number of living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
 
 With Synapse, you can:
