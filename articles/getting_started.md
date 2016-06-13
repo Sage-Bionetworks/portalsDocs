@@ -169,6 +169,7 @@ onWeb(myProj)
 
     {% tab Web %}
 Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the project name in the Projects listing {% endtab %}
+<img src="/assets/images/clickonproject.jpg" >
 {% endtabs %}
 
 
