@@ -134,6 +134,7 @@ print(paste('Created a project with Synapse id', myProj$properties$id, sep = ' '
 
     {% tab Web %}
 Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the **Create Project** button
+<img src="/assets/images/create_project.jpg" >
     {% endtab %}
 {% endtabs %}
 <br>
