@@ -2,21 +2,52 @@
 title: User Guide
 layout: default
 ---
-
-<div class="container-fluid">
-  <div class="row-fluid">
+<div class="container-fluid"> 
+  <div class="row">
     <div class="panel panel-default padding-15">
-      <h2>User Guide</h2>
-      <ul class="nav">
-        {% for page in site.pages %}
-        {% if page.layout == 'article' %}
-        <li><a href="{{ page.url }}.html"><h4 style="color:#185a7a">{{ page.title }}</h4></a></li>
-        <p style="font-size: 1.25em">{{ page.content | split:'<!-- excerpt end -->' | first | split:'<!-- excerpt start -->' | last | strip_html | truncate:300 }}
-        {% if page.content | size > 300 %}
-        <a href="{{ page.url }}.html"><strong>...Read more</strong></a></p>
-        {% endif %}
-        {% endif %}
-        {% endfor %} <!-- page -->
+      {% assign loopindex = 0 %}
+      {% for page in site.pages %}
+      {% if page.layout == 'article' %}
+      {% assign loopindex = loopindex | plus: 1 %}
+      {% assign rowfinder = loopindex | modulo: 2 %}
+      {% if rowfinder == 1 %}
+      <div class="row">
+        <div class="span6"><a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }} > </h5></a>
+          <p style="font-size: 1.25em; margin: 0 0 20px 30px">
+            {{ page.content | split:'<!-- excerpt end -->' | first | split:'<!-- excerpt start -->' | last | strip_html | truncate:300 }} 
+            {% if page.content | size > 300 %} 
+            <a href="{{ page.url }}.html">...Read more</a></p> 
+          {% endif %}
+        </div>
+        {% elsif rowfinder == 0 %}
+        <div class="span6"><a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }} > </h5></a></div>
+      </div>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+
+      {% if rowfinder != 0 %}
+      {% endif %}
     </div>
-  </div>
 </div>
+</div>
+
+
+
+
+<!--<div class="container-fluid"> -->
+<!--<div class="row">-->
+<!--<div class="panel panel-default padding-15">-->
+  <!--{% for page in site.pages %}-->
+  <!--{% assign loopindex = forloop.index | modulo: 2 %}-->
+  <!--{% if loopindex == 1 %}-->
+  <!--<div>-->
+    <!--<a href="{{ page.url }}.html">{{ page.title }}</a>-->
+    <!--{% else %}-->
+    <!--<a href="{{ page.url }}.html">{{ page.title }}</a>-->
+  <!--</div>-->
+  <!--{% endif %}-->
+  <!--{% endfor %}-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
