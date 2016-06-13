@@ -213,6 +213,7 @@ wiki <- synStore(wiki)
 
     {% tab Web %}
 Go to project page and click the **Tool button** and chose **Edit Project Wiki**.
+<img src="/assets/images/addwiki.jpg" >
     {% endtab %}
 {% endtabs %}
 
