@@ -255,6 +255,7 @@ resultsFolder <- synStore(resultsFolder)
 
     {% tab Web %}
 click the **Add Folder** button on the Files tab.
+<img src="/assets/images/addfolder.jpg" >
     {% endtab %}
 {% endtabs %}
 <br>
