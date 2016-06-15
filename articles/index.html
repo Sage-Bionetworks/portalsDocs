@@ -21,20 +21,34 @@ layout: default
 
 
 <div class="container-fluid" style="padding-top: 55px"> 
-  <div class='span6 offset3'>
-  {% for page in site.pages %}
-  {% if page.layout == 'article' %}
-  <div id="hover-background" class="panel panel-default padding-15" style="padding: 5px 5px 5px 15px">
-    <a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
-    <p style="font-size: 1em; margin: 0 0 0 0">
-      {{ page.content | split:'<!-- excerpt end -->' | first | split:'<!-- excerpt start -->' | last | strip_html | truncate:300 }} 
-      <a href="{{ page.url }}.html">...Read more</a></p> 
-  </div>
-  {% endif %}
-  {% endfor %}
+  <div class="row">
+    <div class='col-xs-12 col-sm-6'>
+      {% for page in site.pages limit: 7 %}
+      {% if page.layout == 'article' %}
+      <div id="hover-background" class="panel panel-default padding-15" style="padding: 5px 5px 5px 15px">
+        <a href="{{ page.url }}"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
+        <p style="font-size: 1em; margin: 0 0 0 0">
+          {{ page.content | split:'<!-- excerpt end -->' | first | split:'<!-- excerpt start -->' | last | strip_html | truncate:100 }} 
+          <a href="{{ page.url }}.html">...Read more</a></p> 
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class='col-xs-12 col-sm-6'>
+      {% for page in site.pages limit: 20 offset: 7 %}
+      {% if page.layout == 'article' %}
+      <div id="hover-background" class="panel panel-default padding-15" style="padding: 5px 5px 5px 15px">
+        <a href="{{ page.url }}"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
+        <p style="font-size: 1em; margin: 0 0 0 0">
+          {{ page.content | split:'<!-- excerpt end -->' | first | split:'<!-- excerpt start -->' | last | strip_html | truncate:100 }} 
+          <a href="{{ page.url }}.html">...Read more</a></p> 
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
   </div>
 </div>
-
 
 
 
