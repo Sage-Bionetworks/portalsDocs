@@ -2,52 +2,39 @@
 title: User Guide
 layout: default
 ---
-<div class="container-fluid"> 
-  <div class="row">
-    <div class="panel panel-default padding-15">
-      {% assign loopindex = 0 %}
-      {% for page in site.pages %}
-      {% if page.layout == 'article' %}
-      {% assign loopindex = loopindex | plus: 1 %}
-      {% assign rowfinder = loopindex | modulo: 2 %}
-      {% if rowfinder == 1 %}
-      <div class="row">
-        <div class="span6"><a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }} > </h5></a>
-          <p style="font-size: 1.25em; margin: 0 0 20px 30px">
-            {{ page.content | split:'<!-- excerpt end -->' | first | split:'<!-- excerpt start -->' | last | strip_html | truncate:300 }} 
-            {% if page.content | size > 300 %} 
-            <a href="{{ page.url }}.html">...Read more</a></p> 
-          {% endif %}
-        </div>
-        {% elsif rowfinder == 0 %}
-        <div class="span6"><a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }} > </h5></a></div>
-      </div>
-      {% endif %}
-      {% endif %}
-      {% endfor %}
 
-      {% if rowfinder != 0 %}
-      {% endif %}
-    </div>
+<style>
+  #toc .toc-h5 {
+    padding-left: 20px;
+  }
+  *[id]:before {
+    display: block;
+    content: " ";
+    margin-top: -75px;
+    height: 75px;
+    visibility: hidden;
+  }
+  #hover-background:hover {
+    background: #f6f6f6;
+  }
+</style>
+
+
+<div class="container-fluid" style="padding-top: 55px"> 
+  <div class='span6 offset3'>
+  {% for page in site.pages %}
+  {% if page.layout == 'article' %}
+  <div id="hover-background" class="panel panel-default padding-15" style="padding: 5px 5px 5px 15px">
+    <a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
+    <p style="font-size: 1em; margin: 0 0 0 0">
+      {{ page.content | split:'<!-- excerpt end -->' | first | split:'<!-- excerpt start -->' | last | strip_html | truncate:300 }} 
+      <a href="{{ page.url }}.html">...Read more</a></p> 
+  </div>
+  {% endif %}
+  {% endfor %}
+  </div>
 </div>
-</div>
 
 
 
 
-<!--<div class="container-fluid"> -->
-<!--<div class="row">-->
-<!--<div class="panel panel-default padding-15">-->
-  <!--{% for page in site.pages %}-->
-  <!--{% assign loopindex = forloop.index | modulo: 2 %}-->
-  <!--{% if loopindex == 1 %}-->
-  <!--<div>-->
-    <!--<a href="{{ page.url }}.html">{{ page.title }}</a>-->
-    <!--{% else %}-->
-    <!--<a href="{{ page.url }}.html">{{ page.title }}</a>-->
-  <!--</div>-->
-  <!--{% endif %}-->
-  <!--{% endfor %}-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--</div>-->
