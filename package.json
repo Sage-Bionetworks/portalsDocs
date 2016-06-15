@@ -15,7 +15,8 @@
     "reactify": "1.1.0",
     "superagent": "1.2.0",
     "through2": "0.6.3",
-    "uglify-js": "2.4.20"
+    "uglify-js": "2.4.20",
+    "chance": "^1.0.3"
   },
   "scripts": {
     "build_search": "node ./_site/js/search/build_scripts/index_builder.js",
@@ -30,4 +31,3 @@
     "precommit-hook": "1.0.7"
   }
 }
-

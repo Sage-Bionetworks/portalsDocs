@@ -1,0 +1,16 @@
+---
+title: User Guide
+layout: article
+---
+
+
+<div class="container">
+<h2>User Guide</h2>
+      <ul class="nav">
+        {% for page in site.pages %}
+        {% if page.layout == 'article' %}
+        <li><a href="{{ page.url }}.html">{{ page.title }}</a></li>
+        {% endif %}
+        {% endfor %} <!-- page -->
+</div>
+
