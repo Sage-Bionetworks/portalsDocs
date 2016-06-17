@@ -13,7 +13,7 @@ Provenance is a concept describing the origin of something; in Synapse it is use
 
 ### The basic elements of Synapse provenance
 
-The model Synapse uses for provenance is based on the W3C provenance spec where items are derived from an *activity* which has components that were *used*  and components that were *executed*.  Think of the used items as input files and executed items as software or code.  Both used and executed can either be items in Synapse or URLs such as a link to a github commit or a link to specific version of a software tool.  
+The model Synapse uses for provenance is based on the [W3C provenance spec](https://www.w3.org/standards/techs/provenance#w3c_all) where items are derived from an **activity** which has components that were **used**  and components that were **executed**.  Think of the used items as input files and executed items as software or code.  Both used and executed can either be items in Synapse or URLs such as a link to a github commit or a link to specific version of a software tool.  
 
 [Screen shot of web provenance editing]
 
@@ -40,9 +40,9 @@ provenance
 Details on using provenance:
 <table class="markdown-table border text-align-center">
 <tr><th>  Introduction  </th><th> Full docs  </th></tr>
-<tr><td>python  </td><td>  python docs </td></tr>
-<tr><td>R </td><td>R docs </td></tr>
-<tr><td></td><td>bash docs    </td></tr>
+<tr><td>[python](https://www.synapse.org/#!Synapse:syn1768504/wiki/56099)  </td><td>  [python docs](http://python-docs.synapse.org/index.html#provenance) </td></tr>
+<tr><td>[R](https://www.synapse.org/#!Synapse:syn1834618/wiki/55486) </td><td>[R docs](http://r-docs.synapse.org/) </td></tr>
+<tr><td></td><td>[bash docs](http://python-docs.synapse.org/CommandLineClient.html)    </td></tr>
 
 
 
