@@ -71,6 +71,7 @@ Get the sum of all values for the column 'foo' in table 'syn123'.
 ````
 select sum(foo) from syn123
 ````
+
 ### Set Selection
 
 The DISTINCT keyword can be used to select all distinct value (the value set) from a column.
@@ -90,6 +91,7 @@ The DISTINCT keyword can be used with set functions. In this example, we will ge
 ````
 select count(distinct foo) from syn123
 ````
+
 ### Filtering
 
 Select all rows where column foo has a value equal to one.
