@@ -1,16 +1,13 @@
 ---
 title: Table Queries
 layout: article
+excerpt: The basics of creating, modifying, and querying tabular data on Synapse.  
 ---
 
 # Synapse Tables
 
-<!-- excerpt start -->
-
 Synapse Tables enable storage of tabular data in Synapse in a form that can be queried using a SQL-like query language.
 Tables help to store and organize metadata in an easy-to-view format on the Synapse site. 
-
-<!-- excerpt end -->
 
 ## **Synapse R Client Table Queries**
 

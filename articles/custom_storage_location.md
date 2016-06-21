@@ -1,17 +1,15 @@
 ---
 title: "Creating Custom Storage Locations"
 layout: article
+excerpt: Follow these steps to set up an external S3 bucket and access it with Synapse. 
 ---
 
 ## **Creating a download bucket**
 
 ## Steps for adding an external S3 bucket
 
-<!-- excerpt start -->
-
 ### Share your bucket with Synapse
 First step is to allow Synapse to access your s3 bucket. You can choose to allow read-only access or read-write access. Either way, you have to make sure that objects that are referenced or managed by Synapse are not modified or deleted.
-<!-- excerpt end -->
 
 #### 1. Go to **[Amazon Web Services S3 console](https://console.aws.amazon.com/s3)** and login under your account
 

@@ -1,16 +1,17 @@
 ---
 title: "Access and Content Restrictions"
 layout: article
+excerpt: Learn how to share and restrict content on Synapse using the sharing settings and conditions for use. 
 ---
+
 ## Access and Content Restrictions
-<!-- excerpt start -->
 Synapse content is subject to two control settings: the `Sharing setting` and `Conditions for Use.` The `Sharing setting` determines _with whom_ content is shared. `Conditions for Use` govern _how_ content can be used. 
-<!-- excerpt end -->
 
 ## Sharing setting
+
 `Sharing setting` determines with whom content (projects, wikis, folders, files, and tables) is shared. Content can be shared (1) **broadly**, with all registered Synapse users, (2) **sparsely,** with a limited set of users (e.g., a team) or (3) can be **private** (i.e., only the creator has access). 
 
-**Users are responsible for determining the appropriate `Sharing setting` for any content they upload into Synapse. **
+**Users are responsible for determining the appropriate `Sharing setting` for any content they upload into Synapse.**
 
 ### How to share a project
 The `Sharing setting` enables you to invite others to view/collaborate on a project you have created. **By default, your newly created project is private**; you are the only person that can assess it or any content included in it. To give others access to your project, click on the Share icon in the upper right hand corner of the screen. You can share your project broadly, opening it to the public or you may share your project sparsely, with a limited set of Synapse users, like a team. 
