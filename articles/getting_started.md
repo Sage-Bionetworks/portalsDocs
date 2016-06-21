@@ -7,7 +7,11 @@ layout: article
 
 ## Get Started with Synapse
 
+<!-- excerpt start -->
+
 This getting started is for non-technical users who are interested in learning about Synapse. By following this getting started, you’ll learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
+
+<!-- excerpt end -->
 
 * Create your own project and add content to Synapse
 * Install one of the Synapse clients (R, Python or command line)
@@ -73,7 +77,7 @@ pkgInstall("synapseClient")
 
 Anyone can browse public content in Synapse but in order to download and create content you will need to register for an account:
 
-<form action="https://www.synapse.org/#!RegisterAccount:0">
+<form action="https://www.synapse.org/register">
     <input type="submit" value="Register">
 </form>
 
