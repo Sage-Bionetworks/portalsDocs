@@ -39,4 +39,8 @@ To include new paragraphs, just add the `<br/>` tag within the content, like thi
 
 {% include important.html content="This is for an important message." %}
 
+### To commit changes 
 
+To avoid a lint error when committing, use:
+
+    git commit --no-verify -m "some message here"
