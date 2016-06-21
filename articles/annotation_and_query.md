@@ -1,7 +1,7 @@
 ---
 title: Annotations and Queries
 layout: article
-excerpt: Learn about annotations, how to set them for your data, and how to query them for analysis. 
+excerpt: Learn about what annotations are, how to assign and modify them, and how to query them for analysis. 
 ---
 
 ## Annotations
