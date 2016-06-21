@@ -28,12 +28,11 @@ Synapse operates under a complete [governance process](https://www.synapse.org/#
 
 
 ## Anonymous user
-Anyone can browse Synapse anonymously to review the platform features and resources, including the catalog of public `Projects` and `Files/Tables`. However, anonymous users cannot create `Projects` in Synapse nor can they upload or download `Files` or `Tables`. 
+Anyone can browse Synapse anonymously to review the platform features and resources, including the catalog of public `Projects` and `Files/Tables`. However, anonymous users cannot create `Projects` in Synapse, add Wiki content, nor can they upload or download `Files` or `Tables`. 
 
 ## Registered user
-Registered Synapse users can create `Projects` and `Wikis`. Registered users can download non-controlled content like data, code, and results, and request access to Controlled Use content. Further, registered users can collaborate with other Synapse users and create teams. 
-
-Registering is easy. Anyone over the age of 13 may register for a Synapse account. All you have to do is click on the "Register for a Synapse Account" icon, (1) enter your email, and first and last names in the dialog that appears, (2) read and agree to the Synapse [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4) and (3) look out for an email with the password setup instructions. Once you have an account you can edit your profile description directly in Synapse and/or by importing profile information from your [LinkedIn](https://www.linkedin.com) account.
+Registered Synapse users can create `Projects` and `Wikis`. They can collaborate with other registered Synapse users and create teams. Registered users can download open access content like data, code, and results, and request access to Controlled Use content. Access to Controlled Use content is granted to investigators who fulfill additional conditions as described in the 'Conditions for Use' for that content. Examples of are to be a Synapse Certified user (see below) or provide an intended data use statement.
+Registering is easy. Anyone over the age of 13 may register for a Synapse account. All you have to do is click on the "Register for a Synapse Account" icon, (1) enter your email, and first and last names in the dialog that appears, (2) read and agree to the [Synapse Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4) and (3) look out for an email with the password setup instructions. Once you have an account you can edit your profile description directly in Synapse and/or by importing profile information from your [LinkedIn](https://www.linkedin.com) account.
 
 <form action="https://www.synapse.org/#!RegisterAccount:0">
     <input type="submit" value="Register">
