@@ -1,12 +1,13 @@
 ---
 title: "Provenance"
 layout: article
-excerpt: Learn about how Synapse visualizes and tracks the relationships of files and projects for reproducibility.
 ---
 
 ## Provenance
 
+<!-- excerpt start -->
 Reproducible research is a fundamental responsibility of scientists, but the best practices for achieving it are not established in computational biology. The Synapse “Provenance” system is one of many solutions you can use to make your work reproducible by you and others.
+<!-- excerpt end -->
 
 <img src="/assets/images/Prov_web_screenshot.png" align="right">
 

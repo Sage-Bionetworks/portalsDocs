@@ -1,12 +1,15 @@
 ---
 title: "Teams"
 layout: article
-excerpt: Easily manage groups of users for purposes of project access, communication, and challenges by forming teams. 
 ---
 
 ## Teams
 
+<!-- excerpt start -->
+
 Teams are a way to easily manage groups of users for the purposes of project access, communication, and challenge participation. In this guide you will learn how to:
+
+<!-- excerpt end -->
 
 * Create and manage teams
 * Find teams, and identify and manage the teams to which you belong
