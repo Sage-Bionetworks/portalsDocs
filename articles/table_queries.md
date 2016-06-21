@@ -12,298 +12,11 @@ Tables help to store and organize metadata in an easy-to-view format on the Syna
 
 <!-- excerpt end -->
 
-## **Synapse REST API**
-
-### Basics Table Query
-
-Select all columns from the table identified by 'syn123'.
-
-````
-select * from syn123
-````
-
-Select only two columns identified by 'foo' and 'bar' from the table identified by 'syn'123'.
-
-````
-select foo, bar from syn123
-````
-
-To refer to a column name that contains spaces or punctuation, the name must be enclosed in double quotes.
-
-````
-select "has space" from syn123
-````
-
-Any double quote within a column name must be escaped with two double quotes.
-
-````
-select "The ""Cool"" name" from syn123
-````
-
-### Aggregation Functions
-
-Count the number of rows in table 'syn123'.
-
-````
-select count(*) from syn123
-````
-
-Get the maximum of all values for the column 'foo' in table 'syn123'.
-
-````
-select max( foo ) from syn123
-````
-
-Get the minimum of all values for the column 'foo' in table 'syn123'.
-
-````
-select min(foo) from syn123
-````
-
-Get the average of all values for the column 'foo' in table 'syn123'.
-
-````
-select avg(foo) from syn123
-````
-
-Get the sum of all values for the column 'foo' in table 'syn123'.
-
-````
-select sum(foo) from syn123
-````
-
-### Set Selection
-
-The DISTINCT keyword can be used to select all distinct value (the value set) from a column.
-
-````
-select distinct foo from syn123
-````
-
-The DISTINCT keyword applies to all selected columns, so if more than one column is listed, then the results will be a list of the distinct combinations of all selected columns.
-
-````
-select distinct foo, bar from syn123
-````
-
-The DISTINCT keyword can be used with set functions. In this example, we will get the count of the distinct values from the foo column.
-
-````
-select count(distinct foo) from syn123
-````
-
-### Filtering
-
-Select all rows where column foo has a value equal to one.
-
-````
-select * from syn123 where foo =1
-````
-
-Select all rows where column foo has a string value equal to 'a string', the right-hand-side but be within single quotes (').
-
-````
-select * from syn123 where foo = 'a string'
-````
-
-Select all rows where column foo has a value greater than one.
-
-````
-select * from syn123 where foo > 1
-````
-
-Select all rows where column foo have a value greater than -1.98e12
-
-````
-select * from syn123 where foo > 1.98e12
-````
-
-Select all rows where column foo has a value less than one.
-
-````
-select * from syn123 where foo < 1
-````
-
-Select all rows where column foo has a value that does not equal one.
-
-````
-select * from syn123 where foo <> 1
-````
-
-Select all rows where column foo has a value greater than or equal to one
-
-````
-select * from syn123 where foo >= 1
-````
-
-Select all rows where column foo has a value less than or equal to one.
-
-````
-select * from syn123 where foo <= 1
-````
-Select all rows where column foo has a value equal to one, two, or three.
-
-````
-select * from syn123 where foo in (1,2,3)
-````
-
-Select all rows where column foo has a value between one and two.
-
-````
-select * from syn123 where foo between 1 and 2
-````
-
-Select all rows where column foo has a null value.
-
-````
-select * from syn123 where foo is null
-````
-
-Select all rows where column foo has a value that is not null.
-
-````
-select * from syn123 where foo is not null
-````
-
-Select all rows where column foo has a value with a prefix of 'bar'. In this example the right-hand-side of the LIKE keyword is a regular expression where the '%' represents one or more characters or even zero characters.
-
-````
-select * from syn123 where foo like 'bar%'
-````
-
-Select all rows where column foo has a value with a prefix of 'bar'. In this example the right-hand-side of the LIKE keyword is a regular expression where the '_' represents one and only one character.
-
-````
-select * from syn123 where foo like 'bar_'
-````
-
-Select all rows where double column foo is not a number or plus or minus infinity
-
-````
-select * from syn123 where isNan(foo) or isInfinity(foo)
-````
-The default escape character for LIKE regular expression is the '' character. In this example we want to find all rows such that foo that contain 'bar_' so we will need to escape the '_' character.
-
-````
-select * from syn123 where foo like 'bar_'
-````
-
-To use a different escape character for LIKE regular expression we must define the escape character. In this example, the '|' will be used as an escape character instead of ''.
-
-````
-select * from syn123 where foo like 'bar|_' escape '|'
-````
-
-Select all rows where column foo has a value equal to one or column bar has a value equals to two.
-
-````
-select * from syn123 where foo = 1 or bar = 2
-````
-
-Select all rows where column foo has a value equal to one and column bar has a value equal to two.
-
-````
-select * from syn123 where foo=1 and bar =2
-````
-
-Predicates can be surrounded by the '(' and ')' to enforce precedence and nesting.
-
-````
-select * from syn123 where (foo=1 and bar =2) or foobar = 3
-````
-
-
-### Grouping
-
-Select all rows grouping first by foo, then by bar.
-
-````
-select * from syn123 group by foo, bar
-````
-
-Grouping can be used in conjunction with aggregation function. In this example, values from the foo column are first grouped, then the average of each group is calculated. For this example, one row will be returned for each group.
-
-````
-select foo, avg(foo) from syn123 group by foo
-````
-
-### Sorting
-
-Select all columns from the table with the returned row order sorted by the values of the foo column in ascending order.
-
-````
-select * from syn123 order by foo asc
-````
-
-Select all columns from the table with the returned row order sorted by the values of the foo column in descending order.
-
-````
-select * from syn123 order by foo desc
-````
-
-Multiple columns can be include in the order by clause. In this example, the returned row order will be sorted first by foo in ascending order followed by bar in descending order.
-
-````
-select * from syn123 order by foo asc, bar desc
-````
-
-
-
-
-### Pagination
-
-Pagination is used to limit the number of results returned in a single request. In this example, we want the first ten rows that match our query.
-
-````
-select * from syn123 limit 10 offset 0
-````
-
-If the above query fetches the first page of ten results with indices from zero to nine, the second page of ten rows can be fetched using this query.
-
-````
-select * from syn123 limit 10 offset 10
-````
-
-The OFFSET element is optional. In this example, LIMIT is used to limit the results to the first 5 rows.
-
-````
-select * from syn123 limit 5
-````
-
-Pagination parameters should always be at the end of the query
-
-````
-select * from syn123 where foo =1 group by bar limit 100 offset 0
-````
-
-
-
-### Reserved Columns
-
-Every table has at least two reserved columns ROW_ID and ROW_VERSION. The values for these column are automatically managed and can not be directly modified. However, these columns can be used in queries like any other column. In this example, we are selecting all columns for a single row using its ROW_ID.
-
-````
-select * from syn123 where ROW_ID = 101
-````
-
-In this example we are listing all rows that have a current version number greater than 12. Note: while each row can have multiple versions, only the current version of each row will appear in the index used to support table queries. That means it is not possible to list old version of a row or select a row using an old version number.
-
-````
-select * from syn123 where ROW_VERSION > 12
-````
-
-
-
 ## **Synapse R Client Table Queries**
 
 
 ````
-{r loadClient, include=FALSE, eval=TRUE}
-if( file.exists("~/.Rprofile") )
-  source("~/.Rprofile")
 require(synapseClient)
-library(knitr)
-knitr::opts_knit$set(progress=TRUE, verbose=TRUE)
 ````
 
 ### Overview
@@ -817,134 +530,147 @@ cols = [Column(name='Isotope', columnType='STRING'),
 schema = syn.store(Schema(name='MyTable', columns=cols, parent=project))
 ````
 
-**addColumn**(*column*)
+<!--**addColumn**(*column*)-->
 
-&nbsp;&nbsp;&nbsp;**Parameters:	column** – a column object or its ID
-    
-**addColumns**(*columns*)
+<!--&nbsp;&nbsp;&nbsp;**Parameters:	column** – a column object or its ID-->
 
-&nbsp;&nbsp;&nbsp;**Parameters:	columns** – a list of column objects or their ID
+<!--**addColumns**(*columns*)-->
 
-**has_columns()**
+<!--&nbsp;&nbsp;&nbsp;**Parameters:	columns** – a list of column objects or their ID-->
 
-&nbsp;&nbsp;&nbsp;Does this schema have columns specified?
+<!--**has_columns()**-->
 
-**removeColumn**(*column*)
+<!--&nbsp;&nbsp;&nbsp;Does this schema have columns specified?-->
 
-&nbsp;&nbsp;&nbsp; **Parameters:	column** – a column object or its ID
+<!--**removeColumn**(*column*)-->
 
-
-### Column
-*class* ```synapseclient.table.``` **Column** *(**kwargs)*
-
-Defines a column to be used in a table [synapseclient.table.Schema](#schema).
-
-**Variables:**	
-**id** – An immutable ID issued by the platform
-
-**Parameters:**	
-
-- **columnType** (*string*) – Can be any of: “STRING”, “DOUBLE”, “INTEGER”, “BOOLEAN”, “DATE”, “FILEHANDLEID”, “ENTITYID”
-- **maximumSize** (*integer*) – A parameter for columnTypes with a maximum size. For example, ColumnType.STRINGs have a default maximum size of 50 characters, but can be set to a maximumSize of 1 to 1000 characters.
-- **name** (*string*) – The display name of the column
-- **enumValues** (*array of strings*) – Columns type of STRING can be constrained to an enumeration values set on this list.
-- **defaultValue** (*string*) – The default value for this column. Columns of type FILEHANDLEID and ENTITYID are not allowed to have default values.
+<!--&nbsp;&nbsp;&nbsp; **Parameters:	column** – a column object or its ID-->
 
 
-### Row
+<!--### Column-->
+<!--*class* ```synapseclient.table.``` **Column** *(**kwargs)*-->
 
-*class* ```synapseclient.table.``` **Row**(*values, rowId=None, versionNumber=None*)
-A [row](http://rest.synapse.org/org/sagebionetworks/repo/model/table/Row.html){:target="_blank"} in a Table.
+<!--Defines a column to be used in a table [synapseclient.table.Schema](#schema).-->
 
-**Parameters:**	
+<!--**Variables:**	-->
+<!--**id** – An immutable ID issued by the platform-->
 
-- **values** – A list of values
-- **rowId** – The immutable ID issued to a new row
-- **versionNumber** – The version number of this row. Each row version is immutable, so when a row is updated a new version is created.
+<!--**Parameters:**	-->
+
+<!--- **columnType** (*string*) – Can be any of: “STRING”, “DOUBLE”, “INTEGER”, “BOOLEAN”, “DATE”, “FILEHANDLEID”, “ENTITYID”-->
+<!--- **maximumSize** (*integer*) – A parameter for columnTypes with a maximum size. For example, ColumnType.STRINGs have a default maximum size of 50 characters, but can be set to a maximumSize of 1 to 1000 characters.-->
+<!--- **name** (*string*) – The display name of the column-->
+<!--- **enumValues** (*array of strings*) – Columns type of STRING can be constrained to an enumeration values set on this list.-->
+<!--- **defaultValue** (*string*) – The default value for this column. Columns of type FILEHANDLEID and ENTITYID are not allowed to have default values.-->
 
 
-### Table
+<!--### Row-->
 
-*class* ```synapseclient.table.``` **TableAbstractBaseClass**(*schema, headers=None, etag=None*)
-Abstract base class for Tables based on different data containers.
+<!--*class* ```synapseclient.table.``` **Row**(*values, rowId=None, versionNumber=None*)-->
+<!--A [row](http://rest.synapse.org/org/sagebionetworks/repo/model/table/Row.html){:target="_blank"} in a Table.-->
 
-*class* ```synapseclient.table.``` **RowSetTable**(*schema, rowset*)
-A Table object that wraps a RowSet.
+<!--**Parameters:**	-->
 
-*class* ```synapseclient.table.``` **TableQueryResult**(*synapse, query, limit=None, offset=None, isConsistent=True*)
-An object to wrap rows returned as a result of a table query.
+<!--- **values** – A list of values-->
+<!--- **rowId** – The immutable ID issued to a new row-->
+<!--- **versionNumber** – The version number of this row. Each row version is immutable, so when a row is updated a new version is created.-->
 
-The TableQueryResult object can be used to iterate over results of a query:
 
-````
-results = syn.tableQuery(“select * from syn1234”) for row in results:
-print(row)
-````
+<!--### Table-->
 
-{:.markdown-table}
-| Function |  |
-| -- | -- |
-| **asDataFrame()** | Convert query result to a Pandas DataFrame. |
-| ----------------- | --- |
-| **next()**        | Python 2 iterator |
+<!--*class* ```synapseclient.table.``` **TableAbstractBaseClass**(*schema, headers=None, etag=None*)-->
+<!--Abstract base class for Tables based on different data containers.-->
 
-<br>
-<br>
+<!--*class* ```synapseclient.table.``` **RowSetTable**(*schema, rowset*)-->
+<!--A Table object that wraps a RowSet.-->
 
-*class* ```synapseclient.table.``` **CsvFileTable**(*schema, filepath, etag=None, quoteCharacter='"', escapeCharacter='\\', lineEnd='n', separator=', ', header=True, linesToSkip=0, includeRowIdAndRowVersion=None, headers=None*)
+<!--*class* ```synapseclient.table.``` **TableQueryResult**(*synapse, query, limit=None, offset=None, isConsistent=True*)-->
+<!--An object to wrap rows returned as a result of a table query.-->
 
-&nbsp;&nbsp;&nbsp; An object to wrap a CSV file that may be stored into a Synapse table or returned as a result of a table query.
+<!--The TableQueryResult object can be used to iterate over results of a query:-->
 
-&nbsp;&nbsp;&nbsp; ```classmethod``` **from_table_query**(*synapse, query, quoteCharacter='"', escapeCharacter='\\\\', lineEnd='\n', separator=', ', header=True, includeRowIdAndRowVersion=True*)
+<!--````-->
+<!--results = syn.tableQuery(“select * from syn1234”) for row in results:-->
+<!--print(row)-->
+<!--````-->
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Create a Table object wrapping a CSV file resulting from querying a Synapse table. Mostly for internal use.
+<!--{:.markdown-table}-->
+<!--| Function |  |-->
+<!--| -- | -- |-->
+<!--| **asDataFrame()** | Convert query result to a Pandas DataFrame. |-->
+<!--| ----------------- | --- |-->
+<!--| **next()**        | Python 2 iterator |-->
 
-&nbsp;&nbsp;&nbsp; **setColumnHeaders**(*headers*)
+<!--<br>-->
+<!--<br>-->
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set the list of ```synapseclient.table.SelectColumn``` objects that will be used to convert fields to the appropriate data types.
+<!--*class* ```synapseclient.table.``` **CsvFileTable**(*schema, filepath, etag=None, quoteCharacter='"', escapeCharacter='\\', lineEnd='n', separator=', ', header=True, linesToSkip=0, includeRowIdAndRowVersion=None, headers=None*)-->
 
-Column headers are automatically set when querying.
+<!--&nbsp;&nbsp;&nbsp; An object to wrap a CSV file that may be stored into a Synapse table or returned as a result of a table query.-->
 
-### Module level method
-```synapseclient.table.``` as_table_columns(*df*)
+<!--&nbsp;&nbsp;&nbsp; ```classmethod``` **from_table_query**(*synapse, query, quoteCharacter='"', escapeCharacter='\\\\', lineEnd='\n', separator=', ', header=True, includeRowIdAndRowVersion=True*)-->
 
-&nbsp;&nbsp;&nbsp; Return a list of Synapse table [Column](#column) 
-objects that correspond to the columns in the given [Pandas DataFrame](http://pandas.pydata.org/pandas-docs/stable/api.html#dataframe){:target="_blank"}.
- 
- 
-&nbsp;&nbsp;&nbsp; **Params df:**	[Pandas DataFrame](http://pandas.pydata.org/pandas-docs/stable/api.html#dataframe){:target="_blank"}
+<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Create a Table object wrapping a CSV file resulting from querying a Synapse table. Mostly for internal use.-->
 
-&nbsp;&nbsp;&nbsp; **Returns:**	A list of Synapse table [Column](#column) objects
+<!--&nbsp;&nbsp;&nbsp; **setColumnHeaders**(*headers*)-->
 
-```synapseclient.table.```Table(*schema, values, **kwargs*)
-Combine a table schema and a set of values into some type of Table object depending on what type of values are given.
+<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set the list of ```synapseclient.table.SelectColumn``` objects that will be used to convert fields to the appropriate data types.-->
 
-**Parameters:**	
+<!--Column headers are automatically set when querying.-->
 
-**schema** – a table py:class:```Schema``` object
 
-**value** –an object that holds the content of the tables - a py:class:```RowSet``` - a list of lists (or tuples) where each element is a row - 
-a string holding the path to a CSV file - a [Pandas DataFrame](http://pandas.pydata.org/pandas-docs/stable/api.html#dataframe){:target="_blank"}
-Usually, the immediate next step after creating a Table object is to store it:
+## **Synapse REST API**
+
+For an in-depth look with examples at querying using the Synapse REST API, please refer to the 
+[REST API Docs](http://docs.synapse.com/rest).
+
+### Basics Table Query
+
+Select all columns from the table identified by 'syn123'.
 
 ````
-table = syn.store(Table(schema, values))
+select * from syn123
 ````
 
-End users should not need to know the details of these Table subclasses:
 
-- [TableAbstractBaseClass](#table)
-- [RowSetTable](#table)
-- [TableQueryResult](#table)
-- [CsvFileTable](#table)
+### Aggregation Functions
 
-<br>
-See also:
+Count the number of rows in table 'syn123'.
 
-- [synapseclient.Synapse.getColumns()](http://docs.synapse.org/python/Client.html#synapseclient.Synapse.getColumns){:target="_blank"}
-- [synapseclient.Synapse.getTableColumns()](http://docs.synapse.org/python/Client.html#synapseclient.Synapse.getTableColumns){:target="_blank"}
-- [synapseclient.Synapse.tableQuery()](http://docs.synapse.org/python/Client.html#synapseclient.Synapse.tableQuery){:target="_blank"}
-- [synapseclient.Synapse.get()](http://docs.synapse.org/python/Client.html#synapseclient.Synapse.get){:target="_blank"}
-- [synapseclient.Synapse.store()](http://docs.synapse.org/python/Client.html#synapseclient.Synapse.store){:target="_blank"}
-- [synapseclient.Synapse.delete()](http://docs.synapse.org/python/Client.html#synapseclient.Synapse.delete){:target="_blank"}
+````
+select count(*) from syn123
+````
+
+### Set Selection
+
+The DISTINCT keyword can be used to select all distinct value (the value set) from a column.
+
+````
+select distinct foo from syn123
+````
+
+### Filtering
+
+Select all rows where column foo has a value equal to one.
+
+````
+select * from syn123 where foo =1
+````
+
+### Grouping
+
+Select all rows grouping first by foo, then by bar.
+
+````
+select * from syn123 group by foo, bar
+````
+
+
+### Sorting
+
+Select all columns from the table with the returned row order sorted by the values of the foo column in ascending order.
+
+````
+select * from syn123 order by foo asc
+````
 
