@@ -39,9 +39,9 @@ Registering is easy. Anyone over the age of 13 may register for a Synapse accoun
 </form>
 	
 ## Certified user
-Certified users are authorized to use the full Synapse functionality. In order to ensure that users wishing to interact more freely within Synapse are familiar with the [Synapse Commons Data Use Procedure](https://s3.amazonaws.com/static.synapse.org/governance/SynapseCommonsDataUseProcedure.pdf?v=4), **users must pass a short quiz on the content of this tutorial (18 questions, approximately 20 minutes) to become certified.**
-
-Like registered users, certified Synapse users can create `Projects` and construct `Wikis`, access non-controlled content, and request access to Controlled Use content. Additionally, Certified users can upload content (e.g., `Files, Tables`) and can set the provenance relationships connecting this content. Certified users with a validated profile can request access to Bridge, Controlled Use data derived from ResearchKit apps. 
+Certified users are authorized to use the full Synapse functionality. In order to ensure that users wishing to interact more freely within Synapse are familiar with the [Synapse Commons Data Use Procedure](https://s3.amazonaws.com/static.synapse.org/governance/SynapseCommonsDataUseProcedure.pdf?v=4), **users must pass a short quiz on the content of this tutorial (15 questions, approximately 20 minutes) to become Synapse certified.**
+Like registered users, Synapse certified users can create `Projects` and construct `Wikis`, download open access content, and request access to Controlled Use content. To access Controlled Data, certified users must fulfill the specific requirements described in the 'Conditions for Use' for that data.
+Certified users can also upload content (e.g., `Files`, `Tables`) and can set the provenance relationships connecting this content.
 
 <form action="https://www.synapse.org/#!Quiz:">
     <input type="submit" value="Become a Certified User">
