@@ -20,15 +20,19 @@ layout: default
 </style>
 
 
-<div class="container-fluid" style="padding-top: 55px"> 
+<div class="container-fluid" style="padding-top: 15px"> 
   <div class="row" style="margin:0 0 0 0">
+    <div class="row" style="text-align: center">
+    <h2>Synapse Docs User Guide</h2>
+    <h4>Use the articles on this page to learn how to use Synapse</h4>
+    </div>
     <div class='col-xs-12 col-sm-6'>
       {% for page in site.pages limit: 7 %}
       {% if page.layout == 'article' %}
       <div id="hover-background" class="panel panel-default padding-15" style="padding: 5px 5px 5px 15px">
         <a href="{{ page.url }}"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
         <p style="font-size: 1em; margin: 0 0 0 0">
-          {{ page.content | split:'<!-- excerpt end -->' | first | split:'<!-- excerpt start -->' | last | strip_html | truncate:100 }} 
+          {{page.excerpt}}
           <a href="{{ page.url }}.html">...Read more</a></p> 
       </div>
       {% endif %}
@@ -41,14 +45,25 @@ layout: default
       <div id="hover-background" class="panel panel-default padding-15" style="padding: 5px 5px 5px 15px">
         <a href="{{ page.url }}"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
         <p style="font-size: 1em; margin: 0 0 0 0">
-          {{ page.content | split:'<!-- excerpt end -->' | first | split:'<!-- excerpt start -->' | last | strip_html | truncate:100 }} 
+          {{page.excerpt}}
           <a href="{{ page.url }}.html">...Read more</a></p> 
       </div>
       {% endif %}
       {% endfor %}
     </div>
   </div>
+  <div class="panel panel-default padding-15" style="text-align: center; ">
+<<<<<<< HEAD
+    <h4>Can't find what you're looking for?
+    Try posting a question on our <a href="https://www.synapse.org/#!SynapseForum:default">Forum</a>.</h4>
+=======
+    <h3>Can't find what you're looking for?
+    Try posting a question on our <a href="https://www.synapse.org/#!SynapseForum:default">Forum</a></h3>
+>>>>>>> parent of 740009f... excerpts to yaml header for user guide
+
+  </div>
 </div>
+
 
 
 

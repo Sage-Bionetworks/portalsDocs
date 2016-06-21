@@ -1,11 +1,10 @@
 ---
 title: "Access and Content Restrictions"
 layout: article
+excerpt:
 ---
 ## Access and Content Restrictions
-<!-- excerpt start -->
 Synapse content is subject to two control settings: the `Sharing setting` and `Conditions for Use.` The `Sharing setting` determines _with whom_ content is shared. `Conditions for Use` govern _how_ content can be used. 
-<!-- excerpt end -->
 
 ## Sharing setting
 `Sharing setting` determines with whom content (projects, wikis, folders, files, and tables) is shared. Content can be shared (1) **broadly**, with all registered Synapse users, (2) **sparsely,** with a limited set of users (e.g., a team) or (3) can be **private** (i.e., only the creator has access). 
