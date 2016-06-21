@@ -20,6 +20,13 @@ There are three levels of user credentials in Synapse: anonymous, registered, an
 
 A user's ability to download files/tables depends on his/her credentials and, additionally, on the user fulfilling the _Conditions for Use_ of the file/table they wish to access. For example, some files/tables may require you to complete and sign a Data Use Agreement prior to download. 
 
+## Privileges and Responsibilities
+Synapse users are solely responsible for their action on Synapse. They are expected to abide by the [Synapse Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"} and guiding principles for responsible research as described in the Synapse Governance documents, and reaffirmed in the Synapse Awareness and Ethics Pledge. Please contact the Synapse Access and Compliance Team (ACT@synapse.org) if you have any question regarding Synapse governance.
+The general Terms of Use for Synapse include agreement to use Data ethically and responsibly; to protect the privacy and confidentiality of all sample contributors; not discriminate, identify, or re-contact individuals or groups represented by the Data; keep personal information private and secure from any potential abuses and to comply with all applicable laws and regulations (federal, tribal and local).
+Synapse operates under a complete [governance process](https://www.synapse.org/#!Help:Governance){:target="_blank"} that includes the right of audit and external reviews. Please contact the Synapse Access and Compliance team (act@synapse.org) if you you have any questions or concerns.
+**By using Synapse you consent to all Synapse governance policies and procedures.**
+
+
 ## Anonymous user
 Anyone can browse Synapse anonymously to review the platform features and resources, including the catalog of public `Projects` and `Files/Tables`. However, anonymous users cannot create `Projects` in Synapse nor can they upload or download `Files` or `Tables`. 
 
