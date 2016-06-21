@@ -1,6 +1,7 @@
 ---
 title: "Synapse Wikis"
 layout: article
+excerpt: 
 ---
 
 ## Overview
@@ -14,7 +15,7 @@ Every project has a Wiki tab where you can build pages and a hierarchy of subpag
 ### Using the Synapse web portal
 After creating a new project select the Wiki tab. Start a Wiki through the Tools menu by selecting the 'Edit Project Wiki'function. Content in this first Wiki becomes your projects home page. Go to the Tools menu to add subpages to your Wiki. These will appear as links on the left side of your home page (Image?). Adding a wiki to a folder or file is done in a similar manner by selecting 'Edit Folder/File Wiki'. Content added to a Wiki can be Previewed before Saving. Each version of a saved Wiki is visible under Wiki History where older versions can be restored. To delete a Wiki select 'Delete Wiki Page' under Tools.  
 
-### Using R/Pyton (need someone to complete this)
+### Using R/Python (need someone to complete this)
 {% tabs %} {% tab Command %}
 
 {% highlight bash %} 

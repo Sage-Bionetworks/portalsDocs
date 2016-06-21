@@ -1,17 +1,14 @@
 ---
 title: "Getting Started with Synapse"
 layout: article
+excerpt: 
 ---
 
 <script src='/assets/javascripts/words.js'></script>
 
 ## Get Started with Synapse
 
-<!-- excerpt start -->
-
 This getting started is for non-technical users who are interested in learning about Synapse. By following this getting started, you’ll learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
-
-<!-- excerpt end -->
 
 * Create your own project and add content to Synapse
 * Install one of the Synapse clients (R, Python or command line)
