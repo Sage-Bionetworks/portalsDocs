@@ -90,7 +90,8 @@ There is more information about [accounts, certification and qualified researche
 
 <img style="float: right" src="/assets/images/project_1.png" >
 
-Now that you have your Synapse account we can start creating content. All Synapse content is organized according to user-created `Projects`.  `Projects` are an organizational unit in which you can collaboratively access and share `Wikis` (narratives), `Files` (a distributed file system to store data, code, and results from your work), `Tables` (web-accessible, sharable, and queryable data where columns can have a user-specified structured schema). Each project also contains a project specific `Discussion` Forum.
+Now that you have your Synapse account, let's get started. All Synapse content is organized according to user-created `Projects`. Select a unique name for your Project, such as "My uniquely named project", and create your Project. Projects are an organizational unit in which you can collaboratively access and share `Wikis` (narratives), `Files` (a distributed file system to store data, code, and results from your work), and Tables (web-accessible, sharable, and queryable data where columns can have a user-specified structured schema). Each project also contains a project specific `Discussion Forum`.
+By default, your newly created Project is private; you are the only person who can access it and any content you include in it. To invite others to view or edit your Project, click on the Share icon in the upper right hand portion of the screen. For more information on Sharing, please see the Content Controls section of this tutorial.
 
 As an exercise we are going to create an example project to store some cell line analysis.
 
