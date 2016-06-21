@@ -5,15 +5,8 @@ layout: article
 
 ## Overview
 
-<!-- excerpt start -->
 Wikis are available in Synapse projects to provide a space to build narrative content to describe the research. 
-<<<<<<< HEAD
 Every project has a Wiki tab where you can build pages and a hierarchy of subpages as you would with any website. These pages can be reordered through the Edit Order button below the Wiki pages. Wikis can also be added to folders and files allowing additional content documentation. Wikis, whether they are under the Wiki tab or on a folder, are built in the same way and enables incorporation of highly customized content including, but not limited to: images, tables, code blocks, LaTeX formatted equations, and scholarly references. In addition, Synapse-specific widgets lets you embed dynamic content based on other resources stored in Synapse. 
-=======
-<!-- excerpt end -->
-Every project has a Wiki tab where you can build pages and a hierarchy of subpages as you would with any website. These pages can be reordered through the Edit Order button below the Wiki pages. Wikis can also be added to folders and files allowing additional content documentation. Wikis, whether they are under the Wiki tab or on a folder, are built in the same way and enables incorporation of highly customized content including, but not limited to: images, tables, code blocks, LaTeX formatted equations, and scholarly references. In addition, Synapse-specific widgets lets you embed dynamic content based on other resources stored in Synapse. (needs highlight). 
->>>>>>> parent of 740009f... excerpts to yaml header for user guide
-
 
 ## Starting, editing and deleting a Wiki
 
