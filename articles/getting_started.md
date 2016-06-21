@@ -77,15 +77,11 @@ pkgInstall("synapseClient")
 
 Anyone can browse public content in Synapse but in order to download and create content you will need to register for an account:
 
-<form action="https://www.synapse.org/register">
-    <input type="submit" value="Register">
-</form>
+<a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>
 
 As Synapse can store human subject data that has sharing and use restrictions, you will also need to become certified and take a quiz about what kinds of items can be shared in Synapse.  To start this process:
 
-<form action="https://www.synapse.org/#!Quiz:">
-    <input type="submit" value="Become a Certified User">
-</form>
+<a href="https://www.synapse.org/#!Quiz:Certification" class="btn btn-primary">Become a Certified User</a>
 
 There is more information about [accounts, certification and qualified researchers](/articles/accounts_certified_users_and_qualified_researchers.html)
 

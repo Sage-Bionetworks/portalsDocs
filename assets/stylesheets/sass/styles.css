@@ -388,3 +388,7 @@ input.gsc-search-button-v2 {
 .gsc-search-box-tools .gsc-search-box .gsc-input {
     box-shadow: none;
 }
+
+#bootstrap-overrides .btn:hover {
+  background-position-y: 0px;
+}
