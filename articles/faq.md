@@ -1,5 +1,5 @@
 ---
-title: "Synapse FAQ"
+title: "FAQ"
 layout: article
 excerpt: What is Synapse? 
 ---
