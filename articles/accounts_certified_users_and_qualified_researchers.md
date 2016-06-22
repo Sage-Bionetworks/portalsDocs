@@ -1,7 +1,7 @@
 ---
 title: "Accounts, Certified Users and Qualified Researchers"
 layout: article
-excerpt:
+excerpt: Find out about the different levels of users and the privileges associated with each type of credential. 
 ---
 
 ### About Accounts, Certification and Qualified Researchers
