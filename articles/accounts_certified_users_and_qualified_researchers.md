@@ -35,17 +35,12 @@ Anyone can browse Synapse anonymously to review the platform features and resour
 ## Registered user
 Registered Synapse users can create `Projects` and `Wikis`. They can collaborate with other registered Synapse users and create teams. Registered users can download open access content like data, code, and results, and request access to Controlled Use content. Access to Controlled Use content is granted to investigators who fulfill additional conditions as described in the 'Conditions for Use' for that content. 
 
-
-<form action="https://www.synapse.org/#!RegisterAccount:0">
-    <input type="submit" value="Register">
-</form>
+<a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>
 	
 ## Certified user
 Certified users are authorized to use the full Synapse functionality. In order to ensure that users wishing to interact more freely within Synapse are familiar with the [Synapse Commons Data Use Procedure](https://s3.amazonaws.com/static.synapse.org/governance/SynapseCommonsDataUseProcedure.pdf?v=4), **users must pass a short quiz (15 questions, approximately 20 minutes) to become Synapse certified.**
 
-<form action="https://www.synapse.org/#!Quiz:">
-    <input type="submit" value="Become a Certified User">
-</form>
+<a href="https://www.synapse.org/#!Quiz:" class="btn btn-primary">Become a Certified User</a>
 
 
 ## Qualified researchers
@@ -65,5 +60,4 @@ _**Get your profile validated**_.  Go to your user profile page (click your name
 Please note that a copy of a work identification badge is not an accepted form of identity documentation.
 
 You will receive a notification email once your account information has been verified and a badge will appear on your Synapse profile page. 
-
 
