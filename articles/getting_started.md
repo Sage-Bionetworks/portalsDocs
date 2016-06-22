@@ -87,7 +87,8 @@ There is more information about [accounts, certification and qualified researche
 
 <img style="float: right" src="/assets/images/project_1.png" >
 
-Now that you have your Synapse account we can start creating content. All Synapse content is organized according to user-created `Projects`.  `Projects` are an organizational unit in which you can collaboratively access and share `Wikis` (narratives), `Files` (a distributed file system to store data, code, and results from your work), `Tables` (web-accessible, sharable, and queryable data where columns can have a user-specified structured schema). Each project also contains a project specific `Discussion` Forum.
+Now that you have your Synapse account, let's get started. All Synapse content is organized according to user-created `Projects`. Select a unique name for your Project, such as "My uniquely named project", and create your Project. Projects are an organizational unit in which you can collaboratively access and share `Wikis` (narratives), `Files` (a distributed file system to store data, code, and results from your work), and Tables (web-accessible, sharable, and queryable data where columns can have a user-specified structured schema). Each project also contains a project specific `Discussion Forum`.
+By default, your newly created Project is private; you are the only person who can access it and any content you include in it. To invite others to view or edit your Project, click on the Share icon in the upper right hand portion of the screen. For more information on Sharing, please see the Content Controls section of this tutorial.
 
 As an exercise we are going to create an example project to store some cell line analysis.
 
@@ -131,6 +132,7 @@ print(paste('Created a project with Synapse id', myProj$properties$id, sep = ' '
 
     {% tab Web %}
 Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the **Create Project** button
+<img src="/assets/images/create_project.jpg" >
     {% endtab %}
 {% endtabs %}
 <br>
@@ -165,6 +167,7 @@ onWeb(myProj)
 
     {% tab Web %}
 Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the project name in the Projects listing {% endtab %}
+<img src="/assets/images/clickonproject.jpg" >
 {% endtabs %}
 
 
@@ -209,6 +212,7 @@ wiki <- synStore(wiki)
 
     {% tab Web %}
 Go to project page and click the **Tool button** and chose **Edit Project Wiki**.
+<img src="/assets/images/addwiki.jpg" >
     {% endtab %}
 {% endtabs %}
 
@@ -250,6 +254,7 @@ resultsFolder <- synStore(resultsFolder)
 
     {% tab Web %}
 click the **Add Folder** button on the Files tab.
+<img src="/assets/images/addfolder.jpg" >
     {% endtab %}
 {% endtabs %}
 <br>
@@ -287,6 +292,11 @@ rawDataFile <- synStore(rawDataFile)
 
     {% tab Web %}
 click the **Upload or Link to File** button on the Files tab. Go through the dialogs.  Then click the **Annotations** button on the top right of the screen to add annotations.
+<img style=float left src="/assets/images/upload_linktofile1.jpg" >
+<img style=float right src="/assets/images/upload_linktofile2.jpg" >
+<img src="/assets/images/annotations1.jpg" >
+<img src="/assets/images/annotations3.jpg" >
+
     {% endtab %}
 {% endtabs %}
 <br>
