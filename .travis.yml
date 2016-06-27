@@ -18,5 +18,5 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
-    condition: $depoly_to_s3 = TRUE
+    condition: $depoly_to_s3 = "TRUE"
 
