@@ -1,6 +1,7 @@
 ---
 title: "Getting Started with Synapse"
 layout: article
+excerpt: A getting started guide for non-technical users who are interested in learning about Synapse.
 ---
 
 <script src='/assets/javascripts/words.js'></script>
@@ -34,7 +35,7 @@ Synapse operates under a complete [governance process](https://www.synapse.org/#
 
 
 ## Installing Synapse Clients
-<img style="float: right;" src="/assets/images/synapse_apis.png">
+<img style="float:right;" src="/assets/images/synapse_apis.png">
 
 Synapse is built on a number of RESTful web APIs that allow users to interact with the system via a number of _clients_. One of these _clients_ is the web client, i.e. the website www.synapse.org. Synapse also provides three programmatic clients (R, Python, and Command Line). Content can be uploaded, downloaded, annotated, and queried from any of these interfaces. In the getting started guide we will run through examples using all three programmatic interfaces.  At any point you can pick the language you would like to see examples in by clicking the corresponding tab at the bottom of every example.  Unless otherwise noted the examples are can be typed into the respective environment.  That is a shell prompt for the command line examples, a Python session such as an ipython notbook of script, and an R session for the R examples.
 
@@ -73,24 +74,20 @@ pkgInstall("synapseClient")
 
 Anyone can browse public content in Synapse but in order to download and create content you will need to register for an account:
 
-<form action="https://www.synapse.org/#!RegisterAccount:0">
-    <input type="submit" value="Register">
-</form>
+<a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>
 
 As Synapse can store human subject data that has sharing and use restrictions, you will also need to become certified and take a quiz about what kinds of items can be shared in Synapse.  To start this process:
 
-<form action="https://www.synapse.org/#!Quiz:">
-    <input type="submit" value="Become a Certified User">
-</form>
+<a href="https://www.synapse.org/#!Quiz:Certification" class="btn btn-primary">Become a Certified User</a>
 
 There is more information about [accounts, certification and qualified researchers](/articles/accounts_certified_users_and_qualified_researchers.html)
 
 
 ## Project and Data Management on Synapse
 
-<img style="float: right" src="/assets/images/project_1.png" >
+<img style="float: right" src="/assets/images/project_1.png">
 
-Now that you have your Synapse account, let's get started. All Synapse content is organized according to user-created `Projects`. Select a unique name for your Project, such as "My uniquely named project", and create your Project. Projects are an organizational unit in which you can collaboratively access and share `Wikis` (narratives), `Files` (a distributed file system to store data, code, and results from your work), and Tables (web-accessible, sharable, and queryable data where columns can have a user-specified structured schema). Each project also contains a project specific `Discussion Forum`.
+Now that you have your Synapse account you can start adding content. All Synapse content is organized according to user-created `Projects`. Select a unique name for your Project, such as "My uniquely named project", and create your Project. Projects are an organizational unit in which you can collaboratively access and share `Wikis` (narratives), `Files` (a distributed file system to store data, code, and results from your work), and Tables (web-accessible, sharable, and queryable data where columns can have a user-specified structured schema). Each project also contains a project specific `Discussion Forum`.
 By default, your newly created Project is private; you are the only person who can access it and any content you include in it. To invite others to view or edit your Project, click on the Share icon in the upper right hand portion of the screen. For more information on Sharing, please see the Content Controls section of this tutorial.
 
 As an exercise we are going to create an example project to store some cell line analysis.
@@ -135,7 +132,7 @@ print(paste('Created a project with Synapse id', myProj$properties$id, sep = ' '
 
     {% tab Web %}
 Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the **Create Project** button
-<img src="/assets/images/create_project.jpg" >
+<img src="/assets/images/create_project.jpg">
     {% endtab %}
 {% endtabs %}
 <br>
@@ -170,14 +167,14 @@ onWeb(myProj)
 
     {% tab Web %}
 Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the project name in the Projects listing {% endtab %}
-<img src="/assets/images/clickonproject.jpg" >
+<img src="/assets/images/clickonproject.jpg">
 {% endtabs %}
 
 
 
 ## Adding a Wiki to your Project
 
-<img style="float: right" src="/assets/images/project_2.png" >
+<img style="float: right" src="/assets/images/project_2.png">
 
 The `Wiki` tab in a project provides a space for you to build narrative content to describe your research. These `Wikis` can also be nested as subpages to build up a hierarchy of content within your project as well as be attached to specific files and folders in your project.  Examples of content that you may want to include are project descriptions, specific aims, progress updates of data generation or analysis, analysis results (either in prose or via markdown-based notebooks such as [knitr](http://yihui.name/knitr/) or [IPython notebook](http://ipython.org/notebook.html)), or web-accessible publication-like summaries of your research.
 
@@ -215,7 +212,7 @@ wiki <- synStore(wiki)
 
     {% tab Web %}
 Go to project page and click the **Tool button** and chose **Edit Project Wiki**.
-<img src="/assets/images/addwiki.jpg" >
+<img src="/assets/images/addwiki.jpg">
     {% endtab %}
 {% endtabs %}
 
@@ -224,7 +221,7 @@ Go to project page and click the **Tool button** and chose **Edit Project Wiki**
 
 ## Organizing Data: creating Files and Folders
 
-<img style="float: right" src="/assets/images/project_4.png" >
+<img style="float: right" src="/assets/images/project_4.png">
 
 The `Files` tab houses a remote file system that you can utilize to share your project's data, code, results, and any other information pertinent to your research. Unlike the file system on your local computer, Synapse Files and Folders are identified by a unique identifier, are versioned, and can be linked to one another using the Synapse `Provenance` services. These Files and Folders, like all Synapse content, can be accessed either through the web or through one of our analytical clients using their unique Synapse ID.
 
@@ -257,7 +254,8 @@ resultsFolder <- synStore(resultsFolder)
 
     {% tab Web %}
 click the **Add Folder** button on the Files tab.
-<img src="/assets/images/addfolder.jpg" >
+<br>
+<img src="/assets/images/addfolder.jpg">
     {% endtab %}
 {% endtabs %}
 <br>
@@ -270,12 +268,16 @@ Lets upload a local file `data/cell_lines_raw_data.csv` into this newly created 
 
 	{% tab Command %}
 	{% highlight bash %}
+
 synapse add data/cell_lines_raw_data.csv --parentId=syn123  --annotations '{"foo": "bar", "number1":42, "number2": 3.14}'
+
 	{% endhighlight %}
 	{% endtab %}
 
     {% tab Python %}
 	{% highlight python %}
+
+
 raw_data_file = File(path="data/cell_lines_raw_data.csv", parent=results_folder)
 raw_data_file.foo = 'bar'
 raw_data_file.number1 = 3.14159
@@ -287,29 +289,34 @@ raw_data_file = syn.store(raw_data_file)
 
     {% tab R %}
 	{% highlight r %}
+
 rawDataFile <- File("data/cell_lines_raw_data.csv", parent=resultsFolder$properties$id)
 synSetAnnotations(rawDataFile) <- list(foo="bar", number1="42", number2="3.1415")
 rawDataFile <- synStore(rawDataFile)
-	{%endhighlight %}
-	{% endtab %}
 
-    {% tab Web %}
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+
 click the **Upload or Link to File** button on the Files tab. Go through the dialogs.  Then click the **Annotations** button on the top right of the screen to add annotations.
-<img style=float left src="/assets/images/upload_linktofile1.jpg" >
-<img style=float right src="/assets/images/upload_linktofile2.jpg" >
-<img src="/assets/images/annotations1.jpg" >
-<img src="/assets/images/annotations3.jpg" >
+<img src="/assets/images/upload_linktofile1.jpg">
+<img src="/assets/images/upload_linktofile2.jpg">
+<img src="/assets/images/annotations1.jpg">
+<img src="/assets/images/annotations3.jpg">
 
     {% endtab %}
 {% endtabs %}
+
 <br>
 
-**Local Folder and File Sharing Settings**<br>
+**Local Folder and File Sharing Settings**
+<br>
 Access to `files, tables`, and `folders` is controlled by the `Sharing setting` that you select for your project. You may also set individual `Sharing settings` for specific `files, tables`, or `folders` within a project.
 
 ## Provenance and Tracking Content
 
-<img style="float: right" src="/assets/images/example_provenance.png" >
+<img style="float:right" src="/assets/images/example_provenance.png">
 
 Synapse provides advanced capabilities for formally tracking the relationship between digital assets (e.g. data, code, analytical results) stored within the system through the Synapse provenance system in order to aide in disseminating their work in ways that others can reproduce and reuse. The Synapse provenance system allows users to formally track their analysis history by aiding in the communication and sharing of a sequence of processing steps. Provenance relationships can, for example, be specified between raw data, analysis code and results that occur in a complex processing pipeline, regardless of where it is run.  Synapse’s web services for managing provenance expose a very general data model based on the [W3C Prov spec](http://www.w3.org/2011/prov/wiki/Main_Page). Central to the design, users are not required to use a particular execution environment or workflow tool. Instead, provenance can be specified by inserting calls to the Synapse web service layer into their normal workflows to record activity; pipelines may be created through simple scripting or by using workflow execution engines. The provenance system allows users to branch off workflows at any point in prior analyses, while maintaining detailed records of data, code, and environment versions needed to reproduce the work.
 
@@ -336,7 +343,7 @@ plot2 = syn.store(plot2, used=raw_data_file,
 
     {% tab R %}
 	{% highlight r %}
-plot2 <- File(path="/images/plot2.png", parentId=resultsFolder$properties$id)
+plot2 <- File(path="/images/plot2.png", parentId=resultsFolder$properties$id) 
 plot2 <- synStore(plotFileEntity, used=rawDataFile,
     executed='https://github.com/Sage-Bionetworks/synapseTutorials',
     activityName="plot distributions",
@@ -345,7 +352,8 @@ plot2 <- synStore(plotFileEntity, used=rawDataFile,
 	{% endtab %}
 
     {% tab Web %}
-click the **Upload or Link to File** button on the Files tab to upload image/plot_2.png.  After uplaoding click the **Tools** button and chose **Edit Provenance**.
+click the **Upload or Link to File** button on the Files tab to upload image/plot_2.png.  After uploading click the **Tools** button and chose **Edit Provenance**.
     {% endtab %}
 {% endtabs %}
+
 <br>

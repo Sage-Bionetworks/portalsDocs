@@ -1,16 +1,60 @@
 ---
 title: User Guide
-layout: article
+layout: default
 ---
 
+<style>
+  #toc .toc-h5 {
+    padding-left: 20px;
+  }
+  *[id]:before {
+    display: block;
+    content: " ";
+    margin-top: -75px;
+    height: 75px;
+    visibility: hidden;
+  }
+  #hover-background:hover {
+    background: #f6f6f6;
+  }
+</style>
 
-<div class="container">
-<h2>User Guide</h2>
-      <ul class="nav">
-        {% for page in site.pages %}
-        {% if page.layout == 'article' %}
-        <li><a href="{{ page.url }}.html">{{ page.title }}</a></li>
-        {% endif %}
-        {% endfor %} <!-- page -->
+
+<div class="container-fluid" style="padding-top: 15px"> 
+  <div class="row" style="margin:0 0 0 0">
+    <div class="row" style="text-align: center">
+    <h2>Synapse Docs User Guide</h2>
+    <h4>Use the articles on this page to learn how to use Synapse</h4>
+    </div>
+    <div class='col-xs-12 col-sm-6'>
+      {% for page in site.pages limit: 9 %}
+      {% if page.layout == 'article' %}
+      <div id="hover-background" class="panel panel-default padding-15" style="padding: 5px 5px 5px 15px">
+        <a href="{{ page.url }}"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
+        <p style="font-size: 1em; margin: 0 0 0 0">
+          {{page.excerpt}}
+          <a href="{{ page.url }}.html">...Read more</a></p> 
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class='col-xs-12 col-sm-6'>
+      {% for page in site.pages limit: 20 offset: 9 %}
+      {% if page.layout == 'article' %}
+      <div id="hover-background" class="panel panel-default padding-15" style="padding: 5px 5px 5px 15px">
+        <a href="{{ page.url }}"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
+        <p style="font-size: 1em; margin: 0 0 0 0">
+          {{page.excerpt}}
+          <a href="{{ page.url }}.html">...Read more</a></p> 
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="panel panel-default padding-15" style="text-align: center; ">
+    <h4>Can't find what you're looking for?
+    Try posting a question on our <a href="https://www.synapse.org/#!SynapseForum:default">Forum</a>.</h4>
+  </div>
 </div>
 
