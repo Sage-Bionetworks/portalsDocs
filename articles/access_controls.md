@@ -36,8 +36,15 @@ It is important to note that `Conditions for Use` cannot be set for Synapse wiki
 ### Data that does not require Conditions for Use
 
 Open Data in Synapse are data without `Conditions for Use.` They can be used by any registered Synapse users authorized to view the project/folder/file/table (based on sharing setting) for research purpose. Typically Open Data are:
+
 * Data from model organism, species or strain
 * Non-biological data such as presentations, results or images
+
+Human data that are:
+* Publicly available elsewhere
+* Anonymous data
+* De-identified non-sensitive data with no known sharing or use restrictions
+* Self-contributed data unambiguously consented for open data sharing and use
 
 ### Data that does require Conditions for Use (“Controlled Use” data)
 `Conditions for Use` are typically applied in order to comply with the terms under which the data were collected or with other human subjects regulations. In Synapse, data that carries `Conditions for Use` is labeled as **Controlled Use**. Examples of Controlled Use data include:
