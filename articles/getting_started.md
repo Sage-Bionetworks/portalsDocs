@@ -307,6 +307,7 @@ synapse create Folder name="results" parentId=syn123  #where syn123 is replaced 
 Folder resultsFolder = new Folder();
 resultsFolder.setParentId(myProject.getId());
 resultsFolder.setName("results");
+resultsFolder = synapseClient.createEntity(resultsFolder);
 	{%endhighlight %}
 	{% endtab %}
 
