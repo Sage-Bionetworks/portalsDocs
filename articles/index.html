@@ -27,7 +27,7 @@ layout: default
     <h4>Use the articles on this page to learn how to use Synapse</h4>
     </div>
     <div class='col-xs-12 col-sm-6'>
-      {% for page in site.pages limit: 7 %}
+      {% for page in site.pages limit: 9 %}
       {% if page.layout == 'article' %}
       <div id="hover-background" class="panel panel-default padding-15" style="padding: 5px 5px 5px 15px">
         <a href="{{ page.url }}"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
@@ -40,7 +40,7 @@ layout: default
     </div>
 
     <div class='col-xs-12 col-sm-6'>
-      {% for page in site.pages limit: 20 offset: 7 %}
+      {% for page in site.pages limit: 20 offset: 9 %}
       {% if page.layout == 'article' %}
       <div id="hover-background" class="panel panel-default padding-15" style="padding: 5px 5px 5px 15px">
         <a href="{{ page.url }}"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
@@ -53,17 +53,8 @@ layout: default
     </div>
   </div>
   <div class="panel panel-default padding-15" style="text-align: center; ">
-<<<<<<< HEAD
     <h4>Can't find what you're looking for?
     Try posting a question on our <a href="https://www.synapse.org/#!SynapseForum:default">Forum</a>.</h4>
-=======
-    <h3>Can't find what you're looking for?
-    Try posting a question on our <a href="https://www.synapse.org/#!SynapseForum:default">Forum</a></h3>
->>>>>>> parent of 740009f... excerpts to yaml header for user guide
-
   </div>
 </div>
-
-
-
 
