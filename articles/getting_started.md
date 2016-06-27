@@ -357,3 +357,7 @@ click the **Upload or Link to File** button on the Files tab to upload image/plo
 {% endtabs %}
 
 <br>
+
+### More Guides
+
+Find additional information and tutorials through our <a href="/articles/">User Guide</a>.
