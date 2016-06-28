@@ -1,0 +1,3 @@
+s3_id: <%= ENV['aws_key'] %>
+s3_secret: <%= ENV['aws_secret_key'] %>
+s3_bucket: docs.synapse.org
