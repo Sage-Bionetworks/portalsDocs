@@ -23,7 +23,7 @@ layout: default
       {% for page in site.pages limit: 9 %}
       {% if page.layout == 'article' %}
       <div id="hover-background" class="panel panel-default padding-15" style="padding: 5px 5px 5px 15px">
-        <a href="{{ page.url }}"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
+        <a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
         <p style="font-size: 1em; margin: 0 0 0 0">
           {{page.excerpt}}
           <a href="{{ page.url }}.html">...Read more</a></p> 
@@ -36,7 +36,7 @@ layout: default
       {% for page in site.pages limit: 20 offset: 9 %}
       {% if page.layout == 'article' %}
       <div id="hover-background" class="panel panel-default padding-15" style="padding: 5px 5px 5px 15px">
-        <a href="{{ page.url }}"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
+        <a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
         <p style="font-size: 1em; margin: 0 0 0 0">
           {{page.excerpt}}
           <a href="{{ page.url }}.html">...Read more</a></p> 
