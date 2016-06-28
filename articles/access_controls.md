@@ -27,7 +27,7 @@ Inheritance is illustrated in the example below. In the diagram, the projects A 
 
 <img src= "/assets/images/synapse_sharingsetting.jpg">
 
-## Conditions for Use
+## Conditions for Use<a name="conditions_of_use"></a>
 `Conditions for Use` indicate how content can be used. `Conditions for Use` are added to human data that require additional protection based on its type, source and/or collection method. For example, human 'omic' data may have `Conditions for Use` imposed by informed consent requirements, legal contracts, or other privacy requirements. It is also appropriate to add `Condition for Use` to data collected from "vulnerable" population or to content that could potentially harm individuals or groups if misused.
 **Controlled data may not be redistributed.** Controlled data can only be used by authorized investigators and are not transferable (unless explicitly specified otherwise). In other words, you cannot share Controlled data with collaborators unless they have been approved to use the data. Each Synapse users wishing to access Controlled Use data must individually agree to the `Conditions for Use` for that data.
 **Investigators are responsible for determining the appropriate `Conditions for Use` for any data they upload into Synapse.**
