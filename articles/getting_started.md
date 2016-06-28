@@ -389,10 +389,9 @@ rawDataFile <- synStore(rawDataFile)
 {% tab Web %}
 
 click the **Upload or Link to File** button on the Files tab. Go through the dialogs.  Then click the **Annotations** button on the top right of the screen to add annotations.
-<img src="/assets/images/upload_linktofile1.jpg">
-<img src="/assets/images/upload_linktofile2.jpg">
-<img src="/assets/images/annotations1.jpg">
-<img src="/assets/images/annotations3.jpg">
+<img src="/assets/images/organizing_data1.jpg">
+<img src="/assets/images/organizing_data2.jpg">
+<img src="/assets/images/organizing_data3.jpg">
 
     {% endtab %}
 {% endtabs %}
