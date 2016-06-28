@@ -1,5 +1,5 @@
 ---
-title: "Contribute and Access Data"
+title: "Contribute and Access Controlled Use Data"
 layout: article
 excerpt: Learn how to access different types of controlled data.
 ---
