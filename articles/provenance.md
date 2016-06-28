@@ -123,13 +123,13 @@ Need example here
 ### Details on using provenance:
 
 {:.markdown-table}
-| Introduction | Full Docs |
+| Full Docs |
+| -- |
+| [python docs](http://docs.synapse.org/python/)
+| -- |
+| [R docs](http://docs.synapse.org/r)
 | -- | -- |
-| [python](https://www.synapse.org/#!Synapse:syn1768504/wiki/56099) | [python docs](http://docs.synapse.org/python/)
-| -- | -- |
-| [R](https://www.synapse.org/#!Synapse:syn1834618/wiki/55486) | [R docs](http://docs.synapse.org/r)
-| -- | -- |
-|  | [bash docs](http://docs.synapse.org/python/CommandLineClient.html) |
+| [bash docs](http://docs.synapse.org/python/CommandLineClient.html) |
 
 
 

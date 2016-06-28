@@ -4,7 +4,6 @@ rvm:
 install:
   - bundle install
   - npm install
-  - gem install s3_website
 script:
   - bundle exec jekyll build
 #whitelist
