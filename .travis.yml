@@ -10,14 +10,4 @@ script:
 branches:
   only:
     - master
-#deploy:
-#  provider: s3
-#  access_key_id: $aws_key
-#  secret_access_key: $aws_secret_key
-#  bucket: "docs.synapse.org"
-#  skip_cleanup: true
-#  on:
-#    branch: master
-#    condition: $deploy_to_s3 = TRUE
-
 after_success: bundle exec s3_website push
