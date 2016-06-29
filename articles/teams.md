@@ -13,6 +13,8 @@ Teams are a way to easily manage groups of users for the purposes of project acc
 * Use teams for communications and project permissions
 * Submit to a challenge as a team
 
+<br>
+
 ### Creating a Team
 
 From your Profile Page, which can be accessed by clicking your name in the top right corner, click on the **Teams** tab as seen below.

@@ -219,7 +219,7 @@ While it can be useful to search for files that exist within an known project or
 If annotations have been diligently added to folders, they can be used to discover files of interest.
 For example, you can identify all files annotated as `bam` files (`fileType = bam`) uploaded to Synapse with the following query:
 
-***NOTE:*** *you will only be able to query the files you currently have permission to access.*
+{% include note.html content="You will only be able to query the files you currently have permission to access." %}
 
 ```
 SELECT * FROM file WHERE fileType=="bam"

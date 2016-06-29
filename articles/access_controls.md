@@ -9,9 +9,9 @@ Synapse content is subject to two control settings: the `Sharing setting` and `C
 
 ## Sharing setting
 The `Sharing setting` enables you to invite others to view or collaborate on a project you have created. Projects can be **Public** visible to all or **Private** and visible to selected few. Public projects and contents are shared **broadly** with all registered Synapse users while Private projects and content are shared **sparsely**, with a limited set of designated users (e.g., a team) or not shared at all. **By default, your newly created project is private;** you are the only person that can access it or any content included in it. You can use the `Sharing setting` to enable others to view the content of your projects.
-**Users are responsible for determining the appropriate `Sharing setting` for any content they upload into Synapse.**
+{% include important.html content="Users are responsible for determining the appropriate Sharing Setting for any content they upload into Synapse." %}
 
-####Create a team
+#### Create a team
 If you want to share a project with a specific group of people, you can create a team. Any Synapse user can create a team and invite other Synapse users to join their team. Only after the invited user accepts this invitation is he/she added to the team. Similarly, any Synapse user can request to be added to a team.
 
 ### How to share content
@@ -29,8 +29,9 @@ Inheritance is illustrated in the example below. In the diagram, the projects A 
 
 ## Conditions for Use<a name="conditions_of_use"></a>
 `Conditions for Use` indicate how content can be used. `Conditions for Use` are added to human data that require additional protection based on its type, source and/or collection method. For example, human 'omic' data may have `Conditions for Use` imposed by informed consent requirements, legal contracts, or other privacy requirements. It is also appropriate to add `Condition for Use` to data collected from "vulnerable" population or to content that could potentially harm individuals or groups if misused.
-**Controlled data may not be redistributed.** Controlled data can only be used by authorized investigators and are not transferable (unless explicitly specified otherwise). In other words, you cannot share Controlled data with collaborators unless they have been approved to use the data. Each Synapse users wishing to access Controlled Use data must individually agree to the `Conditions for Use` for that data.
-**Investigators are responsible for determining the appropriate `Conditions for Use` for any data they upload into Synapse.**
+{% include important.html content="Controlled data may not be redistributed." %}
+Controlled data can only be used by authorized investigators and are not transferable (unless explicitly specified otherwise). In other words, you cannot share Controlled data with collaborators unless they have been approved to use the data. Each Synapse users wishing to access Controlled Use data must individually agree to the `Conditions for Use` for that data.
+{% include important.html content="Investigators are responsible for determining the appropriate Conditions for Use for any data they upload into Synapse." %}
 It is important to note that `Conditions for Use` cannot be set for Synapse wiki or discussion forum. These are not designed to house data and therefore do not have local `Conditions for Use` as a feature. Synapse wikis and discussion forum inherit the condition for Use of their parent project.
 
 ### Data that does not require Conditions for Use

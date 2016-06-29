@@ -1,5 +1,5 @@
 ---
-title: Table Queries
+title: Tables
 layout: article
 excerpt: The basics of creating, modifying, and querying tabular data on Synapse.
 ---
@@ -436,6 +436,8 @@ Instructions for Web + screenshots
 <br>
 
 #### Deleting the whole table
+
+**Delete the entire table**
 
 {% tabs %}
 
