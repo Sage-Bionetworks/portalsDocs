@@ -13,7 +13,7 @@ Every project has a Wiki tab where you can build pages and a hierarchy of subpag
 
 
 ### Using the Synapse web portal
-After creating a new project select the Wiki tab. Start a Wiki through the Tools menu by selecting the 'Edit Project Wiki'function. Content in this first Wiki becomes your projects home page. Go to the Tools menu to add subpages to your Wiki. These will appear as links on the left side of your home page (Image?). Adding a wiki to a folder or file is done in a similar manner by selecting 'Edit Folder/File Wiki'. Content added to a Wiki can be Previewed before Saving. Each version of a saved Wiki is visible under Wiki History where older versions can be restored. To delete a Wiki select 'Delete Wiki Page' under Tools.  
+After creating a new project select the Wiki tab. Start a Wiki through the Tools menu by selecting the `Edit Project Wiki` function. Content in this first Wiki becomes your projects home page. Go to the Tools menu to add subpages to your Wiki. These will appear as links on the left side of your home page (Image?). Adding a wiki to a folder or file is done in a similar manner by selecting 'Edit Folder/File Wiki'. Content added to a Wiki can be Previewed before Saving. Each version of a saved Wiki is visible under Wiki History where older versions can be restored. To delete a Wiki select 'Delete Wiki Page' under Tools.  
 
 ### Using R/Python (need someone to complete this)
 {% tabs %} {% tab Command %}
@@ -46,9 +46,11 @@ The layout and text of a Wiki can be customized using Wiki markdown language. A 
 Files, images and videos can be attached to a Wiki. This may be content on from the web, your desktop, or files already uploaded to Synapse. Links can be added to content available from any source with a url or to a Synapse users profile through the Tag someone widget, or by typing @ - just enter the Synapse username in the dialog that appears.
 
 ### Additional Widgets
-See the 'Insert' list for the following widgets to customize your Wiki design. Tip: to edit widgets after they have been added to the wiki see the widget edit button in the upper left hand corner of the Wiki editing window (image?)
+See the 'Insert' list for the following widgets to customize your Wiki design. 
 
-*References
+{% include tip.html content="To edit widgets after they have been added to the wiki, see the widget edit button in the upper left hand corner of the Wiki editing window." %}
+
+* References
 Create a reference list by linking to papers using the References widget
 
 * File Preview

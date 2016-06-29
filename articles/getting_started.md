@@ -398,8 +398,8 @@ click the **Upload or Link to File** button on the Files tab. Go through the dia
 
 <br>
 
-**Local Folder and File Sharing Settings**
-<br>
+### Local Folder and File Sharing Settings
+
 Access to `files, tables`, and `folders` is controlled by the `Sharing setting` that you select for your project. You may also set individual `Sharing settings` for specific `files, tables`, or `folders` within a project.
 
 ## Provenance and Tracking Content

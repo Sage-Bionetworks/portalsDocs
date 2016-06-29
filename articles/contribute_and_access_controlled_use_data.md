@@ -40,7 +40,8 @@ You will see a dialogue box that looks like this, with specific instructions on 
 
 ![accessing data dialog box](/assets/images/accessing_data.png)
 
-**Controlled Use data may not be redistributed.** Each Synapse users wishing to access Controlled Use data must individually agree to the `Conditions for Use` for that data. 
+{% include warning.html content="Controlled Use data may not be redistributed." %}
+Each Synapse users wishing to access Controlled Use data must individually agree to the `Conditions for Use` for that data. 
 
 ### Accessing Bridge Data
 
@@ -49,12 +50,13 @@ from around the world. Bridge data is only accessible to qualified researchers. 
 a user must (1) be a certified user and (2) have an verified profile. In additional, users must agree to the `Conditions for Use` for 
 your desired data set. For example, all Bridge data carries the `Condition for Use` that findings must be published as open access articles. 
 
-**Bridge data may not be redistributed.** Each Synapse user wishing to access Bridge data must individually agree to the `Conditions for Use`.
+{% include warning.html content="Bridge data may not be redistributed." %}
+Each Synapse user wishing to access Bridge data must individually agree to the `Conditions for Use`.
 
 ### Flagging Inappropriate Data Use
 Any human data shared in Synapse, with or without data use restrictions, must be de-identified according to HIPAA Standards and 
 all applicable privacy laws and regulations. Guidance on de-identification according to HIPAA rules can be found [here](http://www.hhs.gov/ocr/privacy){:target="_blank"}. 
 
 **If you believe data made available in Synapse has been posted with inappropriate `Conditions for Use` contact the ACT at <mailto:act@sagebase.org> or 
-click on the *Report Issue* flag next under the folder or file name. This will trigger an email to the ACT who will contact you for more details.**
+click on the `Report Issue` flag next under the folder or file name. This will trigger an email to the ACT who will contact you for more details.**
 

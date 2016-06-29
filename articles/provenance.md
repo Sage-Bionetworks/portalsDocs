@@ -25,9 +25,9 @@ To edit Provenance information for an entity in Synapse, choose **Edit Provenanc
 <img style="float: left;" src="/assets/images/Prov_web_editing.png">
 
 
-### Using R, python, or bash
+### Using command line, Python, or R
 
-The Synapse clients for R, python, and bash support creation and editing of provenance relationships.
+The Synapse clients for command line, Python, and R support creation and editing of provenance relationships.
 
 For example, create a file:
 
@@ -129,7 +129,7 @@ Need example here
 | -- |
 | [R docs](http://docs.synapse.org/r)
 | -- | -- |
-| [bash docs](http://docs.synapse.org/python/CommandLineClient.html) |
+| [command line docs](http://docs.synapse.org/python/CommandLineClient.html) |
 
 
 

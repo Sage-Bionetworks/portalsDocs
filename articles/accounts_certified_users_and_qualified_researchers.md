@@ -4,7 +4,7 @@ layout: article
 excerpt: Find out about the different levels of users and the privileges associated with each type of credential. 
 ---
 
-### About Accounts, Certification and Qualified Researchers
+## About Accounts, Certification and Qualified Researchers
 There are three levels of user credentials in Synapse: anonymous, registered, and certified. 
 The table below summarizes the user privileges for each level.  
 
@@ -26,7 +26,7 @@ A user's ability to download files/tables depends on his/her credentials and, ad
 Synapse users are solely responsible for their action on Synapse. They are expected to abide by the [Synapse Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"} and guiding principles for responsible research as described in the Synapse Governance documents, and reaffirmed in the Synapse Awareness and Ethics Pledge. Please contact the Synapse Access and Compliance Team (ACT@synapse.org) if you have any question regarding Synapse governance.
 The general Terms of Use for Synapse include agreement to use Data ethically and responsibly; to protect the privacy and confidentiality of all sample contributors; not discriminate, identify, or re-contact individuals or groups represented by the Data; keep personal information private and secure from any potential abuses and to comply with all applicable laws and regulations (federal, tribal and local).
 Synapse operates under a complete [governance process](https://www.synapse.org/#!Help:Governance){:target="_blank"} that includes the right of audit and external reviews. Please contact the Synapse Access and Compliance team (act@synapse.org) if you you have any questions or concerns.
-**By using Synapse you consent to all Synapse governance policies and procedures.**
+{% include important.html content="By using Synapse you consent to all Synapse governance policies and procedures." %}
 
 
 ## Anonymous user
@@ -46,9 +46,11 @@ Certified users are authorized to use the full Synapse functionality. In order t
 ## Qualified researchers
 A Synapse Qualified Researcher is a _**Certified User**_ with a _**validated user profile**_.  Synapse Qualified Researchers are eligible to request access to Bridge data (data collected in research studies conducted via self-guided mobile applications.) 
 
-_**Become a Synapse certified user**_. Follow the instructions above to become a Synapse Certified user. 
+#### Become a Synapse certified user
+Follow the instructions above to become a Synapse Certified user. 
 
-_**Get your profile validated**_.  Go to your user profile page (click your name/picture on upper banner of the screen to get there) and use the links in the purple validation box:
+#### Get your profile validated  
+Go to your user profile page (click your name/picture on upper banner of the screen to get there) and use the links in the purple validation box:
 
 1.	Confirm your user profile is complete (your full name, current affiliation, and city/country)
 2.	Link to your ORCID profile (make sure your profile is public and populate it with at least one piece of information about yourself)
