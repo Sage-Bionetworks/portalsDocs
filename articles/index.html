@@ -4,50 +4,53 @@ layout: default
 ---
 
 <style>
-  #toc .toc-h5 {
-    padding-left: 20px;
-  }
   #hover-background:hover {
     background: #f6f6f6;
   }
 </style>
 
-
-<div class="container-fluid" style="padding-top: 15px"> 
-  <div class="row" style="margin:0 0 0 0">
-    <div class="row" style="text-align: center">
+<div class="container-fluid" style="padding-top: 25px"> 
+  <div class="row" style="text-align: center;">
     <h2>Synapse Docs User Guide</h2>
     <h4>Use the articles on this page to learn how to use Synapse</h4>
-    </div>
-    <div class='col-xs-12 col-sm-6'>
-      {% for page in site.pages limit: 9 %}
-      {% if page.layout == 'article' %}
-      <div id="hover-background" class="panel panel-default padding-15" style="padding: 5px 5px 5px 15px">
-        <a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
-        <p style="font-size: 1em; margin: 0 0 0 0">
-          {{page.excerpt}}
-          <a href="{{ page.url }}.html">...Read more</a></p> 
-      </div>
-      {% endif %}
-      {% endfor %}
-    </div>
-
-    <div class='col-xs-12 col-sm-6'>
-      {% for page in site.pages limit: 20 offset: 9 %}
-      {% if page.layout == 'article' %}
-      <div id="hover-background" class="panel panel-default padding-15" style="padding: 5px 5px 5px 15px">
-        <a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
-        <p style="font-size: 1em; margin: 0 0 0 0">
-          {{page.excerpt}}
-          <a href="{{ page.url }}.html">...Read more</a></p> 
-      </div>
-      {% endif %}
-      {% endfor %}
-    </div>
   </div>
-  <div class="panel panel-default padding-15" style="text-align: center; ">
-    <h4>Can't find what you're looking for?
-    Try posting a question on our <a href="https://www.synapse.org/#!SynapseForum:default">Forum</a>.</h4>
+{% assign loopindex = 0 %}
+{% for page in site.pages %}
+{% if page.layout == 'article' %}
+{% assign loopindex = loopindex | plus: 1 %}
+{% assign rowfinder = loopindex | modulo: 2 %}
+{% if rowfinder == 1 %}
+<div class="row" style="padding: 0 25px 0 25px">
+  <div class="col-md-6 col-xs-12">
+    <div id="hover-background" class="panel panel-default padding-15">
+    <a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
+    <p style="font-size: 1em; margin: 0 0 0 0">
+      {{page.excerpt}}
+      <a href="{{ page.url }}.html">...Read more</a>
+    </p>
   </div>
+    </div>
+  {% elsif rowfinder == 0 %}
+  <div class="col-md-6 col-xs-12">
+    <div id="hover-background" class="panel panel-default padding-15">
+    <a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
+    <p style="font-size: 1em; margin: 0 0 0 0">
+      {{page.excerpt}}
+      <a href="{{ page.url }}.html">...Read more</a>
+    </p>
+  </div>
+    </div>
 </div>
-
+{% else %}
+<!--<div class="span0">{{ page.title }}</div>-->
+{% endif %}
+{% endif %}
+{% endfor %}
+{% if rowfinder != 0 %}
+</div>
+{% endif %}
+</div>
+<div class="panel panel-default padding-15" style="text-align: center; ">
+  <h4>Can't find what you're looking for?
+    Try posting a question on our <a href="https://www.synapse.org/#!SynapseForum:default">Forum</a>.</h4>
+</div>
