@@ -27,6 +27,7 @@ Once the team in created, you will be taken to the team page, where you can invi
 
 For teams for which you are a Team Manager, you may invite or delete team members and edit team settings, from the team page. Under the Tools button in the upper right corner of the page you will see options to 
 Invite Users: find and invite registered Synapse users to join your team. Users will be sent an email indicating they have been invited to join the team and must confirm the invitation prior to being included.
+
 * Edit Team: edit the team name, description and icon, and change settings allowing users to join the team without Manger permission or allow non-members to email the team
 * Delete Team: delete all references to the team
 * Leave Team: this option is available to any team member who wants to be removed from a team 
