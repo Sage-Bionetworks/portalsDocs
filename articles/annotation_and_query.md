@@ -6,29 +6,21 @@ excerpt: Learn about what annotations are, how to assign and modify them, and ho
 
 ## Annotations
 Annotations in Synapse are semi-structured metadata that can be added to entities - Projects, Folders, and Files.
-Annotations can be based on an existing ontology (controlled vocabulary such as the Gene Onotology (GO)), an agreed upon set of terms (e.g., describing the results of a sequencing pipeline), or completely free form (like a tag system).
-The annotations can be used to systematically describe groups of entities, which provides a way to search and discover entities in Synapse.
-In Synapse, annotations are simple key-value pairs: the key is the name of the annotation (generally the same across groups of entities) and the values change for each entity.
+Annotations can be based on an existing ontology (controlled vocabulary such as the Gene Onotology (GO)) (add link: http://geneontology.org), an agreed upon set of terms (e.g., describing the results of a sequencing pipeline), or be completely free form (like a tag system). These annotations can be used to systematically describe groups of entities, which provides a way to search and discover Synapse entities.
 
-As an example, let's say you have a collection of alignment files in the BAM file format from an RNASeq experiment, each representing a sample and replicate.
+Synapse annotations are structured as key-value pairs: the key is the name of the annotation group while the value provides specifics. An example; let's say you have a collection of alignment files in the BAM file format from an RNA sequencing experiment, each representing a sample and replicate.
 As is common, much of this information may be encoded in the file name (e.g., `Sample1_ConditionA.bam`).
 However, this makes it difficult to find specific groups of files, such as all replicates of `Sample1`.
 Adding this information as Synapse annotations enables a more complete description of the contents of the file and allows for discovery.
 
 Continuing this example, the annotations you may want to add are:
 
+* `assay = RNA-seq`
 * `fileType = bam`
-* `dataType = mRNA`
 * `sample = 1`
 * `condition = A`
 
-You may have dozens (or thousands) of these files, and each one should get a consistent set of annotations (they all have the same keys: `fileType`, `dataType`, `sample`, and `condition`.)
-
-If these `bam` files were part of a larger sample processing pipeline, you might have many of the same key-value pairs on different entities.
-For example, if the `bam` files were generated from `fastq` files, all annotations would be the same except for `fileType = fastq`.
-Now, you will be able to find all the files for a specific sample.
-
-
+All files you want to be able to search for should have a consistent set of annotations (ie, they should all have the same keys: `assay`, `fileType`, `sample`, and `condition`.) If these samples were part of a dataset with multiple assays, such as RNA-seq and ATAC-seq, you would annotate the file entities with either `assay = RNA-seq` or `assay = ATAC-seq`. Searching for the specific assay would therfore result in the assay specfic files
 
 <br/>
 
@@ -49,7 +41,7 @@ Annotations can be one of four basic types
 
 It's easiest to add annotations when initially uploading the file.
 This can be done using the command line client, the Python client, the R client, or from the Web.
-
+#### Adding annotations using the Python or R client
 {% tabs %}
 	{% tab Command %}
 		{% highlight bash %}
@@ -121,6 +113,7 @@ entity <- synStore(entity, forceVersion = FALSE)
 {% endtabs %}
 
 <br/>
+#### Adding annotations through the web client
 On the web, adding annotations is as easy as clicking the `Annotations` button in the upper right corner, which is available from any Project, Folder, or File entity page.
 
 <img src="/assets/images/annotation-button.png">
