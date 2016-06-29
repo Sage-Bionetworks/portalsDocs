@@ -5,8 +5,8 @@ excerpt: Learn about what annotations are, how to assign and modify them, and ho
 ---
 
 ## Annotations
-Annotations in Synapse are semi-structured metadata that can be added to entities - Projects, Files, and Folders.
-The metadata could come from an existing ontology (controlled vocabulary such as the Gene Onotology (GO)), an agreed upon set of terms (e.g., describing the results of a sequencing pipeline), or completely free form (like a tag system).
+Annotations in Synapse are semi-structured metadata that can be added to entities - Projects, Folders, and Files.
+Annotations can be based on an existing ontology (controlled vocabulary such as the Gene Onotology (GO)), an agreed upon set of terms (e.g., describing the results of a sequencing pipeline), or completely free form (like a tag system).
 The annotations can be used to systematically describe groups of entities, which provides a way to search and discover entities in Synapse.
 In Synapse, annotations are simple key-value pairs: the key is the name of the annotation (generally the same across groups of entities) and the values change for each entity.
 
