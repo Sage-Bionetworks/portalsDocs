@@ -28,20 +28,18 @@ All files you want to be able to search for should have a consistent set of anno
 
 Annotations can be one of four basic types 
 
-* Text
+* Text (character limit=256)
 * Integer
 * Floating point
-* Date
+* Date (date and time)
 
 
 
 <br/>
 
 ### How to assign annotations
-
-It's easiest to add annotations when initially uploading the file.
-This can be done using the command line client, the Python client, the R client, or from the Web.
-#### Adding annotations using the Python or R client
+It is easiest to add annotations when initially uploading the file. This can be done using the command line client, the Python client, the R client, or from the Web. Using the analytical clients facilitates batch and automated population of annotations across many files. The Web client is useful when uploading a single file, or if a minor change needs to be made to annotations on a few files.
+#### Adding annotations using the Python or R client (someone needs to review)
 {% tabs %}
 	{% tab Command %}
 		{% highlight bash %}
@@ -68,12 +66,7 @@ entity <- synStore(entity)
 {% endtabs %}
 
 <br/>
-However, if you haven't decided on the annotations to add yet, you can add and modify the annotations at a later time as well.
-
-Using the R or Python clients facilitates batch and automated population of annotations across many files.
-The Web client is useful when uploading a single file, or if a minor change needs to be made to annotations on a few files.
-
-For the command line, Python, and R clients, you can manipulate annotations
+If you have not decided on the annotations to add yet, you can add and modify the annotations at a later time as well, and you can manipulate annotations that have already been uploaded.
 
 {% tabs %}
 	{% tab Command %}
