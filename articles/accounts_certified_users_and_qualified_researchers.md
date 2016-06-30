@@ -37,13 +37,13 @@ Registered Synapse users can create `Projects` and `Wikis`. They can collaborate
 
 <a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>
 	
-## Certified user
+## Certified user <a name="certified_user"></a>
 Certified users are authorized to use the full Synapse functionality. In order to ensure that users wishing to interact more freely within Synapse are familiar with the [Synapse Commons Data Use Procedure](https://s3.amazonaws.com/static.synapse.org/governance/SynapseCommonsDataUseProcedure.pdf?v=4), **users must pass a short quiz (15 questions, approximately 20 minutes) to become Synapse certified.**
 
 <a href="https://www.synapse.org/#!Quiz:" class="btn btn-primary">Become a Certified User</a>
 
 
-## Qualified researchers
+## Qualified researchers <a name="qualified_researcher"></a>
 A Synapse Qualified Researcher is a _**Certified User**_ with a _**validated user profile**_.  Synapse Qualified Researchers are eligible to request access to Bridge data (data collected in research studies conducted via self-guided mobile applications.) 
 
 #### Become a Synapse certified user
