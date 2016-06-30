@@ -30,5 +30,4 @@ Notary Seal
 
 ---
 
-[Download this template as a Word Doc][1].
-[1]:{{ site.url }}/download/notarized_letter.doc
+[Download this template as a Word Doc]({{ site.url }}/download/notarized_letter.doc).
