@@ -5,15 +5,15 @@ excerpt: Learn about what annotations are, how to assign and modify them, and ho
 ---
 
 ## Annotations
-Annotations in Synapse are semi-structured metadata that can be added to entities - Projects, Files, and Folders.
-The metadata could come from an existing ontology (controlled vocabulary such as the Gene Onotology (GO)), an agreed upon set of terms (e.g., describing the results of a sequencing pipeline), or completely free form (like a tag system).
+Annotations in Synapse are semi-structured metadata that can be added to entities - `Projects`, `Files`, and `Folders`.
+The metadata could come from an existing ontology (controlled vocabulary such as the Gene Ontology (GO)), an agreed upon set of terms (e.g., describing the results of a sequencing pipeline), or completely free form (like a tag system).
 The annotations can be used to systematically describe groups of entities, which provides a way to search and discover entities in Synapse.
 In Synapse, annotations are simple key-value pairs: the key is the name of the annotation (generally the same across groups of entities) and the values change for each entity.
 
 As an example, let's say you have a collection of alignment files in the BAM file format from an RNASeq experiment, each representing a sample and replicate.
 As is common, much of this information may be encoded in the file name (e.g., `Sample1_ConditionA.bam`).
 However, this makes it difficult to find specific groups of files, such as all replicates of `Sample1`.
-Adding this information as Synapse annotations enables a more complete description of the contents of the file and allows for discovery.
+Adding this information as Synapse annotations enables a more complete description of the contents of the `File` and allows for discovery.
 
 Continuing this example, the annotations you may want to add are:
 
@@ -26,7 +26,7 @@ You may have dozens (or thousands) of these files, and each one should get a con
 
 If these `bam` files were part of a larger sample processing pipeline, you might have many of the same key-value pairs on different entities.
 For example, if the `bam` files were generated from `fastq` files, all annotations would be the same except for `fileType = fastq`.
-Now, you will be able to find all the files for a specific sample.
+Now, you will be able to find all the `Files` for a specific sample.
 
 
 
@@ -78,8 +78,8 @@ entity <- synStore(entity)
 <br/>
 However, if you haven't decided on the annotations to add yet, you can add and modify the annotations at a later time as well.
 
-Using the R or Python clients facilitates batch and automated population of annotations across many files.
-The Web client is useful when uploading a single file, or if a minor change needs to be made to annotations on a few files.
+Using the R or Python clients facilitates batch and automated population of annotations across many `Files`.
+The Web client is useful when uploading a single file, or if a minor change needs to be made to annotations on a few `Files`.
 
 For the command line, Python, and R clients, you can manipulate annotations
 
@@ -121,7 +121,7 @@ entity <- synStore(entity, forceVersion = FALSE)
 {% endtabs %}
 
 <br/>
-On the web, adding annotations is as easy as clicking the `Annotations` button in the upper right corner, which is available from any Project, Folder, or File entity page.
+On the web, adding annotations is as easy as clicking the `Annotations` button in the upper right corner, which is available from any `Project`, `Folder`, or `File` entity page.
 
 <img src="/assets/images/annotation-button.png">
 
@@ -146,7 +146,7 @@ Queries in Synapse look SQL-like:
 SELECT * FROM <data type> WHERE <expression>
 ```
 
-where currently supported `<data type>`:
+where currently supported `<data type>` are:
 
 {:.markdown-table}
 | \<data type\> | 
@@ -156,14 +156,16 @@ where currently supported `<data type>`:
 | file      |
 | entity    |
 
-If you know the entity type you are looking for, searching in `project`, `file`, or `folder` is what you want.
-To search over annotations of all entity types, use `entity`.
+If you know the entity type you are looking for, searching in `Project`, `File`, or `Folder` is what you want.
+To search over annotations of all entity types, use `Entity`.
 
 The `<expression>` section are the conditions for limiting the search. Below demonstrates some examples of limiting searches.
 
 For complete information on how to form queries and the types of limiting that can be performed, see the [Synapse Query API](https://sagebionetworks.jira.com/wiki/display/PLFM/Repository+Service+API#RepositoryServiceAPI-QueryAPI).
 
-Along with annotations added by users, every entity has a number of fields useful for searching. For a complete list, see [here](http://hud.rel.rest.doc.sagebase.org.s3-website-us-east-1.amazonaws.com/org/sagebionetworks/repo/model/Entity.html), but here are some really useful ones.
+Along with annotations added by users, every entity has a number of fields useful for searching. For a complete list, see [here](http://hud.rel.rest.doc.sagebase.org.s3-website-us-east-1.amazonaws.com/org/sagebionetworks/repo/model/Entity.html). 
+
+Here are some really useful ones:
 
 * `projectId` which project the entity is associated with
 * `parentId`: where the entity resides (inside a folder/sub-folder; may also be the project if in the root folder) - useful for finding all files if you know they are in a specific folder
@@ -174,9 +176,9 @@ Along with annotations added by users, every entity has a number of fields usefu
 
 ### Finding files in a specific project
 
-To find all files in a specific project, you need to know the `projectId`, which is a Synapse identifier (looks like `syn12345`).
+To find all files in a specific `Project`, you need to know the `projectId`, which is a Synapse identifier (looks like `syn12345`).
 For example, the TCGA Pan-Cancer Project has a `projectId` of syn300013.
-So, the query to find all files and all annotations associated with this project would be:
+So, the query to find all files and all annotations associated with this `Project` would be:
 
 ```
 SELECT * FROM file WHERE projectId=="syn300013"
@@ -187,21 +189,21 @@ SELECT * FROM file WHERE projectId=="syn300013"
 
 ### Listing files in a specific folder
 
-To list the files and annotations in a specific folder, you need to know the Synapse ID of the folder (for example syn1524884, which has data from TCGA related to melanoma). All entities in this folder will have a `parentId` of syn1524884.
+To list the `Files` and annotations in a specific `Folder`, you need to know the Synapse ID of the `Folder` (for example syn1524884, which has data from TCGA related to melanoma). All entities in this `Folder` will have a `parentId` of syn1524884.
 
-So, the query to find all files and all annotations in this folder would be:
+So, the query to find all `Files` and all annotations in this `Folder` would be:
 
 ```
 SELECT * FROM file WHERE parentId=="syn1524884"
 ```
 
-If you wanted to find all the sub-folders in this folder, you would do:
+If you wanted to find all the sub-folders in this `Folder`, you would do:
 
 ```
 SELECT * FROM folder WHERE parentId=="syn1524884"
 ```
 
-If you wanted both files and folders, this would work:
+If you wanted both `Files` and `Folders`, this would work:
 
 ```
 SELECT * FROM entity WHERE parentId=="syn1524884"
@@ -214,10 +216,10 @@ SELECT * FROM entity WHERE parentId=="syn1524884"
 
 Annotations are most useful for discovery of similar types of entities.
 Essentially, all annotations across Synapse are stored in a large table that can be queried to find entities with annotations matching your own criteria.
-While it can be useful to search for files that exist within an known project or folder, this requires that you know ahead of time where the files are.
+While it can be useful to search for `Files` that exist within an known `Project` or `Folder`, this requires that you know ahead of time where the `Files` are.
 
-If annotations have been diligently added to folders, they can be used to discover files of interest.
-For example, you can identify all files annotated as `bam` files (`fileType = bam`) uploaded to Synapse with the following query:
+If annotations have been diligently added to `Folders`, they can be used to discover files of interest.
+For example, you can identify all `Files` annotated as `bam` files (`fileType = bam`) uploaded to Synapse with the following query:
 
 {% include note.html content="You will only be able to query the files you currently have permission to access." %}
 
@@ -226,14 +228,14 @@ SELECT * FROM file WHERE fileType=="bam"
 ```
 
 <br/>
-Likewise, if you had put the mRNA-Seq related files described in the section above into a project (for example syn12345) with the described annotations, then you could find all of the files for `Condition A` for `Sample 1`:
+Likewise, if you had put the mRNA-Seq related files described in the section above into a `Project` (for example syn12345) with the described annotations, then you could find all of the `Files` for `Condition A` for `Sample 1`:
 
 ```
 SELECT * FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"
 ```
 
 <br/>
-Lastly, you may not be interested in all of the possible annotations present on files. If you query and only a subset of entities has a specific annotation, all other entities will have a blank value for that annotation in the query results. You can limit the annotations you want displayed - generally, you want to know the Synapse ID of the entities, the file name, and the annotations you are interested in.
+Lastly, you may not be interested in all of the possible annotations present on `Files`. If you query and only a subset of entities has a specific annotation, all other entities will have a blank value for that annotation in the query results. You can limit the annotations you want displayed - generally, you want to know the Synapse ID of the entities, the file name, and the annotations you are interested in.
 
 ```
 SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"
@@ -272,17 +274,17 @@ result <- synQuery('SELECT id,name,dataType,fileType FROM file WHERE projectId==
 
 <br/>
 
-Also, you can view the query results in a table on the wiki page.
+Also, you can view the query results in a table on the `Wiki` page.
 
-On the wiki page, click `Tools` button in the upper right corner to edit the wiki.
+On the wiki page, click `Tools` button in the upper right corner to edit the `Wiki`.
 
 <img src="/assets/images/query-wiki-tool.png">
 
-A window will pop up where you can edit the wiki content. Click `Insert` and Choose `Table: Query on Files/Folders`.
+A window will pop up where you can edit the `Wiki` content. Click `Insert` and Choose `Table: Query on Files/Folders`.
 
 <img src="/assets/images/query-edit-wiki.png">
 
-Then enter your query in the box and click `Insert` button. Once you `Save` the wiki page, the results will be displayed as a table.
+Then enter your query in the box and click `Insert` button. Once you `Save` the `Wiki` page, the results will be displayed as a table.
 
 <img src="/assets/images/query-file-wiki.png">
 
@@ -292,7 +294,7 @@ Then enter your query in the box and click `Insert` button. Once you `Save` the 
 
 ## How to download based on queries
 
-You can also download files in a folder using queries. Currently this feature is only available in the command line client. For example, if you want to download all the files in a folder that has a synapse id of `syn00123`, use
+You can also download `Files` in a `Folder` using queries. Currently this feature is only available in the command line client. For example, if you want to download all the `Files` in a `Folder` that has a synapse id of `syn00123`, use
 
 ```
 synapse get -q 'SELECT * FROM file WHERE parentId == "syn00123"'
