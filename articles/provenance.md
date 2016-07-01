@@ -20,7 +20,7 @@ On the right is a Synapse visualization of provenance relationships involved in 
 
 The model Synapse uses for provenance is based on the [W3C provenance spec](https://www.w3.org/standards/techs/provenance#w3c_all){:target="_blank"} where items are derived from an **activity** which has components that were **used**  and components that were **executed**.  Think of the used items as input files and executed items as software or code.  Both used and executed can either be items in Synapse or URLs such as a link to a github commit or a link to specific version of a software tool.  
 
-To edit Provenance information for an entity in Synapse, choose **Edit Provenance** from the Tools menu of the webpage for your entity. This will bring up a dialog that lets you name the **activity** and specify which elements were **used** and **executed** to create the file. The below example shows a filtering activity that has a synapse ID as an input (used) element and some code in github that was executed. You can specify more than one used and/or executed items if needed.
+To edit Provenance information for an entity in Synapse, choose **Edit Provenance** from the Tools menu of the webpage for your entity. This will bring up a dialog that lets you name the **activity** and specify which elements were **used** and **executed** to create the `File`. The below example shows a filtering activity that has a synapse ID as an input (used) element and some code in github that was executed. You can specify more than one used and/or executed items if needed.
 
 <img style="float: left;" src="/assets/images/Prov_web_editing.png">
 
@@ -29,7 +29,7 @@ To edit Provenance information for an entity in Synapse, choose **Edit Provenanc
 
 The Synapse clients for command line, Python, and R support creation and editing of provenance relationships.
 
-For example, create a file:
+For example, create a `File`:
 
 {% tabs %}
 

@@ -5,28 +5,28 @@ excerpt: The basics of creating, modifying, and querying tabular data on Synapse
 ---
 
 ## Tables
-Synapse Tables is a feature designed to provide users the ability to create web-accessible, sharable, and queryable 
+Synapse `Tables` is a feature designed to provide users the ability to create web-accessible, sharable, and queryable 
 data where columns can have a user-specified structured schema. Users may define table columns to contain common primitive 
-data types (text, numbers, dates, etc.) or references to other Synapse objects (e.g., Files). Therefore, it is possible to 
+data types (text, numbers, dates, etc.) or references to other Synapse objects (e.g., `Files`). Therefore, it is possible to 
 organize sample metadata into tables that include columns for desired sample fields, as well as columns that link the sample 
 information to a heterogeneous collection of files.
-Tables may be queried and edited through both the Synapse web portal as well as through our analytical clients 
-that enable direct access to these data from analysis pipeline code. Unlike most NoSQL systems, the data in Synapse tables 
+`Tables` may be queried and edited through both the Synapse web portal as well as through our analytical clients 
+that enable direct access to these data from analysis pipeline code. Unlike most NoSQL systems, the data in Synapse `Tables` 
 is strongly consistent, not eventually consistent. This is an important design consideration for scientific data processing, 
 as analysis on eventually-consistent data sources can limit the types of analysis performed, and may require special coding 
 strategies to ensure reasonable accuracy.
 
 
 ### Table Schema
-Synapse Tables contain metadata that specifies the types of columns included in the Table. These columns can be specified manually, 
+Synapse `Tables` contain metadata that specifies the types of columns included in the `Table`. These columns can be specified manually, 
 or Synapse can recommend column types when a user uploads a data file.
 
 ### Table Data
-The data contained within a Synapse Table can be retrieved by using a SQL-like query language either through the web portal or through 
+The data contained within a Synapse `Table` can be retrieved by using a SQL-like query language either through the web portal or through 
 the analytical clients. **See the [API docs](http://docs.synapse.org/rest) for an enumeration of the types of queries that can be performed.** Here are a couple of simple 
 examples.
 
-To get all of the columns from a Table with id syn3079449, the following query would be used:
+To get all of the columns from a `Table` with id syn3079449, the following query would be used:
 
 ````
 SELECT * FROM syn3079449
@@ -61,7 +61,7 @@ SELECT * FROM syn3079449 WHERE age > 50 ORDER BY "treatmentArm" ASC
 
 ### Overview  
 Synapse allows you to create, modify and query tabular data.
-A table has a Schema and holds a set of rows conforming to that schema.
+A `Table` has a Schema and holds a set of rows conforming to that schema.
 A Schema is defined in terms of Column objects that specify types from the following choices: 
 STRING, DOUBLE, INTEGER, BOOLEAN, DATE, ENTITYID, FILEHANDLEID.
 
@@ -464,7 +464,7 @@ Instructions for Web + screenshots
 <br>
 
 ## More on tables
-There are additional docs available for tables in both Python and R that cover more advanced topics such as table attached files and uploading .csv data via the Python client without using Pandas.
+There are additional docs available for `Tables` in both Python and R that cover more advanced topics such as table attached files and uploading .csv data via the Python client without using Pandas.
 
 For **Python** check out our [Python Docs](http://docs.synapse.org/python/Table.html#module-synapseclient.table).
 
