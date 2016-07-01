@@ -392,3 +392,11 @@ input.gsc-search-button-v2 {
 #bootstrap-overrides .btn:hover {
   background-position-y: 0px;
 }
+
+#bootstrap-overrides code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #555555;
+    background-color: #f9f2f4;
+    border-radius: 3px;
+}
