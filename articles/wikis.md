@@ -35,7 +35,7 @@ placeholderText <- "* Cell growth look normally distributed\n* There is evidence
 {% endtabs %}
 
 ## Governance
-Access Controls are not available for Wiki pages. Protected human data should therefore not be shared through `Wikis` unless it is embedded content stored in Synapse, such as `Files` and `Tables`, that have the appropriate access controls in place. Only people with the appropriate access permission will be able to see the embedded content. See the Synapse Data Use Procedure document for [details](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}.
+`Wiki` pages do not have `Conditions for Use` as a feature. Therefore, **do not** put any protected human data (`Controlled Data`) in Synapse `Wikis`. See the Synapse Data Use Procedure document for [details](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}.
 
 ## Wiki Features
 
