@@ -24,4 +24,4 @@ Contact information for signing official:
 
 ---
 
-[Download this template as a Word Doc]({{ site.url }}/download/signing_official.doc)
+[Download this template as a Word Doc](/assets/downloads/signing_official.doc)

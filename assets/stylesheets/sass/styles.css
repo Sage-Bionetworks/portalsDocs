@@ -40,7 +40,7 @@ article pre {
   margin-top: 60px; }
 
 strong {
-  color: #cb4b16; }
+  color: #000000; }
 
 .highlight {
   line-height: 25px;
@@ -391,4 +391,12 @@ input.gsc-search-button-v2 {
 
 #bootstrap-overrides .btn:hover {
   background-position-y: 0px;
+}
+
+#bootstrap-overrides code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #555555;
+    background-color: #f5f5f5;
+    border-radius: 3px;
 }

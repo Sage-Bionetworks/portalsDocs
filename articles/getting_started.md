@@ -188,7 +188,7 @@ By default, your newly created `Project` is private; you are the only person who
 As you create content in Synapse the items are associated with unique accession ids.  That are used to uniquely reference your content.  For example your newly created `Project` will have a Synapse Id with the format syn1234.
 
 
-**Synapse Ids are used to uniquely identify `Files`, `Folders`, `Projects` and `Tables` in Synapse**
+{% include note.html content= " Synapse Ids are used to uniquely identify Files, Folders, Projects and Tables in Synapse." %}
 
 You can view what you have created in Synapse on the web with:
 
