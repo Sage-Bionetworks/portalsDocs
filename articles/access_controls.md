@@ -1,7 +1,7 @@
 ---
-title: "Access Controls and Data Governance: Sharing Settings and Conditions for Use"
+title: "Sharing Settings and Conditions for Use"
 layout: article
-excerpt: Learn how to set access controls and data governance on Synapse using `Sharing settings` and `Conditions for Use`. 
+excerpt: Synapse has two content controls: the Sharing setting and Conditions for Use. Learn how to set Sharing settings and Conditions for Use. 
 ---
 
 ## 
@@ -12,10 +12,7 @@ You can use the `Sharing setting` to invite people to view or collaborate on a S
 {% include important.html content="Synapse users are responsible for determining the appropriate `Sharing Setting` for any content they upload into Synapse." %}
 
 ### How to share content
-To adjust the `Sharing setting`, click the `Share` button at the upper right hand side of the `Project's` header. This will open a window listing the Synapse users who have access to the `Project` and their roles. A globe icon means the `Project` is **Public**. A lock icon means the `Project` is **Private**. When you create a new `Project` you are the only Synapse user listed in this window. Use the `Add People` feature to add collaborators individually or to add a team of collaborators.
-
-#### Create a team
-If you want to share a `Project` with a specific group of people, you can create a team. Any Synapse user can create a team. From your Synapse profile homepage, click on the `Team` button and then use the `Create Team` dialogue box to get started. When you create a team, an invitation is sent automatically to each person you invite. People are only added to the team _after_ they accept this invitation. Similarly, if you see a team you would like to be part of, you can request to join the team by clicking the `Request to Join Team` button on the team's homepage. You are only added to the team _after_ the team's administrator approves your request.
+To adjust the `Sharing setting`, click the `Share` button at the upper right hand side of the `Project's` header. This will open a window listing the Synapse users who have access to the `Project` and their roles. A globe icon means the `Project` is **Public**. A lock icon means the `Project` is **Private**. When you create a new `Project` you are the only Synapse user listed in this window. Use the `Add People` feature to add collaborators individually or to add a [team of collaborators](/articles/teams.html).
 
 
 ![sharing button examples]({{site.url}}/assets/images/sharing_buttons_examples.png)
@@ -34,7 +31,7 @@ Some data requires data governance to appropriately manage its use. In Synapse t
 `Controlled Data` can only be downloaded and used by authorized Synapse users. `Controlled Data` is not transferable unless explicitly specified otherwise. In other words, you cannot share `Controlled Data` with collaborators. Each Synapse user wishing to access `Controlled Data` must individually agree to the `Conditions for Use` to access that data.
 
 {% include important.html content="Synapse users are responsible for determining the appropriate `Conditions for Use` for any data they upload into Synapse." %}
-It is important to note that `Conditions for Use` cannot be set for Synapse `Wikis` or `Discussion Forums`: they are not designed to house data and therefore do not have local `Conditions for Use` as a feature. Synapse `Wikis` or `Discussion Forums` inherit the `Conditions for Use` of their Synapse parent `Project`.
+It is important to note that `Conditions for Use` cannot be set for Synapse `Wikis` or `Discussion Forums`: they are not designed to house data and therefore do not have local `Conditions for Use` as a feature. 
 
 ### Data that does not require Conditions for Use
 Synapse `Open Data` is data that does not require `Conditions for Use`. Any registered Synapse user included in the `Project`, `Folder`, `File` or `Table` (based on the `Sharing setting`) can immediately access `Open Data`. Typically, `Open Data` is:
