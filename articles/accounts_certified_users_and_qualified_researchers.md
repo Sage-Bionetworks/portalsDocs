@@ -23,7 +23,7 @@ The table below summarizes the user privileges for each level.
 *Your ability to download a `File` or `Table` depends on your Synapse user type AND fulfilling the `Conditions for Use`, if any, of the `File` or `Table`.  
 
 ## User Responsibilities
-You are solely responsible for your actions on Synapse. You are required to abide by the [Synapse Terms and Conditions of Use]( https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"} and all policies and principles described in the [Synapse governance documents]({{site.url}}/articles/governance.html). We strongly encourage you to familiarize yourself with these documents. Please contact the Synapse Access and Compliance Team (act@synapse.org) if you have any questions.
+You are solely responsible for your actions on Synapse. You are required to abide by the [Synapse Terms and Conditions of Use]( https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"} and all policies and principles described in the [Synapse governance documents]({{site.url}}/articles/governance.html). We strongly encourage you to familiarize yourself with these documents. Please contact the Synapse Access and Compliance Team (<mailto:act@synapse.org>) if you have any questions.
 {% include important.html content="By using Synapse you consent to all Synapse governance policies and procedures." %}
 
 ## About Creating, Updating, and Deleting Synapse Accounts
@@ -49,7 +49,7 @@ Anyone can browse Synapse anonymously to review the platform features and resour
 
 
 #### Get your profile validated  
-Go to your Synapse profile homepage (click your name/picture on upper banner of the screen to get there) and use the links in the purple validation box:
+Go to your [Synapse profile homepage](https://www.synapse.org/#!Profile:v){:target="_blank"} (click your name/picture on upper banner of the screen to get there) and use the links in the purple validation box:
 
 1.	Confirm your user profile is complete including **your full name, current affiliation, and city/country.**
 2.	Link to your ORCID profile. **Make sure your profile is public and populate it with at least one piece of information about yourself.**
