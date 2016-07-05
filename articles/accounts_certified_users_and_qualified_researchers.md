@@ -1,11 +1,11 @@
 ---
-title: "Synapse User Credentials including Certified Users and Qualified Researchers"
+title: "User Types including Certified Users"
 layout: article
-excerpt: Find out about the three levels of Synapse user credentials and the privileges and responsibilities associated with each level 
+excerpt: Find out about the three levels of Synapse users and the privileges and responsibilities associated with each level 
 ---
 
 ## About Accounts, Certification and Qualified Researchers
-There are three levels of user credentials in Synapse: `Anonymous`, `Registered`, and `Certified`. 
+There are three levels of users in Synapse: `Anonymous`, `Registered`, and `Certified`. 
 The table below summarizes the user privileges for each level.  
 
 <table class="markdown-table border text-align-center">
@@ -20,7 +20,7 @@ The table below summarizes the user privileges for each level.
 </table>
 
 
-*Your ability to download a `File` or `Table` depends on your Synapse credentials AND fulfilling the `Conditions for Use`, if any, of the `File` or `Table`.  
+*Your ability to download a `File` or `Table` depends on your Synapse user type AND fulfilling the `Conditions for Use`, if any, of the `File` or `Table`.  
 
 ## User Responsibilities
 You are solely responsible for your actions on Synapse. You are required to abide by the [Synapse Terms and Conditions of Use]( https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"} and all policies and principles described in the [Synapse governance documents](https://www.synapse.org/#!Synapse:syn2502577/wiki/65109). We strongly encourage you to familiarize yourself with these documents. Please contact the Synapse Access and Compliance Team (act@synapse.org) if you have any questions.
@@ -39,16 +39,14 @@ Anyone can browse Synapse anonymously to review the platform features and resour
 <a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>
 	
 ## Certified Users
-`Certified Users` are authorized to use the full Synapse functionality. In order to ensure that users wishing to interact more freely within Synapse are familiar with the [Synapse Commons Data Use Procedure](https://s3.amazonaws.com/static.synapse.org/governance/SynapseCommonsDataUseProcedure.pdf?v=4), **users must pass a short quiz (15 questions, approximately 20 minutes) to become `Certified`.**
+`Certified Users` are authorized to use the full Synapse functionality. In order to ensure that users wishing to interact more freely within Synapse are familiar with the [Synapse Commons Data Use Procedure](https://s3.amazonaws.com/static.synapse.org/governance/SynapseCommonsDataUseProcedure.pdf?v=4), **users must pass a short [quiz](https://www.synapse.org/#!Quiz:Certification) (15 questions, approximately 20 minutes) to become `Certified`.**
 
 <a href="https://www.synapse.org/#!Quiz:" class="btn btn-primary">Become a Certified User</a>
 
 
-## Qualified researchers
-A `Qualified Researcher` is a Synapse `Certified User` with a _**validated user profile**_.  Synapse `Qualified Researchers` are eligible to request access to Bridge data (data collected in research studies conducted via self-guided mobile applications.) 
+## Validated Profile
+`Certified Users` can apply to have their _**user profile validated **_.  A Synapse user with a `Validated Profile` is eligible to request access to Bridge data (data collected in research studies conducted via self-guided mobile applications.) 
 
-#### Become a Synapse certified user
-Follow the instructions above to become a Synapse Certified user. 
 
 #### Get your profile validated  
 Go to your Synapse profile homepage (click your name/picture on upper banner of the screen to get there) and use the links in the purple validation box:
