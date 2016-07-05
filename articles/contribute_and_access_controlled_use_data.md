@@ -9,7 +9,7 @@ You must be a `Certified User` to contribute data to Synapse. You are responsibl
 
 If there are no ethical, legal or regulatory reasons to impose `Conditions for Use`, the data can be used for any lawful research purpose. All human data shared in Synapse, with or without `Conditions for Use`, must be de-identified according to **HIPAA standards** and comply with all applicable privacy laws and regulations. Guidance on de-identification according to HIPAA rules can be found [here](http://www.hhs.gov/ocr/privacy){:target="_blank"}. 
 
-`Conditions for Use` can be set at the `Project`, `Folder`, or `File`/`Table` level. We recommend grouping `Files` that require the same `Conditions for Use` in a dedicated `Folder` within your `Project`. For more information about setting `Conditions for Use` please see [Access Controls and Data Governance].
+`Conditions for Use` can be set at the `Project`, `Folder`, or `File`/`Table` level. We recommend grouping `Files` that require the same `Conditions for Use` in a dedicated `Folder` within your `Project`. For more information about setting `Conditions for Use` please see [Access Controls and Data Governance](/articles/access_controls.html).
 
 ## Accessing Data
 
@@ -27,7 +27,7 @@ Each Synapse user wishing to access `Controlled Data` must individually agree to
 ### Accessing Bridge Data
 
 Synapse houses Bridge data, data collected through research apps. This data has been donated by thousands of volunteers 
-from around the world. Bridge data is only accessible to `Qualified Researchers`. To learn more about becoming a `Qualified Researcher` see [Synapse User Credentials]. 
+from around the world. Bridge data is only accessible to Users with a `Validated Profile`. To learn more see [Synapse User Credentials](articles/accounts_certified_users_and_qualified_researchers.html#qualified_researcher). 
 
 {% include warning.html content="Bridge data may not be redistributed." %}
 Each Synapse user wishing to access Bridge data must individually agree to the `Conditions for Use`.
