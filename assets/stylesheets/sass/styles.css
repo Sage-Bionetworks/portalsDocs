@@ -40,7 +40,7 @@ article pre {
   margin-top: 60px; }
 
 strong {
-  color: #000000; }
+  color: #666666; }
 
 .highlight {
   line-height: 25px;
@@ -325,7 +325,12 @@ section:last-child, .section:last-child, section.last, .section.last {
   text-transform: uppercase;
   font-size: 0.70em;
     font-weight: bold;
-    margin-left: 1.0em;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+
+#bootstrap-overrides .navbar-inverse .brand, .navbar-inverse .nav > li > a:hover {
+    text-decoration: underline;
 }
 
 .header-dropdown {
