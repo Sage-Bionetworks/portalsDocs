@@ -49,6 +49,7 @@ The ACT supports ethical use of Synapse, including adjudicating suspected unauth
 You should not hesitate to get in touch with the ACT (act@synapse.org) if you have questions or suggestions about Synapse governance, including the policies, ethics, or rules for data sharing on Synapse. 
 
 It is your responsibility to contact the ACT (act@synapse.org) if: 
+
 -	You suspect that data is improperly shared on Synapse
 -	You are concerned that data shared on Synapse is improperly or incompletely de-identified
 -	You suspect unauthorized use of Synapse data
