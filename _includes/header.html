@@ -101,12 +101,12 @@
                             s.parentNode.insertBefore(gcse, s);
                         })();
                         $(function() {
-                             var pgurl = '/articles/' + window.location.href.substr(window.location.href
-                        .lastIndexOf("/")+1);
-                             $("ul.nav li a").each(function(){
-                                  if($(this).attr("href") == pgurl)
-                                    $(this).parent().addClass("active");
-                             })
+                             if (window.location.pathname && window.location.pathname != '/') {
+                                 $("ul.nav li a").each(function(){
+                                      if($(this).attr("href") == window.location.pathname)
+                                        $(this).parent().addClass("active");
+                                 })   
+                             }
                         });
                     </script>
                     <gcse:search></gcse:search>
