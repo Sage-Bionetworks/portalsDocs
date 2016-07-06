@@ -33,24 +33,22 @@ Annotations can be one of four basic types
 * Floating point
 * Date (date and time)
 
-
-
 <br/>
 
 ### How to assign annotations
-It is easiest to add annotations when initially uploading the file. This can be done using the command line client, the Python client, the R client, or from the Web. Using the analytical clients facilitates batch and automated population of annotations across many files. The Web client is useful when uploading a single file, or if a minor change needs to be made to annotations on a few files.
+It is easiest to add annotations when initially uploading a file. This can be done using the command line client, the Python client, the R client, or from the Web. Using the analytical clients facilitates batch and automated population of annotations across many files. The Web client is useful when uploading a single file, or if a minor change needs to be made to annotations on a few files.
 #### Adding annotations using the Python or R client (someone needs to review)
 {% tabs %}
 	{% tab Command %}
 		{% highlight bash %}
-synapse store Sample1_ConditionA.bam --parentId syn00123 --annotations '{"fileType":"bam", "dataType":"mRNA"}'
+synapse store Sample1_ConditionA.bam --parentId syn00123 --annotations '{"fileType":"bam", "assay":"RNA-seq"}'
 		{% endhighlight %}
 	{% endtab %}
 
 	{% tab Python %}
 		{% highlight python %}
 entity = File(path="Sample1_ConditionA.bam",parent="syn00123")
-entity.annotations = {"fileType":"bam", "dataType":"mRNA"}
+entity.annotations = {"fileType":"bam", "assay":"RNA-seq"}
 syn.store(entity)
 		{% endhighlight %}
 	{% endtab %}
@@ -58,7 +56,7 @@ syn.store(entity)
 	{% tab R %}
 		{% highlight r %}
 entity <- File("Sample1_ConditionA.bam",parent="syn00123")
-synSetAnnotations(entity) <- list(fileType = "bam", dataType = "mRNA")
+synSetAnnotations(entity) <- list(fileType = "bam", assay = "RNA-seq")
 entity <- synStore(entity)
 		{%endhighlight %}
 	{% endtab %}
@@ -71,7 +69,7 @@ If you have not decided on the annotations to add yet, you can add and modify th
 {% tabs %}
 	{% tab Command %}
 		{% highlight bash %}
-synapse set-annotations --id syn123 --annotations '{"fileType":"bam", "dataType":"mRNA"}'
+synapse set-annotations --id syn123 --annotations '{"fileType":"bam", "assay":"RNA-seq"}'
 		{% endhighlight %}
 	{% endtab %}
 
@@ -79,11 +77,11 @@ synapse set-annotations --id syn123 --annotations '{"fileType":"bam", "dataType"
 		{% highlight python %}
 entity = syn.get("syn123")
 
-# Assigning ONLY one annotation
+##### Assigning ONLY one annotation
 entity.fileType = 'bam'
 entity['fileType'] = 'bam'
-# Assigning a set of annotations
-entity.annotations = {"fileType":"bam", "dataType":"mRNA"}
+##### Assigning a set of annotations
+entity.annotations = {"fileType":"bam", "assay":"RNA-seq"}
 
 syn.store(entity, forceVersion = F)
 		{% endhighlight %}
@@ -94,10 +92,10 @@ syn.store(entity, forceVersion = F)
 
 entity <- synGet("syn123")
 
-# Assigning ONLY one annotation
+##### Assigning ONLY one annotation
 synSetAnnotation(entity, "filType") <- "bam"
 # Assigning a set of annotations
-synSetAnnotations(entity) <- list(fileType = "bam", dataType = "mRNA")
+synSetAnnotations(entity) <- list(fileType = "bam", assay = "RNA-seq")
 
 entity <- synStore(entity, forceVersion = FALSE)
 		{%endhighlight %}
@@ -107,20 +105,20 @@ entity <- synStore(entity, forceVersion = FALSE)
 
 <br/>
 #### Adding annotations through the web client
-On the web, adding annotations is as easy as clicking the `Annotations` button in the upper right corner, which is available from any Project, Folder, or File entity page.
+To add annotations through the web client, click the `Annotations` button in the upper right corner on a Project, Folder, or File page.
 
 <img src="/assets/images/annotation-button.png">
 
-This pops up a table of all existing annotations. Click the `Edit` button to add, delete, or modify the annotations.
+Click the `Edit` button in the resulting table to add, delete, or modify annotations.
 
 <img src="/assets/images/annotation-box.png">
 
-Now, you are able to enter a key (the name of the annotation), select the type, and enter a value.
-Lastly, click `Save` to store the annotations for this entity.
+Start by entering a Key (the name of the annotation), select the type (text, integer etc.,), and enter the Value. For example Key=assay - Value=RNA-seq. Click `Save` to store the annotations for this entity.
 
 <img src="/assets/images/annotation-edit-box.png">
 
-
+To enter multiple Values for a single Key click `Enter` with the cursor in the Value field.
+(need image)
 
 <br/>
 
@@ -196,30 +194,28 @@ SELECT * FROM entity WHERE parentId=="syn1524884"
 
 <br/>
 
-## How to query on annotations
+### Queries on annotations
 
-Annotations are most useful for discovery of similar types of entities.
-Essentially, all annotations across Synapse are stored in a large table that can be queried to find entities with annotations matching your own criteria.
-While it can be useful to search for files that exist within an known project or folder, this requires that you know ahead of time where the files are.
+Annotations are most useful for discovery of similar types of entities. Essentially, all annotations across Synapse are stored in a large table that can be queried to find entities with annotations matching your own criteria. While it can be useful to search for files that exist within an known project or folder, this requires that you know ahead of time where the files are.
 
 If annotations have been diligently added to folders, they can be used to discover files of interest.
 For example, you can identify all files annotated as `bam` files (`fileType = bam`) uploaded to Synapse with the following query:
 
-***NOTE:*** *you will only be able to query the files you currently have permission to access.*
+***NOTE:*** *you will only be able to query the files you have permission to access.*
 
 ```
 SELECT * FROM file WHERE fileType=="bam"
 ```
 
 <br/>
-Likewise, if you had put the mRNA-Seq related files described in the section above into a project (for example syn12345) with the described annotations, then you could find all of the files for `Condition A` for `Sample 1`:
+Likewise, if you had put the RNA-seq related files described in the section above into a project (for example syn12345) with the described annotations, then you could find all of the files for `Condition A` for `Sample 1`:
 
 ```
 SELECT * FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"
 ```
 
 <br/>
-Lastly, you may not be interested in all of the possible annotations present on files. If you query and only a subset of entities has a specific annotation, all other entities will have a blank value for that annotation in the query results. You can limit the annotations you want displayed - generally, you want to know the Synapse ID of the entities, the file name, and the annotations you are interested in.
+Lastly, you can query on a subset of entities that have a specific annotation. You can limit the annotations you want displayed as following.
 
 ```
 SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"
@@ -227,9 +223,7 @@ SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sampl
 
 <br/>
 
-You can query by using one of the analytical clients (command line, Python, and R). 
-
-Using the example above, queries can be performed using these clients
+Queries can be constructed using one of the analytical clients (command line, Python, and R). Using the example above this can be done as following:
 
 {% tabs %}
 	{% tab Command %}
@@ -240,10 +234,10 @@ synapse query 'SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn1
 
 	{% tab Python %}
 		{% highlight python %}
-# Option 1 
+#### Option 1 
 result = syn.query('SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"')
 
-# Option 2 (More robust way)
+#### Option 2 (More robust way)
 result = syn.chunckedQuery('SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"')
 		{% endhighlight %}
 	{% endtab %}
@@ -258,27 +252,26 @@ result <- synQuery('SELECT id,name,dataType,fileType FROM file WHERE projectId==
 
 <br/>
 
-Also, you can view the query results in a table on the wiki page.
+Query results can be diplayed in a table on a wiki page.
 
 On the wiki page, click `Tools` button in the upper right corner to edit the wiki.
 
 <img src="/assets/images/query-wiki-tool.png">
 
-A window will pop up where you can edit the wiki content. Click `Insert` and Choose `Table: Query on Files/Folders`.
+Click `Insert` and Choose `Table: Query on Files/Folders`.
 
 <img src="/assets/images/query-edit-wiki.png">
 
-Then enter your query in the box and click `Insert` button. Once you `Save` the wiki page, the results will be displayed as a table.
+Enter your query in the box and click teh `Insert` button. Once you `Save` the wiki page, the results will be displayed as a table.
 
 <img src="/assets/images/query-file-wiki.png">
-
 
 
 <br/>
 
 ## How to download based on queries
 
-You can also download files in a folder using queries. Currently this feature is only available in the command line client. For example, if you want to download all the files in a folder that has a synapse id of `syn00123`, use
+You can download files in a folder using queries. Currently this feature is only available in the command line client. For example, if you want to download all files in a folder that has a synapse id of `syn00123`, use
 
 ```
 synapse get -q 'SELECT * FROM file WHERE parentId == "syn00123"'
