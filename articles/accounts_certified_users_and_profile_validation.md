@@ -4,7 +4,10 @@ layout: article
 excerpt: Find out about the three levels of Synapse users and the privileges and responsibilities associated with each level 
 ---
 
-## About Accounts, Certification and Profile Validation
+<a name="synapse-user-credentials"></a>
+
+## About Accounts, Certification and Profile Validation 
+
 There are three levels of users in Synapse: `Anonymous`, `Registered`, and `Certified`. 
 The table below summarizes the user privileges for each level.  
 

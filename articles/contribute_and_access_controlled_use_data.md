@@ -32,6 +32,8 @@ from around the world. Bridge data is only accessible to Users with a `Validated
 {% include warning.html content="Bridge data may not be redistributed." %}
 Each Synapse user wishing to access Bridge data must individually agree to the `Conditions for Use`.
 
+<a name="flagging-inappropriate-data-use"></a>
+
 ### Flagging Inappropriate Data Use
 Any human data shared in Synapse, with or without `Conditions for Use`, must be de-identified according to HIPAA Standards and 
 all applicable privacy laws and regulations [see [Contributing Data](#contributing-data), above]. **If you believe data made available in Synapse has been posted with inappropriate `Conditions for Use` contact the ACT at <mailto:act@sagebase.org> or click on the `Report Issue` flag (found at the center of the header). This will trigger an email to the ACT who will contact you for more details.**
