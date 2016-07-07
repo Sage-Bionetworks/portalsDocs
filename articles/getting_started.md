@@ -103,7 +103,7 @@ As Synapse can store human subject data that has sharing and use restrictions, y
 
 <a href="https://www.synapse.org/#!Quiz:Certification" class="btn btn-primary">Become a Certified User</a>{:target="_blank"}
 
-Explore our [accounts, certification and qualified researchers](/articles/accounts_certified_users_and_qualified_researchers.html) page to find out more information on the different levels of users.  
+Explore our [accounts, certification and profile validation](/articles/accounts_certified_users_and_profile_validation.html) page to find out more information on the different levels of users.  
 
 
 ## Project and Data Management on Synapse
