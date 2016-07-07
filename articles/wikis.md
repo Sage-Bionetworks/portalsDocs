@@ -46,6 +46,8 @@ The layout and text of a Wiki can be customized using Wiki markdown language. A 
 Files, images and videos can be attached to a Wiki. This may be content on from the web, your desktop, or files already uploaded to Synapse. Links can be added to content available from any source with a url or to a Synapse users profile through the Tag someone widget, or by typing @ - just enter the Synapse username in the dialog that appears.
 
 ### Additional Widgets
+On the project Wiki page, go to 'Tools' and click on 'Edit Project Wiki'
+
 See the 'Insert' list for the following widgets to customize your Wiki design. Tip: to edit widgets after they have been added to the wiki see the widget edit button in the upper left hand corner of the Wiki editing window (image?)
 
 *References
