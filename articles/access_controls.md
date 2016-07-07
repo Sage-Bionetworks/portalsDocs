@@ -36,8 +36,6 @@ Some data requires data governance to appropriately manage its use. In Synapse t
 {% include important.html content="Controlled Data may not be redistributed." %}
 `Controlled Data` can only be downloaded and used by authorized Synapse users. `Controlled Data` is not transferable unless explicitly specified otherwise. In other words, you cannot share `Controlled Data` with collaborators. Each Synapse user wishing to access `Controlled Data` must individually agree to the `Conditions for Use` to access that data.
 
-<a name="discussion-sharing-setting"></a>
-
 {% include important.html content="Synapse users are responsible for determining the appropriate Conditions for Use for any data they upload into Synapse." %}
 
 It is important to note that `Conditions for Use` cannot be set for Synapse `Wikis` or `Discussion Forums`: they are not designed to house data and therefore do not have local `Conditions for Use` as a feature. 
