@@ -49,7 +49,8 @@ Files, images and videos can be attached to a Wiki. This may be content on from 
 On the project Wiki page, go to 'Tools' and click on 'Edit Project Wiki'
 <img src="/assets/images/wiki_editprojectwiki.png">
 
-See the 'Insert' list for the following widgets to customize your Wiki design. Tip: to edit widgets after they have been added to the wiki see the widget edit button in the upper left hand corner of the Wiki editing window (image?)
+See the 'Insert' list for the following widgets to customize your Wiki design. Tip: to edit widgets after they have been added to the wiki see the widget edit button in the upper left hand corner of the Wiki editing window
+<img src="/assets/images/wiki_insertwidget.png">
 
 *References
 Create a reference list by linking to papers using the References widget
