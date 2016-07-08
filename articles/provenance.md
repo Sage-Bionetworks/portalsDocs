@@ -10,7 +10,7 @@ Reproducible research is a fundamental responsibility of scientists, but the bes
 
 <img src="/assets/images/Prov_web_screenshot.png" align="right">
 
-Provenance is a concept describing the origin of something; in Synapse it is used to describe the connections between workflow steps that derive a particular file of results. Data analysis often involves multiple steps to go from a raw data file to a finished analysis.  Synapse’s Provenance Tools allow users to keep track of each step involved in an analysis, and share those steps with other users. Synapse provides capabilities for tracking the relationship between digital assets (e.g. data, code, analytical results), regardless of the computing location on which the steps are executed.
+Provenance is a concept describing the origin of something; in Synapse it is used to describe the connections between workflow steps that derive a particular file of results. Data analysis often involves multiple steps to go from a raw data file to a finished analysis.  Synapse’s Provenance Tools allow users to keep track of each step involved in an analysis, and share those steps with other users. 
 
 On the right is a Synapse visualization of provenance relationships involved in creation of the file at the bottom: "pc_cases_DGE.R". To recapitulate this file, you can retrieve the elements from an upstream step and execute the same actions.
 
@@ -35,13 +35,13 @@ For example, create a `File`:
 
 {% tab Command %}
 {% highlight bash %}
-Need code here
+synapse add --parentid syn2824593 filteredPathwayResults.txt
 {% endhighlight %}
 {% endtab %}
 
 {% tab Python %}
 {% highlight python %}
-need code here
+file = File(path="filteredPathwayResults.txt", parentId="syn2367745", synapseStore=True)
 {% endhighlight %}
 {% endtab %}
 
@@ -60,25 +60,25 @@ Need example here
 <br>
 
 
-Store it, indicating that another entity was used to create it.
+Load the file into Synapse, indicating that an **Activity** named Filtering generated it, with input from another entity.
 
 {% tabs %}
 
 {% tab Command %}
 {% highlight bash %}
-Need code here
+synapse set-provenance --id syn6688421 --name "Filtering" --used syn2582230
 {% endhighlight %}
 {% endtab %}
 
 {% tab Python %}
 {% highlight python %}
-need code here
+file = syn.store(file, activityName = "Filtering", used="syn2582230")
 {% endhighlight %}
 {% endtab %}
 
 {% tab R %}
 {% highlight r %}
-file <- synStore(file, used=list("syn2824593"))
+file <- synStore(file, activityName = "Filtering", used=list("syn2582230"))
 {% endhighlight %}
 {% endtab %}
 
@@ -96,13 +96,13 @@ Now, show the provenance relationship you created in the previous step:
 
 {% tab Command %}
 {% highlight bash %}
-Need code here
+synapse get-provenance --id syn6688421
 {% endhighlight %}
 {% endtab %}
 
 {% tab Python %}
 {% highlight python %}
-need code here
+syn.getProvenance(file)
 {% endhighlight %}
 {% endtab %}
 
