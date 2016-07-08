@@ -69,8 +69,9 @@ Embeds the provenance graph created for a file
   A list of Synapse folders, files or tables can be easily created by browsing to the Synapse location or searching by entity name or Synapse ID. The table lists entity name, date entity was created, who created it, and for files and tables - version and version notes
  <img src="/assets/images/wiki_entitylist.png">
   * Table: Paste tabular data
-  A table can be created of any data by pasting tab delimited content into this widget window.
- <img src="/assets/images/wiki_tablepastetabular.png">
+  A table can be created of any data by pasting tab delimited content into this widget window. 
+ <img src="/assets/images/wiki_tablepastetabular.png">                
+
 Tip: add this markdown below the header to enable sort on the header columns.
     ````
      Header 1 | Header 2 | Header 3
