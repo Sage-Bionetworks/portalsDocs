@@ -86,7 +86,7 @@ Embeds the provenance graph created for a file
   Provide a button for people to join Synapse Teams (need link)
 <img src="/assets/images/wiki_jointeambutton.png">
   * Team Badge
-  Creates a link to the team profile
+  Creates a link to the team profile                               
 <img src="/assets/images/wiki_teambadge.png">
 * Genome Browser 
 You can add a [Biodalliance genome browser](http://www.biodalliance.org) using tracks from files uploaded to Synapse or from external sources. Choose between Human or Mouse and adjust your tracks for height and color. See the Biodalliance Setup page for [more information](https://www.synapse.org/#!StandaloneWiki:GenomeBrowser).
