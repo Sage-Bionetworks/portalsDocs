@@ -80,6 +80,7 @@ Tip: add this markdown below the header to enable sort on the header columns.
 
   * Table: Query on a Synapse Table
   Provides a Query for any Synapse Table and displays the information in the Wiki.
+ <img src="/assets/images/wiki_queryonsyntable.png">
   * Query on Files/Folders
   Provides a Query based an annotations (need link) added to files and folders. Columns in the Query table can be renamed and ordered through the 'Add Column Renderer'
  <img src="/assets/images/wiki_tablequeryonfiles.png">
