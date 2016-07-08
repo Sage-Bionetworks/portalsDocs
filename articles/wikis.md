@@ -59,6 +59,7 @@ Embeds a preview window for csv, txt and image files
 
 * Provenance graph
 Embeds the provenance graph created for a file
+<img src="/assets/images/wiki_provenance.png">
 
 * Lists and Tables
   * Table of Contents
@@ -82,7 +83,9 @@ Embeds the provenance graph created for a file
   Insert a button that links to content within Synapse or elsewhere. Tip: buttons can be colored purple by adding `'&highlight=true'` to the end of the widget markdown
   * Join Team Button
   Provide a button for people to join Synapse Teams (need link)
+<img src="/assets/images/wiki_jointeambutton.png">
   * Team Badge
   Creates a link to the team profile
+<img src="/assets/images/wiki_teambadge.png">
 * Genome Browser 
 You can add a [Biodalliance genome browser](http://www.biodalliance.org) using tracks from files uploaded to Synapse or from external sources. Choose between Human or Mouse and adjust your tracks for height and color. See the Biodalliance Setup page for [more information](https://www.synapse.org/#!StandaloneWiki:GenomeBrowser).
