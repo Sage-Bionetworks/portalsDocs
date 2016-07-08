@@ -64,6 +64,7 @@ Embeds the provenance graph created for a file
 * Lists and Tables
   * Table of Contents
   Creates a content list that links to sections of the wiki based on headers and subheaders.
+ <img src="/assets/images/wiki_tableofcontents.png">
   * Entity List
   A list of Synapse folders, files or tables can be easily created by browsing to the Synapse location or searching by entity name or Synapse ID. The table lists entity name, date entity was created, who created it, and for files and tables - version and version notes
  <img src="/assets/images/wiki_entitylist.png">
