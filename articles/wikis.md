@@ -82,6 +82,7 @@ Tip: add this markdown below the header to enable sort on the header columns.
   Provides a Query for any Synapse Table and displays the information in the Wiki.
   * Query on Files/Folders
   Provides a Query based an annotations (need link) added to files and folders. Columns in the Query table can be renamed and ordered through the 'Add Column Renderer'
+ <img src="/assets/images/wiki_tablequeryonfiles.png">
 * Buttons and Badges
   * Button Link
   Insert a button that links to content within Synapse or elsewhere. Tip: buttons can be colored purple by adding `'&highlight=true'` to the end of the widget markdown
