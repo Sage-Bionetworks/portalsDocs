@@ -27,10 +27,12 @@ Each Synapse user wishing to access `Controlled Data` must individually agree to
 ### Accessing Bridge Data
 
 Synapse houses Bridge data, data collected through research apps. This data has been donated by thousands of volunteers 
-from around the world. Bridge data is only accessible to Users with a `Validated Profile`. To learn more see [Synapse User Credentials](/articles/accounts_certified_users_and_qualified_researchers.html#qualified_researcher). 
+from around the world. Bridge data is only accessible to Users with a `Validated Profile`. To learn more see [Synapse User Credentials](/articles/accounts_certified_users_and_profile_validation.html#validated-profile). 
 
 {% include warning.html content="Bridge data may not be redistributed." %}
 Each Synapse user wishing to access Bridge data must individually agree to the `Conditions for Use`.
+
+<a name="flagging-inappropriate-data-use"></a>
 
 ### Flagging Inappropriate Data Use
 Any human data shared in Synapse, with or without `Conditions for Use`, must be de-identified according to HIPAA Standards and 

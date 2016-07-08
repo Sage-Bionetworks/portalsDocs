@@ -7,6 +7,8 @@ excerpt: Synapse has two content controls -- the Sharing setting and Conditions 
 ## Overview
 Synapse has two content controls: the `Sharing setting` and `Conditions for Use.` The `Sharing setting` is an access control. It determines _who_ has access to Synapse content. `Conditions for Use` are for data governance. They determine _how_ data can be used. 
 
+<a name="sharing-setting"></a>
+
 ## Sharing setting
 You can use the `Sharing setting` to invite people to view or collaborate on a Synapse `Project`. There are two `Sharing settings`: **Public** and **Private**. Synapse content with the **Public** `Sharing setting` is visible to all Synapse users. By contrast, the **Private** `Sharing setting` limits who can see content. **By default, new `Projects` are Private.** 
 {% include important.html content="Synapse users are responsible for determining the appropriate `Sharing Setting` for any content they upload into Synapse." %}
@@ -17,6 +19,8 @@ To adjust the `Sharing setting`, click the `Share` button at the upper right han
 
 ![sharing button examples]({{site.url}}/assets/images/sharing_buttons_examples.png)
 
+<a name="share-content"></a>
+
 ### Sharing content within a Project 
 You can also adjust the `Sharing setting` for `Folders`, `Files`, and `Tables`. By default, all of the content residing within a `Folder` or `Project` inherits the `Sharing setting` of its parent `Folder` or `Project`. To create a local `Sharing setting` specific only to a particular `Folder`, `File` or `Table`, open the `Folder`, `File` or `Table` and click on its `Share` button and adjust the `Sharing setting` just like you would for a `Project`. It is important to note that you **cannot** set local sharing settings for `Wikis` and `Discussion Forums`. `Wikis` and `Discussion Forums` inherit the `Sharing setting` of their parent `Project`.
 
@@ -24,25 +28,35 @@ Local `Sharing settings` are illustrated in the diagram below. `Projects` A and 
 
 <img src= "/assets/images/synapse_sharingsetting.jpg">
 
-## Conditions for Use<a name="conditions_of_use"></a>
+<a name="conditions-for-use"></a>
+
+## Conditions for Use
 Some data requires data governance to appropriately manage its use. In Synapse this data is called `Controlled Data` and it is protected by `Conditions for Use`. `Conditions for Use` are typically applied in order to comply with the terms under which the data were collected or with other human subjects regulations. For example, human 'omic' data may have `Conditions for Use` imposed by informed consent requirements, legal contracts, or other privacy requirements. It is also appropriate to add `Condition for Use` to data collected from "vulnerable" populations and to content that could potentially harm individuals or groups if misused. 
 
 {% include important.html content="Controlled Data may not be redistributed." %}
 `Controlled Data` can only be downloaded and used by authorized Synapse users. `Controlled Data` is not transferable unless explicitly specified otherwise. In other words, you cannot share `Controlled Data` with collaborators. Each Synapse user wishing to access `Controlled Data` must individually agree to the `Conditions for Use` to access that data.
 
 {% include important.html content="Synapse users are responsible for determining the appropriate Conditions for Use for any data they upload into Synapse." %}
+
 It is important to note that `Conditions for Use` cannot be set for Synapse `Wikis` or `Discussion Forums`: they are not designed to house data and therefore do not have local `Conditions for Use` as a feature. 
+
+<a name="open-data"></a>
 
 ### Data that does not require Conditions for Use
 Synapse `Open Data` is data that does not require `Conditions for Use`. Any registered Synapse user included in the `Project`, `Folder`, `File` or `Table` (based on the `Sharing setting`) can immediately access `Open Data`. Typically, `Open Data` is:
 
 * Data from model organisms, species or strains
 * Non-biological data, like that used for the calibration of instruments 
+
+<br>
 Human data that are:
+
 * Publicly available elsewhere
 * Anonymous
 * De-identified and non-sensitive, with no known sharing or use restrictions
 * Self-contributed and unambiguously consented for open data sharing and use
+
+<a name="require-conditions-for-use"></a>
 
 ### Data that does require Conditions for Use
 `Conditions for Use` regulate who can access `Controlled Data` and how it can be used. This means that any Synapse user included in a `Project`, `Folder`, `File` or `Table` (based on the `Sharing setting`) must fulfill the `Conditions for Use` **before** he/she can access that `Controlled Use` data. Examples of `Controlled Data` include:
@@ -52,6 +66,7 @@ Human data that are:
 * Data from “vulnerable” populations as defined using OHRP guidelines
 * Data generated with restrictions or requirements for use as outlined in informed consents or legal agreements
 
+<a name="controlled-data"></a>
 
 ### Examples of Conditions for Use
 `Conditions for Use` vary broadly. Some examples include:
@@ -63,6 +78,8 @@ Human data that are:
 
 <br>
 Additionally, use of certain data may require independent review and monitoring of research by an ethics committee (for example, an IRB). This ensures that use of the data meets all applicable human subjects research regulations. 
+
+<a name="how-to-set-conditions-for-use "></a>
 
 ### How to set Conditions for Use?
 If you would like to set `Conditions for Use` for an entire `Project`, please contact the Synapse Access and Compliance Team (ACT) directly for assistance (<mailto:act@synapse.org>). 

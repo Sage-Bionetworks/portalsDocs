@@ -40,15 +40,17 @@ I commit myself to:
 -	Abide by all applicable laws and regulations
 
 
-The Synapse [Oath](https://www.synapse.org/#!Synapse:syn3722562/wiki/390754){:target="_blank"} (part of the profile validation process) further reinforces these principles.
+The Synapse [Oath](/assets/other/oath.html) (part of the profile validation process) further reinforces these principles.
+
+<a name="oversight-audits-and-adjudication"></a>
 
 ### Oversight, Audits, and Adjudication
 
 The Synapse Access and Compliance Team (ACT) monitors public activities on Synapse through periodic audits to assess compliance with the Synapse governance policies. For example, through these audits, the ACT verifies that public content shared on Synapse has appropriate `Conditions for Use`. The ACT does not monitor activities or content placed in private `Projects`.
 The ACT supports ethical use of Synapse, including adjudicating suspected unauthorized and/or unethical use of data, as well as “unsportsmanlike” behavior within the Synapse research commons. The ACT relies on the community of researchers and research participants for vigilance against unauthorized and/or unethical use of Synapse. Additionally, we rely on the community to hold itself to the highest standard of collegial behavior. People unable or unwilling to meet these standards may be expelled from Synapse.
-You should not hesitate to get in touch with the ACT (act@synapse.org) if you have questions or suggestions about Synapse governance, including the policies, ethics, or rules for data sharing on Synapse. 
+You should not hesitate to get in touch with the ACT (<mailto:act@synapse.org>) if you have questions or suggestions about Synapse governance, including the policies, ethics, or rules for data sharing on Synapse. 
 
-It is your responsibility to contact the ACT (act@synapse.org) if: 
+It is your responsibility to contact the ACT (<mailto:act@synapse.org>) if: 
 
 -	You suspect that data is improperly shared on Synapse
 -	You are concerned that data shared on Synapse is improperly or incompletely de-identified

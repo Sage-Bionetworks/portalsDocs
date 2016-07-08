@@ -4,7 +4,10 @@ layout: article
 excerpt: Find out about the three levels of Synapse users and the privileges and responsibilities associated with each level 
 ---
 
-## About Accounts, Certification and Qualified Researchers
+<a name="synapse-user-credentials"></a>
+
+## About Accounts, Certification and Profile Validation 
+
 There are three levels of users in Synapse: `Anonymous`, `Registered`, and `Certified`. 
 The table below summarizes the user privileges for each level.  
 
@@ -30,6 +33,8 @@ You are solely responsible for your actions on Synapse. You are required to abid
 Anyone over the age of 13 may create a Synapse account. From your Synapse profile homepage, you can edit your profile information, update your email account, and change your password. 
 All user activity on Synapse is recorded for auditing purposes. So, although they can be updated, Synapse accounts cannot be deleted. All of your public activities are and will remain publically viewable. All of your activities within private projects are and will remain viewable to the people within that project. 
 
+<a name="anonymous-users"></a>
+
 ## Anonymous Users
 Anyone can browse Synapse anonymously to review the platform features and resources, including the catalog of public `Projects`, `Files`, and `Tables`. However, `Anonymous Users` cannot create `Projects` in Synapse, add `Wiki` content, comment in a `Discussion Forums`, nor can they upload or download `Files` or `Tables`. 
 
@@ -53,7 +58,7 @@ Go to your [Synapse profile homepage](https://www.synapse.org/#!Profile:v){:targ
 
 1.	Confirm your user profile is complete including **your full name, current affiliation, and city/country.**
 2.	Link to your ORCID profile. **Make sure your profile is public and populate it with at least one piece of information about yourself.**
-3.	Sign, initial, and submit the Synapse Oath
+3.	Sign, initial, and submit the Synapse [Oath](/assets/other/oath.html)
 4.	Submit identity attestation documentation. Acceptable forms of documentation, in English, are:
 - A letter from a signing official on letterhead attesting to your identity ([template here]({{site.url}}/assets/other/signing_official_template.html)) OR
 - A notarized letter attesting to your identity ([template here]({{site.url}}/assets/other/notarized_letter_template.html)) OR
