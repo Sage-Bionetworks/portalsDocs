@@ -66,6 +66,7 @@ Embeds the provenance graph created for a file
   Creates a content list that links to sections of the wiki based on headers and subheaders.
   * Entity List
   A list of Synapse folders, files or tables can be easily created by browsing to the Synapse location or searching by entity name or Synapse ID. The table lists entity name, date entity was created, who created it, and for files and tables - version and version notes
+ <img src="/assets/images/wiki_entitylist.png">
   * Table: Paste tabular data
   A table can be created of any data by pasting tab delimited content into this widget window. Tip: add this markdown below the header to enable sort on the header columns.
 
