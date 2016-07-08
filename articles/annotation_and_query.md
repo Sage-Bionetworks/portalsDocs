@@ -1,12 +1,13 @@
 ---
 title: Annotations and Queries
 layout: article
-excerpt: Learn about what annotations are, how to assign and modify them, and how to query them for analysis. 
+excerpt: Learn about annotations, how to assign and modify them, and how to query them for analysis. 
 ---
 
 ## Annotations
-Annotations in Synapse are semi-structured metadata that can be added to entities - Projects, Folders, and Files.
-Annotations can be based on an existing ontology (controlled vocabulary such as the Gene Onotology (GO)) (add link: http://geneontology.org), an agreed upon set of terms (e.g., describing the results of a sequencing pipeline), or be completely free form (like a tag system). These annotations can be used to systematically describe groups of entities, which provides a way to search and discover Synapse entities.
+
+Annotations in Synapse are semi-structured metadata that can be added to Projects, Files, Folders, and Tables.
+Annotations can be based on an existing ontology (controlled vocabulary such as a disease Onotology (GO)), an agreed upon set of terms (e.g., describing the results of a sequencing pipeline), or be completely free form (like a tag system). These annotations can be used to systematically describe groups of entities, which provides a way to search and discover Synapse entities.
 
 Synapse annotations are structured as key-value pairs: the key is the name of the annotation group while the value provides specifics. An example; let's say you have a collection of alignment files in the BAM file format from an RNA sequencing experiment, each representing a sample and replicate.
 As is common, much of this information may be encoded in the file name (e.g., `Sample1_ConditionA.bam`).
@@ -36,8 +37,11 @@ Annotations can be one of four basic types
 <br/>
 
 ### How to assign annotations
+
 It is easiest to add annotations when initially uploading a file. This can be done using the command line client, the Python client, the R client, or from the Web. Using the analytical clients facilitates batch and automated population of annotations across many files. The Web client is useful when uploading a single file, or if a minor change needs to be made to annotations on a few files.
-#### Adding annotations using the Python or R client (someone needs to review)
+
+#### Adding annotations using the Python or R client
+
 {% tabs %}
 	{% tab Command %}
 		{% highlight bash %}
@@ -79,9 +83,12 @@ synapse set-annotations --id syn123 --annotations '{"fileType":"bam", "assay":"R
 entity = syn.get("syn123")
 
 ##### Assigning ONLY one annotation
+
 entity.fileType = 'bam'
 entity['fileType'] = 'bam'
+
 ##### Assigning a set of annotations
+
 entity.annotations = {"fileType":"bam", "assay":"RNA-seq"}
 
 syn.store(entity, forceVersion = F)
@@ -94,6 +101,7 @@ syn.store(entity, forceVersion = F)
 entity <- synGet("syn123")
 
 ##### Assigning ONLY one annotation
+
 synSetAnnotation(entity, "filType") <- "bam"
 # Assigning a set of annotations
 synSetAnnotations(entity) <- list(fileType = "bam", assay = "RNA-seq")
@@ -107,6 +115,7 @@ entity <- synStore(entity, forceVersion = FALSE)
 <br/>
 
 #### Adding annotations through the web client
+
 To add annotations through the web client, click the `Annotations` button in the upper right corner on a Project, Folder, or File page.
 
 <img src="/assets/images/annotation-button.png">
@@ -238,10 +247,8 @@ synapse query 'SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn1
 
 	{% tab Python %}
 		{% highlight python %}
-#### Option 1 
-result = syn.query('SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"')
 
-#### Option 2 (More robust way)
+
 result = syn.chunckedQuery('SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"')
 		{% endhighlight %}
 	{% endtab %}
