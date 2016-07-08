@@ -58,8 +58,8 @@ Create a reference list by linking to papers using the References widget
 Embeds a preview window for csv, txt and image files
 
 * Provenance graph
-Embeds the provenance graph created for a file
-<img src="/assets/images/wiki_provenance.png">
+Embeds the provenance graph created for a file           
+ <img src="/assets/images/wiki_provenance.png">           
 
 * Lists and Tables
   * Table of Contents
