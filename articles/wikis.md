@@ -88,7 +88,7 @@ Tip: add this markdown below the header to enable sort on the header columns.
   * Button Link
   Insert a button that links to content within Synapse or elsewhere. Tip: buttons can be colored purple by adding `'&highlight=true'` to the end of the widget markdown
   * Join Team Button
-  Provide a button for people to join Synapse Teams (need link)
+  Provide a button for people to join Synapse Teams (need link)                    
 <img src="/assets/images/wiki_jointeambutton.png">
   * Team Badge
   Creates a link to the team profile                               
