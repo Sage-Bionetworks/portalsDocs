@@ -4,6 +4,8 @@ layout: article
 excerpt: Learn how to contribute and access different types of `Controlled Data`.
 ---
 
+<a name="contributing-data"></a>
+
 ## Contributing Data
 You must be a `Certified User` to contribute data to Synapse. You are responsible for determining if the data you would like to contribute is `Controlled Use` and therefore requires `Conditions for Use`. Carefully consider the specific risks and appropriate protections required before sharing your data. 
 
@@ -11,9 +13,13 @@ If there are no ethical, legal or regulatory reasons to impose `Conditions for U
 
 `Conditions for Use` can be set at the `Project`, `Folder`, or `File`/`Table` level. We recommend grouping `Files` that require the same `Conditions for Use` in a dedicated `Folder` within your `Project`. For more information about setting `Conditions for Use` please see [Access Controls and Data Governance](/articles/access_controls.html).
 
+<a name="accessing-data"></a>
+
 ## Accessing Data
 
 Both `Registered` and `Certified` users can view, download, and use `Open Data` (data that does not have `Conditions for Use`.)
+
+<a name="access-data-with-conditions-for-use"></a>
 
 ### How do you access data with Conditions for Use? 
 
