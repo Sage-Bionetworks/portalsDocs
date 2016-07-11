@@ -4,6 +4,16 @@ layout: article
  excerpt: Create wikis to provide narrative content for your research. 
 ---
 
+<style>
+#image {
+    width: 35%;
+}
+#image:hover {
+    transform: scale(3.0);
+    outline: 1px solid #1e7098;
+}
+</style>
+
 ## Overview
 
 `Wikis` are available in Synapse projects to provide a space to build narrative content to describe the research. 
@@ -49,56 +59,34 @@ Files, images and videos can be attached to a `Wiki`. This may be content on fro
 
 On the project Wiki page, go to 'Tools' and click on 'Edit Project Wiki'
 
-See the 'Insert' list for the following widgets to customize your Wiki design. Tip: to edit widgets after they have been added to the wiki see the widget edit button in the upper left hand corner of the Wiki editing window
+See the 'Insert' list for the following widgets to customize your Wiki design. 
 <img src="/assets/images/wiki_insertwidget.png">
 
 {% include tip.html content="To edit widgets after they have been added to the wiki, see the widget edit button in the upper left hand corner of the Wiki editing window." %}
 
-* References: 
-Create a reference list by linking to papers using the References widget
+{:.markdown-table}
+| Widget | Hover over the image to see what the widget will look like when embedded in your project |
+| -- | :--: | 
+| **References** <br/> Create a reference list by linking to papers using the References widget | <img id="image" src=""> |
+| **File Preview** <br/> Embeds a preview window for csv, txt and image files| <img id="image" src=""> |
+| **Provenance** <br/> Embeds the provenance graph created for a file |  <img id="image" src="/assets/images/wiki_provenance.png"> |
+| **Table of Contents** <br/> Creates a content list that links to sections of the wiki based on headers and subheaders |  <img id="image" src="/assets/images/wiki_tableofcontents.png"> |
+| **Entity List** <br/> A list of Synapse `Folders`, `Files` or `Tables` can be easily created by browsing to the Synapse location or searching by entity name or Synapse ID. The table lists entity name, date entity was created, who created it, and for `Files` and `Tables` - version and version notes|  <img id="image" src="/assets/images/wiki_entitylist.png"> |
+| **Table: Paste tabular data** <br/> A table can be created of any data by pasting tab delimited content into this widget window.  |  <img id="image" src="/assets/images/wiki_tablepastetabular.png"> |
+| **Table: Query on a Synapse `Table`** <br/> Provides a Query for any Synapse `Table` and displays the information in the`Wiki`. |  <img id="image" src="/assets/images/wiki_queryonsyntable.png"> |
+| **Query on `Files`/`Folders`** <br/> Provides a Query based an annotations (need link) added to `Files` and `Folders`. Columns in the Query table can be renamed and ordered through the 'Add Column Renderer' | <img id="image" src="/assets/images/wiki_tablequeryonfiles.png"> |
+| **Button Link** <br/> Insert a button that links to content within Synapse or elsewhere. **Tip:** buttons can be colored purple by adding `'&highlight=true'` to the end of the widget markdown |  |
+| **Join Team Button** <br/> Provide a button for people to join Synapse [Teams](/articles/teams.html) | <img id="image" src="/assets/images/wiki_jointeambutton.png"> |
+| **Team Badge** <br/> Creates a link to the `Team` profile | <img id="image" src="/assets/images/wiki_teambadge.png"> |
+| **Genome Browser** <br/> You can add a [Biodalliance genome browser](http://www.biodalliance.org) using tracks from files uploaded to Synapse or from external sources. Choose between Human or Mouse and adjust your tracks for height and color. See the Biodalliance Setup page for [more information](https://www.synapse.org/#!StandaloneWiki:GenomeBrowser) | <img id="image" src="/assets/images/wiki_genomebrowser.png"> |
 
-* File Preview: 
-Embeds a preview window for csv, txt and image files
+<br> 
 
-* Provenance graph
-Embeds the provenance graph created for a file           
- <img src="/assets/images/wiki_provenance.png">           
-
-
-* Lists and Tables: 
-  * Table of Contents: 
-  Creates a content list that links to sections of the wiki based on headers and subheaders.
-  
- <img src="/assets/images/wiki_tableofcontents.png">
-  * Entity List
-  A list of Synapse `Folders`, `Files` or `Tables` can be easily created by browsing to the Synapse location or searching by entity name or Synapse ID. The table lists entity name, date entity was created, who created it, and for `Files` and `Tables` - version and version notes
- <img src="/assets/images/wiki_entitylist.png">
-  * Table: Paste tabular data
-  A table can be created of any data by pasting tab delimited content into this widget window. 
- <img src="/assets/images/wiki_tablepastetabular.png">                
-
-Tip: add this markdown below the header to enable sort on the header columns.
+{% include tip.html content="Add this markdown below the header to enable sort on the header columns." %}
 
     ````
      Header 1 | Header 2 | Header 3
     --- | --- | ---
     ````
 
-  * Table: Query on a Synapse `Table`
-  Provides a Query for any Synapse `Table` and displays the information in the`Wiki`.
- <img src="/assets/images/wiki_queryonsyntable.png">
-  * Query on `Files`/`Folders`
-  Provides a Query based an annotations (need link) added to `Files` and `Folders`. Columns in the Query table can be renamed and ordered through the 'Add Column Renderer'
- <img src="/assets/images/wiki_tablequeryonfiles.png">
-* Buttons and Badges
-  * Button Link
-  Insert a button that links to content within Synapse or elsewhere. **Tip:** buttons can be colored purple by adding `'&highlight=true'` to the end of the widget markdown
-  * Join Team Button
-  Provide a button for people to join Synapse `Teams` (need link)                    
-<img src="/assets/images/wiki_jointeambutton.png">
-  * Team Badge
-  Creates a link to the `Team` profile                               
-<img src="/assets/images/wiki_teambadge.png">
-* Genome Browser 
-You can add a [Biodalliance genome browser](http://www.biodalliance.org) using tracks from files uploaded to Synapse or from external sources. Choose between Human or Mouse and adjust your tracks for height and color. See the Biodalliance Setup page for [more information](https://www.synapse.org/#!StandaloneWiki:GenomeBrowser).
-<img src="/assets/images/wiki_genomebrowser.png">
+
