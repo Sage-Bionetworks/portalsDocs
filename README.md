@@ -5,7 +5,7 @@ scientists use to carry out, track, and communicate their research in real time.
 
 ## How to contribute
 
-Synapse Docs is generated using [Jekyll](https://jekyllrb.com/) and uses redcarpet to render markdown. Various page layouts can be found under the _layouts folder in the home directory. 
+Synapse Docs is generated using [Jekyll](https://jekyllrb.com/) and uses redcarpet to render Markdown. Various page layouts can be found under the _layouts folder in the home directory. Most everything can be written using standard [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). 
 
 ### Creating a page
 
@@ -58,12 +58,29 @@ There are four types of alert highlighting to inform users: note, tip, warning, 
 {% include note.html content="This is a note." %}
 
 {% include tip.html content="This is a tip." %}
-
+```
 To include new paragraphs, just add the `<br/>` tag within the content, like this:
-
+```
 {% include warning.html content="This is a warning. `<br/>` This is the second line of the warning." %}
 
 {% include important.html content="This is for an important message." %}
+```
+
+### Adding a table
+To add a table, use Liquid to call on the markdown-table css class. Then use the standard markdown table format.
+```
+{:.markdown-table}
+| Header 1 | Header 2 | 
+| --- | --- |
+| content | content |
+| content | content |
+```
+
+### Inserting an image
+Images can be inserted using either Markdown or HTML, it all depends on your preference. The examples below will display the same thing:
+```
+![alt text](/assets/images/image1.jpg)
+<img src="/assets/images/image1.jpg" alt="alt text">
 ```
 ### To commit changes 
 
