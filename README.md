@@ -15,9 +15,12 @@ To create a page using the article layout, start by specifying at the very begin
 ---
 title: Name of page here
 layout: article
-excerpt: A blurb about this page (optional)
+excerpt: A blurb about this page that will show up as a description in the user guide.
 ---
 ```
+
+### Content
+Article content should begin with a short summary describing what the page is about. Each header on the page will be rendered on the sidebar menu as well for easier navigation.
 
 ### Code blocks with multiple languages
 
