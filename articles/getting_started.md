@@ -25,13 +25,13 @@ With Synapse, you can:
 * populate your projects with files and tables such as data, code, and results as well as the provenance relationships that tie these resources together
 * richly annotate files and tables to increase discoverability and aid in programmatic querying of these resources
 * provide a project narrative which lives right along side the scientific artifacts of your work, via the Synapse Wiki engine
-* create a [DOI](http://en.wikipedia.org/wiki/Digital_object_identifier) for any resource for easy citation of your work
+* create a [DOI](http://en.wikipedia.org/wiki/Digital_object_identifier){:target="_blank"} for any resource for easy citation of your work
 * share your work with other Synapse users, teams of users, or make your work public
 * Discuss with researchers in a project using group email and group chat.
 
-Synapse was created to encourage open science initiatives to advance our understanding of human health. [Sage Bionetworks](http://www.sagebase.org) provides Synapse services free of charge to the scientific community through generous support from the [*National Cancer Institute (NCI)*](http://www.cancer.gov), the [*Washington State Life Science Development Fund (LSDF)*](http://www.lsdfa.org), and the [*National Heart, Lung, and Blood Institute (NIH NHLBI)*](http://www.nhlbi.nih.gov).
+Synapse was created to encourage open science initiatives to advance our understanding of human health. [Sage Bionetworks](http://www.sagebase.org){:target="_blank"} provides Synapse services free of charge to the scientific community through generous support from the [*National Cancer Institute (NCI)*](http://www.cancer.gov){:target="_blank"}, the [*Washington State Life Science Development Fund (LSDF)*](http://www.lsdfa.org){:target="_blank"}, and the [*National Heart, Lung, and Blood Institute (NIH NHLBI)*](http://www.nhlbi.nih.gov){:target="_blank"}.
 
-Synapse operates under a complete [governance process](https://www.synapse.org/#!Help:Governance) that includes well-documented [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4), guidelines and operating procedures, privacy enhancing technologies, as well as the right of audit and external reviews.
+Synapse operates under a complete [governance process](/articles/governance.html) that includes well-documented [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}, guidelines and operating procedures, privacy enhancing technologies, as well as the right of audit and external reviews.
 
 
 ## Installing Synapse Clients
@@ -49,6 +49,29 @@ In a terminal window type the following command and hit enter. (For alternative 
 {% highlight bash %}
 pip install synapseclient
 {% endhighlight %}
+{% endtab %}
+
+
+{% tab Java %}
+{% highlight xml %}
+<!-- 
+Using Maven, add the following block to your pom.xml.
+Note, you should set the version to the most recent 'repo' version, found in the footer of www.synapse.org
+-->
+<distributionManagement>
+	<repository>
+		<id>sagebionetworks</id>
+		<name>sagebionetworks-releases</name>
+		<url>http://sagebionetworks.artifactoryonline.com/sagebionetworks/libs-releases-local</url>
+	</repository>
+</distributionManagement>
+
+<dependency>
+	<groupId>org.sagebionetworks</groupId>
+	<artifactId>synapseJavaClient</artifactId>
+	<version>See comment above</version>
+</dependency>
+{%endhighlight %}
 {% endtab %}
 
 {% tab Python %}
@@ -74,25 +97,25 @@ pkgInstall("synapseClient")
 
 Anyone can browse public content in Synapse but in order to download and create content you will need to register for an account:
 
-<a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>
+<a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>{:target="_blank"}
 
 As Synapse can store human subject data that has sharing and use restrictions, you will also need to become certified and take a quiz about what kinds of items can be shared in Synapse.  To start this process:
 
-<a href="https://www.synapse.org/#!Quiz:Certification" class="btn btn-primary">Become a Certified User</a>
+<a href="https://www.synapse.org/#!Quiz:Certification" class="btn btn-primary">Become a Certified User</a>{:target="_blank"}
 
-There is more information about [accounts, certification and qualified researchers](/articles/accounts_certified_users_and_qualified_researchers.html)
+Explore our [accounts, certification and profile validation](/articles/accounts_certified_users_and_profile_validation.html) page to find out more information on the different levels of users.  
 
 
 ## Project and Data Management on Synapse
 
 <img style="float: right" src="/assets/images/project_1.png">
 
-Now that you have your Synapse account you can start adding content. All Synapse content is organized according to user-created `Projects`. Select a unique name for your Project, such as "My uniquely named project", and create your Project. Projects are an organizational unit in which you can collaboratively access and share `Wikis` (narratives), `Files` (a distributed file system to store data, code, and results from your work), and Tables (web-accessible, sharable, and queryable data where columns can have a user-specified structured schema). Each project also contains a project specific `Discussion Forum`.
-By default, your newly created Project is private; you are the only person who can access it and any content you include in it. To invite others to view or edit your Project, click on the Share icon in the upper right hand portion of the screen. For more information on Sharing, please see the Content Controls section of this tutorial.
+Now that you have your Synapse account you can start adding content. All Synapse content is organized according to user-created `Projects`. Select a unique name for your `Project`, such as "My uniquely named project", and create your `Project`. `Projects` are an organizational unit in which you can collaboratively access and share `Wikis` (narratives), `Files` (a distributed file system to store data, code, and results from your work), and `Tables` (web-accessible, sharable, and queryable data where columns can have a user-specified structured schema). Each `Project` also contains a project-specific `Discussion Forum`.
+By default, your newly created `Project` is private; you are the only person who can access it and any content you include in it. To invite others to view or edit your `Project`, click on the Share icon in the upper right hand portion of the screen. For more information on Sharing, please see the [Content Controls](/articles/access_controls.html) article.
 
-As an exercise we are going to create an example project to store some cell line analysis.
+As an exercise we are going to create an example `Project` to store some cell line analysis.
 
-Since Project names must be unique in Synapse, let me suggest a project name for you: **<span id='random_proj_name'>Foo</span>**<br/>
+Since `Project` names must be unique in Synapse, let me suggest a project name for you: **<span id='random_proj_name'>Foo</span>**<br/>
 
 <script type="text/javascript">
 var chance = window.Chance.Chance();
@@ -110,6 +133,29 @@ randomProjNameElement.innerHTML = new_random_string;
 synapse create Project -name "My uniquely named project"
 	{% endhighlight %}
 {% endtab %}
+
+
+	{% tab Java %}
+	{% highlight java %}
+import org.sagebionetworks.client.*;
+import org.sagebionetworks.repo.model.*;
+
+public static String PROD_REPO_URL = "https://repo-prod.prod.sagebase.org/repo/v1";
+public static String PROD_AUTH_URL = "https://repo-prod.prod.sagebase.org/auth/v1";
+public static String PROD_FILE_URL = "https://repo-prod.prod.sagebase.org/file/v1";
+
+SynapseClient synapseClient = new SynapseClientImpl();
+synapseClient.setSessionToken(sessionToken);
+synapseClient.setRepositoryEndpoint(PROD_REPO_URL);
+synapseClient.setAuthEndpoint(PROD_AUTH_URL);
+synapseClient.setFileEndpoint(PROD_FILE_URL);
+
+Project myProject = new Project();
+myProject.setName("My uniquely named project");
+myProject = synapseClient.createEntity(myProject);
+System.out.println("Created a project with Synapse id " + myProject.getId());
+	{%endhighlight %}
+	{% endtab %}
 
     {% tab Python %}
 	{% highlight python %}
@@ -137,12 +183,12 @@ Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the **C
 {% endtabs %}
 <br>
 
-By default, your newly created `Project` is private; you are the only person who can access it and any content you include in it.  Later on we will share your created project with other users.
+By default, your newly created `Project` is private; you are the only person who can access it and any content you include in it.  Later on we will share your created `Project` with other users.
 
-As you create content in Synapse the items are associated with unique accession ids.  That are used to uniquely reference your content.  For example your newly created project will have a Synapse Id with the format syn1234.
+As you create content in Synapse the items are associated with unique accession ids.  That are used to uniquely reference your content.  For example your newly created `Project` will have a Synapse Id with the format syn1234.
 
 
-**Synapse Ids are used to uniquely identify `Files`, `Folders`, `Projects` and `Tables` in Synapse**
+{% include note.html content= " Synapse Ids are used to uniquely identify Files, Folders, Projects and Tables in Synapse." %}
 
 You can view what you have created in Synapse on the web with:
 
@@ -152,6 +198,12 @@ You can view what you have created in Synapse on the web with:
 synapse onweb syn123  #where syn123 is replaced with the synapse Id of your project
 	{% endhighlight %}
 {% endtab %}
+
+    {% tab Java %}
+	{% highlight java %}
+java.awt.Desktop.getDesktop().browse("https://www.synapse.org/#!Synapse:"+myProject.getId());
+	{%endhighlight %}
+	{% endtab %}
 
     {% tab Python %}
 	{% highlight python %}
@@ -176,11 +228,11 @@ Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the pro
 
 <img style="float: right" src="/assets/images/project_2.png">
 
-The `Wiki` tab in a project provides a space for you to build narrative content to describe your research. These `Wikis` can also be nested as subpages to build up a hierarchy of content within your project as well as be attached to specific files and folders in your project.  Examples of content that you may want to include are project descriptions, specific aims, progress updates of data generation or analysis, analysis results (either in prose or via markdown-based notebooks such as [knitr](http://yihui.name/knitr/) or [IPython notebook](http://ipython.org/notebook.html)), or web-accessible publication-like summaries of your research.
+The `Wiki` tab in a `Project` provides a space for you to build narrative content to describe your research. These `Wikis` can also be nested as subpages to build up a hierarchy of content within your `Project` as well as be attached to specific `Files` and `Folders` in your `Project`.  Examples of content that you may want to include are project descriptions, specific aims, progress updates of data generation or analysis, analysis results (either in prose or via markdown-based notebooks such as [knitr](http://yihui.name/knitr/){:target="_blank"} or [IPython notebook](http://ipython.org/notebook.html){:target="_blank"}), or web-accessible publication-like summaries of your research.
 
 `Wiki` pages can contain highly customized content including, but not limited to images, tables, code blocks, LaTeX formatted equations, and scholarly references. Synapse-specific widgets also allow users to embed dynamic content based on other resources stored in Synapse (e.g., Entity List, User/Team badge, Query Table, or Provenance Graph).
 
-Here we will create a small Wiki:
+Here we will create a small `Wiki`:
 
 {% tabs %}
 {% tab Command %}
@@ -191,6 +243,19 @@ synapse onweb syn###
 where syn### is the Synapse Id of your created project.  Then editing the wiki using the web client.
 	{% endhighlight %}
 {% endtab %}
+
+    {% tab Java %}
+	{% highlight java %}
+import org.sagebionetworks.repo.model.wiki.WikiPage;
+
+WikiPage page = new WikiPage();
+page.setTitle("Data Summary");
+page.setMarkdown("* Cell growth look normally distributed\n" + 
+		"* There is evidence of inverse growth between these two cell lines");
+synapseClient.createWikiPage(myProject.getId(), ObjectType.ENTITY, page);
+	{%endhighlight %}
+	{% endtab %}
+
 
     {% tab Python %}
 	{% highlight bash %}
@@ -223,11 +288,11 @@ Go to project page and click the **Tool button** and chose **Edit Project Wiki**
 
 <img style="float: right" src="/assets/images/project_4.png">
 
-The `Files` tab houses a remote file system that you can utilize to share your project's data, code, results, and any other information pertinent to your research. Unlike the file system on your local computer, Synapse Files and Folders are identified by a unique identifier, are versioned, and can be linked to one another using the Synapse `Provenance` services. These Files and Folders, like all Synapse content, can be accessed either through the web or through one of our analytical clients using their unique Synapse ID.
+The `Files` tab houses a remote file system that you can utilize to share your project's data, code, results, and any other information pertinent to your research. Unlike the file system on your local computer, Synapse `Files` and `Folders` are identified by a unique identifier, are versioned, and can be linked to one another using the Synapse `Provenance` services. These `Files` and `Folders`, like all Synapse content, can be accessed either through the web or through one of our analytical clients using their unique Synapse ID.
 
-Synapse `Folders` are used just as folders are on a local file system -- to organize and segment content. `Folders` can also contain (or be *parents* of) any number of other folders and files.
+Synapse `Folders` are used just as folders are on a local file system -- to organize and segment content. `Folders` can also contain (or be *parents* of) any number of other `Folders` and `Files`.
 
-To add a Folder:
+To add a `Folder`:
 
 {% tabs %}
 
@@ -235,6 +300,15 @@ To add a Folder:
 	{% highlight bash %}
 synapse create Folder name="results" parentId=syn123  #where syn123 is replaced by the project Id
 	{% endhighlight %}
+	{% endtab %}
+
+    {% tab Java %}
+	{% highlight java %}
+Folder resultsFolder = new Folder();
+resultsFolder.setParentId(myProject.getId());
+resultsFolder.setName("results");
+resultsFolder = synapseClient.createEntity(resultsFolder);
+	{%endhighlight %}
 	{% endtab %}
 
     {% tab Python %}
@@ -260,9 +334,9 @@ click the **Add Folder** button on the Files tab.
 {% endtabs %}
 <br>
 
-Synapse `Files` are also much like files on a local file system -- except they are web-accessible to anyone who has access, can be richly annotated (and queried on), can be embedded as links or images within a Synapse `Wiki`, and can be associated with a [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier). `Files` carry the `Conditions for Use` of the `Folder` they are placed into in addition to additional specific `Conditions for Use` they have on their own.
+Synapse `Files` are also much like files on a local file system -- except they are web-accessible to anyone who has access, can be richly annotated (and queried on), can be embedded as links or images within a Synapse `Wiki`, and can be associated with a [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier){:target="_blank"}. `Files` carry the Conditions for Use of the `Folder` they are placed into in addition to additional specific Conditions for Use they have on their own.
 
-Lets upload a local file `data/cell_lines_raw_data.csv` into this newly created Folder. To follow along you can pick any file you have and replace the name with your chosen file. We will also attach some annotations to this file describing the content of the file. In the example we will associate the key `foo` with the value `bar` along with two numerical annotations.
+Lets upload a local file `data/cell_lines_raw_data.csv` into this newly created `Folder`. To follow along you can pick any file you have and replace the name with your chosen file. We will also attach some annotations to this file describing the content of the file. In the example, we will associate the key `foo` with the value `bar` along with two numerical annotations.
 
 {% tabs %}
 
@@ -271,6 +345,21 @@ Lets upload a local file `data/cell_lines_raw_data.csv` into this newly created 
 
 synapse add data/cell_lines_raw_data.csv --parentId=syn123  --annotations '{"foo": "bar", "number1":42, "number2": 3.14}'
 
+	{% endhighlight %}
+	{% endtab %}
+
+    {% tab Java %}
+	{% highlight java %}
+import org.sagebionetworks.repo.model.file.S3FileHandle;
+
+Long storageLocationId = null;
+Boolean generatePreview = true;
+Boolean forceRestart = null;
+S3FileHandle result = synapseClient.multipartUpload(file, storageLocationId, generatePreview, forceRestart);
+
+FileEntity fileEntity = new FileEntity();
+fileEntity.setDataFileHandleId(result.getId());
+fileEntity = synapseClient.createEntity(fileEntity);
 	{% endhighlight %}
 	{% endtab %}
 
@@ -309,17 +398,17 @@ click the **Upload or Link to File** button on the Files tab. Go through the dia
 
 <br>
 
-**Local Folder and File Sharing Settings**
-<br>
-Access to `files, tables`, and `folders` is controlled by the `Sharing setting` that you select for your project. You may also set individual `Sharing settings` for specific `files, tables`, or `folders` within a project.
+### Local Folder and File Sharing Settings
+
+Access to `Files`, `Tables`, and `Folders` is controlled by the **Sharing setting** that you select for your project. You may also set individual Sharing settings for specific `Files`, `Tables`, or `Folders` within a `Project`.
 
 ## Provenance and Tracking Content
 
 <img style="float:right" src="/assets/images/example_provenance.png">
 
-Synapse provides advanced capabilities for formally tracking the relationship between digital assets (e.g. data, code, analytical results) stored within the system through the Synapse provenance system in order to aide in disseminating their work in ways that others can reproduce and reuse. The Synapse provenance system allows users to formally track their analysis history by aiding in the communication and sharing of a sequence of processing steps. Provenance relationships can, for example, be specified between raw data, analysis code and results that occur in a complex processing pipeline, regardless of where it is run.  Synapse’s web services for managing provenance expose a very general data model based on the [W3C Prov spec](http://www.w3.org/2011/prov/wiki/Main_Page). Central to the design, users are not required to use a particular execution environment or workflow tool. Instead, provenance can be specified by inserting calls to the Synapse web service layer into their normal workflows to record activity; pipelines may be created through simple scripting or by using workflow execution engines. The provenance system allows users to branch off workflows at any point in prior analyses, while maintaining detailed records of data, code, and environment versions needed to reproduce the work.
+Synapse provides advanced capabilities for formally tracking the relationship between digital assets (e.g. data, code, analytical results) stored within the system through the Synapse provenance system in order to aide in disseminating their work in ways that others can reproduce and reuse. The Synapse provenance system allows users to formally track their analysis history by aiding in the communication and sharing of a sequence of processing steps. Provenance relationships can, for example, be specified between raw data, analysis code and results that occur in a complex processing pipeline, regardless of where it is run.  Synapse’s web services for managing provenance expose a very general data model based on the [W3C Prov spec](http://www.w3.org/2011/prov/wiki/Main_Page){:target="_blank"}. Central to the design, users are not required to use a particular execution environment or workflow tool. Instead, provenance can be specified by inserting calls to the Synapse web service layer into their normal workflows to record activity; pipelines may be created through simple scripting or by using workflow execution engines. The provenance system allows users to branch off workflows at any point in prior analyses, while maintaining detailed records of data, code, and environment versions needed to reproduce the work.
 
-Provenance is easiest specified when you are uploading or editing a file in Synapse.  To specify the provenance you specify the files used as input and any files that were executed to generate the file.  Both used and executed can be either an arbitrary URL such as a reference to a code commit on github, a file stored on an ftp site or references to items in Synapse.  Here we are going to add a figure to Synapse and indicate that the code https://github.com/Sage-Bionetworks/synapseTutorials was used to generate the figure from the data in the file `data/cell_lines_raw_data.csv` that we uploaded previously
+Provenance is easiest specified when you are uploading or editing a file in Synapse.  To specify the provenance you specify the files used as input and any files that were executed to generate the `File`.  Both used and executed can be either an arbitrary URL such as a reference to a code commit on github, a file stored on an ftp site or references to items in Synapse.  Here we are going to add a figure to Synapse and indicate that the code https://github.com/Sage-Bionetworks/synapseTutorials was used to generate the figure from the data in the file `data/cell_lines_raw_data.csv` that we uploaded previously
 
 {% tabs %}
 
@@ -330,6 +419,29 @@ synapse add images/plot_2.png --parentId=syn123  \
 --executed https://github.com/Sage-Bionetworks/synapseTutorials
 {% endhighlight %}
 {% endtab %}
+
+	 {% tab Java %}
+	{% highlight java %}
+import org.sagebionetworks.repo.model.provenance.*;
+
+Activity newActivity = new Activity();
+newActivity.setName("plot distributions");
+newActivity.setDescription("Generate histograms for demo");
+Set<Used> used = new HashSet<Used>();
+UsedEntity usedEntity = new UsedEntity();
+usedEntity.setWasExecuted(false);
+Reference fileEntityReference = new Reference();
+fileEntityReference.setTargetId(rawDataFileEntity.getId());
+usedEntity.setReference(fileEntityReference);
+UsedURL usedURL = new UsedURL();
+usedURL.setWasExecuted(true);
+usedURL.setUrl("https://github.com/Sage-Bionetworks/synapseTutorials");
+used.add(usedEntity);
+used.add(usedURL);
+newActivity.setUsed(used);
+newActivity = synapseClient.createActivity(newActivity);	
+    {%endhighlight %}
+	{% endtab %}
 
     {% tab Python %}
 	{% highlight python %}
@@ -356,3 +468,7 @@ click the **Upload or Link to File** button on the Files tab to upload image/plo
 {% endtabs %}
 
 <br>
+
+### More Guides
+
+Find additional information and tutorials through our <a href="/articles/">User Guide</a>.
