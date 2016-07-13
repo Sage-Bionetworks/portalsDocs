@@ -464,6 +464,8 @@ plot2 <- synStore(plotFileEntity, used=rawDataFile,
 
     {% tab Web %}
 click the **Upload or Link to File** button on the Files tab to upload image/plot_2.png.  After uploading click the **Tools** button and chose **Edit Provenance**.
+<img src="/assets/images/gettingstarted_provenance1.png">
+<img src="/assets/images/gettingstarted_provenance2.png">
     {% endtab %}
 {% endtabs %}
 
