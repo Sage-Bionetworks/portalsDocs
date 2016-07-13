@@ -68,7 +68,7 @@ See the 'Insert' list for the following widgets to customize your Wiki design.
 | Widget | Hover over the image to see what the widget will look like when embedded in your project |
 | -- | :--: | 
 | **References** <br/> Create a reference list by linking to papers using the References widget | <img id="image" src="/assets/images/wiki_reference.png"> |
-| **File Preview** <br/> Embeds a preview window for csv, txt and image files| <img id="image" src=""> |
+| **File Preview** <br/> Embeds a preview window for csv, txt and image files||
 | **Provenance** <br/> Embeds the provenance graph created for a file |  <img id="image" src="/assets/images/wiki_provenance.png"> |
 | **Table of Contents** <br/> Creates a content list that links to sections of the wiki based on headers and subheaders |  <img id="image" src="/assets/images/wiki_tableofcontents.png"> |
 | **Entity List** <br/> A list of Synapse `Folders`, `Files` or `Tables` can be easily created by browsing to the Synapse location or searching by entity name or Synapse ID. The table lists entity name, date entity was created, who created it, and for `Files` and `Tables` - version and version notes|  <img id="image" src="/assets/images/wiki_entitylist.png"> |
