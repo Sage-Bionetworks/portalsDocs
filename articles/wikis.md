@@ -79,6 +79,7 @@ See the 'Insert' list for the following widgets to customize your Wiki design.
 | **Join Team Button** <br/> Provide a button for people to join Synapse [Teams](/articles/teams.html) | <img id="image" src="/assets/images/wiki_jointeambutton.png"> |
 | **Team Badge** <br/> Creates a link to the `Team` profile | <img id="image" src="/assets/images/wiki_teambadge.png"> |
 | **Genome Browser** <br/> You can add a [Biodalliance genome browser](http://www.biodalliance.org) using tracks from files uploaded to Synapse or from external sources. Choose between Human or Mouse and adjust your tracks for height and color. See the Biodalliance Setup page for [more information](https://www.synapse.org/#!StandaloneWiki:GenomeBrowser) | <img id="image" src="/assets/images/wiki_genomebrowser.png"> |
+| **Video** <br/> Video, Vimeo Video, and YouTube Video insert a video from various sources. | <img id="image" src="/assets/images/wiki_video.png"> | 
 
 <br> 
 
