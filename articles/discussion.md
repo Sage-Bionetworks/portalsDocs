@@ -4,6 +4,12 @@ layout: article
 excerpt: Explore the features of the discussion forum and how to use it to help your collaborations.
 ---
 
+<style>
+#image {
+    width: 50%;
+}
+</style>
+
 ## Discussion
 
 `Discussion` forums are a way to easily communicate with others in a message board style manner which is visible to all those with whom a project is shared. In this guide you will learn how to:
@@ -18,17 +24,21 @@ excerpt: Explore the features of the discussion forum and how to use it to help 
 
 The `Discussion` tab can be found as the left-most tab on your project main page, and anyone with `Project` access may view discussion threads contained therein, create new threads or reply to existing threads.
 
-<img style="float: right;" src="/assets/images/Discussion Main.png">
+<br>
+<img style="width: 65%;" src="/assets/images/Discussion Main.png">
 
+<br>
 To create a new thread, click the `New Thread` button at the top of the `Discussion` tab.
 
-<img style="float: right;" src="/assets/images/NewThread_Dialog.png">
+<br>
+<img style="width: 50%" src="/assets/images/NewThread_Dialog.png">
 
 This opens a **New Thread** dialog box in which you can edit text, insert pictures, code, TeX, Widgets, or Markdown script. As with `Wiki` editing, a Formatting Guide is available to show you what formatting features are available.
 
-<img style="float: right;" src="/assets/images/FormattingGuide.png">
+<br>
+<img style="width: 50%" src="/assets/images/FormattingGuide.png">
 
-As with `Wikis` you may tag people (by including "@" + username) or link to Synapse entities (by simply typing a Synapse Id). Please see the `Wikis` guide for more information.
+As with `Wikis` you may tag people (by including "@" + username) or link to Synapse entities (by simply typing a Synapse Id). Please see the [Wikis](/articles/wikis.html) guide for more information.
 
 Within an existing thread, you may use the `Reply` button to write a reply to an existing discussion. All editing features described above are available for this purpose.
 
@@ -41,7 +51,7 @@ You may subscribe to a `Discussion` forum for a particular `Project` by clicking
 
 Additionally, to change notification settings on an individual thread you can use the **eye** icon which is visible from within the thread. This can be used to stop receiving reply notifications for that individual thread when you've followed all activity in a discussion forum, or to follow activity in only a select thread.
 
-<img style="float: right;" src="/assets/images/UnfollowThread.png">
+<img style="width: 65%;" src="/assets/images/UnfollowThread.png">
 
 
 ### Moderating a Discussion Forum
@@ -50,4 +60,4 @@ Project administrators have moderator privileges for discussion forums in all pr
 
 Moderators may also "pin" important threads using the **pin** icon located next to the original post within the thread page. This causes the thread to be highlighted on the top of the thread list on the `Discussion` main page.
 
-<img style="float: right;" src="/assets/images/ModeratorButtons.png">
+<img style="width: 65%;" src="/assets/images/ModeratorButtons.png">
