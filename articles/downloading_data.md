@@ -97,6 +97,17 @@ synGet("syn00123", downloadLocation="./path/to/folder")
 
 {% endtabs %}
 
+
+####Command line download
+The synapse command line client offers two ways of downloading synapse files that the other clients don't.  First, it allows for recursive downloading of files, maintaining the folder structure that is present on syanpse.  Second, users can pass in a query statement (See [here](http://docs.synapse.org/articles/annotation_and_query.html#queries) to learn more about query statements) to download all the files that is returned from that query statement.
+
+```
+# syn00123 has to be a folder or a project
+syanpse get -r syn00123
+# In the case below, syn00123 has to be a project.  Any query statement would work. 
+synapse get -q 'select id from entity where projectId == "syn00123"'
+```
+
 ####Download Tables
 
 Please view [here](http://docs.synapse.org/articles/tables.html#making-changes-to-tables) to learn how to use table entities.
