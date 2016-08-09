@@ -37,7 +37,7 @@ Synapse operates under a complete [governance process](/articles/governance.html
 ## Installing Synapse Clients
 <img style="float:right;" src="/assets/images/synapse_apis.png">
 
-Synapse is built on a number of RESTful web APIs that allow users to interact with the system via a number of _clients_. One of these _clients_ is the web client, i.e. the website www.synapse.org. Synapse also provides three programmatic clients (R, Python, and Command Line). Content can be uploaded, downloaded, annotated, and queried from any of these interfaces. In the getting started guide we will run through examples using all three programmatic interfaces.  At any point you can pick the language you would like to see examples in by clicking the corresponding tab at the bottom of every example.  Unless otherwise noted the examples are can be typed into the respective environment.  That is a shell prompt for the command line examples, a Python session such as an ipython notbook of script, and an R session for the R examples.
+Synapse is built on a number of RESTful web APIs that allow users to interact with the system via a number of _clients_. One of these _clients_ is the web client, i.e. the website [www.synapse.org](https://www.synapse.org/). Synapse also provides three programmatic clients (R, Python, and Command Line). Content can be uploaded, downloaded, annotated, and queried from any of these interfaces. In the getting started guide we will run through examples using all three programmatic interfaces.  At any point you can pick the language you would like to see examples in by clicking the corresponding tab at the bottom of every example.  Unless otherwise noted the examples are can be typed into the respective environment.  That is a shell prompt for the command line examples, a Python session such as an ipython notbook of script, and an R session for the R examples.
 
 
 
@@ -464,6 +464,8 @@ plot2 <- synStore(plotFileEntity, used=rawDataFile,
 
     {% tab Web %}
 click the **Upload or Link to File** button on the Files tab to upload image/plot_2.png.  After uploading click the **Tools** button and chose **Edit Provenance**.
+<img src="/assets/images/gettingstarted_provenance1.png">
+<img src="/assets/images/gettingstarted_provenance2.png">
     {% endtab %}
 {% endtabs %}
 

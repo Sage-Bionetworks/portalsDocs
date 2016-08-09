@@ -25,7 +25,7 @@ Every project has a Wiki tab where you can build pages and a hierarchy of subpag
 ### Using the Synapse web portal
 After creating a new project select the Wiki tab. Start a `Wiki` through the Tools menu by selecting the 'Edit Project Wiki' function. Content in this first `Wiki` becomes your `Project`'s home page. Go to the Tools menu to add subpages to your `Wiki`. These will appear as links on the left side of your home page (Image?). Adding a `Wiki` to a `Folder` or `File` is done in a similar manner by selecting 'Edit Folder/File Wiki'. Content added to a `Wiki` can be Previewed before Saving. Each version of a saved `Wiki` is visible under Wiki History where older versions can be restored. To delete a `Wiki` select 'Delete Wiki Page' under Tools.  
 
-### Using R/Python (need someone to complete this)
+### Using R/Python
 {% tabs %} {% tab Command %}
 
 {% highlight bash %} 
@@ -67,26 +67,27 @@ See the 'Insert' list for the following widgets to customize your Wiki design.
 {:.markdown-table}
 | Widget | Hover over the image to see what the widget will look like when embedded in your project |
 | -- | :--: | 
-| **References** <br/> Create a reference list by linking to papers using the References widget | <img id="image" src=""> |
-| **File Preview** <br/> Embeds a preview window for csv, txt and image files| <img id="image" src=""> |
+| **References** <br/> Create a reference list by linking to papers using the References widget | <img id="image" src="/assets/images/wiki_reference.png"> |
+| **File Preview** <br/> Embeds a preview window for csv, txt and image files||
 | **Provenance** <br/> Embeds the provenance graph created for a file |  <img id="image" src="/assets/images/wiki_provenance.png"> |
 | **Table of Contents** <br/> Creates a content list that links to sections of the wiki based on headers and subheaders |  <img id="image" src="/assets/images/wiki_tableofcontents.png"> |
 | **Entity List** <br/> A list of Synapse `Folders`, `Files` or `Tables` can be easily created by browsing to the Synapse location or searching by entity name or Synapse ID. The table lists entity name, date entity was created, who created it, and for `Files` and `Tables` - version and version notes|  <img id="image" src="/assets/images/wiki_entitylist.png"> |
 | **Table: Paste tabular data** <br/> A table can be created of any data by pasting tab delimited content into this widget window.  |  <img id="image" src="/assets/images/wiki_tablepastetabular.png"> |
 | **Table: Query on a Synapse `Table`** <br/> Provides a Query for any Synapse `Table` and displays the information in the`Wiki`. |  <img id="image" src="/assets/images/wiki_queryonsyntable.png"> |
 | **Query on `Files`/`Folders`** <br/> Provides a Query based an annotations (need link) added to `Files` and `Folders`. Columns in the Query table can be renamed and ordered through the 'Add Column Renderer' | <img id="image" src="/assets/images/wiki_tablequeryonfiles.png"> |
-| **Button Link** <br/> Insert a button that links to content within Synapse or elsewhere. **Tip:** buttons can be colored purple by adding `'&highlight=true'` to the end of the widget markdown |  |
+| **Button Link** <br/> Insert a button that links to content within Synapse or elsewhere. **Tip:** buttons can be colored purple by adding `'&highlight=true'` to the end of the widget markdown |<img id="image" src="/assets/images/wiki_insertbutton.png">|
 | **Join Team Button** <br/> Provide a button for people to join Synapse [Teams](/articles/teams.html) | <img id="image" src="/assets/images/wiki_jointeambutton.png"> |
 | **Team Badge** <br/> Creates a link to the `Team` profile | <img id="image" src="/assets/images/wiki_teambadge.png"> |
 | **Genome Browser** <br/> You can add a [Biodalliance genome browser](http://www.biodalliance.org) using tracks from files uploaded to Synapse or from external sources. Choose between Human or Mouse and adjust your tracks for height and color. See the Biodalliance Setup page for [more information](https://www.synapse.org/#!StandaloneWiki:GenomeBrowser) | <img id="image" src="/assets/images/wiki_genomebrowser.png"> |
+| **Video** <br/> Video, Vimeo Video, and YouTube Video insert a video from various sources. | <img id="image" src="/assets/images/wiki_video.png"> | 
 
 <br> 
 
 {% include tip.html content="Add this markdown below the header to enable sort on the header columns." %}
 
+Tip: add this markdown below the header to enable sort on the header columns.
     ````
      Header 1 | Header 2 | Header 3
     --- | --- | ---
     ````
-
 
