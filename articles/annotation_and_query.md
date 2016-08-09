@@ -264,7 +264,7 @@ result <- synQuery('SELECT id,name,dataType,fileType FROM file WHERE projectId==
 	{% endtab %}
 	
 	{% tab Web %}	
-On the wiki page, click `Tools` button in the upper right corner to `Edit Wiki Project`.
+On the wiki page, click `Tools` button in the upper right corner to `Edit Wiki`.
 Click `Insert` and choose `Table: Query on Files/Folders`.
 Enter your query in the box and click the **Insert** button. Once you save the wiki page, the results will be displayed as a table.
 
