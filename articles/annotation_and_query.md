@@ -4,6 +4,12 @@ layout: article
 excerpt: Learn about annotations, how to assign and modify them, and how to query them for analysis. 
 ---
 
+<style>
+#image {
+    width: 75%;
+}
+</style>
+
 ## Annotations
 
 Annotations in Synapse are semi-structured metadata that can be added to Projects, Files, Folders, and Tables.
@@ -40,7 +46,7 @@ Annotations can be one of four basic types
 
 It is easiest to add annotations when initially uploading a file. This can be done using the command line client, the Python client, the R client, or from the Web. Using the analytical clients facilitates batch and automated population of annotations across many files. The Web client is useful when uploading a single file, or if a minor change needs to be made to annotations on a few files.
 
-#### Adding annotations using the Python or R client
+#### Adding annotations 
 
 {% tabs %}
 	{% tab Command %}
@@ -64,10 +70,18 @@ synSetAnnotations(entity) <- list(fileType = "bam", assay = "RNA-seq")
 entity <- synStore(entity)
 		{%endhighlight %}
 	{% endtab %}
+	
+	{% tab Web %}
+To add annotations through the web client, click the `Annotations` button in the upper right corner on a Project, Folder, or File page.
+
+<img src="/assets/images/annotation-button.png">
+	{% endtab %}
 
 {% endtabs %}
 
 <br/>
+
+#### Modifying Annotations
 If you have not decided on the annotations to add yet, you can add and modify the annotations at a later time as well, and you can manipulate annotations that have already been uploaded.
 
 
@@ -109,29 +123,19 @@ synSetAnnotations(entity) <- list(fileType = "bam", assay = "RNA-seq")
 entity <- synStore(entity, forceVersion = FALSE)
 		{%endhighlight %}
 	{% endtab %}
+	
+	{% tab Web %}
+Click the `Edit` button in the resulting table to add, delete, or modify annotations.
+Start by entering a Key (the name of the annotation), select the type (text, integer etc.,), and enter the Value. For example Key=assay - Value=RNA-seq. Click `Save` to store the annotations for this entity.
+To enter multiple Values for a single Key click `Enter` with the cursor in the Value field.
+<img src="/assets/images/annotation-edit-box.png">
+
+	{% endtab %}
 
 {% endtabs %}
 
 <br/>
 
-#### Adding annotations through the web client
-
-To add annotations through the web client, click the `Annotations` button in the upper right corner on a Project, Folder, or File page.
-
-<img src="/assets/images/annotation-button.png">
-
-Click the `Edit` button in the resulting table to add, delete, or modify annotations.
-
-<img src="/assets/images/annotation-box.png">
-
-Start by entering a Key (the name of the annotation), select the type (text, integer etc.,), and enter the Value. For example Key=assay - Value=RNA-seq. Click `Save` to store the annotations for this entity.
-
-<img src="/assets/images/annotation-edit-box.png">
-
-To enter multiple Values for a single Key click `Enter` with the cursor in the Value field.
-(need image)
-
-<br/>
 
 ## Queries
 
@@ -236,7 +240,7 @@ SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sampl
 
 <br/>
 
-Queries can be constructed using one of the analytical clients (command line, Python, and R). Using the example above this can be done as following:
+Queries can be constructed using one of the analytical clients (command line, Python, and R) and on the web client, query results can be displayed in a table on a wiki page.. Using the example above this can be done as following:
 
 {% tabs %}
 	{% tab Command %}
@@ -258,26 +262,16 @@ result = syn.chunckedQuery('SELECT id,name,dataType,fileType FROM file WHERE pro
 result <- synQuery('SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"')
 		{%endhighlight %}
 	{% endtab %}
+	
+	{% tab Web %}	
+On the wiki page, click `Tools` button in the upper right corner to `Edit Wiki Project`.
+Click `Insert` and choose `Table: Query on Files/Folders`.
+Enter your query in the box and click the **Insert** button. Once you save the wiki page, the results will be displayed as a table.
+
+<img id="image" src="/assets/images/query-file-wiki.png">
+    {% endtab %}
 
 {% endtabs %}
-
-<br/>
-
-Query results can be diplayed in a table on a wiki page.
-
-On the wiki page, click `Tools` button in the upper right corner to edit the `Wiki`.
-
-<img src="/assets/images/query-wiki-tool.png">
-
-
-Click insert and choose `Table: Query on Files/Folders`.
-
-<img src="/assets/images/query-edit-wiki.png">
-
-Enter your query in the box and click the insert button. Once you save the wiki page, the results will be displayed as a table.
-
-<img src="/assets/images/query-file-wiki.png">
-
 
 <br/>
 
@@ -288,7 +282,3 @@ You can download files in a folder using queries. Currently this feature is only
 ```
 synapse get -q 'SELECT * FROM file WHERE parentId == "syn00123"'
 ````
-
-
-
-<br/>
