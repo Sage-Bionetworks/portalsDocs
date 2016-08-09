@@ -22,8 +22,9 @@ The model Synapse uses for provenance is based on the [W3C provenance spec](http
 
 To edit Provenance information for an entity in Synapse, choose **Edit Provenance** from the Tools menu of the webpage for your entity. This will bring up a dialog that lets you name the **activity** and specify which elements were **used** and **executed** to create the `File`. The below example shows a filtering activity that has a synapse ID as an input (used) element and some code in github that was executed. You can specify more than one used and/or executed items if needed.
 
-<img style="float: left;" src="/assets/images/Prov_web_editing.png">
+<img src="/assets/images/Prov_web_editing.png">
 
+<br/>
 
 ### Using command line, Python, or R
 
