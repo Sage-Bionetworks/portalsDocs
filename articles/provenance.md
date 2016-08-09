@@ -53,7 +53,9 @@ file <- File(path="filteredPathwayResults.txt", parentId="syn2367745")
 {% endtab %}
 
 {% tab Web %}
-Need example here
+Upload a file by navigating to the **Files** tab on your `Project` and click on the **Upload or Link to File Button**. Select the file you'd like to upload and click **Save**
+
+<img src="/assets/images/upload_file.png">
 {% endtab %}
 
 {% endtabs %}
@@ -84,7 +86,10 @@ file <- synStore(file, activityName = "Filtering", used=list("syn2582230"))
 {% endtab %}
 
 {% tab Web %}
-Need example here
+To indicate that an the **Activity** Filtering was used to generate this `File` along with input from another `Entity`, click on the `File` name to navigate to its `Wiki` page. Then click on the **Tools** button in the upper right corner and select **Edit Provenance**.
+Enter "Filtering" for the Activity name and add the Synapse reference by selecting **Add Synapse Reference** under the **Used** heading.
+
+<img src="/assets/images/update_provenance_activity">
 {% endtab %}
 
 {% endtabs %}
