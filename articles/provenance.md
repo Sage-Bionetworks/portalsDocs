@@ -255,6 +255,84 @@ Navigate to the `File's` page to view its provenance. Clicking on the triple dot
 
 {% endtabs %}
 
+<br/>
+
+### Reusing an Activity for multiple files
+
+An `Activity` is a Synapse object that helps keep track of what objects were 'used' in an analysis step ... as well as what objects were generated. Thus, all relationships between Synapse objects and an `Activity` are governed by dependencies. That is, an `Activity` needs to know what it 'used' -- and outputs need to know what `Activity` they were 'generatedBy'. A couple of points for clarity:
+
+* An `Activity` can 'use' many things (i.e. many inputs to an analysis)
+* Many outputs can be 'generatedBy' the same `Activity`
+
+If an activity isn't assigned to an entity and then stored, a separate graph will be created for each file that the activity generated. 
+The following example is used to assign the same activity to multiple files resulting in one provenance graph: 
+
+{% tabs %}
+
+{% tab Command %}
+{% highlight bash %}
+Unfortunately, command line currently does not support assigning the same activity to multiple files.
+{% endhighlight %}
+{% endtab %}
+
+
+{% tab Python %}
+{% highlight python %}
+# Code used to generate the file
+code_file = syn.get("syn123456")
+
+# Files used to generate the information
+expr_file = syn.get("syn246810")
+filter_file = syn.get("syn135791")
+
+# Activity to assign to multiple files
+act = Activity(name="filtering",
+                used=[expr_file, filter_file],
+                executed=code_file)
+syn.store(final_file, activity=act)
+
+# Get the activity now associated with an entity
+act = syn.getProvenance(final_file)
+
+# Now you can set this activity to as many files as you want (file1, file2, etc are Synapse Files)
+file_list = [file_1, file_2, file_3]
+file_list = map(lambda x: syn.store(x, activity=act), file_list)
+
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+# Code used to generate the file
+codeFile <- synGet("syn123456")
+
+# Files used to generate the information
+expr_file = synGet("syn246810")
+filter_file = synGet("syn135791")
+
+# Activity to assign to multiple files
+act <- Activity(name="filtering",
+                used=list(
+                  list(entity=codeFile, wasExecuted=T),
+                  list(entity=exprFile, wasExecuted=F),
+                  list(entity=filterFile, wasExecuted=F)))
+finalFile <- synStore(finalFile, activity=act)
+
+# Get the activity now associated with an entity
+act <- synGetActivity(finalFile)
+
+# Now you can set this activity to as many files as you want (file1, file2, etc are Synapse Files)
+finalList <- c(file1, file2, file3)
+finalList <- lapply(finalList, function(x) synStore(x, activity=act))
+
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+Unfortunately, the web interface currently does not support assigning the same activity to multiple files.
+{% endtab %}
+
+{% endtabs %}
 
 
 ### Details on using provenance
