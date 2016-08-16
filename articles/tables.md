@@ -259,6 +259,7 @@ Click on the **edit** icon to the right of the **Query** button to update table 
 
 #### Changing Columns
 
+{% include note.html content="To be compatible across multiple languages the common practice of using dots (.) in column names in R is not supported in Synapse Tables." %}
 **Adding new columns**
 
 {% tabs %}
