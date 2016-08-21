@@ -4,6 +4,13 @@ layout: article
 excerpt: The basics of creating, modifying, and querying tabular data on Synapse.
 ---
 
+<style>
+#image {
+    width: 50%;
+}
+</style>
+
+
 ## Tables
 Synapse `Tables` is a feature designed to provide users the ability to create web-accessible, sharable, and queryable 
 data where columns can have a user-specified structured schema. Users may define table columns to contain common primitive 
@@ -100,7 +107,10 @@ df <- data.frame("n"=c(1.1, 2.2, 3.3),
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
+Navigate to the **Tables** tab on your project. You have to option to insert data directly by clicking on the **Add Table** button or upload a **.csv** or **.tsv** file by clicking the **Upload Table** button. 
+<br>
+<img id="image" src="/assets/images/addOrUploadTable.png">
+
 {% endtab %}
 
 {% endtabs %}
@@ -132,7 +142,9 @@ schema <- TableSchema(name="mySchema", columns=cols, parent=project)
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
+If you upload a file, the Web interface will automatically detect the table schema. After a few prompts, you will arrive at the option to name your table. You can adjust the schema(e.g. Column Name, Column Type, etc) here by clicking on the **Schema Options** button underneath the name. 
+<br>
+<img id="image" src="/assets/images/tableSchema.png">
 {% endtab %}
 
 {% endtabs %}
@@ -167,7 +179,9 @@ table <- synStore(table)
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
+Upload the table into Synapse by clicking the **Create** button.
+
+<img id="image" src="/assets/images/createTable.png">
 {% endtab %}
 
 {% endtabs %}
@@ -192,7 +206,9 @@ queryResult <- synTableQuery(sprintf("select * from %s where c='bar'", table@sch
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
+Tables can be queried by using the Query bar above each table. 
+<br>
+<img id="image" src="/assets/images/table_query.png">
 {% endtab %}
 
 {% endtabs %}
@@ -208,7 +224,7 @@ each row to be modified. We get those by querying before updating. Minimizing ch
 change will make processing faster.
 
 The etag is used by the server to prevent concurrent users from making conflicting changes, a technique called optimistic concurrency. 
-In case of a conflict, your update may be rejected. You then have to do another query an try your update again.
+In case of a conflict, your update may be rejected. You then have to do another query and try your update again.
            
 **Updating existing values**
 
@@ -232,7 +248,9 @@ table@values
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
+Click on the **edit** icon to the right of the **Query** button to update table values.
+<br>
+<img id="image" src="/assets/images/table_update_values.png">
 {% endtab %}
 
 {% endtabs %}
@@ -241,6 +259,7 @@ Instructions for Web + screenshots
 
 #### Changing Columns
 
+{% include note.html content="To be compatible across multiple languages the common practice of using dots (.) in column names in R is not supported in Synapse Tables." %}
 **Adding new columns**
 
 {% tabs %}
@@ -266,7 +285,9 @@ schema <- synStore(schema)
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
+To add columns, click on the **Schema** button. From there, select the **Edit Schema** button and then add columns using the **Add Column** button located at the bottom of the pop-up.
+<br>
+<img id="image" src="/assets/images/table_updating_columns.png">
 {% endtab %}
 
 {% endtabs %}
@@ -298,7 +319,9 @@ schema <- synStore(schema)
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
+To delete columns, click on the **Schema** button. From there, click the **Edit Schema** button and then select the columns you would like to delete and delete them by clicking the **trash can** icon at the top.
+<br>
+<img id="image" src="/assets/images/table_deleting_columns.png">
 {% endtab %}
 
 {% endtabs %}
@@ -338,7 +361,9 @@ table@values
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
+To modify information in a column, first begin by **adding** a new column, then **copy** the data from the column you would like to change into the newly created column, make the changes in the new column, and **delete** the old one.
+ In this example, we are chaning the **Column Type** of **Header_1** into **Boolean** and setting the **Default Value** to **true**.
+ <img id="image" src="/assets/images/table_modifying_columns.png">
 {% endtab %}
 
 {% endtabs %}
@@ -373,7 +398,9 @@ table@values
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
+Click on the **Edit icon** to the right of the query button to get to the **Edit Rows** pop-up. From there, you can add rows by click the **+** at the top. 
+<br>
+<img id="image" src="/assets/images/table_add_rows.png">
 {% endtab %}
 
 {% endtabs %}
@@ -401,7 +428,9 @@ synDeleteRows(rowsToDelete)
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
+Click on the **Edit icon** to the right of the query button to get to the **Edit Rows** pop-up. From there, you can delete rows by checking the boxes of the rows you would like to delete and then clicking the **Trash Can** icon.
+<br>
+<img id="image" src="/assets/images/table_delete_rows.png">
 {% endtab %}
 
 {% endtabs %}
@@ -428,7 +457,9 @@ results@values[c(2,3), "c"] <- pi
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
+To modify row entries, click on the **Edit icon** to the right of the **Query** button. In the resulting pop-up, you can adjust each entry as you please. In this example, the first and last entry of row two have been updated.
+<br>
+<img id="image" src="/assets/images/table_modify_rows.png">
 {% endtab %}
 
 {% endtabs %}
@@ -456,7 +487,9 @@ synDelete(table@schema$id)
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
+To delete the entire Table, click on **Tools** and then select **Delete Table** from the resulting dropdown.
+<br>
+<img id="image" src="/assets/images/delete_table.png">
 {% endtab %}
 
 {% endtabs %}
