@@ -4,7 +4,7 @@ layout: article
 excerpt: The basics of using the synapse docker registry
 ---
 
-###Synapse Docker Registry
+##Synapse Docker Registry
 Synapse now has its own docker registry which will allow you to have private docker repositories.  Please click [here](https://www.docker.com/products/overview) to learn how to use docker for mac, windows or linux. Below is a brief tutorial on how to use the synapse docker registry using the command line.
 
 ### Step 1. Check out or build some images
@@ -57,7 +57,7 @@ docker login docker.synapse.org
 
 ###Step 6. Push your images
 ```
-docker push  docker.synapse.org/syn12345/mytestrepo:version1
+docker push docker.synapse.org/syn12345/mytestrepo:version1
 docker push docker.synapse.org/syn12345/my-repo
 ```
 
