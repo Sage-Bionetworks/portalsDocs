@@ -415,7 +415,7 @@ Click on the **Edit icon** to the right of the query button to get to the **Edit
 {% highlight python %}
 # Query for the rows you want to delete and call syn.delete on the results:
 rowsToDelete = syn.tableQuery("select * from %s where c='foo'" %table.schema.id)
-a = syn.delete(rowsToDelete.synapseclient.asRowSet())
+a = syn.delete(rowsToDelete.asRowSet())
 {% endhighlight %}
 {% endtab %}
 
