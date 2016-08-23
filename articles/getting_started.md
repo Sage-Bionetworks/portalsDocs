@@ -185,7 +185,7 @@ Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the **C
 
 By default, your newly created `Project` is private; you are the only person who can access it and any content you include in it.  Later on we will share your created `Project` with other users.
 
-As you create content in Synapse the items are associated with unique accession ids.  That are used to uniquely reference your content.  For example your newly created `Project` will have a Synapse Id with the format syn1234.
+Content created in Synapse are assigned unique accession ids which are used to uniquely reference your content. For example, your newly created `Project` will have a Synapse Id with the format syn1234.
 
 
 {% include note.html content= " Synapse Ids are used to uniquely identify Files, Folders, Projects and Tables in Synapse." %}
