@@ -16,7 +16,7 @@ Lets begin by creating a custom docker image.  Users can choose to either modify
 ```
 docker pull ubuntu
 ```
-To tag an existing docker image, users must know the IMAGE ID.  The IMAGE ID can be found by doing:
+To tag an existing docker image, users can use the IMAGE ID or the repo name.  The IMAGE ID can be found by doing:
 ```
 docker images
 #REPOSITORY	TAG	IMAGE ID	CREATED	SIZE
@@ -25,9 +25,11 @@ docker images
 Tag the docker image:
 ```
 docker tag f8d79ba03c00 docker.synapse.org/syn12345/mytestrepo:version1 
+#or
+docker tag ubuntu:latest docker.synapse.org/syn12345/mytestrepo:version1 
 #syntax: docker.synapse.org/<projectId>/<repoName>:<tag>
 ```
-You can also choose to not tag your image with anything, which will by default tag it with `latest`.
+You can also choose to not tag your image with an explicit tag, which will by default tag it with `latest`.
 ```
 docker tag f8d79ba03c00 docker.synapse.org/syn12345/mytestrepo
 ```
@@ -68,5 +70,8 @@ docker pull docker.synapse.org/syn12345/my-repo
 docker pull docker.synapse.org/syn12345/mytestrepo:version1
 ```
 
-
-
+Docker tags can be assigned to later commits. If you want to be explicit about the version of an image then instead of referencing a tag you can reference a digest:
+```
+docker pull docker.synapse.org/syn12345/mytestrepo@sha256:2e36829f986351042e28242ae386913645a7b41b25844fb39b29af0bdf8dcb63
+```
+where the digest for a commit is printed to the command line after a successful Docker push. The Synapse web portal displays current digests for a repository's tags on the repository's Synapse page.
