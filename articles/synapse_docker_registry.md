@@ -4,7 +4,8 @@ layout: article
 excerpt: The Synapse Docker registry provides a space for synapse users to store and distribute their Docker images per Synapse project.  The Docker images will inherit the some access control settings as the project, so users can choose to develop the tool in private then share it after it is complete.
 ---
 
-##Synapse Docker Registry
+## Synapse Docker Registry
+
 Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run.  This can be extremely helpful as software can have many dependencies, so by installing all of them in a container, users can avoid going through the trouble of installing the software on their own computer.  These Docker images can then be stored and distributed on a Docker registry.  The Synapse Docker registry will allow users to create software on a per project basis which can be easily shared across synapse. To learn more about [Docker](https://www.docker.com/products/overview) and [Docker registry](https://www.docker.com/products/docker-registry)
 
 
