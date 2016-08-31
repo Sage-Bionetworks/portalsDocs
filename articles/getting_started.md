@@ -95,7 +95,7 @@ pkgInstall("synapseClient")
 {% endtab %}
 
 {% tab Web %}
-	Nothing to Install
+	Use a web browser to navigate to http://www.synapse.org/
 {% endtab %}
 
 {% endtabs %}
