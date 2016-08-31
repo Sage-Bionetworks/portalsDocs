@@ -17,7 +17,7 @@ This getting started is for new users who are interested in learning about Synap
 * Understand and use provenance
 
 ### What is Synapse?
-Synapse is an open source software platform that people can use to perform, track, and communicate their research in real time. Synapse enables content (data, code, results) and descriptions (readme's) of that content to be available in the same place.
+Synapse is an open source software platform that people can use to perform, track, and communicate their research in real time. It enables collaboratively generated content (like data, code, results) and descriptions of that content (like readme's) to be available in the same place.
 
 Synapse hosts a growing number of living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
 
@@ -40,9 +40,7 @@ Synapse operates under a complete [governance process](/articles/governance.html
 ## Installing Synapse Clients
 <img style="float:right;" src="/assets/images/synapse_apis.png">
 
-Synapse is built on a number of RESTful web APIs that allow users to interact with the system via a number of _clients_. One of these _clients_ is the web client, i.e. the website [www.synapse.org](https://www.synapse.org/). Synapse also provides three programmatic clients (R, Python, and Command Line). Content can be uploaded, downloaded, annotated, and queried from any of these interfaces. In the getting started guide we will run through examples using all three programmatic interfaces.  At any point you can pick the language you would like to see examples in by clicking the corresponding tab at the bottom of every example.  Unless otherwise noted the examples are can be typed into the respective environment.  That is a shell prompt for the command line examples, a Python session such as an ipython notbook of script, and an R session for the R examples.
-
-
+Synapse is built on a number of RESTful web APIs that allow users to interact with the system via a number of _clients_, including the Synapse website [www.synapse.org](https://www.synapse.org/). Synapse also provides three programmatic clients (R, Python, and command line). Content can be uploaded, downloaded, annotated, and queried from any of these interfaces. In the getting started guide we will run through examples using all three programmatic interfaces. At any point you can pick the language you would like to see examples in by clicking the corresponding tab at the bottom of every example. Unless otherwise noted, the examples can be typed into the appropriate programming environment (R session or script, Python session or script, or shell prompt).
 
 {% tabs %}
 {% tab Command %}
