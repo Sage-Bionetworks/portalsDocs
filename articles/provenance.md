@@ -6,12 +6,15 @@ excerpt: Learn about how Synapse visualizes and tracks the relationships of file
 
 <style>
 #image {
- width: 55%;
+ width: 40%;
  border: 1px solid #1e7098;
 }
 </style>
 
 ## Provenance
+
+<img id="image" style="float:right" src="/assets/images/provenanceWorkflowDemo.png">
+
 
 Reproducible research is a fundamental responsibility of scientists, but the best practices for achieving it are not established in computational biology. The Synapse “Provenance” system is one of many solutions you can use to make your work reproducible by you and others.
 
@@ -19,46 +22,31 @@ Provenance is a concept describing the origin of something; in Synapse it is use
 
 ### The basic elements of Synapse provenance
 
-
 The model Synapse uses for provenance is based on the [W3C provenance spec](https://www.w3.org/standards/techs/provenance#w3c_all){:target="_blank"} where items are derived from an **activity** which has components that were **used**  and components that were **executed**.  Think of the used items as input files and executed items as software or code.  Both used and executed can either be items in Synapse or URLs such as a link to a github commit or a link to specific version of a software tool.  
 
 The Synapse clients for command line, Python, and R support creating and editing of provenance relationships. The Web client allows editing of provenance once the file has been uploaded.
 
-Below is a Synapse visualization of provenance relationships that is demonstrated in the following section using our programmatic and web clients. in this example, we have two scripts, one that generates random numbers and another that takes a list of numbers and computes their squares. The project's workflow looks like this:
+Below is a Synapse visualization of provenance relationships that is demonstrated in the following section using our programmatic and web clients. in this example, we have two scripts, one that generates random numbers and another that takes a list of numbers and computes their squares. The project's workflow looks like the image to the right.
 
-<img id="image" src="/assets/images/provenanceWorkflowDemo.png">
+
 
 <br/>
 
 ### Setting Provenance When Uploading a File
 
-Let's assume that you have a script that generates a list of normally distributed random numbers. This will mean that you have a script file that was used to create a data file and both will be uploaded into Synapse. 
-For example, you have an R script file called generate_random_data.R:
-
-```
-# generate_random_data.R
-rnorm(100)
-```
-
-And you've saved the output to a data file called random_numbers.txt
-
-
-```
-# Using command line to save R script output to file
-Rscript generate_random_numbers.R > random_numbers.txt
-```
-
+Let's assume that you have a script that generates a list of normally distributed random numbers and saves the output to a file. 
+For example, you have an R script file called [generate_random_data.R](https://www.synapse.org/#!Synapse:syn7205215){:target="_blank"} and you've saved the output to a data file called [random_numbers.txt](https://www.synapse.org/#!Synapse:syn7208917){:target="_blank"}. We'll begin by uploading the files to Synapse and then set their provenance.  
 
 #### Add the script file to Synapse
 
-For this example, we'll assume that the `Project` already exists ([*Wondrous Research Example* : syn1901847](https://www.synapse.org/#!Synapse:syn1901847/files/)). We'll add our code file and data file to this project, or in Synapse terminology, the project will be the parent of the new entities. 
+For this example, we'll assume that the `Project` already exists ([*Wondrous Research Example* : syn1901847](https://www.synapse.org/#!Synapse:syn1901847/files/){:target="_blank"}). We'll add our code file and data file to this project, or in Synapse terminology, the project will be the parent of the new entities. 
 
 {% tabs %}
 
 {% tab Command %}
 {% highlight bash %}
 # Add the script to Synapse
-synapse add generate_random_data.py -parentId syn1901847 
+synapse add generate_random_data.R -parentId syn1901847 
 {% endhighlight %}
 {% endtab %}
 
@@ -69,7 +57,7 @@ import synpaseclient
 syn = synapseclient.login()
 
 # Add the script to Synapse
-script_file = File(path="generate_random_numbers.py", parent="syn1901847")
+script_file = File(path="generate_random_numbers.R", parent="syn1901847")
 script_file = syn.store(script_file)
 {% endhighlight %}
 {% endtab %}
@@ -94,14 +82,6 @@ Navigate to the **Files** tab on the project and click on **Upload or Link to Fi
 <br/>
 As you upload files onto Synapse, the new entity's synId will be provided. For this example, the new synId for the uploaded script file will be `syn7205215`. 
 
-```
-##################################################
- Uploading file to Synapse storage 
-##################################################
-Uploading [--------------------]0.00%   0.0bytes/29.0bytes  generate_random_dataUploading [####################]100.00%   29.0bytes/29.0bytes (14.0bytes/s) generate_random_data.R Done...
-    Created/Updated entity: syn7205215	generate_random_data.R
-```
-
 
 #### Add Provenance
 As the random_numbers.txt file was generated from the above script we are going to specify this using provenance. 
@@ -123,7 +103,7 @@ There are a couple ways to set provenance information for a Synapse entity. The 
 synapse add random_numbers.txt -parentId syn1901847 -executed syn7205215 -used http://mathworld.wolfram.com/NormalDistribution.html 
 
 # Alternatively in the command line client, you can specify a local path to a file in provenance if it has already been uploaded 
-synapse add random_numbers.txt -parentId syn1901847 -executed ./generate_random_data.py -used http://mathworld.wolfram.com/NormalDistribution.html 
+synapse add random_numbers.txt -parentId syn1901847 -executed ./generate_random_data.R -used http://mathworld.wolfram.com/NormalDistribution.html 
 {% endhighlight %}
 {% endtab %}
 
@@ -152,40 +132,18 @@ Currently, the web client does not support setting provenance when uploading a f
 
 Once the data file is uploaded, it will provide the synId assigned to it. In this case, the data file's synId is `syn7208917`.
 
-<br/>
 
 ### Editing Provenance
 
-To continue our example above, we'll now add some new results from our initial data file. We're going to take the results in random_numbers.txt and square them. Here's our script to square the numbers:
+To continue our example above, we'll now add some new results from our initial data file. We're going to take the results in random_numbers.txt and square them. The script to square the numbers will be [square.R](https://www.synapse.org/#!Synapse:syn7209078){:target="_blank"} and we'll save the output to a data file, [squares.txt](https://www.synapse.org/#!Synapse:syn7209166){:target="_blank"}.
 
-```
-# square.R
-
-# Get the file with the random numbers
-random_numbers <- synGet("syn7208917")
-random_numbers <- read.table(file=random_numbers@filePath, header=F, stringsAsFactors = F, row.names = 1)
-
-# Square the numbers
-lapply(random_numbers, function(x) x^2)
-
-```
-
-And we'll save the output to a data file, squares.txt, using command line:
-
-```
-# Using command line to save R script output to file
-Rscript square.R > squares.txt
-```
-
-
-
-#### Add the code entity 
+#### Add the code file 
 
 {% tabs %}
 
 {% tab Command %}
 {% highlight bash %}
-# Add code entity to Synapse
+# Add code file to Synapse
 synapse add square.R -parentId syn1901847
 {% endhighlight %}
 {% endtab %}
@@ -193,7 +151,7 @@ synapse add square.R -parentId syn1901847
 
 {% tab Python %}
 {% highlight python %}
-# Add code entity to Synapse 
+# Add code file to Synapse 
 code_file = File(path="square.R", parentId="syn1901847")
 code_file = syn.store(code_file)
 {% endhighlight %}
@@ -201,7 +159,7 @@ code_file = syn.store(code_file)
 
 {% tab R %}
 {% highlight r %}
-# Add code entity to Synapse 
+# Add code file to Synapse 
 code_file <- File(path="square.R", parentId="syn1901847")
 code_file <- synStore(code_file)
 {% endhighlight %}
@@ -214,13 +172,13 @@ Navigate to the **Files** tab on the project and click on **Upload or Link to Fi
 {% endtabs %}
 
 
-#### Add the data entity and set provenance
+#### Add the data file and set provenance
 
 {% tabs %}
 
 {% tab Command %}
 {% highlight bash %}
-# Add the data entity to Synapse
+# Add the data file to Synapse
 synapse add squares.txt -parentId syn1901847 
 # Set the provenance for newly created entity syn7209166
 synapse set-provenance -id syn7209166 -executed syn7209078 -used syn7208917
@@ -260,6 +218,7 @@ To update the provenance on a file, navigate to the `File's` tab and click on th
 
 {% endtabs %}
 
+<br/>
 
 ### Getting and Viewing Provenance
 
@@ -316,17 +275,15 @@ Unfortunately, command line currently does not support assigning the same activi
 
 {% tab Python %}
 {% highlight python %}
-# Code used to generate the file
-code_file = syn.get("syn123456")
-
+# Code used to generate the file will be syn123456
 # Files used to generate the information
-expr_file = syn.get("syn246810")
-filter_file = syn.get("syn135791")
+expr_file = syn.get("syn246810", download=F)
+filter_file = syn.get("syn135791", download=F)
 
 # Activity to assign to multiple files
 act = Activity(name="filtering",
                 used=[expr_file, filter_file],
-                executed=code_file)
+                executed="syn123456")
 syn.store(final_file, activity=act)
 
 # Get the activity now associated with an entity
@@ -341,19 +298,15 @@ file_list = map(lambda x: syn.store(x, activity=act), file_list)
 
 {% tab R %}
 {% highlight r %}
-# Code used to generate the file
-codeFile <- synGet("syn123456")
-
+# Code used to generate the file will be syn123456
 # Files used to generate the information
-expr_file = synGet("syn246810")
-filter_file = synGet("syn135791")
+expr_file = synGet("syn246810", download=F)
+filter_file = synGet("syn135791", download=F)
 
 # Activity to assign to multiple files
 act <- Activity(name="filtering",
-                used=list(
-                  list(entity=codeFile, wasExecuted=T),
-                  list(entity=exprFile, wasExecuted=F),
-                  list(entity=filterFile, wasExecuted=F)))
+                used=list(expr_file, filter_file),
+                executed="syn123456")
 finalFile <- synStore(finalFile, activity=act)
 
 # Get the activity now associated with an entity
