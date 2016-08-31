@@ -119,12 +119,11 @@ Explore our [accounts, certification and profile validation](/articles/accounts_
 
 <img style="float: right" src="/assets/images/project_1.png">
 
-Now that you have your Synapse account you can start adding content. All Synapse content is organized according to user-created `Projects`. Select a unique name for your `Project`, such as "My uniquely named project", and create your `Project`. `Projects` are an organizational unit in which you can collaboratively access and share `Wikis` (narratives), `Files` (a distributed file system to store data, code, and results from your work), and `Tables` (web-accessible, sharable, and queryable data where columns can have a user-specified structured schema). Each `Project` also contains a project-specific `Discussion Forum`.
+Once you have a Synapse account and have installed a client (or navigated to the Synapse web site) you can start adding content. All Synapse content is organized in user-created `Projects`, an organizational unit in which you can collaboratively access and share `Wikis` (narratives), `Files` (a distributed file system to store data, code, and results from your work), and `Tables` (web-accessible, sharable, and queryable data where columns can have a user-specified structured schema). Each `Project` also contains a project-specific `Discussion Forum`.
 By default, your newly created `Project` is private; you are the only person who can access it and any content you include in it. To invite others to view or edit your `Project`, click on the Share icon in the upper right hand portion of the screen. For more information on Sharing, please see the [Content Controls](/articles/access_controls.html) article.
 
 As an exercise we are going to create an example `Project` to store some cell line analysis.
-
-Since `Project` names must be unique in Synapse, let me suggest a project name for you: **<span id='random_proj_name'>Foo</span>**<br/>
+Decide on a unique name for your `Project`. Since `Project` names must be unique in Synapse, let me suggest a project name for you: **<span id='random_proj_name'>Foo</span>**<br/>
 
 <script type="text/javascript">
 var chance = window.Chance.Chance();
