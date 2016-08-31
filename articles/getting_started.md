@@ -37,10 +37,16 @@ Synapse was created to encourage open science initiatives to advance our underst
 Synapse operates under a complete [governance process](/articles/governance.html) that includes well-documented [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}, guidelines and operating procedures, privacy enhancing technologies, as well as the right of audit and external reviews.
 
 
-## Installing Synapse Clients
+## Interacting with Synapse
 <img style="float:right;" src="/assets/images/synapse_apis.png">
 
-Synapse is built on a number of RESTful web APIs that allow users to interact with the system via a number of _clients_, including the Synapse website [www.synapse.org](https://www.synapse.org/). Synapse also provides three programmatic clients (R, Python, and command line). Content can be uploaded, downloaded, annotated, and queried from any of these interfaces. In the getting started guide we will run through examples using all three programmatic interfaces. At any point you can pick the language you would like to see examples in by clicking the corresponding tab at the bottom of every example. Unless otherwise noted, the examples can be typed into the appropriate programming environment (R session or script, Python session or script, or shell prompt).
+Users can interact with Synapse through the Synapse website [www.synapse.org](https://www.synapse.org/) as well as three programmatic clients (R, Python, and command line). Content can be uploaded, downloaded, annotated, and queried from any of these interfaces.
+
+Under the hood, Synapse is built on a number of RESTful web APIs which all of the clients and the web site use for interaction.
+
+### Installing Synapse Clients
+
+In the getting started guide we will run through examples using all three programmatic interfaces. At any point you can pick the language you would like to see examples in by clicking the corresponding tab at the bottom of every example. Unless otherwise noted, the examples can be typed into the appropriate programming environment (R session or script, Python session or script, or shell prompt).
 
 {% tabs %}
 {% tab Command %}
