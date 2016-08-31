@@ -19,17 +19,18 @@ This getting started is for new users who are interested in learning about Synap
 ### What is Synapse?
 Synapse is an open source software platform that people can use to perform, track, and communicate their research in real time. Synapse enables content (data, code, results) and descriptions (readme's) of that content to be available in the same place.
 
-Synapse has seeded a growing number of living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
+Synapse hosts a growing number of living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
 
 With Synapse, you can:
 
-* create your own personal project workspaces
-* populate your projects with files and tables such as data, code, and results as well as the provenance relationships that tie these resources together
-* richly annotate files and tables to increase discoverability and aid in programmatic querying of these resources
-* provide a project narrative which lives right along side the scientific artifacts of your work, via the Synapse Wiki engine
-* create a [DOI](http://en.wikipedia.org/wiki/Digital_object_identifier){:target="_blank"} for any resource for easy citation of your work
-* share your work with other Synapse users, teams of users, or make your work public
-* Discuss with researchers in a project using group email and group chat.
+* create your own project workspaces
+* populate your projects with files (such as data, code, and results) and tables
+* connect the files with relationships that show how code was used with data to generate results (provenance)
+* annotate files and tables to increase discoverability
+* provide a narratives (documentation, readme's) for directly on the created files
+* create a [DOI](http://en.wikipedia.org/wiki/Digital_object_identifier){:target="_blank"} for any resource to allow citation of your work
+* share your work with other Synapse users, teams, or the public
+* discuss with researchers in a project using the discussion forums and email groups
 
 Synapse was created to encourage open science initiatives to advance our understanding of human health. [Sage Bionetworks](http://www.sagebase.org){:target="_blank"} provides Synapse services free of charge to the scientific community through generous support from the [*National Cancer Institute (NCI)*](http://www.cancer.gov){:target="_blank"}, the [*Washington State Life Science Development Fund (LSDF)*](http://www.lsdfa.org){:target="_blank"}, and the [*National Heart, Lung, and Blood Institute (NIH NHLBI)*](http://www.nhlbi.nih.gov){:target="_blank"}.
 
