@@ -6,9 +6,9 @@ excerpt: A getting started guide for non-technical users who are interested in l
 
 <script src='/assets/javascripts/words.js'></script>
 
-## Get Started with Synapse
+## Getting Started with Synapse
 
-This getting started is for non-technical users who are interested in learning about Synapse. By following this getting started, you’ll learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
+This getting started is for new users who are interested in learning about Synapse. You will learn fundamental Synapse features by performing some simple tasks:
 
 * Create your own project and add content to Synapse
 * Install one of the Synapse clients (R, Python or command line)
@@ -17,7 +17,9 @@ This getting started is for non-technical users who are interested in learning a
 * Understand and use provenance
 
 ### What is Synapse?
-Synapse is an open source software platform that data scientists can use to carry out, track, and communicate their research in real time. Synapse enables co-location of scientific content (data, code, results) and narrative descriptions of that work. Synapse has seeded a growing number of living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
+Synapse is an open source software platform that people can use to perform, track, and communicate their research in real time. Synapse enables content (data, code, results) and descriptions (readme's) of that content to be available in the same place.
+
+Synapse has seeded a growing number of living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
 
 With Synapse, you can:
 
@@ -54,7 +56,7 @@ pip install synapseclient
 
 {% tab Java %}
 {% highlight xml %}
-<!-- 
+<!--
 Using Maven, add the following block to your pom.xml.
 Note, you should set the version to the most recent 'repo' version, found in the footer of www.synapse.org
 -->
@@ -250,7 +252,7 @@ import org.sagebionetworks.repo.model.wiki.WikiPage;
 
 WikiPage page = new WikiPage();
 page.setTitle("Data Summary");
-page.setMarkdown("* Cell growth look normally distributed\n" + 
+page.setMarkdown("* Cell growth look normally distributed\n" +
 		"* There is evidence of inverse growth between these two cell lines");
 synapseClient.createWikiPage(myProject.getId(), ObjectType.ENTITY, page);
 	{%endhighlight %}
@@ -439,7 +441,7 @@ usedURL.setUrl("https://github.com/Sage-Bionetworks/synapseTutorials");
 used.add(usedEntity);
 used.add(usedURL);
 newActivity.setUsed(used);
-newActivity = synapseClient.createActivity(newActivity);	
+newActivity = synapseClient.createActivity(newActivity);
     {%endhighlight %}
 	{% endtab %}
 
@@ -454,7 +456,7 @@ plot2 = syn.store(plot2, used=raw_data_file,
 
     {% tab R %}
 	{% highlight r %}
-plot2 <- File(path="/images/plot2.png", parentId=resultsFolder$properties$id) 
+plot2 <- File(path="/images/plot2.png", parentId=resultsFolder$properties$id)
 plot2 <- synStore(plotFileEntity, used=rawDataFile,
     executed='https://github.com/Sage-Bionetworks/synapseTutorials',
     activityName="plot distributions",
