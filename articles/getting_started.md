@@ -125,6 +125,8 @@ By default, your newly created `Project` is private; you are the only person who
 As an exercise we are going to create an example `Project` to store some cell line analysis.
 Decide on a unique name for your `Project`. Since `Project` names must be unique in Synapse, let me suggest a project name for you: **<span id='random_proj_name'>Foo</span>**<br/>
 
+Use this project name in the example scripts below.
+
 <script type="text/javascript">
 var chance = window.Chance.Chance();
 var myadj = chance.capitalize(chance.pickone(adjectives));
