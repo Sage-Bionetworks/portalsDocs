@@ -100,13 +100,15 @@ pkgInstall("synapseClient")
 
 {% endtabs %}
 
-## Becoming a Certified User
+## Registering on Synapse
 
-Anyone can browse public content in Synapse but in order to download and create content you will need to register for an account:
+Anyone can browse public content on the Synapse web site, but in order to download and create content you will need to register for an account:
 
 <a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>{:target="_blank"}
 
-As Synapse can store human subject data that has sharing and use restrictions, you will also need to become certified and take a quiz about what kinds of items can be shared in Synapse.  To start this process:
+### Becoming a Certified User
+
+Since Synapse can store human subject data that has sharing and use restrictions, before you can create content you will need to become a Certified User and take a quiz about what kinds of items can be shared in Synapse. To start this process:
 
 <a href="https://www.synapse.org/#!Quiz:Certification" class="btn btn-primary">Become a Certified User</a>{:target="_blank"}
 
