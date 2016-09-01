@@ -17,7 +17,9 @@ This getting started is for new users who are interested in learning about Synap
 * Understand and use provenance
 
 ### What is Synapse?
-Synapse is an open source software platform that people can use to perform, track, and communicate their research in real time. It enables collaboratively generated content (like data, code, results) and descriptions of that content (like readme's) to be available in the same place.
+Synapse is an open source software platform that people can use to perform, track, and communicate their research in real time. It enables collaboratively generated content (like data, code, results) and descriptions of that content (like readme's) to be available in the same place. It was created to encourage open science initiatives to advance our understanding of human health.
+
+[Sage Bionetworks](http://www.sagebase.org){:target="_blank"} provides Synapse services free of charge to the scientific community through generous support from various [funding sources](http://localhost:4000/articles/faq.html#how-is-synapse-funded){:target='_blank'}.
 
 Synapse hosts a growing number of living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
 
@@ -32,7 +34,7 @@ With Synapse, you can:
 * share your work with other Synapse users, teams, or the public
 * discuss with researchers in a project using the discussion forums and email groups
 
-Synapse was created to encourage open science initiatives to advance our understanding of human health. [Sage Bionetworks](http://www.sagebase.org){:target="_blank"} provides Synapse services free of charge to the scientific community through generous support from the [*National Cancer Institute (NCI)*](http://www.cancer.gov){:target="_blank"}, the [*Washington State Life Science Development Fund (LSDF)*](http://www.lsdfa.org){:target="_blank"}, and the [*National Heart, Lung, and Blood Institute (NIH NHLBI)*](http://www.nhlbi.nih.gov){:target="_blank"}.
+<br/>
 
 Synapse operates under a complete [governance process](/articles/governance.html) that includes well-documented [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}, guidelines and operating procedures, privacy enhancing technologies, as well as the right of audit and external reviews.
 
