@@ -19,9 +19,7 @@ This getting started is for new users who are interested in learning about Synap
 ### What is Synapse?
 Synapse is an open source software platform that people can use to perform, track, and communicate their research in real time. It enables collaboratively generated content (like data, code, results) and descriptions of that content (like readme's) to be available in the same place. It was created to encourage open science initiatives to advance our understanding of human health.
 
-[Sage Bionetworks](http://www.sagebase.org){:target="_blank"} provides Synapse services free of charge to the scientific community through generous support from various [funding sources](http://localhost:4000/articles/faq.html#how-is-synapse-funded){:target='_blank'}.
-
-Synapse hosts many living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
+[Sage Bionetworks](http://www.sagebase.org){:target="_blank"} provides Synapse services free of charge to the scientific community through generous support from various [funding sources](http://localhost:4000/articles/faq.html#how-is-synapse-funded){:target='_blank'}. Synapse hosts many living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
 
 With Synapse, you can:
 
