@@ -121,7 +121,9 @@ Once you have a Synapse account and have installed a client (or navigated to the
 By default, your newly created `Project` is private; you are the only person who can access it and any content you include in it. To invite others to view or edit your `Project`, click on the Share icon in the upper right hand portion of the screen. For more information on Sharing, please see the [Content Controls](/articles/access_controls.html) article.
 
 As an exercise we are going to create an example `Project` to store some cell line analysis.
-Decide on a unique name for your `Project`. Since `Project` names must be unique in Synapse, let me suggest a project name for you: **<span id='random_proj_name'>Foo</span>**<br/>
+Decide on a unique name for your `Project`. Since `Project` names must be unique in Synapse, let me suggest a project name for you:
+
+**<span id='random_proj_name'>Foo</span>**<br/>
 
 Use this project name in the example scripts below.
 
@@ -239,6 +241,8 @@ Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the pro
 The `Wiki` tab in a `Project` provides a space for you to build narrative content to describe your research. These `Wikis` can also be nested as subpages to build up a hierarchy of content within your `Project` as well as be attached to specific `Files` and `Folders` in your `Project`.  Examples of content that you may want to include are project descriptions, specific aims, progress updates of data generation or analysis, analysis results (either in prose or via markdown-based notebooks such as [knitr](http://yihui.name/knitr/){:target="_blank"} or [IPython notebook](http://ipython.org/notebook.html){:target="_blank"}), or web-accessible publication-like summaries of your research.
 
 `Wiki` pages can contain highly customized content including, but not limited to images, tables, code blocks, LaTeX formatted equations, and scholarly references. Synapse-specific widgets also allow users to embed dynamic content based on other resources stored in Synapse (e.g., Entity List, User/Team badge, Query Table, or Provenance Graph).
+
+See the [Wiki](http://localhost:4000/articles/wikis.html) user guide for more information and examples. 
 
 Here we will create a small `Wiki`:
 
