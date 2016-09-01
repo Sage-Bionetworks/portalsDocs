@@ -44,7 +44,7 @@ Under the hood, Synapse is built on a number of RESTful web APIs which all of th
 
 ### Installing Synapse Clients
 
-In the getting started guide we will run through examples using all three programmatic interfaces. At any point you can pick the language you would like to see examples in by clicking the corresponding tab at the bottom of every example. Unless otherwise noted, the examples can be typed into the appropriate programming environment (R session or script, Python session or script, or shell prompt).
+In the getting started guide we will run through examples using all Synapse interfaces - command line, Java, Python, R, and the web site. At any point you can pick which you would like to see examples for by clicking the corresponding tab at the bottom of every example. Unless otherwise noted, the examples can be typed into the appropriate programming environment (R session or script, Python session or script, or shell prompt).
 
 {% tabs %}
 {% tab Command %}
