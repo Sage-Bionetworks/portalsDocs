@@ -34,12 +34,12 @@ Below is a Synapse visualization of provenance relationships that is demonstrate
 
 ### Setting Provenance When Uploading a File
 
-Let's assume that you have a script that generates a list of normally distributed random numbers and saves the output to a file. 
+Let's begin with a script that generates a list of normally distributed random numbers and saves the output to a file. 
 For example, you have an R script file called [generate_random_data.R](https://www.synapse.org/#!Synapse:syn7205215){:target="_blank"} and you've saved the output to a data file called [random_numbers.txt](https://www.synapse.org/#!Synapse:syn7208917){:target="_blank"}. We'll begin by uploading the files to Synapse and then set their provenance.  
 
 #### Add the script file to Synapse
 
-For this example, we'll assume that the `Project` already exists ([*Wondrous Research Example* : syn1901847](https://www.synapse.org/#!Synapse:syn1901847/files/){:target="_blank"}). We'll add our code file and data file to this project, or in Synapse terminology, the project will be the parent of the new entities. 
+For this example, we'll use a `Project` that already exists ([*Wondrous Research Example* : syn1901847](https://www.synapse.org/#!Synapse:syn1901847/files/){:target="_blank"}). We'll add our code file and data file to this project, or in Synapse terminology, the project will be the parent of the new entities. 
 
 {% tabs %}
 
