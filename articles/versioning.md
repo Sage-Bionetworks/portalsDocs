@@ -1,7 +1,7 @@
 ---
-title: Versioning
+title: Files and Versioning
 layout: article
-excerpt: Learn about how versioning works on Synapse.
+excerpt: Learn how files and versioning work in Synapse.
 ---
 
 Overview
