@@ -29,7 +29,7 @@ With Synapse, you can:
 * populate your projects with files (such as data, code, and results) and tables
 * connect the files with relationships that show how code was used with data to generate results (provenance)
 * annotate files and tables to increase discoverability
-* provide a narratives (documentation, readme's) for directly on the created files
+* provide narratives (documentation, readme's) for directly on the created files
 * create a [DOI](http://en.wikipedia.org/wiki/Digital_object_identifier){:target="_blank"} for any resource to allow citation of your work
 * share your work with other Synapse users, teams, or the public
 * discuss with researchers in a project using the discussion forums and email groups
@@ -37,7 +37,6 @@ With Synapse, you can:
 <br/>
 
 Synapse operates under a complete [governance process](/articles/governance.html) that includes well-documented [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}, guidelines and operating procedures, privacy enhancing technologies, as well as the right of audit and external reviews.
-
 
 ## Interacting with Synapse
 <img style="float:right;" src="/assets/images/synapse_apis.png">
