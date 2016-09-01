@@ -33,13 +33,12 @@ With Synapse, you can:
 * discuss with researchers in a project using the discussion forums and email groups
 
 <br/>
-
 Synapse operates under a complete [governance process](/articles/governance.html) that includes well-documented [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}, guidelines and operating procedures, privacy enhancing technologies, as well as the right of audit and external reviews.
 
 ## Interacting with Synapse
 <img style="float:right;" src="/assets/images/synapse_apis.png">
 
-Users can interact with Synapse through the Synapse website [www.synapse.org](https://www.synapse.org/) as well as three programmatic clients (R, Python, and command line). Content can be uploaded, downloaded, annotated, and queried from any of these interfaces.
+Users can interact with Synapse through the Synapse web site [www.synapse.org](https://www.synapse.org/) as well as three programmatic clients (R, Python, and command line). Content can be uploaded, downloaded, annotated, and queried from any of these interfaces.
 
 Under the hood, Synapse is built on a number of RESTful web APIs which all of the clients and the web site use for interaction.
 
