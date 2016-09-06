@@ -5,7 +5,7 @@ scientists use to carry out, track, and communicate their research in real time.
 
 ## How to contribute
 
-Synapse Docs is generated using [Jekyll](https://jekyllrb.com/) and uses redcarpet to render Markdown. Various page layouts can be found under the _layouts folder in the home directory. Most everything can be written using standard [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). 
+Synapse Docs is generated using [Jekyll](https://jekyllrb.com/) and uses redcarpet to render Markdown. Various page layouts can be found under the _layouts folder in the home directory. Most everything can be written using standard [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 ### Creating a page
 
@@ -56,7 +56,7 @@ You can use Liquid tags to show a code example in multiple languages. Follow the
 
 ### Using alert tags
 
-There are four types of alert highlighting to inform users: note, tip, warning, and important. You can insert an alert by using any of the following code in a markdown file. 
+There are four types of alert highlighting to inform users: note, tip, warning, and important. You can insert an alert by using any of the following code in a markdown file.
 ```
 {% include note.html content="This is a note." %}
 
@@ -73,7 +73,7 @@ To include new paragraphs, just add the `<br/>` tag within the content, like thi
 To add a table, use Liquid to call on the markdown-table css class. Then use the standard markdown table format.
 ```
 {:.markdown-table}
-| Header 1 | Header 2 | 
+| Header 1 | Header 2 |
 | --- | --- |
 | content | content |
 | content | content |
@@ -85,17 +85,12 @@ Images can be inserted using either Markdown or HTML, it all depends on your pre
 ![alt text](/assets/images/image1.jpg)
 <img src="/assets/images/image1.jpg" alt="alt text">
 ```
-### To commit changes 
-
-To avoid a lint error when committing, use:
-
-    git commit --no-verify -m "some message here"
 
 ## Install Dependencies
 
 With Bundler:
 
-    bundle install 
+    bundle install
     npm install
 
 ### How to run a development server
@@ -108,7 +103,6 @@ then navigate to [localhost:4000](http://localhost:4000)
 
     ./bin/jekyll build
 
-## License 
+## License
 
 Distributed under the Eclipse Public License, the same as Clojure.
-
