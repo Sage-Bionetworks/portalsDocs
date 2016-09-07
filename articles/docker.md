@@ -72,7 +72,7 @@ docker push docker.synapse.org/syn12345/my-repo
 ### Using Docker images stored in Synapse
 To access the Docker images stored in Synapse, simply use the `docker pull` command.
 
-{% include tip.html content="By default, if you do not specify a tag, it will attach "latest" as the tag.  If you specified a tag on your repository, be sure to pull the repository with the tag." %}
+{% include tip.html content="By default, if you do not specify a tag, it will attach latest as the tag.  If you specified a tag on your repository, be sure to pull the repository with the tag." %}
 ```
 docker pull docker.synapse.org/syn12345/my-repo
 ```
