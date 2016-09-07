@@ -76,7 +76,7 @@ STRING, DOUBLE, INTEGER, BOOLEAN, DATE, ENTITYID, FILEHANDLEID.
 
 ### Creating a Table
 
-**1. Start with a dataframe:**
+**1. Start with a dataframe, .csv, or .tsv:**
 
 {% tabs %}
 

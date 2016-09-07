@@ -23,7 +23,7 @@ layout: article
 
 ## Overview
 
-`Wikis` are available in Synapse projects to provide a space to build narrative content to describe the research. 
+`Wikis` are available in Synapse both on the `Project` level and on `Files/Folders` to provide a space to build narrative content to describe the research. 
 Every project has a Wiki tab where you can build pages and a hierarchy of subpages as you would with any website. These pages can be reordered through the Edit Order button below the Wiki pages. `Wikis` can also be added to `Folders` and `Files` allowing additional content documentation. `Wikis`, whether they are under the Wiki tab or on a folder, are built in the same way and enables incorporation of highly customized content including, but not limited to: images, tables, code blocks, LaTeX formatted equations, and scholarly references. In addition, Synapse-specific widgets lets you embed dynamic content based on other resources stored in Synapse. 
 
 ## Starting, editing and deleting a Wiki
