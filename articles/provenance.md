@@ -26,7 +26,7 @@ The model Synapse uses for provenance is based on the [W3C provenance spec](http
 
 The Synapse clients for command line, Python, and R support creating and editing of provenance relationships. The Web client allows editing of provenance once the file has been uploaded.
 
-Below is a Synapse visualization of provenance relationships that is demonstrated in the following section using our programmatic and web clients. in this example, we have two scripts, one that generates random numbers and another that takes a list of numbers and computes their squares. The project's workflow looks like the image to the right.
+On the right is a Synapse visualization of provenance relationships that is demonstrated in the following section using our programmatic and web clients. In this example, we have two scripts, one that generates random numbers and another that takes a list of numbers and computes their squares. The project's workflow looks like the image to the right.
 
 
 
@@ -37,58 +37,15 @@ Below is a Synapse visualization of provenance relationships that is demonstrate
 Let's begin with a script that generates a list of normally distributed random numbers and saves the output to a file. 
 For example, you have an R script file called [generate_random_data.R](https://www.synapse.org/#!Synapse:syn7205215){:target="_blank"} and you've saved the output to a data file called [random_numbers.txt](https://www.synapse.org/#!Synapse:syn7208917){:target="_blank"}. We'll begin by uploading the files to Synapse and then set their provenance.  
 
-#### Add the script file to Synapse
+#### Upload a file and add provenance
 
-For this example, we'll use a `Project` that already exists ([*Wondrous Research Example* : syn1901847](https://www.synapse.org/#!Synapse:syn1901847/files/){:target="_blank"}). We'll add our code file and data file to this project, or in Synapse terminology, the project will be the parent of the new entities. 
+For this example, we'll use a `Project` that already exists ([*Wondrous Research Example* : syn1901847](https://www.synapse.org/#!Synapse:syn1901847/files/){:target="_blank"}). The [code file](https://www.synapse.org/#!Synapse:syn7205215){:target="_blank"} is already saved in Synapse with synId `syn7205215` so we'll upload the data file to this `Project`, or in Synapse terminology, the project will be the parent of the new entities. 
 
-{% tabs %}
-
-{% tab Command %}
-{% highlight bash %}
-# Add the script to Synapse
-synapse add generate_random_data.R -parentId syn1901847 
-{% endhighlight %}
-{% endtab %}
-
-
-{% tab Python %}
-{% highlight python %}
-import synpaseclient
-syn = synapseclient.login()
-
-# Add the script to Synapse
-script_file = File(path="generate_random_numbers.R", parent="syn1901847")
-script_file = syn.store(script_file)
-{% endhighlight %}
-{% endtab %}
-
-{% tab R %}
-{% highlight r %}
-require(synapseClient)
-synapseLogin()
-
-# Add the script to Synapse
-script_file <- File(path="generate_random_numbers.R", parentId="syn1901847")
-script_file <- synStore(script_file)
-{% endhighlight %}
-{% endtab %}
-
-{% tab Web %}
-Navigate to the **Files** tab on the project and click on **Upload or Link to File**. In the resulting pop-up, click the **Choose File** button and select the file(s) you would like to upload.
-{% endtab %}
-
-{% endtabs %}
-
-<br/>
-As you upload files onto Synapse, the new entity's synId will be provided. For this example, the new synId for the uploaded script file will be `syn7205215`. 
-
-
-#### Add Provenance
-As the random_numbers.txt file was generated from the above script we are going to specify this using provenance. 
+As the [random_numbers.txt file](https://www.synapse.org/#!Synapse:syn7208917){:target="_blank"} was generated from the above script, we are going to specify this using provenance. 
 
 There are a couple ways to set provenance information for a Synapse entity. The `used` and `executed` arguments specify resources used and code executed in the process of creating the entity. Code can be stored in Synapse(as we did in the previous step) or, better yet, linked by URL to a source code versioning system like GitHub or SVN. As an example, we'll specify 2 somewhat contrived sources of provenance:
 
-1. Synapse entity by synId: syn7205215 
+1. Synapse entity by synId: [syn7205215](https://www.synapse.org/#!Synapse:syn7205215){:target="_blank"} (the code file)
 2. URL to a page describing [normal distributions](http://mathworld.wolfram.com/NormalDistribution.html){:target="_blank"}
 
 <br/>
@@ -102,7 +59,7 @@ There are a couple ways to set provenance information for a Synapse entity. The 
 # Set provenance using synId of the uploaded script (syn7205215) and the website referenced
 synapse add random_numbers.txt -parentId syn1901847 -executed syn7205215 -used http://mathworld.wolfram.com/NormalDistribution.html 
 
-# Alternatively in the command line client, you can specify a local path to a file in provenance if it has already been uploaded 
+# Alternatively in the command line client, if you have downloaded the file, you can specify a local path as such: 
 synapse add random_numbers.txt -parentId syn1901847 -executed ./generate_random_data.R -used http://mathworld.wolfram.com/NormalDistribution.html 
 {% endhighlight %}
 {% endtab %}
@@ -119,13 +76,16 @@ data_file = syn.store(data_file, executed="syn7205215", used="http://mathworld.w
 
 {% tab R %}
 {% highlight r %}
+# Set provenance for data file generated by the script file
 data_file <- File(path="random_numbers.txt", parent="syn1901847")
 data_file <- synStore(data_file, executed="syn7205215", used="http://mathworld.wolfram.com/NormalDistribution.html")
 {% endhighlight %}
 {% endtab %}
 
 {% tab Web %}
-Currently, the web client does not support setting provenance when uploading a file.
+Currently, the web client does not support setting provenance when uploading a file. However, provenance can be set up after the file has been uploaded: 
+Navigate to the `File's` tab and click on the `File` that you would like to update. Click on the **Tools** dropdown in the upper right hand corner and select **Edit Provenance**. In the resulting pop-up, enter the relevant information. 
+
 {% endtab %}
 
 {% endtabs %}
@@ -135,42 +95,7 @@ Once the data file is uploaded, it will provide the synId assigned to it. In thi
 
 ### Editing Provenance
 
-To continue our example above, we'll now add some new results from our initial data file. We're going to take the results in random_numbers.txt and square them. The script to square the numbers will be [square.R](https://www.synapse.org/#!Synapse:syn7209078){:target="_blank"} and we'll save the output to a data file, [squares.txt](https://www.synapse.org/#!Synapse:syn7209166){:target="_blank"}.
-
-#### Add the code file 
-
-{% tabs %}
-
-{% tab Command %}
-{% highlight bash %}
-# Add code file to Synapse
-synapse add square.R -parentId syn1901847
-{% endhighlight %}
-{% endtab %}
-
-
-{% tab Python %}
-{% highlight python %}
-# Add code file to Synapse 
-code_file = File(path="square.R", parentId="syn1901847")
-code_file = syn.store(code_file)
-{% endhighlight %}
-{% endtab %}
-
-{% tab R %}
-{% highlight r %}
-# Add code file to Synapse 
-code_file <- File(path="square.R", parentId="syn1901847")
-code_file <- synStore(code_file)
-{% endhighlight %}
-{% endtab %}
-
-{% tab Web %}
-Navigate to the **Files** tab on the project and click on **Upload or Link to File**. In the resulting pop-up, click the **Choose File** button and select the file(s) you would like to upload.
-{% endtab %}
-
-{% endtabs %}
-
+To continue our example above, we'll now add some new results from our initial data file. We're going to take the results in random_numbers.txt and square them. The script to square the numbers will be [square.R](https://www.synapse.org/#!Synapse:syn7209078){:target="_blank"} and we'll save the output to a data file, [squares.txt](https://www.synapse.org/#!Synapse:syn7209166){:target="_blank"}. As with the previous example, the code file is already saved in Synapse, so we'll upload the data file and set its provenance. 
 
 #### Add the data file and set provenance
 
@@ -180,8 +105,10 @@ Navigate to the **Files** tab on the project and click on **Upload or Link to Fi
 {% highlight bash %}
 # Add the data file to Synapse
 synapse add squares.txt -parentId syn1901847 
-# Set the provenance for newly created entity syn7209166
+# Set the provenance for newly created entity syn7209166 using synId
 synapse set-provenance -id syn7209166 -executed syn7209078 -used syn7208917
+# Set the provenance for newly created entity syn7209166 using local path
+synapse set-provenance -id syn7209166 -executed ./square.R -used ./random_numbers.txt
 {% endhighlight %}
 {% endtab %}
 
@@ -189,23 +116,29 @@ synapse set-provenance -id syn7209166 -executed syn7209078 -used syn7208917
 {% tab Python %}
 {% highlight python %}
 # Add the data file to Synapse
-data_file = File(path="squares.txt", parentId="syn1901847")
-data_file = syn.store(data_file)
+squared_file = File(path="squares.txt", parentId="syn1901847")
+squared_file = syn.store(squared_file)
 
 # Set provenance for newly created entity syn7209166
-data_file = syn.setProvenance(data_file, activity = Activity(used = "syn7208917", executed = "syn7209078"))
+squared_file = syn.setProvenance(squared_file, activity = Activity(used = "syn7208917", executed = "syn7209078"))
+# Provenance can also be set using local variables instead of looking up synIds
+squared_file = syn.setProvenance(squared_file, activity = Activity(used = data_file, executed = "syn7209078"))
 {% endhighlight %}
 {% endtab %}
 
 {% tab R %}
 {% highlight r %}
 # Add the data file to Synapse
-data_file <- File(path="squares.txt", parentId="syn1901847")
-data_file <- synStore(data_file)
+squared_file <- File(path="squares.txt", parentId="syn1901847")
+squared_file <- synStore(squared_file)
 
 # Set provenance for newly created entity syn7209166
 act <- Activity(name = "Squared numbers", used = "syn7208917", executed = "syn7209078")
 generatedBy(data_file) <- act
+# Provenance can also be set using local variables instead of looking up synIds
+act <- Activity(name = "Squared numbers", used = data_file, executed = "syn7209078")
+generatedBy(squared_file) <- act
+
 {% endhighlight %}
 {% endtab %}
 
@@ -235,7 +168,8 @@ synapse get-provenance -id syn7209166
 
 {% tab Python %}
 {% highlight python %}
-syn.getProvenance("syn7209166")
+provenance = syn.getProvenance("syn7209166")
+provenance
 {% endhighlight %}
 {% endtab %}
 
