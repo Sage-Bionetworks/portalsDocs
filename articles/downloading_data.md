@@ -1,26 +1,14 @@
 ---
 title: "Downloading data"
 layout: article
-excerpt: Tutorial on how to download data from synapse with the clients 
+excerpt: This tutorial will cover the best practices of downloading a file, directory and managing where files are stored
 ---
+
 
 ## Downloading a file
 
 Every entity in synapse has a unique synapse Id associated with it.  It can be found on every entity page next to `Synapse ID:`, starting with `syn` ending with numbers (ie. `syn00123`)
 
-
-### Entities
-
-There are six different types of entities
-
-* Project
-* Folder
-* File
-* Link
-* Table
-* Wiki
-
-Each of these entities will have attached metadata and annotations, except wikis, which users can extract. For file entities, there is an option for the `R` and `python` client to not download the file by setting `downloadFile = false`.
 
 {% tabs %}
 	{% tab Command %}
@@ -44,9 +32,8 @@ Entity = synGet("syn00123", downloadFile= FALSE)
 {% endtabs %}
 
 
-
 ###Downloading File Entities
-`File` entities can be downloaded by using the `get` command. Without specifying the optional parameters, the file entity downloaded will always be the most recent version (See [versioning](http://docs.synapse.org/articles/versioning.html) for more details) and downloaded to the user's synapse cache directory `~/.synapseCache`.
+`File` entities can be downloaded by using the `get` command. Without specifying the optional parameters, the file entity downloaded will always be the most recent version (See [versioning](http://docs.synapse.org/articles/versioning.html) for more details).
 
 ####Versions
 By default, the most recent version of the file is always downloaded unless specified.
