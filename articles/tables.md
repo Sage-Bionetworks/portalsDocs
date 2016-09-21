@@ -30,7 +30,7 @@ or Synapse can recommend column types when a user uploads a data file.
 
 ### Table Data
 The data contained within a Synapse `Table` can be retrieved by using a SQL-like query language either through the web portal or through 
-the analytical clients. **See the [API docs](http://docs.synapse.org/rest) for an enumeration of the types of queries that can be performed.** Here are a couple of simple 
+the analytical clients. **See the [API docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html){:target="_blank"} for an enumeration of the types of queries that can be performed.** Here are a couple of simple 
 examples.
 
 To get all of the columns from a `Table` with id syn3079449, the following query would be used:
@@ -67,12 +67,23 @@ SELECT * FROM syn3079449 WHERE age > 50 ORDER BY "treatmentArm" ASC
 ## Using Tables
 
 ### Overview  
-Synapse allows you to create, modify and query tabular data.
-A `Table` has a Schema and holds a set of rows conforming to that schema.
-A Schema is defined in terms of Column objects that specify types from the following choices: 
-STRING, DOUBLE, INTEGER, BOOLEAN, DATE, ENTITYID, FILEHANDLEID.
+Synapse allows you to create, modify and query tabular data. A `Table` has a Schema and holds a set of rows conforming to that schema. A Schema is defined in terms of Column objects that specify types from the following choices: 
 
-<br>
+{:.markdown-table}
+| \<columnType> |
+| ---- |
+| STRING |
+| DOUBLE|
+| INTEGER |
+| BOOLEAN |
+| DATE |
+| ENTITYID |
+| FILEHANDLEID |
+
+<br/>
+
+For the following code examples, we'll be using the [Wondrous Research Project (syn1901847)](https://www.synapse.org/#!Synapse:syn1901847/){:Target="_blank"}. The .csv file used in the example below can be downloaded [here](https://www.synapse.org/#!Synapse:syn7256188){:target="_blank"}.
+
 
 ### Creating a Table
 
@@ -89,8 +100,7 @@ syn = synapseclient.login()
 # If you have Pandas installed, the goal is that Synapse Tables will play nice with it.
 # Convert a .csv to a Pandas DataFrame
 import pandas as pd
-df = pd.read_csv("/path/to/foo.csv", index_col=False)
-
+df = pd.read_csv("path/to/jazzAlbums.csv", index_col=False)
 {% endhighlight %}
 {% endtab %}
 
@@ -99,10 +109,11 @@ df = pd.read_csv("/path/to/foo.csv", index_col=False)
 require(synapseClient)
 synapseLogin()
 
-#Begin with a data frame in your session:
-df <- data.frame("n"=c(1.1, 2.2, 3.3),
-                 "c"=c("foo", "bar", "bar"),
-                 "i"=as.integer(c(10,10,20)))
+csvFile <- read.csv("path/to/jazzAlbums.csv")
+
+# Convert to a data frame in your session:
+df <- as.data.frame(csvFile)
+
 {% endhighlight %}
 {% endtab %}
 
@@ -124,20 +135,20 @@ Python uses `synapseclient.as_table_columns` and R uses `as.tableColumns`.
 
 {% tab Python %}
 {% highlight python %}
-
+project = syn.get('syn1901847')
 cols = synapseclient.as_table_columns(df)
 
-schema = synpaseclient.Schema(name='My Schema', columns=cols, parent=project)
-
+schema = synpaseclient.Schema(name='Jazz Albums', columns=cols, parent=project)
 {% endhighlight %}
 {% endtab %}
 
 {% tab R %}
 {% highlight r %}
+project <- synGet('syn1901847')
 tcresult <- as.tableColumns(df)
 cols <- tcresult$tableColumns
 
-schema <- TableSchema(name="mySchema", columns=cols, parent=project)
+schema <- TableSchema(name='jazzAlbums', columns=cols, parent=project)
 {% endhighlight %}
 {% endtab %}
 
@@ -195,7 +206,8 @@ Python returns an iterator and R returns a data frame. To return a data frame in
 
 {% tab Python %}
 {% highlight python %}
-results = syn.tableQuery("select * from %s where c='bar'" % table.schema.id)
+results = syn.tableQuery('select * from syn7264701')
+df = results.asDataFrame()
 {% endhighlight %}
 {% endtab %}
 
@@ -232,9 +244,11 @@ In case of a conflict, your update may be rejected. You then have to do another 
 
 {% tab Python %}
 {% highlight python %}
-results = syn.tableQuery("select * from %s where n='2.2'" %table.schema.id)
+# Change the album value 'Vol. 2' to 'Volume 2' 
+results = syn.tableQuery("select * from %s where album='Vol. 2'" %table.schema.id)
 df = results.asDataFrame()
-df['n'] = [pi]
+df['album'] = ['Volume 2']
+syn.store(Table(schema, df, etag=results.etag))
 {% endhighlight %}
 {% endtab %}
 
@@ -267,10 +281,17 @@ Click on the **edit** icon to the right of the **Query** button to update table 
 {% tab Python %}
 {% highlight python %}
 #Define a new column
-new_column = syn.store(synapseclient.Column(name='new', columnType='STRING'))
+new_column = syn.store(synapseclient.Column(name='purchased', columnType='STRING'))
 #Add the new column to existing schema
-synpaseclient.Schema.addColumn(new_column)
+schema.addColumn(new_column)
 schema = syn.store(schema)
+# Query for the newest schema
+results = syn.tableQuery('select * from syn7264571')
+df = results.asDataFrame()
+# Add values into the new column
+df['purchased'] = ['yes', 'yes', 'no', 'yes']
+# Store the new table
+syn.store(Table(schema, df, etag=results.etag))
 {% endhighlight %}
 {% endtab %}
 
@@ -303,8 +324,8 @@ To add columns, click on the **Schema** button. From there, select the **Edit Sc
 {% highlight python %}
 cols = syn.getTableColumns(schema)
 for col in cols:
-    if col.name == "new":
-        synapseclient.Schema.removeColumn(col)
+    if col.name == 'purchased':
+        schema.removeColumn(col)
 schema = syn.store(schema)
 {% endhighlight %}
 {% endtab %}
@@ -337,10 +358,10 @@ To delete columns, click on the **Schema** button. From there, click the **Edit 
 # Renaming or otherwise modifying a column involves removing the column and adding a new column
 cols = syn.getTableColumns(schema)
 for col in cols:
-    if col.name == "new":
-        synapseclient.Schema.removeColumn(col)
-new_column2 = syn.store(synapseclient.Column(name='new2', columnType='STRING'))
-synapseclient.Schema.addColumn(new_column2)
+    if col.name == 'purchased':
+        schema.removeColumn(col)
+new_column2 = syn.store(synapseclient.Column(name='sold', columnType='STRING'))
+schema.addColumn(new_column2)
 schema = syn.store(schema)
 {% endhighlight %}
 {% endtab %}
@@ -379,9 +400,8 @@ To modify information in a column, first begin by **adding** a new column, then 
 
 {% tab Python %}
 {% highlight python %}
-new_rows = [["4.4", "moar", 100],
-            ["5.5", "stuff", 90],
-            ["6.6", "here", 80]]
+new_rows = [['Charles Mingus', 'Blues & Roots', 1960, 'SD 1305'],
+            ['Eugen Cicero', 'Rokoko-Jazz', 1965, 'SB 15027']]
 table = syn.store(synapseclient.Table(schema, new_rows))
 {% endhighlight %}
 {% endtab %}
@@ -414,7 +434,7 @@ Click on the **Edit icon** to the right of the query button to get to the **Edit
 {% tab Python %}
 {% highlight python %}
 # Query for the rows you want to delete and call syn.delete on the results:
-rowsToDelete = syn.tableQuery("select * from %s where c='foo'" %table.schema.id)
+rowsToDelete = syn.tableQuery("select * from %s where artist='Sonny Rollins'" %table.schema.id)
 a = syn.delete(rowsToDelete.asRowSet())
 {% endhighlight %}
 {% endtab %}
@@ -422,7 +442,7 @@ a = syn.delete(rowsToDelete.asRowSet())
 {% tab R %}
 {% highlight r %}
 # Query for the rows you want to delete and call synDeleteRows on the results:
-rowsToDelete <- synTableQuery(sprintf("select * from %s where c='foo'", table@schema$id)))
+rowsToDelete <- synTableQuery(sprintf("select * from %s where artist='Sonny Rollins'", table@schema$id)))
 synDeleteRows(rowsToDelete)
 {% endhighlight %}
 {% endtab %}
@@ -443,9 +463,10 @@ Click on the **Edit icon** to the right of the query button to get to the **Edit
 
 {% tab Python %}
 {% highlight python %}
-results = syn.tableQuery("select * from %s where c='bar'" %table.schema.id)
+results = syn.tableQuery("select * from %s where artist='Sonny Rollins'" %table.schema.id)
 df = results.asDataFrame()
-df['i'] = [50, 60]
+df['purchased'] = ['yes', 'yes']
+table = syn.store(synapseclient.Table(schema, df))
 {% endhighlight %}
 {% endtab %}
 
@@ -496,8 +517,130 @@ To delete the entire Table, click on **Tools** and then select **Delete Table** 
 
 <br>
 
+### Working with Files in a Table
+
+#### Table attached files
+
+Synapse `Tables` support a special column type called `File` which contain a file handle, an identifier of a file stored in Synapse. Here’s an example of how to upload files into Synapse, associate them with a table and read them back later.
+
+**1. Add a new column for files in the table we're currently working with**
+
+{% tabs %}
+
+{% tab Python %}
+{% highlight python %}
+# Add a column for files
+col = syn.store(Column(name='covers', columnType='FILEHANDLEID'))
+schema.addColumn(col)
+schema = syn.store(schema)
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+require(synapseClient)
+synapseLogin()
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+Instructions for Web + screenshots
+{% endtab %}
+
+{% endtabs %}
+
+<br/>
+
+**2. Retrieve the most currest schema and save as a data frame**
+
+{% tabs %}
+
+{% tab Python %}
+{% highlight python %}
+# retrieve the most current schema/df
+results = syn.tableQuery('select * from syn7264701')
+df = results.asDataFrame()
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+R code example
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+Instructions for Web + screenshots
+{% endtab %}
+
+{% endtabs %}
+
+<br/>
+
+**3. Upload the files:** The files used in this example can be found [here](){:target="_blank"}. It is assumed that the files are in your current working directory.
+
+{% tabs %}
+
+{% tab Python %}
+{% highlight python %}
+## the actual data
+files = ['./coltraneBlueTrain.jpg', './rollinsBN1558.jpg', 
+		'./rollinsBN4001.jpg','./burrellWarholBN1543.jpg']
+
+# Upload to filehandle service
+files = [syn._uploadToFileHandleService(f) for f in files]
+
+# get the filehandle ids
+fileHandleIds = [i['id'] for i in files]
+
+# assign the filehandle ids to the new column
+df['covers'] = fileHandleIds
+
+# store the new column
+syn.store(Table(schema, df, etag=results.etag))
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+add code here
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+Instructions for Web + screenshots
+{% endtab %}
+
+{% endtabs %}
+
+<br/>
+
+**4. Query the table and download the album cover files**
+
+{% tabs %}
+
+{% tab Python %}
+{% highlight python %}
+results = syn.tableQuery("select cover from %s where artist = 'Sonny Rollins'" % schema.id)
+cover_files = syn.downloadTableColumns(results, ['cover'])
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+add code here
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+Instructions for Web + screenshots
+{% endtab %}
+
+{% endtabs %}
+
+
 ## More on tables
-There are additional docs available for `Tables` in both Python and R that cover more advanced topics such as table attached files and uploading .csv data via the Python client without using Pandas.
+There are additional docs available for `Tables` in both Python and R that cover more advanced topics.
 
 For **Python** check out our [Python Docs](http://docs.synapse.org/python/Table.html#module-synapseclient.table).
 
