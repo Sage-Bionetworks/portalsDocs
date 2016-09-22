@@ -100,7 +100,7 @@ syn = synapseclient.login()
 # If you have Pandas installed, the goal is that Synapse Tables will play nice with it.
 # Convert a .csv to a Pandas DataFrame
 import pandas as pd
-df = pd.read_csv("path/to/jazzAlbums.csv", index_col=False)
+df = pd.read_csv('path/to/jazzAlbums.csv', index_col=False)
 {% endhighlight %}
 {% endtab %}
 
@@ -109,7 +109,7 @@ df = pd.read_csv("path/to/jazzAlbums.csv", index_col=False)
 require(synapseClient)
 synapseLogin()
 
-csvFile <- read.csv("path/to/jazzAlbums.csv")
+csvFile <- read.csv('path/to/jazzAlbums.csv')
 
 # Convert to a data frame in your session:
 df <- as.data.frame(csvFile)
@@ -148,7 +148,7 @@ project <- synGet('syn1901847')
 tcresult <- as.tableColumns(df)
 cols <- tcresult$tableColumns
 
-schema <- TableSchema(name='jazzAlbums', columns=cols, parent=project)
+schema <- TableSchema(name='Jazz Albums', columns=cols, parent=project)
 {% endhighlight %}
 {% endtab %}
 
@@ -213,7 +213,7 @@ df = results.asDataFrame()
 
 {% tab R %}
 {% highlight r %}
-queryResult <- synTableQuery(sprintf("select * from %s where c='bar'", table@schema$id))
+queryResult <- synTableQuery('select * from syn7264701')
 {% endhighlight %}
 {% endtab %}
 
@@ -254,10 +254,11 @@ syn.store(Table(schema, df, etag=results.etag))
 
 {% tab R %}
 {% highlight r %}
-#Update values in the second row, column "n" with the value "pi"
-queryResult@values[2, "n"] <- pi
-table <- synStore(queryResult, retrieveData=TRUE)
-table@values
+# Change the album value 'Vol. 2' to 'Volume 2' 
+queryResult <- synTableQuery("select * from syn7266590 where album='Vol. 2'")
+queryResult@values['album'] <- 'Volume 2'
+
+table <- synStore(queryResult)
 {% endhighlight %}
 {% endtab %}
 
@@ -286,7 +287,7 @@ new_column = syn.store(synapseclient.Column(name='purchased', columnType='STRING
 schema.addColumn(new_column)
 schema = syn.store(schema)
 # Query for the newest schema
-results = syn.tableQuery('select * from syn7264571')
+results = syn.tableQuery('select * from syn7264701')
 df = results.asDataFrame()
 # Add values into the new column
 df['purchased'] = ['yes', 'yes', 'no', 'yes']
@@ -297,11 +298,17 @@ syn.store(Table(schema, df, etag=results.etag))
 
 {% tab R %}
 {% highlight r %}
-#Define a new column
-newColumn <- TableColumn(name="new", columnType="STRING")
-#Add the new column to existing schema
+# Define a new column
+newColumn <- TableColumn(name="purchased", columnType="STRING")
+# Add the new column to existing schema
 schema <- synAddColumn(schema, newColumn)
 schema <- synStore(schema)
+# Query for the newest schema
+queryResult <- synTableQuery('select * from syn7264701')
+# Add values
+queryResult@values['purchased'] <- c('yes', 'yes', 'no', 'yes') 
+# Store the new table
+table <- synStore(queryResult)
 {% endhighlight %}
 {% endtab %}
 
@@ -332,10 +339,12 @@ schema = syn.store(schema)
 
 {% tab R %}
 {% highlight r %}
-
-schema <- synRemoveColumn(schema, aColumn)
-
-schema <- synStore(schema)
+# Get the latest table
+table <- synGet('syn7264701')
+# delete the 'purchased' column
+schema <- synRemoveColumn(table, table@columns[[5]])
+# store the new table
+table <- synStore(schema)
 {% endhighlight %}
 {% endtab %}
 
@@ -368,16 +377,19 @@ schema = syn.store(schema)
 
 {% tab R %}
 {% highlight r %}
-# Renaming or otherwise modifying a column involves removing the column and adding a new column
-newColumn <- TableColumn(name="new", columnType="STRING")
-schema <- synAddColumn(schema, newColumn)
+# Get the latest table
+table <- synGet('syn7266590')
+# delete the 'purchased' column
+schema <- synRemoveColumn(table, table@columns[[5]])
+# store the new table
+table <- synStore(schema)
+# get the latest table
+table <- synGet('syn7264701')
+# Define the new column
+newColumn <- TableColumn(name='sold', columnType='STRING')
+# Add the new column to the existing schema
+schema <- synAddColumn(table, newColumn)
 schema <- synStore(schema)
-table <- synTableQuery(sprintf("select * from %s", propertyValue(schema, "id")), 
-                       loadResult=TRUE)
-#Replace NAS in the new column with other values
-table@values["new"] <- c("one", "two", "three")
-table <- synStore(table, retrieveData=TRUE)
-table@values
 {% endhighlight %}
 {% endtab %}
 
@@ -408,12 +420,13 @@ table = syn.store(synapseclient.Table(schema, new_rows))
 
 {% tab R %}
 {% highlight r %}
-newRows <- data.frame("n"=c(4.4, 5.5, 6.6), 
-                       "c"=c("moar", "stuff", "here"), 
-                       "i"=as.integer(c(100,90,80)))
+newRows <- data.frame('artist'=c('Charles Mingus', 'Eugen Cicero'), 
+                      'album'=c('Blues & Roots', 'Rokoko-Jazz'), 
+                      'year'=as.integer(c(1960, 1965)),
+                      'catalog'=c('SD 1305', 'SB 15027'))
+schema <- synGet('syn7266590')
 tableToAppend <- Table(schema, newRows)
-table <- synStore(tableToAppend, retrieveData=TRUE)
-table@values
+table <- synStore(tableToAppend)
 {% endhighlight %}
 {% endtab %}
 
@@ -442,7 +455,7 @@ a = syn.delete(rowsToDelete.asRowSet())
 {% tab R %}
 {% highlight r %}
 # Query for the rows you want to delete and call synDeleteRows on the results:
-rowsToDelete <- synTableQuery(sprintf("select * from %s where artist='Sonny Rollins'", table@schema$id)))
+rowsToDelete <- synTableQuery("select * from syn7264701 where artist='Sonny Rollins'")
 synDeleteRows(rowsToDelete)
 {% endhighlight %}
 {% endtab %}
@@ -472,8 +485,9 @@ table = syn.store(synapseclient.Table(schema, df))
 
 {% tab R %}
 {% highlight r %}
-results <- synTableQuery(sprintf("select * from %s, table@schema$id))
-results@values[c(2,3), "c"] <- pi
+results <- synTableQuery("select * from syn7264701 where artist='Sonny Rollins'")
+results@values['purchased'] <- c('yes', 'yes')
+table <- synStore(results)
 {% endhighlight %}
 {% endtab %}
 
@@ -538,26 +552,30 @@ schema = syn.store(schema)
 
 {% tab R %}
 {% highlight r %}
-require(synapseClient)
-synapseLogin()
+# Add a column for files
+fileColumn <- TableColumn(name='covers', columnType='FILEHANDLEID')
+schema <- synAddColumn(schema, fileColumn)
+schema <- synStore(schema)
 {% endhighlight %}
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
+To add columns, click on the **Schema** button. From there, select the **Edit Schema** button and then add columns using the **Add Column** button located at the bottom of the pop-up and set the **Column Type** as **File**.
+<br>
+<img id="image" src="/assets/images/table_updating_columns.png">
 {% endtab %}
 
 {% endtabs %}
 
 <br/>
 
-**2. Retrieve the most currest schema and save as a data frame**
+**2. Retrieve the most current table and save as a data frame**
 
 {% tabs %}
 
 {% tab Python %}
 {% highlight python %}
-# retrieve the most current schema/df
+# retrieve the most current table
 results = syn.tableQuery('select * from syn7264701')
 df = results.asDataFrame()
 {% endhighlight %}
@@ -565,19 +583,22 @@ df = results.asDataFrame()
 
 {% tab R %}
 {% highlight r %}
-R code example
+# get the latest table
+table <- synTableQuery('select * from syn7264701')
 {% endhighlight %}
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
+Click **Save** to save your latest schema. 
+
+<img id="image" src="/assets/images/save_table.png">
 {% endtab %}
 
 {% endtabs %}
 
 <br/>
 
-**3. Upload the files:** The files used in this example can be found [here](){:target="_blank"}. It is assumed that the files are in your current working directory.
+**3. Upload the files:** The files used in this example can be downloaded [here](https://www.synapse.org/#!Synapse:syn7274194){:target="_blank"}. It is assumed that the files are in your current working directory.
 
 {% tabs %}
 
@@ -603,12 +624,28 @@ syn.store(Table(schema, df, etag=results.etag))
 
 {% tab R %}
 {% highlight r %}
-add code here
+# the actual data
+files <- c('./coltraneBlueTrain.jpg', './rollinsBN1558.jpg', 
+         './rollinsBN4001.jpg','./burrellWarholBN1543.jpg')
+
+# upload to filehandle service
+files <- lapply(files, function(f) synapseClient:::chunkedUploadFile(f))
+
+# get the filehandle ids
+fileHandleIds <- sapply(files, function(i) i[1]$id)
+
+# assign the filehandle ids to the new column
+table@values['covers'] <- fileHandleIds
+
+# store the new column
+synStore(table)
 {% endhighlight %}
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
+Click on the **Edit icon** to the right of the **Query** button. In the resulting pop-up, you can upload files by clicking the **Upload icon** then **Browse** and selecting the file from your local directory. Save the new table. 
+
+<img id="image" src="/assets/images/upload_files_to_table.png">
 {% endtab %}
 
 {% endtabs %}
@@ -621,21 +658,23 @@ Instructions for Web + screenshots
 
 {% tab Python %}
 {% highlight python %}
-results = syn.tableQuery("select cover from %s where artist = 'Sonny Rollins'" % schema.id)
+results = syn.tableQuery("select covers from %s where artist = 'Sonny Rollins'" % schema.id)
 cover_files = syn.downloadTableColumns(results, ['cover'])
 {% endhighlight %}
 {% endtab %}
 
 {% tab R %}
 {% highlight r %}
-add code here
+results <- synTableQuery('select covers from syn7264701')
+coverFiles <- synDownloadTableColumns(results, 'covers')
 {% endhighlight %}
 {% endtab %}
 
 {% tab Web %}
-Instructions for Web + screenshots
-{% endtab %}
+Clicking on any file will download it.
 
+<img id="image" src="/assets/images/download_files_from_table.png">
+{% endtab %}
 {% endtabs %}
 
 
