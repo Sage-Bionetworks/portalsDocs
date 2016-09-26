@@ -14,3 +14,4 @@ gem "redcarpet"
 gem "pygments.rb"
 gem "json"
 gem "s3_website"
+gem 'jekyll-seo-tag'
