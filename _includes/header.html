@@ -25,13 +25,16 @@
     <script type='text/javascript' src='/js/all.js'></script>
     <meta content='text/html;charset=utf-8' http-equiv='Content-Type' />
 
+    <!--<script src="/assets/javascripts/bootstrap.js"></script>-->
+    <!--<script src="/assets/javascripts/bootstrap.min.js"></script>-->
+
     <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
         if(!(window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")) {
             ga('create', 'UA-80938446-1', 'auto');
@@ -40,76 +43,122 @@
     </script>
 </head>
 
-<div class='navbar navbar-inverse navbar-fixed-top'>
-
-    <div class='navbar-inner'>
-
-        <div class='container-fluid synapse-blue-bg'>
-
-            <a id='bootstrap-overrides' class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-            </a>
-            <div class='collapse navbar-collapse'>
-                <ul class='nav font-size-1-5x line-height-45'>
-                    <li>
-                        <a href='/' style="text-transform: none !important; font-weight: normal !important; font-size: 0.85em !important; margin-left: 0;">
-                            <img src="/assets/images/synapse_logo_white_small.png" alt="Synapse Logo" style="width:45px; height:45px;">
-                            Synapse Docs</a>
-                    </li>
-                    <li>
-                        <a href="/articles/getting_started.html">Getting Started</a>
-                    </li>
-                    <li>
-                        <div class="dropdown header-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: transparent">API Docs
-                            <span class="caret" style="padding: 10px 0 0 0; border-top-color: white; border-bottom-color: white;"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="http://docs.synapse.org/r">R</a></li>
-                            <li><a href="http://docs.synapse.org/python">Python</a></li>
-                            <li><a href="http://docs.synapse.org/python/CommandLineClient.html">Command Line</a></li>
-                            <li><a href="http://docs.synapse.org/rest">REST APIs</a></li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="/articles/">User Guide</a>
-                    </li>
-                    <li>
-                        <a href="/articles/governance.html">Governance</a>
-                    </li>
-                    <li>
-                        <a href='/articles/faq.html'>FAQ</a>
-                    </li>
-                    <li>
-                        <a href='https://www.synapse.org/#!SynapseForum:default'>Forum</a>
-                    </li>
-                </ul>
-                <div id='cse'>
-                    <script>
-                        (function() {
-                            var cx = '005382984057587108443:ogr_hnjqqte';
-                            var gcse = document.createElement('script');
-                            gcse.type = 'text/javascript';
-                            gcse.async = true;
-                            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-                            var s = document.getElementsByTagName('script')[0];
-                            s.parentNode.insertBefore(gcse, s);
-                        })();
-                        $(function() {
-                             if (window.location.pathname && window.location.pathname != '/') {
-                                 $("ul.nav li a").each(function(){
-                                      if($(this).attr("href") == window.location.pathname)
-                                        $(this).parent().addClass("active");
-                                 })   
-                             }
-                        });
-                    </script>
-                    <gcse:search></gcse:search>
+<div class="navbar navbar-inverse navbar-fixed-top" id="bootstrap-overrides">
+    <button aria-controls="sd-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#sd-navbar" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a href="/" class="navbar-brand" style="color:white"><img src="/assets/images/synapse_logo_white_small.png" alt="Synapse Logo" style="width:35px; height:35px; padding-right: 0; position: relative; top:-7px"></a>
+    <nav class="collapse navbar-collapse" id="sd-navbar">
+        <a href="/" class="navbar-brand" style="color:white; padding-left:6px">Synapse Docs</a>
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="/articles/getting_started.html">Getting started</a>
+            </li>
+            <li>
+                <div class="dropdown" target='#collapsedropdown'>
+                    <a id="collapsedropdown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: transparent">API Docs
+                        <span class="caret" style="padding: 10px 0 0 0; border-top-color: white; border-bottom-color: white;"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="http://docs.synapse.org/r">R</a></li>
+                        <li><a href="http://docs.synapse.org/python">Python</a></li>
+                        <li><a href="http://docs.synapse.org/python/CommandLineClient.html">Command Line</a></li>
+                        <li><a href="http://docs.synapse.org/rest">REST APIs</a></li>
+                    </ul>
                 </div>
-            </div>
-
-        </div>
-    </div>
+            </li>
+            <li>
+                <a href="/articles/">User Guide</a>
+            </li>
+            <li>
+                <a href="/articles/governance.html">Governance</a>
+            </li>
+            <li>
+                <a href='/articles/faq.html'>FAQ</a>
+            </li>
+            <li>
+                <a href='https://www.synapse.org/#!SynapseForum:default'>Forum</a>
+            </li>
+        </ul>
+    </nav>
 </div>
+
+
+
+
+<!--<div class='navbar navbar-inverse navbar-fixed-top'>-->
+
+<!--<div class='navbar-inner'>-->
+
+<!--<div class='container-fluid synapse-blue-bg'>-->
+
+<!--<a id='bootstrap-overrides' class='btn btn-navbar' data-target='#mycollapsablemenu' data-toggle='collapse'>-->
+<!--<span class='icon-bar'></span>-->
+<!--<span class='icon-bar'></span>-->
+<!--<span class='icon-bar'></span>-->
+<!--</a>-->
+<!--<div id='mycollapsablemenu' class='collapse navbar-collapse'>-->
+<!--<ul class='nav font-size-1-5x line-height-45'>-->
+<!--<li>-->
+<!--<a href='/' style="text-transform: none !important; font-weight: normal !important; font-size: 0.85em !important; margin-left: 0;">-->
+<!--<img src="/assets/images/synapse_logo_white_small.png" alt="Synapse Logo" style="width:45px; height:45px;">-->
+<!--Synapse Docs</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="/articles/getting_started.html">Getting Started</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<div class="dropdown header-dropdown" target='#collapsedropdown'>-->
+<!--<a id="collapsedropdown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: transparent">API Docs-->
+<!--<span class="caret" style="padding: 10px 0 0 0; border-top-color: white; border-bottom-color: white;"></span></a>-->
+<!--<ul class="dropdown-menu">-->
+<!--<li><a href="http://docs.synapse.org/r">R</a></li>-->
+<!--<li><a href="http://docs.synapse.org/python">Python</a></li>-->
+<!--<li><a href="http://docs.synapse.org/python/CommandLineClient.html">Command Line</a></li>-->
+<!--<li><a href="http://docs.synapse.org/rest">REST APIs</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="/articles/">User Guide</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="/articles/governance.html">Governance</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href='/articles/faq.html'>FAQ</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href='https://www.synapse.org/#!SynapseForum:default'>Forum</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<div id='cse'>-->
+<!--<script>-->
+<!--(function() {-->
+<!--var cx = '005382984057587108443:ogr_hnjqqte';-->
+<!--var gcse = document.createElement('script');-->
+<!--gcse.type = 'text/javascript';-->
+<!--gcse.async = true;-->
+<!--gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;-->
+<!--var s = document.getElementsByTagName('script')[0];-->
+<!--s.parentNode.insertBefore(gcse, s);-->
+<!--})();-->
+<!--$(function() {-->
+<!--if (window.location.pathname && window.location.pathname != '/') {-->
+<!--$("ul.nav li a").each(function(){-->
+<!--if($(this).attr("href") == window.location.pathname)-->
+<!--$(this).parent().addClass("active");-->
+<!--})-->
+<!--}-->
+<!--});-->
+<!--</script>-->
+<!--<gcse:search></gcse:search>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
