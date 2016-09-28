@@ -80,83 +80,29 @@
                 <a href='https://www.synapse.org/#!SynapseForum:default'>Forum</a>
             </li>
         </ul>
+        <div id='cse'>
+            <script>
+                (function() {
+                    var cx = '005382984057587108443:ogr_hnjqqte';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                })();
+                $(function() {
+                    if (window.location.pathname && window.location.pathname != '/') {
+                        $("ul.nav li a").each(function(){
+                            if($(this).attr("href") == window.location.pathname)
+                                $(this).parent().addClass("active");
+                        })
+                    }
+                });
+            </script>
+            <gcse:search></gcse:search>
+        </div>
+
     </nav>
 </div>
 
-
-
-
-<!--<div class='navbar navbar-inverse navbar-fixed-top'>-->
-
-<!--<div class='navbar-inner'>-->
-
-<!--<div class='container-fluid synapse-blue-bg'>-->
-
-<!--<a id='bootstrap-overrides' class='btn btn-navbar' data-target='#mycollapsablemenu' data-toggle='collapse'>-->
-<!--<span class='icon-bar'></span>-->
-<!--<span class='icon-bar'></span>-->
-<!--<span class='icon-bar'></span>-->
-<!--</a>-->
-<!--<div id='mycollapsablemenu' class='collapse navbar-collapse'>-->
-<!--<ul class='nav font-size-1-5x line-height-45'>-->
-<!--<li>-->
-<!--<a href='/' style="text-transform: none !important; font-weight: normal !important; font-size: 0.85em !important; margin-left: 0;">-->
-<!--<img src="/assets/images/synapse_logo_white_small.png" alt="Synapse Logo" style="width:45px; height:45px;">-->
-<!--Synapse Docs</a>-->
-<!--</li>-->
-<!--<li>-->
-<!--<a href="/articles/getting_started.html">Getting Started</a>-->
-<!--</li>-->
-<!--<li>-->
-<!--<div class="dropdown header-dropdown" target='#collapsedropdown'>-->
-<!--<a id="collapsedropdown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: transparent">API Docs-->
-<!--<span class="caret" style="padding: 10px 0 0 0; border-top-color: white; border-bottom-color: white;"></span></a>-->
-<!--<ul class="dropdown-menu">-->
-<!--<li><a href="http://docs.synapse.org/r">R</a></li>-->
-<!--<li><a href="http://docs.synapse.org/python">Python</a></li>-->
-<!--<li><a href="http://docs.synapse.org/python/CommandLineClient.html">Command Line</a></li>-->
-<!--<li><a href="http://docs.synapse.org/rest">REST APIs</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</li>-->
-<!--<li>-->
-<!--<a href="/articles/">User Guide</a>-->
-<!--</li>-->
-<!--<li>-->
-<!--<a href="/articles/governance.html">Governance</a>-->
-<!--</li>-->
-<!--<li>-->
-<!--<a href='/articles/faq.html'>FAQ</a>-->
-<!--</li>-->
-<!--<li>-->
-<!--<a href='https://www.synapse.org/#!SynapseForum:default'>Forum</a>-->
-<!--</li>-->
-<!--</ul>-->
-<!--<div id='cse'>-->
-<!--<script>-->
-<!--(function() {-->
-<!--var cx = '005382984057587108443:ogr_hnjqqte';-->
-<!--var gcse = document.createElement('script');-->
-<!--gcse.type = 'text/javascript';-->
-<!--gcse.async = true;-->
-<!--gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;-->
-<!--var s = document.getElementsByTagName('script')[0];-->
-<!--s.parentNode.insertBefore(gcse, s);-->
-<!--})();-->
-<!--$(function() {-->
-<!--if (window.location.pathname && window.location.pathname != '/') {-->
-<!--$("ul.nav li a").each(function(){-->
-<!--if($(this).attr("href") == window.location.pathname)-->
-<!--$(this).parent().addClass("active");-->
-<!--})-->
-<!--}-->
-<!--});-->
-<!--</script>-->
-<!--<gcse:search></gcse:search>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->

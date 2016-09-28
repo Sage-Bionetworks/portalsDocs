@@ -11,8 +11,3 @@ redcarpet:
 gems:
     - jekyll-seo-tag
 
-title: Synapse Docs
-description: Synapse is an open source software platform that data scientists use to carry out, track, and communicate their research in real time.
-url: docs.syanpse.org
-author: Sage Bionetworks
-logo: ./assets/images/synapse_logo_white_small.png
