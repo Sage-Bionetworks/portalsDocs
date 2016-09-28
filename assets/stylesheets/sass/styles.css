@@ -331,13 +331,27 @@ section:last-child, .section:last-child, section.last, .section.last {
     margin-right: 0.25em;
 }
 
-/*#bootstrap-overrides .navbar-inverse .brand, .navbar-inverse .nav > li > a:hover {*/
-    /*text-decoration: underline;*/
-/*}*/
+.btn-group>.btn:hover,
+.btn-group>.btn:active,
+.btn-group>.btn:focus,
+.btn-group>.btn:visited
+ {
+    color: white;
+}
+
+.dropdown-item:hover {
+    text-decoration: none;
+    background-color: #e6e6e6;
+}
+
+.dropdown-item:visited {
+    color: #333333;
+}
 
 #bootstrap-overrides .dropdown {
     line-height: 5px;
     padding-top: 22px;
+    color: #666666;
 }
 
 .navbar-inverse .nav li.dropdown.open > .dropdown-toggle {
