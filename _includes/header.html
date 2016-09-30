@@ -42,16 +42,21 @@
     </script>
 </head>
 
-<div class="navbar navbar-inverse navbar-fixed-top" id="bootstrap-overrides">
+
+<nav class="navbar navbar-inverse navbar-fixed-top" id="bootstrap-overrides">
+        <div class="navbar-header">
     <button aria-controls="sd-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#sd-navbar" data-toggle="collapse" type="button">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
+
     <a href="/" class="navbar-brand" style="color:white"><img src="/assets/images/synapse_logo_white_small.png" alt="Synapse Logo" style="width:35px; height:35px; padding-right: 0; position: relative; top:-7px"></a>
+    <a hfer="/" class="navbar-brand" style="color:white; padding-left:6px; font-size: 1.5em">Synapse Docs</a>
+</div>
+    <div class="collapse navbar-collapse navbar-right" collapse="!isCollapsed"></div>
     <nav class="collapse navbar-collapse" id="sd-navbar">
-        <a href="/" class="navbar-brand" style="color:white; padding-left:6px">Synapse Docs</a>
         <ul class="nav navbar-nav">
             <li>
                 <a href="/articles/getting_started.html">Getting started</a>
@@ -66,7 +71,6 @@
                         <a class="dropdown-item" href="http://docs.synapse.org/python/CommandLineClient.html">Command Line</a>
                         <a class="dropdown-item" href="http://docs.synapse.org/python">Python</a>
                         <a class="dropdown-item" href="http://docs.synapse.org/r">R</a>
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="http://docs.synapse.org/rest">REST APIs</a>
                     </div>
                 </div>
@@ -106,9 +110,8 @@
             </script>
             <gcse:search></gcse:search>
         </div>
-
     </nav>
-</div>
+</nav>
 
 <!--<div class="dropdown" target='#collapsedropdown'>-->
     <!--<a id="collapsedropdown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: transparent">API Docs-->

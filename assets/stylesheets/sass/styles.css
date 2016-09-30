@@ -431,3 +431,22 @@ input.gsc-search-button-v2 {
     /*border-bottom: 3px solid white;*/
     /*color: #f0ad4e;*/
 /*}*/
+
+.navbar-collapse.in {
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    #bootstrap-overrides  .navbar-nav > li {
+        float: left;
+    }
+}
+@media (max-width: 768px) {
+    #bootstrap-overrides .navbar-nav > li {
+        float: none;
+    }
+    #bootstrap-overrides  .nav > li {
+        position: relative;
+        display: block;
+    }
+}
