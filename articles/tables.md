@@ -95,9 +95,7 @@ For the following code examples, we'll be using the [Wondrous Research Project (
 import synapseclient
 syn = synapseclient.login()
 
-# Pandas (For Python only): Pandas is a popular library for working with tabular data. 
-# If you have Pandas installed, the goal is that Synapse Tables will play nice with it.
-# Convert a .csv to a Pandas DataFrame
+# Convert a .csv to a Pandas DataFrame (this requires that you have Pandas downloaded)
 import pandas as pd
 df = pd.read_csv('path/to/jazzAlbums.csv', index_col=False)
 {% endhighlight %}
@@ -164,8 +162,8 @@ If you upload a file, the Web interface will automatically detect the table sche
 The Table() function takes two arguments, a schema object and data in some form, which can be:
 
 - a path to a CSV file
-- a [Pandas](http://pandas.pydata.org/){:target="_blank"} [DataFrame](http://pandas.pydata.org/pandas-docs/stable/api.html#dataframe){:target="_blank"} (This is a Python-only feature)
-- a `RowSet` object
+- a dataframe
+- a [`RowSet` object](http://docs.synapse.org/rest/org/sagebionetworks/repo/model/table/RowSet.html){:target="_blank"}
 - a list of lists where each of the inner lists is a row
 
 <br>
@@ -199,7 +197,7 @@ Upload the table into Synapse by clicking the **Create** button.
 <br>
 
 **4. Query the table:**
-Python returns an iterator and R returns a data frame. To return a data frame in Python using Pandas `results.asDataFrame()`.
+Python returns an iterator and R returns a data frame. To return a data frame in Python use Pandas `results.asDataFrame()`.
 
 {% tabs %}
 
@@ -230,12 +228,7 @@ Tables can be queried by using the Query bar above each table.
 
 Once the schema is settled, changes can be made by adding, appending, and deleting.
 
-In Python, updating requires an *etag*, which identifies the most recent change set plus row IDs and version numbers for 
-each row to be modified. We get those by querying before updating. Minimizing changesets to contain only rows that actually 
-change will make processing faster.
-
-The etag is used by the server to prevent concurrent users from making conflicting changes, a technique called optimistic concurrency. 
-In case of a conflict, your update may be rejected. You then have to do another query and try your update again.
+When updating, begin by querying the table to ensure you have the latest schema.
            
 **Updating existing values**
 
@@ -246,8 +239,8 @@ In case of a conflict, your update may be rejected. You then have to do another 
 # Change the album value 'Vol. 2' to 'Volume 2' 
 results = syn.tableQuery("select * from %s where album='Vol. 2'" %table.schema.id)
 df = results.asDataFrame()
-df['album'] = ['Volume 2']
-syn.store(Table(schema, df, etag=results.etag))
+df['album'] = 'Volume 2'
+syn.store(Table(results, df))
 {% endhighlight %}
 {% endtab %}
 
@@ -291,7 +284,7 @@ df = results.asDataFrame()
 # Add values into the new column
 df['purchased'] = ['yes', 'yes', 'no', 'yes']
 # Store the new table
-syn.store(Table(schema, df, etag=results.etag))
+syn.store(Table(schema, df))
 {% endhighlight %}
 {% endtab %}
 
@@ -617,7 +610,7 @@ fileHandleIds = [i['id'] for i in files]
 df['covers'] = fileHandleIds
 
 # store the new column
-syn.store(Table(schema, df, etag=results.etag))
+syn.store(Table(schema, df))
 {% endhighlight %}
 {% endtab %}
 
