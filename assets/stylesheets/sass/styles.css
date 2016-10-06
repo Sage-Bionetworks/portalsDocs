@@ -135,8 +135,8 @@ h2 {
   padding: 20px;
   color: black; }
 
-.row-fluid {
-  padding-top: 55px; }
+/*.row-fluid {*/
+  /*padding-top: 55px; }*/
 
 #bootstrap-overrides .alert {
   text-shadow: 0 0px 0;
@@ -378,6 +378,9 @@ sidebar navigates to topic
     }
     #bootstrap-overrides .float-right-lg {
         float: right;
+    }
+    #bootstrap-overrides  .navbar-nav > li:hover{
+        background-color: #154e6a;
     }
 }
 @media (max-width: 768px) {
@@ -734,3 +737,46 @@ b {
     color: #15C;
 }
 
+
+body { padding-top: 50px; }
+
+.navbar-fixed-top {
+    top: -50px; /* you'll have to figure out the exact number here */
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+    position: relative; /* this can also be static */
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover,
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus {
+    color: white;
+    font-weight: bolder;
+}
+
+@media only screen and (max-width: 320px) {
+
+    #bootstrap-overrides .container { font-size: 1.5em; }
+
+}
+
+/*
+Styling for code tabs
+*/
+
+.text-right.btn-group {
+    background-color: #e0e0e0;
+    color: black;
+}
+.text-right.btn-group .btn.btn-inactive:hover {
+    background-color: #e0e0e0;
+}
+.text-right.btn-group .btn:hover {
+    background-color: #e0e0e0;
+}
+.text-right.btn-group .btn {
+    color: black;
+}
+.text-right.btn-group .btn.btn-inactive {
+    background-color: #efefef;
+}
