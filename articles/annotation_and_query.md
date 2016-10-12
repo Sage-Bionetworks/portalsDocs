@@ -215,7 +215,7 @@ SELECT * FROM entity WHERE parentId=="syn1524884"
 
 Annotations are most useful for discovery of similar types of entities. Essentially, all annotations across Synapse are stored in a large table that can be queried to find entities with annotations matching your own criteria. While it can be useful to search for files that exist within an known project or folder, this requires that you know ahead of time where the files are.
 
-If annotations have been diligently added to `Folders`, they can be used to discover files of interest.
+If annotations have been diligently added to `Files`, they can be used to discover files of interest.
 For example, you can identify all `Files` annotated as `bam` files (`fileType = bam`) uploaded to Synapse with the following query:
 
 {% include note.html content="You will only be able to query the files you currently have permission to access." %}
