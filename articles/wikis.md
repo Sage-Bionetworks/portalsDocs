@@ -74,9 +74,9 @@ Select **Tools** then select **Edit Project/Folder/File wiki**
 ### Markdown language
 The layout and text of a `Wiki` can be customized using Wiki markdown language. A Formatting Guide is available within the Wiki editing window. For additional markdown functions see [Markdown in Synapse](https://www.synapse.org/#!Wiki:syn2467792/ENTITY/64247){:target="_blank"}. Useful markdown shortcuts are available as separate tools, including: heading, bold, italic, strike-through, code block, sub and superscript. 
 
-### Tables in markdown
+### Tables in Markdown
 
-{% include tip.html content="Add this markdown below the header to enable sort on the header columns." %}
+{% include tip.html content="Add this Markdown below the header to enable sort on the header columns." %}
 
     ````
      Header 1 | Header 2 | Header 3

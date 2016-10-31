@@ -95,7 +95,7 @@ For the following code examples, we'll be using the [Wondrous Research Project (
 import synapseclient
 syn = synapseclient.login()
 
-# Convert a .csv to a Pandas DataFrame (this requires that you have Pandas downloaded)
+# Convert a .csv to a Pandas DataFrame (this requires that you have Pandas installed)
 import pandas as pd
 df = pd.read_csv('path/to/jazzAlbums.csv', index_col=False)
 {% endhighlight %}
@@ -197,7 +197,7 @@ Upload the table into Synapse by clicking the **Create** button.
 <br>
 
 **4. Query the table:**
-Python returns an iterator and R returns a data frame. To return a data frame in Python use Pandas `results.asDataFrame()`.
+Python returns an iterator and R returns a data frame by default. To return a data frame in Python use Pandas `results.asDataFrame()`.
 
 {% tabs %}
 
@@ -228,7 +228,7 @@ Tables can be queried by using the Query bar above each table.
 
 Once the schema is settled, changes can be made by adding, appending, and deleting.
 
-When updating, begin by querying the table to ensure you have the latest schema.
+When updating, begin by querying the table to ensure you have the latest schema and values.
            
 **Updating existing values**
 
