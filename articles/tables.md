@@ -237,10 +237,10 @@ When updating, begin by querying the table to ensure you have the latest schema 
 {% tab Python %}
 {% highlight python %}
 # Change the album value 'Vol. 2' to 'Volume 2' 
-results = syn.tableQuery("select * from %s where album='Vol. 2'" %table.schema.id)
-df = results.asDataFrame()
+query = syn.tableQuery("select * from %s where album='Vol. 2'" %table.schema.id)
+df = query.asDataFrame()
 df['album'] = 'Volume 2'
-syn.store(Table(results, df))
+syn.store(Table(query, df))
 {% endhighlight %}
 {% endtab %}
 
