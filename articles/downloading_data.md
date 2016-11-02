@@ -40,6 +40,32 @@ entity <- synGet("syn3158111")
 
 <br/>
 
+Once a `File` has been downloaded, you can find the filepath using the following:
+
+{% tabs %}
+
+{% tab Command %}
+{% highlight bash %}
+# When downloading using the command line client, it will print the filepath of where the file was saved to.
+{% endhighlight %}
+{% endtab %}
+
+
+{% tab Python %}
+{% highlight python %}
+filepath = entity.path
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+filepath <- entity@filePath
+{% endhighlight %}
+{% endtab %}
+
+{% endtabs %}
+
+
 #### Versions
 
 If there are multiple versions of a `File`, a specific version can be downloaded by passing the `version` parameter.
@@ -95,17 +121,19 @@ entity <- synGet("syn00123", downloadLocation="/path/to/folder")
 
 {% endtabs %}
 
-## Finding Files
 
-Files in projects can be annotated to facilitate finding them with the information from the metadata tables. Most projects will have a page dedicated to the types of annotations available for query. 
 
-For example, to find all files in a project with synID `syn00123` and fileType `bam`:
+## Finding and Downloading Files
+
+Files in projects can be annotated to facilitate finding them with the information from the metadata tables. Most projects will have a page dedicated to the types of annotations available for query. It is possible to query based on any of the annotations attached to the files.
+
+For example, to find all **mRNA fastq** files originating from **CD34+ cells** in the [PCBC project](https://www.synapse.org/#!Synapse:syn1773109){:target="_blank"} (syn1773109) we can query by:
 
 {% tabs %}
 
 {% tab Command %}
 {% highlight bash %}
-synapse query "select * from file where projectId=='syn00123' AND fileType=='bam'"
+synapse query "select * from file where projectId=='syn1773109' AND dataType=='mRNA' AND fileType=='fastq' AND Cell_Type_of_Origin=='CD34+ cells'"
 {% endhighlight %}
 {% endtab %}
 
@@ -115,7 +143,7 @@ synapse query "select * from file where projectId=='syn00123' AND fileType=='bam
 import synapseclient
 syn = synapseclient.Synapse()
 syn.login()
-results = syn.query("select * from file where projectId=='syn00123' AND fileType=='bam'")
+results = syn.chunkedQuery("select * from file where projectId=='syn1773109' AND dataType=='mRNA' AND fileType=='fastq' AND Cell_Type_of_Origin=='CD34+ cells'")
 {% endhighlight %}
 {% endtab %}
 
@@ -123,12 +151,67 @@ results = syn.query("select * from file where projectId=='syn00123' AND fileType
 {% highlight r %}
 library(synapseClient)
 synapseLogin()
-results <- synQuery("select * from file where projectId=='syn00123' AND fileType=='bam'")
+results <- synQuery("select * from file where projectId=='syn1773109' AND dataType=='mRNA' AND fileType=='fastq' AND Cell_Type_of_Origin=='CD34+ cells'")
 {% endhighlight %}
 {% endtab %}
 
 {% endtabs %}
 
+Once you've queried for the files of interest, they can be downloaded using the following:
+
+
+{% tabs %}
+
+{% tab Command %}
+{% highlight bash %}
+synapse get -q "select * from file where projectId=='syn1773109' AND dataType=='mRNA' AND fileType=='fastq' AND Cell_Type_of_Origin=='CD34+ cells'"
+{% endhighlight %}
+{% endtab %}
+
+
+{% tab Python %}
+{% highlight python %}
+results = syn.chunkedQuery("select * from file where projectId=='syn1773109' AND dataType=='mRNA' AND fileType=='fastq' AND Cell_Type_of_Origin=='CD34+ cells'")
+
+entity = [syn.get(r['file.id']) for r in results]
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+results <- synQuery("select * from file where projectId=='syn1773109' AND dataType=='mRNA' AND fileType=='fastq' AND Cell_Type_of_Origin=='CD34+ cells'")
+
+entity <- lapply(results$file.id, function(x) synGet(x))
+{% endhighlight %}
+{% endtab %}
+
+{% endtabs %}
+
+#### Recursive Downloads
+
+The folder structure that is present on Synapse can be maintained by recursive downloading. 
+
+{% tabs %}
+
+{% tab Command %}
+{% highlight bash %}
+synapse get -r syn2390898
+{% endhighlight %}
+{% endtab %}
+
+{% tab Python %}
+{% highlight python %}
+files = synapseutils.syncFromSynapse(syn, 'syn2390898')
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+add code here
+{% endhighlight %}
+{% endtab %}
+
+{% endtabs %}
 
 #### Download Tables
 
@@ -179,19 +262,3 @@ wiki <- synGetWiki(entity, 12345)
 {% endtabs %}
 
 
-
-<!--#### Command Line Download-->
-
-<!--The Synapse command line client offers two ways of downloading Synapse `Files` that the other clients do not.  First, it allows for recursive downloading of files, maintaining the folder structure that is present on Synapse.  -->
-
-<!--```-->
-<!--# syn00123 has to be a Folder or a Project-->
-<!--synapse get --recursive syn00123-->
-<!--```-->
-
-<!--Second, users can pass in a [query statement](http://docs.synapse.org/articles/annotation_and_query.html#queries) to specify files to download.-->
-
-<!--```-->
-<!--# In the case below, syn00123 has to be a Project.  Any query statement would work. -->
-<!--synapse get --query 'select id from entity where projectId == "syn00123"'-->
-<!--```-->
