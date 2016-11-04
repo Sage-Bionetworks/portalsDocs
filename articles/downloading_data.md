@@ -11,7 +11,7 @@ Data in Synapse can be downloaded using the programmatic clients (Python, R, and
 ## Downloading a File
 
 Every entity in Synapse has a unique synID associated with it.  It can be found on every entity page next to `Synapse ID:`, starting with `syn` ending with numbers (ie. `syn00123`).
-`Files` can be downloaded by using the `get` command. By default, the `File` downloaded will always be the most recent version.
+`Files` can be downloaded by using the `get` command. By default, the `File` downloaded will always be the most recent version. If the current version of the `File` has already been downloaded, it will not re-download the `File`.
 
 For example, to get the experimental protocol file on [Adult Mouse Cardiac Myocyte Isolation](https://www.synapse.org/#!Synapse:syn3158111){:target="_blank"} (syn3158111) from the [Progenitor Cell Biology Consortium (PCBC)](https://www.synapse.org/#!Synapse:syn177310){:target="_blank"} you would run the following:
 
@@ -207,7 +207,7 @@ files = synapseutils.syncFromSynapse(syn, 'syn2390898')
 
 {% tab R %}
 {% highlight r %}
-add code here
+# Unfortunately, this feature is not currently available in the R client
 {% endhighlight %}
 {% endtab %}
 
