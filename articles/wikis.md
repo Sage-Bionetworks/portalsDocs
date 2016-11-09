@@ -74,6 +74,17 @@ Select **Tools** then select **Edit Project/Folder/File wiki**
 ### Markdown language
 The layout and text of a `Wiki` can be customized using Wiki markdown language. A Formatting Guide is available within the Wiki editing window. For additional markdown functions see [Markdown in Synapse](https://www.synapse.org/#!Wiki:syn2467792/ENTITY/64247){:target="_blank"}. Useful markdown shortcuts are available as separate tools, including: heading, bold, italic, strike-through, code block, sub and superscript. 
 
+### Tables in Markdown
+
+{% include tip.html content="Add this Markdown below the header to enable sort on the header columns." %}
+
+    ````
+     Header 1 | Header 2 | Header 3
+    --- | --- | ---
+    ````
+
+
+
 ### Attachments, links and tagging
 Files, images and videos can be attached to a `Wiki`. This may be content on from the web, your desktop, or `Files` already uploaded to Synapse. Links can be added to content available from any source with a url or to a Synapse users profile through the Tag someone widget, or by typing @ - just enter the Synapse username in the dialog that appears.
 
@@ -104,13 +115,4 @@ See the 'Insert' list for the following widgets to customize your Wiki design.
 | **Video** <br/> Video, Vimeo Video, and YouTube Video insert a video from various sources. | <img id="image" src="/assets/images/wiki_video.png"> | 
 
 <br> 
-
-{% include tip.html content="Add this markdown below the header to enable sort on the header columns." %}
-
-Tip: add this markdown below the header to enable sort on the header columns.
-
-    ````
-     Header 1 | Header 2 | Header 3
-    --- | --- | ---
-    ````
 

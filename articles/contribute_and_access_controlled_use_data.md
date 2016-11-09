@@ -25,7 +25,7 @@ Both `Registered` and `Certified` users can view, download, and use `Open Data` 
 
 To access `Controlled Data` (data with `Conditions for Use`), you must fulfill the `Conditions for Use` set by the data contributor. On the specific `File`/`Table's` page, click on the orange `Show unmet conditions` box in the center of the header. This will open a dialog box with directions on how to meet the `Conditions for Use` for the `File`/`Table` (see example, below). In many cases, access requires that you read and agree to data-specific terms electronically in a clickwrap contract. Occasionally, access to `Controlled Data` requires additional steps, like having your analysis plan approved by an ethics board or IRB. 
 
-![accessing data dialog box](/assets/images/accessing_data.png)
+<img style="width: 80%;" src="/assets/images/accessing_data.png">
 
 {% include warning.html content="Controlled Data may not be redistributed." %}
 Each Synapse user wishing to access `Controlled Data` must individually agree to the `Conditions for Use` to access that data.

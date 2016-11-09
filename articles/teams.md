@@ -4,6 +4,12 @@ layout: article
 excerpt: Easily manage groups of users for purposes of project access, communication, and challenges by forming teams.  
 ---
 
+<style>
+#image {
+ width: 100%;
+}
+</style>
+
 ## Teams
 
 `Teams` are a way to easily manage groups of users for the purposes of project access, communication, and challenge participation. In this guide you will learn how to:
@@ -19,7 +25,7 @@ excerpt: Easily manage groups of users for purposes of project access, communica
 
 From your Profile Page, which can be accessed by clicking your name in the top right corner, click on the **Teams** tab as seen below.
 
-<img style="float: right;" src="/assets/images/Teams_user_list.png">
+<img id="image" style="float: right;" src="/assets/images/Teams_user_list.png">
 
 Enter a team name in the dialog box and click **Create Team**. If the team name already exists, you will be prompted to enter a new team name.
 
@@ -44,7 +50,7 @@ You may search for Synapse `Teams` using the **Search All Teams** button on the 
 
 For `Teams` to which you do not belong, you may view the team members and contact information, as well as request to join the `Team` via the **Request to Join Team** button. You may also search among team members using the search box on the upper right side of the page.
 
-<img style="float: right;" src="/assets/images/Teams_teamscreenshot.png">
+<img id="image" style="float: right;" src="/assets/images/Teams_teamscreenshot.png">
 
 ### Communications and Project Permissions
 
