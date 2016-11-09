@@ -10,7 +10,7 @@ Data in Synapse can be downloaded using the programmatic clients (Python, R, and
 
 ## Downloading a File
 
-Every entity in Synapse has a unique synID associated with it.  It can be found on every entity page next to `Synapse ID:`, starting with `syn` ending with numbers (ie. `syn00123`).
+Every entity in Synapse has a unique synID associated with it.  It can be found on every entity page next to `Synapse ID:`, starting with `syn` ending with numbers (i.e. `syn00123`).
 `Files` can be downloaded by using the `get` command. By default, the `File` downloaded will always be the most recent version. If the current version of the `File` has already been downloaded, it will not re-download the `File`.
 
 For example, to get the experimental protocol file on [Adult Mouse Cardiac Myocyte Isolation](https://www.synapse.org/#!Synapse:syn3158111){:target="_blank"} (syn3158111) from the [Progenitor Cell Biology Consortium (PCBC)](https://www.synapse.org/#!Synapse:syn177310){:target="_blank"} you would run the following:
@@ -26,12 +26,17 @@ synapse get syn3158111
 
 {% tab Python %}
 {% highlight python %}
+import synapseclient
+syn = synapseclient.Synapse()
+syn.login()
 entity = syn.get("syn3158111")
 {% endhighlight %}
 {% endtab %}
 
 {% tab R %}
 {% highlight r %}
+library(synapseClient)
+synapseLogin()
 entity <- synGet("syn3158111")
 {%endhighlight %}
 {% endtab %}
@@ -70,7 +75,7 @@ filepath <- entity@filePath
 
 If there are multiple versions of a `File`, a specific version can be downloaded by passing the `version` parameter.
 
-In this example, there are multiple versions of an [miRNA FASTQ file](https://www.synapse.org/#!Synapse:syn3260973){:target="_blank"} (syn3260973) from PCBC. To download the first version, you use the following:
+In this example, there are multiple versions of an [miRNA FASTQ file](https://www.synapse.org/#!Synapse:syn3260973){:target="_blank"} (syn3260973) from the Progenitor Cell Biology Consortium. To download the first version:
 
 {% tabs %}
 {% tab Command %}
@@ -127,7 +132,7 @@ entity <- synGet("syn00123", downloadLocation="/path/to/folder")
 
 Files in projects can be annotated to facilitate finding them with the information from the metadata tables. Most projects will have a page dedicated to the types of annotations available for query. It is possible to query based on any of the annotations attached to the files.
 
-For example, to find all **mRNA fastq** files originating from **CD34+ cells** in the [PCBC project](https://www.synapse.org/#!Synapse:syn1773109){:target="_blank"} (syn1773109) we can query by:
+For example, to find all **mRNA fastq** files originating from **CD34+ cells** in the [PCBC project](https://www.synapse.org/#!Synapse:syn1773109){:target="_blank"} we can query by:
 
 {% tabs %}
 
@@ -140,17 +145,12 @@ synapse query "select * from file where projectId=='syn1773109' AND dataType=='m
 
 {% tab Python %}
 {% highlight python %}
-import synapseclient
-syn = synapseclient.Synapse()
-syn.login()
 results = syn.chunkedQuery("select * from file where projectId=='syn1773109' AND dataType=='mRNA' AND fileType=='fastq' AND Cell_Type_of_Origin=='CD34+ cells'")
 {% endhighlight %}
 {% endtab %}
 
 {% tab R %}
 {% highlight r %}
-library(synapseClient)
-synapseLogin()
 results <- synQuery("select * from file where projectId=='syn1773109' AND dataType=='mRNA' AND fileType=='fastq' AND Cell_Type_of_Origin=='CD34+ cells'")
 {% endhighlight %}
 {% endtab %}
@@ -201,6 +201,7 @@ synapse get -r syn2390898
 
 {% tab Python %}
 {% highlight python %}
+import synapseutils
 files = synapseutils.syncFromSynapse(syn, 'syn2390898')
 {% endhighlight %}
 {% endtab %}
