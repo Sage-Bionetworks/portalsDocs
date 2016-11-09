@@ -6,6 +6,12 @@ excerpt: A getting started guide for non-technical users who are interested in l
 
 <script src='/assets/javascripts/words.js'></script>
 
+<style>
+#webTab {
+    width: 90%;
+}
+</style>
+
 ## Get Started with Synapse
 
 This getting started is for non-technical users who are interested in learning about Synapse. By following this getting started, you’ll learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
@@ -178,7 +184,7 @@ print(paste('Created a project with Synapse id', myProj$properties$id, sep = ' '
 
     {% tab Web %}
 Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the **Create Project** button
-<img src="/assets/images/create_project.jpg">
+<img id="webTab" src="/assets/images/create_project.jpg">
     {% endtab %}
 {% endtabs %}
 <br>
@@ -219,7 +225,7 @@ onWeb(myProj)
 
     {% tab Web %}
 Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the project name in the Projects listing {% endtab %}
-<img src="/assets/images/clickonproject.jpg">
+<img id="webTab" src="/assets/images/clickonproject.jpg">
 {% endtabs %}
 
 
@@ -277,7 +283,7 @@ wiki <- synStore(wiki)
 
     {% tab Web %}
 Go to project page and click the **Tool button** and chose **Edit Project Wiki**.
-<img src="/assets/images/addwiki.jpg">
+<img id="webTab" src="/assets/images/addwiki.jpg">
     {% endtab %}
 {% endtabs %}
 
@@ -329,7 +335,7 @@ resultsFolder <- synStore(resultsFolder)
     {% tab Web %}
 click the **Add Folder** button on the Files tab.
 <br>
-<img src="/assets/images/addfolder.jpg">
+<img id="webTab" src="/assets/images/addfolder.jpg">
     {% endtab %}
 {% endtabs %}
 <br>
@@ -389,9 +395,9 @@ rawDataFile <- synStore(rawDataFile)
 {% tab Web %}
 
 click the **Upload or Link to File** button on the Files tab. Go through the dialogs.  Then click the **Annotations** button on the top right of the screen to add annotations.
-<img src="/assets/images/organizing_data1.jpg">
-<img src="/assets/images/organizing_data2.jpg">
-<img src="/assets/images/organizing_data3.jpg">
+<img id="webTab" src="/assets/images/organizing_data1.jpg">
+<img id="webTab" src="/assets/images/organizing_data2.jpg">
+<img id="webTab" src="/assets/images/organizing_data3.jpg">
 
     {% endtab %}
 {% endtabs %}
@@ -464,8 +470,8 @@ plot2 <- synStore(plotFileEntity, used=rawDataFile,
 
     {% tab Web %}
 click the **Upload or Link to File** button on the Files tab to upload image/plot_2.png.  After uploading click the **Tools** button and chose **Edit Provenance**.
-<img src="/assets/images/gettingstarted_provenance1.png">
-<img src="/assets/images/gettingstarted_provenance2.png">
+<img id="webTab" src="/assets/images/gettingstarted_provenance1.png">
+<img id="webTab" src="/assets/images/gettingstarted_provenance2.png">
     {% endtab %}
 {% endtabs %}
 

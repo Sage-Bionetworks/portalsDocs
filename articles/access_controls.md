@@ -4,6 +4,12 @@ layout: article
 excerpt: Synapse has two content controls -- the Sharing setting and Conditions for Use. Learn how to set Sharing settings and Conditions for Use.
 ---
 
+<style>
+#image {
+    width: 100%;
+    }
+</style>
+
 ## Overview
 Synapse has two content controls: the `Sharing setting` and `Conditions for Use.` The `Sharing setting` is an access control. It determines _who_ has access to Synapse content. `Conditions for Use` are for data governance. They determine _how_ data can be used. 
 
@@ -18,8 +24,7 @@ You can use the `Sharing setting` to invite people to view or collaborate on a S
 ### How to share content
 To adjust the `Sharing setting`, click the `Share` button at the upper right hand side of the `Project's` header. This will open a window listing the Synapse users who have access to the `Project` and their roles. A globe icon means the `Project` is **Public**. A lock icon means the `Project` is **Private**. When you create a new `Project` you are the only Synapse user listed in this window. Use the `Add People` feature to add collaborators individually or to add a [team of collaborators](/articles/teams.html).
 
-
-![sharing button examples]({{site.url}}/assets/images/sharing_buttons_examples.png)
+<img id="image" src="/assets/images/sharing_buttons_examples.png">
 
 <a name="share-content"></a>
 
@@ -28,7 +33,7 @@ You can also adjust the `Sharing setting` for `Folders`, `Files`, and `Tables`. 
 
 Local `Sharing settings` are illustrated in the diagram below. `Projects` A and B have a **Public** `Sharing setting` (notice the globe icon on the `Share` button). `Folders` 1 and 2 and `Table` 3 in `Project` A _do not_ have a local `Sharing setting` specified. Because they do not have a local `Sharing setting` specified, they inherit the **Public** `Sharing setting` of `Project` A. By contrast, in `Project` B the `Folder` 4 and `Table` 6 _do_ have local `Sharing settings`. Unlike their parent `Project` B, `Folder` 4 and `Table` 6 have the **Private** `Sharing setting` (notice the lock icon on the `Share` buttons). However, `File` 5 has no local `Sharing setting`; it inherits the **Public** `Sharing setting` of `Project` B. But, if you move `File` 5 into `Folder` 4, then its **Public** `Sharing setting` will be reset to the `Sharing setting` of `Folder` 4: **Private**.
 
-<img src= "/assets/images/synapse_sharingsetting.jpg">
+<img id="image" src="/assets/images/synapse_sharingsetting.jpg">
 
 <a name="conditions-for-use"></a>
 

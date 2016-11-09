@@ -9,6 +9,9 @@ excerpt: Learn about how Synapse visualizes and tracks the relationships of file
  width: 40%;
  border: 1px solid #1e7098;
 }
+#webTab {
+ width: 90%;
+}
 </style>
 
 ## Provenance
@@ -145,7 +148,7 @@ generatedBy(squared_file) <- act
 {% tab Web %}
 To update the provenance on a file, navigate to the `File's` tab and click on the `File` that you would like to update. Click on the **Tools** dropdown in the upper right hand corner and select **Edit Provenance**. In the resulting pop-up, enter the relevant information. 
 
-<img src="/assets/images/editProvenance.png">
+<img id="webTab" src="/assets/images/editProvenance.png">
 
 {% endtab %}
 
