@@ -253,7 +253,7 @@ synapse query 'SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn1
 		{% highlight python %}
 
 
-result = syn.chunckedQuery('SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"')
+result = syn.chunkedQuery('SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"')
 		{% endhighlight %}
 	{% endtab %}
 
