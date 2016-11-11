@@ -786,8 +786,13 @@ Styling for code tabs
 /*testing css for new userguide*/
 .thumbnail {
     padding:0;
+    border-right: white;
+    border-top: white;
+    border-bottom: white;
+
 }
-#ugDiv {
+
+#userDiv {
     min-height: 500px;
     height: auto;
 }
