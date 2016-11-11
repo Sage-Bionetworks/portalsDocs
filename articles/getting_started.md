@@ -2,6 +2,7 @@
 title: "Getting Started with Synapse"
 layout: article
 excerpt: A getting started guide for non-technical users who are interested in learning about Synapse.
+category: intro
 ---
 
 <script src='/assets/javascripts/words.js'></script>

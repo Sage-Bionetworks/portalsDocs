@@ -2,6 +2,7 @@
 title: Files and Versioning
 layout: article
 excerpt: Learn how files and versioning work in Synapse.
+category: howto
 ---
 
 Files
