@@ -3,6 +3,7 @@ title: "FAQ"
 layout: article
 excerpt: What is Synapse? 
 category: intro
+order: 4
 ---
 
 ## General
