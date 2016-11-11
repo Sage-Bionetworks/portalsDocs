@@ -47,7 +47,7 @@ layout: default
 <!--#68b2bb, #0ea862, #7772b4-->
 
 
-<div class="container" id="ugDiv">
+<div class="container" id="userDiv">
 
 
   <div class="panel panel-default">
@@ -60,17 +60,13 @@ layout: default
       <div class="row"">
         {% for page in site.pages %}
         {% if page.category == 'intro' %}
-        <div class="col-xs-18 col-sm-6 col-md-3">
-          <div class="thumbnail">
-            <div class="card-header" style="height: 15px; background-color: #68b2bb">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="thumbnail" style="border-left: 5px solid #68b2bb">
+            <div class="card-header" style="height: 15px; background-color: #d1e7ea">
             </div>
             <div class="caption">
               <h5><b>{{ page.title }}</b></h5>
               <p>{{page.excerpt}}</p>
-              <!--<hr>-->
-              <!--<a href="#" class="btn btn-default" role="button">-->
-              <!--<span class="glyphicon glyphicon-info-sign"></span>-->
-              <!--</a>-->
               <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
             </div>
 
@@ -94,17 +90,13 @@ layout: default
       <div class="row">
         {% for page in site.pages %}
         {% if page.category == 'howto' %}
-        <div class="col-xs-18 col-sm-6 col-md-3">
-          <div class="thumbnail">
-            <div class="card-header" style="height: 15px; background-color: #0ea862">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="thumbnail" style="border-left: 5px solid #0ea862">
+            <div class="card-header" style="height: 15px; background-color: #ceeddf">
             </div>
             <div class="caption">
               <h5><b>{{ page.title }}</b></h5>
               <p>{{page.excerpt}}</p>
-              <!--<hr>-->
-              <!--<a href="#" class="btn btn-default" role="button">-->
-              <!--<span class="glyphicon glyphicon-info-sign"></span>-->
-              <!--</a>-->
               <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
             </div>
 
@@ -128,17 +120,13 @@ layout: default
       <div class="row">
         {% for page in site.pages %}
         {% if page.category == 'governance' %}
-        <div class="col-xs-18 col-sm-6 col-md-3">
-          <div class="thumbnail">
-            <div class="card-header" style="height: 15px; background-color: #7772b4">
+        <div class="col-xs-1 col-sm-6 col-md-3">
+          <div class="thumbnail" style="border-left: 5px solid #7772b4">
+            <div class="card-header" style="height: 15px; background-color: #e3e2f0">
             </div>
             <div class="caption">
               <h5><b>{{ page.title }}</b></h5>
               <p>{{page.excerpt}}</p>
-              <!--<hr>-->
-              <!--<a href="#" class="btn btn-default" role="button">-->
-              <!--<span class="glyphicon glyphicon-info-sign"></span>-->
-              <!--</a>-->
               <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
             </div>
 
@@ -150,126 +138,5 @@ layout: default
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-    <!--<div class="panel-group" id="accordion">-->
-    <!--<div class="panel panel-default">-->
-      <!--<div class="panel-heading" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" href="#collapseOne">-->
-        <!--<h4 class="panel-title">-->
-          <!--<a class="accordion-toggle">-->
-            <!--Introduction-->
-          <!--</a>-->
-        <!--</h4>-->
-      <!--</div>-->
-      <!--<div id="collapseOne" class="panel-collapse collapse in">-->
-        <!--<div class="panel-body">-->
-          <!--<div class="row" style="padding-bottom: 50px;">-->
-            <!--{% for page in site.pages %}-->
-            <!--{% if page.category == 'intro' %}-->
-            <!--<div class="col-xs-18 col-sm-6 col-md-3">-->
-              <!--<div class="thumbnail">-->
-                <!--<div class="card-header" style="height: 15px; background-color: #68b2bb">-->
-                <!--</div>-->
-                <!--<div class="caption">-->
-                  <!--<h5><b>{{ page.title }}</b></h5>-->
-                  <!--<p>{{page.excerpt}}</p>-->
-                  <!--&lt;!&ndash;<hr>&ndash;&gt;-->
-                  <!--&lt;!&ndash;<a href="#" class="btn btn-default" role="button">&ndash;&gt;-->
-                  <!--&lt;!&ndash;<span class="glyphicon glyphicon-info-sign"></span>&ndash;&gt;-->
-                  <!--&lt;!&ndash;</a>&ndash;&gt;-->
-                  <!--<a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>-->
-                <!--</div>-->
-
-              <!--</div>-->
-            <!--</div>-->
-
-            <!--{% endif %}-->
-            <!--{% endfor %}-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-
-  <!--<div class="panel-group" id="accordion">-->
-    <!--<div class="panel panel-default">-->
-      <!--<div class="panel-heading">-->
-        <!--<h4 class="panel-title">-->
-          <!--<a class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" href="#collapseTwo">-->
-            <!--How-To's-->
-          <!--</a>-->
-        <!--</h4>-->
-      <!--</div>-->
-      <!--<div id="collapseTwo" class="panel-collapse collapse in">-->
-        <!--<div class="panel-body">-->
-          <!--<div class="row" style="padding-bottom: 50px;">-->
-            <!--{% for page in site.pages %}-->
-            <!--{% if page.category == 'howto' %}-->
-            <!--<div class="col-xs-18 col-sm-6 col-md-3">-->
-              <!--<div class="thumbnail">-->
-                <!--<div class="card-header" style="height: 15px; background-color: #0ea862">-->
-                <!--</div>-->
-                <!--<div class="caption">-->
-                  <!--<h5><b>{{ page.title }}</b></h5>-->
-                  <!--<p>{{page.excerpt}}</p>-->
-                  <!--&lt;!&ndash;<hr>&ndash;&gt;-->
-                  <!--&lt;!&ndash;<a href="#" class="btn btn-default" role="button">&ndash;&gt;-->
-                  <!--&lt;!&ndash;<span class="glyphicon glyphicon-info-sign"></span>&ndash;&gt;-->
-                  <!--&lt;!&ndash;</a>&ndash;&gt;-->
-                  <!--<a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>-->
-                <!--</div>-->
-
-              <!--</div>-->
-            <!--</div>-->
-            <!--{% endif %}-->
-            <!--{% endfor %}-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-
-  <!--<div class="panel-group" id="accordion">-->
-    <!--<div class="panel panel-default">-->
-      <!--<div class="panel-heading">-->
-        <!--<h4 class="panel-title">-->
-          <!--<a class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" href="#collapseThree">-->
-            <!--Governance & Security-->
-          <!--</a>-->
-        <!--</h4>-->
-      <!--</div>-->
-      <!--<div id="collapseThree" class="panel-collapse collapse in">-->
-        <!--<div class="panel-body">-->
-          <!--<div class="row" style="padding-bottom: 50px;">-->
-            <!--{% for page in site.pages %}-->
-            <!--{% if page.category == 'governance' %}-->
-            <!--<div class="col-xs-18 col-sm-6 col-md-3">-->
-              <!--<div class="thumbnail">-->
-                <!--<div class="card-header" style="height: 15px; background-color: #7772b4">-->
-                <!--</div>-->
-                <!--<div class="caption">-->
-                  <!--<h5><b>{{ page.title }}</b></h5>-->
-                  <!--<p>{{page.excerpt}}</p>-->
-                  <!--&lt;!&ndash;<hr>&ndash;&gt;-->
-                  <!--&lt;!&ndash;<a href="#" class="btn btn-default" role="button">&ndash;&gt;-->
-                  <!--&lt;!&ndash;<span class="glyphicon glyphicon-info-sign"></span>&ndash;&gt;-->
-                  <!--&lt;!&ndash;</a>&ndash;&gt;-->
-                  <!--<a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>-->
-                <!--</div>-->
-
-              <!--</div>-->
-            <!--</div>-->
-            <!--{% endif %}-->
-            <!--{% endfor %}-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
 
 </div>
