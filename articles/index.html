@@ -2,54 +2,274 @@
 title: User Guide
 layout: default
 ---
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
-<style>
-  #hover-background:hover {
-    background: #f6f6f6;
-  }
-</style>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
 
-<div class="container-fluid" style="margin-top: -50px"> 
-  <div class="panel panel-default padding-15" style="text-align: center;">
-    <h4>Use the articles on this page to learn how to use Synapse</h4>
-  </div>
-{% assign loopindex = 0 %}
-{% for page in site.pages %}
-{% if page.layout == 'article' %}
-{% assign loopindex = loopindex | plus: 1 %}
-{% assign rowfinder = loopindex | modulo: 2 %}
-{% if rowfinder == 1 %}
-<div class="row" style="padding: 0 25px 0 25px">
-  <div class="col-md-6 col-xs-12">
-    <div id="hover-background" class="panel panel-default padding-15">
-    <a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
-    <p style="font-size: 1em; margin: 0 0 0 0">
-      {{page.excerpt}}
-      <a href="{{ page.url }}.html">...Read more</a>
-    </p>
-  </div>
+<script>
+    $(function() {
+      $('.thumbnail').matchHeight();
+    });
+
+    $(document).on('click', '.panel-heading span.clickable', function (e) {
+      var $this = $(this);
+      if (!$this.hasClass('panel-collapsed')) {
+        $this.parents('.panel').find('.panel-body').slideUp();
+        $this.addClass('panel-collapsed');
+        $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+      } else {
+        $this.parents('.panel').find('.panel-body').slideDown();
+        $this.removeClass('panel-collapsed');
+        $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+      }
+    });
+    $(document).on('click', '.panel div.clickable', function (e) {
+      var $this = $(this);
+      if (!$this.hasClass('panel-collapsed')) {
+        $this.parents('.panel').find('.panel-body').slideUp();
+        $this.addClass('panel-collapsed');
+        $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+      } else {
+        $this.parents('.panel').find('.panel-body').slideDown();
+        $this.removeClass('panel-collapsed');
+        $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+      }
+    });
+    $(document).ready(function () {
+      $('.panel-heading span.clickable').click();
+      $('.panel div.clickable').click();
+    });
+
+  </script>
+
+
+<!--#68b2bb, #0ea862, #7772b4-->
+
+
+<div class="container" id="ugDiv">
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading clickable" style="background-color: #68b2bb">
+      <h3 class="panel-heading">
+        Introduction</h3>
+      <span class="pull-right "><i class="glyphicon glyphicon-plus"></i></span>
     </div>
-  {% elsif rowfinder == 0 %}
-  <div class="col-md-6 col-xs-12">
-    <div id="hover-background" class="panel panel-default padding-15">
-    <a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
-    <p style="font-size: 1em; margin: 0 0 0 0">
-      {{page.excerpt}}
-      <a href="{{ page.url }}.html">...Read more</a>
-    </p>
-  </div>
+    <div class="panel-body">
+      <div class="row"">
+        {% for page in site.pages %}
+        {% if page.category == 'intro' %}
+        <div class="col-xs-18 col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <div class="card-header" style="height: 15px; background-color: #68b2bb">
+            </div>
+            <div class="caption">
+              <h5><b>{{ page.title }}</b></h5>
+              <p>{{page.excerpt}}</p>
+              <!--<hr>-->
+              <!--<a href="#" class="btn btn-default" role="button">-->
+              <!--<span class="glyphicon glyphicon-info-sign"></span>-->
+              <!--</a>-->
+              <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
+            </div>
+
+          </div>
+        </div>
+
+        {% endif %}
+        {% endfor %}
+      </div>
     </div>
-</div>
-{% else %}
-<div class="span0">{{ page.title }}</div>
-{% endif %}
-{% endif %}
-{% endfor %}
-{% if rowfinder != 0 %}
-</div>
-{% endif %}
-</div>
-<div class="panel panel-default padding-15" style="text-align: center; ">
-  <h4>Can't find what you're looking for?
-    Try posting a question on our <a href="https://www.synapse.org/#!SynapseForum:default">Forum</a>.</h4>
+    </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading clickable" style="background-color: #0ea862">
+      <h3 class="panel-heading">
+        How-To's
+      </h3>
+      <span class="pull-right "><i class="glyphicon glyphicon-minus"></i></span>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        {% for page in site.pages %}
+        {% if page.category == 'howto' %}
+        <div class="col-xs-18 col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <div class="card-header" style="height: 15px; background-color: #0ea862">
+            </div>
+            <div class="caption">
+              <h5><b>{{ page.title }}</b></h5>
+              <p>{{page.excerpt}}</p>
+              <!--<hr>-->
+              <!--<a href="#" class="btn btn-default" role="button">-->
+              <!--<span class="glyphicon glyphicon-info-sign"></span>-->
+              <!--</a>-->
+              <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
+            </div>
+
+          </div>
+        </div>
+
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading clickable" style="background-color: #7772b4">
+      <h3 class="panel-heading">
+        Governance & Security
+      </h3>
+      <span class="pull-right"><i class="glyphicon glyphicon-minus"></i></span>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        {% for page in site.pages %}
+        {% if page.category == 'governance' %}
+        <div class="col-xs-18 col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <div class="card-header" style="height: 15px; background-color: #7772b4">
+            </div>
+            <div class="caption">
+              <h5><b>{{ page.title }}</b></h5>
+              <p>{{page.excerpt}}</p>
+              <!--<hr>-->
+              <!--<a href="#" class="btn btn-default" role="button">-->
+              <!--<span class="glyphicon glyphicon-info-sign"></span>-->
+              <!--</a>-->
+              <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
+            </div>
+
+          </div>
+        </div>
+
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+    <!--<div class="panel-group" id="accordion">-->
+    <!--<div class="panel panel-default">-->
+      <!--<div class="panel-heading" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" href="#collapseOne">-->
+        <!--<h4 class="panel-title">-->
+          <!--<a class="accordion-toggle">-->
+            <!--Introduction-->
+          <!--</a>-->
+        <!--</h4>-->
+      <!--</div>-->
+      <!--<div id="collapseOne" class="panel-collapse collapse in">-->
+        <!--<div class="panel-body">-->
+          <!--<div class="row" style="padding-bottom: 50px;">-->
+            <!--{% for page in site.pages %}-->
+            <!--{% if page.category == 'intro' %}-->
+            <!--<div class="col-xs-18 col-sm-6 col-md-3">-->
+              <!--<div class="thumbnail">-->
+                <!--<div class="card-header" style="height: 15px; background-color: #68b2bb">-->
+                <!--</div>-->
+                <!--<div class="caption">-->
+                  <!--<h5><b>{{ page.title }}</b></h5>-->
+                  <!--<p>{{page.excerpt}}</p>-->
+                  <!--&lt;!&ndash;<hr>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<a href="#" class="btn btn-default" role="button">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<span class="glyphicon glyphicon-info-sign"></span>&ndash;&gt;-->
+                  <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                  <!--<a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>-->
+                <!--</div>-->
+
+              <!--</div>-->
+            <!--</div>-->
+
+            <!--{% endif %}-->
+            <!--{% endfor %}-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--<div class="panel-group" id="accordion">-->
+    <!--<div class="panel panel-default">-->
+      <!--<div class="panel-heading">-->
+        <!--<h4 class="panel-title">-->
+          <!--<a class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" href="#collapseTwo">-->
+            <!--How-To's-->
+          <!--</a>-->
+        <!--</h4>-->
+      <!--</div>-->
+      <!--<div id="collapseTwo" class="panel-collapse collapse in">-->
+        <!--<div class="panel-body">-->
+          <!--<div class="row" style="padding-bottom: 50px;">-->
+            <!--{% for page in site.pages %}-->
+            <!--{% if page.category == 'howto' %}-->
+            <!--<div class="col-xs-18 col-sm-6 col-md-3">-->
+              <!--<div class="thumbnail">-->
+                <!--<div class="card-header" style="height: 15px; background-color: #0ea862">-->
+                <!--</div>-->
+                <!--<div class="caption">-->
+                  <!--<h5><b>{{ page.title }}</b></h5>-->
+                  <!--<p>{{page.excerpt}}</p>-->
+                  <!--&lt;!&ndash;<hr>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<a href="#" class="btn btn-default" role="button">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<span class="glyphicon glyphicon-info-sign"></span>&ndash;&gt;-->
+                  <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                  <!--<a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>-->
+                <!--</div>-->
+
+              <!--</div>-->
+            <!--</div>-->
+            <!--{% endif %}-->
+            <!--{% endfor %}-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--<div class="panel-group" id="accordion">-->
+    <!--<div class="panel panel-default">-->
+      <!--<div class="panel-heading">-->
+        <!--<h4 class="panel-title">-->
+          <!--<a class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" href="#collapseThree">-->
+            <!--Governance & Security-->
+          <!--</a>-->
+        <!--</h4>-->
+      <!--</div>-->
+      <!--<div id="collapseThree" class="panel-collapse collapse in">-->
+        <!--<div class="panel-body">-->
+          <!--<div class="row" style="padding-bottom: 50px;">-->
+            <!--{% for page in site.pages %}-->
+            <!--{% if page.category == 'governance' %}-->
+            <!--<div class="col-xs-18 col-sm-6 col-md-3">-->
+              <!--<div class="thumbnail">-->
+                <!--<div class="card-header" style="height: 15px; background-color: #7772b4">-->
+                <!--</div>-->
+                <!--<div class="caption">-->
+                  <!--<h5><b>{{ page.title }}</b></h5>-->
+                  <!--<p>{{page.excerpt}}</p>-->
+                  <!--&lt;!&ndash;<hr>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<a href="#" class="btn btn-default" role="button">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<span class="glyphicon glyphicon-info-sign"></span>&ndash;&gt;-->
+                  <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                  <!--<a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>-->
+                <!--</div>-->
+
+              <!--</div>-->
+            <!--</div>-->
+            <!--{% endif %}-->
+            <!--{% endfor %}-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
 </div>
