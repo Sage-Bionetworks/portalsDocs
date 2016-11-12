@@ -1,8 +1,7 @@
 ---
 title: Files and Versioning
 layout: article
-excerpt: Learn how files and versioning work in Synapse.
-category: howto
+excerpt: Uploading files and file versioning in Synapse.
 ---
 
 Files
@@ -10,7 +9,7 @@ Files
 
 Synapse `Files` are like files on a local file system, except they are accessible to anyone who has access, can be annotated and queried on, can be embedded into Synapse `Wiki` pages, and can be associated with a [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier){:target="_blank"}. `Files` carry the Conditions for Use of the Synapse `Folder` they are placed in, plus any additional specific Conditions for Use they have on their own.
 
-By default, `Files` uploaded to Synapse are stored in 'Synapse Storage', which is freely available to you. `Files` can also be stored on your own Amazon S3 bucket (see [Custom Storage Locations](/articles/custom_storage_location.html)) as well as your own SFTP server. Furthermore, if you don't want to upload a file (it has external restrictions on sharing, is really large, for example)m you can also link to the file. In this way, the file will be accessible through the Synapse clients when you are on the computer that the file is stored, but can be annotated, queried, and documented with a Wiki through Synapse. Lastly, you can provide web-accessible links (http or ftp) as Synapse files, which will redirect to that location. All of the same Synapse `File` features are available (e.g., annotations and Wikis) are available on external links as well.
+By default, `Files` uploaded to Synapse are stored in 'Synapse Storage', which is freely available to you. `Files` can also be stored on your own Amazon S3 bucket (see [Custom Storage Locations](/articles/custom_storage_location.html)) as well as your own SFTP server. Furthermore, if you don't want to upload a file (it has external restrictions on sharing, is really large, for example) you can also link to the file. In this way, the file will be accessible through the Synapse clients when you are on the computer that the file is stored, but can be annotated, queried, and documented with a Wiki through Synapse. Lastly, you can provide web-accessible links (http or ftp) as Synapse files, which will redirect to that location. All of the same Synapse `File` features are available (e.g., annotations and Wikis) are available on external links as well.
 
 Synapse `Files` (as well as `Folders` and `Projects`) are identified by a unique identifier called a Synapse ID. It takes the form `syn12345678`. This identifier can be used to refer to a specific file on the web and through the clients.
 
