@@ -1,7 +1,7 @@
 ---
 title: Tables
 layout: article
-excerpt: The basics of creating, modifying, and querying tabular data on Synapse. Some additional text to see if format changes
+excerpt: The basics of creating, modifying, and querying tabular data on Synapse.
 category: howto
 ---
 
