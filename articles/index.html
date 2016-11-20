@@ -13,186 +13,476 @@ layout: default
   });
 
   $(function(){
-    $('.btn-circle').on('click',function(){
-      $('.btn-circle.btn-info').removeClass('btn-info').addClass('btn-default');
-      $(this).addClass('btn-info').removeClass('btn-default').blur();
-    });
-
-    $('.next-step, .prev-step').on('click', function (e){
-      var $activeTab = $('.tab-pane.active');
-
-      $('.btn-circle.btn-info').removeClass('btn-info').addClass('btn-default');
-
-      if ( $(e.target).hasClass('next-step') )
-      {
-        var nextTab = $activeTab.next('.tab-pane').attr('id');
-        $('[href="#'+ nextTab +'"]').addClass('btn-info').removeClass('btn-default');
-        $('[href="#'+ nextTab +'"]').tab('show');
-      }
-      else
-      {
-        var prevTab = $activeTab.prev('.tab-pane').attr('id');
-        $('[href="#'+ prevTab +'"]').addClass('btn-info').removeClass('btn-default');
-        $('[href="#'+ prevTab +'"]').tab('show');
-      }
-    });
+    $('a[title]').tooltip();
   });
-  </script>
+
+</script>
 
 <style>
-  .process-step .btn:focus {
-    outline:none
+  .board{
+    width: 100%%;
+    margin: 60px auto;
+    height: 500px;
+    background: #fff;
+    /*box-shadow: 10px 10px #ccc,-10px 20px #ddd;*/
   }
-  .process {
-    display:table;
-    width:100%;
-    position:relative;
+  .board .nav-tabs {
+    position: relative;
+    /* border-bottom: 0; */
+    /* width: 80%; */
+    margin: 40px auto;
+    margin-bottom: 0;
+    box-sizing: border-box;
+
   }
-  .process-row {
-    display:table-row
+
+  .board > div.board-inner{
+    background-color: whitesmoke;
   }
-  .process-step button[disabled]{
-    opacity:1 !important;
-    filter: alpha(opacity=100) !important;
+
+  p.narrow{
+    width: 60%;
+    margin: 10px auto;
   }
-  .process-row:before{
-    top:40px;
-    left:30px;
-    bottom:0;
-    position:absolute;
-    content:" ";
-    width:90%;
-    height:2px;
-    background-color:#ccc;
-    z-order:0;
+
+  .liner{
+    height: 2px;
+    background: #ddd;
+    position: absolute;
+    width: 80%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 60%;
+    z-index: 1;
   }
-  .process-step {
-    display:table-cell;
-    text-align:center;
-    position:relative;
+
+  .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    /*color: #555555;*/
+    cursor: default;
+    /* background-color: #ffffff; */
+    border: 0;
+    /*border-bottom-color: #ddd;*/
   }
-  .process-step p {
-    margin-top:4px;
+
+  span.round-tabs{
+    width: 65px;
+    height: 65px;
+    line-height: 70px;
+    display: inline-block;
+    border-radius: 100px;
+    background: white;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 33px;
+    top: -10px
   }
-  .btn-circle {
-    width:80px;
-    height:80px;
-    text-align:center;
-    font-size:12px;
-    border-radius:50%;
+
+  span.round-tabs.one{
+    color: #d1e7ea;
+    border: 2px solid #d1e7ea;
   }
-  #howto {
-    background-color: #0ea862 !important;
-    /*background-image: #0ea862 !important;*/
-    background-image: radial-gradient(circle, #0ea862 80%, #ceeddf 81%);
+
+  li.active span.round-tabs.one{
+    background: #fff !important;
+    border: 2px solid #68b2bb;
+    color: #68b2bb;
   }
-  #howto {
+
+  span.round-tabs.two{
+    color: #ceeddf;
+    border: 2px solid #ceeddf;
+  }
+
+  li.active span.round-tabs.two{
+    background: #fff !important;
+    border: 2px solid #0ea862;
+    color: #0ea862;
+  }
+
+  span.round-tabs.three{
+    color: #e3e2f0;
+    border: 2px solid #e3e2f0;
+  }
+
+  li.active span.round-tabs.three{
+    background: #fff !important;
+    border: 2px solid #7772b4;
+    color: #7772b4;
+  }
+
+  span.round-tabs.four{
+    color: #fce0de;
+    border: 2px solid #fce0de;
+  }
+
+  li.active span.round-tabs.four{
+    background: #fff !important;
+    border: 2px solid #f1685e;
+    color: #f1685e;
+  }
+
+  span.round-tabs.five{
+    color: #f4f4f4;
+    border: 2px solid #f4f4f4;
+  }
+
+  li.active span.round-tabs.five{
+    background: #fff !important;
+    border: 2px solid #999;
+    color: #999;
+  }
+
+  .nav-tabs > li.active > a span.round-tabs{
+    background: #fafafa;
+  }
+  .nav-tabs > li {
+    width: 20%;
+  }
+
+  .nav-tabs > li:after {
+    content: " ";
+    position: absolute;
+    left: 45%;
+    opacity:0;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 5px solid transparent;
+    border-bottom-color: #ddd;
+    transition:0.1s ease-in-out;
+
+  }
+  .nav-tabs > li.active:after {
+    content: " ";
+    position: absolute;
+    left: 45%;
+    opacity:1;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 10px solid transparent;
+    border-bottom-color: #ddd;
+
+  }
+  .nav-tabs > li a{
+    width: 70px;
+    height: 70px;
+    margin: 20px auto;
+    border-radius: 100%;
+    padding: 0;
+  }
+
+  .nav-tabs > li a:hover{
+    background: transparent;
+  }
+
+  .tab-content{
+  }
+  .tab-pane{
+    position: relative;
+    padding-top: 50px;
+  }
+  .tab-content .head{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+  }
+  .btn-outline-rounded{
+    padding: 10px 40px;
+    margin: 20px 0;
+    border: 2px solid transparent;
+    border-radius: 25px;
+  }
+
+  .btn.green{
+    background-color:#7772b4;
+    /*border: 2px solid #5cb85c;*/
+    color: #ffffff;
+  }
+
+
+
+  @media( max-width : 585px ){
+
+    .board {
+      width: 90%;
+      height:auto !important;
+    }
+    span.round-tabs {
+      font-size:16px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+    }
+    .tab-content .head{
+      font-size:20px;
+    }
+    .nav-tabs > li a {
+      width: 50px;
+      height: 50px;
+      line-height:50px;
+    }
+
+    .nav-tabs > li.active:after {
+      content: " ";
+      position: absolute;
+      left: 35%;
+    }
+
+    .btn-outline-rounded {
+      padding:12px 20px;
+    }
+  }
+  .nav-tabs>li.active>a {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+
+  }
+  .nav-tabs>li>a:hover {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+
+  }
+  .nav-tabs>li>a {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+
+  }
+  .glyphicon {
+  line-height: 1.6;
+  }
 
   }
 
 </style>
 
-<div class="container" id="userDiv">
 
-  <!-- Nav tabs -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <div class="container">
-    <div class="row">
+  <section style="margin-top: -70px; padding-top: 50px;">
+    <div class="container">
       <div class="row">
-      <div class="process col-md-2">
-        <div class="process-row nav nav-tabs">
-          <div class="process-step">
-            <button id="intro" type="button" class="btn btn-info btn-circle" data-toggle="tab" href="#menu1"><i class="fa fa-info fa-3x"></i></button>
-            <p style="text-align: center">Introduction</p>
-          </div>
-          <div class="process-step">
-            <button id="howto" type="button" class="btn btn-default btn-circle" data-toggle="tab" href="#menu2"><i class="fa fa-file-text-o fa-3x"></i></button>
-            <p>How To's</p>
-          </div>
-          <div class="process-step">
-            <button type="button" class="btn btn-default btn-circle" data-toggle="tab" href="#menu3"><i class="fa fa-key fa-3x"></i></button>
-            <p>Governance <br />& Security</p>
-          </div>
-          <div class="process-step">
-            <button type="button" class="btn btn-default btn-circle" data-toggle="tab" href="#menu4"><i class="fa fa-question fa-3x"></i></button>
-            <p>Can't Find What<br/> You're Looking For?</p>
-          </div>
+        <div class="board">
+          <!--<div class="board-inner">-->
+            <ul class="nav nav-tabs" id="myTab" style="border-bottom: 2px solid #ddd !important; margin-top: -70px; border: 2px solid transparent;">
+              <div class="liner"></div>
+              <li class="active">
+                <a href="#home" data-toggle="tab" title="Introduction">
+                      <span class="round-tabs one">
+                              <i class="glyphicon glyphicon-dashboard"></i>
+                      </span>
+                </a></li>
 
-        </div>
-      </div>
+              <li><a href="#profile" data-toggle="tab" title="How-To's">
+                     <span class="round-tabs two">
+                         <i class="glyphicon glyphicon-list-alt"></i>
 
-        </div>
-      <div class="tab-content col-md-11">
-        <div id="menu1" class="tab-pane fade active in">
-          <div class="row"">
-          {% assign sorted_pages = site.pages | sort:"order" %}
-          {% for page in sorted_pages %}
-          {% if page.category == 'intro' %}
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="thumbnail" style="border-left: 5px solid #68b2bb">
-              <div class="card-header" style="height: 15px; background-color: #d1e7ea">
-              </div>
-              <div class="caption">
-                <h5><b>{{ page.title }}</b></h5>
-                <p>{{page.excerpt}}</p>
-                <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
-              </div>
+                     </span>
+              </a>
+              </li>
+              <li><a href="#messages" data-toggle="tab" title="Governance & Security">
+                     <span class="round-tabs three">
+                          <i class="glyphicon glyphicon-check"></i>
+                     </span> </a>
+              </li>
 
-            </div>
-          </div>
+              <li><a href="#settings" data-toggle="tab" title="Dream Challenges">
+                         <span class="round-tabs four">
+                              <i class="glyphicon glyphicon-cloud"></i>
+                         </span>
+              </a></li>
 
-          {% endif %}
-          {% endfor %}
-        </div>
-        </div>
-        <div id="menu2" class="tab-pane fade">
-          <div class="row">
-            {% for page in site.pages %}
-            {% if page.category == 'howto' %}
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="thumbnail" style="border-left: 5px solid #0ea862">
-                <div class="card-header" style="height: 15px; background-color: #ceeddf">
+              <li><a href="#doner" data-toggle="tab" title="More Help">
+                         <span class="round-tabs five">
+                              <i class="glyphicon glyphicon-comment"></i>
+                         </span> </a>
+              </li>
+
+            </ul>
+        <!--</div>--> <!--end of board-inner-->
+
+          <div class="tab-content">
+            <div class="tab-pane fade in active" id="home">
+
+              <div class="row"">
+              {% assign sorted_pages = site.pages | sort:"order" %}
+              {% for page in sorted_pages %}
+              {% if page.category == 'intro' %}
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="thumbnail" style="border-left: 5px solid #68b2bb">
+                  <div class="card-header" style="height: 15px; background-color: #d1e7ea">
+                  </div>
+                  <div class="caption">
+                    <h5><b>{{ page.title }}</b></h5>
+                    <p>{{page.excerpt}}</p>
+                    <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
+                  </div>
+
                 </div>
-                <div class="caption">
-                  <h5><b>{{ page.title }}</b></h5>
-                  <p>{{page.excerpt}}</p>
-                  <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
-                </div>
-
               </div>
-            </div>
 
-            {% endif %}
-            {% endfor %}
-          </div>
-        </div>
-        <div id="menu3" class="tab-pane fade">
-          <div class="row">
-            {% for page in site.pages %}
-            {% if page.category == 'governance' %}
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="thumbnail" style="border-left: 5px solid #7772b4">
-                <div class="card-header" style="height: 15px; background-color: #e3e2f0">
-                </div>
-                <div class="caption">
-                  <h5><b>{{ page.title }}</b></h5>
-                  <p>{{page.excerpt}}</p>
-                  <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
-                </div>
-
-              </div>
+              {% endif %}
+              {% endfor %}
             </div>
 
-            {% endif %}
-            {% endfor %}
-          </div>
-        </div>
-        <div id="menu4" class="tab-pane fade">
-          <h3>Can't find what you're looking for?</h3>
-          <h4>Try posting to our <a href="https://www.synapse.org/#!SynapseForum:default">Forum</a></h4>
-        </div>
+            </div> <!--<end intro>-->
 
+          <div class="tab-pane fade" id="profile">
+            <div class="row">
+              {% for page in site.pages %}
+              {% if page.category == 'howto' %}
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="thumbnail" style="border-left: 5px solid #0ea862">
+                  <div class="card-header" style="height: 15px; background-color: #ceeddf">
+                  </div>
+                  <div class="caption">
+                    <h5><b>{{ page.title }}</b></h5>
+                    <p>{{page.excerpt}}</p>
+                    <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
+                  </div>
+
+                </div>
+              </div>
+
+              {% endif %}
+              {% endfor %}
+            </div>
+
+            </div>
+          <!--end how to tab-->
+
+            <div class="tab-pane fade" id="messages">
+              <div class="row">
+                {% for page in site.pages %}
+                {% if page.category == 'governance' %}
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                  <div class="thumbnail" style="border-left: 5px solid #7772b4">
+                    <div class="card-header" style="height: 15px; background-color: #e3e2f0">
+                    </div>
+                    <div class="caption">
+                      <h5><b>{{ page.title }}</b></h5>
+                      <p>{{page.excerpt}}</p>
+                      <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
+                    </div>
+
+                  </div>
+                </div>
+
+                {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          <!--end governance tab-->
+
+            <div class="tab-pane fade" id="settings">
+              <h3 class="head text-center">Dream Challenges</h3>
+              <p class="narrow text-center">
+                Stay tuned for articles regarding how to participate in our Dream Challenges.
+              </p>
+
+            </div>
+            <div class="tab-pane fade" id="doner">
+              <div class="text-center">
+                <i class="img-intro icon-checkmark-circle"></i>
+              </div>
+              <h3 class="head text-center">Got Questions?</h3>
+              <p class="narrow text-center">
+                Can't find what you're looking for? Try posting a question to our forum.
+              </p>
+              <p class="text-center">
+                <a href="https://www.synapse.org/#!SynapseForum:default" class="btn btn-success btn-outline-rounded green"> Forum <span style="margin-left:10px;" class="glyphicon glyphicon-new-window"></span></a>
+              </p>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+
+
+  <!-- Nav tabs -->
+
+        </div>
+
 </div>
+
+<!--<div class="tab-content col-md-11">-->
+<!--&lt;!&ndash;<div id="menu1" class="tab-pane fade active in">&ndash;&gt;-->
+<!--<div class="row"">-->
+<!--{% assign sorted_pages = site.pages | sort:"order" %}-->
+<!--{% for page in sorted_pages %}-->
+<!--{% if page.category == 'intro' %}-->
+<!--<div class="col-xs-12 col-sm-6 col-md-4">-->
+<!--<div class="thumbnail" style="border-left: 5px solid #68b2bb">-->
+<!--<div class="card-header" style="height: 15px; background-color: #d1e7ea">-->
+<!--</div>-->
+<!--<div class="caption">-->
+<!--<h5><b>{{ page.title }}</b></h5>-->
+<!--<p>{{page.excerpt}}</p>-->
+<!--<a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+
+<!--{% endif %}-->
+<!--{% endfor %}-->
+<!--</div>-->
+<!--</div>-->
+<!--<div id="menu2" class="tab-pane fade">-->
+<!--<div class="row">-->
+<!--{% for page in site.pages %}-->
+<!--{% if page.category == 'howto' %}-->
+<!--<div class="col-xs-12 col-sm-6 col-md-4">-->
+<!--<div class="thumbnail" style="border-left: 5px solid #0ea862">-->
+<!--<div class="card-header" style="height: 15px; background-color: #ceeddf">-->
+<!--</div>-->
+<!--<div class="caption">-->
+<!--<h5><b>{{ page.title }}</b></h5>-->
+<!--<p>{{page.excerpt}}</p>-->
+<!--<a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+
+<!--{% endif %}-->
+<!--{% endfor %}-->
+<!--</div>-->
+<!--</div>-->
+<!--<div id="menu3" class="tab-pane fade">-->
+<!--<div class="row">-->
+<!--{% for page in site.pages %}-->
+<!--{% if page.category == 'governance' %}-->
+<!--<div class="col-xs-12 col-sm-6 col-md-4">-->
+<!--<div class="thumbnail" style="border-left: 5px solid #7772b4">-->
+<!--<div class="card-header" style="height: 15px; background-color: #e3e2f0">-->
+<!--</div>-->
+<!--<div class="caption">-->
+<!--<h5><b>{{ page.title }}</b></h5>-->
+<!--<p>{{page.excerpt}}</p>-->
+<!--<a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+
+<!--{% endif %}-->
+<!--{% endfor %}-->
+<!--</div>-->
+<!--</div>-->
+<!--<div id="menu4" class="tab-pane fade">-->
+<!--<h3>Dream Challenges</h3>-->
+<!--<h4>Articles regarding DREAM Challenges coming soon.</h4>-->
+<!--</div>-->
+<!--<div id="menu5" class="tab-pane fade">-->
+<!--<h3>Can't find what you're looking for?</h3>-->
+<!--<h4>Try posting to our <a href="https://www.synapse.org/#!SynapseForum:default">Forum</a></h4>-->
+<!--</div>-->
+
+
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
