@@ -283,7 +283,7 @@ layout: default
             <ul class="nav nav-tabs" id="myTab" style="border-bottom: 2px solid #ddd !important; margin-top: -70px; border: 2px solid transparent;">
               <div class="liner"></div>
               <li class="active">
-                <a href="#home" data-toggle="tab" <!--title="Introduction"-->>
+                <a href="#intro" data-toggle="tab" <!--title="Introduction"-->>
                       <span class="round-tabs one">
                         <p style="text-align: center; font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
                         Intro
@@ -292,7 +292,7 @@ layout: default
                       </span>
                 </a></li>
 
-              <li><a href="#profile" data-toggle="tab" <!--title="How-To's"-->>
+              <li><a href="#howto" data-toggle="tab">
                      <span class="round-tabs two">
                        <p style="text-align: center; font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
                         How-To's
@@ -302,7 +302,7 @@ layout: default
                      </span>
               </a>
               </li>
-              <li><a href="#messages" data-toggle="tab">
+              <li><a href="#governance" data-toggle="tab">
                      <span class="round-tabs three">
                        <p style="text-align: center; font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
                         Governance
@@ -311,7 +311,7 @@ layout: default
                      </span> </a>
               </li>
 
-              <li><a href="#settings" data-toggle="tab">
+              <li><a href="#dream" data-toggle="tab">
                          <span class="round-tabs four">
                            <p style="text-align: center; text-transform:upper; font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
                         Dream
@@ -320,7 +320,7 @@ layout: default
                          </span>
               </a></li>
 
-              <li><a href="#doner" data-toggle="tab">
+              <li><a href="#forum" data-toggle="tab">
                          <span class="round-tabs five">
                            <p style="text-align: center; text-transform:upper; font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
                         Help
@@ -333,7 +333,7 @@ layout: default
         <!--</div>--> <!--end of board-inner-->
 
           <div class="tab-content">
-            <div class="tab-pane fade in active" id="home">
+            <div class="tab-pane fade in active" id="intro">
               <h3 class="head text-center">Introduction</h3>
               <div class="row"">
               {% assign sorted_pages = site.pages | sort:"order" %}
@@ -358,7 +358,7 @@ layout: default
 
             </div> <!--<end intro>-->
 
-          <div class="tab-pane fade" id="profile">
+          <div class="tab-pane fade" id="howto">
             <h3 class="head text-center">How-To's</h3>
             <div class="row">
               {% for page in site.pages %}
@@ -383,7 +383,7 @@ layout: default
             </div>
           <!--end how to tab-->
 
-            <div class="tab-pane fade" id="messages">
+            <div class="tab-pane fade" id="governance">
               <h3 class="head text-center">Governance and Security</h3>
               <div class="row">
                 {% for page in site.pages %}
@@ -407,14 +407,14 @@ layout: default
             </div>
           <!--end governance tab-->
 
-            <div class="tab-pane fade" id="settings">
+            <div class="tab-pane fade" id="dream">
               <h3 class="head text-center">Dream Challenges</h3>
               <p class="narrow text-center">
                 Stay tuned for articles regarding how to participate in our Dream Challenges.
               </p>
 
             </div>
-            <div class="tab-pane fade" id="doner">
+            <div class="tab-pane fade" id="forum">
               <div class="text-center">
                 <i class="img-intro icon-checkmark-circle"></i>
               </div>
