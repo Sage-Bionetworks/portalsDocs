@@ -783,7 +783,8 @@ Styling for code tabs
 
 
 
-/*css for new userguide*/
+/*styling for user guide*/
+
 .thumbnail {
     padding:0;
     border-right: white;
@@ -797,90 +798,267 @@ Styling for code tabs
     min-height: 500px;
     height: auto;
 }
-/*.clickable {*/
-    /*cursor: pointer;*/
-/*}*/
 
-/*.clickable .glyphicon {*/
-    /*!*padding: 6px 450px 12px 0;*!*/
-    /*margin-top: -25px;*/
-/*}*/
-
-/*.panel-heading {*/
-    /*color: white;*/
-    /*font-weight: bold;*/
-/*}*/
-
-/*.panel-heading span {*/
-    /*margin-top: -23px;*/
-    /*font-size: 15px;*/
-    /*margin-right: -9px;*/
-    /*margin-bottom: 10px;*/
-    /*color: white;*/
-/*}*/
-/*a.clickable {*/
-    /*color: inherit;*/
-/*}*/
-/*a.clickable:hover {*/
-    /*text-decoration:none;*/
-/*}*/
-
-/*styling for user guide*/
-
-/* USER PROFILE PAGE */
-.card {
-    margin-top: 20px;
-    padding: 30px;
-    background-color: rgba(214, 224, 226, 0.2);
-    -webkit-border-top-left-radius:5px;
-    -moz-border-top-left-radius:5px;
-    border-top-left-radius:5px;
-    -webkit-border-top-right-radius:5px;
-    -moz-border-top-right-radius:5px;
-    border-top-right-radius:5px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+.board{
+    width: 100%%;
+    margin: 60px auto;
+    height: 500px;
+    background: #fff;
+    /*box-shadow: 10px 10px #ccc,-10px 20px #ddd;*/
 }
-.card.hovercard {
+.board .nav-tabs {
     position: relative;
-    padding-top: 0;
-    overflow: hidden;
-    text-align: center;
-    background-color: #fff;
-    background-color: rgba(255, 255, 255, 1);
+    /* border-bottom: 0; */
+    /* width: 80%; */
+    margin: 40px auto;
+    margin-bottom: 0;
+    box-sizing: border-box;
+
 }
-.card.hovercard .card-background {
-    height: 130px;
+
+.board > div.board-inner{
+    background-color: whitesmoke;
 }
-.card.hovercard .card-info {
+
+p.narrow{
+    width: 60%;
+    margin: 10px auto;
+}
+
+.liner{
+    height: 2px;
+    background: #ddd;
     position: absolute;
-    bottom: 14px;
+    width: 80%;
+    margin: 0 auto;
     left: 0;
     right: 0;
-}
-.card.hovercard .card-info .card-title {
-    padding:0 5px;
-    font-size: 20px;
-    line-height: 1;
-    color: #262626;
-    background-color: rgba(255, 255, 255, 0.1);
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-}
-.card.hovercard .card-info {
-    overflow: hidden;
-    font-size: 12px;
-    line-height: 20px;
-    color: #737373;
-    text-overflow: ellipsis;
-}
-.card.hovercard .bottom {
-    padding: 0 20px;
-    margin-bottom: 17px;
-}
-.btn-pref .btn {
-    -webkit-border-radius:0 !important;
+    top: 60%;
+    z-index: 1;
 }
 
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    /*color: #555555;*/
+    cursor: default;
+    /* background-color: #ffffff; */
+    border: 0;
+    /*border-bottom-color: #ddd;*/
+}
+
+span.round-tabs{
+    width: 65px;
+    height: 65px;
+    line-height: 70px;
+    display: inline-block;
+    border-radius: 100px;
+    background: white;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 33px;
+    top: -10px
+}
+
+span.round-tabs.one{
+    color: #b3d8dd;
+    border: 2px solid #b3d8dd;
+}
+span.round-tabs.one:hover{
+    color: #68b2bb;
+}
+
+li.active span.round-tabs.one{
+    background: #fff !important;
+    border: 2px solid #68b2bb;
+    color: #68b2bb;
+}
+
+span.round-tabs.two{
+    color: #9edcc0;
+    border: 2px solid #9edcc0;
+}
+span.round-tabs.two:hover{
+    color: #0ea862;
+}
+
+li.active span.round-tabs.two{
+    background: #fff !important;
+    border: 2px solid #0ea862;
+    color: #0ea862;
+}
+
+span.round-tabs.three{
+    color: #c8c6e1;
+    border: 2px solid #c8c6e1;
+}
+
+span.round-tabs.three:hover{
+    color: #7772b4;
+}
+
+li.active span.round-tabs.three{
+    background: #fff !important;
+    border: 2px solid #7772b4;
+    color: #7772b4;
+}
+
+span.round-tabs.four{
+    color: #f9c2be;
+    border: 2px solid #f9c2be;
+}
+span.round-tabs.four:hover{
+    color: #f1685e;
+}
+
+li.active span.round-tabs.four{
+    background: #fff !important;
+    border: 2px solid #f1685e;
+    color: #f1685e;
+}
+
+span.round-tabs.five{
+    color: #ffe47f;
+    border: 2px solid #ffe47f;
+}
+span.round-tabs.five:hover{
+    color: #ffca00;
+}
+
+li.active span.round-tabs.five{
+    background: #fff !important;
+    border: 2px solid #ffca00;
+    color: #ffca00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nav-tabs > li.active > a span.round-tabs{
+    background: #fafafa;
+}
+.nav-tabs > li {
+    width: 20%;
+}
+
+.nav-tabs > li:after {
+    content: " ";
+    position: absolute;
+    left: 45%;
+    opacity:0;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 5px solid transparent;
+    border-bottom-color: #ddd;
+    transition:0.1s ease-in-out;
+
+}
+.nav-tabs > li.active:after {
+    content: " ";
+    position: absolute;
+    left: 45%;
+    opacity:1;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 10px solid transparent;
+    border-bottom-color: #ddd;
+
+}
+.nav-tabs > li a{
+    width: 70px;
+    height: 70px;
+    margin: 20px auto;
+    border-radius: 100%;
+    padding: 0;
+}
+
+.nav-tabs > li a:hover{
+    background: transparent;
+}
+
+.tab-content{
+}
+.tab-pane{
+    position: relative;
+    padding-top: 50px;
+}
+.tab-content .head{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+.btn-outline-rounded{
+    padding: 10px 40px;
+    margin: 20px 0;
+    border: 2px solid transparent;
+    border-radius: 25px;
+}
+
+/*.btn.green{*/
+/*background-color:#7772b4;*/
+/*!*border: 2px solid #5cb85c;*!*/
+/*color: #ffffff;*/
+}
+
+
+
+@media( max-width : 585px ){
+
+    .board {
+        width: 90%;
+        height:auto !important;
+    }
+    span.round-tabs {
+        font-size:16px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+    .tab-content .head{
+        font-size:20px;
+    }
+    .nav-tabs > li a {
+        width: 50px;
+        height: 50px;
+        line-height:50px;
+    }
+
+    .nav-tabs > li.active:after {
+        content: " ";
+        position: absolute;
+        left: 35%;
+    }
+
+    .btn-outline-rounded {
+        padding:12px 20px;
+    }
+}
+.nav-tabs>li.active>a {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+
+}
+.nav-tabs>li>a:hover {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+
+}
+.nav-tabs>li>a {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+
+}

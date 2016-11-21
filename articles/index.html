@@ -8,436 +8,206 @@ layout: default
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
 
 <script>
-  $(function() {
-    $('.thumbnail').matchHeight();
-  });
+    $(function () {
+        $('.thumbnail').matchHeight();
+    });
 
-  $(function(){
-    $('a[title]').tooltip();
-  });
+    $(function () {
+        $('a[title]').tooltip();
+    });
 
 </script>
 
 <style>
-  .board{
-    width: 100%%;
-    margin: 60px auto;
-    height: 500px;
-    background: #fff;
-    /*box-shadow: 10px 10px #ccc,-10px 20px #ddd;*/
-  }
-  .board .nav-tabs {
-    position: relative;
-    /* border-bottom: 0; */
-    /* width: 80%; */
-    margin: 40px auto;
-    margin-bottom: 0;
-    box-sizing: border-box;
-
-  }
-
-  .board > div.board-inner{
-    background-color: whitesmoke;
-  }
-
-  p.narrow{
-    width: 60%;
-    margin: 10px auto;
-  }
-
-  .liner{
-    height: 2px;
-    background: #ddd;
-    position: absolute;
-    width: 80%;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    top: 60%;
-    z-index: 1;
-  }
-
-  .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    /*color: #555555;*/
-    cursor: default;
-    /* background-color: #ffffff; */
-    border: 0;
-    /*border-bottom-color: #ddd;*/
-  }
-
-  span.round-tabs{
-    width: 65px;
-    height: 65px;
-    line-height: 70px;
-    display: inline-block;
-    border-radius: 100px;
-    background: white;
-    z-index: 2;
-    position: absolute;
-    left: 0;
-    text-align: center;
-    font-size: 33px;
-    top: -10px
-  }
-
-  span.round-tabs.one{
-    color: #b3d8dd;
-    border: 2px solid #b3d8dd;
-  }
-  span.round-tabs.one:hover{
-    color: #68b2bb;
-  }
-
-  li.active span.round-tabs.one{
-    background: #fff !important;
-    border: 2px solid #68b2bb;
-    color: #68b2bb;
-  }
-
-  span.round-tabs.two{
-    color: #9edcc0;
-    border: 2px solid #9edcc0;
-  }
-  span.round-tabs.two:hover{
-    color: #0ea862;
-  }
-
-  li.active span.round-tabs.two{
-    background: #fff !important;
-    border: 2px solid #0ea862;
-    color: #0ea862;
-  }
-
-  span.round-tabs.three{
-    color: #c8c6e1;
-    border: 2px solid #c8c6e1;
-  }
-
-  span.round-tabs.three:hover{
-    color: #7772b4;
-  }
-
-  li.active span.round-tabs.three{
-    background: #fff !important;
-    border: 2px solid #7772b4;
-    color: #7772b4;
-  }
-
-  span.round-tabs.four{
-    color: #f9c2be;
-    border: 2px solid #f9c2be;
-  }
-  span.round-tabs.four:hover{
-    color: #f1685e;
-  }
-
-  li.active span.round-tabs.four{
-    background: #fff !important;
-    border: 2px solid #f1685e;
-    color: #f1685e;
-  }
-
-  span.round-tabs.five{
-    color: #ffe47f;
-    border: 2px solid #ffe47f;
-  }
-  span.round-tabs.five:hover{
-    color: #ffca00;
-  }
-
-  li.active span.round-tabs.five{
-    background: #fff !important;
-    border: 2px solid #ffca00;
-    color: #ffca00;
-  }
-
-  .nav-tabs > li.active > a span.round-tabs{
-    background: #fafafa;
-  }
-  .nav-tabs > li {
-    width: 20%;
-  }
-
-  .nav-tabs > li:after {
-    content: " ";
-    position: absolute;
-    left: 45%;
-    opacity:0;
-    margin: 0 auto;
-    bottom: 0px;
-    border: 5px solid transparent;
-    border-bottom-color: #ddd;
-    transition:0.1s ease-in-out;
-
-  }
-  .nav-tabs > li.active:after {
-    content: " ";
-    position: absolute;
-    left: 45%;
-    opacity:1;
-    margin: 0 auto;
-    bottom: 0px;
-    border: 10px solid transparent;
-    border-bottom-color: #ddd;
-
-  }
-  .nav-tabs > li a{
-    width: 70px;
-    height: 70px;
-    margin: 20px auto;
-    border-radius: 100%;
-    padding: 0;
-  }
-
-  .nav-tabs > li a:hover{
-    background: transparent;
-  }
-
-  .tab-content{
-  }
-  .tab-pane{
-    position: relative;
-    padding-top: 50px;
-  }
-  .tab-content .head{
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 25px;
-    text-transform: uppercase;
-    padding-bottom: 10px;
-  }
-  .btn-outline-rounded{
-    padding: 10px 40px;
-    margin: 20px 0;
-    border: 2px solid transparent;
-    border-radius: 25px;
-  }
-
-  .btn.green{
-    background-color:#7772b4;
-    /*border: 2px solid #5cb85c;*/
-    color: #ffffff;
-  }
-
-
-
-  @media( max-width : 585px ){
-
-    .board {
-      width: 90%;
-      height:auto !important;
-    }
-    span.round-tabs {
-      font-size:16px;
-      width: 50px;
-      height: 50px;
-      line-height: 50px;
-    }
-    .tab-content .head{
-      font-size:20px;
-    }
-    .nav-tabs > li a {
-      width: 50px;
-      height: 50px;
-      line-height:50px;
+    .glyphicon {
+        line-height: 1.6;
     }
 
-    .nav-tabs > li.active:after {
-      content: " ";
-      position: absolute;
-      left: 35%;
     }
-
-    .btn-outline-rounded {
-      padding:12px 20px;
-    }
-  }
-  .nav-tabs>li.active>a {
-    box-shadow: none;
-    -webkit-box-shadow: none;
-
-  }
-  .nav-tabs>li>a:hover {
-    box-shadow: none;
-    -webkit-box-shadow: none;
-
-  }
-  .nav-tabs>li>a {
-    box-shadow: none;
-    -webkit-box-shadow: none;
-
-  }
-  .glyphicon {
-  line-height: 1.6;
-  }
-
-  }
-
 </style>
 
 
-  <section style="margin-top: -70px; padding-top: 50px;">
+<section style="margin-top: -70px; padding-top: 50px;">
     <div class="container">
-      <div class="row">
-        <div class="board">
-          <!--<div class="board-inner">-->
-            <ul class="nav nav-tabs" id="myTab" style="border-bottom: 2px solid #ddd !important; margin-top: -70px; border: 2px solid transparent;">
-              <div class="liner"></div>
-              <li class="active">
-                <a href="#intro" data-toggle="tab" <!--title="Introduction"-->>
+        <div class="row">
+            <div class="board">
+                <ul class="nav nav-tabs" id="myTab"
+                    style="border-bottom: 2px solid #ddd !important; margin-top: -70px; border: 2px solid transparent;">
+                    <div class="liner"></div>
+                    <li class="active">
+
+                        <a href="#intro" data-toggle="tab">
                       <span class="round-tabs one">
-                        <p style="text-align: center; font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
+                        <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
                         Intro
                         </p>
-                              <i class="glyphicon glyphicon-dashboard"></i>
+                              <i class="glyphicon glyphicon-off"></i>
                       </span>
-                </a></li>
+                        </a>
 
-              <li><a href="#howto" data-toggle="tab">
+                    </li>
+
+                    <li>
+                        <a href="#howto" data-toggle="tab">
                      <span class="round-tabs two">
-                       <p style="text-align: center; font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
+                       <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
                         How-To's
                         </p>
-                         <i class="glyphicon glyphicon-list-alt"></i>
+                         <i class="glyphicon glyphicon-list"></i>
 
                      </span>
-              </a>
-              </li>
-              <li><a href="#governance" data-toggle="tab">
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#governance" data-toggle="tab">
                      <span class="round-tabs three">
-                       <p style="text-align: center; font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
+                       <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
                         Governance
                         </p>
                           <i class="glyphicon glyphicon-check"></i>
-                     </span> </a>
-              </li>
+                     </span>
+                        </a>
+                    </li>
 
-              <li><a href="#dream" data-toggle="tab">
+                    <li>
+                        <a href="#dream" data-toggle="tab">
                          <span class="round-tabs four">
-                           <p style="text-align: center; text-transform:upper; font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
+                           <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
                         Dream
                         </p>
                               <i class="glyphicon glyphicon-cloud"></i>
                          </span>
-              </a></li>
+                        </a>
+                    </li>
 
-              <li><a href="#forum" data-toggle="tab">
+                    <li>
+                        <a href="#forum" data-toggle="tab">
                          <span class="round-tabs five">
-                           <p style="text-align: center; text-transform:upper; font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
+                           <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
                         Help
                         </p>
                               <i class="glyphicon glyphicon-question-sign"></i>
-                         </span> </a>
-              </li>
+                         </span>
+                        </a>
+                    </li>
 
-            </ul>
-        <!--</div>--> <!--end of board-inner-->
+                </ul>
 
-          <div class="tab-content">
-            <div class="tab-pane fade in active" id="intro">
-              <h3 class="head text-center">Introduction</h3>
-              <div class="row"">
-              {% assign sorted_pages = site.pages | sort:"order" %}
-              {% for page in sorted_pages %}
-              {% if page.category == 'intro' %}
-              <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="thumbnail" style="border-left: 5px solid #68b2bb">
-                  <div class="card-header" style="height: 15px; background-color: #d1e7ea">
-                  </div>
-                  <div class="caption">
-                    <h5><b>{{ page.title }}</b></h5>
-                    <p>{{page.excerpt}}</p>
-                    <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
-                  </div>
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="intro"> <!--Start intro content-->
+                        <h3 class="head text-center">Introduction</h3>
+                        <div class="row">
+                            {% assign sorted_pages = site.pages | sort:"order" %}
+                            {% for page in sorted_pages %}
+                            {% if page.category == 'intro' %}
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="thumbnail" style="border-left: 5px solid #68b2bb">
+                                    <div class="card-header" style="height: 15px; background-color: #d1e7ea">
+                                    </div>
+                                    <div class="caption">
+                                        <h5><b>{{ page.title }}</b></h5>
+                                        <p>{{page.excerpt}}</p>
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                            More</a>
+                                    </div>
 
-                </div>
-              </div>
+                                </div>
+                            </div>
 
-              {% endif %}
-              {% endfor %}
-            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
 
-            </div> <!--<end intro>-->
+                    </div> <!--<end intro content>-->
 
-          <div class="tab-pane fade" id="howto">
-            <h3 class="head text-center">How-To's</h3>
-            <div class="row">
-              {% for page in site.pages %}
-              {% if page.category == 'howto' %}
-              <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="thumbnail" style="border-left: 5px solid #0ea862">
-                  <div class="card-header" style="height: 15px; background-color: #ceeddf">
-                  </div>
-                  <div class="caption">
-                    <h5><b>{{ page.title }}</b></h5>
-                    <p>{{page.excerpt}}</p>
-                    <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
-                  </div>
+                    <div class="tab-pane fade" id="howto"> <!--Start how to content-->
+                        <h3 class="head text-center">How-To's</h3>
+                        <div class="row">
+                            {% for page in site.pages %}
+                            {% if page.category == 'howto' %}
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="thumbnail" style="border-left: 5px solid #0ea862">
+                                    <div class="card-header" style="height: 15px; background-color: #ceeddf">
+                                    </div>
+                                    <div class="caption">
+                                        <h5><b>{{ page.title }}</b></h5>
+                                        <p>{{page.excerpt}}</p>
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                            More</a>
+                                    </div>
 
-                </div>
-              </div>
+                                </div>
+                            </div>
 
-              {% endif %}
-              {% endfor %}
-            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
 
-            </div>
-          <!--end how to tab-->
-
-            <div class="tab-pane fade" id="governance">
-              <h3 class="head text-center">Governance and Security</h3>
-              <div class="row">
-                {% for page in site.pages %}
-                {% if page.category == 'governance' %}
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                  <div class="thumbnail" style="border-left: 5px solid #7772b4">
-                    <div class="card-header" style="height: 15px; background-color: #e3e2f0">
                     </div>
-                    <div class="caption">
-                      <h5><b>{{ page.title }}</b></h5>
-                      <p>{{page.excerpt}}</p>
-                      <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
-                    </div>
+                    <!--end how to content-->
 
-                  </div>
+                    <div class="tab-pane fade" id="governance"> <!--Start governance content-->
+                        <h3 class="head text-center">Governance and Security</h3>
+                        <div class="row">
+                            {% for page in site.pages %}
+                            {% if page.category == 'governance' %}
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="thumbnail" style="border-left: 5px solid #7772b4">
+                                    <div class="card-header" style="height: 15px; background-color: #e3e2f0">
+                                    </div>
+                                    <div class="caption">
+                                        <h5><b>{{ page.title }}</b></h5>
+                                        <p>{{page.excerpt}}</p>
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                            More</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!--end governance content-->
+
+                    <div class="tab-pane fade" id="dream"> <!--Start Dream Challenge content-->
+                        <h3 class="head text-center">Dream Challenges</h3>
+                        <p class="narrow text-center">
+                            Stay tuned for articles regarding how to participate in our Dream Challenges.
+                        </p>
+
+                    </div>
+                    <!--End dream challenge content-->
+
+                    <div class="tab-pane fade" id="forum"> <!--start help/forum content-->
+                        <div class="text-center">
+                            <i class="img-intro icon-checkmark-circle"></i>
+                        </div>
+                        <h3 class="head text-center">Got Questions?</h3>
+                        <p class="narrow text-center">
+                            Can't find what you're looking for? Try posting a question to our forum.
+                        </p>
+                        <p class="text-center">
+                            <a href="https://www.synapse.org/#!SynapseForum:default"
+                               class="btn btn-primary btn-outline-rounded green"> Forum <span style="margin-left:10px;"
+                                                                                              class="glyphicon glyphicon-new-window"></span></a>
+                        </p>
+                    </div>
+                    <!--End help/forum content-->
+                    <div class="clearfix"></div>
                 </div>
 
-                {% endif %}
-                {% endfor %}
-              </div>
             </div>
-          <!--end governance tab-->
-
-            <div class="tab-pane fade" id="dream">
-              <h3 class="head text-center">Dream Challenges</h3>
-              <p class="narrow text-center">
-                Stay tuned for articles regarding how to participate in our Dream Challenges.
-              </p>
-
-            </div>
-            <div class="tab-pane fade" id="forum">
-              <div class="text-center">
-                <i class="img-intro icon-checkmark-circle"></i>
-              </div>
-              <h3 class="head text-center">Got Questions?</h3>
-              <p class="narrow text-center">
-                Can't find what you're looking for? Try posting a question to our forum.
-              </p>
-              <p class="text-center">
-                <a href="https://www.synapse.org/#!SynapseForum:default" class="btn btn-success btn-outline-rounded green"> Forum <span style="margin-left:10px;" class="glyphicon glyphicon-new-window"></span></a>
-              </p>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-
         </div>
-      </div>
     </div>
-  </section>
+</section>
 
 
-  <!-- Nav tabs -->
+<!-- Nav tabs -->
 
-        </div>
+</div>
 
 </div>
 
