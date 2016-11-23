@@ -829,7 +829,7 @@ p.narrow{
     height: 2px;
     background: #ddd;
     position: absolute;
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -870,7 +870,7 @@ span.round-tabs.one:hover{
 
 li.active span.round-tabs.one{
     background: #fff !important;
-    border: 2px solid #68b2bb;
+    border: 3px solid #68b2bb;
     color: #68b2bb;
 }
 
@@ -884,7 +884,7 @@ span.round-tabs.two:hover{
 
 li.active span.round-tabs.two{
     background: #fff !important;
-    border: 2px solid #0ea862;
+    border: 3px solid #0ea862;
     color: #0ea862;
 }
 
@@ -899,7 +899,7 @@ span.round-tabs.three:hover{
 
 li.active span.round-tabs.three{
     background: #fff !important;
-    border: 2px solid #7772b4;
+    border: 3px solid #7772b4;
     color: #7772b4;
 }
 
@@ -913,7 +913,7 @@ span.round-tabs.four:hover{
 
 li.active span.round-tabs.four{
     background: #fff !important;
-    border: 2px solid #f1685e;
+    border: 3px solid #f1685e;
     color: #f1685e;
 }
 
@@ -927,31 +927,15 @@ span.round-tabs.five:hover{
 
 li.active span.round-tabs.five{
     background: #fff !important;
-    border: 2px solid #ffca00;
+    border: 3px solid #ffca00;
     color: #ffca00;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .nav-tabs > li.active > a span.round-tabs{
     background: #fafafa;
 }
 .nav-tabs > li {
-    width: 20%;
+    width: 25%;
 }
 
 .nav-tabs > li:after {
