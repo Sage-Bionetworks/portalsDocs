@@ -138,6 +138,22 @@ layout: default
                                 </div>
                             </div>
 
+                            {% elsif page.category == null and page.layout == 'article' %}
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="thumbnail" style="border-left: 5px solid #0ea862">
+                                    <div class="card-header" style="height: 15px; background-color: #ceeddf">
+                                    </div>
+                                    <div class="caption">
+                                        <h5><b>{{ page.title }}</b></h5>
+                                        <p>{{page.excerpt}}</p>
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                            More</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
                             {% endif %}
                             {% endfor %}
                         </div>
