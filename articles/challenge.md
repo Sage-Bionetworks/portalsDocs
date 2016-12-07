@@ -65,22 +65,22 @@ Each Project, Folder and File may have an associated wiki page describing it.  T
 
 All DREAM challenges should have a live and staging site.  The two projects should be named something like this:  "Your DREAM challenge" and "Your DREAM challenge staging site".  It is important to note that the live site will act as a splash site as the DREAM challenge is in development.  The main challenge project can serve as a 'landing page' for visitors wishing to learn about the challenge, as well as a repository for data files and other resources related to the challenge.  **All edits and changes even after the challenge has launched should be made on the staging site**
 
-The comprehensive [DREAM Challenge Wiki Template](https://www.synapse.org/#!Synapse:syn2769515/wiki/) is a great starting point for your challenge's wiki pages.  It also helps to have a look at [some examples from previous challenges](https://www.synapse.org/#!Challenges:DREAM).  **This page will act as the staging site until the challenge is ready to be launched.  Then all the pages on the staging site will be copied onto the main site.** To copy the Challenge Wiki Template to your new project:  Say your private project is "syn0123456".   First, ensure your project has no wiki page (deleting the current one if necessary). 
+The comprehensive [DREAM Challenge Wiki Template](https://www.synapse.org/#!Synapse:syn2769515/wiki/) is a great starting point for your challenge's wiki pages.  It also helps to have a look at [some examples from previous challenges](https://www.synapse.org/#!Challenges:DREAM).  **This page will act as the staging site until the challenge is ready to be launched.  Then all the pages on the staging site will be copied onto the main site.** To copy the Challenge Wiki Template to your new project:  Say your private project is "syn0123456".   First, ensure your project has no wiki page (deleting the current one if necessary).  Here are the ways to copy a wiki from one project to another.
 
-###Shell Script (MAC only)
-Download this [file](https://sourceforge.net/projects/createsynapsechallengewiki/files/createChallengeWiki.command/download) and double click the script.  You may have to right click and click open if you have script security settings on your computer. This script will prompt you to login to synapse.  Give it your private project "syn0123456", and it will copy the template over. 
-
-### Python
-```
+{% tabs %}
+	{% tab Python %}
+		{% highlight python %}
 import synapseclient
 import synapseutils
 syn = synapseclient.login()
 source_project_id = "syn2769515" # This is the ID of the template project
 target_project_id = "syn0123456"
 synapseutils.copyWiki(syn, source_project_id, target_project_id)
-```
-### R
-```
+		{% endhighlight %}
+	{% endtab %}
+
+	{% tab R %}
+		{% highlight r %}
 library(synapseClient)
 library(RCurl)
 synapseLogin()
@@ -89,7 +89,17 @@ targetProjectId<-"syn01234"
 x<-getURL("https://gist.github.com/brucehoff/8f5e8975270e3b5d73f9/raw/2a4ac735d7992261bd6c3fdb519940cfbe08fbff/copyWikis.R", .opts=list(followlocation=TRUE))
 source(textConnection(x))
 copyWikis(sourceProjectId, targetProjectId)
-```
+#NOTE:  R Synapse client version 1.6-0 or later is required to correct a problem copying non-ASCII characters.
+		{%endhighlight %}
+	{% endtab %}
+
+	{% tab Web %}
+This script only works for apple computers. Download this [file](https://sourceforge.net/projects/createsynapsechallengewiki/files/createChallengeWiki.command/download) and double click the script.  You may have to right click and click open if you have script security settings on your computer. This script will prompt you to login to synapse.  Give it your private project "syn0123456", and it will copy the template over. 
+	{% endtab %}
+
+{% endtabs %}
+
+
 
 ## Share the Project
 Data access may be controlled at the Project, Folder or File level by clicking on the "Share" button in the upper right of any page, and selecting individual users or Teams and their access level.  A common pattern is to make the challenge project publicly viewable so all Synapse users can read about the challenge.  Participant data sets are organized in the project, but are limited in access so only challenge participants may see them.  Data used for testing/scoring submissions may
@@ -98,8 +108,10 @@ also be placed with the project but with even tighter access restrictions, so th
 ## Connect the Sign-up Team to the Challenge Project 
 The API to call is [http://hud.rel.rest.doc.sagebase.org.s3-website-us-east-1.amazonaws.com/POST/challenge.html]. This registers the challenge team to the challenge site and creates a challenge Id.
 
-### Python
-```
+
+{% tabs %}
+	{% tab Python %}
+		{% highlight python %}
 import synapseclient
 import json
 syn = synapseclient.login()
@@ -109,14 +121,14 @@ challenge_object = {'id': u'1000',
 challenge = syn.restPOST('/challenge', json.dumps(challenge_object))
 # retain the challenge ID (distinct from 'projectId', above) for use in several wiki widgets described below)
 challenge_id = challenge['id']
-```
-You will be able to access the challenge Id by doing
-```
+#You will be able to access the challenge Id by doing
 challenge = syn.restGET('/entity/syn12345/challenge')
 challenge.id
-```
-### R
-```
+		{% endhighlight %}
+	{% endtab %}
+
+	{% tab R %}
+		{% highlight r %}
 library(synapseClient)
 synapseLogin()
 projectId<-"syn123456" # replace with the actual project Synapse ID
@@ -125,7 +137,12 @@ challenge<-list(projectId=projectId, participantTeamId=participantTeamId)
 challenge<-synRestPOST("/challenge", challenge)
 # retain the challenge ID (distinct from 'projectId', above) for use in several wiki widgets described below)
 challengeId<-challenge$id
-```
+		{%endhighlight %}
+	{% endtab %}
+{% endtabs %}
+
+
+
 Make sure to replace all the places that have `challengeId` in the staging site (3.2 - Forming a team)
 
 
@@ -142,19 +159,25 @@ List registered participants who have not joined a registered Team:
 ${challengeParticipants?challengeId=1234&isInTeam=false}
 ```
 In the template the challenge ID is the placeholder '1234'.  Replace this with the challenge ID for your challenge.  This ID was retained in the Python/R script in the section 'Connect the Sign-up Team to the Challenge Project', above.  If you did not retain this ID, you may look it up from the Challenge project ID.
-### Python
-```
+
+
+{% tabs %}
+	{% tab Python %}
+		{% highlight python %}
 challenge = syn.restGET("/entity/%s/challenge" % project_id) # project_id is defined above
 challenge['id']
-```
-### R
-```
-library(synapseClient)
-synapseLogin()
+		{% endhighlight %}
+	{% endtab %}
+
+	{% tab R %}
+		{% highlight r %}
 projectId<-"syn123456" # replace with the actual challenge project ID
 challenge<-synRestGET(sprintf("/entity/%s/challenge", projectId))
 challenge$id
-```
+		{%endhighlight %}
+	{% endtab %}
+{% endtabs %}
+
 
 ## Add a Sign-up button
 You can add a "Join" button on a wiki page to allow people to join your challenge.  Edit a wiki page, and click Insert > "Join Team Button".  A 'widget' will be added to your wiki page like this:
@@ -168,29 +191,8 @@ contact them (act@sagebase.org), providing the text of the the ToU and the name 
 
 ## Edit Challenge Wiki Privately
 **Need to add information here about the merge wiki script**
-Challenge organizers have found it convenient to author wiki pages privately, then publish the result when ready for public view.  To do this, create a second project which you do _not_ share with the public, but only with fellow challenge organizers.  When complete, the content can be published using a script which is available in R or Python:
-### Python
-```
-import synapseclient
-import synapseutils
-syn = synapseclient.login()
-sourceProjectId = "syn01234"
-targetProjectId = "syn56789"
-synapseutils.copyWiki(syn, sourceProjectId, targetProjectId)
-```
-### R
-Say your private project is "syn01234" and your publicly facing project is "syn56789".   First delete the current wiki page(s) at the public project.  Now run the following in R:
-```
-library(synapseClient)
-library(RCurl)
-synapseLogin()
-sourceProjectId<-"syn01234"
-targetProjectId<-"syn56789"
-x<-getURL("https://gist.github.com/brucehoff/8f5e8975270e3b5d73f9/raw/2a4ac735d7992261bd6c3fdb519940cfbe08fbff/copyWikis.R", .opts=list(followlocation=TRUE))
-source(textConnection(x))
-copyWikis(sourceProjectId, targetProjectId)
-```
-NOTE:  R Synapse client version 1.6-0 or later is required to correct a problem copying non-ASCII characters.
+Challenge organizers have found it convenient to author wiki pages privately, then publish the result when ready for public view.  To do this, create a second project which you do _not_ share with the public, but only with fellow challenge organizers.  When complete, the content can be published using a script which is available in R or Python.  There are instructions above on how to copy wikis from one project to another. 
+
 
 ## Upload Challenge Data
 As mentioned earlier, Synapse can serve both as a place for challenge administrators to share 'secret' scoring data files and for challenge participants to access training data used in the challenge.  You may share training data with participants by sharing with the challenge Team you created.
@@ -203,8 +205,9 @@ There are cases in which there are no human data concerns but for which a pop-up
 ## Create an Evaluation Queue for Submissions
 Challenge participants submit their entries as Synapse Files to an Evaluation queue ("Evaluation" for short) which you manage.  You can create a new Evaluation using our R or Python client.  You may create multiple Evaluation queues to support sub-challenges having different types of submissions.  You may also define submission 'rounds' (start date, round duration, and number of rounds) with optional submission quota (maximum submissions per participant or team) for each Evaluation queue.
 
-###Python
-```
+{% tabs %}
+	{% tab Python %}
+		{% highlight python %}
 evaluation = Evaluation(name="My Example Challenge",
 	  					description="Short description of challenge queue",
 					    status="OPEN",
@@ -213,9 +216,11 @@ evaluation = Evaluation(name="My Example Challenge",
 					    submissionInstructionsMessage="Instructions on submission format...",
 					    submissionReceiptMessage="Thanks for submitting to My Example Challenge!")
 syn.store(evaluation)
-```
-###R
-```
+		{% endhighlight %}
+	{% endtab %}
+
+	{% tab R %}
+		{% highlight r %}
 evaluation <- Evaluation(name="My Example Challenge",
                   description="Short description of challenge queue",
                   status="OPEN",
@@ -224,7 +229,12 @@ evaluation <- Evaluation(name="My Example Challenge",
                   submissionInstructionsMessage="Instructions on submission format...",
                   submissionReceiptMessage="Thanks for submitting to My Example Challenge!")
 synStore(evaluation)
-```
+		{%endhighlight %}
+	{% endtab %}
+{% endtabs %}
+
+
+
 
 ### Share the Evaluation Queue with Participants
 An Evaluation has a "contentSource" field which during creation should be set the Synapse ID of your challenge project.  Afterwards your project will have a "Challenge Admin" tab next to the Wiki and Files tabs.  Your new Evaluation(s) will appear in a list.  Click on an Evaluation will open a sharing tab.  The sharing levels are: Administer, "Can score", "Can Submit", and "Can view."  Give "Can Submit" to the Team or individuals who will be participating in the challenge.
@@ -235,10 +245,9 @@ Share your Evaluations with the service account 'evaluationstatistics', giving '
 
 One way to enable statistics is with the following lines of Python:
 
-###Python
 ```
 evaluation = syn.getEvaluation(3317421)
-syn.setPermissions(evaluation, principalId=3321925, accessType=['READ_PRIVATE_SUBMISSION', 'READ', 'UPDATE_SUBMISSION'])
+syn.setPermissions(evaluation, principalId=0000001, accessType=['READ_PRIVATE_SUBMISSION', 'READ', 'UPDATE_SUBMISSION'])
 ```
 
 ### Add a Submit button to your wiki
@@ -278,7 +287,7 @@ for pasting into the wiki editor.  In the "Challenge Admin" control, described a
 
 ## Link results to participants' project spaces
 If using a "live leader board", simply add a column whose value is "entityId".  This will add a column to the table containing hyperlinks to the submitter's home project.  There they can add a wiki describing their algorithm.  If using a static leader board (wiki table), you may retrieve the entity IDs from the submissions and add them in the wiki editor.  To get the link for each submission, you may use this R script:
-### R
+
 ```
 library(synapseClient)
 synapseLogin()
