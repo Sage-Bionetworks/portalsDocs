@@ -253,10 +253,11 @@ syn.setPermissions(evaluation, principalId=0000001, accessType=['READ_PRIVATE_SU
 
 ### Add a Submit button to your wiki
 You can add a "Submit" button on a wiki page to allow people to submit entries to the Evaluation you set up.  Edit a wiki page, and click Insert > "Submit to Evaluation Button".  A 'widget' will be added to your wiki page like this:
-```
-${evalsubmit?subchallengeIdList=evalId1,evalId2&unavailableMessage=Join the team to submit to the challenge}
 
 ```
+${evalsubmit?subchallengeIdList=evalId1,evalId2&unavailableMessage=Join the team to submit to the challenge}
+```
+
 You customize the subchallengeIdList and other parameters.  The IDs in the subchallengeIdList are those shown in the Challenge Admin project tab. 
 
 ### Large email volumes
