@@ -4,7 +4,8 @@ layout: article
 excerpt: Explores all aspects of DREAM challenges
 ---
 
-#Submitting to challenges
+# Submitting to challenges
+
 One major part of the challenge is ofcourse submitting to the challenge itself.  There are multiple ways a participant can submit to a challenge by using the R, python or web client.  Below is a quick tutorial on how to submit to a challenge.  Most challenge queues will be labeled by `challengename-subchallenge#` as a challenge may have different questions that it may want participants to answer.  
 
 To submit to a challenge, one must have uploaded an entity first to their project and know the evaluation id of the subchallenge you are trying to submit to.  This number can be found in the challenge tab of the challenge site in parenthesis. 
@@ -44,7 +45,7 @@ After doing so, pick the challenge you want to submit to, in this case (My Examp
 {% endtabs %}
 
 
-#Challenge technical support
+# Challenge technical support
 
 
 
@@ -94,7 +95,7 @@ copyWikis(sourceProjectId, targetProjectId)
 	{% endtab %}
 
 	{% tab Web %}
-This script only works for apple computers. Download this [file](https://sourceforge.net/projects/createsynapsechallengewiki/files/createChallengeWiki.command/download) and double click the script.  You may have to right click and click open if you have script security settings on your computer. This script will prompt you to login to synapse.  Give it your private project "syn0123456", and it will copy the template over. 
+This script only works for apple computers. Download this [file](https://sourceforge.net/projects/createsynapsechallengewiki/files/createChallengeWiki.command/download) and double click the script.  You may have to right click and click open if you have script security settings on your computer. This script will prompt you to login to synapse.  Give it your private project syn0123456, and it will copy the template over. 
 	{% endtab %}
 
 {% endtabs %}
