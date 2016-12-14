@@ -61,7 +61,7 @@ From the Synapse home page [https://www.synapse.org] enter a unique Team name to
 Please visit this [page]((http://docs.synapse.org/articles/teams.html) to learn more about teams.
 
 
-##Creating DREAM Challenge Projects
+## Creating DREAM Challenge Projects
 Each Project, Folder and File may have an associated wiki page describing it.  The project wiki is a good place for an overview of the challenge and instructions for participating.  For background on how to create and share Projects, Files and Folders, please see our [making a project guide](http://docs.synapse.org/articles/making_a_project.html).  
 
 All DREAM challenges should have a live and staging site.  The two projects should be named something like this:  "Your DREAM challenge" and "Your DREAM challenge staging site".  It is important to note that the live site will act as a splash site as the DREAM challenge is in development.  The main challenge project can serve as a 'landing page' for visitors wishing to learn about the challenge, as well as a repository for data files and other resources related to the challenge.  **All edits and changes even after the challenge has launched should be made on the staging site**
