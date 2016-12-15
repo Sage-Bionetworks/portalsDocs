@@ -8,191 +8,220 @@ layout: default
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
 
 <script>
-  $(function() {
-    $('.thumbnail').matchHeight();
-  });
-
-  $(function(){
-    $('.btn-circle').on('click',function(){
-      $('.btn-circle.btn-info').removeClass('btn-info').addClass('btn-default');
-      $(this).addClass('btn-info').removeClass('btn-default').blur();
+    $(function () {
+        $('.thumbnail').matchHeight();
     });
 
-    $('.next-step, .prev-step').on('click', function (e){
-      var $activeTab = $('.tab-pane.active');
-
-      $('.btn-circle.btn-info').removeClass('btn-info').addClass('btn-default');
-
-      if ( $(e.target).hasClass('next-step') )
-      {
-        var nextTab = $activeTab.next('.tab-pane').attr('id');
-        $('[href="#'+ nextTab +'"]').addClass('btn-info').removeClass('btn-default');
-        $('[href="#'+ nextTab +'"]').tab('show');
-      }
-      else
-      {
-        var prevTab = $activeTab.prev('.tab-pane').attr('id');
-        $('[href="#'+ prevTab +'"]').addClass('btn-info').removeClass('btn-default');
-        $('[href="#'+ prevTab +'"]').tab('show');
-      }
+    $(function () {
+        $('a[title]').tooltip();
     });
-  });
-  </script>
+
+</script>
 
 <style>
-  .process-step .btn:focus {
-    outline:none
-  }
-  .process {
-    display:table;
-    width:100%;
-    position:relative;
-  }
-  .process-row {
-    display:table-row
-  }
-  .process-step button[disabled]{
-    opacity:1 !important;
-    filter: alpha(opacity=100) !important;
-  }
-  .process-row:before{
-    top:40px;
-    left:30px;
-    bottom:0;
-    position:absolute;
-    content:" ";
-    width:90%;
-    height:2px;
-    background-color:#ccc;
-    z-order:0;
-  }
-  .process-step {
-    display:table-cell;
-    text-align:center;
-    position:relative;
-  }
-  .process-step p {
-    margin-top:4px;
-  }
-  .btn-circle {
-    width:80px;
-    height:80px;
-    text-align:center;
-    font-size:12px;
-    border-radius:50%;
-  }
-  #howto {
-    background-color: #0ea862 !important;
-    /*background-image: #0ea862 !important;*/
-    background-image: radial-gradient(circle, #0ea862 80%, #ceeddf 81%);
-  }
-  #howto {
-
-  }
-
+    .glyphicon {
+        line-height: 1.6;
+    }
 </style>
 
-<div class="container" id="userDiv">
 
-  <!-- Nav tabs -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <div class="container">
-    <div class="row">
-      <div class="row">
-      <div class="process col-md-2">
-        <div class="process-row nav nav-tabs">
-          <div class="process-step">
-            <button id="intro" type="button" class="btn btn-info btn-circle" data-toggle="tab" href="#menu1"><i class="fa fa-info fa-3x"></i></button>
-            <p style="text-align: center">Introduction</p>
-          </div>
-          <div class="process-step">
-            <button id="howto" type="button" class="btn btn-default btn-circle" data-toggle="tab" href="#menu2"><i class="fa fa-file-text-o fa-3x"></i></button>
-            <p>How To's</p>
-          </div>
-          <div class="process-step">
-            <button type="button" class="btn btn-default btn-circle" data-toggle="tab" href="#menu3"><i class="fa fa-key fa-3x"></i></button>
-            <p>Governance <br />& Security</p>
-          </div>
-          <div class="process-step">
-            <button type="button" class="btn btn-default btn-circle" data-toggle="tab" href="#menu4"><i class="fa fa-question fa-3x"></i></button>
-            <p>Can't Find What<br/> You're Looking For?</p>
-          </div>
+<section style="margin-top: -70px; padding-top: 50px;">
+    <div class="container">
+        <div class="row">
+            <div class="board">
+                <ul class="nav nav-tabs" id="myTab"
+                    style="border-bottom: 2px solid #ddd !important; margin-top: -70px; border: 2px solid transparent;">
+                    <div class="liner"></div>
+                    <li class="active">
 
-        </div>
-      </div>
+                        <a href="#intro" data-toggle="tab">
+                      <span class="round-tabs one">
+                        <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
+                        Intro
+                        </p>
+                              <i class="glyphicon glyphicon-off"></i>
+                      </span>
+                        </a>
 
-        </div>
-      <div class="tab-content col-md-11">
-        <div id="menu1" class="tab-pane fade active in">
-          <div class="row"">
-          {% assign sorted_pages = site.pages | sort:"order" %}
-          {% for page in sorted_pages %}
-          {% if page.category == 'intro' %}
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="thumbnail" style="border-left: 5px solid #68b2bb">
-              <div class="card-header" style="height: 15px; background-color: #d1e7ea">
-              </div>
-              <div class="caption">
-                <h5><b>{{ page.title }}</b></h5>
-                <p>{{page.excerpt}}</p>
-                <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
-              </div>
+                    </li>
+
+                    <li>
+                        <a href="#howto" data-toggle="tab">
+                     <span class="round-tabs two">
+                       <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
+                        How-To's
+                        </p>
+                         <i class="glyphicon glyphicon-list"></i>
+
+                     </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#governance" data-toggle="tab">
+                     <span class="round-tabs three">
+                       <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
+                        Governance
+                        </p>
+                          <i class="glyphicon glyphicon-check"></i>
+                     </span>
+                        </a>
+                    </li>
+
+                    <!--<li>-->
+                        <!--<a href="#dream" data-toggle="tab">-->
+                         <!--<span class="round-tabs four">-->
+                           <!--<p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">-->
+                        <!--Dream-->
+                        <!--</p>-->
+                              <!--<i class="glyphicon glyphicon-cloud"></i>-->
+                         <!--</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+
+                    <li>
+                        <a href="#forum" data-toggle="tab">
+                         <span class="round-tabs five">
+                           <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
+                        Forum
+                        </p>
+                              <i class="glyphicon glyphicon-question-sign"></i>
+                         </span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="intro"> <!--Start intro content-->
+                        <h3 class="head text-center">Introduction</h3>
+                        <div class="row">
+                            {% assign sorted_pages = site.pages | sort:"order" %}
+                            {% for page in sorted_pages %}
+                            {% if page.category == 'intro' %}
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="thumbnail" style="border-left: 5px solid #68b2bb">
+                                    <div class="card-header" style="height: 15px; background-color: #d1e7ea">
+                                    </div>
+                                    <div class="caption">
+                                        <h5><b>{{ page.title }}</b></h5>
+                                        <p>{{page.excerpt}}</p>
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                            More</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+
+                    </div> <!--<end intro content>-->
+
+                    <div class="tab-pane fade" id="howto"> <!--Start how to content-->
+                        <h3 class="head text-center">How-To's</h3>
+                        <div class="row">
+                            {% for page in site.pages %}
+                            {% if page.category == 'howto' %}
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="thumbnail" style="border-left: 5px solid #0ea862">
+                                    <div class="card-header" style="height: 15px; background-color: #ceeddf">
+                                    </div>
+                                    <div class="caption">
+                                        <h5><b>{{ page.title }}</b></h5>
+                                        <p>{{page.excerpt}}</p>
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                            More</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            {% elsif page.category == null and page.layout == 'article' %}
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="thumbnail" style="border-left: 5px solid #0ea862">
+                                    <div class="card-header" style="height: 15px; background-color: #ceeddf">
+                                    </div>
+                                    <div class="caption">
+                                        <h5><b>{{ page.title }}</b></h5>
+                                        <p>{{page.excerpt}}</p>
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                            More</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                    <!--end how to content-->
+
+                    <div class="tab-pane fade" id="governance"> <!--Start governance content-->
+                        <h3 class="head text-center">Governance and Security</h3>
+                        <div class="row">
+                            {% for page in site.pages %}
+                            {% if page.category == 'governance' %}
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="thumbnail" style="border-left: 5px solid #7772b4">
+                                    <div class="card-header" style="height: 15px; background-color: #e3e2f0">
+                                    </div>
+                                    <div class="caption">
+                                        <h5><b>{{ page.title }}</b></h5>
+                                        <p>{{page.excerpt}}</p>
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                            More</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!--end governance content-->
+
+                    <!--<div class="tab-pane fade" id="dream"> &lt;!&ndash;Start Dream Challenge content&ndash;&gt;-->
+                        <!--<h3 class="head text-center">Dream Challenges</h3>-->
+                        <!--<p class="narrow text-center">-->
+                            <!--Stay tuned for articles regarding how to participate in our Dream Challenges.-->
+                        <!--</p>-->
+
+                    <!--</div>-->
+                    <!--End dream challenge content-->
+
+                    <div class="tab-pane fade" id="forum"> <!--start help/forum content-->
+                        <div class="text-center">
+                            <i class="img-intro icon-checkmark-circle"></i>
+                        </div>
+                        <h3 class="head text-center">Got Questions?</h3>
+                        <p class="narrow text-center">
+                            Can't find what you're looking for? Try posting a question to our forum.
+                        </p>
+                        <p class="text-center">
+                            <a href="https://www.synapse.org/#!SynapseForum:default" target="_blank"
+                               class="btn btn-primary btn-outline-rounded green"> Forum <span style="margin-left:10px;"
+                                                                                              class="glyphicon glyphicon-new-window"></span></a>
+                        </p>
+                    </div>
+                    <!--End help/forum content-->
+                    <div class="clearfix"></div>
+                </div>
 
             </div>
-          </div>
-
-          {% endif %}
-          {% endfor %}
         </div>
-        </div>
-        <div id="menu2" class="tab-pane fade">
-          <div class="row">
-            {% for page in site.pages %}
-            {% if page.category == 'howto' %}
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="thumbnail" style="border-left: 5px solid #0ea862">
-                <div class="card-header" style="height: 15px; background-color: #ceeddf">
-                </div>
-                <div class="caption">
-                  <h5><b>{{ page.title }}</b></h5>
-                  <p>{{page.excerpt}}</p>
-                  <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
-                </div>
-
-              </div>
-            </div>
-
-            {% endif %}
-            {% endfor %}
-          </div>
-        </div>
-        <div id="menu3" class="tab-pane fade">
-          <div class="row">
-            {% for page in site.pages %}
-            {% if page.category == 'governance' %}
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="thumbnail" style="border-left: 5px solid #7772b4">
-                <div class="card-header" style="height: 15px; background-color: #e3e2f0">
-                </div>
-                <div class="caption">
-                  <h5><b>{{ page.title }}</b></h5>
-                  <p>{{page.excerpt}}</p>
-                  <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read More</a>
-                </div>
-
-              </div>
-            </div>
-
-            {% endif %}
-            {% endfor %}
-          </div>
-        </div>
-        <div id="menu4" class="tab-pane fade">
-          <h3>Can't find what you're looking for?</h3>
-          <h4>Try posting to our <a href="https://www.synapse.org/#!SynapseForum:default">Forum</a></h4>
-        </div>
-
-      </div>
     </div>
-  </div>
+</section>
+
+
+<!-- Nav tabs -->
+
 </div>
+
+</div>
+
