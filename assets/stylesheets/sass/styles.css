@@ -950,17 +950,17 @@ li.active span.round-tabs.five{
     transition:0.1s ease-in-out;
 
 }
-.nav-tabs > li.active:after {
-    content: " ";
-    position: absolute;
-    left: 45%;
-    opacity:1;
-    margin: 0 auto;
-    bottom: 0px;
-    border: 10px solid transparent;
-    border-bottom-color: #ddd;
+/*.nav-tabs > li.active:after {*/
+    /*content: " ";*/
+    /*position: absolute;*/
+    /*left: 45%;*/
+    /*opacity:1;*/
+    /*margin: 0 auto;*/
+    /*bottom: 0px;*/
+    /*border: 10px solid transparent;*/
+    /*border-bottom-color: #ddd;*/
 
-}
+/*}*/
 .nav-tabs > li a{
     width: 70px;
     height: 70px;
@@ -977,7 +977,6 @@ li.active span.round-tabs.five{
 }
 .tab-pane{
     position: relative;
-    padding-top: 50px;
 }
 .tab-content .head{
     font-family: 'Roboto Condensed', sans-serif;
