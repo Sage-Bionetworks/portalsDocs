@@ -202,6 +202,8 @@ synapse get -r syn2390898
 {% tab Python %}
 {% highlight python %}
 import synapseutils
+import synapseclient
+syn = synapseclient.login()
 files = synapseutils.syncFromSynapse(syn, 'syn2390898')
 {% endhighlight %}
 {% endtab %}
