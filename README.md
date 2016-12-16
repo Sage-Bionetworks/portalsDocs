@@ -9,13 +9,19 @@ Synapse Docs is generated using [Jekyll](https://jekyllrb.com/) and uses redcarp
 
 ### Creating a page
 
-To create a page using the article layout, start by specifying at the very beginning the title, layout, and excerpt in the YAML front matter. Note that the front matter needs to be enclosed between three dashed lines to work properly.:
+To create a page using the article layout, start by specifying at the very beginning the title, layout, excerpt, and category in the YAML front matter. The title and excerpt will show up in the article's user guide thumbnail and the category tag will be used to sort the article into its corresponding user guide tab. If no category is specified, it will default into the "How-To" tab. 
+
+**category options:** `intro, howto, governance, dream`
+
+
+Note that the front matter needs to be enclosed between three dashed lines to work properly.
 
 ```
 ---
 title: Name of page here
 layout: article
 excerpt: A blurb about this page that will show up as a description in the user guide.
+category: intro 
 ---
 ```
 
