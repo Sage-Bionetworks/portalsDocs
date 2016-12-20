@@ -47,7 +47,7 @@ After doing so, pick the challenge you want to submit to, in this case (My Examp
 
 ## Challenge technical support
 
-**Coming soon**
+**More Information Coming Soon**
 
 ## Setting up a DREAM challenge infrastructure
 
@@ -198,7 +198,7 @@ contact them (act@sagebase.org), providing the text of the the ToU and the name 
 
 ### Edit Challenge Wiki Privately
 
-**Need to add information here about the merge wiki script**
+**More information soon about the merge wiki script**
 Challenge organizers have found it convenient to author wiki pages privately, then publish the result when ready for public view.  To do this, create a second project which you do _not_ share with the public, but only with fellow challenge organizers.  When complete, the content can be published using a script which is available in R or Python.  There are instructions above on how to copy wikis from one project to another. 
 
 
@@ -291,7 +291,7 @@ Submission scores and other computational results may be attached to the Submiss
 ```
 git clone https://github.com/Sage-Bionetworks/SynapseChallengeTemplates.git
 ```
-**More info here**
+**More Information Coming Soon**
 
 #### Share Scoring Code with Participants
 
