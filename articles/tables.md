@@ -443,6 +443,8 @@ Click on the **Edit icon** to the right of the query button to get to the **Edit
 # Query for the rows you want to delete and call syn.delete on the results:
 rowsToDelete = syn.tableQuery("select * from %s where artist='Sonny Rollins'" %table.schema.id)
 a = syn.delete(rowsToDelete.asRowSet())
+#or
+a = syn.delete(synapseclient.Table(syn.get(table.schema.id), rowsToDelete.asDataFrame()))
 {% endhighlight %}
 {% endtab %}
 
