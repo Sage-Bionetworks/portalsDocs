@@ -429,9 +429,11 @@ Note: the first 5 * stand for minute (m), hour (h), day of month (dom), and mont
 
 #### Java Scoring Application
 
-
+**More info coming soon**
 
 #### R Scoring Application
+
+**More info coming soon**
 
 
 #### Share Scoring Code with Participants
