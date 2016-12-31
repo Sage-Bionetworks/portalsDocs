@@ -286,7 +286,7 @@ After customizing the application for your scoring needs, create a periodically 
 Submission scores and other computational results may be attached to the Submissions themselves.  The sample code shows how to do this.  The results may be retrieved and displayed in a leader board, as described below.
 
 
-#### Setting up a python scoring application
+#### Python Scoring Application
 
 ```
 git clone https://github.com/Sage-Bionetworks/SynapseChallengeTemplates.git
@@ -296,6 +296,7 @@ git clone https://github.com/Sage-Bionetworks/SynapseChallengeTemplates.git
 For those writing Synapse challenge scoring applications in Python, these scripts should serve as a starting point giving working examples of many of the tasks typical to running a challenge on Synapse.  Challenges can be set up by creating a **challenge_config.py** with **challenge_config.template.py** and editting **messages.py**. You'll need to add an evaluation queue for each question in your challenge and write appropriate validation and scoring functions. Then, customize the messages with challenge specific help for your solvers.
 
 In the **challenge_config.template.py**, you can add in separate `validate_func`, `score1`, `score2`, and `score...` functions for each question in your challenge.  You can name these functions anything you want as long as you set up a evaluation queue and function or file mapping. 
+
 ```
 evaluation_queues = [
     {
@@ -318,6 +319,7 @@ evaluation_queue_by_id = {q['id']:q for q in evaluation_queues}
 Make sure the id's are your actual evaluation queue ids, so that the right functions are used when the submissions are being validated and scored.   
 
 All validation functions **MUST** use assertions to catch the participant errors.  Only assertion errors are emailed to the participants.  All other errors are emailed to the challenge admins.  Example validation function:
+
 ```
 import pandas as pd
 import os
@@ -334,6 +336,7 @@ def validate_func(submission, goldstandard_path):
 ```
 
 All successfully validated submissions will have submission status as VALIDATED.  The scoring harness will then look for all VALIDATED submissions and score them.  Example scoring function:
+
 ```
 import pandas as pd
 import numpy
@@ -364,64 +367,83 @@ def score_submission(evaluation, submission):
 
 
 In **messages.py**, please edit the dictionary on line 18:
+
 ```
 defaults = dict(
     challenge_instructions_url = "https://www.synapse.org/",
     support_forum_url = "https://www.synapse.org/#!Synapse:{synIdhere}/discussion/default",
     scoring_script = "the scoring script")
 ```
+
 Point to the correct **How to submit** page on the challenge site and the challenge's discussion forum.
 
 
-### Validation and Scoring
+##### Validation and Scoring
 
 Let's validate the submission we just reset, with the full suite of messages enabled:
+
 ```
 python challenge.py --send-messages --notifications --acknowledge-receipt validate [evaluation ID]
 ```
+
 The script also takes a --dry-run parameter for testing. Let's see if scoring seems to work:
+
 ```
 python challenge.py --send-messages --notifications --dry-run score [evaluation ID]
 ```
+
 OK, assuming that went well, now let's score for real:
+
 ```
 python challenge.py --send-messages --notifications score [evaluation ID]
 ```
+
 Go to the challenge project in Synapse and take a look around. You will find a leaderboard in the wikis and also a Synapse table that mirrors the contents of the leaderboard. The script can output the leaderboard in .csv format:
+
 ```
 python challenge.py leaderboard [evaluation ID]
 ```
 
-### RPy2
+##### RPy2
 Often it's more convenient to write statistical code in R. We've successfully used the [Rpy2](http://rpy.sourceforge.net/) library to pass file paths to scoring functions written in R and get back a named list of scoring statistics. Alternatively, there's R code included in the R folder of this repo to fully run a challenge in R.
 
-## Setting Up Automatic Validation and Scoring on an EC2
+##### Setting Up Automatic Validation and Scoring on an EC2
 
 Make sure challenge_config.py is set up properly and all the files in this repository are in one directory on the EC2.  Crontab is used to help run the validation and scoring command automatically.  To set up crontab, first open the crontab configuration file:
 
-    crontab -e
+```
+crontab -e
+```
 
 Paste this into the file:
 
-    # minute (m), hour (h), day of month (dom), month (mon)                      
-    */10 * * * * sh challenge_eval.sh>>~/challenge_runtimes.log
-    5 5 * * * sh scorelog_update.sh>>~/change_score.log
+```
+# minute (m), hour (h), day of month (dom), month (mon)                      
+*/10 * * * * sh challenge_eval.sh>>~/challenge_runtimes.log
+5 5 * * * sh scorelog_update.sh>>~/change_score.log
+```
 
 Note: the first 5 * stand for minute (m), hour (h), day of month (dom), and month (mon). The configuration to have a job be done every ten minutes would look something like */10 * * * *
 
 
+
+#### Java Scoring Application
+
+
+
+#### R Scoring Application
 
 
 #### Share Scoring Code with Participants
 
 Although validation/test data is typically kept secret during a challenge, you should make the scoring algorithm itself available to participants.  A straightforward way to do this is to push the code to your Github fork, then link to a Synapse entity or wiki using its Github URL.
 
-#### Create a Leader Board
+### Create a Leaderboard
 
 You can add a dynamic leader board on a wiki page to show the submissions to an Evaluation and their scores.  Click "@" in the lower, right-hand corner of the portal, edit a wiki page, and click Insert > "Synapse API SuperTable".  A table editor allows you to pick from the results your scoring application added to the participants' submissions and display in a sorted, paginated, tabular form.  The scoring application templates mentioned above print out valid sample widget text suitable
 for pasting into the wiki editor.  In the "Challenge Admin" control, described above, you provide "Can View" access to whoever you wish to be able to see the leader board, a choice which can be to make the leader board visible to everyone.
 
-### Test everything on some dry run users
+**Test everything on some dry run users**
 
 **DON'T SKIP THIS STEP!!!**  Really.  Get some friends to try to go through the whole process of signing up and submitting to the challenge, starting with just a link to synapse.org.  Do this 2 weeks before you intend to launch publicly so you can actually do the little bug fixing needed to smooth things out for the larger launch.
 
