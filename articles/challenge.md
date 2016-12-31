@@ -291,7 +291,126 @@ Submission scores and other computational results may be attached to the Submiss
 ```
 git clone https://github.com/Sage-Bionetworks/SynapseChallengeTemplates.git
 ```
-**More Information Coming Soon**
+
+
+For those writing Synapse challenge scoring applications in Python, these scripts should serve as a starting point giving working examples of many of the tasks typical to running a challenge on Synapse.  Challenges can be set up by creating a **challenge_config.py** with **challenge_config.template.py** and editting **messages.py**. You'll need to add an evaluation queue for each question in your challenge and write appropriate validation and scoring functions. Then, customize the messages with challenge specific help for your solvers.
+
+In the **challenge_config.template.py**, you can add in separate `validate_func`, `score1`, `score2`, and `score...` functions for each question in your challenge.  You can name these functions anything you want as long as you set up a evaluation queue and function or file mapping. 
+```
+evaluation_queues = [
+    {
+        'id':1,
+        'scoring_func':score1
+        'validation_func':validate_func
+        'goldstandard':'path/to/sc1gold.txt'
+    },
+    {
+        'id':2,
+        'scoring_func':score2
+        'validation_func':validate_func
+        'goldstandard':'path/to/sc2gold.txt'
+
+    }
+]
+evaluation_queue_by_id = {q['id']:q for q in evaluation_queues}
+```
+
+Make sure the id's are your actual evaluation queue ids, so that the right functions are used when the submissions are being validated and scored.   
+
+All validation functions **MUST** use assertions to catch the participant errors.  Only assertion errors are emailed to the participants.  All other errors are emailed to the challenge admins.  Example validation function:
+```
+import pandas as pd
+import os
+def validate_func(submission, goldstandard_path):
+    ##Read in submission (submission.filePath)
+    ## MUST USE ASSERTION ERRORS!!! 
+    assert os.path.basename(submission.filePath) == "prediction.tsv", "Submission file must be named prediction.tsv"
+    pred = pd.read_csv(submission.filePath, sep="\t")
+    gold = pd.read_csv(goldstandard_path, sep="\t")
+    REQUIRED_HEADERS = ["sampleId","values"]
+    assert all([i in pred.columns for i in REQUIRED_HEADERS]), "predictions.tsv must have headers: sampleId, values"
+    assert sum(pred['sampleId'].duplicated()) ==0, "No duplicated sampleIds allowed"
+    return(True,"Passed Validation")
+```
+
+All successfully validated submissions will have submission status as VALIDATED.  The scoring harness will then look for all VALIDATED submissions and score them.  Example scoring function:
+```
+import pandas as pd
+import numpy
+print numpy.corrcoef(a,b)
+def score1(submission, goldstandard_path):
+    pred = pd.read_csv(submission.filePath, sep="\t")
+    gold = pd.read_csv(goldstandard_path, sep="\t")
+    combined = gold.merge(pred, on="sampleId", how="outer")
+    correlation = numpy.corrcoef(combined['truth'],combined['values'])
+    return(correlation[0,1])
+```
+
+To attach the scores to the submission object, you must set up the `score_submission` function to return a dictionary of values.
+
+```
+def score_submission(evaluation, submission):
+    """
+    Find the right scoring function and score the submission
+
+    :returns: (score, message) where score is a dict of stats and message
+              is text for display to user
+    """
+    config = evaluation_queue_by_id[int(evaluation.id)]
+    score = config['scoring_func'](submission, config['goldstandard_path'])
+    #Make sure to round results to 3 or 4 digits
+    return (dict(corr=round(score[0],4)), "You did fine!")
+```
+
+
+In **messages.py**, please edit the dictionary on line 18:
+```
+defaults = dict(
+    challenge_instructions_url = "https://www.synapse.org/",
+    support_forum_url = "https://www.synapse.org/#!Synapse:{synIdhere}/discussion/default",
+    scoring_script = "the scoring script")
+```
+Point to the correct **How to submit** page on the challenge site and the challenge's discussion forum.
+
+
+### Validation and Scoring
+
+Let's validate the submission we just reset, with the full suite of messages enabled:
+```
+python challenge.py --send-messages --notifications --acknowledge-receipt validate [evaluation ID]
+```
+The script also takes a --dry-run parameter for testing. Let's see if scoring seems to work:
+```
+python challenge.py --send-messages --notifications --dry-run score [evaluation ID]
+```
+OK, assuming that went well, now let's score for real:
+```
+python challenge.py --send-messages --notifications score [evaluation ID]
+```
+Go to the challenge project in Synapse and take a look around. You will find a leaderboard in the wikis and also a Synapse table that mirrors the contents of the leaderboard. The script can output the leaderboard in .csv format:
+```
+python challenge.py leaderboard [evaluation ID]
+```
+
+### RPy2
+Often it's more convenient to write statistical code in R. We've successfully used the [Rpy2](http://rpy.sourceforge.net/) library to pass file paths to scoring functions written in R and get back a named list of scoring statistics. Alternatively, there's R code included in the R folder of this repo to fully run a challenge in R.
+
+## Setting Up Automatic Validation and Scoring on an EC2
+
+Make sure challenge_config.py is set up properly and all the files in this repository are in one directory on the EC2.  Crontab is used to help run the validation and scoring command automatically.  To set up crontab, first open the crontab configuration file:
+
+    crontab -e
+
+Paste this into the file:
+
+    # minute (m), hour (h), day of month (dom), month (mon)                      
+    */10 * * * * sh challenge_eval.sh>>~/challenge_runtimes.log
+    5 5 * * * sh scorelog_update.sh>>~/change_score.log
+
+Note: the first 5 * stand for minute (m), hour (h), day of month (dom), and month (mon). The configuration to have a job be done every ten minutes would look something like */10 * * * *
+
+
+
 
 #### Share Scoring Code with Participants
 
