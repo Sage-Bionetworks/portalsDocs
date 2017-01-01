@@ -223,7 +223,7 @@ evaluation = Evaluation(name="My Example Challenge",
 	  					description="Short description of challenge queue",
 					    status="OPEN",
 					    quota={'submissionLimit':3}, #Sets the number of submissions allowed per participant/team
-					    contentSource="syn7824172", #Your synapse project id
+					    contentSource="syn12345", #Your synapse project id
 					    submissionInstructionsMessage="Instructions on submission format...",
 					    submissionReceiptMessage="Thanks for submitting to My Example Challenge!")
 syn.store(evaluation)
@@ -236,11 +236,18 @@ evaluation <- Evaluation(name="My Example Challenge",
                   description="Short description of challenge queue",
                   status="OPEN",
                   quota=synapseClient:::SubmissionQuota(submissionLimit=3), #Sets the number of submissions allowed per participant/team
-                  contentSource="syn7824172", #Your synapse project id
+                  contentSource="syn12345", #Your synapse project id
                   submissionInstructionsMessage="Instructions on submission format...",
                   submissionReceiptMessage="Thanks for submitting to My Example Challenge!")
 synStore(evaluation)
 		{%endhighlight %}
+	{% endtab %}
+
+	{% tab Web %}
+You can create evaluation queues on the web by navigating to your challenge site by adding /admin (E.g. www.synapse.org/#!Synapse:syn12345/admin)
+
+<img src="/assets/images/createEvalQueue.png">
+Click **Add Evaluation Queue** and follow the instructions on the screen. Unforuntately you will not be able to set the quota of an evaluation queue from the web. There are instructions above on how to set quotas on an existing evaluation queue.
 	{% endtab %}
 {% endtabs %}
 
