@@ -109,7 +109,7 @@ The login credentials can be specified for every call to the synapseclient but t
 
 To login with your username/email and password:
 
-`synapse login -u me@nowhere.com -p secret --rememberMe`
+`synapse login -u me@example.com -p secret --rememberMe`
 
 by passing `--rememberMe` the username/password will not need to specified on subsequent calls to Synapse.
 
@@ -119,7 +119,7 @@ You can store your credentials in your home directory in a file called `.synapse
 
 ```
 [authentication]
-username: me@nowhere.com
+username: me@example.com
 password: secret
 ```
 
