@@ -39,7 +39,9 @@ This opens a **New Thread** dialog box in which you can edit text, insert pictur
 <br>
 <img style="width: 50%" src="/assets/images/FormattingGuide.png">
 
-As with `Wikis` you may tag people (by including "@" + username) or link to Synapse entities (by simply typing a Synapse Id). Please see the [Wikis](/articles/wikis.html) guide for more information.
+{% include tip.html content="As with Wikis you may tag people (by including @ + username) or link to Synapse entities (by simply typing a Synapse Id)." %}
+
+**Please see the [Wikis](/articles/wikis.html) guide for more information.**
 
 Within an existing thread, you may use the `Reply` button to write a reply to an existing discussion. All editing features described above are available for this purpose.
 
