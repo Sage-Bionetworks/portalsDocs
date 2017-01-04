@@ -5,7 +5,7 @@ excerpt: Uploading files and file versioning in Synapse.
 category: howto
 ---
 
-#Files
+# Files
 
 Synapse `Files` are like files on a local file system, except they are accessible to anyone who has access, can be annotated and queried on, can be embedded into Synapse `Wiki` pages, and can be associated with a [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier){:target="_blank"}. `Files` carry the Conditions for Use of the Synapse `Folder` they are placed in, plus any additional specific Conditions for Use they have on their own.
 
@@ -13,7 +13,7 @@ By default, `Files` uploaded to Synapse are stored in 'Synapse Storage', which i
 
 Synapse `Files` (as well as `Folders` and `Projects`) are identified by a unique identifier called a Synapse ID. It takes the form `syn12345678`. This identifier can be used to refer to a specific file on the web and through the clients.
 
-#Versioning
+# Versioning
 
 Versioning is an important component to reusable, reproducible research. There are a number of ways that versioning can be accomplished, including the commonly used filename modification scheme (e.g., 'file.txt', 'file-1.txt', 'file-1a.txt', 'file-final.txt', and then 'file-reallyfinal.txt'). However, this is less than satisfactory for a number of reasons. First, the rules for naming are arbitrary, and may change over time. Second, it is not possible to easily determine (without external documentation) that this set of file changes are related to the same file. Third, it becomes difficult to manage future use of specific versions of the file. Using `File` versioning provided by Synapse solves these issues.
 
