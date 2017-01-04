@@ -77,14 +77,18 @@ The layout and text of a `Wiki` can be customized using Wiki markdown language. 
 
 ### Tables in Markdown
 
-{% include tip.html content="Add this Markdown below the header to enable sort on the header columns." %}
+To create a table you separate the columns by the pipe character (\|).  A Header can be added by separating the first row by dashes (-).  A header allows the table to be sorted by each column.  A simple table would be created by the following markdown.
 
     ````
-     Header 1 | Header 2 | Header 3
-    --- | --- | ---
+     Header 1 | Header 2 | Header 3 |
+    --- | --- | --- |
+     a  |  b  |  c  |
     ````
 
 
+For more table settings see the formatting guide at the top of the wiki editor.
+
+{% include tip.html content="To insert large amounts of text, use the widget \"Table: Paste tabular data\" (see all widgets below)." %}
 
 ### Attachments, links and tagging
 Files, images and videos can be attached to a `Wiki`. This may be content on from the web, your desktop, or `Files` already uploaded to Synapse. Links can be added to content available from any source with a url or to a Synapse users profile through the Tag someone widget, or by typing @ - just enter the Synapse username in the dialog that appears.
