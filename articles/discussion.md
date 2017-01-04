@@ -11,7 +11,7 @@ category: howto
 }
 </style>
 
-## Discussion
+# Discussion
 
 `Discussion` forums are a way to easily communicate with others in a message board style manner which is visible to all those with whom a project is shared. In this guide you will learn how to:
 
@@ -21,7 +21,7 @@ category: howto
 
 <br>
 
-### Creating a Message Thread and Responding Existing Threads
+## Creating a Message Thread and Responding Existing Threads
 
 The `Discussion` tab can be found as the left-most tab on your project main page, and anyone with `Project` access may view discussion threads contained therein, create new threads or reply to existing threads.
 
@@ -46,7 +46,7 @@ Within an existing thread, you may use the `Reply` button to write a reply to an
 You may edit or delete any forum post you've created by clicking the **pencil** icon or the **trash can** icon, respectively, located in the bottom right corner of the post.
 
 
-### Managing automatic notifications
+## Managing automatic notifications
 
 You may subscribe to a `Discussion` forum for a particular `Project` by clicking the `Follow` button on the main discussion page. When this feature is activated you will receive email to your Synapse-registered email address whenever a new thread is created or a reply to an existing thread is posted. You can use the `Unfollow` button at any time to discontinue this subscription. 
 
@@ -55,7 +55,7 @@ Additionally, to change notification settings on an individual thread you can us
 <img style="width: 65%;" src="/assets/images/UnfollowThread.png">
 
 
-### Moderating a Discussion Forum
+## Moderating a Discussion Forum
 
 Project administrators have moderator privileges for discussion forums in all projects to which they have administrator privileges. Moderators may delete threads and replies from all users using the **trash can** icon next to the original post, which deletes the entire thread, or an individual reply, which deletes only that comment, from inside the thread page.
 

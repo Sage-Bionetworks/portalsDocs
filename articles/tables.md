@@ -12,7 +12,7 @@ category: howto
 </style>
 
 
-## Tables
+# Tables
 Synapse `Tables` is a feature designed to provide users the ability to create web-accessible, sharable, and queryable 
 data where columns can have a user-specified structured schema. Users may define table columns to contain common primitive 
 data types (text, numbers, dates, etc.) or references to other Synapse objects (e.g., `Files`). Therefore, it is possible to 
@@ -25,11 +25,11 @@ as analysis on eventually-consistent data sources can limit the types of analysi
 strategies to ensure reasonable accuracy.
 
 
-### Table Schema
+## Table Schema
 Synapse `Tables` contain metadata that specifies the types of columns included in the `Table`. These columns can be specified manually, 
 or Synapse can recommend column types when a user uploads a data file.
 
-### Table Data
+## Table Data
 The data contained within a Synapse `Table` can be retrieved by using a SQL-like query language either through the web portal or through 
 the analytical clients. **See the [API docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html){:target="_blank"} for an enumeration of the types of queries that can be performed.** Here are a couple of simple examples.
 
@@ -64,7 +64,7 @@ SELECT * FROM syn3079449 WHERE age > 50 ORDER BY "treatmentArm" ASC
 ````
 
 
-## Using Tables
+# Using Tables
 
 ### Overview  
 Synapse allows you to create, modify and query tabular data. A `Table` has a Schema and holds a set of rows conforming to that schema. A Schema is defined in terms of Column objects that specify types from the following choices: 
@@ -85,7 +85,7 @@ Synapse allows you to create, modify and query tabular data. A `Table` has a Sch
 For the following code examples, we'll be using the [Wondrous Research Project (syn1901847)](https://www.synapse.org/#!Synapse:syn1901847/){:Target="_blank"}. The .csv file used in the example below can be downloaded [here](https://www.synapse.org/#!Synapse:syn7256188){:target="_blank"}.
 
 
-### Creating a Table
+## Creating a Table
 
 **1. Start with a dataframe, .csv, or .tsv:**
 
@@ -225,7 +225,7 @@ Tables can be queried by using the Query bar above each table.
 
 <br>
 
-### Making changes to tables
+## Making changes to tables
 
 Once the schema is settled, changes can be made by adding, appending, and deleting.
 
@@ -266,7 +266,7 @@ Click on the **edit** icon to the right of the **Query** button to update table 
 
 <br>
 
-#### Changing Columns
+### Changing Columns
 
 {% include note.html content="To be compatible across multiple languages the common practice of using dots (.) in column names in R is not supported in Synapse Tables." %}
 **Adding new columns**
@@ -398,7 +398,7 @@ To modify information in a column, first begin by **adding** a new column, then 
 <br> 
 
 
-#### Changing Rows
+### Changing Rows
 
 **Adding new rows**
 
@@ -495,7 +495,7 @@ To modify row entries, click on the **Edit icon** to the right of the **Query** 
 
 <br>
 
-#### Deleting the whole table
+### Deleting the whole table
 
 **Delete the entire table**
 
@@ -525,9 +525,9 @@ To delete the entire Table, click on **Tools** and then select **Delete Table** 
 
 <br>
 
-### Working with Files in a Table
+## Working with Files in a Table
 
-#### Table attached files
+### Table attached files
 
 Synapse `Tables` support a special column type called `File` which contain a file handle, an identifier of a file stored in Synapse. Here’s an example of how to upload files into Synapse, associate them with a table and read them back later.
 
