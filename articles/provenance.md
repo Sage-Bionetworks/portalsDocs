@@ -275,5 +275,7 @@ Unfortunately, the web interface currently does not support assigning the same a
 | -- | -- |
 | [command line docs](http://docs.synapse.org/python/CommandLineClient.html) |
 
+<br/>
 
-
+### See Also
+[Files and Versioning](/articles/versioning.html), [Annotations and Queries](/articles/annotation_and_query.html)
