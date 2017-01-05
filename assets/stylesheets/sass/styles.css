@@ -151,19 +151,19 @@ Nav-bar table of contents css
 }
 
 #toc .toc-h2 {
-     padding-left: 0px;
-}
-
-#toc .toc-h3 {
      padding-left: 15px;
 }
 
-#toc .toc-h4 {
+#toc .toc-h3 {
      padding-left: 30px;
 }
 
-#toc .toc-h5 {
+#toc .toc-h4 {
      padding-left: 45px;
+}
+
+#toc .toc-h5 {
+     padding-left: 60px;
 }
 
 #toc ul {

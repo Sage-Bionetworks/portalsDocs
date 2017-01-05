@@ -11,18 +11,18 @@ category: governance
     }
 </style>
 
-## Overview
+# Overview
 Synapse has two content controls: the `Sharing setting` and `Conditions for Use.` The `Sharing setting` is an access control. It determines _who_ has access to Synapse content. `Conditions for Use` are for data governance. They determine _how_ data can be used. 
 
 <a name="sharing-setting"></a>
 
-## Sharing setting
+# Sharing setting
 You can use the `Sharing setting` to invite people to view or collaborate on a Synapse `Project`. There are two `Sharing settings`: **Public** and **Private**. Synapse content with the **Public** `Sharing setting` is visible to all Synapse users. By contrast, the **Private** `Sharing setting` limits who can see content. **By default, new `Projects` are Private.** 
 {% include important.html content="Synapse users are responsible for determining the appropriate `Sharing Setting` for any content they upload into Synapse." %}
 
 <a name="how-to-share-content"></a>
 
-### How to share content
+## How to share content
 To adjust the `Sharing setting`, click the `Share` button at the upper right hand side of the `Project's` header. This will open a window listing the Synapse users who have access to the `Project` and their roles. A globe icon means the `Project` is **Public**. A lock icon means the `Project` is **Private**. When you create a new `Project` you are the only Synapse user listed in this window. Use the `Add People` feature to add collaborators individually or to add a [team of collaborators](/articles/teams.html).
 
 <img id="image" src="/assets/images/sharing_buttons_examples.png">

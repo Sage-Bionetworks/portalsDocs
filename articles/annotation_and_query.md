@@ -11,7 +11,7 @@ category: howto
 }
 </style>
 
-## Annotations
+# Annotations
 
 Annotations in Synapse are semi-structured metadata that can be added to Projects, Files, Folders, and Tables.
 Annotations can be based on an existing ontology (controlled vocabulary such as a disease Onotology (GO)), an agreed upon set of terms (e.g., describing the results of a sequencing pipeline), or be completely free form (like a tag system). These annotations can be used to systematically describe groups of entities, which provides a way to search and discover Synapse entities.
@@ -138,7 +138,7 @@ To enter multiple Values for a single Key click `Enter` with the cursor in the V
 <br/>
 
 
-## Queries
+# Queries
 
 Queries in Synapse look SQL-like:
 
