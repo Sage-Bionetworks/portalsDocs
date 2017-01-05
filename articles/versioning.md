@@ -33,3 +33,9 @@ If a DOI has been created for a Synapse file, it is automatically versioned as w
 The easiest way to create a new version of an existing Synapse `File` is to use the same file name and store it in the same location (e.g., the same `parentId`). Synapse will automatically determine that a new version of a file is being stored, only if the contents of the file have changed. If the contents have not changed (e.g., the `md5sum` of the file is identical to the most recent version), a new file will not be uploaded and the version will not increase.
 
 Only the file and annotations information are included in the version. Other metadata about a Synapse `File` (such as the description, name, parent, ACL, *and its associated Wiki*) are not part of the version, and will not change between versions.
+
+
+<br/>
+
+### See Also
+[Provenance](/articles/provenance.html), [Annotations and Queries](/articles/annotation_and_query.html), [Downloading Data](/articles/downloading_data.html)

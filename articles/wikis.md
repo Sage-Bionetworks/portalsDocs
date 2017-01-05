@@ -117,3 +117,5 @@ See the 'Insert' list for the following widgets to customize your Wiki design.
 
 <br> 
 
+### See Also
+[Discussion](/articles/discussion.html)
