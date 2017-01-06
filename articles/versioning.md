@@ -5,6 +5,15 @@ excerpt: Uploading files and file versioning in Synapse.
 category: howto
 ---
 
+<style>
+#image {
+    width: 40%;
+}
+#largeImage { 
+    width: 100%;
+}
+</style>
+
 # Files
 
 Synapse `Files` are like files on a local file system, except they are accessible to anyone who has access, can be annotated and queried on, can be embedded into Synapse `Wiki` pages, and can be associated with a [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier){:target="_blank"}. `Files` carry the Conditions for Use of the Synapse `Folder` they are placed in, plus any additional specific Conditions for Use they have on their own.
@@ -34,6 +43,213 @@ The easiest way to create a new version of an existing Synapse `File` is to use 
 
 Only the file and annotations information are included in the version. Other metadata about a Synapse `File` (such as the description, name, parent, ACL, *and its associated Wiki*) are not part of the version, and will not change between versions.
 
+### Uploading a File
+When you first upload a `File` to Synapse, it has a version of `1`. 
+
+{% tabs %}
+
+{% tab Command %}
+{% highlight bash %}
+# Add a local file to an existing project (syn12345) on Synapse
+synapse store raw_data.txt --parentId syn123456
+{% endhighlight %}
+{% endtab %}
+
+
+{% tab Python %}
+{% highlight python %}
+import synapseclient
+syn = synapseclient.login()
+
+# Add a local file to an existing project (syn12345) on Synapse
+file = File(path='/path/to/raw_data.txt', parent='syn12345')
+file = syn.store(file)
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+library(synapseClient)
+synapseLogin()
+
+# Add a local file to an existing project (syn12345) on Synapse
+file <- File(path='/path/to/raw_data.txt', parentId='syn12345')
+file <- synStore(file)
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+Navigate to the **Files** tab of the project you would like to add the file to. Click on **Upload or Link to File** to upload a local file from your computer or to link to a URL (such as http or ftp).
+
+<img id="image" src="/assets/images/upload_file_button.png">
+{% endtab %}
+
+{% endtabs %}
+
+
+#### Uploading a New Version of a File
+If you'd like to upload a new version of a `File`, the easiest way to do this is to use the same file name and store it in the same location (e.g., the same `parentId`), therefore uploading a new version follows the same steps as uploading a file for the first time. **The only major difference is the practice of adding a comment to the new version in order to easily track differences at a glance**. The example file `raw_data.txt` will now have a version of `2` and a comment describing the change. 
+
+{% tabs %}
+
+{% tab Command %}
+{% highlight bash %}
+# Upload a new version of raw_data.txt 
+synapse store raw_data.txt --parentId syn123456 
+#Currently there is no option to add a version comment when uploading via command line. We recommend adding the comment via the web client.
+{% endhighlight %}
+{% endtab %}
+
+
+{% tab Python %}
+{% highlight python %}
+# Upload a new version of raw_data.txt 
+file = File(path='/path/to/raw_data.txt', parent='syn12345')
+file.versionComment = "Added 5 random normally distributed numbers."
+file = syn.store(file)
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+# Upload a new version of raw_data.txt
+file <- File(path='/path/to/raw_data.txt', parentId='syn12345')
+file@properties$versionComment <- "Added 5 random normally distributed numbers."
+file <- synStore(file)
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+Navigate to the file on Synapse and click the **Tools** button. Select **Upload A New Version Of The File** from the dropdown menu and upload or link to your file in the resulting pop-up. 
+
+<img id="image" src="/assets/images/upload_new_version_file.png">
+
+Once the new version has been uploaded, select the **File History** button and then **Edit Version Info** to add the version comment.
+
+<img id="image" src="/assets/images/add_version_comment.png">
+
+{% endtab %}
+
+{% endtabs %}
+
+
+#### Updating Annotations/Provenance Without Changing Versions
+When using the R or Python client to make changes to things other than file content, such as annotations or provenance, it is best practice to use the flag `forceVersion=False`. For command line, the commands `set-annotations` and `set-provenance` will update the metadata without creating a new version. Adding/updating annotations and provenance in the web client will not cause a version change.
+
+{% include note.html content="When adding or editing metadata on a file with the R or Python client, use forceVersion=False" %}
+
+**Setting annotations without changing version**
+
+{% tabs %}
+
+{% tab Command %}
+{% highlight bash %}
+# Set annotation on file (syn56789)
+synapse set-annotations --id syn56789 --annotations '{"fileType":"bam", "assay":"RNA-seq"}'
+{% endhighlight %}
+{% endtab %}
+
+{% tab Python %}
+{% highlight python %}
+# Get file from Synapse, set download=False since we are only updating annotations
+file = syn.get('syn56789', download=False)
+# Add annotations 
+file.annotations = {"fileType":"bam", "assay":"RNA-seq"}
+# Store the file without creating a new version
+file = syn.store(file, forceVersion=False)
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+# Get file from Synapse, set download=False since we are only updating annotations
+file <- synGet('syn56789', downloadFile=F)
+# Add annotations 
+synSetAnnotations(file) <- list(fileType = "bam", assay = "RNA-seq")
+# Store the file without creating a new version
+file = synStore(file, forceVersion=F)
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+Please refer to the [Annotations and Queries](/articles/annotation_and_query.html) article for instructions on adding/editing annotations via the web client.
+{% endtab %}
+
+{% endtabs %}
+
+<br/>
+
+**Setting provenance without changing version**
+
+{% tabs %}
+
+{% tab Command %}
+{% highlight bash %}
+# Setting provenance (syn56789)
+synapse set-provenance -id syn56789 -executed ./path/to/example_code
+{% endhighlight %}
+{% endtab %}
+
+
+{% tab Python %}
+{% highlight python %}
+# Get file from Synapse, set download=False since we are only updating provenance
+file = syn.get('syn56789', download=False)
+# Add provenance 
+file = syn.setProvenance(file, activity = Activity(used = '/path/to/example_code'))
+# Store the file without creating a new version
+file = syn.store(file, forceVersion=False)
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+# Get file from Synapse, set download=False since we are only updating annotations
+file <- synGet('syn56789', downloadFile=F)
+# Add provenance 
+act <- Activity(name = 'Example Code', used = '/path/to/example_code')
+generatedBy(file) <- act
+# Store the file without creating a new version
+file = synStore(file, forceVersion=F)
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+Please refer to the [Provenance](/articles/provenance.html) article for instructions on adding/editing annotations via the web client.
+{% endtab %}
+
+{% endtabs %}
+
+### Downloading a Specific Version of a File
+By default, the `File` downloaded will always be the most recent version. However, a specific version can be downloaded by passing the `version` parameter.
+
+{% tabs %}
+{% tab Command %}
+{% highlight bash %}
+# Retrieve the first version of a file from Synapse
+synapse get syn56789 -v 1
+{% endhighlight %}
+{% endtab %}
+
+{% tab Python %}
+{% highlight python %}
+entity = syn.get("syn3260973", version=1)
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+entity <- synGet("syn3260973", version=1)
+{%endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+Navigate to where the file is stored in Synapse and click the **File History** button to show a list of all versions. Select the version you could like to download and once the page has refreshed, click the blue **Download** button next to the name of the file.
+
+<img id='largeImage' src='/assets/images/download_specific_version.png'>
+{% endtab %}
+
+{% endtabs %}
 
 <br/>
 
