@@ -88,7 +88,7 @@ Navigate to the **Files** tab of the project you would like to add the file to. 
 
 
 #### Uploading a New Version of a File
-If you'd like to upload a new version of a `File`, the easiest way to do this is to use the same file name and store it in the same location (e.g., the same `parentId`), therefore uploading a new version follows the same steps as uploading a file for the first time. **The only major difference is the practice of adding a comment to the new version in order to easily track differences at a glance**. The example file `raw_data.txt` will now have a version of `2` and a comment describing the change. 
+To upload a new version of a `File`, the easiest way to do this is to use the same file name and store it in the same location (e.g., the same `parentId`), therefore uploading a new version follows the same steps as uploading a file for the first time. **The only major difference is the practice of adding a comment to the new version in order to easily track differences at a glance**. The example file `raw_data.txt` will now have a version of `2` and a comment describing the change. 
 
 {% tabs %}
 
@@ -104,6 +104,8 @@ synapse store raw_data.txt --parentId syn123456
 {% tab Python %}
 {% highlight python %}
 # Upload a new version of raw_data.txt 
+from synapseclient import File
+
 file = File(path='/path/to/raw_data.txt', parent='syn12345')
 file.versionComment = "Added 5 random normally distributed numbers."
 file = syn.store(file)
@@ -134,9 +136,9 @@ Once the new version has been uploaded, select the **File History** button and t
 
 
 #### Updating Annotations/Provenance Without Changing Versions
-When using the R or Python client to make changes to things other than file content, such as annotations or provenance, it is best practice to use the flag `forceVersion=False`. For command line, the commands `set-annotations` and `set-provenance` will update the metadata without creating a new version. Adding/updating annotations and provenance in the web client will not cause a version change.
+Any change to a `File` will automatically update its version. If this isn't the desired behavior, such as minor cahnges to the metadata, you can set `forceVersion=False` with the Python or R clients. For command line, the commands `set-annotations` and `set-provenance` will update the metadata without creating a new version. Adding/updating annotations and provenance in the web client will also not cause a version change.
 
-{% include note.html content="When adding or editing metadata on a file with the R or Python client, use forceVersion=False" %}
+{% include important.html content="Because Provenance is tracked by version, set forceVersion=False for minor changes to avoid breaking Provenance." %}
 
 **Setting annotations without changing version**
 
