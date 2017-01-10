@@ -21,9 +21,9 @@ category: howto
 
 <br>
 
-## Creating a Message Thread and Responding Existing Threads
+## Creating a Message Thread and Responding to Existing Threads
 
-The `Discussion` tab can be found as the left-most tab on your project main page, and anyone with `Project` access may view discussion threads contained therein, create new threads or reply to existing threads.
+The `Discussion` tab can be found as the left-most tab on your project's main page, and anyone with `Project` access may view discussion threads contained therein, create new threads or reply to existing threads.
 
 <br>
 <img style="width: 65%;" src="/assets/images/Discussion Main.png">
@@ -64,3 +64,6 @@ Project administrators have moderator privileges for discussion forums in all pr
 Moderators may also "pin" important threads using the **pin** icon located next to the original post within the thread page. This causes the thread to be highlighted on the top of the thread list on the `Discussion` main page.
 
 <img style="width: 65%;" src="/assets/images/ModeratorButtons.png">
+
+### See Also
+[Wikis](/articles/wikis.html)

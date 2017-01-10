@@ -682,3 +682,8 @@ There are additional docs available for `Tables` in both Python and R that cover
 For **Python** check out our [Python Docs](http://docs.synapse.org/python/Table.html#module-synapseclient.table).
 
 For **R**, open up your R session and check out our vignettes by typing `vignette("tables", package="synapseClient")` into your console.
+
+<br/>
+
+### See Also
+[Annotations and Queries](/articles/annotation_and_query.html), [Downloading Data](/articles/downloading_data.html), [Files and Versioning](/articles/versioning.html)
