@@ -101,7 +101,32 @@ pkgInstall("synapseClient")
 
 {% endtabs %}
 
-# Becoming a Certified User
+
+## Logging into Synapse
+
+Synapse credentials are required to use the programmatic clients. Register to create an account, and even if you login with a Gmail account, make sure you go through the extra step of creating a username and password.
+
+At the command line you can login by specifying your Synapse username and password.
+
+The login credentials can be specified for every call to the synapseclient but this is not the recommended as your password will be visible on the command line. Instead by passing the `rememberMe` parameter you can cache your credentials on the machine.
+
+To login with your username/email and password:
+
+`synapse login -u me@example.com -p secret --rememberMe`
+
+by passing `--rememberMe` the username/password will not need to specified on subsequent calls to Synapse.
+
+### Using a config file
+
+You can store your credentials in your home directory in a file called `.synapseConfig` (note the period at the beginning of the file which makes this a hidden, system file on Linux-like OS's. The format is as such:
+
+```
+[authentication]
+username: me@example.com
+password: secret
+```
+
+## Becoming a Certified User
 
 Anyone can browse public content in Synapse but in order to download and create content you will need to register for an account:
 
