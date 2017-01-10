@@ -156,3 +156,8 @@ fileHandle = syn.restPOST('/externalFileHandle/proxy', json.dumps(fileHandle), e
 f = synapseclient.File(parentId=PROJECT, dataFileHandleId = fileHandle['id'])
 f = syn.store(f)
 ```
+
+
+## Using SFTP (set this 1st)
+## Setting up an external bucket (2nd)
+## Using a file-proxy (3rd) 
