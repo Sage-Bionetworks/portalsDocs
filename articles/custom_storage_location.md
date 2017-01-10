@@ -73,19 +73,14 @@ For **read-write** permissions (you allow Synapse to upload and retrieve files):
 }
 ````
 
-For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **owner.txt** file with your Synapse username and uploading it to your bucket or through a REST call. 
+For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **owner.txt** file with your Synapse username and uploading it to your bucket using the [AWS command line client](https://aws.amazon.com/cli/){:target="_blank"} or the Synapse web client. 
 
 {% tabs %}
 
-{% tab AWS %}
+{% tab AWScli %}
 {% highlight bash %}
-some code here
-{% endhighlight %}
-{% endtab %}
-
-{% tab Command %}
-{% highlight bash %}
-add code here
+# copy your owner.txt file to your s3 bucket
+aws s3 cp owner.txt
 {% endhighlight %}
 {% endtab %}
 
@@ -99,6 +94,20 @@ Create a new text file locally on your computer (e.g. Notepad for Windows and Te
 
 
 ### Set S3 Bucket as Upload Location
+
+**To set the upload location using our REST API:**
+
+Create a dictionary of your bucket name along with the concrete type `org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting` and set it to a variable as a string. You can then set the upload location using `syn.restPOST`. For more information, please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/model/project/ExternalS3StorageLocationSetting.html){:target="_blank"}.
+
+```
+foo = '{"bucket":"nameofbucket", "concreteType"="org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting"}'
+bar = syn.restPOST("./storageLocation", body=foo)
+```
+
+<br/>
+
+**To set the upload location using the web client:**
+
 By default, your `Project/Folder` uses Synapse storage. To use the external bucket configured above, navigate to your **`Project/Folder` -> Tools -> Change Storage Location**. In the resulting pop-up, select the `Amazon S3 Bucket` option and fill in the relevant information, where Bucket is the name of your external bucket, Base Key is the name of the folder in your bucket to upload to, and Banner is a short description such as who owns the storage location:
   
 <img id="image" src="/assets/images/external_s3.png">
