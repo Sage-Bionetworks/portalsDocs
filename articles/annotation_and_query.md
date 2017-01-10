@@ -2,6 +2,7 @@
 title: Annotations and Queries
 layout: article
 excerpt: Learn about annotations, how to assign and modify them, and how to query them for analysis. 
+category: howto
 ---
 
 <style>
@@ -10,10 +11,10 @@ excerpt: Learn about annotations, how to assign and modify them, and how to quer
 }
 </style>
 
-## Annotations
+# Annotations
 
 Annotations in Synapse are semi-structured metadata that can be added to Projects, Files, Folders, and Tables.
-Annotations can be based on an existing ontology (controlled vocabulary such as a disease Onotology (GO)), an agreed upon set of terms (e.g., describing the results of a sequencing pipeline), or be completely free form (like a tag system). These annotations can be used to systematically describe groups of entities, which provides a way to search and discover Synapse entities.
+Annotations can be based on an existing ontology (controlled vocabulary such as a disease Ontology (GO)), an agreed upon set of terms (e.g., describing the results of a sequencing pipeline), or be completely free form (like a tag system). These annotations can be used to systematically describe groups of entities, which provides a way to search and discover Synapse entities.
 
 Synapse annotations are structured as key-value pairs: the key is the name of the annotation group while the value provides specifics. An example; let's say you have a collection of alignment files in the BAM file format from an RNA sequencing experiment, each representing a sample and replicate.
 As is common, much of this information may be encoded in the file name (e.g., `Sample1_ConditionA.bam`).
@@ -27,7 +28,7 @@ Continuing this example, the annotations you may want to add are:
 * `sample = 1`
 * `condition = A`
 
-All files you want to be able to search for should have a consistent set of annotations (ie, they should all have the same keys: `assay`, `fileType`, `sample`, and `condition`.) If these samples were part of a dataset with multiple assays, such as RNA-seq and ATAC-seq, you would annotate the file entities with either `assay = RNA-seq` or `assay = ATAC-seq`. Searching for the specific assay would therfore result in the assay specfic files
+All files you want to be able to search for should have a consistent set of annotations (ie, they should all have the same keys: `assay`, `fileType`, `sample`, and `condition`.) If these samples were part of a dataset with multiple assays, such as RNA-seq and ATAC-seq, you would annotate the file entities with either `assay = RNA-seq` or `assay = ATAC-seq`. Searching for the specific assay would therefore result in the assay specific files
 
 <br/>
 
@@ -137,7 +138,7 @@ To enter multiple Values for a single Key click `Enter` with the cursor in the V
 <br/>
 
 
-## Queries
+# Queries
 
 Queries in Synapse look SQL-like:
 
@@ -240,7 +241,7 @@ SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sampl
 
 <br/>
 
-Queries can be constructed using one of the analytical clients (command line, Python, and R) and on the web client, query results can be displayed in a table on a wiki page.. Using the example above this can be done as following:
+Queries can be constructed using one of the analytical clients (command line, Python, and R) and on the web client, query results can be displayed in a table on a wiki page. Using the example above this can be done as following:
 
 {% tabs %}
 	{% tab Command %}
@@ -282,3 +283,6 @@ You can download files in a folder using queries. Currently this feature is only
 ```
 synapse get -q 'SELECT * FROM file WHERE parentId == "syn00123"'
 ````
+
+### See Also
+[Downloading Data](/articles/downloading_data.html), [Tables](/articles/tables.html)

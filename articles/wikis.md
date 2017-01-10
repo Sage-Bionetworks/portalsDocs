@@ -2,6 +2,7 @@
 title: "Wikis"
 layout: article
  excerpt: Create wikis to provide narrative content for your research. 
+category: howto
 ---
 
 <style>
@@ -21,7 +22,7 @@ layout: article
 }
 </style>
 
-## Overview
+# Overview
 
 `Wikis` are available in Synapse both on the `Project` level and on `Files/Folders` to provide a space to build narrative content to describe the research. 
 Every project has a Wiki tab where you can build pages and a hierarchy of subpages as you would with any website. These pages can be reordered through the Edit Order button below the Wiki pages. `Wikis` can also be added to `Folders` and `Files` allowing additional content documentation. `Wikis`, whether they are under the Wiki tab or on a folder, are built in the same way and enables incorporation of highly customized content including, but not limited to: images, tables, code blocks, LaTeX formatted equations, and scholarly references. In addition, Synapse-specific widgets lets you embed dynamic content based on other resources stored in Synapse. 
@@ -76,14 +77,18 @@ The layout and text of a `Wiki` can be customized using Wiki markdown language. 
 
 ### Tables in Markdown
 
-{% include tip.html content="Add this Markdown below the header to enable sort on the header columns." %}
+To create a table you separate the columns by the pipe character (\|).  A Header can be added by separating the first row by dashes (-).  A header allows the table to be sorted by each column.  A simple table would be created by the following markdown.
 
     ````
-     Header 1 | Header 2 | Header 3
-    --- | --- | ---
+     Header 1 | Header 2 | Header 3 |
+    --- | --- | --- |
+     a  |  b  |  c  |
     ````
 
 
+For more table settings see the formatting guide at the top of the wiki editor.
+
+{% include tip.html content="To insert large amounts of text, use the widget \"Table: Paste tabular data\" (see all widgets below)." %}
 
 ### Attachments, links and tagging
 Files, images and videos can be attached to a `Wiki`. This may be content on from the web, your desktop, or `Files` already uploaded to Synapse. Links can be added to content available from any source with a url or to a Synapse users profile through the Tag someone widget, or by typing @ - just enter the Synapse username in the dialog that appears.
@@ -116,3 +121,5 @@ See the 'Insert' list for the following widgets to customize your Wiki design.
 
 <br> 
 
+### See Also
+[Discussion](/articles/discussion.html)

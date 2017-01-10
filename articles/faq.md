@@ -2,9 +2,11 @@
 title: "FAQ"
 layout: article
 excerpt: What is Synapse? 
+category: intro
+order: 4
 ---
 
-## General
+# General
 
 #### What is Synapse?
 Synapse is a collaborative informatics platform dedicated to supporting large-scale pooling of data, knowledge, and expertise across institutional boundaries to solve research problems.  Synapse helps scientists solve a series of problems:
@@ -54,7 +56,7 @@ You may browse open issues or file a bug through our [Jira](https://sagebionetwo
 #### How do I get started?
 Whether you are looking to access content or use Synapse to track your own work, start by [registering](https://www.synapse.org/#!RegisterAccount:0){:target="_blank"} for a Synapse user account. Before uploading files, you will need to take a short [certification quiz](https://www.synapse.org/#!Quiz:Certification){:target="_blank"} that demonstrates your understanding of the ethical considerations in sharing data and the manner in which data is managed and shared in Synapse. See the [Getting Started guide](/articles/getting_started.html) for tips on how to access data, create your own project, and share content with others.
 
-## Accessing Content
+# Accessing Content
 
 #### My colleague put some content in Synapse.  How do I find it?
 This will depend if the content is public or private. If private, you will need to make sure your colleague has shared this content with you. Shared content is visible from your “Dashboard page” under the tab “Shared directly with me”. If you favorite the content (using the yellow star) it will appear under your list of favorites visible from the top of any Synapse page or on your [Profile](https://www.synapse.org/#!Profile:v/projects/favorites){:target="_blank"}.
@@ -70,7 +72,7 @@ You can browse public content in Synapse without registering. However, without a
 #### What is a validated profile?
 Validating your profile is a process where your identity is established through a combination of your profile information, your [ORCID](http://orcid.org/){:target="_blank"}, a signed oath, and an external credential. Validation increases transparency between researchers and data donors. A validated profile is needed for access to specific datasets, and is currently required for access to data collected through Sage Bionetworks’ [research apps](http://sagebase.org/mobile-health/overview/ ){:target="_blank"}. Profile validation instructions can be found on your profile page. Click on the ‘Request Profile Validation’ link to see the required steps.
 
-## Adding Content
+# Adding Content
 
 #### Why do I have to be a certified user to upload content?
 User certification ensures that you understand your responsibilities for sharing data through Synapse, especially data derived from human participants. These responsibilities include making sure that data derived from human participants is de-identified and that all applicable privacy laws and regulations are observed. See the [How to contribute data]({{site.url}}/articles/contribute_and_access_controlled_use_data.html) for more information.

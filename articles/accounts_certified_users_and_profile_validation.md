@@ -2,11 +2,12 @@
 title: "User Types including Certified Users"
 layout: article
 excerpt: Find out about the three levels of Synapse users and the privileges and responsibilities associated with each level 
+category: governance
 ---
 
 <a name="synapse-user-credentials"></a>
 
-## About Accounts, Certification and Profile Validation 
+# About Accounts, Certification and Profile Validation 
 
 There are three levels of users in Synapse: `Anonymous`, `Registered`, and `Certified`. 
 The table below summarizes the user privileges for each level.  
@@ -53,7 +54,7 @@ Anyone can browse Synapse anonymously to review the platform features and resour
 `Certified Users` can apply to have their _**user profile validated**_.  A Synapse user with a `Validated Profile` is eligible to request access to Bridge data (data collected in research studies conducted via self-guided mobile applications.) 
 
 
-#### Get your profile validated  
+### Get your profile validated  
 Go to your [Synapse profile homepage](https://www.synapse.org/#!Profile:v){:target="_blank"} (click your name/picture on upper banner of the screen to get there) and use the links in the purple validation box:
 
 1.	Confirm your user profile is complete including **your full name, current affiliation, and city/country.**
