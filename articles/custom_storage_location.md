@@ -14,8 +14,9 @@ category: howto
 # Overview
 One of the main features of Synapse is to act as a repository for scientific data. Access to all data in Synapse is controlled with the use of access-control-lists (ACLs). The ACL is often the only required control on non-human subjects data. Human subjects data requires additional controls. While Synapse provides physical storage for files (using Amazon's S3), not all data 'in' Synapse is stored on Synapse controlled buckets. For example, data files can physically reside on a user owned S3 buckets, SFTP servers, or other type of file servers. Creating a custom storage location allows users ownership and control of their files, especially in cases where there is a large amount of data or cases where there are additional restrictions that need to be set on the data.
 
+## Using SFTP
 
-## Creating an S3 Bucket
+## Setting Up an External Bucket
 Follow the documentation on Amazon Web Service's (AWS) site to **[Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html){:target="_blank"}**. 
 
 <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html" class="btn btn-primary">View AWS Bucket Instructions</a>{:target="_blank"}
@@ -73,14 +74,14 @@ For **read-write** permissions (you allow Synapse to upload and retrieve files):
 }
 ````
 
-For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **owner.txt** file with your Synapse username and uploading it to your bucket using the [AWS command line client](https://aws.amazon.com/cli/){:target="_blank"} or the Synapse web client. 
+For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **owner.txt** file with your Synapse username and uploading it to your bucket. You can upload the file with our Synapse web client or if you have  the [AWS command line client](https://aws.amazon.com/cli/){:target="_blank"}, you can upload using the command line. 
 
 {% tabs %}
 
 {% tab AWScli %}
 {% highlight bash %}
 # copy your owner.txt file to your s3 bucket
-aws s3 cp owner.txt
+aws s3 cp owner.txt s3://nameofmybucket/nameofmyfolder
 {% endhighlight %}
 {% endtab %}
 
@@ -95,24 +96,41 @@ Create a new text file locally on your computer (e.g. Notepad for Windows and Te
 
 ### Set S3 Bucket as Upload Location
 
-**To set the upload location using our REST API:**
+By default, your `Project/Folder` uses Synapse storage. You can use the external bucket configured above via the web client or our REST API.
 
-Create a dictionary of your bucket name along with the concrete type `org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting` and set it to a variable as a string. You can then set the upload location using `syn.restPOST`. For more information, please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/model/project/ExternalS3StorageLocationSetting.html){:target="_blank"}.
+{% tabs %}
 
-```
+{% tab Python %}
+{% highlight python %}
+# Create a dictionary of your bucket name along with the concrete type
 foo = '{"bucket":"nameofbucket", "concreteType"="org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting"}'
+# Set upload location
 bar = syn.restPOST("./storageLocation", body=foo)
-```
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+# Create a dictionary of your bucket name along with the concrete type
+foo <- list(bucket = "nameofbucket", concreteType = "org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting")
+# Set upload location
+bar <- synRestPOST("/storageLocation", body=foo)
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+Navigate to your **Project/Folder -> Tools -> Change Storage Location**. In the resulting pop-up, select the `Amazon S3 Bucket` option and fill in the relevant information, where Bucket is the name of your external bucket, Base Key is the name of the folder in your bucket to upload to, and Banner is a short description such as who owns the storage location:
+  
+<img id="image" src="/assets/images/external_s3.png">
+{% endtab %}
+
+{% endtabs %}
 
 <br/>
 
-**To set the upload location using the web client:**
+Please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/model/project/ExternalS3StorageLocationSetting.html){:target="_blank"} for more information on external storage location settings.
 
-By default, your `Project/Folder` uses Synapse storage. To use the external bucket configured above, navigate to your **`Project/Folder` -> Tools -> Change Storage Location**. In the resulting pop-up, select the `Amazon S3 Bucket` option and fill in the relevant information, where Bucket is the name of your external bucket, Base Key is the name of the folder in your bucket to upload to, and Banner is a short description such as who owns the storage location:
-  
-<img id="image" src="/assets/images/external_s3.png">
-
-## Setting Up a File-Proxy
+## Using a File-Proxy
 
 For files stored outside of Amazon, an additional proxy is needed to validate the pre-signed URL and then proxy the requested file contents. The primary purpose of this project is to provide such validation and file proxying.  View more information **[here](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"}** about setting up a file-proxy.
 
@@ -157,7 +175,3 @@ f = synapseclient.File(parentId=PROJECT, dataFileHandleId = fileHandle['id'])
 f = syn.store(f)
 ```
 
-
-## Using SFTP (set this 1st)
-## Setting up an external bucket (2nd)
-## Using a file-proxy (3rd) 
