@@ -4,7 +4,7 @@ plugins_dir:     ./_plugins
 include: []
 encoding: utf-8
 exclude: [bin, CNAME, Gemfile, Gemfile.lock, README.md, Dockerfile, fig.yml, node_modules]
-permalink: /:title
+permalink: [/:title, /404.html]
 highlighter: pygments
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
