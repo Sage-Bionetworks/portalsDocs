@@ -30,9 +30,7 @@ Make the following adjustments to customize it to work with Synapse:
 
 For **read-only** permissions (you only allow Synapse to read files that you upload to this bucket):
 
-````
-# READ-ONLY PERMISSIONS
-
+{% highlight json %}
 {
     "Statement": [
         {
@@ -49,13 +47,13 @@ For **read-only** permissions (you only allow Synapse to read files that you upl
         }
     ]
 }
-````
+{% endhighlight %}
+
+<br/>
 
 For **read-write** permissions (you allow Synapse to upload and retrieve files):
 
-````
-# READ-WRITE PERMISSIONS
-
+{% highlight json %}
 {
     "Statement": [
         {
@@ -72,7 +70,7 @@ For **read-write** permissions (you allow Synapse to upload and retrieve files):
         }
     ]
 }
-````
+{% endhighlight %}
 
 For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **owner.txt** file with your Synapse username and uploading it to your bucket. You can upload the file with our Synapse web client or if you have  the [AWS command line client](https://aws.amazon.com/cli/){:target="_blank"}, you can upload using the command line. 
 
@@ -96,39 +94,15 @@ Create a new text file locally on your computer (e.g. Notepad for Windows and Te
 
 ### Set S3 Bucket as Upload Location
 
-By default, your `Project/Folder` uses Synapse storage. You can use the external bucket configured above via the web client or our REST API.
+By default, your `Project/Folder` uses Synapse storage. You can use the external bucket configured above via our web client. Navigate to your **Project/Folder -> Tools -> Change Storage Location**. In the resulting pop-up, select the `Amazon S3 Bucket` option and fill in the relevant information, where Bucket is the name of your external bucket, Base Key is the name of the folder in your bucket to upload to, and Banner is a short description such as who owns the storage location:
 
-{% tabs %}
-
-{% tab Python %}
-{% highlight python %}
-# Create a dictionary of your bucket name along with the concrete type
-foo = '{"bucket":"nameofbucket", "concreteType"="org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting"}'
-# Set upload location
-bar = syn.restPOST("./storageLocation", body=foo)
-{% endhighlight %}
-{% endtab %}
-
-{% tab R %}
-{% highlight r %}
-# Create a dictionary of your bucket name along with the concrete type
-foo <- list(bucket = "nameofbucket", concreteType = "org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting")
-# Set upload location
-bar <- synRestPOST("/storageLocation", body=foo)
-{% endhighlight %}
-{% endtab %}
-
-{% tab Web %}
-Navigate to your **Project/Folder -> Tools -> Change Storage Location**. In the resulting pop-up, select the `Amazon S3 Bucket` option and fill in the relevant information, where Bucket is the name of your external bucket, Base Key is the name of the folder in your bucket to upload to, and Banner is a short description such as who owns the storage location:
-  
 <img id="image" src="/assets/images/external_s3.png">
-{% endtab %}
 
-{% endtabs %}
+
 
 <br/>
 
-Please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/model/project/ExternalS3StorageLocationSetting.html){:target="_blank"} for more information on external storage location settings.
+Please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/model/project/ExternalS3StorageLocationSetting.html){:target="_blank"} for more information on setting external storage location settings using our REST API.
 
 ## Using a File-Proxy
 
@@ -136,9 +110,9 @@ For files stored outside of Amazon, an additional proxy is needed to validate th
 
 ### Connecting Synapse to the Restricted Filesystem
 
-You must have a key ("your_sftp_key") to allow Synapse to interact with the filesystem:
+You must have a key ("your_sftp_key") to allow Synapse to interact with the filesystem. To connect using Python:
 
-```python
+{% highlight python %}
 import synapseclient
 import json
 syn = synapseclient.login()
@@ -152,14 +126,15 @@ project_destination ={"concreteType": "org.sagebionetworks.repo.model.project.Up
                       "settingsType": "upload"}
 project_destination['locations'] = destination['storageLocationId']
 project_destination['projectId'] = PROJECT
-project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
-```
+proj_dest = '{"settingsType": "upload", "locations": [9598], "concreteType": "org.sagebionetworks.repo.model.project.UploadDestinationListSetting", "projectId": "syn8020286"}'
+project_destination = syn.restPOST('/projectSettings', body = proj_dest)
+{% endhighlight %}
 
 #### Create a Filehandle
 
 A filehandle is merely a Synapse representation of the file, therefore you will have to specify all the metadata below for Synapse to recognize it.
 
-```python
+{% highlight python %}
 import mimetypes
 path='/path/to/your/file.txt'
 fileType = mimetypes.guess_type(path,strict=False)[0]
@@ -173,5 +148,23 @@ fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.ProxyFileHand
 fileHandle = syn.restPOST('/externalFileHandle/proxy', json.dumps(fileHandle), endpoint=syn.fileHandleEndpoint)
 f = synapseclient.File(parentId=PROJECT, dataFileHandleId = fileHandle['id'])
 f = syn.store(f)
-```
+{% endhighlight %}
 
+
+
+Run a few tests...
+```python
+import synapseclient
+import json
+syn = synapseclient.login()
+PROJECT = 'syn12345'
+destination = {"bucket":"testingbucketwithr",
+               "uploadType":"S3",  
+               "concreteType":"org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting"}
+destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
+project_destination ={"concreteType": "org.sagebionetworks.repo.model.project.UploadDestinationListSetting", 
+                      "settingsType": "upload"}
+project_destination['locations'] = destination['storageLocationId']
+project_destination['projectId'] = PROJECT
+project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
+```
