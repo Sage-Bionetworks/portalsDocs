@@ -112,9 +112,37 @@ The login credentials can be specified for every call to the synapseclient but t
 
 To login with your username/email and password:
 
-`synapse login -u me@example.com -p secret --rememberMe`
+{% tabs %}
 
-by passing `--rememberMe` the username/password will not need to specified on subsequent calls to Synapse.
+{% tab Command %}
+{% highlight bash %}
+# by passing --rememberMe the username/password will not need to specified on subsequent calls to Synapse.
+synapse login -u me@example.com -p secret --rememberMe
+{% endhighlight %}
+{% endtab %}
+
+
+{% tab Python %}
+{% highlight python %}
+import synapseclient
+# If you have your config file set up you can run:
+syn = synapseclient.login()
+# Otherwise, pass in your username and password:
+syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=True)
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+library(synapseClient)
+# If you have your config file set up you can run:
+synapseLogin()
+# Otherwise, pass in your username and password:
+synapseLogin(username='me@example.com', password='secret', rememberMe=T)
+{% endhighlight %}
+{% endtab %}
+
+{% endtabs %}
 
 ### Using a config file
 
