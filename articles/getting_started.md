@@ -108,7 +108,9 @@ Synapse credentials are required to use the programmatic clients. Register to cr
 
 At the command line you can login by specifying your Synapse username and password.
 
-The login credentials can be specified for every call to the synapseclient but this is not the recommended as your password will be visible on the command line. Instead by passing the `rememberMe` parameter you can cache your credentials on the machine.
+The login credentials can be specified for every call to the synapseclient but this is not the recommended practice as your password will be visible on the command line. Instead by passing the `rememberMe` parameter you can cache your credentials on the machine.
+
+The full list of possible login parameters for the Python client can be found in the [Python Docs](http://docs.synapse.org/python/Client.html#synapseclient.Synapse.login) and for the R client in the [R Docs](http://docs.synapse.org/r/synapseLogin.html). 
 
 To login with your username/email and password:
 
