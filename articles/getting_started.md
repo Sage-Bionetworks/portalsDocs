@@ -104,11 +104,11 @@ pkgInstall("synapseClient")
 
 ## Logging into Synapse
 
-Synapse credentials are required to use the programmatic clients. Register to create an account, and even if you login with a Gmail account, make sure you go through the extra step of creating a username and password.
+Synapse credentials are required to use the programmatic clients. Register to create an account, and even if you login with a Google account, make sure you go through the extra step of creating a Synapse username and password.
 
 At the command line you can login by specifying your Synapse username and password.
 
-The login credentials can be specified for every call to the synapseclient but this is not the recommended practice as your password will be visible on the command line. Instead by passing the `rememberMe` parameter you can cache your credentials on the machine.
+The login credentials can be specified for every Synapse client session, but this is not the recommended practice as your password will be visible. Instead, by passing the `rememberMe` parameter you can cache your credentials for use in future Synapse client sessions.
 
 The full list of possible login parameters for the Python client can be found in the [Python Docs](http://docs.synapse.org/python/Client.html#synapseclient.Synapse.login) and for the R client in the [R Docs](http://docs.synapse.org/r/synapseLogin.html). 
 
@@ -140,7 +140,7 @@ library(synapseClient)
 # If you have your config file set up you can run:
 synapseLogin()
 # Otherwise, pass in your username and password:
-synapseLogin(username='me@example.com', password='secret', rememberMe=T)
+synapseLogin(username='me@example.com', password='secret', rememberMe=TRUE)
 {% endhighlight %}
 {% endtab %}
 
