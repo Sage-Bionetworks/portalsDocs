@@ -16,6 +16,51 @@ One of the main features of Synapse is to act as a repository for scientific dat
 
 ## Using SFTP
 
+For files stored outside of Amazon, an additional proxy is needed to validate the pre-signed URL and then proxy the requested file contents.  View more information **[here](https://github.com/Sage-Bionetworks/file-proxy/wiki/Setup-Proxy-SFTP){:target="_blank"}** about setting up an SFTP proxy.
+
+#### Set Project Settings
+
+You must have a key ("your_secret_key") to allow Synapse to interact with the filesystem. To connect using Python:
+
+{% highlight python %}
+import synapseclient
+import json
+syn = synapseclient.login()
+PROJECT = 'syn12345'
+destination = {"uploadType":"SFTP", 
+               "secretKey":"your_secret_key", 
+               "proxyUrl":"https://your-proxy.prod.sagebase.org", 
+               "concreteType":"org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings"}
+destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
+project_destination ={"concreteType": "org.sagebionetworks.repo.model.project.UploadDestinationListSetting", 
+                      "settingsType": "upload"}
+project_destination['locations'] = [destination['storageLocationId']]
+project_destination['projectId'] = PROJECT
+project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
+{% endhighlight %}
+
+#### Create a Filehandle
+
+A filehandle is merely a Synapse representation of the file, therefore you will have to specify all the metadata below for Synapse to recognize it.
+
+{% highlight python %}
+import mimetypes
+path='/path/to/your/file.txt'
+fileType = mimetypes.guess_type(path,strict=False)[0]
+fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.ProxyFileHandle',
+              'fileName'    : os.path.basename(path),
+              'contentSize' : 'sizeInBytes',
+              'filePath' : path,
+              'contentType' : fileType,
+              'contentMd5' :  'md5',
+              'storageLocationId': destination['storageLocationId']}
+fileHandle = syn.restPOST('/externalFileHandle/proxy', json.dumps(fileHandle), endpoint=syn.fileHandleEndpoint)
+f = synapseclient.File(parentId=PROJECT, dataFileHandleId = fileHandle['id'])
+f = syn.store(f)
+{% endhighlight %}
+
+
+
 ## Setting Up an External Bucket
 Follow the documentation on Amazon Web Service's (AWS) site to **[Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html){:target="_blank"}**. 
 
@@ -106,65 +151,44 @@ Please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo
 
 ## Using a File-Proxy
 
-For files stored outside of Amazon, an additional proxy is needed to validate the pre-signed URL and then proxy the requested file contents. The primary purpose of this project is to provide such validation and file proxying.  View more information **[here](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"}** about setting up a file-proxy.
+View more information **[here](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"}** about setting up a file-proxy.
 
-### Connecting Synapse to the Restricted Filesystem
-
-You must have a key ("your_sftp_key") to allow Synapse to interact with the filesystem. To connect using Python:
+#### Set Project Settings
+You must have a key ("your_secret_key") to allow Synapse to interact with the filesystem. To connect using Python:
 
 {% highlight python %}
 import synapseclient
 import json
 syn = synapseclient.login()
 PROJECT = 'syn12345'
-destination = {"uploadType":"SFTP", 
-               "secretKey":"your_sftp_key", 
+destination = {"uploadType":"PROXYLOCAL", 
+               "secretKey":"your_secret_key", 
                "proxyUrl":"https://your-proxy.prod.sagebase.org", 
                "concreteType":"org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings"}
 destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
 project_destination ={"concreteType": "org.sagebionetworks.repo.model.project.UploadDestinationListSetting", 
                       "settingsType": "upload"}
-project_destination['locations'] = destination['storageLocationId']
+project_destination['locations'] = [destination['storageLocationId']]
 project_destination['projectId'] = PROJECT
-proj_dest = '{"settingsType": "upload", "locations": [9598], "concreteType": "org.sagebionetworks.repo.model.project.UploadDestinationListSetting", "projectId": "syn8020286"}'
-project_destination = syn.restPOST('/projectSettings', body = proj_dest)
+project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
 {% endhighlight %}
+
 
 #### Create a Filehandle
 
-A filehandle is merely a Synapse representation of the file, therefore you will have to specify all the metadata below for Synapse to recognize it.
-
 {% highlight python %}
+import os
 import mimetypes
 path='/path/to/your/file.txt'
 fileType = mimetypes.guess_type(path,strict=False)[0]
 fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.ProxyFileHandle',
               'fileName'    : os.path.basename(path),
-              'contentSize' : "2252439673",
+              'contentSize' : 'sizeInBytes',
               'filePath' : path,
               'contentType' : fileType,
-              'contentMd5' :  '67a3688466ad3f606e2cc7b42df4d4bb',
+              'contentMd5' :  'md5',
               'storageLocationId': destination['storageLocationId']}
 fileHandle = syn.restPOST('/externalFileHandle/proxy', json.dumps(fileHandle), endpoint=syn.fileHandleEndpoint)
 f = synapseclient.File(parentId=PROJECT, dataFileHandleId = fileHandle['id'])
 f = syn.store(f)
 {% endhighlight %}
-
-
-
-Run a few tests...
-```python
-import synapseclient
-import json
-syn = synapseclient.login()
-PROJECT = 'syn12345'
-destination = {"bucket":"testingbucketwithr",
-               "uploadType":"S3",  
-               "concreteType":"org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting"}
-destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
-project_destination ={"concreteType": "org.sagebionetworks.repo.model.project.UploadDestinationListSetting", 
-                      "settingsType": "upload"}
-project_destination['locations'] = destination['storageLocationId']
-project_destination['projectId'] = PROJECT
-project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
-```
