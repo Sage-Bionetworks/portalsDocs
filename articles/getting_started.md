@@ -146,6 +146,7 @@ synapseLogin(username='me@example.com', password='secret', rememberMe=TRUE)
 
 {% endtabs %}
 
+
 ### Using a config file
 
 You can store your credentials in your home directory in a file called `.synapseConfig` (note the period at the beginning of the file which makes this a hidden, system file on Linux-like OS's. The format is as such:
