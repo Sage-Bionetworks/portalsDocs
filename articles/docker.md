@@ -51,7 +51,7 @@ docker build -t  docker.synapse.org/syn12345/my-repo path/to/dockerfile
 
 To learn more about building [Docker images](https://docs.docker.com/engine/getstarted/step_four/).  
 
-## Storing Docker images in Synapse
+## Storing Docker images in the Synapse Docker Registry
 To store Docker images, use the `docker push` command.  To push to the Synapse Docker Registry, users must be logged into the registry:
 
 ```
@@ -73,7 +73,7 @@ docker push docker.synapse.org/syn12345/mytestrepo:version1
 docker push docker.synapse.org/syn12345/my-repo
 ```
 
-## Using Docker images stored in Synapse
+## Using Docker images stored in the Synapse Docker Registry
 To access the Docker images stored in Synapse, simply use the `docker pull` command.
 
 ```
