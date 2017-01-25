@@ -73,7 +73,7 @@ filepath <- entity@filePath
 {% endtabs %}
 
 
-#### Versions
+### Versions
 
 If there are multiple versions of a `File`, a specific version can be downloaded by passing the `version` parameter.
 
@@ -103,7 +103,7 @@ entity <- synGet("syn3260973", version=1)
 See [versioning](http://docs.synapse.org/articles/versioning.html) for more details.
 
 
-#### Download Location
+### Download Location
 
 By default, for the Python and R clients, the download location will always be in the Synapse cache whereas the command line client downloads to your current working directory. In each case you can specify the `downloadLocation` parameter.
 
@@ -189,7 +189,7 @@ entity <- lapply(results$file.id, function(x) synGet(x))
 
 {% endtabs %}
 
-#### Recursive Downloads
+### Recursive Downloads
 
 The folder structure that is present on Synapse can be maintained by recursive downloading. 
 
@@ -218,12 +218,12 @@ files = synapseutils.syncFromSynapse(syn, 'syn2390898')
 
 {% endtabs %}
 
-#### Download Tables
+### Download Tables
 
 Please view [here](http://docs.synapse.org/articles/tables.html#making-changes-to-tables) to learn how to use `Tables`.
 
 
-#### Download Wikis
+### Download Wikis
 
 The structure of a project's `Wiki` page can be extracted through the R and Python clients.  The id, title and parent `Wiki` page of each sub-`Wiki` page is also determined through the same method.
 
@@ -266,4 +266,7 @@ wiki <- synGetWiki(entity, 12345)
 
 {% endtabs %}
 
+<br/>
 
+### See Also
+[Versioning](/articles/versioning.html), [Tables](/articles/tables.html), [Wikis](/articles/wikis.html) 

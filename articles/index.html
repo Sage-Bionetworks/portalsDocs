@@ -30,7 +30,7 @@ layout: default
         <div class="row">
             <div class="board">
                 <ul class="nav nav-tabs" id="myTab"
-                    style="border-bottom: 2px solid #ddd !important; margin-top: -70px; border: 2px solid transparent;">
+                    style="margin-top: -70px; border: 2px solid transparent;">
                     <div class="liner"></div>
                     <li class="active">
 
@@ -100,7 +100,9 @@ layout: default
                             {% for page in sorted_pages %}
                             {% if page.category == 'intro' %}
                             <div class="col-xs-12 col-sm-6 col-md-6">
-                                <div class="thumbnail" style="border-left: 5px solid #68b2bb">
+                                <div class="thumbnail"
+                                     style="border-left: 5px solid #68b2bb;
+                                     border-right: 1px solid #d1e7ea; border-bottom: 1px solid #d1e7ea;">
                                     <div class="card-header" style="height: 15px; background-color: #d1e7ea">
                                     </div>
                                     <div class="caption">
@@ -125,7 +127,9 @@ layout: default
                             {% for page in site.pages %}
                             {% if page.category == 'howto' %}
                             <div class="col-xs-12 col-sm-6 col-md-4">
-                                <div class="thumbnail" style="border-left: 5px solid #0ea862">
+                                <div class="thumbnail"
+                                     style="border-left: 5px solid #0ea862;
+                                     border-right: 1px solid #ceeddf; border-bottom: 1px solid #ceeddf;">
                                     <div class="card-header" style="height: 15px; background-color: #ceeddf">
                                     </div>
                                     <div class="caption">
@@ -140,8 +144,10 @@ layout: default
 
                             {% elsif page.category == null and page.layout == 'article' %}
                             <div class="col-xs-12 col-sm-6 col-md-4">
-                                <div class="thumbnail" style="border-left: 5px solid #0ea862">
-                                    <div class="card-header" style="height: 15px; background-color: #ceeddf">
+                                <div class="thumbnail"
+                                     style="border-left: 5px solid #68b2bb;
+                                     border-right: 1px solid #d1e7ea; border-bottom: 1px solid #d1e7ea;">
+                                    <div class="card-header" style="height: 15px; background-color: #d1e7ea">
                                     </div>
                                     <div class="caption">
                                         <h5><b>{{ page.title }}</b></h5>
@@ -167,7 +173,9 @@ layout: default
                             {% for page in site.pages %}
                             {% if page.category == 'governance' %}
                             <div class="col-xs-12 col-sm-6 col-md-6">
-                                <div class="thumbnail" style="border-left: 5px solid #7772b4">
+                                <div class="thumbnail"
+                                     style="border-left: 5px solid #7772b4;
+                                     border-right: 1px solid #e3e2f0; border-bottom: 1px solid #e3e2f0">
                                     <div class="card-header" style="height: 15px; background-color: #e3e2f0">
                                     </div>
                                     <div class="caption">

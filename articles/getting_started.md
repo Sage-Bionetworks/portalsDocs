@@ -14,7 +14,7 @@ order: 1
 }
 </style>
 
-## Get Started with Synapse
+# Get Started with Synapse
 
 This getting started is for non-technical users who are interested in learning about Synapse. By following this getting started, you’ll learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
 
@@ -24,7 +24,7 @@ This getting started is for non-technical users who are interested in learning a
 * Find content in Synapse
 * Understand and use provenance
 
-### What is Synapse?
+## What is Synapse?
 Synapse is an open source software platform that data scientists can use to carry out, track, and communicate their research in real time. Synapse enables co-location of scientific content (data, code, results) and narrative descriptions of that work. Synapse has seeded a growing number of living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
 
 With Synapse, you can:
@@ -42,7 +42,7 @@ Synapse was created to encourage open science initiatives to advance our underst
 Synapse operates under a complete [governance process](/articles/governance.html) that includes well-documented [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}, guidelines and operating procedures, privacy enhancing technologies, as well as the right of audit and external reviews.
 
 
-## Installing Synapse Clients
+# Installing Synapse Clients
 <img style="float:right;" src="/assets/images/synapse_apis.png">
 
 Synapse is built on a number of RESTful web APIs that allow users to interact with the system via a number of _clients_. One of these _clients_ is the web client, i.e. the website [www.synapse.org](https://www.synapse.org/). Synapse also provides three programmatic clients (R, Python, and Command Line). Content can be uploaded, downloaded, annotated, and queried from any of these interfaces. In the getting started guide we will run through examples using all three programmatic interfaces.  At any point you can pick the language you would like to see examples in by clicking the corresponding tab at the bottom of every example.  Unless otherwise noted the examples are can be typed into the respective environment.  That is a shell prompt for the command line examples, a Python session such as an ipython notbook of script, and an R session for the R examples.
@@ -101,6 +101,62 @@ pkgInstall("synapseClient")
 
 {% endtabs %}
 
+
+## Logging into Synapse
+
+Synapse credentials are required to use the programmatic clients. Register to create an account, and even if you login with a Google account, make sure you go through the extra step of creating a Synapse username and password.
+
+At the command line you can login by specifying your Synapse username and password.
+
+The login credentials can be specified for every Synapse client session, but this is not the recommended practice as your password will be visible. Instead, by passing the `rememberMe` parameter you can cache your credentials for use in future Synapse client sessions.
+
+The full list of possible login parameters for the Python client can be found in the [Python Docs](http://docs.synapse.org/python/Client.html#synapseclient.Synapse.login) and for the R client in the [R Docs](http://docs.synapse.org/r/synapseLogin.html). 
+
+To login with your username/email and password:
+
+{% tabs %}
+
+{% tab Command %}
+{% highlight bash %}
+# by passing --rememberMe the username/password will not need to specified on subsequent calls to Synapse.
+synapse login -u me@example.com -p secret --rememberMe
+{% endhighlight %}
+{% endtab %}
+
+
+{% tab Python %}
+{% highlight python %}
+import synapseclient
+# If you have your config file set up you can run:
+syn = synapseclient.login()
+# Otherwise, pass in your username and password:
+syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=True)
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+library(synapseClient)
+# If you have your config file set up you can run:
+synapseLogin()
+# Otherwise, pass in your username and password:
+synapseLogin(username='me@example.com', password='secret', rememberMe=TRUE)
+{% endhighlight %}
+{% endtab %}
+
+{% endtabs %}
+
+
+### Using a config file
+
+You can store your credentials in your home directory in a file called `.synapseConfig` (note the period at the beginning of the file which makes this a hidden, system file on Linux-like OS's. The format is as such:
+
+```
+[authentication]
+username: me@example.com
+password: secret
+```
+
 ## Becoming a Certified User
 
 Anyone can browse public content in Synapse but in order to download and create content you will need to register for an account:
@@ -114,7 +170,7 @@ As Synapse can store human subject data that has sharing and use restrictions, y
 Explore our [accounts, certification and profile validation](/articles/accounts_certified_users_and_profile_validation.html) page to find out more information on the different levels of users.  
 
 
-## Project and Data Management on Synapse
+# Project and Data Management on Synapse
 
 <img style="float: right" src="/assets/images/project_1.png">
 
@@ -232,7 +288,7 @@ Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the pro
 
 
 
-## Adding a Wiki to your Project
+# Adding a Wiki to your Project
 
 <img style="float: right" src="/assets/images/project_2.png">
 
@@ -292,7 +348,7 @@ Go to project page and click the **Tool button** and chose **Edit Project Wiki**
 
 
 
-## Organizing Data: creating Files and Folders
+# Organizing Data: creating Files and Folders
 
 <img style="float: right" src="/assets/images/project_4.png">
 
@@ -406,11 +462,11 @@ click the **Upload or Link to File** button on the Files tab. Go through the dia
 
 <br>
 
-### Local Folder and File Sharing Settings
+## Local Folder and File Sharing Settings
 
 Access to `Files`, `Tables`, and `Folders` is controlled by the **Sharing setting** that you select for your project. You may also set individual Sharing settings for specific `Files`, `Tables`, or `Folders` within a `Project`.
 
-## Provenance and Tracking Content
+# Provenance and Tracking Content
 
 <img style="float:right" src="/assets/images/example_provenance.png">
 
@@ -479,6 +535,6 @@ click the **Upload or Link to File** button on the Files tab to upload image/plo
 
 <br>
 
-### More Guides
+## More Guides
 
 Find additional information and tutorials through our <a href="/articles/">User Guide</a>.
