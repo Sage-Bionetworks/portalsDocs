@@ -2,6 +2,7 @@
 title: Running a Challenge
 layout: article
 excerpt: Learn how to administer and start a challenge
+category: admin
 ---
 
 ## Setting up a DREAM challenge infrastructure

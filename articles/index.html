@@ -68,16 +68,16 @@ layout: default
                         </a>
                     </li>
 
-                    <!--<li>-->
-                        <!--<a href="#dream" data-toggle="tab">-->
-                         <!--<span class="round-tabs four">-->
-                           <!--<p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">-->
-                        <!--Dream-->
-                        <!--</p>-->
-                              <!--<i class="glyphicon glyphicon-cloud"></i>-->
-                         <!--</span>-->
-                        <!--</a>-->
-                    <!--</li>-->
+                    <li>
+                        <a href="#admin" data-toggle="tab">
+                         <span class="round-tabs four">
+                           <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
+                        Admin
+                        </p>
+                              <i class="glyphicon glyphicon-cloud"></i>
+                         </span>
+                        </a>
+                    </li>
 
                     <li>
                         <a href="#forum" data-toggle="tab">
@@ -194,13 +194,35 @@ layout: default
                     </div>
                     <!--end governance content-->
 
-                    <!--<div class="tab-pane fade" id="dream"> &lt;!&ndash;Start Dream Challenge content&ndash;&gt;-->
-                        <!--<h3 class="head text-center">Dream Challenges</h3>-->
-                        <!--<p class="narrow text-center">-->
-                            <!--Stay tuned for articles regarding how to participate in our Dream Challenges.-->
-                        <!--</p>-->
+                    <div class="tab-pane fade" id="admin"> 
+                        <h3 class="head text-center">Administration</h3>
+                        <!-- <p class="narrow text-center">
+                            Stay tuned for articles regarding how to administration.
+                        </p> -->
+                        <div class="row">
+                            {% for page in site.pages %}
+                            {% if page.category == 'admin' %}
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="thumbnail"
+                                     style="border-left: 5px solid #7772b4;
+                                     border-right: 1px solid #e3e2f0; border-bottom: 1px solid #e3e2f0">
+                                    <div class="card-header" style="height: 15px; background-color: #e3e2f0">
+                                    </div>
+                                    <div class="caption">
+                                        <h5><b>{{ page.title }}</b></h5>
+                                        <p>{{page.excerpt}}</p>
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                            More</a>
+                                    </div>
 
-                    <!--</div>-->
+                                </div>
+                            </div>
+
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+
+                    </div>
                     <!--End dream challenge content-->
 
                     <div class="tab-pane fade" id="forum"> <!--start help/forum content-->
