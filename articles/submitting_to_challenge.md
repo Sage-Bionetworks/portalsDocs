@@ -1,7 +1,7 @@
 ---
-title: Submitting to a DREAM Challenge
+title: Participating in a DREAM Challenge
 layout: article
-excerpt: Learn how to submit to a challenge
+excerpt: Learn how to participate in challenges and submit to evaluation queues.
 category: howto
 ---
 
