@@ -15,7 +15,7 @@ In Synapse, Teams are publicly viewable groups of users.  Teams may be given acc
 
 From the Synapse home page [https://www.synapse.org] enter a unique Team name to the left of the "Create Team" button, then click the button to create a new Team.  On the page for your Team you can configure whether approval is required by a Team administrator (you) to join the Team.  On this page you can also share administrative rights with other team members of your choice.
 
-Please visit this [page]((http://docs.synapse.org/articles/teams.html) to learn more about teams.
+Please visit this [page](http://docs.synapse.org/articles/teams.html) to learn more about teams.
 
 
 ### Creating DREAM Challenge Projects
@@ -53,7 +53,9 @@ copyWikis(sourceProjectId, targetProjectId)
 	{% endtab %}
 
 	{% tab Web %}
-This script only works for apple computers. Download this [file](https://sourceforge.net/projects/createsynapsechallengewiki/files/createChallengeWiki.command/download) and double click the script.  You may have to right click and click open if you have script security settings on your computer. This script will prompt you to login to synapse.  Give it your private project syn0123456, and it will copy the template over. 
+
+This script only works for macs. Download this [file](https://sourceforge.net/projects/createsynapsechallengewiki/files/createChallengeWiki.command/download) and double click the script.  You may have to right click and click open if you have script security settings on your computer. This script will prompt you to login to synapse.  Give it your private project syn0123456, and it will copy the template over. 
+
 	{% endtab %}
 
 {% endtabs %}
@@ -100,6 +102,7 @@ challenge<-synRestPOST("/challenge", challenge)
 challengeId<-challenge$id
 		{%endhighlight %}
 	{% endtab %}
+
 {% endtabs %}
 
 
@@ -155,6 +158,7 @@ contact them (act@sagebase.org), providing the text of the the ToU and the name 
 ### Edit Challenge Wiki Privately
 
 **More information soon about the merge wiki script**
+
 Challenge organizers have found it convenient to author wiki pages privately, then publish the result when ready for public view.  To do this, create a second project which you do _not_ share with the public, but only with fellow challenge organizers.  When complete, the content can be published using a script which is available in R or Python.  There are instructions above on how to copy wikis from one project to another. 
 
 
@@ -449,15 +453,15 @@ Here are some helpful functions that could help with running a challenge.  Every
 {% tabs %}
 	{% tab Python %}
 		{% highlight python %}
-			#Get submission / annotations
-			sub = syn.getSubmission(submissionId)
-			annotations = syn.getSubmissionStatus(submissionId)
-			#Get all scored submissions in an evaluation queue
-			e = syn.getEvaluation(e)
-			bundles = syn.getSubmissionBundles(e, status = "SCORED")
-			for sub, status in bundles:
-				print(sub)
-				print(status)
+#Get submission / annotations
+sub = syn.getSubmission(submissionId)
+annotations = syn.getSubmissionStatus(submissionId)
+#Get all scored submissions in an evaluation queue
+e = syn.getEvaluation(e)
+bundles = syn.getSubmissionBundles(e, status = "SCORED")
+for sub, status in bundles:
+	print(sub)
+	print(status)
 		{% endhighlight %}
 	{% endtab %}
 
