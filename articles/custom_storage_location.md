@@ -19,6 +19,10 @@ One of the main features of Synapse is to act as a repository for scientific dat
 To set the storage location as your SFTP server:
 
 ````
+import synapseclient
+import json
+syn = synapseclient.login()
+
 PROJECT = 'syn12345'
 
 DESTINATIONS = [
@@ -28,11 +32,8 @@ DESTINATIONS = [
      "description" :"Testing SFTP upload location",
      "supportsSubfolders": True,
      "url": "sftp://your-sftp-server.com",
-     "banner": (“A descriptive banner - tada!”)}
+     "banner": “A descriptive banner - tada!”}
     ]
-
-
-syn = synapseclient.login()
 
 destinations = [syn.restPOST('/storageLocation', body=json.dumps(x)) for x in DESTINATIONS]
 project_destination = {"concreteType": "org.sagebionetworks.repo.model.project.UploadDestinationListSetting",
@@ -359,6 +360,7 @@ A filehandle is merely a Synapse representation of the file, therefore you will 
 
 {% tab Python %}
 {% highlight python %}
+import os
 import mimetypes
 path='/path/to/your/file.txt'
 fileType = mimetypes.guess_type(path,strict=False)[0]
