@@ -33,11 +33,11 @@ In the resulting pop-up, give your view a name and then select **Add container**
 
 <img id="image" src="/assets/images/fileViewPopup.png">
 
-You can search for `Projects`/`Folders` of interest by browsing by your favorite and current projects, by searching for a project by name, or by entering in a Synapse Id. Click on the Project name to add it to your scope. You can select specific folders in a project by clicking on the 
+You can search for `Projects`/`Folders` of interest by browsing by your favorite and current projects, by searching for a project by name, or by entering in a Synapse Id. Click on the Project name to add it to your scope. You can select specific folders in a project by clicking on the caret.
 
 <img id="image" src="/assets/images/expandProject.png">
 
-Clicking on a `Project` or `Folder` will select it for the view. Select whether you'd like the current or previous version and click the **Select** button at the bottom.
+Clicking on a `Project` or `Folder` will select it for the view. 
 
 <img id="image" src="/assets/images/selectProject.png">
 
