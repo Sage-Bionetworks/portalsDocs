@@ -18,30 +18,56 @@ One of the main features of Synapse is to act as a repository for scientific dat
 
 To set the storage location as your SFTP server:
 
-````
+{% tabs %}
+
+{% tab Python %}
+{% highlight python %}
 import synapseclient
 import json
 syn = synapseclient.login()
 
-PROJECT = 'syn12345'
+DESTINATIONS = [{ "uploadType":"SFTP",
+    "concreteType":"org.sagebionetworks.repo.model.project.ExternalStorageLocationSetting",
+    "description":"My SFTP upload location", 
+    "supportsSubfolders":True,
+    "url":"sftp://your-sftp-server.com",
+    "banner":"A descriptive banner, tada!"}] 
 
-DESTINATIONS = [
-    {
-     "uploadType": "SFTP", 
-     "concreteType": "org.sagebionetworks.repo.model.project.ExternalStorageLocationSetting", 
-     "description" :"Testing SFTP upload location",
-     "supportsSubfolders": True,
-     "url": "sftp://your-sftp-server.com",
-     "banner": “A descriptive banner - tada!”}
-    ]
+destinations = [syn.restPOST('/storageLocation', body=json.dumps(x)) for x in DESTINATIONS] 
 
-destinations = [syn.restPOST('/storageLocation', body=json.dumps(x)) for x in DESTINATIONS]
-project_destination = {"concreteType": "org.sagebionetworks.repo.model.project.UploadDestinationListSetting",
-                       "settingsType": "upload"}
+project_destination = {"concreteType":"org.sagebionetworks.repo.model.project.UploadDestinationListSetting", 
+    "settingsType":"upload"}
 project_destination['projectId'] = PROJECT
 project_destination['locations'] = [dest['storageLocationId'] for dest in destinations]
+project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
+{% endhighlight %}
+{% endtab %}
 
-````
+{% tab R %}
+{% highlight r %}
+library(synapseClient)
+synapseLogin()
+
+projectId <- 'syn12345'
+destination <- list(uploadType='SFTP', 
+                    concreteType='org.sagebionetworks.repo.model.project.ExternalStorageLocationSetting',
+                    description='My SFTP upload location',
+                    supportsSubfolders=TRUE,
+                    url='https://your-sftp-server.com',
+                    banner='A descriptive banner, tada!')
+                    
+destination <- synRestPOST('/storageLocation', body=destination)
+
+projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
+                           settingsType='upload')
+projectDestination$locations <- list(destination$storageLocationId)
+projectDestination$projectId <- projectId
+projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
+
+{% endhighlight %}
+{% endtab %}
+
+{% endtabs %}
 
 
 
