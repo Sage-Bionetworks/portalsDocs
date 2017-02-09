@@ -1,7 +1,7 @@
 ---
 title: "Custom Storage Locations"
 layout: article
-excerpt: Follow these steps to set up custom storage locations and access it with Synapse. 
+excerpt: Follow these steps to set up custom storage locations and access them with Synapse. 
 category: howto
 ---
 
@@ -12,7 +12,7 @@ category: howto
 </style>
 
 # Overview
-One of the main features of Synapse is to act as a repository for scientific data. Access to all data in Synapse is controlled with the use of Sharing settings. The Sharing setting is often the only required control on non-human subjects data whereas human subjects data requires additional controls. While Synapse provides physical storage for files (using Amazon's S3), not all data 'in' Synapse is stored on Synapse controlled S3 buckets. For example, data files can physically reside on a user owned S3 buckets, SFTP servers, or other type of file servers. Creating a custom storage location allows users ownership and control of their files, especially in cases where there is a large amount of data or cases where there are additional restrictions that need to be set on the data.
+One of the main features of Synapse is to act as a repository for scientific data. Access to all data in Synapse is controlled with the use of [Sharing settings](/articles/access_controls). The Sharing setting is often the only required control on non-human subjects data whereas human subjects data requires additional controls. While Synapse provides physical storage for files (using Amazon's S3), not all data 'in' Synapse is stored on Synapse controlled locations. For example, data files can physically reside on a user owned S3 buckets, SFTP servers, or other type of file servers. Creating a custom storage location allows users ownership and control of their files, especially in cases where there is a large amount of data or cases where there are additional restrictions that need to be set on the data.
 
 ## Using SFTP
 
@@ -72,7 +72,7 @@ projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 
 
 ## Setting Up an External Bucket
-Follow the documentation on Amazon Web Service's (AWS) site to **[Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html){:target="_blank"}**. 
+Follow the documentation on Amazon Web Service (AWS) site to **[Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html){:target="_blank"}**. 
 
 <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html" class="btn btn-primary">View AWS Bucket Instructions</a>{:target="_blank"}
 
@@ -378,9 +378,9 @@ projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 {% endtabs %}
 
 
-#### Create a Filehandle
+#### Create a FileHandle
 
-A filehandle is merely a Synapse representation of the file, therefore you will have to specify all the metadata below for Synapse to recognize it.
+A `FileHandle` is a Synapse representation of the file, therefore you will have to specify all the metadata below for Synapse to recognize it.
 
 {% tabs %}
 
