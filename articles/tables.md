@@ -136,7 +136,7 @@ Python uses `synapseclient.as_table_columns` and R uses `as.tableColumns`.
 project = syn.get('syn1901847')
 cols = synapseclient.as_table_columns(df)
 
-schema = synpaseclient.Schema(name='Jazz Albums', columns=cols, parent=project)
+schema = synapseclient.Schema(name='Jazz Albums', columns=cols, parent=project)
 {% endhighlight %}
 {% endtab %}
 
