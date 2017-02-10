@@ -21,7 +21,7 @@ Participants **must** be registered for the challenge if they want to submit and
 
 
 ## Join or Create a Team
-Although not mandatory, we encourage you to be part of a team. You can either join a team or create your own team of collaborators. See instructions on how to form your own team of collaborators [here](http://docs.synapse.org/articles/teams.html).  It is important to note that you **cannot** be on more than one team.  Once you have submitted as a team or individual, you cannot submit as another team. 
+Although not mandatory, we encourage you to be part of a team. You can either join a team or create your own team of collaborators. See instructions on how to form your own team of collaborators [here](http://docs.synapse.org/articles/teams.html).  It is important to note that you **cannot** be on more than one team.  Once you have submitted as a team or individual, you cannot submit as another team.  After you form a team, you must register your team to the challenge - there will be a place to do this in every challenge wiki.
 
 ## Accessing Challenge Data
 The data stored in the Synapse data repository can be accessed using the Synapse website or programmatically using the Synapse R or Python clients. Instructions on using Synapse are provided in the [Synapse User Guide](http://docs.synapse.org/).  File descriptions are provided on the Data Description page in each challenge wiki.  See instructions 
@@ -29,13 +29,9 @@ The data stored in the Synapse data repository can be accessed using the Synapse
 
 ## Run your Algorithms and Submit to the Challenge
 
-One major part of the challenge is ofcourse submitting to the challenge itself.  There are multiple ways a participant can submit to a challenge by using the R, python or web client.  Below is a quick tutorial on how to submit to a challenge.  Most challenge queues will be labeled by `challengename-subchallenge#` as a challenge may have different questions that it may want participants to answer.  
+There are multiple ways a participant can submit to a challenge queue by using the R, python or web client.  The most conventional way is to submit through the web.  All submissions must be uploaded onto a private synapse page.  Follow instructions [here](http://docs.synapse.org/articles/getting_started.html#project-and-data-management-on-synapse) on how to upload to a project. Most challenge queues will be labeled by `challengename-subchallenge#` as a challenge may have different questions that it may want participants to answer.
 
-To submit to a challenge, one must have uploaded an entity first to their project and know the evaluation id of the subchallenge you are trying to submit to.  This number can be found in the challenge tab of the challenge site in parenthesis. 
-
-<img id="image" src="/assets/images/evaluationQueue.png">
-
-In these R and python examples, we will be uploading a file to an example project then submitting that file to the challenge. The submission function takes two optional parameters: name and team.  Name can be provided to serve as a custom name of the submission, if name isn't provided the name of the entity being submitted will be used as the name.  Team can optionally be provided to give credit to members of the team that contributed to the submission. The team must be registered for the challenge with which the given evaluation is associated. The caller must be a member of the submitting team.
+In the R and python examples, participants will have to know the evaluation id of the subchallenge they are trying to submit to.  We will be uploading a file to an example project then submitting that file to the challenge. The submission function takes two optional parameters: name and team.  Name can be provided to serve as a custom name of the submission, if name isn't provided the name of the entity being submitted will be used as the name.  Teams can optionally be provided to give credit to members of the team that contributed to the submission. 
 
 {% tabs %}
 	{% tab Python %}
