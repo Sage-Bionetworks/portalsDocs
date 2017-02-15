@@ -9,7 +9,18 @@ category: howto
 #image {
     width: 50%;
 }
+#imageLg {
+    width: 60%;
+}
+#imageXL {
+    width: 100%;
+}
+#imageSmall {
+    width: 25%;
+}
 </style>
+
+
 
 
 # Tables
@@ -680,6 +691,35 @@ Clicking on any file will download it.
 <img id="image" src="/assets/images/download_files_from_table.png">
 {% endtab %}
 {% endtabs %}
+
+## Table Facets
+The faceted navigation on `Tables` can be used to help simplify your search without having to use SQL-like queries. To use table facets, navigate to a `Table` or a `File View`. For this example, we'll be using the [Synapse Table Demo](https://www.synapse.org/#!Synapse:syn3079449/tables/){:target="_blank"} found in the [Wondrous Research Example](https://www.synapse.org/#!Synapse:syn1901847/wiki/56044){:target="_blank"}.
+
+### Set facets
+In order to use simple search, you must first set columns to be facets in the schema editor. Select **Schema** in the upper right of your table and click on **Edit Schema**. In the resulting pop-up, select **Values** or **Range** from the dropdowns under the **Facet** option.
+
+<img id="imageLg" src="/assets/images/set_facets.png">
+
+### See faceted (simple) search
+To see all the facets, click on **Show simple search** found above the SQL-query bar:
+
+<img id="imageLg" src="/assets/images/show_simple_search.png">
+
+#### Use simple search
+Select the features you're interested in to filter the table. 
+
+<img id="imageLg" src="/assets/images/simple_search.png">
+
+#### Toggling between simple and advanced search
+You can toggle from the simple search to the advanced search without losing the query results. For example, if in the simple search you've selected for treatmentArm `A`, age of `23:64`, and gender as `female`, the query will be preserved in the advanced search bar. 
+
+{% include note.html content="The slider for range in simple search is inclusive." %}
+
+<img id="imageSmall" src="/assets/images/simple_search_query.png">
+<img id="imageXL" src="/assets/images/query_statement_from_simple_search.png">
+
+However, when toggling back to simple search, the query will be reset.
+<img id="imageLg" src="/assets/images/toggle_advanced_to_simple_search.png">
 
 
 ## More on tables
