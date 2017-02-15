@@ -9,10 +9,13 @@ category: howto
 #image {
     width: 100%;
 }
+#imageSmall {
+    width: 40%;
+}
 </style>
 
 # Overview
-One of the main features of Synapse is to act as a repository for scientific data. Access to all data in Synapse is controlled with the use of [Sharing settings](/articles/access_controls). The Sharing setting is often the only required control on non-human subjects data whereas human subjects data requires additional controls. While Synapse provides physical storage for files (using Amazon's S3), not all data 'in' Synapse is stored on Synapse controlled locations. For example, data files can physically reside on a user owned S3 buckets, SFTP servers, or other type of file servers. Creating a custom storage location allows users ownership and control of their files, especially in cases where there is a large amount of data or cases where there are additional restrictions that need to be set on the data.
+One of the main features of Synapse is to act as a repository for scientific data. Access to all data in Synapse is controlled with the use of [Sharing settings](/articles/access_controls). The Sharing setting is often the only required control on non-human subjects data whereas human subjects data requires additional controls. While Synapse provides physical storage for files (using Amazon's S3), not all data 'in' Synapse is stored on Synapse controlled locations. For example, data files can physically reside on a user owned S3 buckets, SFTP servers, or proxy servers. Creating a custom storage location allows users ownership and control of their files, especially in cases where there is a large amount of data or cases where there are additional restrictions that need to be set on the data.
 
 ## Using SFTP
 
@@ -26,19 +29,19 @@ import synapseclient
 import json
 syn = synapseclient.login()
 
-DESTINATIONS = [{ "uploadType":"SFTP",
+destination = { "uploadType":"SFTP",
     "concreteType":"org.sagebionetworks.repo.model.project.ExternalStorageLocationSetting",
     "description":"My SFTP upload location", 
     "supportsSubfolders":True,
     "url":"sftp://your-sftp-server.com",
-    "banner":"A descriptive banner, tada!"}] 
+    "banner":"A descriptive banner, tada!"}
 
-destinations = [syn.restPOST('/storageLocation', body=json.dumps(x)) for x in DESTINATIONS] 
+destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
 
 project_destination = {"concreteType":"org.sagebionetworks.repo.model.project.UploadDestinationListSetting", 
     "settingsType":"upload"}
 project_destination['projectId'] = PROJECT
-project_destination['locations'] = [dest['storageLocationId'] for dest in destinations]
+project_destination['locations'] = [destination['storageLocationId']]
 project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
 {% endhighlight %}
 {% endtab %}
@@ -83,7 +86,8 @@ Make the following adjustments to customize it to work with Synapse:
     * Make sure that all the boxes (List, Upload/Delete, View Permissions, and Edit Permissions) have been checked. It should do this by default. 
     * Select the **Add bucket policy** button and copy one of the below policies (read-only or read-write permissions). Change the name of `Resource` from “synapse-share.yourcompany.com” to the name of your new bucket (twice) and ensure that the `Principal` is `"AWS":"325565585839"`. This is Synapse's account number. 
 
-For **read-only** permissions (you only allow Synapse to read files that you upload to this bucket):
+#### Read-only permissions
+For read-only permissions (you only allow Synapse to read files that you upload to this bucket):
 
 {% highlight json %}
 {
@@ -106,7 +110,8 @@ For **read-only** permissions (you only allow Synapse to read files that you upl
 
 <br/>
 
-For **read-write** permissions (you allow Synapse to upload and retrieve files):
+#### Read-write permissions
+For read-write permissions (you allow Synapse to upload and retrieve files):
 
 {% highlight json %}
 {
@@ -127,7 +132,9 @@ For **read-write** permissions (you allow Synapse to upload and retrieve files):
 }
 {% endhighlight %}
 
-For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **owner.txt** file with your Synapse username and uploading it to your bucket. You can upload the file with our Synapse web client or if you have  the [AWS command line client](https://aws.amazon.com/cli/){:target="_blank"}, you can upload using the command line. 
+<br/>
+
+For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **owner.txt** file with your Synapse username and uploading it to your bucket. You can upload the file with the Amazon Web Console or if you have  the [AWS command line client](https://aws.amazon.com/cli/){:target="_blank"}, you can upload using the command line. 
 
 {% tabs %}
 
@@ -139,7 +146,10 @@ aws s3 cp owner.txt s3://nameofmybucket/nameofmyfolder
 {% endtab %}
 
 {% tab Web %}
-Create a new text file locally on your computer (e.g. Notepad for Windows and TextEdit for Mac) with your Synapse username. Save the file as **owner.txt**. Navigate to your bucket and select **Upload** to upload your text file.
+
+<img id="imageSmall" src="/assets/images/ownerTxt.png">
+
+Create a new text file locally on your computer (e.g. Notepad for Windows and TextEdit for Mac) with your Synapse username. Save the file as **owner.txt**. Then navigate to your bucket on the Amazon Console and select **Upload** to upload your text file.
 {% endtab %}
 
 {% endtabs %}
@@ -172,7 +182,6 @@ project_destination = syn.restPOST('/projectSettings', body = json.dumps(project
 
 # create filehandle
 import os
-import mimetypes
 fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.S3FileHandle', 
               'fileName'    : 'nameOfFile.csv',
               'contentSize' : "sizeInBytes",
@@ -205,7 +214,6 @@ projectDestination$projectId <- projectId
 projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 
 # create filehandle
-library(mime)
 fileHandle <- list(concreteType='org.sagebionetworks.repo.model.file.S3FileHandle', 
                    fileName    = 'nameOfFile.csv',
                    contentSize = 'sizeInBytes',
@@ -236,11 +244,9 @@ Please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo
 
 ## Using a Proxy to Access a File/SFTP Server
 
-For files stored outside of Amazon, an additional proxy is needed to validate the pre-signed URL and then proxy the requested file contents.  View more information **[here](https://github.com/Sage-Bionetworks/file-proxy/wiki/Setup-Proxy-SFTP){:target="_blank"}** about setting up an SFTP proxy.
+For files stored outside of Amazon, an additional proxy is needed to validate the pre-signed URL and then proxy the requested file contents.  View more information **[here](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"}** about the process as well as setting up an [SFTP proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"} and about launching a [local server](https://github.com/Sage-Bionetworks/file-proxy/wiki/Setup-Proxy-Local){:target="_blank"}.
 
-And **[here](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"}** about launching a local server.
-
-#### Set Project Settings
+#### Set Project Settings for Proxy-Local
 You must have a key ("your_secret_key") to allow Synapse to interact with the filesystem. 
 
 {% tabs %}
@@ -293,14 +299,12 @@ projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 {% tab Python %}
 {% highlight python %}
 import os
-import mimetypes
 path='/path/to/your/file.txt'
-fileType = mimetypes.guess_type(path,strict=False)[0]
 fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.ProxyFileHandle',
               'fileName'    : os.path.basename(path),
               'contentSize' : 'sizeInBytes',
               'filePath' : path,
-              'contentType' : fileType,
+              'contentType' : 'txt',
               'contentMd5' :  'md5',
               'storageLocationId': destination['storageLocationId']}
 fileHandle = syn.restPOST('/externalFileHandle/proxy', json.dumps(fileHandle), endpoint=syn.fileHandleEndpoint)
@@ -311,16 +315,13 @@ f = syn.store(f)
 
 {% tab R %}
 {% highlight r %}
-library(mime)
-
 filePath <- '/path/to/your/file.txt'
-fileType <- guess_type(filePath)
 fileHandle <- list(concreteType = 'org.sagebionetworks.repo.model.file.ProxyFileHandle', 
                    externalURL = destination$proxyUrl,
                    fileName    = basename(filePath),
                    contentSize = 'sizeInBytes',
                    filePath = filePath,
-                   contentType = fileType,
+                   contentType = 'txt',
                    contentMd5 =  'md5',
                    storageLocationId = destination$storageLocationId)
 fileHandle <- synRestPOST('/externalFileHandle/proxy', body = fileHandle, endpoint = synapseFileServiceEndpoint())
@@ -331,7 +332,7 @@ f <- synStore(f)
 
 {% endtabs %}
 
-#### Set Project Settings
+#### Set Project Settings for Proxy-SFTP
 
 You must have a key ("your_secret_key") to allow Synapse to interact with the filesystem. 
 
@@ -387,14 +388,12 @@ A `FileHandle` is a Synapse representation of the file, therefore you will have 
 {% tab Python %}
 {% highlight python %}
 import os
-import mimetypes
 path='/path/to/your/file.txt'
-fileType = mimetypes.guess_type(path,strict=False)[0]
 fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.ProxyFileHandle',
               'fileName'    : os.path.basename(path),
               'contentSize' : 'sizeInBytes',
               'filePath' : path,
-              'contentType' : fileType,
+              'contentType' : 'txt',
               'contentMd5' :  'md5',
               'storageLocationId': destination['storageLocationId']}
 fileHandle = syn.restPOST('/externalFileHandle/proxy', json.dumps(fileHandle), endpoint=syn.fileHandleEndpoint)
@@ -405,16 +404,14 @@ f = syn.store(f)
 
 {% tab R %}
 {% highlight r %}
-library(mime)
 
 filePath <- '/path/to/your/file.txt'
-fileType <- guess_type(filePath)
 fileHandle <- list(concreteType='org.sagebionetworks.repo.model.file.ProxyFileHandle', 
                    externalURL = destination$proxyUrl,
                    fileName    = basename(filePath),
                    contentSize = 'sizeInBytes',
                    filePath = filePath,
-                   contentType = fileType,
+                   contentType = 'txt',
                    contentMd5 =  'md5',
                    storageLocationId = destination$storageLocationId)
 fileHandle <- synRestPOST('/externalFileHandle/proxy', body=fileHandle, endpoint = synapseFileServiceEndpoint())
