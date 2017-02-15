@@ -1,7 +1,7 @@
 ---
 title: "File Views"
 layout: article
-excerpt: User file views to see files across multiple projects and folders.
+excerpt: Use file views to see files across multiple projects and folders.
 category: howto
 ---
 
