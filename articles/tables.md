@@ -693,12 +693,15 @@ Clicking on any file will download it.
 {% endtabs %}
 
 ## Table Facets
-The faceted navigation on `Tables` can be used to help simplify your search without having to use SQL-like queries. To use table facets, navigate to a `Table` or a `File View`. For this example, we'll be using the [Synapse Table Demo](https://www.synapse.org/#!Synapse:syn3079449/tables/){:target="_blank"} found in the [Wondrous Research Example](https://www.synapse.org/#!Synapse:syn1901847/wiki/56044){:target="_blank"}.
+The faceted navigation on `Tables` (also known as **simple search**) can be used to simplify your search without having to use SQL-like queries. To use table facets, navigate to a `Table` or a `File View`. For this example, we will be using the [Synapse Table Demo](https://www.synapse.org/#!Synapse:syn3079449/tables/){:target="_blank"} found in the [Wondrous Research Example](https://www.synapse.org/#!Synapse:syn1901847/wiki/56044){:target="_blank"}. Simple and advanced search both allow you to query for features of interest in a`Table` using different methods. Simple search uses radio buttons and sliders to show all available facets in a menu to the left of the `Table` whereas advanced search employs a SQL-like query to filter the `Table`.
 
 ### Set facets
-In order to use simple search, you must first set columns to be facets in the schema editor. Select **Schema** in the upper right of your table and click on **Edit Schema**. In the resulting pop-up, select **Values** or **Range** from the dropdowns under the **Facet** option.
+In order to use simple search, you must first set columns to be facets in the schema editor. Select **Schema** in the upper right of your table and click on **Edit Schema**. In the resulting pop-up, select **Values** or **Range** from the dropdowns under the **Facet** option. **Values** can be thought of as factors whereas **Range** is a date or numerical element. 
 
 <img id="imageLg" src="/assets/images/set_facets.png">
+
+{% include note.html content="If you change Column Type in the schema, you have to set its facet selection again." %}
+
 
 ### See faceted (simple) search
 To see all the facets, click on **Show simple search** found above the SQL-query bar:
@@ -706,7 +709,7 @@ To see all the facets, click on **Show simple search** found above the SQL-query
 <img id="imageLg" src="/assets/images/show_simple_search.png">
 
 #### Use simple search
-Select the features you're interested in to filter the table. 
+Select the features you are interested in to filter the table. 
 
 <img id="imageLg" src="/assets/images/simple_search.png">
 
@@ -718,7 +721,9 @@ You can toggle from the simple search to the advanced search without losing the 
 <img id="imageSmall" src="/assets/images/simple_search_query.png">
 <img id="imageXL" src="/assets/images/query_statement_from_simple_search.png">
 
-However, when toggling back to simple search, the query will be reset.
+<br/>
+
+**However, when toggling back to simple search, the query will be reset.**
 <img id="imageLg" src="/assets/images/toggle_advanced_to_simple_search.png">
 
 
