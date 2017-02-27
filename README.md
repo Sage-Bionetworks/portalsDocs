@@ -109,6 +109,21 @@ then navigate to [localhost:4000](http://localhost:4000)
 
     ./bin/jekyll build
 
+**Solving common bugs while regenerating**
+Connection refused error:
+```
+            Source: .
+       Destination: ./_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+  Conversion error: Jekyll::BrowserifyConverter encountered an error while converting '/js/all.js':
+                    Connection refused - connect(2)
+jekyll 3.1.2 | Error:  Connection refused - connect(2)
+```
+When you get this error, simply run this command several times before regenerating again.
+```
+ulimit -n 10000
+```
 ## License
 
 Distributed under the Eclipse Public License, the same as Clojure.
