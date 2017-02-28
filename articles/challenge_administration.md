@@ -13,7 +13,7 @@ This guide is meant to help challenge organizers create a space within Synapse t
 
 In Synapse, Teams are publicly viewable groups of users.  Teams may be given access to projects, data files, and Evaluation submission queues as a group.  Using a Team for a challenge allows you to see who is participating and to conveniently control access to challenge resources.  **All challenges require a challenge participant, challenge pre-registrant, and administrator team.**
 
-From the Synapse home page [https://www.synapse.org] enter a unique Team name to the left of the "Create Team" button, then click the button to create a new Team.  On the page for your Team you can configure whether approval is required by a Team administrator (you) to join the Team.  On this page you can also share administrative rights with other team members of your choice.
+From the Synapse [home page](https://www.synapse.org) enter a unique Team name to the left of the "Create Team" button, then click the button to create a new Team.  On the page for your Team you can configure whether approval is required by a Team administrator (you) to join the Team.  On this page you can also share administrative rights with other team members of your choice.
 
 Please visit this [page](http://docs.synapse.org/articles/teams.html) to learn more about teams.
 
@@ -69,7 +69,7 @@ also be placed with the project but with even tighter access restrictions, so th
 
 ### Connect the Sign-up Team to the Challenge Project 
 
-The API to call is [http://hud.rel.rest.doc.sagebase.org.s3-website-us-east-1.amazonaws.com/POST/challenge.html]. This registers the challenge team to the challenge site and creates a challenge Id.
+The API to call is found [here](http://hud.rel.rest.doc.sagebase.org.s3-website-us-east-1.amazonaws.com/POST/challenge.html). This registers the challenge team to the challenge site and creates a challenge Id.
 
 
 {% tabs %}
@@ -102,17 +102,21 @@ challenge<-synRestPOST("/challenge", challenge)
 challengeId<-challenge$id
 		{%endhighlight %}
 	{% endtab %}
+	{% tab Web %}
 
+Navigate to your challenge site (E.g. www.synapse.org/#!Synapse:syn12345) and click on Tools, Run Challenge and insert your challenge team name.
+
+<img src="/assets/images/attachTeamToChallenge.png">
+
+
+	{% endtab %}
 {% endtabs %}
-
-
-
-Make sure to replace all the places that have `challengeId` in the staging site (3.2 - Forming a team)
 
 
 ### Configure Team Registration widgets
 
 The challenge wiki template has placeholders for widgets which (1) register teams with the challenge, (2) list registered teams, and (3) list participants who have not joined any registered team.  At the time of this writing the templates appear in Sect. "3.2 - Forming a Team".  Edit the markdown to see the widget definitions:
+
 ```
 Register a Team for the challenge:
 ${registerChallengeTeam?challengeId=1234&buttonText=Register a Team} 
@@ -123,6 +127,7 @@ ${challengeTeams?challengeId=1234}
 List registered participants who have not joined a registered Team:
 ${challengeParticipants?challengeId=1234&isInTeam=false}
 ```
+
 In the template the challenge ID is the placeholder '1234'.  Replace this with the challenge ID for your challenge.  This ID was retained in the Python/R script in the section 'Connect the Sign-up Team to the Challenge Project', above.  If you did not retain this ID, you may look it up from the Challenge project ID.
 
 
@@ -141,17 +146,27 @@ challenge<-synRestGET(sprintf("/entity/%s/challenge", projectId))
 challenge$id
 		{%endhighlight %}
 	{% endtab %}
+	{% tab Web %}
+
+Click on the Challenge Tab:
+
+<img src="/assets/images/challengeId.png">
+
+
+	{% endtab %}
 {% endtabs %}
 
 
 ### Add a Sign-up button
 
 You can add a "Join" button on a wiki page to allow people to join your challenge.  Edit a wiki page, and click Insert > "Join Team Button".  A 'widget' will be added to your wiki page like this:
+
 ```
 ${jointeam?teamId=42&showProfileForm=true&isMemberMessage=You have successfully registered for the challenge&
 text=Register for the Challenge&successMessage=Registration Request Accepted&
 requestOpenText=Registration Request Accepted&isSimpleRequestButton=true&isChallenge=true}
 ```
+
 You fill in the challenge Team ID and other parameters.  You can configure challenge registration to require that registrants agree to 'terms of use' (ToU) before they are allowed to join the challenge.   Further, mutiple terms can be associated with a single team.  For example, it is common to have participants agree both to the DREAM rules and also to terms that are specific to the particular challenge.  Adding these terms is the function of the Synapse Access and Compliance Team.  Please
 contact them (act@sagebase.org), providing the text of the the ToU and the name and/or ID of the team.
 
@@ -160,6 +175,12 @@ contact them (act@sagebase.org), providing the text of the the ToU and the name 
 **More information soon about the merge wiki script**
 
 Challenge organizers have found it convenient to author wiki pages privately, then publish the result when ready for public view.  To do this, create a second project which you do _not_ share with the public, but only with fellow challenge organizers.  When complete, the content can be published using a script which is available in R or Python.  There are instructions above on how to copy wikis from one project to another. 
+
+After the initial copying over of wikis, there is a way to mirror the staging site changes to the live site so that only changes are made on the staging site.  The mirrorWiki script can be found [here](https://github.com/Sage-Bionetworks/DREAM-Utilities/blob/master/mirrorWiki.py).  **Note: The wiki titles are matched between the staging and live site, so if you don't want a page to be mirrored over, simply change the name of the wikipage.**
+
+```
+python mirrorWiki.py stagingSiteSynId liveSiteSynId
+```
 
 
 ### Upload Challenge Data
@@ -207,7 +228,8 @@ synStore(evaluation)
 You can create evaluation queues on the web by navigating to your challenge site by adding /admin (E.g. www.synapse.org/#!Synapse:syn12345/admin)
 
 <img src="/assets/images/createEvalQueue.png">
-Click **Add Evaluation Queue** and follow the instructions on the screen. Unforuntately you will not be able to set the quota of an evaluation queue from the web. There are instructions above on how to set quotas on an existing evaluation queue.
+
+Click **Add Evaluation Queue** and follow the instructions on the screen. Unforuntately you will not be able to set the quota of an evaluation queue from the web. There are instructions in the R and Python tabs on how to set these programmatically.
 	{% endtab %}
 {% endtabs %}
 
