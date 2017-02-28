@@ -81,7 +81,7 @@ Follow the documentation on Amazon Web Service (AWS) site to **[Create a Bucket]
 
 Make the following adjustments to customize it to work with Synapse:  
 
-* When the AWS instructions prompt you to `Create a Bucket - Select a Bucket Name and Region`, use a unique name that ends in your company domain. For example, synapse-share.yourcompany.com. For region, you must select the **`US Standard`** region.
+* When the AWS instructions prompt you to `Create a Bucket - Select a Bucket Name and Region`, use a unique name that ends in your company domain. For example, synapse-share.yourcompany.com. 
 * Select the newly created bucket and click the **Properties** button. Expand the **Permissions** section and:  
     * Make sure that all the boxes (List, Upload/Delete, View Permissions, and Edit Permissions) have been checked. It should do this by default. 
     * Select the **Add bucket policy** button and copy one of the below policies (read-only or read-write permissions). Change the name of `Resource` from “synapse-share.yourcompany.com” to the name of your new bucket (twice) and ensure that the `Principal` is `"AWS":"325565585839"`. This is Synapse's account number. 
@@ -180,20 +180,6 @@ project_destination['locations'] = [destination['storageLocationId']]
 project_destination['projectId'] = PROJECT
 project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
 
-# create filehandle
-import os
-fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.S3FileHandle', 
-              'fileName'    : 'nameOfFile.csv',
-              'contentSize' : "sizeInBytes",
-              'contentType' : 'text/csv',
-              'contentMd5' :  'CFB7B2183993F4C0D5EE14C057C7F1CB',
-              'bucketName' : destination['bucket'],
-              'key' : 's3ObjectKey',
-              'storageLocationId': destination['storageLocationId']}
-fileHandle = syn.restPOST('/externalFileHandle/s3', json.dumps(fileHandle), endpoint=syn.fileHandleEndpoint)
-f = synapseclient.File(parentId=PROJECT, dataFileHandleId = fileHandle['id'])
-f = syn.store(f)
-
 {% endhighlight %}
 {% endtab %}
 
@@ -213,6 +199,47 @@ projectDestination$locations <- list(destination$storageLocationId)
 projectDestination$projectId <- projectId
 projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+ Navigate to your **Project/Folder -> Tools -> Change Storage Location**. In the resulting pop-up, select the `Amazon S3 Bucket` option and fill in the relevant information, where Bucket is the name of your external bucket, Base Key is the name of the folder in your bucket to upload to, and Banner is a short description such as who owns the storage location:
+
+<img id="image" src="/assets/images/external_s3.png">
+
+{% endtab %}
+
+{% endtabs %}
+
+
+<br/>
+
+### Example of uploading a file to S3 bucket
+
+A `FileHandle` is a Synapse representation of the file, therefore you will have to specify all the metadata below for Synapse to recognize it.
+
+{% tabs %}
+
+{% tab Python %}
+{% highlight python %}
+# create filehandle
+import os
+fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.S3FileHandle', 
+              'fileName'    : 'nameOfFile.csv',
+              'contentSize' : "sizeInBytes",
+              'contentType' : 'text/csv',
+              'contentMd5' :  'CFB7B2183993F4C0D5EE14C057C7F1CB',
+              'bucketName' : destination['bucket'],
+              'key' : 's3ObjectKey',
+              'storageLocationId': destination['storageLocationId']}
+fileHandle = syn.restPOST('/externalFileHandle/s3', json.dumps(fileHandle), endpoint=syn.fileHandleEndpoint)
+f = synapseclient.File(parentId=PROJECT, dataFileHandleId = fileHandle['id'])
+f = syn.store(f)
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
 # create filehandle
 fileHandle <- list(concreteType='org.sagebionetworks.repo.model.file.S3FileHandle', 
                    fileName    = 'nameOfFile.csv',
@@ -228,15 +255,7 @@ f <- synStore(f)
 {% endhighlight %}
 {% endtab %}
 
-{% tab Web %}
- Navigate to your **Project/Folder -> Tools -> Change Storage Location**. In the resulting pop-up, select the `Amazon S3 Bucket` option and fill in the relevant information, where Bucket is the name of your external bucket, Base Key is the name of the folder in your bucket to upload to, and Banner is a short description such as who owns the storage location:
-
-<img id="image" src="/assets/images/external_s3.png">
-
-{% endtab %}
-
 {% endtabs %}
-
 
 <br/>
 
@@ -292,46 +311,6 @@ projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 {% endtabs %}
 
 
-#### Create a Filehandle
-
-{% tabs %}
-
-{% tab Python %}
-{% highlight python %}
-import os
-path='/path/to/your/file.txt'
-fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.ProxyFileHandle',
-              'fileName'    : os.path.basename(path),
-              'contentSize' : 'sizeInBytes',
-              'filePath' : path,
-              'contentType' : 'txt',
-              'contentMd5' :  'md5',
-              'storageLocationId': destination['storageLocationId']}
-fileHandle = syn.restPOST('/externalFileHandle/proxy', json.dumps(fileHandle), endpoint=syn.fileHandleEndpoint)
-f = synapseclient.File(parentId=PROJECT, dataFileHandleId = fileHandle['id'])
-f = syn.store(f)
-{% endhighlight %}
-{% endtab %}
-
-{% tab R %}
-{% highlight r %}
-filePath <- '/path/to/your/file.txt'
-fileHandle <- list(concreteType = 'org.sagebionetworks.repo.model.file.ProxyFileHandle', 
-                   externalURL = destination$proxyUrl,
-                   fileName    = basename(filePath),
-                   contentSize = 'sizeInBytes',
-                   filePath = filePath,
-                   contentType = 'txt',
-                   contentMd5 =  'md5',
-                   storageLocationId = destination$storageLocationId)
-fileHandle <- synRestPOST('/externalFileHandle/proxy', body = fileHandle, endpoint = synapseFileServiceEndpoint())
-f <- synapseClient::File(dataFileHandleId = fileHandle$id, parentId = projectId)
-f <- synStore(f)
-{% endhighlight %}
-{% endtab %}
-
-{% endtabs %}
-
 #### Set Project Settings for Proxy-SFTP
 
 You must have a key ("your_secret_key") to allow Synapse to interact with the filesystem. 
@@ -378,46 +357,3 @@ projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 
 {% endtabs %}
 
-
-#### Create a FileHandle
-
-A `FileHandle` is a Synapse representation of the file, therefore you will have to specify all the metadata below for Synapse to recognize it.
-
-{% tabs %}
-
-{% tab Python %}
-{% highlight python %}
-import os
-path='/path/to/your/file.txt'
-fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.ProxyFileHandle',
-              'fileName'    : os.path.basename(path),
-              'contentSize' : 'sizeInBytes',
-              'filePath' : path,
-              'contentType' : 'txt',
-              'contentMd5' :  'md5',
-              'storageLocationId': destination['storageLocationId']}
-fileHandle = syn.restPOST('/externalFileHandle/proxy', json.dumps(fileHandle), endpoint=syn.fileHandleEndpoint)
-f = synapseclient.File(parentId=PROJECT, dataFileHandleId = fileHandle['id'])
-f = syn.store(f)
-{% endhighlight %}
-{% endtab %}
-
-{% tab R %}
-{% highlight r %}
-
-filePath <- '/path/to/your/file.txt'
-fileHandle <- list(concreteType='org.sagebionetworks.repo.model.file.ProxyFileHandle', 
-                   externalURL = destination$proxyUrl,
-                   fileName    = basename(filePath),
-                   contentSize = 'sizeInBytes',
-                   filePath = filePath,
-                   contentType = 'txt',
-                   contentMd5 =  'md5',
-                   storageLocationId = destination$storageLocationId)
-fileHandle <- synRestPOST('/externalFileHandle/proxy', body=fileHandle, endpoint = synapseFileServiceEndpoint())
-f <- synapseClient::File(dataFileHandleId = fileHandle$id, parentId = projectId)
-f <- synStore(f)
-{% endhighlight %}
-{% endtab %}
-
-{% endtabs %}
