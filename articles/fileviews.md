@@ -65,7 +65,7 @@ In advanced search, you can use a SQL-like query to search for files in that vie
 <img id="image" src="/assets/images/fileViewAdvancedSearch.png">
 
 ## Insert a View into a Wiki
-File views can also be placed inside a [`Wiki`](/articles/wikis.html') once they have been created. You can embed the entire file view or a subset of a query on it. 
+File views can also be placed inside a [`Wiki`](/articles/wikis.html) once they have been created. You can embed the entire file view or a subset of a query on it. 
 
 To insert a file view with a synId of `syn8146547`:
 
@@ -81,4 +81,4 @@ To embed a subset of the file view, like the advanced search query in the previo
 
 
 ## See Also
-[Annotations and Queries](/articles/annotation_and_query.html), [Tables](/articles/tables.html)
+[Annotations and Queries](/articles/annotation_and_query.html), [Tables](/articles/tables.html), [`Wikis`](/articles/wikis.html)
