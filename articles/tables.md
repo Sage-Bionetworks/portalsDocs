@@ -33,7 +33,7 @@ information to a heterogeneous collection of files.
 that enable direct access to these data from analysis pipeline code. Unlike most NoSQL systems, the data in Synapse `Tables` 
 is strongly consistent, not eventually consistent. This is an important design consideration for scientific data processing, 
 as analysis on eventually-consistent data sources can limit the types of analysis performed, and may require special coding 
-strategies to ensure reasonable accuracy.
+strategies to ensure reasonable accuracy. 
 
 
 ## Table Schema
@@ -77,8 +77,7 @@ SELECT * FROM syn3079449 WHERE age > 50 ORDER BY "treatmentArm" ASC
 
 # Using Tables
 
-### Overview  
-Synapse allows you to create, modify and query tabular data. A `Table` has a Schema and holds a set of rows conforming to that schema. A Schema is defined in terms of Column objects that specify types from the following choices: 
+ A Schema is defined in terms of Column objects that specify types from the following choices: 
 
 {:.markdown-table}
 | \<columnType> |
@@ -696,7 +695,7 @@ Clicking on any file will download it.
 The faceted navigation on `Tables` (also known as **simple search**) can be used to simplify your search without having to use SQL-like queries. To use table facets, navigate to a `Table` or a `File View`. For this example, we will be using the [Synapse Table Demo](https://www.synapse.org/#!Synapse:syn3079449/tables/){:target="_blank"} found in the [Wondrous Research Example](https://www.synapse.org/#!Synapse:syn1901847/wiki/56044){:target="_blank"}. Simple and advanced search both allow you to query for features of interest in a`Table` using different methods. Simple search uses radio buttons and sliders to show all available facets in a menu to the left of the `Table` whereas advanced search employs a SQL-like query to filter the `Table`.
 
 ### Set facets
-In order to use simple search, you must first set columns to be facets in the schema editor. Select **Schema** in the upper right of your table and click on **Edit Schema**. In the resulting pop-up, select **Values** or **Range** from the dropdowns under the **Facet** option. **Values** can be thought of as factors whereas **Range** is a date or numerical element. 
+In order to use simple search, you must first set columns to be facets in the schema editor. Select **Schema** in the upper right of your table and click on **Edit Schema**. In the resulting pop-up, select **Values** or **Range** from the dropdowns under the **Facet** option. **Values** can be thought of as categories whereas **Range** is a date or number. 
 
 <img id="imageLg" src="/assets/images/set_facets.png">
 
@@ -723,7 +722,8 @@ You can toggle from the simple search to the advanced search without losing the 
 
 <br/>
 
-**However, when toggling back to simple search, the query will be reset.**
+{% include warning.html content="When toggling back to simple search, the query will be reset." %}
+
 <img id="imageLg" src="/assets/images/toggle_advanced_to_simple_search.png">
 
 
