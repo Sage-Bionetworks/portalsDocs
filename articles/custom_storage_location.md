@@ -228,7 +228,7 @@ fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.S3FileHandle'
               'fileName'    : 'nameOfFile.csv',
               'contentSize' : "sizeInBytes",
               'contentType' : 'text/csv',
-              'contentMd5' :  'CFB7B2183993F4C0D5EE14C057C7F1CB',
+              'contentMd5' :  'md5',
               'bucketName' : destination['bucket'],
               'key' : 's3ObjectKey',
               'storageLocationId': destination['storageLocationId']}
