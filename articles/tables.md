@@ -692,7 +692,7 @@ Clicking on any file will download it.
 {% endtabs %}
 
 ## Table Facets
-The faceted navigation on `Tables` (also known as **simple search**) can be used to simplify your search without having to use SQL-like queries. To use table facets, navigate to a `Table` or a `File View`. For this example, we will be using the [Synapse Table Demo](https://www.synapse.org/#!Synapse:syn3079449/tables/){:target="_blank"} found in the [Wondrous Research Example](https://www.synapse.org/#!Synapse:syn1901847/wiki/56044){:target="_blank"}. Simple and advanced search both allow you to query for features of interest in a`Table` using different methods. Simple search uses radio buttons and sliders to show all available facets in a menu to the left of the `Table` whereas advanced search employs a SQL-like query to filter the `Table`.
+The faceted navigation on `Tables` (also known as **simple search**) can be used to simplify your search without having to use SQL-like queries. Simple search uses radio buttons and sliders to show all available facets in a menu to the left of the `Table` whereas advanced search employs a SQL-like query to filter the `Table`. To use table facets, navigate to a `Table` or a `File View`. For this example, we will be using the [Synapse Table Demo](https://www.synapse.org/#!Synapse:syn3079449/tables/){:target="_blank"} found in the [Wondrous Research Example](https://www.synapse.org/#!Synapse:syn1901847/wiki/56044){:target="_blank"}. Simple and advanced search both allow you to query for features of interest in a`Table` using different methods. 
 
 ### Set facets
 In order to use simple search, you must first set columns to be facets in the schema editor. Select **Schema** in the upper right of your table and click on **Edit Schema**. In the resulting pop-up, select **Values** or **Range** from the dropdowns under the **Facet** option. **Values** can be thought of as categories whereas **Range** is a date or number. 
@@ -713,7 +713,7 @@ Select the features you are interested in to filter the table.
 <img id="imageLg" src="/assets/images/simple_search.png">
 
 #### Toggling between simple and advanced search
-You can toggle from the simple search to the advanced search without losing the query results. For example, if in the simple search you've selected for treatmentArm `A`, age of `23:64`, and gender as `female`, the query will be preserved in the advanced search bar. 
+You can toggle from the simple search to the advanced search without losing the query results. For example, if in the simple search you've selected for treatmentArm `A`, age of `23:64`, and gender as `female`, the query will be preserved in the advanced search bar. However, this is unidirectional because the advance search allows parameters that are not available with facets so switching from advanced to simple search will result in resetting the search query.
 
 {% include note.html content="The slider for range in simple search is inclusive." %}
 
