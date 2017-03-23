@@ -261,11 +261,11 @@ f <- synStore(f)
 
 Please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/model/project/ExternalS3StorageLocationSetting.html){:target="_blank"} for more information on setting external storage location settings using our REST API.
 
-## Using a Proxy to Access a File/SFTP Server
+## Using a Proxy to Access a Local File Server or SFTP Server
 
-For files stored outside of Amazon, an additional proxy is needed to validate the pre-signed URL and then proxy the requested file contents.  View more information **[here](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"}** about the process as well as setting up an [SFTP proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"} and about launching a [local server](https://github.com/Sage-Bionetworks/file-proxy/wiki/Setup-Proxy-Local){:target="_blank"}.
+For files stored outside of Amazon, an additional proxy is needed to validate the pre-signed URL and then proxy the requested file contents.  View more information **[here](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"}** about the process as well as about creating a [local proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki/Setup-Proxy-Local){:target="_blank"} or a [SFTP proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"}.
 
-#### Set Project Settings for Proxy-Local
+#### Set Project Settings for a Local Proxy
 You must have a key ("your_secret_key") to allow Synapse to interact with the filesystem. 
 
 {% tabs %}
@@ -311,7 +311,7 @@ projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 {% endtabs %}
 
 
-#### Set Project Settings for Proxy-SFTP
+#### Set Project Settings for a SFTP Proxy
 
 You must have a key ("your_secret_key") to allow Synapse to interact with the filesystem. 
 
