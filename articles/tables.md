@@ -713,7 +713,7 @@ Select the features you are interested in to filter the table.
 <img id="imageLg" src="/assets/images/simple_search.png">
 
 #### Toggling between simple and advanced search
-You can toggle from the simple search to the advanced search without losing the query results. For example, if in the simple search you've selected for treatmentArm `A`, age of `23:64`, and gender as `female`, the query will be preserved in the advanced search bar. However, this is unidirectional because the advance search allows parameters that are not available with facets so switching from advanced to simple search will result in resetting the search query.
+You can toggle from the simple search to the advanced search without losing the query results. For example, if in the simple search you had selected treatmentArm `A`, age of `23:64`, and gender as `female`, the query will be preserved in the advanced search bar. However, this is unidirectional because the advance search allows parameters that are not available with facets. Therefore switching from advanced to simple search will result in resetting the search query.
 
 {% include note.html content="The slider for range in simple search is inclusive." %}
 
