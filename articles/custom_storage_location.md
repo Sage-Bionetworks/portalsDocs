@@ -42,6 +42,7 @@ project_destination = {"concreteType":"org.sagebionetworks.repo.model.project.Up
     "settingsType":"upload"}
 project_destination['projectId'] = PROJECT
 project_destination['locations'] = [destination['storageLocationId']]
+
 project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
 {% endhighlight %}
 {% endtab %}
@@ -50,8 +51,8 @@ project_destination = syn.restPOST('/projectSettings', body = json.dumps(project
 {% highlight r %}
 library(synapseClient)
 synapseLogin()
-
 projectId <- 'syn12345'
+
 destination <- list(uploadType='SFTP', 
                     concreteType='org.sagebionetworks.repo.model.project.ExternalStorageLocationSetting',
                     description='My SFTP upload location',
@@ -65,6 +66,7 @@ projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.
                            settingsType='upload')
 projectDestination$locations <- list(destination$storageLocationId)
 projectDestination$projectId <- projectId
+
 projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 
 {% endhighlight %}
@@ -170,16 +172,18 @@ import synapseclient
 import json
 syn = synapseclient.login()
 PROJECT = 'syn12345'
+
 destination = {'uploadType':'S3', 
                'concreteType':'org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting',
                'bucket':'nameofyourbucket'}
 destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
+
 project_destination ={'concreteType': 'org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
                       'settingsType': 'upload'}
 project_destination['locations'] = [destination['storageLocationId']]
 project_destination['projectId'] = PROJECT
-project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
 
+project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
 {% endhighlight %}
 {% endtab %}
 
@@ -189,16 +193,18 @@ project_destination = syn.restPOST('/projectSettings', body = json.dumps(project
 library(synapseClient)
 synapseLogin()
 projectId <- 'syn12345'
+
 destination <- list(uploadType='S3', 
                     concreteType='org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting',
                     bucket='nameofyourbucket')
 destination <- synRestPOST('/storageLocation', body=destination)
+
 projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
                            settingsType='upload')
 projectDestination$locations <- list(destination$storageLocationId)
 projectDestination$projectId <- projectId
-projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 
+projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 {% endhighlight %}
 {% endtab %}
 
@@ -223,7 +229,6 @@ A `FileHandle` is a Synapse representation of the file, therefore you will have 
 {% tab Python %}
 {% highlight python %}
 # create filehandle
-import os
 fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.S3FileHandle', 
               'fileName'    : 'nameOfFile.csv',
               'contentSize' : "sizeInBytes",
@@ -233,7 +238,9 @@ fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.S3FileHandle'
               'key' : 's3ObjectKey',
               'storageLocationId': destination['storageLocationId']}
 fileHandle = syn.restPOST('/externalFileHandle/s3', json.dumps(fileHandle), endpoint=syn.fileHandleEndpoint)
+
 f = synapseclient.File(parentId=PROJECT, dataFileHandleId = fileHandle['id'])
+
 f = syn.store(f)
 {% endhighlight %}
 {% endtab %}
@@ -250,7 +257,9 @@ fileHandle <- list(concreteType='org.sagebionetworks.repo.model.file.S3FileHandl
                    bucketName = destination$bucket,
                    key ='s3ObjectKey')
 fileHandle <- synRestPOST('/externalFileHandle/s3', body=fileHandle, endpoint = synapseFileServiceEndpoint())
+
 f <- synapseClient::File(dataFileHandleId = fileHandle$id, parentId = projectId)
+
 f <- synStore(f)
 {% endhighlight %}
 {% endtab %}
@@ -276,15 +285,18 @@ import synapseclient
 import json
 syn = synapseclient.login()
 PROJECT = 'syn12345'
+
 destination = {"uploadType":"PROXYLOCAL", 
                "secretKey":"your_secret_key", 
                "proxyUrl":"https://your-proxy.prod.sagebase.org", 
                "concreteType":"org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings"}
 destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
+
 project_destination ={"concreteType": "org.sagebionetworks.repo.model.project.UploadDestinationListSetting", 
                       "settingsType": "upload"}
 project_destination['locations'] = [destination['storageLocationId']]
 project_destination['projectId'] = PROJECT
+
 project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
 {% endhighlight %}
 {% endtab %}
@@ -293,17 +305,19 @@ project_destination = syn.restPOST('/projectSettings', body = json.dumps(project
 {% highlight r %}
 library(synapseClient)
 synapseLogin()
-
 projectId <- 'syn12345'
+
 destination <- list(uploadType='PROXYLOCAL', 
                     secretKey='your_secret_key', 
                     proxyUrl='https://your-proxy.prod.sagebase.org', 
                     concreteType='org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings')
 destination <- synRestPOST('/storageLocation', body=destination)
+
 projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
                            settingsType='upload')
 projectDestination$locations <- list(destination$storageLocationId)
 projectDestination$projectId <- projectId
+
 projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 {% endhighlight %}
 {% endtab %}
@@ -323,15 +337,18 @@ import synapseclient
 import json
 syn = synapseclient.login()
 PROJECT = 'syn12345'
+
 destination = {"uploadType":"SFTP", 
                "secretKey":"your_secret_key", 
                "proxyUrl":"https://your-proxy.prod.sagebase.org", 
                "concreteType":"org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings"}
 destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
+
 project_destination ={"concreteType": "org.sagebionetworks.repo.model.project.UploadDestinationListSetting", 
                       "settingsType": "upload"}
 project_destination['locations'] = [destination['storageLocationId']]
 project_destination['projectId'] = PROJECT
+
 project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
 {% endhighlight %}
 {% endtab %}
@@ -340,17 +357,19 @@ project_destination = syn.restPOST('/projectSettings', body = json.dumps(project
 {% highlight r %}
 library(synapseClient)
 synapseLogin()
-
 projectId <- 'syn12345'
+
 destination <- list(uploadType='SFTP', 
                     secretKey='your_secret_key', 
                     proxyUrl='https://your-proxy.prod.sagebase.org', 
                     concreteType='org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings')
 destination <- synRestPOST('/storageLocation', body=destination)
+
 projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
                            settingsType='upload')
 projectDestination$locations <- list(destination$storageLocationId)
 projectDestination$projectId <- projectId
+
 projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 {% endhighlight %}
 {% endtab %}
