@@ -15,11 +15,12 @@ category: howto
 </style>
 
 # Overview
-One of the main features of Synapse is to act as a repository for scientific data. Access to all data in Synapse is controlled with the use of [Sharing settings](/articles/access_controls). The Sharing setting is often the only required control on non-human subjects data whereas human subjects data requires additional controls. While Synapse provides physical storage for files (using Amazon's S3), not all data 'in' Synapse is stored on Synapse controlled locations. For example, data files can physically reside on a user owned S3 buckets, SFTP servers, or proxy servers. Creating a custom storage location allows users ownership and control of their files, especially in cases where there is a large amount of data or cases where there are additional restrictions that need to be set on the data.
+While Synapse provides physical storage for files (using Amazon's S3), not all data 'in' Synapse is stored on Synapse controlled locations. For example, data files can physically reside on a user owned S3 buckets, SFTP servers, or proxy servers. Creating a custom storage location allows users ownership and control of their files, especially in cases where there is a large amount of data or cases where there are additional restrictions that need to be set on the data.
 
 ## Using SFTP
 
-To set the storage location as your SFTP server:
+To setup an SFTP as a storage location, the settings on the `Project` need to be changed, specifically the `storageLocation` needs to be set. This is best done using either R or Python but has alpha support in the web browser.
+Customize the code below to set the storage location as your SFTP server:
 
 {% tabs %}
 
@@ -86,32 +87,8 @@ Make the following adjustments to customize it to work with Synapse:
     * Make sure that all the boxes (List, Upload/Delete, View Permissions, and Edit Permissions) have been checked. It should do this by default. 
     * Select the **Add bucket policy** button and copy one of the below policies (read-only or read-write permissions). Change the name of `Resource` from “synapse-share.yourcompany.com” to the name of your new bucket (twice) and ensure that the `Principal` is `"AWS":"325565585839"`. This is Synapse's account number. 
 
-#### Read-only permissions
-For read-only permissions (you only allow Synapse to read files that you upload to this bucket):
-
-{% highlight json %}
-{
-    "Statement": [
-        {
-            "Action": "s3:ListBucket*",
-            "Effect": "Allow",
-            "Resource": "arn:aws:s3:::synapse-share.yourcompany.com",
-            "Principal": { "AWS": "325565585839" }
-        },
-        {
-            "Action": [ "s3:GetObject*", "s3:*MultipartUpload*" ],
-            "Effect": "Allow",
-            "Resource": "arn:aws:s3:::synapse-share.yourcompany.com/*",
-            "Principal": { "AWS": "325565585839" }
-        }
-    ]
-}
-{% endhighlight %}
-
-<br/>
-
 #### Read-write permissions
-For read-write permissions (you allow Synapse to upload and retrieve files):
+To allow authorized Synapse users to upload data to your bucket set read-write permissions need to be set on that bucket (you allow Synapse to upload and retrieve files):
 
 {% highlight json %}
 {
@@ -134,7 +111,9 @@ For read-write permissions (you allow Synapse to upload and retrieve files):
 
 <br/>
 
-For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **owner.txt** file with your Synapse username and uploading it to your bucket. You can upload the file with the Amazon Web Console or if you have  the [AWS command line client](https://aws.amazon.com/cli/){:target="_blank"}, you can upload using the command line. 
+For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **<a href="/assets/downloads/owner.txt" download="owner.txt">owner.txt</a>** file with your Synapse username and uploading it to your bucket. You can upload the file with the Amazon Web Console or if you have  the [AWS command line client](https://aws.amazon.com/cli/){:target="_blank"}, you can upload using the command line. 
+
+<img id="imageSmall" src="/assets/images/ownerTxt.png">
 
 {% tabs %}
 
@@ -147,14 +126,40 @@ aws s3 cp owner.txt s3://nameofmybucket/nameofmyfolder
 
 {% tab Web %}
 
-<img id="imageSmall" src="/assets/images/ownerTxt.png">
+<img id="imageSmall" src="/assets/images/uploadAWS.png">
 
-Create a new text file locally on your computer (e.g. Notepad for Windows and TextEdit for Mac) with your Synapse username. Save the file as **owner.txt**. Then navigate to your bucket on the Amazon Console and select **Upload** to upload your text file.
+Navigate to your bucket on the Amazon Console and select **Upload** to upload your text file.
 {% endtab %}
 
 {% endtabs %}
 
 <br/>
+
+#### Read-only permissions
+If you do not want to allow authorized Synapse users to upload data to your bucket but provide read access you can change the permissions to read-only:
+
+{% highlight json %}
+{
+    "Statement": [
+        {
+            "Action": "s3:ListBucket*",
+            "Effect": "Allow",
+            "Resource": "arn:aws:s3:::synapse-share.yourcompany.com",
+            "Principal": { "AWS": "325565585839" }
+        },
+        {
+            "Action": [ "s3:GetObject*", "s3:*MultipartUpload*" ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:s3:::synapse-share.yourcompany.com/*",
+            "Principal": { "AWS": "325565585839" }
+        }
+    ]
+}
+{% endhighlight %}
+
+<br/>
+
+
 
 
 ### Set S3 Bucket as Upload Location
