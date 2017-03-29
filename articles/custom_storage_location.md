@@ -1,57 +1,98 @@
 ---
 title: "Custom Storage Locations"
 layout: article
-excerpt: Follow these steps to set up an external S3 bucket and access it with Synapse. 
+excerpt: Follow these steps to set up custom storage locations and access them with Synapse. 
 category: howto
 ---
 
-## **Creating a download bucket**
+<style>
+#image {
+    width: 100%;
+}
+#imageSmall {
+    width: 40%;
+}
+</style>
 
-## Steps for adding an external S3 bucket
+# Overview
+While Synapse provides physical storage for files (using Amazon's S3), not all data 'in' Synapse is stored on Synapse controlled locations. For example, data files can physically reside on a user owned S3 buckets, SFTP servers, or a local file server using a proxy servers. Creating a custom storage location allows users ownership and control of their files, especially in cases where there is a large amount of data or cases where there are additional restrictions that need to be set on the data.
 
-### Share your bucket with Synapse
-First step is to allow Synapse to access your s3 bucket. You can choose to allow read-only access or read-write access. Either way, you have to make sure that objects that are referenced or managed by Synapse are not modified or deleted.
+## Using SFTP
 
-#### 1. Go to **[Amazon Web Services S3 console](https://console.aws.amazon.com/s3)** and login under your account
+To setup an SFTP as a storage location, the settings on the `Project` need to be changed, specifically the `storageLocation` needs to be set. This is best done using either R or Python but has alpha support in the web browser.
+Customize the code below to set the storage location as your SFTP server:
 
-____
+{% tabs %}
+
+{% tab Python %}
+{% highlight python %}
+import synapseclient
+import json
+syn = synapseclient.login()
+
+destination = { "uploadType":"SFTP",
+    "concreteType":"org.sagebionetworks.repo.model.project.ExternalStorageLocationSetting",
+    "description":"My SFTP upload location", 
+    "supportsSubfolders":True,
+    "url":"sftp://your-sftp-server.com",
+    "banner":"A descriptive banner, tada!"}
+
+destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
+
+project_destination = {"concreteType":"org.sagebionetworks.repo.model.project.UploadDestinationListSetting", 
+    "settingsType":"upload"}
+project_destination['projectId'] = PROJECT
+project_destination['locations'] = [destination['storageLocationId']]
+
+project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+library(synapseClient)
+synapseLogin()
+projectId <- 'syn12345'
+
+destination <- list(uploadType='SFTP', 
+                    concreteType='org.sagebionetworks.repo.model.project.ExternalStorageLocationSetting',
+                    description='My SFTP upload location',
+                    supportsSubfolders=TRUE,
+                    url='https://your-sftp-server.com',
+                    banner='A descriptive banner, tada!')
+                    
+destination <- synRestPOST('/storageLocation', body=destination)
+
+projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
+                           settingsType='upload')
+projectDestination$locations <- list(destination$storageLocationId)
+projectDestination$projectId <- projectId
+
+projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
+
+{% endhighlight %}
+{% endtab %}
+
+{% endtabs %}
 
 
-#### 2. Create a new bucket under your account
-Click **Create Bucket**
 
-<img src="/assets/images/create-bucket-button.jpg">
+## Setting Up an External Bucket
+Follow the documentation on Amazon Web Service (AWS) site to **[Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html){:target="_blank"}**. 
 
-And for the bucket name, use a unique name that ends in your company domain. For example synapse-share.yourcompany.com.
-For region, _you must select the US Standard region_.
+<a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html" class="btn btn-primary">View AWS Bucket Instructions</a>{:target="_blank"}
 
-<img src="/assets/images/create-bucket-dialog.jpg">
+Make the following adjustments to customize it to work with Synapse:  
 
-____
+* When the AWS instructions prompt you to `Create a Bucket - Select a Bucket Name and Region`, use a unique name that ends in your company domain. For example, synapse-share.yourcompany.com. 
+* Select the newly created bucket and click the **Properties** button. Expand the **Permissions** section and:  
+    * Make sure that all the boxes (List, Upload/Delete, View Permissions, and Edit Permissions) have been checked. It should do this by default. 
+    * Select the **Add bucket policy** button and copy one of the below policies (read-only or read-write permissions). Change the name of `Resource` from “synapse-share.yourcompany.com” to the name of your new bucket (twice) and ensure that the `Principal` is `"AWS":"325565585839"`. This is Synapse's account number. 
 
+#### Read-write permissions
+To allow authorized Synapse users to upload data to your bucket set read-write permissions need to be set on that bucket (you allow Synapse to upload and retrieve files):
 
-#### 3. Show the permission properties for the new bucket
-Select your new bucket and click the **Properties** button to show the new bucket's properties
-
-<img src="/assets/images/select-properties.jpg">
-
-and expand the **Permissions** for the new bucket
-
-<img src="/assets/images/expand-permissions.jpg">
-
-____
-
-
-#### 4. Add a policy to give Synapse permissions to access your bucket
-Click **Add bucket policy**
-
-<img src="/assets/images/click-add-policy.jpg">
-
-and copy one of the below policies. Change the name of resource from "synapse-share.yourcompany.com" to the name of your new bucket (twice) and **Save** the new policy.
-
-For read-write permissions (you allow Synapse to upload and retrieve files)
-
-````json
+{% highlight json %}
 {
     "Statement": [
         {
@@ -68,87 +109,38 @@ For read-write permissions (you allow Synapse to upload and retrieve files)
         }
     ]
 }
-````
+{% endhighlight %}
 
+<br/>
 
-## **Downloading requester pays data**
+For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **<a href="/assets/downloads/owner.txt" download="owner.txt">owner.txt</a>** file with your Synapse username and uploading it to your bucket. You can upload the file with the Amazon Web Console or if you have  the [AWS command line client](https://aws.amazon.com/cli/){:target="_blank"}, you can upload using the command line. 
 
-For data made available through Synapse that is large enough to incur significant download costs, there is a separate method for downloading:
+<img id="imageSmall" src="/assets/images/ownerTxt.png">
 
-1. Create a new AWS S3 bucket in the us-east-1 region under your account (see [Creating a download bucket](https://www.synapse.org/#!Synapse:syn3316305/wiki/217751) for details)
-2. Use the s3FileCopy API to copy the files to that new bucket
-3. Download the files from that new bucket using the AWS tools
-4. Don't forget to delete the files from that bucket to avoid paying the associated storage costs
+{% tabs %}
 
+{% tab AWScli %}
+{% highlight bash %}
+# copy your owner.txt file to your s3 bucket
+aws s3 cp owner.txt s3://nameofmybucket/nameofmyfolder
+{% endhighlight %}
+{% endtab %}
 
+{% tab Web %}
 
-## **External S3 buckets**
+<img id="imageSmall" src="/assets/images/uploadAWS.png">
 
-## Steps for adding an external S3 bucket
+Navigate to your bucket on the Amazon Console and select **Upload** to upload your text file.
+{% endtab %}
 
-### Share your bucket with Synapse
-First step is to allow Synapse to access your s3 bucket. You can choose to allow read-only access or read-write access. Either way, you have to make sure that objects that are referenced or managed by Synapse are not modified or deleted.
+{% endtabs %}
 
-#### 1. Go to **[Amazon Web Services S3 console](https://console.aws.amazon.com/s3)** and login under your account
+<br/>
 
-____
+#### Read-only permissions
+If you do not want to allow authorized Synapse users to upload data to your bucket but provide read access you can change the permissions to read-only:
 
-#### 2. Create a new bucket under your account
-Click **Create Bucket**
-
-<img src="/assets/images/create-bucket-button.jpg">
-
-And for the bucket name, use a unique name that ends in your company domain. For example synapse-share.yourcompany.com.
-For region, _you must select the US Standard region_.
-
-<img src="/assets/images/create-bucket-dialog.jpg">
-
-____
-
-
-#### 3. Show the permission properties for the new bucket
-Select your new bucket and click the **Properties** button to show the new bucket's properties
-
-<img src="/assets/images/select-properties.jpg">
-
-and expand the **Permissions** for the new bucket
-
-<img src="/assets/images/expand-permissions.jpg">
-
-____
-
-
-#### 4. Add a policy to give Synapse permissions to access your bucket
-Click **Add bucket policy**
-
-<img src="/assets/images/expand-permissions.jpg">
-
-and copy one of the below policies. Change the name of resource from "synapse-share.yourcompany.com" to the name of your new bucket (twice) and **Save** the new policy.
-
-For read-write permissions (you allow Synapse to upload and retrieve files)
-
-````json
-{
-    "Statement": [
-        {
-            "Action": "s3:ListBucket*",
-            "Effect": "Allow",
-            "Resource": "arn:aws:s3:::synapse-share.yourcompany.com",
-            "Principal": { "AWS": "325565585839" }
-        },
-        {
-            "Action": [ "s3:*Object*", "s3:*MultipartUpload*" ],
-            "Effect": "Allow",
-            "Resource": "arn:aws:s3:::synapse-share.yourcompany.com/*",
-            "Principal": { "AWS": "325565585839" }
-        }
-    ]
-}
-````
-
-For read-only permissions (you only allow Synapse to read files that you upload to this bucket)
-
-````json
+{% highlight json %}
 {
     "Statement": [
         {
@@ -165,136 +157,228 @@ For read-only permissions (you only allow Synapse to read files that you upload 
         }
     ]
 }
-````
+{% endhighlight %}
 
-<img src="/assets/images/policy-dialog-paste.jpg">
-
-____
+<br/>
 
 
-#### 5. Create an object that proves to the Synapse service that you own this bucket
-Open a new file in notepad and type in your synapse user name
-
-<img src="/assets/images/notepad.jpg">
-
-and save the file as **owner.txt**
-
-<img src="/assets/images/save-as-owner.jpg">
-
-click on the new bucket name to open up your new bucket
-
-<img src="/assets/images/select-bucket.jpg">
-
-and click the **Upload** button
-
-<img src="/assets/images/click-upload.jpg">
-
-to show the upload dialog
-
-<img src="/assets/images/upload-dialog.jpg">
-
-click on **Add Files**
-
-<img src="/assets/images/click-add-file.jpg">
-
-and select the **owner.txt** file you created earlier
-
-<img src="/assets/images/select-owner-file.jpg">
-
-click on **Start Upload**
-
-<img src="/assets/images/click-start-upload.jpg">
-
-and wait for the upload to finish
-
-<img src="/assets/images/wait-until-done.jpg">
-
-____
 
 
-#### 6. Make sure to enable cross-origin resource sharing
+### Set S3 Bucket as Upload Location
 
-In **Properties**, click **Edit CORS configuration**
+By default, your `Project/Folder` uses Synapse storage. You can use the external bucket configured above via our programmatic clients or web client.
 
-<img src="/assets/images/edit-cors-config.png">
+{% tabs %}
 
-You will see a popup that looks like this:
-
-<img src="/assets/images/cors-config-confirm.png">
-
-Edit this and save. Make sure your `AllowedOrigin` includes Synapse. For more information, please read: [How Do I Enable CORS on My Bucket?](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html#how-do-i-enable-cors)
-Example CORS content:
-
-```xml
-<CORSConfiguration>
-    <CORSRule>
-        <AllowedOrigin>*</AllowedOrigin>
-        <AllowedMethod>GET</AllowedMethod>
-        <AllowedMethod>POST</AllowedMethod>
-        <AllowedMethod>PUT</AllowedMethod>
-        <AllowedMethod>HEAD</AllowedMethod>
-        <MaxAgeSeconds>3000</MaxAgeSeconds>
-        <AllowedHeader>*</AllowedHeader>
-    </CORSRule>
-</CORSConfiguration>
-```
-
-____
-
-
-### Create a new external s3 upload location setting
-Go to your Project/Folder in Synapse, and select Tools->Change Storage Location.
-
-<img src="/assets/images/tools.png">
-
-By default, it uses Synapse storage.  To use the external bucket configured above, select Amazon S3 Bucket and fill in the parameters.
-
-<img src="/assets/images/amazon-s3-bucket.png">
-
-____
-
-
-## Synapse Proxy for access to restricted filesystem
-
-While Synapse provides physical storage for files (using Amazon's S3), not all data 'in' Synapse is stored on Synapse controlled buckets. For files stored outside of Amazon, an additional proxy is needed to validate the pre-signed URL and then proxy the requested file contents. The primary purpose of this project is to provide such validation and file proxying.  View more information [here](https://github.com/Sage-Bionetworks/file-proxy/wiki) about setting up file-proxy.
-
-### Connecting synapse to the restricted filesystem
-
-You must have a key "your_sftp_key" to allow synapse to interact with the filesystem
-
-```python
+{% tab Python %}
+{% highlight python %}
+# Set storage location
 import synapseclient
 import json
 syn = synapseclient.login()
 PROJECT = 'syn12345'
-destination = {"uploadType":"SFTP", 
-               "secretKey":"your_sftp_key", 
+
+destination = {'uploadType':'S3', 
+               'concreteType':'org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting',
+               'bucket':'nameofyourbucket'}
+destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
+
+project_destination ={'concreteType': 'org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
+                      'settingsType': 'upload'}
+project_destination['locations'] = [destination['storageLocationId']]
+project_destination['projectId'] = PROJECT
+
+project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+#set storage location
+library(synapseClient)
+synapseLogin()
+projectId <- 'syn12345'
+
+destination <- list(uploadType='S3', 
+                    concreteType='org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting',
+                    bucket='nameofyourbucket')
+destination <- synRestPOST('/storageLocation', body=destination)
+
+projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
+                           settingsType='upload')
+projectDestination$locations <- list(destination$storageLocationId)
+projectDestination$projectId <- projectId
+
+projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+ Navigate to your **Project/Folder -> Tools -> Change Storage Location**. In the resulting pop-up, select the `Amazon S3 Bucket` option and fill in the relevant information, where Bucket is the name of your external bucket, Base Key is the name of the folder in your bucket to upload to, and Banner is a short description such as who owns the storage location:
+
+<img id="image" src="/assets/images/external_s3.png">
+
+{% endtab %}
+
+{% endtabs %}
+
+
+<br/>
+
+### Adding Files in Your S3 Bucket to Synapse
+
+ If the bucket is read-only or you already have content in the bucket, you will have to add representations of the files in Synapse using a script. This is done using a `FileHandle` which is a Synapse representation of the file. If your bucket is set for read-write access, the files can be added to the bucket using the Synapse interface. 
+
+
+{% tabs %}
+
+{% tab Python %}
+{% highlight python %}
+# create filehandle
+fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.S3FileHandle', 
+              'fileName'    : 'nameOfFile.csv',
+              'contentSize' : "sizeInBytes",
+              'contentType' : 'text/csv',
+              'contentMd5' :  'md5',
+              'bucketName' : destination['bucket'],
+              'key' : 's3ObjectKey',
+              'storageLocationId': destination['storageLocationId']}
+fileHandle = syn.restPOST('/externalFileHandle/s3', json.dumps(fileHandle), endpoint=syn.fileHandleEndpoint)
+
+f = synapseclient.File(parentId=PROJECT, dataFileHandleId = fileHandle['id'])
+
+f = syn.store(f)
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+# create filehandle
+fileHandle <- list(concreteType='org.sagebionetworks.repo.model.file.S3FileHandle', 
+                   fileName    = 'nameOfFile.csv',
+                   contentSize = 'sizeInBytes',
+                   contentType = 'text/csv',
+                   contentMd5 =  'md5',
+                   storageLocationId = destination$storageLocationId,
+                   bucketName = destination$bucket,
+                   key ='s3ObjectKey')
+fileHandle <- synRestPOST('/externalFileHandle/s3', body=fileHandle, endpoint = synapseFileServiceEndpoint())
+
+f <- synapseClient::File(dataFileHandleId = fileHandle$id, parentId = projectId)
+
+f <- synStore(f)
+{% endhighlight %}
+{% endtab %}
+
+{% endtabs %}
+
+<br/>
+
+Please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/model/project/ExternalS3StorageLocationSetting.html){:target="_blank"} for more information on setting external storage location settings using our REST API.
+
+## Using a Proxy to Access a Local File Server or SFTP Server
+
+For files stored outside of Amazon, an additional proxy is needed to validate the pre-signed URL and then proxy the requested file contents.  View more information **[here](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"}** about the process as well as about creating a [local proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki/Setup-Proxy-Local){:target="_blank"} or a [SFTP proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"}.
+
+#### Set Project Settings for a Local Proxy
+You must have a key ("your_secret_key") to allow Synapse to interact with the filesystem. 
+
+{% tabs %}
+
+{% tab Python %}
+{% highlight python %}
+import synapseclient
+import json
+syn = synapseclient.login()
+PROJECT = 'syn12345'
+
+destination = {"uploadType":"PROXYLOCAL", 
+               "secretKey":"your_secret_key", 
                "proxyUrl":"https://your-proxy.prod.sagebase.org", 
                "concreteType":"org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings"}
 destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
+
 project_destination ={"concreteType": "org.sagebionetworks.repo.model.project.UploadDestinationListSetting", 
                       "settingsType": "upload"}
-project_destination['locations'] = destination['storageLocationId']
+project_destination['locations'] = [destination['storageLocationId']]
 project_destination['projectId'] = PROJECT
+
 project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
-```
+{% endhighlight %}
+{% endtab %}
 
-#### Create a fileHandle
+{% tab R %}
+{% highlight r %}
+library(synapseClient)
+synapseLogin()
+projectId <- 'syn12345'
 
-A filehandle is merely a synapse representation of the file, therefore you will have to specify all the metadata below for synapse to recognize it.
+destination <- list(uploadType='PROXYLOCAL', 
+                    secretKey='your_secret_key', 
+                    proxyUrl='https://your-proxy.prod.sagebase.org', 
+                    concreteType='org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings')
+destination <- synRestPOST('/storageLocation', body=destination)
 
-```python
-import mimetypes
-path='/path/to/your/file.txt'
-fileType = mimetypes.guess_type(path,strict=False)[0]
-fileHandle = {'concreteType': 'org.sagebionetworks.repo.model.file.ProxyFileHandle',
-              'fileName'    : os.path.basename(path),
-              'contentSize' : "2252439673",
-              'filePath' : path,
-              'contentType' : fileType,
-              'contentMd5' :  '67a3688466ad3f606e2cc7b42df4d4bb',
-              'storageLocationId': destination['storageLocationId']}
-fileHandle = syn.restPOST('/externalFileHandle/proxy', json.dumps(fileHandle), endpoint=syn.fileHandleEndpoint)
-f = synapseclient.File(parentId=PROJECT, dataFileHandleId = fileHandle['id'])
-f = syn.store(f)
-```
+projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
+                           settingsType='upload')
+projectDestination$locations <- list(destination$storageLocationId)
+projectDestination$projectId <- projectId
+
+projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
+{% endhighlight %}
+{% endtab %}
+
+{% endtabs %}
+
+
+#### Set Project Settings for a SFTP Proxy
+
+You must have a key ("your_secret_key") to allow Synapse to interact with the filesystem. 
+
+{% tabs %}
+
+{% tab Python %}
+{% highlight python %}
+import synapseclient
+import json
+syn = synapseclient.login()
+PROJECT = 'syn12345'
+
+destination = {"uploadType":"SFTP", 
+               "secretKey":"your_secret_key", 
+               "proxyUrl":"https://your-proxy.prod.sagebase.org", 
+               "concreteType":"org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings"}
+destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
+
+project_destination ={"concreteType": "org.sagebionetworks.repo.model.project.UploadDestinationListSetting", 
+                      "settingsType": "upload"}
+project_destination['locations'] = [destination['storageLocationId']]
+project_destination['projectId'] = PROJECT
+
+project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+library(synapseClient)
+synapseLogin()
+projectId <- 'syn12345'
+
+destination <- list(uploadType='SFTP', 
+                    secretKey='your_secret_key', 
+                    proxyUrl='https://your-proxy.prod.sagebase.org', 
+                    concreteType='org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings')
+destination <- synRestPOST('/storageLocation', body=destination)
+
+projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
+                           settingsType='upload')
+projectDestination$locations <- list(destination$storageLocationId)
+projectDestination$projectId <- projectId
+
+projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
+{% endhighlight %}
+{% endtab %}
+
+{% endtabs %}
+
