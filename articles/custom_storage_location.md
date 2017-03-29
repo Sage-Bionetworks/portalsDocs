@@ -15,7 +15,7 @@ category: howto
 </style>
 
 # Overview
-While Synapse provides physical storage for files (using Amazon's S3), not all data 'in' Synapse is stored on Synapse controlled locations. For example, data files can physically reside on a user owned S3 buckets, SFTP servers, or proxy servers. Creating a custom storage location allows users ownership and control of their files, especially in cases where there is a large amount of data or cases where there are additional restrictions that need to be set on the data.
+While Synapse provides physical storage for files (using Amazon's S3), not all data 'in' Synapse is stored on Synapse controlled locations. For example, data files can physically reside on a user owned S3 buckets, SFTP servers, or a local file server using a proxy servers. Creating a custom storage location allows users ownership and control of their files, especially in cases where there is a large amount of data or cases where there are additional restrictions that need to be set on the data.
 
 ## Using SFTP
 
@@ -225,9 +225,10 @@ projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 
 <br/>
 
-### Example of uploading a file to S3 bucket
+### Adding Files in Your S3 Bucket to Synapse
 
-A `FileHandle` is a Synapse representation of the file, therefore you will have to specify all the metadata below for Synapse to recognize it.
+ If the bucket is read-only or you already have content in the bucket, you will have to add representations of the files in Synapse using a script. This is done using a `FileHandle` which is a Synapse representation of the file. If your bucket is set for read-write access, the files can be added to the bucket using the Synapse interface. 
+
 
 {% tabs %}
 
