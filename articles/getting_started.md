@@ -16,12 +16,11 @@ order: 1
 
 # Get Started with Synapse
 
-This getting started is for non-technical users who are interested in learning about Synapse. By following this getting started, you’ll learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
+This getting started is for non-technical users who are interested in learning about Synapse. By following this guide, you will learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
 
-* Create your own project and add content to Synapse
 * Install one of the Synapse clients (R, Python or command line)
+* Create your own project and add content to Synapse
 * Incorporate Synapse in your workflows to read shared content and upload analysis results
-* Find content in Synapse
 * Understand and use provenance
 
 ## What is Synapse?
@@ -470,9 +469,9 @@ Access to `Files`, `Tables`, and `Folders` is controlled by the **Sharing settin
 
 <img style="float:right" src="/assets/images/example_provenance.png">
 
-Synapse provides advanced capabilities for formally tracking the relationship between digital assets (e.g. data, code, analytical results) stored within the system through the Synapse provenance system in order to aide in disseminating their work in ways that others can reproduce and reuse. The Synapse provenance system allows users to formally track their analysis history by aiding in the communication and sharing of a sequence of processing steps. Provenance relationships can, for example, be specified between raw data, analysis code and results that occur in a complex processing pipeline, regardless of where it is run.  Synapse’s web services for managing provenance expose a very general data model based on the [W3C Prov spec](http://www.w3.org/2011/prov/wiki/Main_Page){:target="_blank"}. Central to the design, users are not required to use a particular execution environment or workflow tool. Instead, provenance can be specified by inserting calls to the Synapse web service layer into their normal workflows to record activity; pipelines may be created through simple scripting or by using workflow execution engines. The provenance system allows users to branch off workflows at any point in prior analyses, while maintaining detailed records of data, code, and environment versions needed to reproduce the work.
+Synapse provides advanced capabilities for formally tracking the relationship between digital assets (e.g. data, code, analytical results) through the Synapse provenance system. This aides in disseminating data and results in ways that other users can reproduce and reuse. Using provenance allows you to track your analysis history and communicate and share a sequence of processing steps. Provenance relationships can, for example, be specified between raw data, analysis code and results that occur in a complex processing pipeline, regardless of where it is run. The Synapse web services for managing provenance expose a general data model based on the [W3C Prov spec](http://www.w3.org/2011/prov/wiki/Main_Page){:target="_blank"}. Central to the design, users are not required to use a particular execution environment or workflow tool. Instead, provenance can be specified by inserting calls to the Synapse web service layer into their normal workflows to record activity; pipelines may be created through simple scripting or by using workflow execution engines. The provenance system allows users to branch off workflows at any point in prior analyses, while maintaining detailed records of data, code, and environment versions needed to reproduce the work.
 
-Provenance is easiest specified when you are uploading or editing a file in Synapse.  To specify the provenance you specify the files used as input and any files that were executed to generate the `File`.  Both used and executed can be either an arbitrary URL such as a reference to a code commit on github, a file stored on an ftp site or references to items in Synapse.  Here we are going to add a figure to Synapse and indicate that the code https://github.com/Sage-Bionetworks/synapseTutorials was used to generate the figure from the data in the file `data/cell_lines_raw_data.csv` that we uploaded previously
+Provenance is most easily specified when you are uploading or editing a file in Synapse. To specify the provenance you specify the files used as input and any files that were executed to generate the `File`. Both used and executed can be either an arbitrary URL such as a reference to a code commit on Github, a file stored on an FTP site or references to items in Synapse. Here we demonstrate how to add a figure to Synapse and indicate that code from https://github.com/Sage-Bionetworks/synapseTutorials was used to generate the figure from the data in the file `data/cell_lines_raw_data.csv` that we uploaded previously:
 
 {% tabs %}
 
