@@ -1,7 +1,7 @@
 ---
 title: "File Views"
 layout: article
-excerpt: User file views to see files across multiple projects and folders.
+excerpt: Use file views to see files across multiple projects and folders.
 category: howto
 ---
 
@@ -64,7 +64,21 @@ In advanced search, you can use a SQL-like query to search for files in that vie
 
 <img id="image" src="/assets/images/fileViewAdvancedSearch.png">
 
+## Insert a View into a Wiki
+File views can also be placed inside a [`Wiki`](/articles/wikis.html) once they have been created. You can embed the entire file view or a subset of a query on it. 
+
+To insert a file view with a synId of `syn8146547`:
+
+In the **Edit Project Wiki** window, select **Table: Query on a Synapse Table/View** under the **Insert** dropdown. To embed the entire file view into the wiki enter `SELECT * FROM syn8146547` in the resulting pop-up.
+
+
+To embed a subset of the file view, like the advanced search query in the previous example, enter `SELECT * FROM syn8146547 WHERE Cell_Type = 'PSC'`. 
+
+<img id="image" src="/assets/images/subsetFileVIewWiki.png">
+
+
+**Save** the query and the edits to the `Wiki` to embed the file view.
 
 
 ## See Also
-[Annotations and Queries](/articles/annotation_and_query.html), [Tables](/articles/tables.html)
+[Annotations and Queries](/articles/annotation_and_query.html), [Tables](/articles/tables.html), [`Wikis`](/articles/wikis.html)

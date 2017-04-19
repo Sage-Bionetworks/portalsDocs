@@ -9,7 +9,18 @@ category: howto
 #image {
     width: 50%;
 }
+#imageLg {
+    width: 60%;
+}
+#imageXL {
+    width: 100%;
+}
+#imageSmall {
+    width: 25%;
+}
 </style>
+
+
 
 
 # Tables
@@ -22,7 +33,7 @@ information to a heterogeneous collection of files.
 that enable direct access to these data from analysis pipeline code. Unlike most NoSQL systems, the data in Synapse `Tables` 
 is strongly consistent, not eventually consistent. This is an important design consideration for scientific data processing, 
 as analysis on eventually-consistent data sources can limit the types of analysis performed, and may require special coding 
-strategies to ensure reasonable accuracy.
+strategies to ensure reasonable accuracy. 
 
 
 ## Table Schema
@@ -66,8 +77,7 @@ SELECT * FROM syn3079449 WHERE age > 50 ORDER BY "treatmentArm" ASC
 
 # Using Tables
 
-### Overview  
-Synapse allows you to create, modify and query tabular data. A `Table` has a Schema and holds a set of rows conforming to that schema. A Schema is defined in terms of Column objects that specify types from the following choices: 
+ A Schema is defined in terms of Column objects that specify types from the following choices: 
 
 {:.markdown-table}
 | \<columnType> |
@@ -680,6 +690,41 @@ Clicking on any file will download it.
 <img id="image" src="/assets/images/download_files_from_table.png">
 {% endtab %}
 {% endtabs %}
+
+## Table Facets
+The faceted navigation on `Tables` (also known as **simple search**) can be used to simplify your search without having to use SQL-like queries. Simple search uses radio buttons and sliders to show all available facets in a menu to the left of the `Table` whereas advanced search employs a SQL-like query to filter the `Table`. To use table facets, navigate to a `Table` or a `File View`. For this example, we will be using the [Synapse Table Demo](https://www.synapse.org/#!Synapse:syn3079449/tables/){:target="_blank"} found in the [Wondrous Research Example](https://www.synapse.org/#!Synapse:syn1901847/wiki/56044){:target="_blank"}. Simple and advanced search both allow you to query for features of interest in a`Table` using different methods. 
+
+### Set facets
+In order to use simple search, you must first set columns to be facets in the schema editor. Select **Schema** in the upper right of your table and click on **Edit Schema**. In the resulting pop-up, select **Values** or **Range** from the dropdowns under the **Facet** option. **Values** can be thought of as categories whereas **Range** is a date or number. 
+
+<img id="imageLg" src="/assets/images/set_facets.png">
+
+{% include note.html content="If you change Column Type in the schema, you have to set its facet selection again." %}
+
+
+### See faceted (simple) search
+To see all the facets, click on **Show simple search** found above the SQL-query bar:
+
+<img id="imageLg" src="/assets/images/show_simple_search.png">
+
+#### Use simple search
+Select the features you are interested in to filter the table. 
+
+<img id="imageLg" src="/assets/images/simple_search.png">
+
+#### Toggling between simple and advanced search
+You can toggle from the simple search to the advanced search without losing the query results. For example, if in the simple search you had selected treatmentArm `A`, age of `23:64`, and gender as `female`, the query will be preserved in the advanced search bar. However, this is unidirectional because the advance search allows parameters that are not available with facets. Therefore switching from advanced to simple search will result in resetting the search query.
+
+{% include note.html content="The slider for range in simple search is inclusive." %}
+
+<img id="imageSmall" src="/assets/images/simple_search_query.png">
+<img id="imageXL" src="/assets/images/query_statement_from_simple_search.png">
+
+<br/>
+
+{% include warning.html content="When toggling back to simple search, the query will be reset." %}
+
+<img id="imageLg" src="/assets/images/toggle_advanced_to_simple_search.png">
 
 
 ## More on tables
