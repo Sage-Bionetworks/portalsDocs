@@ -74,7 +74,7 @@ In the **Edit Project Wiki** window, select **Table: Query on a Synapse Table/Vi
 
 To embed a subset of the file view, like the advanced search query in the previous example, enter `SELECT * FROM syn8146547 WHERE Cell_Type = 'PSC'`. 
 
-<img id="image" src="/assets/images/subsetFileVIewWiki.png">
+<img id="image" src="/assets/images/subsetFileViewWiki.png">
 
 
 **Save** the query and the edits to the `Wiki` to embed the file view.
