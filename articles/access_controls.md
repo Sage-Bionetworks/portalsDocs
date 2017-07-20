@@ -3,6 +3,7 @@ title: "Sharing Settings and Conditions for Use"
 layout: article
 excerpt: Synapse has two content controls -- the Sharing setting and Conditions for Use. Learn how to set Sharing settings and Conditions for Use.
 category: governance
+order: 2
 ---
 
 <style>
