@@ -16,7 +16,7 @@ The files will be uploaded using a tab separated manifest file. In this article 
 
 <br/>
 
-Read more about the helper functions on the [synapseutils](http://docs.synapse.org/python/synapseutils.html#module-synapseutils) page.
+Read more about the helper functions on the **[synapseutils](http://docs.synapse.org/python/synapseutils.html#module-synapseutils)** page.
 
 ## Uploading Data in Bulk
 
@@ -31,7 +31,7 @@ Files can be uploaded in bulk by using a tab separated (.tsv) manifest file. The
 
 <br/>
 
-The above manifest describes a "file.csv" to upload to a folder/project `syn123` and name it "Tardar Sauce". It would have provenance indicating that the code (https://github.com/your/code/repo) was executed using entity `syn654` to generate your file. Additional annotations, called `annotation1:grumpy` and `annotation2:cat` in this example, can be added to the file to make it easier to query and understand at a glance. Some examples annotations that could be placed on the file are fileFormat, cellType, study, etc. 
+The above manifest describes a "file.csv" to upload to a folder/project `syn123` and name it "Tardar Sauce". It would have [provenance](/articles/provenance.html) indicating that the code (https://github.com/your/code/repo) was executed using entity `syn654` to generate your file. Additional [annotations](/articles/annotation_and_query.html), called `annotation1:grumpy` and `annotation2:cat` in this example, can be added to the file to make it easier to query and understand at a glance. Examples of annotations that could be placed on the file are fileFormat, cellType, study, etc. 
 
 To review:
 * the **path** and **parent** columns are required
@@ -44,20 +44,21 @@ Download the [template](/assets/downloads/example_manifest_template.tsv).
 
 #### Validate the Manifest
 
-The format of the manifest file (called 'manifest.tsv') can be validated prior to uploading by using the parameter `dry_run = True` in `syncToSynapse`:
+The format of the manifest file (called 'manifest.tsv' in this example) can be validated prior to uploading by using the parameter `dry_run = True` in `syncToSynapse`:
 
 {% highlight python %}
 # Load required libraries
 import synapseclient
 import synapseutils
 
-# sign in
+# login to Synapse
 syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=True) 
 
 # validate the manifest
 foo = synapseutils.syncToSynapse(syn, manifest_file='manifest.tsv', dry_run=True)
 {% endhighlight %}
 
+<br/>
 
 #### Upload the Files
 
@@ -83,7 +84,7 @@ For example, to download all the files in `syn123` to a folder called "myFolder"
 import synapseclient
 import synapseutils
 
-# sign in
+# login to Synapse
 syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=True) 
 
 # download all the files in folder syn123
@@ -92,7 +93,15 @@ all_files = synapseutils.syncFromSynapse(syn, entity='syn123', path='/path/to/my
 
 
 ## Editing in Bulk
-You cannot move things with a manifest. If you change the parentId, you'll create a copy and the file will be in two different locations! 
+
+You can edit files in bulk by changing the values in the manifest and pushing it up to Synapse using the `syncToSynapse` function. The manifest allows you to modify everything: file path, provenance, annotations, and versions. However, if only annotations are being updated, we recommend using our [File Views](/articles/fileviews.html) feature. 
+
+
+Please note that you cannot move things with a manifest. If the parentId is changed, it will create a copy and the file will exist in two different locations. 
 
 
 {% include note.html content="Changing the parent synId in a manifest creates a copy of the file. It does not move it." %}
+
+
+### See Also
+[Downloading Data](/articles/downloading_data.html), [Provenance](/articles/provenance.html), [Annotations and Queries](/articles/annotation_and_query.html), [File Views](/articles/fileviews.html), [Files and Versioning](/articles/files_and_versioning.html)
