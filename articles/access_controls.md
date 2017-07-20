@@ -17,7 +17,7 @@ Synapse has two content controls: the `Sharing setting` and `Conditions for Use.
 
 <a name="sharing-setting"></a>
 
-# Sharing setting
+# Sharing settings
 You can use the `Sharing setting` to invite people to view or collaborate on a Synapse `Project`. There are two `Sharing settings`: **Public** and **Private**. Synapse content with the **Public** `Sharing setting` is visible to all Synapse users. By contrast, the **Private** `Sharing setting` limits who can see content. **By default, new `Projects` are Private.** 
 {% include important.html content="Synapse users are responsible for determining the appropriate Sharing Setting for any content they upload into Synapse." %}
 
