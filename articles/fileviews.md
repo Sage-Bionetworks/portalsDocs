@@ -53,19 +53,18 @@ entity_view = syn.store(entity_view)
 {% endtab %}
 
 {% tab Web %}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KpJepgvl7sc" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
 {% endtab %}
 
 {% endtabs %}
  
-
 
 ## Query a File View
 A file view can be queried exactly the same as any other `Table` in Synapse. Please see [Tables](/articles/tables.html) for more examples.
 
 {% tabs %}
 
- {% tab Command %}
+{% tab Command %}
 {% highlight bash %}
 # query for everything in syn123
 synapse query 'SELECT * FROM syn123'
@@ -98,6 +97,49 @@ See the [Using Simple Search](/articles/fileviews.html#using-simple-search) and 
 {% endtabs %}
 
 <br/>
+
+## Update Annotations in Bulk
+
+File views can be used to update annotations in bulk. To update other metadata in bulk, such as provenance, please see the [Uploading Data in Bulk](/articles/uploading_in_bulk.html) article.
+
+For example, if you would like to add the annotation `dogSays`:`woof` to every file in a fileview with the synId syn456, you can do:
+
+{% tabs %}
+
+{% tab Python %}
+{% highlight python %}
+# load libraries
+import pandas as pd
+import synapseclient
+from synapseclient import table
+
+# login
+syn = synapseclient.login()
+
+# query from everything in syn456
+foo = syn.tableQuery('select * from syn456')
+
+# convert to dataframe for easier handling
+bar = foo.asDataFrame()
+
+# add in annotation as a column with key: dogSays, value: woof
+bar['dogSays'] = 'woof'
+
+# store the fileview with the new annotation in Synapse
+fv = syn.store(synapseclient.Table(foo.tableId, bar))
+
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+
+<iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+
+{% endtab %}
+
+{% endtabs %}
+
+
 
 ### Using Simple Search
 The file views are in Simple Search mode by default. You can filter out `Files` of interest by selecting what characteristics you like using the facet menu on the left. You can toggle between simple and advanced search using the `Show advanced search/Show simple search` link.
