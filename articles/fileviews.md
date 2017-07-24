@@ -25,7 +25,7 @@ A file view is a view of all `Files` within one or more `Projects` or `Folders`.
 
 ## Create a File View
 
-To create a file view, select the `Project` that you would like to create the view in. The `Project` you choose does not have to contain the files you are creating the view of.
+To create a `File View`, select the `Project` that you would like to create the view in. The `Project` you choose does not have to contain the files you are creating the view of. You will select the files of interest by defining the scope aka the `Project` and `Folders` that contain your files. 
 
 {% tabs %}
 
