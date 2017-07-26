@@ -170,7 +170,8 @@ layout: default
                     <div class="tab-pane fade" id="governance"> <!--Start governance content-->
                         <h3 class="head text-center">Governance and Security</h3>
                         <div class="row">
-                            {% for page in site.pages %}
+                            {% assign sorted_pages = site.pages | sort:"order" %}
+                            {% for page in sorted_pages %}
                             {% if page.category == 'governance' %}
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="thumbnail"
