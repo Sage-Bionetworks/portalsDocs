@@ -7,12 +7,11 @@ category: howto
 
 # Overview
 
-When uploading many files to Synapse, it can be helpful to do that all in one operation while setting all the metadata. By using the `sync` function in the `synapseutils` helper package, files can be uploaded in bulk with annotations and provenance set all at once. 
-The files will be uploaded using a tab separated manifest file. In this article we will cover how to: 
+Uploading a large number of files can be tedious when uploading one at a time, especially if you want to set annotations and provenance. The  commandline and Python client have a convenience sync functionality for bulk upload and download. The uploads are specified by a tab delimited *manifest* file that specifies each file upload as a row in the manifest. In this article we will cover how to: 
 	
 * create a manifest 
 * upload the files in bulk
-* modify files in bulk using the manifest
+* modify files in bulk using a manifest
 
 <br/>
 
@@ -22,21 +21,24 @@ Read more about the helper functions on the **[synapseutils](http://docs.synapse
 
 #### Create a Manifest
 
-Files can be uploaded in bulk by using a tab separated (.tsv) manifest file. The manifest file has multiple columns: a set of required columns, columns for provenance, and columns for annotations. See below for an example manifest template:
+File uploads are specified in bulk using a tab separated (.tsv) file. The manifest file has multiple columns that contain information about the file to be uploaded along with metadata that will be added in Synapse.  Specifically the manifest has a set of required columns (path, parent), columns for provenance, and columns for annotations. A simple example manifest that uploads a single file:
 
 {:.markdown-table}
-| path | parent | name | used | executed | annotation1 | annotation2 |
+| path | parent | name | used | executed | emotion| species |
 | --- | --- | --- | --- | --- | --- | --- |
 | /path/to/file.csv | syn123 | Tardar Sauce | syn654 | https://github.com/your/code/repo | grumpy | cat |
 
 <br/>
 
-The above manifest describes a "file.csv" to upload to a folder/project `syn123` and name it "Tardar Sauce". It would have [provenance](/articles/provenance.html) indicating that the code (https://github.com/your/code/repo) was executed using entity `syn654` to generate your file. Additional [annotations](/articles/annotation_and_query.html), called `annotation1:grumpy` and `annotation2:cat` in this example, can be added to the file to make it easier to query and understand at a glance. Examples of annotations that could be placed on the file are fileFormat, cellType, study, etc. 
+The above manifest describes a "file.csv" to upload to a Synapse folder `syn123` and name it "Tardar Sauce". It would have [provenance](/articles/provenance.html) indicating that the code (https://github.com/your/code/repo) was executed and used input data in `syn654`. Additionally it would have the  [annotations](/articles/annotation_and_query.html), `emotion:grumpy` and `species:cat`.  Additonal annotations would be added through more columns (e.g. fileFormat, cellType, study)
 
+For reference:
+
+%%Tables from syanpseutils docs
 To review:
 * the **path** and **parent** columns are required
 * **used** and **executed** are for provenance and optional (but helpful!),
-* **annotation1** and **annotation2** are for annotations and also optional (but also helpful!)
+* **emotion** and **species** are for annotations and also optional (but also helpful!)
 
 <br/>
 
@@ -44,7 +46,7 @@ Download the [template](/assets/downloads/example_manifest_template.tsv).
 
 #### Validate the Manifest
 
-The format of the manifest file (called 'manifest.tsv' in this example) can be validated prior to uploading by using the parameter `dry_run = True` in `syncToSynapse`:
+The format of the manifest file (called 'filesToUpload.tsv' in this example) can be validated prior to uploading by using the parameter `dryRun = True` in `syncToSynapse`:
 
 {% highlight python %}
 # Load required libraries
@@ -55,7 +57,7 @@ import synapseutils
 syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=True) 
 
 # validate the manifest
-foo = synapseutils.syncToSynapse(syn, manifest_file='manifest.tsv', dry_run=True)
+foo = synapseutils.syncToSynapse(syn, manifestFile='filesToUpload.tsv', dryRun=True)
 {% endhighlight %}
 
 <br/>
@@ -66,7 +68,7 @@ Using the validated manifest above, we can now upload the files to Synapse. Once
 
 {% highlight python %}
 # upload files using manifest
-bar = synapseutils.syncToSynapse(syn, manifest_file='manifest.tsv')
+bar = synapseutils.syncToSynapse(syn, manifestFile='filesToUpload.tsv')
 {% endhighlight %}
 
 <br/>
