@@ -53,7 +53,7 @@ entity_view = syn.store(entity_view)
 {% endtab %}
 
 {% tab Web %}
-<iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M5A1vY5JvJU" frameborder="0" allowfullscreen></iframe>
 {% endtab %}
 
 {% endtabs %}
@@ -133,7 +133,7 @@ fv = syn.store(synapseclient.Table(foo.tableId, bar))
 
 {% tab Web %}
 
-<iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/78lSqHyTNrk" frameborder="0" allowfullscreen></iframe>
 
 {% endtab %}
 
