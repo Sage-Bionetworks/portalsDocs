@@ -132,9 +132,9 @@ entity <- synGet("syn00123", downloadLocation="/path/to/folder")
 
 ## Finding and Downloading Files
 
-Files in projects can be annotated to facilitate finding them with the information from the metadata tables. In order to search the annotations, a [File View](/articles/fileviews.html) must be created first. It is possible to query based on any of the annotations attached to the files.
+Files can be [annotated](/articles/annotation_and_query.html) to facilitate finding them. In order to search the annotations, a [File View](/articles/fileviews.html) must be created first. It is possible to query based on any of the annotations attached to the files.
 
-For example, to find all **mRNA fastq** files originating from **CD34+ cells** in the [PCBC project](https://www.synapse.org/#!Synapse:syn1773109){:target="_blank"} we can query by:
+For example, the [PCBC Project](https://www.synapse.org/#!Synapse:syn1773109){:target="_blank"} has a [table](https://www.synapse.org/#!Synapse:syn7511263){:target="_blank"}) listing sequencing data files that have been annotated. To find all **mRNA fastq** files originating from **CD34+ cells** in the we can query by:
 
 {% tabs %}
 
@@ -161,7 +161,6 @@ results <- synTableQuery('select * from syn7511263 where dataType="mRNA" AND fil
 
 Once you've queried for the files of interest, they can be downloaded using the following:
 
-
 {% tabs %}
 
 {% tab Command %}
@@ -169,7 +168,6 @@ Once you've queried for the files of interest, they can be downloaded using the 
 synapse get -q 'select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"'
 {% endhighlight %}
 {% endtab %}
-
 
 {% tab Python %}
 {% highlight python %}
