@@ -227,8 +227,9 @@ projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 
 ### Adding Files in Your S3 Bucket to Synapse
 
- If the bucket is read-only or you already have content in the bucket, you will have to add representations of the files in Synapse using a script. This is done using a `FileHandle` which is a Synapse representation of the file. If your bucket is set for read-write access, the files can be added to the bucket using the Synapse interface. 
+If your bucket is set for read-write access, files can be added to the bucket using the standard Synapse interface (web or programmatic). 
 
+If the bucket is read-only or you already have content in the bucket, you will have to add representations of the files in Synapse programmatically. This is done using a `FileHandle`, which is a Synapse representation of the file. 
 
 {% tabs %}
 
