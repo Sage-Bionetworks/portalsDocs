@@ -267,4 +267,4 @@ wiki <- synGetWiki(entity, 12345)
 <br/>
 
 ### See Also
-[Versioning](/articles/versioning.html), [Tables](/articles/tables.html), [Wikis](/articles/wikis.html) 
+[Versioning](/articles/versioning.html), [Tables](/articles/tables.html), [Wikis](/articles/wikis.html), [File Views](/articles/fileviews.html), [Annotations and Queries](/articles/annotation_and_query.html)
