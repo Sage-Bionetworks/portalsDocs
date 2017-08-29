@@ -31,11 +31,8 @@ To create a `File View`, select the `Project` that you would like to create the 
 
 {% tab Python %}
 {% highlight python %}
-# load library
 import synapseclient
 from synapseclient import EntityViewSchema
-
-# login to Synapse
 syn = synapseclient.login()
 
 # define your scope, you can do this by getting the entity with "syn.get" or by using just the synId
@@ -74,8 +71,6 @@ synapse query 'SELECT * FROM syn123'
 {% tab Python %}
 {% highlight python %}
 # query for everything in syn123
-import synapseclient
-syn = synapseclient.login()
 query = syn.tableQuery('SELECT * FROM syn123')
 {% endhighlight %}
 {% endtab %}
@@ -83,8 +78,6 @@ query = syn.tableQuery('SELECT * FROM syn123')
 {% tab R %}
 {% highlight r %}
 # query for everything in syn123
-library(synapseClient)
-synpaseLogin()
 query <- synTableQuery('SELECT * FROM syn123')
 {% endhighlight %}
 {% endtab %}
@@ -108,21 +101,14 @@ For example, if you would like to add the annotation `dogSays`:`woof` to every f
 
 {% tab Python %}
 {% highlight python %}
-# load libraries
-import pandas as pd
-import synapseclient
-from synapseclient import table
-
-# login
-syn = synapseclient.login()
+from synapseclient import Table
 
 # query from everything in syn456
 foo = syn.tableQuery('select * from syn456')
 
-# convert to dataframe for easier handling
 bar = foo.asDataFrame()
 
-# add in annotation as a column with key: dogSays, value: woof
+# add in annotation as a column 
 bar['dogSays'] = 'woof'
 
 # store the fileview with the new annotation in Synapse
