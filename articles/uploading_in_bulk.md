@@ -1,5 +1,5 @@
 ---
-title: Uploading Data in Bulk
+title: Batch Processing
 layout: article
 excerpt: Learn about uploading files and their metadata in bulk.
 category: howto
@@ -33,8 +33,8 @@ File uploads are specified in bulk using a tab separated (.tsv) file. The manife
 The above manifest describes a "file.csv" to upload to a Synapse folder `syn123` and name it "Tardar Sauce". It would have [provenance](/articles/provenance.html) indicating that the code (https://github.com/your/code/repo) was executed and used input data in `syn654`. Additionally it would have the  [annotations](/articles/annotation_and_query.html), `emotion:grumpy` and `species:cat`.  Additonal annotations would be added through more columns (e.g. fileFormat, cellType, study)
 
 For reference:
+[Tables](http://docs.synapse.org/python/Table.html#module-synapseclient.table) in the Synapse python docs.
 
-%%Tables from syanpseutils docs
 To review:
 * the **path** and **parent** columns are required
 * **used** and **executed** are for provenance and optional (but helpful!),
