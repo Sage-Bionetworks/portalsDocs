@@ -1,13 +1,13 @@
 ---
 title: Uploading Data in Bulk
 layout: article
-excerpt: Learn about uploading files and their metadata in bulk.
+excerpt: Learn about uploading files and associated annotations and provenance in bulk.
 category: howto
 ---
 
 # Overview
 
-Uploading a large number of files can be tedious when uploading one at a time, especially if you want to set annotations and provenance. The  commandline and Python client have a convenience sync functionality for bulk upload and download. The uploads are specified by a tab delimited *manifest* file that specifies each file upload as a row in the manifest. In this article we will cover how to: 
+Uploading a large number of files can be tedious when uploading one at a time, especially if you want to set annotations and provenance. The  command line and Python client have functionality for bulk upload and download called `sync`. The uploads are specified by a tab delimited *manifest* file that specifies each file upload as a row in the manifest. In this article we will cover how to: 
 	
 * create a manifest 
 * upload the files in bulk
@@ -21,7 +21,7 @@ Read more about the helper functions on the **[synapseutils](http://docs.synapse
 
 #### Create a Manifest
 
-File uploads are specified in bulk using a tab separated (.tsv) file. The manifest file has multiple columns that contain information about the file to be uploaded along with metadata that will be added in Synapse.  Specifically the manifest has a set of required columns (path, parent), columns for provenance, and columns for annotations. A simple example manifest that uploads a single file:
+Bulk file uploads are specified using a tab separated (`.tsv`) manifest file. This file has columns of information about the file to be uploaded along with annotations that will be added in Synapse.  Specifically the manifest has a set of required columns (`path` and `parent`), columns for provenance, and columns for annotations. A simple example manifest that uploads a single file:
 
 {:.markdown-table}
 | path | parent | name | used | executed | emotion| species |
@@ -30,7 +30,7 @@ File uploads are specified in bulk using a tab separated (.tsv) file. The manife
 
 <br/>
 
-The above manifest describes a "file.csv" to upload to a Synapse folder `syn123` and name it "Tardar Sauce". It would have [provenance](/articles/provenance.html) indicating that the code (https://github.com/your/code/repo) was executed and used input data in `syn654`. Additionally it would have the  [annotations](/articles/annotation_and_query.html), `emotion:grumpy` and `species:cat`.  Additonal annotations would be added through more columns (e.g. fileFormat, cellType, study)
+The above manifest describes a "file.csv" to upload to a Synapse folder `syn123` and name it "Tardar Sauce". It would have [provenance](/articles/provenance.html) indicating that the code (https://github.com/your/code/repo) was executed and used input data in `syn654`. Additionally it would have the [annotations](/articles/annotation_and_query.html), `emotion = 'grumpy'` and `species = 'cat'`.  Additonal annotations would be added by specifying more columns, where the name of the column indicates the name of the annotation to apply, and the values determined by what is entered in a row for that column.
 
 For reference:
 
