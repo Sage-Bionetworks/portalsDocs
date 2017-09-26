@@ -5,7 +5,9 @@ scientists use to carry out, track, and communicate their research in real time.
 
 ## How to contribute
 
-Synapse Docs is generated using [Jekyll](https://jekyllrb.com/) and uses redcarpet to render Markdown. Various page layouts can be found under the _layouts folder in the home directory. Most everything can be written using standard [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+Synapse Docs is generated using [Jekyll](https://jekyllrb.com/) and uses redcarpet to render Markdown. Various page layouts can be found under the \_layouts folder in the home directory. Most everything can be written using standard [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+
+Internal development can be performed by branching from `develop` to your own feature branch, making changes, pushing the branch to this repository, and opening a pull request. Pull requests against the master branch require a review before merging.
 
 ### Creating a page
 
