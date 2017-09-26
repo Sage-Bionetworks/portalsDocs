@@ -13,7 +13,7 @@ Internal development can be performed by branching from `develop` to your own fe
 
 To create a page using the article layout, start by specifying at the very beginning the title, layout, excerpt, and category in the YAML front matter. The title and excerpt will show up in the article's user guide thumbnail and the category tag will be used to sort the article into its corresponding user guide tab. If no category is specified, it will default into the "How-To" tab. 
 
-**category options:** `intro, howto, governance, dream`
+**category options:** `intro, howto, governance, dream, inpractice`
 
 
 Note that the front matter needs to be enclosed between three dashed lines to work properly.
