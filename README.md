@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Sage-Bionetworks/synapseDocs.svg?branch=master)](https://travis-ci.org/Sage-Bionetworks/synapseDocs)
+
 # Synapse Documentation
 
 This is a documentation site for [Synapse](https://www.synapse.org). Synapse is an open source software platform that data
