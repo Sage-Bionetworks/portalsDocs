@@ -1,5 +1,5 @@
 ---
-title: "Integrating Synapse in your workflow"
+title: "Integrating Synapse in your RNA-Seq workflow"
 layout: article
 category: inpractice
 excerpt: Easily manage groups of users for purposes of project access, communication, and challenges by forming teams.  
@@ -47,7 +47,8 @@ Here, we access two `fastq` files and a small region of chr19 (300000-350000 Mb)
 {% tabs %}
 {% tab Command %}
 {% highlight bash %}
-
+synapse get syn2468554
+synapse get syn2468552
 {% endhighlight %}
 {% endtab %}
 
@@ -71,6 +72,10 @@ Now that we have the data, you can then use the alignment tool of choice to map 
 {% tabs %}
 {% tab Command %}
 {% highlight bash %}
+mkdir temp_Demo_RNA-Seq_workflow
+
+#dir to store the STAR genome index for the reference genome
+mkdir ref_genome
 
 {% endhighlight %}
 {% endtab %}
@@ -93,6 +98,11 @@ ref_genome_dir = create_dir(local_analysis_dir + '/ref_genome/')
 {% tabs %}
 {% tab Command %}
 {% highlight bash %}
+#the reference genome
+synapse get syn2468557
+
+#create a STAR genome index
+STAR --runMode genomeGenerate --genomeDir genome_dir --genomeFastaFiles `synapse show -path syn2468557`
 
 {% endhighlight %}
 {% endtab %}
@@ -139,6 +149,13 @@ basic_star_command_template = STAR_executable +' --runThreadN 1 --genomeDir {gen
 {% tabs %}
 {% tab Command %}
 {% highlight bash %}
+#run the mapping commands
+STAR ... TODO
+START TODO brain_star_command = basic_star_command_template.format(genome_dir = ref_genome_dir,
+                                                        prefix = local_analysis_dir + '/brain_',
+                                                        read_1 = brain_reads.path
+                                                        )
+! $brain_star_command
 
 {% endhighlight %}
 {% endtab %}
