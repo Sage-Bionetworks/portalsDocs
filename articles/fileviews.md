@@ -90,7 +90,7 @@ See the [Using Simple Search](/articles/fileviews.html#using-simple-search) and 
 
 ## Update Annotations in Bulk
 
-File views can be used to update annotations in bulk. To update other metadata in bulk, such as provenance, please see the [Uploading Data in Bulk](/articles/uploading_in_bulk.html) article.
+File views can be used to update annotations in bulk. To update other metadata in bulk, such as provenance, please see the [Bulk Processing](/articles/uploading_in_bulk.html) article.
 
 For example, if you would like to add the annotation `dogSays`:`woof` to every file in a fileview with the synId syn456, you can do:
 
@@ -100,7 +100,6 @@ For example, if you would like to add the annotation `dogSays`:`woof` to every f
 {% highlight python %}
 from synapseclient import Table
 
-# query from everything in syn456
 foo = syn.tableQuery('select * from syn456')
 
 bar = foo.asDataFrame()
