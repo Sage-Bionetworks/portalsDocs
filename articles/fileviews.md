@@ -57,27 +57,24 @@ entity_view = syn.store(entity_view)
  
 
 ## Query a File View
-A file view can be queried exactly the same as any other `Table` in Synapse. Please see [Tables](/articles/tables.html) for more examples.
+A file view can be queried exactly the same as any other `Table` in Synapse. Please see [Tables](/articles/tables.html) for more examples. For example, to query for everything in `syn123`:
 
 {% tabs %}
 
 {% tab Command %}
 {% highlight bash %}
-# query for everything in syn123
 synapse query 'SELECT * FROM syn123'
 {% endhighlight %}
 {% endtab %}
 
 {% tab Python %}
 {% highlight python %}
-# query for everything in syn123
 query = syn.tableQuery('SELECT * FROM syn123')
 {% endhighlight %}
 {% endtab %}
 
 {% tab R %}
 {% highlight r %}
-# query for everything in syn123
 query <- synTableQuery('SELECT * FROM syn123')
 {% endhighlight %}
 {% endtab %}
