@@ -41,7 +41,7 @@ folder1 = syn.get('syn111')
 folder2 = 'syn222'
 
 # create a view named "My Fileview" to upload to project syn333
-entity_view = EntityViewSchema(name='My Fileview', parent='syn333', scopes=[folder1, folder2], view_type='file')
+entity_view = EntityViewSchema(name='My Fileview', parent='syn333', scopes=[folder1, folder2])
 
 # store the view in Synapse
 entity_view = syn.store(entity_view)
