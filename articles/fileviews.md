@@ -13,12 +13,12 @@ category: howto
 
 
 # Overview 
-A file view is a view of all `Files` within one or more `Projects` or `Folders`. File views can:
+A file view is a type of Synapse [Table](/articles/tables.html) that lists all `Files` within one or more `Folders` or `Projects`. File views can:
 
+ * Allow `Files` to be easily searched and queried
+ * Allow view/editing `File` attributes in bulk
  * Provide a way of isolating or linking data based on similarities
  * Provide the ability to link `Files` together by their annotations
- * Allow view/editing `File` attributes in bulk
- * Allow `Files` to be easily searched and queried
  
  <br/>
 
@@ -133,6 +133,7 @@ The file views are in Simple Search mode by default. You can filter out `Files` 
 In advanced search, you can use a SQL-like query to search for files in that view. In the example below, we're selecting for all files that have a `Cell Type` of `PSC`. 
 
 <img id="image" src="/assets/images/fileViewAdvancedSearch.png">
+
 
 ## Insert a View into a Wiki
 File views can also be placed inside a [`Wiki`](/articles/wikis.html) once they have been created. You can embed the entire file view or a subset of a query on it. 

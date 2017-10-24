@@ -77,14 +77,14 @@ projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 
 
 
-## Setting Up an External Bucket
+## Setting Up an External AWS S3 Bucket
 Follow the documentation on Amazon Web Service (AWS) site to **[Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html){:target="_blank"}**. 
 
 <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html" class="btn btn-primary">View AWS Bucket Instructions</a>{:target="_blank"}
 
 Make the following adjustments to customize it to work with Synapse:  
 
-* When the AWS instructions prompt you to `Create a Bucket - Select a Bucket Name and Region`, use a unique name that ends in your company domain. For example, synapse-share.yourcompany.com. 
+* When the AWS instructions prompt you to `Create a Bucket - Select a Bucket Name and Region`, use a unique name. For example, `thisisthenameofmybucket`. 
 * Select the newly created bucket and click the **Properties** button. Expand the **Permissions** section and:  
     * Make sure that all the boxes (List, Upload/Delete, View Permissions, and Edit Permissions) have been checked. It should do this by default. 
     * Select the **Add bucket policy** button and copy one of the below policies (read-only or read-write permissions). Change the name of `Resource` from “synapse-share.yourcompany.com” to the name of your new bucket (twice) and ensure that the `Principal` is `"AWS":"325565585839"`. This is Synapse's account number. 
@@ -98,13 +98,13 @@ To allow authorized Synapse users to upload data to your bucket set read-write p
         {
             "Action": "s3:ListBucket*",
             "Effect": "Allow",
-            "Resource": "arn:aws:s3:::synapse-share.yourcompany.com",
+            "Resource": "arn:aws:s3:::thisisthenameofmybucket",
             "Principal": { "AWS": "325565585839" }
         },
         {
             "Action": [ "s3:*Object*", "s3:*MultipartUpload*" ],
             "Effect": "Allow",
-            "Resource": "arn:aws:s3:::synapse-share.yourcompany.com/*",
+            "Resource": "arn:aws:s3:::thisisthenameofmybucket/*",
             "Principal": { "AWS": "325565585839" }
         }
     ]
@@ -227,8 +227,9 @@ projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 
 ### Adding Files in Your S3 Bucket to Synapse
 
- If the bucket is read-only or you already have content in the bucket, you will have to add representations of the files in Synapse using a script. This is done using a `FileHandle` which is a Synapse representation of the file. If your bucket is set for read-write access, the files can be added to the bucket using the Synapse interface. 
+If your bucket is set for read-write access, files can be added to the bucket using the standard Synapse interface (web or programmatic). 
 
+If the bucket is read-only or you already have content in the bucket, you will have to add representations of the files in Synapse programmatically. This is done using a `FileHandle`, which is a Synapse representation of the file. 
 
 {% tabs %}
 

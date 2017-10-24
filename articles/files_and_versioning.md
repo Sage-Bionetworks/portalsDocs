@@ -37,6 +37,7 @@ synapse store raw_data.txt --parentId syn123456
 {% tab Python %}
 {% highlight python %}
 import synapseclient
+from synapseclient import File
 syn = synapseclient.login()
 
 # Add a local file to an existing project (syn12345) on Synapse
