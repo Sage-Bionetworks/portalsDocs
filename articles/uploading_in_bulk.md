@@ -1,13 +1,13 @@
 ---
-title: Uploading Data in Bulk
+title: Batch Processing
 layout: article
-excerpt: Learn about uploading files and their metadata in bulk.
+excerpt: Learn about uploading files and associated annotations and provenance in bulk.
 category: howto
 ---
 
 # Overview
 
-Uploading a large number of files can be tedious when done one at a time, especially if you want to set [annotations](http://docs.synapse.org/articles/annotation_and_query.html) and [provenance](http://docs.synapse.org/articles/provenance.html). The  commandline and Python client have a convenience (convenient?) sync functionality for bulk upload and download. The uploads are done through a tab delimited *manifest* where each file to be uploaded and it's metadata is specified as a row in the manifest file. In this article we will cover how to: 
+Uploading a large number of files can be tedious when done one at a time, especially if you want to set [annotations](http://docs.synapse.org/articles/annotation_and_query.html) and [provenance](http://docs.synapse.org/articles/provenance.html). The command line and Python client have a convenience function for bulk upload and download called `sync`. The uploads are done through a tab delimited *manifest* where each file to be uploaded and it's metadata is specified as a row in the manifest file. In this article we will cover how to: 
 	
 * create a manifest 
 * upload the files in bulk
@@ -21,7 +21,7 @@ Read more about the helper functions on the **[synapseutils](http://docs.synapse
 
 #### Creating a Manifest
 
-Files to be uploaded are specified in a tab separated (.tsv) manifest. The manifest has columns that contain information about each file to be uploaded along with metadata that will be associated with the file in Synapse.  Specifically, the manifest has a set of required columns (the directory path of the file to be uploaded, the Synapse id of the folder the file will be uploaded to), and columns for provenance and annotations. A simple example manifest that uploads a single file:
+Files to be uploaded are specified in a tab separated (`.tsv`) manifest. The manifest has columns that contain information about each file to be uploaded along with metadata (annotations) that will be associated with the file in Synapse. Specifically, the manifest has a set of required columns (the directory `path` of the file to be uploaded, the Synapse id of the folder or `parent` the file will be uploaded to), and columns for provenance and annotations. A simple example manifest that uploads a single file:
 
 {:.markdown-table}
 | path | parent | name | used | executed | emotion| species |
@@ -30,11 +30,14 @@ Files to be uploaded are specified in a tab separated (.tsv) manifest. The manif
 
 <br/>
 
-The above manifest describes a "file.csv" that will be uploaded to the Synapse folder `syn123` and named "Tardar Sauce". The manifest describes the provenance of the file indicating that it was generated using code deposited in GitHub (https://github.com/your/code/repo) from the data in `syn654`. Additionally, the file has been annotated with; `emotion:grumpy` and `species:cat`.  Additonal annotations would be added through more columns (e.g. assay, fileFormat, cellType, etc)
+The above manifest describes a "file.csv" that will be uploaded to the Synapse folder `syn123` and named "Tardar Sauce". The manifest describes the provenance of the file indicating that it was generated using code deposited in GitHub (https://github.com/your/code/repo) from the data in `syn654`. Additionally, the file has been annotated with; `emotion:grumpy` and `species:cat`. Additonal annotations would be added through more columns (e.g. assay, fileFormat, cellType, etc.).
+
 
 For reference:
+[Tables](http://docs.synapse.org/python/Table.html#module-synapseclient.table) in the Synapse python docs.
 
 Tables from synapseutils docs
+
 To review:
 * the **path** and **parent** columns are required
 * the **name** is only necessary if the displayed name in Synapse should be different than the name of the uploaded file
