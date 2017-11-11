@@ -1,12 +1,13 @@
 <head>
-    <link rel="icon" type="image/png" href="https://www.synapse.org/favicon.png?v=3">
     <title>{{page.title}}</title>
+
     <meta content='width=device-width, initial-scale=1.0' name='viewport' />
-    <meta content='Clojure graph library built on top of Aurelius Titan and the Tinkerpop stack' name='description' />
-    <meta content='The ClojureWerkz Team' name='author' />
+    <meta content='Synapse Documentation' name='description' />
+    <meta content='Sage Bionetworks' name='author' />
+
     <link href='/assets/stylesheets/bootstrap.css' media='screen' rel='stylesheet' type='text/css' />
     <link href='//www.synapse.org/Portal/css/bootstrap-paper-theme.min.css' media='screen' rel='stylesheet' type='text/css' />
-    <link href='/assets/stylesheets/bootstrap-responsive.css' media='screen' rel='stylesheet' type='text/css' />
+    <!--<link href='/assets/stylesheets/bootstrap-responsive.css' media='screen' rel='stylesheet' type='text/css' />-->
     <link href='/assets/stylesheets/bootstrap-docs.css' media='screen' rel='stylesheet' type='text/css' />
     <link href='/assets/stylesheets/pygments.css' media='screen' rel='stylesheet' type='text/css' />
     <link href='/assets/stylesheets/sass/styles.css' media='screen' rel='stylesheet' type='text/css' />
@@ -31,8 +32,8 @@
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
         if(!(window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")) {
             ga('create', 'UA-80938446-1', 'auto');
@@ -41,76 +42,68 @@
     </script>
 </head>
 
-<div class='navbar navbar-inverse navbar-fixed-top'>
 
-    <div class='navbar-inner'>
+<nav class="navbar navbar-inverse navbar-fixed-top" id="bootstrap-overrides">
+        <div class="navbar-header col-lg-3">
+    <button aria-controls="sd-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#sd-navbar" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
 
-        <div class='container-fluid synapse-blue-bg'>
-
-            <a id='bootstrap-overrides' class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-            </a>
-            <div class='collapse navbar-collapse'>
-                <ul class='nav font-size-1-5x line-height-45'>
-                    <li>
-                        <a href='/' style="text-transform: none !important; font-weight: normal !important; font-size: 0.85em !important; margin-left: 0;">
-                            <img src="/assets/images/synapse_logo_white_small.png" alt="Synapse Logo" style="width:45px; height:45px;">
-                            Synapse Docs</a>
-                    </li>
-                    <li>
-                        <a href="/articles/getting_started.html">Getting Started</a>
-                    </li>
-                    <li>
-                        <div class="dropdown header-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: transparent">API Docs
-                            <span class="caret" style="padding: 10px 0 0 0; border-top-color: white; border-bottom-color: white;"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="http://docs.synapse.org/r">R</a></li>
-                            <li><a href="http://docs.synapse.org/python">Python</a></li>
-                            <li><a href="http://docs.synapse.org/python/CommandLineClient.html">Command Line</a></li>
-                            <li><a href="http://docs.synapse.org/rest">REST APIs</a></li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="/articles/">User Guide</a>
-                    </li>
-                    <li>
-                        <a href="/articles/governance.html">Governance</a>
-                    </li>
-                    <li>
-                        <a href='/articles/faq.html'>FAQ</a>
-                    </li>
-                    <li>
-                        <a href='https://www.synapse.org/#!SynapseForum:default'>Forum</a>
-                    </li>
-                </ul>
-                <div id='cse'>
-                    <script>
-                        (function() {
-                            var cx = '005382984057587108443:ogr_hnjqqte';
-                            var gcse = document.createElement('script');
-                            gcse.type = 'text/javascript';
-                            gcse.async = true;
-                            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-                            var s = document.getElementsByTagName('script')[0];
-                            s.parentNode.insertBefore(gcse, s);
-                        })();
-                        $(function() {
-                             if (window.location.pathname && window.location.pathname != '/') {
-                                 $("ul.nav li a").each(function(){
-                                      if($(this).attr("href") == window.location.pathname)
-                                        $(this).parent().addClass("active");
-                                 })   
-                             }
-                        });
-                    </script>
-                    <gcse:search></gcse:search>
-                </div>
-            </div>
-
-        </div>
-    </div>
+    <a href="/" class="navbar-brand" style="color:white"><img src="/assets/images/synapse_logo_white_small.png" alt="Synapse Logo" style="width:35px; height:35px; padding-right: 0; position: relative; top:-7px"></a>
+    <a href="/" class="navbar-brand" style="color:white; padding-left:6px; font-size: 1.5em">Synapse Docs</a>
 </div>
+    <nav class="collapse navbar-collapse" id="sd-navbar">
+        <ul class="nav navbar-nav col-lg-7">
+            <li>
+                <a href="/articles/getting_started.html">Getting started</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">API Docs <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="http://docs.synapse.org/python/CommandLineClient.html">Command Line</a></li>
+                    <li><a href="http://docs.synapse.org/python">Python</a></li>
+                    <li><a href="http://docs.synapse.org/r">R</a></li>
+                    <li><a href="http://docs.synapse.org/rest">REST APIs</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="/articles/">User Guide</a>
+            </li>
+            <li>
+                <a href="/articles/governance.html">Governance</a>
+            </li>
+            <li>
+                <a href='/articles/faq.html'>FAQ</a>
+            </li>
+            <li>
+                <a href='https://www.synapse.org/#!SynapseForum:default'>Forum</a>
+            </li>
+        </ul>
+        <div id='cse' class='col-lg-2 col-md-2 col-sm-4 col-xs-12'>
+        <script>
+        (function() {
+            var cx = '004392328299901121883:dlvsk1-fk4y';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+            })();
+                $(function() {
+                    if (window.location.pathname && window.location.pathname != '/') {
+                        $("ul.nav li a").each(function(){
+                            if($(this).attr("href") == window.location.pathname)
+                                $(this).parent().addClass("active");
+                        })
+                    }
+                });
+            </script>
+            <gcse:search></gcse:search>
+        </div>
+    </nav>
+</nav>

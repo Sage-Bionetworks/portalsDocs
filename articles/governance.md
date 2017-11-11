@@ -1,7 +1,9 @@
 ---
 title: Governance Overview
 layout: article
-excerpt: A look at Synapse's complete governance process.
+excerpt: A look at the Synapse governance process.
+category: governance
+order: 1
 ---
 
 # Synapse Commons Governance Overview
@@ -25,7 +27,7 @@ access to some content will be granted only to `Registered Users`.
 
 ### Awareness and Ethics Pledge
 
-In order to become a `Registered User`, you must agree to the terms of the Synapse Awareness and Ethics Pledge. This Pledge echos many of the themes of the Terms and Conditions of Use, the Data Use Procedure, and Privacy Policy.
+In order to become a `Registered User`, you must agree to the terms of the Synapse Awareness and Ethics Pledge. This Pledge echoes many of the themes of the Terms and Conditions of Use, the Data Use Procedure, and Privacy Policy.
 
 **Awareness and Ethics Pledge**
 
@@ -47,7 +49,7 @@ The Synapse [Oath](/assets/other/oath.html) (part of the profile validation proc
 ### Oversight, Audits, and Adjudication
 
 The Synapse Access and Compliance Team (ACT) monitors public activities on Synapse through periodic audits to assess compliance with the Synapse governance policies. For example, through these audits, the ACT verifies that public content shared on Synapse has appropriate `Conditions for Use`. The ACT does not monitor activities or content placed in private `Projects`.
-The ACT supports ethical use of Synapse, including adjudicating suspected unauthorized and/or unethical use of data, as well as “unsportsmanlike” behavior within the Synapse research commons. The ACT relies on the community of researchers and research participants for vigilance against unauthorized and/or unethical use of Synapse. Additionally, we rely on the community to hold itself to the highest standard of collegial behavior. People unable or unwilling to meet these standards may be expelled from Synapse.
+The ACT supports ethical use of Synapse, including adjudicating suspected unauthorized and/or unethical use of data, as well as "unsportsmanlike" behavior within the Synapse research commons. The ACT relies on the community of researchers and research participants for vigilance against unauthorized and/or unethical use of Synapse. Additionally, we rely on the community to hold itself to the highest standard of collegial behavior. People unable or unwilling to meet these standards may be expelled from Synapse.
 You should not hesitate to get in touch with the ACT (<mailto:act@synapse.org>) if you have questions or suggestions about Synapse governance, including the policies, ethics, or rules for data sharing on Synapse. 
 
 It is your responsibility to contact the ACT (<mailto:act@synapse.org>) if: 

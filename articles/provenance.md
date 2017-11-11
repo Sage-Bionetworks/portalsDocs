@@ -2,6 +2,7 @@
 title: "Provenance"
 layout: article
 excerpt: Learn about how Synapse visualizes and tracks the relationships of files and projects for reproducibility.  
+category: howto
 ---
 
 <style>
@@ -9,9 +10,12 @@ excerpt: Learn about how Synapse visualizes and tracks the relationships of file
  width: 40%;
  border: 1px solid #1e7098;
 }
+#webTab {
+ width: 90%;
+}
 </style>
 
-## Provenance
+# Provenance
 
 <img id="image" style="float:right" src="/assets/images/provenanceWorkflowDemo.png">
 
@@ -20,7 +24,7 @@ Reproducible research is a fundamental responsibility of scientists, but the bes
 
 Provenance is a concept describing the origin of something; in Synapse it is used to describe the connections between workflow steps that derive a particular file of results. Data analysis often involves multiple steps to go from a raw data file to a finished analysis.  Synapse’s Provenance Tools allow users to keep track of each step involved in an analysis, and share those steps with other users. 
 
-### The basic elements of Synapse provenance
+## The basic elements of Synapse provenance
 
 The model Synapse uses for provenance is based on the [W3C provenance spec](https://www.w3.org/standards/techs/provenance#w3c_all){:target="_blank"} where items are derived from an **activity** which has components that were **used**  and components that were **executed**.  Think of the used items as input files and executed items as software or code.  Both used and executed can either be items in Synapse or URLs such as a link to a github commit or a link to specific version of a software tool.  
 
@@ -145,7 +149,7 @@ generatedBy(squared_file) <- act
 {% tab Web %}
 To update the provenance on a file, navigate to the `File's` tab and click on the `File` that you would like to update. Click on the **Tools** dropdown in the upper right hand corner and select **Edit Provenance**. In the resulting pop-up, enter the relevant information. 
 
-<img src="/assets/images/editProvenance.png">
+<img id="webTab" src="/assets/images/editProvenance.png">
 
 {% endtab %}
 
@@ -271,5 +275,7 @@ Unfortunately, the web interface currently does not support assigning the same a
 | -- | -- |
 | [command line docs](http://docs.synapse.org/python/CommandLineClient.html) |
 
+<br/>
 
-
+### See Also
+[Files and Versioning](/articles/versioning.html), [Annotations and Queries](/articles/annotation_and_query.html)
