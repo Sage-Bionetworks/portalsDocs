@@ -7,7 +7,7 @@ category: howto
 
 # Overview
 
-Uploading a large number of files can be tedious when uploading one at a time, especially if you want to set annotations and provenance. The  command line and Python client have functionality for bulk upload and download called `sync`. The uploads are specified by a tab delimited *manifest* file that specifies each file upload as a row in the manifest. In this article we will cover how to: 
+Uploading a large number of files can be tedious when done one at a time, especially if you want to set [annotations](http://docs.synapse.org/articles/annotation_and_query.html) and [provenance](http://docs.synapse.org/articles/provenance.html). The command line and Python client have a convenience function for bulk upload and download called `sync`. The uploads are done through a tab delimited *manifest* where each file to be uploaded and it's metadata is specified as a row in the manifest file. In this article we will cover how to: 
 	
 * create a manifest 
 * upload the files in bulk
@@ -19,9 +19,9 @@ Read more about the helper functions on the **[synapseutils](http://docs.synapse
 
 ## Uploading Data in Bulk
 
-#### Create a Manifest
+#### Creating a Manifest
 
-Bulk file uploads are specified using a tab separated (`.tsv`) manifest file. This file has columns of information about the file to be uploaded along with annotations that will be added in Synapse.  Specifically the manifest has a set of required columns (`path` and `parent`), columns for provenance, and columns for annotations. A simple example manifest that uploads a single file:
+Files to be uploaded are specified in a tab separated (`.tsv`) manifest. The manifest has columns that contain information about each file to be uploaded along with metadata (annotations) that will be associated with the file in Synapse. Specifically, the manifest has a set of required columns (the directory `path` of the file to be uploaded, the Synapse id of the folder or `parent` the file will be uploaded to), and columns for provenance and annotations. A simple example manifest that uploads a single file:
 
 {:.markdown-table}
 | path | parent | name | used | executed | emotion| species |
@@ -30,13 +30,17 @@ Bulk file uploads are specified using a tab separated (`.tsv`) manifest file. Th
 
 <br/>
 
-The above manifest describes a "file.csv" to upload to a Synapse folder `syn123` and name it "Tardar Sauce". It would have [provenance](/articles/provenance.html) indicating that the code (https://github.com/your/code/repo) was executed and used input data in `syn654`. Additionally it would have the [annotations](/articles/annotation_and_query.html), `emotion = 'grumpy'` and `species = 'cat'`.  Additonal annotations would be added by specifying more columns, where the name of the column indicates the name of the annotation to apply, and the values determined by what is entered in a row for that column.
+The above manifest describes a "file.csv" that will be uploaded to the Synapse folder `syn123` and named "Tardar Sauce". The manifest describes the provenance of the file indicating that it was generated using code deposited in GitHub (https://github.com/your/code/repo) from the data in `syn654`. Additionally, the file has been annotated with; `emotion:grumpy` and `species:cat`. Additonal annotations would be added through more columns (e.g. assay, fileFormat, cellType, etc.).
+
 
 For reference:
 [Tables](http://docs.synapse.org/python/Table.html#module-synapseclient.table) in the Synapse python docs.
 
+Tables from synapseutils docs
+
 To review:
 * the **path** and **parent** columns are required
+* the **name** is only necessary if the displayed name in Synapse should be different than the name of the uploaded file
 * **used** and **executed** are for provenance and optional (but helpful!),
 * **emotion** and **species** are for annotations and also optional (but also helpful!)
 
@@ -62,9 +66,9 @@ foo = synapseutils.syncToSynapse(syn, manifestFile='filesToUpload.tsv', dryRun=T
 
 <br/>
 
-#### Upload the Files
+#### Uploading Files
 
-Using the validated manifest above, we can now upload the files to Synapse. Once the files have all uploaded, you will receive an email notification of the completed upload. It will also notify you if there were any errors that were encountered during upload. 
+Using the validated manifest above, you can now upload the files to Synapse. Once the upload has completed you will receive an email notification. This notification will also notify you if there were any errors during upload. 
 
 {% highlight python %}
 # upload files using manifest
