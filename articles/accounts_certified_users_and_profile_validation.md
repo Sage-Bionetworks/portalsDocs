@@ -69,5 +69,10 @@ _Please note that a copy of a work or university identification badge is not an 
 
 You will receive a notification email when your profile has been validated and a badge will appear on your Synapse profile homepage. 
 
+### Why Get Validated?
+As a certified user with a validated profile, you can access more features and data.
+
+A validated profile is one where your identity is established through a combination of your profile information, your ORCID, your signed oath, and an external credential. This profile validation enables greater transparency within the research community, promoting a reciprocal relationship between you and participants as data donors. You will need a validated profile prior to requesting access to data collected through research apps.
+
 
 
