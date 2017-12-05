@@ -242,14 +242,14 @@ An Evaluation has a "contentSource" field which during creation should be set th
 
 #### Enable Challenge Statistics
 
-Share your Evaluations with the service account 'evaluationstatistics', giving 'Can Score' access.  This will result in a statistical summary of your challenge appearing on the page: [https://www.synapse.org/#!Synapse:syn2504723].
+Share your Evaluations with the service account 'evaluationstatistics', giving 'Can Score' access.  This will result in a statistical summary of your challenge appearing on the page: [https://www.synapse.org/#!Synapse:syn2504723]. The specific steps are:
+- Navigate to your Challenge project in Synapse
+- Click on the `Challenge` tab
+- Next to each Evaluation submission queue click `Share`
+- In the `name` field type `evaluationstatistics`.  The new entry will appear in the list of accessors above.
+- Next to the new entry use the pull down menu to change `Can View` to `Can Score.`
+- Click Save.
 
-One way to enable statistics is with the following lines of Python:
-
-```
-evaluation = syn.getEvaluation(3317421)
-syn.setPermissions(evaluation, principalId=0000001, accessType=['READ_PRIVATE_SUBMISSION', 'READ', 'UPDATE_SUBMISSION'])
-```
 
 #### Add a Submit button to your wiki
 
