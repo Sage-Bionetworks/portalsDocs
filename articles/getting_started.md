@@ -2,21 +2,28 @@
 title: "Getting Started with Synapse"
 layout: article
 excerpt: A getting started guide for non-technical users who are interested in learning about Synapse.
+category: intro
+order: 1
 ---
 
 <script src='/assets/javascripts/words.js'></script>
 
-## Get Started with Synapse
+<style>
+#webTab {
+    width: 90%;
+}
+</style>
 
-This getting started is for non-technical users who are interested in learning about Synapse. By following this getting started, you’ll learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
+# Get Started with Synapse
 
-* Create your own project and add content to Synapse
+This getting started is for non-technical users who are interested in learning about Synapse. By following this guide, you will learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
+
 * Install one of the Synapse clients (R, Python or command line)
+* Create your own project and add content to Synapse
 * Incorporate Synapse in your workflows to read shared content and upload analysis results
-* Find content in Synapse
 * Understand and use provenance
 
-### What is Synapse?
+## What is Synapse?
 Synapse is an open source software platform that data scientists can use to carry out, track, and communicate their research in real time. Synapse enables co-location of scientific content (data, code, results) and narrative descriptions of that work. Synapse has seeded a growing number of living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
 
 With Synapse, you can:
@@ -34,7 +41,7 @@ Synapse was created to encourage open science initiatives to advance our underst
 Synapse operates under a complete [governance process](/articles/governance.html) that includes well-documented [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}, guidelines and operating procedures, privacy enhancing technologies, as well as the right of audit and external reviews.
 
 
-## Installing Synapse Clients
+# Installing Synapse Clients
 <img style="float:right;" src="/assets/images/synapse_apis.png">
 
 Synapse is built on a number of RESTful web APIs that allow users to interact with the system via a number of _clients_. One of these _clients_ is the web client, i.e. the website [www.synapse.org](https://www.synapse.org/). Synapse also provides three programmatic clients (R, Python, and Command Line). Content can be uploaded, downloaded, annotated, and queried from any of these interfaces. In the getting started guide we will run through examples using all three programmatic interfaces.  At any point you can pick the language you would like to see examples in by clicking the corresponding tab at the bottom of every example.  Unless otherwise noted the examples are can be typed into the respective environment.  That is a shell prompt for the command line examples, a Python session such as an ipython notbook of script, and an R session for the R examples.
@@ -93,6 +100,62 @@ pkgInstall("synapseClient")
 
 {% endtabs %}
 
+
+## Logging into Synapse
+
+Synapse credentials are required to use the programmatic clients. Register to create an account, and even if you login with a Google account, make sure you go through the extra step of creating a Synapse username and password.
+
+At the command line you can login by specifying your Synapse username and password.
+
+The login credentials can be specified for every Synapse client session, but this is not the recommended practice as your password will be visible. Instead, by passing the `rememberMe` parameter you can cache your credentials for use in future Synapse client sessions.
+
+The full list of possible login parameters for the Python client can be found in the [Python Docs](http://docs.synapse.org/python/Client.html#synapseclient.Synapse.login) and for the R client in the [R Docs](http://docs.synapse.org/r/synapseLogin.html). 
+
+To login with your username/email and password:
+
+{% tabs %}
+
+{% tab Command %}
+{% highlight bash %}
+# by passing --rememberMe the username/password will not need to specified on subsequent calls to Synapse.
+synapse login -u me@example.com -p secret --rememberMe
+{% endhighlight %}
+{% endtab %}
+
+
+{% tab Python %}
+{% highlight python %}
+import synapseclient
+# If you have your config file set up you can run:
+syn = synapseclient.login()
+# Otherwise, pass in your username and password:
+syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=True)
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+library(synapseClient)
+# If you have your config file set up you can run:
+synapseLogin()
+# Otherwise, pass in your username and password:
+synapseLogin(username='me@example.com', password='secret', rememberMe=TRUE)
+{% endhighlight %}
+{% endtab %}
+
+{% endtabs %}
+
+
+### Using a config file
+
+You can store your credentials in your home directory in a file called `.synapseConfig` (note the period at the beginning of the file which makes this a hidden, system file on Linux-like OS's. The format is as such:
+
+```
+[authentication]
+username: me@example.com
+password: secret
+```
+
 ## Becoming a Certified User
 
 Anyone can browse public content in Synapse but in order to download and create content you will need to register for an account:
@@ -106,7 +169,7 @@ As Synapse can store human subject data that has sharing and use restrictions, y
 Explore our [accounts, certification and profile validation](/articles/accounts_certified_users_and_profile_validation.html) page to find out more information on the different levels of users.  
 
 
-## Project and Data Management on Synapse
+# Project and Data Management on Synapse
 
 <img style="float: right" src="/assets/images/project_1.png">
 
@@ -178,7 +241,7 @@ print(paste('Created a project with Synapse id', myProj$properties$id, sep = ' '
 
     {% tab Web %}
 Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the **Create Project** button
-<img src="/assets/images/create_project.jpg">
+<img id="webTab" src="/assets/images/create_project.jpg">
     {% endtab %}
 {% endtabs %}
 <br>
@@ -219,12 +282,12 @@ onWeb(myProj)
 
     {% tab Web %}
 Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the project name in the Projects listing {% endtab %}
-<img src="/assets/images/clickonproject.jpg">
+<img id="webTab" src="/assets/images/clickonproject.jpg">
 {% endtabs %}
 
 
 
-## Adding a Wiki to your Project
+# Adding a Wiki to your Project
 
 <img style="float: right" src="/assets/images/project_2.png">
 
@@ -277,14 +340,14 @@ wiki <- synStore(wiki)
 
     {% tab Web %}
 Go to project page and click the **Tool button** and chose **Edit Project Wiki**.
-<img src="/assets/images/addwiki.jpg">
+<img id="webTab" src="/assets/images/addwiki.jpg">
     {% endtab %}
 {% endtabs %}
 
 
 
 
-## Organizing Data: creating Files and Folders
+# Organizing Data: creating Files and Folders
 
 <img style="float: right" src="/assets/images/project_4.png">
 
@@ -329,7 +392,7 @@ resultsFolder <- synStore(resultsFolder)
     {% tab Web %}
 click the **Add Folder** button on the Files tab.
 <br>
-<img src="/assets/images/addfolder.jpg">
+<img id="webTab" src="/assets/images/addfolder.jpg">
     {% endtab %}
 {% endtabs %}
 <br>
@@ -389,26 +452,26 @@ rawDataFile <- synStore(rawDataFile)
 {% tab Web %}
 
 click the **Upload or Link to File** button on the Files tab. Go through the dialogs.  Then click the **Annotations** button on the top right of the screen to add annotations.
-<img src="/assets/images/organizing_data1.jpg">
-<img src="/assets/images/organizing_data2.jpg">
-<img src="/assets/images/organizing_data3.jpg">
+<img id="webTab" src="/assets/images/organizing_data1.jpg">
+<img id="webTab" src="/assets/images/organizing_data2.jpg">
+<img id="webTab" src="/assets/images/organizing_data3.jpg">
 
     {% endtab %}
 {% endtabs %}
 
 <br>
 
-### Local Folder and File Sharing Settings
+## Local Folder and File Sharing Settings
 
 Access to `Files`, `Tables`, and `Folders` is controlled by the **Sharing setting** that you select for your project. You may also set individual Sharing settings for specific `Files`, `Tables`, or `Folders` within a `Project`.
 
-## Provenance and Tracking Content
+# Provenance and Tracking Content
 
 <img style="float:right" src="/assets/images/example_provenance.png">
 
-Synapse provides advanced capabilities for formally tracking the relationship between digital assets (e.g. data, code, analytical results) stored within the system through the Synapse provenance system in order to aide in disseminating their work in ways that others can reproduce and reuse. The Synapse provenance system allows users to formally track their analysis history by aiding in the communication and sharing of a sequence of processing steps. Provenance relationships can, for example, be specified between raw data, analysis code and results that occur in a complex processing pipeline, regardless of where it is run.  Synapse’s web services for managing provenance expose a very general data model based on the [W3C Prov spec](http://www.w3.org/2011/prov/wiki/Main_Page){:target="_blank"}. Central to the design, users are not required to use a particular execution environment or workflow tool. Instead, provenance can be specified by inserting calls to the Synapse web service layer into their normal workflows to record activity; pipelines may be created through simple scripting or by using workflow execution engines. The provenance system allows users to branch off workflows at any point in prior analyses, while maintaining detailed records of data, code, and environment versions needed to reproduce the work.
+Synapse provides advanced capabilities for formally tracking the relationship between digital assets (e.g. data, code, analytical results) through the Synapse provenance system. This aides in disseminating data and results in ways that other users can reproduce and reuse. Using provenance allows you to track your analysis history and communicate and share a sequence of processing steps. Provenance relationships can, for example, be specified between raw data, analysis code and results that occur in a complex processing pipeline, regardless of where it is run. The Synapse web services for managing provenance expose a general data model based on the [W3C Prov spec](http://www.w3.org/2011/prov/wiki/Main_Page){:target="_blank"}. Central to the design, users are not required to use a particular execution environment or workflow tool. Instead, provenance can be specified by inserting calls to the Synapse web service layer into their normal workflows to record activity; pipelines may be created through simple scripting or by using workflow execution engines. The provenance system allows users to branch off workflows at any point in prior analyses, while maintaining detailed records of data, code, and environment versions needed to reproduce the work.
 
-Provenance is easiest specified when you are uploading or editing a file in Synapse.  To specify the provenance you specify the files used as input and any files that were executed to generate the `File`.  Both used and executed can be either an arbitrary URL such as a reference to a code commit on github, a file stored on an ftp site or references to items in Synapse.  Here we are going to add a figure to Synapse and indicate that the code https://github.com/Sage-Bionetworks/synapseTutorials was used to generate the figure from the data in the file `data/cell_lines_raw_data.csv` that we uploaded previously
+Provenance is most easily specified when you are uploading or editing a file in Synapse. To specify the provenance you specify the files used as input and any files that were executed to generate the `File`. Both used and executed can be either an arbitrary URL such as a reference to a code commit on Github, a file stored on an FTP site or references to items in Synapse. Here we demonstrate how to add a figure to Synapse and indicate that code from https://github.com/Sage-Bionetworks/synapseTutorials was used to generate the figure from the data in the file `data/cell_lines_raw_data.csv` that we uploaded previously:
 
 {% tabs %}
 
@@ -464,13 +527,13 @@ plot2 <- synStore(plotFileEntity, used=rawDataFile,
 
     {% tab Web %}
 click the **Upload or Link to File** button on the Files tab to upload image/plot_2.png.  After uploading click the **Tools** button and chose **Edit Provenance**.
-<img src="/assets/images/gettingstarted_provenance1.png">
-<img src="/assets/images/gettingstarted_provenance2.png">
+<img id="webTab" src="/assets/images/gettingstarted_provenance1.png">
+<img id="webTab" src="/assets/images/gettingstarted_provenance2.png">
     {% endtab %}
 {% endtabs %}
 
 <br>
 
-### More Guides
+## More Guides
 
 Find additional information and tutorials through our <a href="/articles/">User Guide</a>.

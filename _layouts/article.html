@@ -1,15 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang='en'>
 
-<meta charset="utf-8"> 
+<head>
+  <link rel="icon" type="image/png" href="https://www.synapse.org/favicon.png?v=3">
+</head>
+
+<meta charset="utf-8">
   <body class="font-size-1-5x">
     {% include header.html %}
-    <div class='container-fluid' id="bootstrap-overrides">
+    <div class='container-fluid' id="bootstrap-overrides" style="position:relative; top: -50px">
       <div class='row-fluid'>
-        <div class='span3'>
+        <div class='col-md-3 col-xs-12'>
           <div id='toc' class='well sidebar-nav panel panel-default padding-left-30 padding-right-15 font-size-14'></div>
         </div>
-        <div class='span9'>
+        <div class='col-md-9 col-xs-12'>
           <div class='panel panel-default padding-15'>
           {{ content }}
           <h2>Need More Help!</h2>

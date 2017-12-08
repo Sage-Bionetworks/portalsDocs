@@ -1,7 +1,8 @@
 ---
 title: "Wikis"
 layout: article
- excerpt: Create wikis to provide narrative content for your research. 
+excerpt: Create wikis to provide narrative content for your research.
+category: howto
 ---
 
 <style>
@@ -21,16 +22,23 @@ layout: article
 }
 </style>
 
-## Overview
+# Overview
 
-`Wikis` are available in Synapse projects to provide a space to build narrative content to describe the research. 
-Every project has a Wiki tab where you can build pages and a hierarchy of subpages as you would with any website. These pages can be reordered through the Edit Order button below the Wiki pages. `Wikis` can also be added to `Folders` and `Files` allowing additional content documentation. `Wikis`, whether they are under the Wiki tab or on a folder, are built in the same way and enables incorporation of highly customized content including, but not limited to: images, tables, code blocks, LaTeX formatted equations, and scholarly references. In addition, Synapse-specific widgets lets you embed dynamic content based on other resources stored in Synapse. 
+`Wikis` are available in Synapse both on the `Project` level and on `Files/Folders` to provide a space to build narrative content to describe the research. 
+Every project has a Wiki tab where you can build pages and a hierarchy of subpages as you would with any website. These pages can be reordered through the Edit Order button below the Wiki pages, to change both the hierarchy and the order of pages within a particular level.  
 
-## Starting, editing and deleting a Wiki
+`Wikis` can also be added to `Folders` and `Files` allowing additional content documentation. `Wikis`, whether they are under the Wiki tab or on a folder, are built in the same way and enables incorporation of highly customized content including, but not limited to: images, tables, code blocks, LaTeX formatted equations, and scholarly references. In addition, Synapse-specific widgets lets you embed dynamic content based on other resources stored in Synapse. 
+
+## Creating, editing, and deleting a Wiki
 
 
 ### Using the Synapse web portal
-After creating a new project select the Wiki tab. Start a `Wiki` through the Tools menu by selecting the 'Edit Project Wiki' function. Content in this first `Wiki` becomes your `Project`'s home page. Go to the Tools menu to add subpages to your `Wiki`. These will appear as links on the left side of your home page. Adding a `Wiki` to a `Folder` or `File` is done in a similar manner by selecting 'Edit Folder/File Wiki'. Content added to a `Wiki` can be Previewed before Saving. Each version of a saved `Wiki` is visible under Wiki History where older versions can be restored. To delete a `Wiki` select 'Delete Wiki Page' under Tools.  
+After creating a new project, select the Wiki tab. Start a `Wiki` through the Tools menu by selecting the 'Edit Project Wiki' function. Content in this first `Wiki` becomes your `Project`'s home page. Go to the Tools menu to add subpages to your `Wiki`. These will appear as links on the left side of your home page. Adding a `Wiki` to a `Folder` or `File` is done in a similar manner by selecting 'Edit Folder/File Wiki'. Content added to a `Wiki` can be previewed before saving. Each version of a saved `Wiki` is visible under Wiki History where older versions can be restored. To delete a `Wiki` select 'Delete Wiki Page' under Tools.  
+
+
+Select **Tools** then select **Edit Project/Folder/File wiki** 
+
+<img src="/assets/images/wiki_editprojectwiki.png">
 
 ### Using R/Python
 {% tabs %} 
@@ -58,12 +66,6 @@ wiki <- synStore(wiki)
 {%endhighlight %} 
 {% endtab %}
 
-{% tab Web %} 
-Select **Tools** then select **Edit Project/Folder/File wiki** 
-
-<img src="/assets/images/wiki_editprojectwiki.png">
-{% endtab %}
-
 {% endtabs %}
 
 ## Governance
@@ -73,6 +75,21 @@ Select **Tools** then select **Edit Project/Folder/File wiki**
 
 ### Markdown language
 The layout and text of a `Wiki` can be customized using Wiki markdown language. A Formatting Guide is available within the Wiki editing window. For additional markdown functions see [Markdown in Synapse](https://www.synapse.org/#!Wiki:syn2467792/ENTITY/64247){:target="_blank"}. Useful markdown shortcuts are available as separate tools, including: heading, bold, italic, strike-through, code block, sub and superscript. 
+
+### Tables in Markdown
+
+To create a table you separate the columns by the pipe character (\|).  A Header can be added by separating the first row by dashes (-).  A header allows the table to be sorted by each column.  A simple table would be created by the following markdown.
+
+    ````
+     Header 1 | Header 2 | Header 3 |
+    --- | --- | --- |
+     a  |  b  |  c  |
+    ````
+
+
+For more table settings see the formatting guide at the top of the wiki editor.
+
+{% include tip.html content="To insert large amounts of text, use the widget \"Table: Paste tabular data\" (see all widgets below)." %}
 
 ### Attachments, links and tagging
 Files, images and videos can be attached to a `Wiki`. This may be content on from the web, your desktop, or `Files` already uploaded to Synapse. Links can be added to content available from any source with a url or to a Synapse users profile through the Tag someone widget, or by typing @ - just enter the Synapse username in the dialog that appears.
@@ -105,12 +122,5 @@ See the 'Insert' list for the following widgets to customize your Wiki design.
 
 <br> 
 
-{% include tip.html content="Add this markdown below the header to enable sort on the header columns." %}
-
-Tip: add this markdown below the header to enable sort on the header columns.
-
-    ````
-     Header 1 | Header 2 | Header 3
-    --- | --- | ---
-    ````
-
+### See Also
+[Discussion](/articles/discussion.html)

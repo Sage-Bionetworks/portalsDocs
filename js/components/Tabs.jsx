@@ -29,6 +29,11 @@ var Tabs = React.createClass({
 		return function() {
 			TabsActions.update(i, this.state.options);
 			this.setState({ active: i });
+			// yuk
+			var containerDomNode = React.findDOMNode(this);
+			window.setTimeout(function() {
+				window.scrollTo(0, containerDomNode.offsetTop);
+			}, 50);
 		}.bind(this);
 	},
 	render: function() {
