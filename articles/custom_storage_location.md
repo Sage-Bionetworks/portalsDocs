@@ -161,7 +161,7 @@ If you do not want to allow authorized Synapse users to upload data to your buck
 
 <br/>
 
-### Make sure to enable cross-origin resource sharing
+### Make sure to enable cross-origin resource sharing (CORS)
 In **Properties**, click **Edit CORS configuration**. In the resulting pop-up, edit the configuration so that Synapse is included  in the `AllowedOrigin` tag. An example of CORS content that would allow this is:
 {% highlight html %}
 <CORSConfiguration>
