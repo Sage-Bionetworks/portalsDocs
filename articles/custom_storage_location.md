@@ -161,8 +161,25 @@ If you do not want to allow authorized Synapse users to upload data to your buck
 
 <br/>
 
+### Make sure to enable cross-origin resource sharing
+In **Properties**, click **Edit CORS configuration**. In the resulting pop-up, edit the configuration so that Synapse is included  in the `AllowedOrigin` tag. An example CORS content that would allow this is:
+{% highlight html %}
+<CORSConfiguration>
+    <CORSRule>
+        <AllowedOrigin>*</AllowedOrigin>
+        <AllowedMethod>GET</AllowedMethod>
+        <AllowedMethod>POST</AllowedMethod>
+        <AllowedMethod>PUT</AllowedMethod>
+        <AllowedMethod>HEAD</AllowedMethod>
+        <MaxAgeSeconds>3000</MaxAgeSeconds>
+        <AllowedHeader>*</AllowedHeader>
+    </CORSRule>
+</CORSConfiguration>
+{% endhighlight %}
 
+<br/>
 
+For more information, please read: [How Do I Configure CORS on My Bucket?](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html#how-do-i-enable-cors){:target="_blank"}
 
 ### Set S3 Bucket as Upload Location
 
