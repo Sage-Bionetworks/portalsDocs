@@ -2,20 +2,92 @@
 title: Synapse Documentation, Welcome to Synapse Documentation
 layout: default
 ---
+<style>
+  #tagline {
+    text-align: left;
+    padding: 1em 3em 5em 8em;
+    line-height: 2em;
+    font-size: 1.25em;
+  }
+  #title {
+    font-weight: inherit;
+  }
+  body {
+    background-image: url(/assets/images/bg-blue-geom.png);
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:center;
+  }
+  #search-bar {
+    height: 300px;
+    font-weight: inherit;
+
+  }
+  #search-bar span {
+    font-size: larger;
+  }
+  h1.search-title {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0;
+    color: #1e7098;
+  }
+  h5.search-text {
+    font-weight: 600;
+    color: #1e7098;
+  }
+
+
+</style>
+
+
 
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"
       xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-<div id="bootstrap-overrides" class="container col-xs-12" style="padding-bottom: 100px; padding-left: 100px; color: #666666; line-height: 1.5em; font-size: 1.25em; width: 55%;">
-  <h2>Synapse Docs</h2>
-  <span class="rwd-line">Synapse is an open source software platform that data</span>
-  <span class="rwd-line">scientists use to carry out, track, and communicate their
-  research in real time.</span>
+
+  <div class="col-xs-12 col-md-6 col-lg-6" id="tagline">
+  <h1 id="title">Synapse Docs</h1>
+  <span class="tagline">Synapse is an open source software platform that data scientists use to carry out, track, and communicate their research in real time. </span>
   </br>
   </br>
-  <a  style="float:left; color: white; background-color: #1e7098; text-shadow: 0 0 0;" href="/articles/getting_started.html" type="button" class="btn btn-secondary">GET STARTED</a>
-</div>
+  <a  style="float:left; color: white; background-color: #1e7098; text-shadow: 0 0 0;" href="/articles/getting_started.html" type="button" class="btn btn-secondary btn-lg">GET STARTED</a>
+  </div>
+
 
 <div class="middle">
+  <div class="section">
+    <div class="row" id="search-bar">
+      <h1 class="search-title"> Search Articles </h1>
+      <br>
+      <h5 class="search-text"> Search the docs for how-to's and examples</h5>
+      <div id="landing-cse">
+        <script>
+            (function() {
+                var cx = '004392328299901121883:dlvsk1-fk4y';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+            })();
+            $(function() {
+                if (window.location.pathname && window.location.pathname != '/') {
+                    $("ul.nav li a").each(function(){
+                        if($(this).attr("href") == window.location.pathname)
+                            $(this).parent().addClass("active");
+                    })
+                }
+            });
+        </script>
+        <gcse:search></gcse:search>
+      </div>
+
+    </div>
+  </div>
   <div class="section">
     <div class="row">
       <div class="col-xs-12 col-sm-3">
@@ -67,3 +139,4 @@ layout: default
 </div>
 </div>
 
+</div>
