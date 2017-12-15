@@ -480,7 +480,7 @@ input.gsc-search-button {
     min-width: 0px;
     padding: 5px 12px;
     width: 40px;
-    background-image: url('/assets/images/Magnifying-glass.png') !important;
+    /*background-image: url('/assets/images/Magnifying-glass.png');*/
 }
 .cse input.gsc-search-button,
 input.gsc-search-button:hover {
