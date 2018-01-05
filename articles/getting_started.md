@@ -59,28 +59,6 @@ pip install synapseclient
 {% endtab %}
 
 
-{% tab Java %}
-{% highlight xml %}
-<!-- 
-Using Maven, add the following block to your pom.xml.
-Note, you should set the version to the most recent 'repo' version, found in the footer of www.synapse.org
--->
-<distributionManagement>
-	<repository>
-		<id>sagebionetworks</id>
-		<name>sagebionetworks-releases</name>
-		<url>http://sagebionetworks.artifactoryonline.com/sagebionetworks/libs-releases-local</url>
-	</repository>
-</distributionManagement>
-
-<dependency>
-	<groupId>org.sagebionetworks</groupId>
-	<artifactId>synapseJavaClient</artifactId>
-	<version>See comment above</version>
-</dependency>
-{%endhighlight %}
-{% endtab %}
-
 {% tab Python %}
 {% highlight python %}
 pip install synapseclient
@@ -95,7 +73,7 @@ pkgInstall("synapseClient")
 {% endtab %}
 
 {% tab Web %}
-	Nothing to Install
+Navigate to [www.synapse.org](https://www.synapse.org) - nothing to install
 {% endtab %}
 
 {% endtabs %}
