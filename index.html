@@ -77,14 +77,35 @@ layout: default
         color: #4b4b4b;
     }
     #subjects {
-        height: 200px;
-        padding: 2em 2em 2em 2em;
+        height: 100%;
+        padding: 2em 7% 2em 7%;
         display: block;
+        background-color: #ffffff;
     }
     .subject-card {
         text-align: center;
-        border: solid 2px lightblue;
+        border: solid 2px #a5c5d5;
         border-radius: 5px;
+        padding: 1em 2em 1em 2em;
+        margin-top: 5px;
+    }
+    .subject-card:hover {
+        border: 2px solid #1e7098;
+        box-shadow: 0 9px 14px 0 rgba(0,0,0,0.1);
+    }
+    .subject-card span{
+        color: #4d4d4d;
+        font-size: 14px;
+    }
+    .subject-card i {
+        font-size: 2.5em;
+    }
+    #subjects a:hover {
+        text-decoration: none;
+    }
+    #subjects h5 {
+        text-transform: uppercase;
+        font-weight: 500;
     }
 
 </style>
@@ -125,26 +146,45 @@ layout: default
 </div>
 <div class="col-xs-12 col-md-12 col-lg-12" id="subjects">
     <div class="col-xs-12 col-sm-3">
+        <a href="/articles/getting_started.html">
         <div class="subject-card">
-        <h4> Getting Started </h4>
+            <i class="fa fa-power-off"></i>
+            <h5> Getting Started </h5>
+            <hr>
+            <span>Learn the fundamental Synapse features with our step-by-step tutorial.</span>
         </div>
+        </a>
     </div>
     <div class="col-xs-12 col-sm-3">
+        <a href="/articles/">
         <div class="subject-card">
-        <h4> User Guide </h4>
+            <i class="fa fa-book"></i>
+            <h5> User Guide </h5>
+            <hr>
+            <span>Learn to use Synapse through a series of guides.</span>
         </div>
+        </a>
     </div>
     <div class="col-xs-12 col-sm-3">
+        <a href="/articles/api_documentation.html">
         <div class="subject-card">
-        <h4> API Docs </h4>
+            <i class="fa fa-cog"></i>
+            <h5> API Docs </h5>
+            <hr>
+            <span>Access language-specific functions for interacting with Synapse.</span>
         </div>
+        </a>
     </div>
     <div class="col-xs-12 col-sm-3">
+        <a href="">
         <div class="subject-card">
-        <h4> Synapse in Practice </h4>
+            <i class="fa fa-pencil"></i>
+            <h5> Synapse in Practice </h5>
+            <hr>
+            <span>See examples of how to use Synapse in case-specific articles.</span>
         </div>
+        </a>
     </div>
-    <div class="col-xs-12 col-sm-3">
-    </div>
+
 </div>
 </div>
