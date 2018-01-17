@@ -23,7 +23,7 @@ layout: default
         font-weight: inherit;
         color: #1e1e1e;
     }
-    body {
+    #background {
         background-image: url(/assets/images/bg-blue-geom.png);
         background-repeat:no-repeat;
         -webkit-background-size:cover;
@@ -31,6 +31,15 @@ layout: default
         -o-background-size:cover;
         background-size:cover;
         background-position:center;
+    }
+    body {
+        /*background-image: url(/assets/images/bg-blue-geom.png);*/
+        /*background-repeat:no-repeat;*/
+        /*-webkit-background-size:cover;*/
+        /*-moz-background-size:cover;*/
+        /*-o-background-size:cover;*/
+        /*background-size:cover;*/
+        /*background-position:center;*/
     }
     #gs-button {
         float:left;
@@ -120,13 +129,14 @@ layout: default
 
 </style>
 
+<div class="row" id="background">
 <div class="col-xs-12 col-md-6 col-lg-6" id="tagline">
     <h1 id="title">Synapse Docs</h1>
     <span>Synapse is an open source software platform that data scientists use to carry out, track, and communicate their research in real time.</span>
     <br>
     <br>
-    <a id="gs-button" href="/articles/getting_started.html" type="button" class="btn btn-secondary btn-lg"> Get Started</a>
-
+    <a id="gs-button" href="/articles/getting_started.html" type="button" class="btn btn-secondary btn-lg">Get Started</a>
+</div>
 </div>
 <div class="col-xs-12 col-md-12 col-lg-12" id="search-bar">
     <h3 class="search-title"> Search Articles </h3>
