@@ -263,18 +263,6 @@ Unfortunately, the web interface currently does not support assigning the same a
 
 {% endtabs %}
 
-
-### Details on using provenance
-
-{:.markdown-table}
-| Full Docs |
-| -- |
-| [python docs](http://docs.synapse.org/python/)
-| -- |
-| [R docs](http://docs.synapse.org/r)
-| -- | -- |
-| [command line docs](http://docs.synapse.org/python/CommandLineClient.html) |
-
 <br/>
 
 ### See Also
