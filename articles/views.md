@@ -13,19 +13,19 @@ category: howto
 
 
 # Overview 
-A view is a type of Synapse [Table](/articles/tables.html) that queries across metadata ([Annotations](/articles/annotation_and_query.html) for particular items (currently: projects or files) with a particular "scope". A `File View` lists all `Files` within one or more `Folders` or `Projects`. A `Project View` lists all `Projects` you've added to the view. Views can:
+A view is a type of Synapse [Table](/articles/tables.html) that queries across metadata ([Annotations](/articles/annotation_and_query.html)) for particular items (currently: projects or files) with a particular "scope". A `File View` lists all `Files` or `Tables` within one or more `Folders` or `Projects`. A `Project View` lists all `Projects` you've added to the view. Views can:
 
- * Allow `Projects` and `Files` to be easily searched and queried
+ * Allow `Projects`, `Files`, and `Tables` to be easily searched and queried
  * Allow view/editing metadata attributes in bulk
  * Provide a way of isolating or linking data based on similarities
- * Provide the ability to link `Projects` or `Files` together by their annotations
+ * Provide the ability to link `Projects`, `Files`, and `Tables` together by their annotations
  
  <br/>
 
 
 ## Create a File View
 
-To create a `File View`, select the `Project` that you would like to create the view in. The `Project` you choose does not have to contain the files you are including in your view. You will select the files of interest by defining the scope a.k.a. the `Project` and `Folders` that contain your files. 
+To create a `File View`, select the `Project` in which you would like to create the view. The `Project` you choose does not have to contain the files you are including in your view. You will select the files of interest by defining the scope, which is the `Project(s)` and `Folders` that contain your files. 
 
 {% tabs %}
 
@@ -57,7 +57,7 @@ entity_view = syn.store(entity_view)
 
 ## Create a Project View
 
-To create a `Project View`, select the `Project` that you would like to create the view in. You will select the projects of interest by defining the scope as above. The only notable difference between creating a `Project View` and a `File View` is that for project views, there is a 1:1 relationship between the projects you select in your scope and the projects that are included in the view. 
+To create a `Project View`, select the `Project` in which you would like to create the view. You will select the projects of interest by defining the scope as above. The only notable difference between creating a `Project View` and a `File View` is that for project views, there is a 1:1 relationship between the projects you select in your scope and the projects that are shown in the view. 
 
 ## Query a View
 A view can be queried exactly the same as any other `Table` in Synapse. Please see [Tables](/articles/tables.html) for more examples. For example, to query for everything in `syn123`:
@@ -127,7 +127,7 @@ fv = syn.store(synapseclient.Table(foo.tableId, bar))
 
 
 ### Using Simple Search
-The file views are in Simple Search mode by default. You can filter out `Projects` or `Files` of interest by selecting what characteristics you like using the facet menu on the left. You can toggle between simple and advanced search using the `Show advanced search/Show simple search` link.
+Views are in `Simple Search` mode by default. You can filter out `Projects` or `Files` of interest by selecting what characteristics you like using the facet menu on the left. You can toggle between simple and advanced search using the `Show advanced search/Show simple search` link.
 
 <img id="image" src="/assets/images/fileViewFacetedSearch.png">
 
