@@ -1,7 +1,7 @@
 ---
-title: "File Views"
+title: "Views"
 layout: article
-excerpt: Use file views to see files across multiple projects and folders.
+excerpt: Use project and file views to query across multiple projects and folders.
 category: howto
 ---
 
@@ -13,19 +13,19 @@ category: howto
 
 
 # Overview 
-A file view is a type of Synapse [Table](/articles/tables.html) that lists all `Files` within one or more `Folders` or `Projects`. File views can:
+A view is a type of Synapse [Table](/articles/tables.html) that queries across metadata ([Annotations](/articles/annotation_and_query.html) for particular items (currently: projects or files) with a particular "scope". A `File View` lists all `Files` within one or more `Folders` or `Projects`. A `Project View` lists all `Projects` you've added to the view. Views can:
 
- * Allow `Files` to be easily searched and queried
- * Allow view/editing `File` attributes in bulk
+ * Allow `Projects` and `Files` to be easily searched and queried
+ * Allow view/editing metadata attributes in bulk
  * Provide a way of isolating or linking data based on similarities
- * Provide the ability to link `Files` together by their annotations
+ * Provide the ability to link `Projects` or `Files` together by their annotations
  
  <br/>
 
 
 ## Create a File View
 
-To create a `File View`, select the `Project` that you would like to create the view in. The `Project` you choose does not have to contain the files you are creating the view of. You will select the files of interest by defining the scope aka the `Project` and `Folders` that contain your files. 
+To create a `File View`, select the `Project` that you would like to create the view in. The `Project` you choose does not have to contain the files you are including in your view. You will select the files of interest by defining the scope a.k.a. the `Project` and `Folders` that contain your files. 
 
 {% tabs %}
 
@@ -54,10 +54,13 @@ entity_view = syn.store(entity_view)
 {% endtab %}
 
 {% endtabs %}
- 
 
-## Query a File View
-A file view can be queried exactly the same as any other `Table` in Synapse. Please see [Tables](/articles/tables.html) for more examples. For example, to query for everything in `syn123`:
+## Create a Project View
+
+To create a `Project View`, select the `Project` that you would like to create the view in. You will select the projects of interest by defining the scope as above. The only notable difference between creating a `Project View` and a `File View` is that for project views, there is a 1:1 relationship between the projects you select in your scope and the projects that are included in the view. 
+
+## Query a View
+A view can be queried exactly the same as any other `Table` in Synapse. Please see [Tables](/articles/tables.html) for more examples. For example, to query for everything in `syn123`:
 
 {% tabs %}
 
@@ -90,9 +93,9 @@ See the [Using Simple Search](/articles/fileviews.html#using-simple-search) and 
 
 ## Update Annotations in Bulk
 
-File views can be used to update annotations in bulk. To update other metadata in bulk, such as provenance, please see the [Bulk Processing](/articles/uploading_in_bulk.html) article.
+Views can be used to update annotations in bulk. To update other metadata in bulk, such as provenance, please see the [Bulk Processing](/articles/uploading_in_bulk.html) article.
 
-For example, if you would like to add the annotation `dogSays`:`woof` to every file in a fileview with the synId syn456, you can do:
+For example, if you would like to add the annotation `dogSays`:`woof` to every file in a `File View` with the synId syn456, you can do:
 
 {% tabs %}
 
@@ -124,19 +127,19 @@ fv = syn.store(synapseclient.Table(foo.tableId, bar))
 
 
 ### Using Simple Search
-The file views are in Simple Search mode by default. You can filter out `Files` of interest by selecting what characteristics you like using the facet menu on the left. You can toggle between simple and advanced search using the `Show advanced search/Show simple search` link.
+The file views are in Simple Search mode by default. You can filter out `Projects` or `Files` of interest by selecting what characteristics you like using the facet menu on the left. You can toggle between simple and advanced search using the `Show advanced search/Show simple search` link.
 
 <img id="image" src="/assets/images/fileViewFacetedSearch.png">
 
 
 ### Using Advanced Search
-In advanced search, you can use a SQL-like query to search for files in that view. In the example below, we're selecting for all files that have a `Cell Type` of `PSC`. 
+In advanced search, you can use a SQL-like query to search for items in that view. In the example below, we're selecting for all files that have a `Cell Type` of `PSC`. 
 
 <img id="image" src="/assets/images/fileViewAdvancedSearch.png">
 
 
 ## Insert a View into a Wiki
-File views can also be placed inside a [`Wiki`](/articles/wikis.html) once they have been created. You can embed the entire file view or a subset of a query on it. 
+Views can also be placed inside a [`Wiki`](/articles/wikis.html) once they have been created. You can embed the entire view or a subset of a query on it. 
 
 To insert a file view with a synId of `syn8146547`:
 
