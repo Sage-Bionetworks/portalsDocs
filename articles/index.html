@@ -2,54 +2,257 @@
 title: User Guide
 layout: default
 ---
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+
+<script>
+    $(function () {
+        $('.thumbnail').matchHeight();
+    });
+
+    $(function () {
+        $('a[title]').tooltip();
+    });
+
+</script>
 
 <style>
-  #hover-background:hover {
-    background: #f6f6f6;
-  }
+    .glyphicon {
+        line-height: 1.6;
+    }
 </style>
 
-<div class="container-fluid" style="padding-top: 25px"> 
-  <div class="panel panel-default padding-15" style="text-align: center;">
-    <h4>Use the articles on this page to learn how to use Synapse</h4>
-  </div>
-{% assign loopindex = 0 %}
-{% for page in site.pages %}
-{% if page.layout == 'article' %}
-{% assign loopindex = loopindex | plus: 1 %}
-{% assign rowfinder = loopindex | modulo: 2 %}
-{% if rowfinder == 1 %}
-<div class="row" style="padding: 0 25px 0 25px">
-  <div class="col-md-6 col-xs-12">
-    <div id="hover-background" class="panel panel-default padding-15">
-    <a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
-    <p style="font-size: 1em; margin: 0 0 0 0">
-      {{page.excerpt}}
-      <a href="{{ page.url }}.html">...Read more</a>
-    </p>
-  </div>
+
+<section style="margin-top: -70px; padding-top: 50px;">
+    <div class="container">
+        <div class="row">
+            <div class="board">
+                <ul class="nav nav-tabs" id="myTab"
+                    style="margin-top: -70px; border: 2px solid transparent;">
+                    <div class="liner"></div>
+                    <li class="active">
+
+                        <a href="#intro" data-toggle="tab">
+                      <span class="round-tabs one">
+                        <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
+                        Intro
+                        </p>
+                              <i class="glyphicon glyphicon-off"></i>
+                      </span>
+                        </a>
+
+                    </li>
+
+                    <li>
+                        <a href="#howto" data-toggle="tab">
+                     <span class="round-tabs two">
+                       <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
+                        How-To's
+                        </p>
+                         <i class="glyphicon glyphicon-list"></i>
+
+                     </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#governance" data-toggle="tab">
+                     <span class="round-tabs three">
+                       <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
+                        Governance
+                        </p>
+                          <i class="glyphicon glyphicon-check"></i>
+                     </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#admin" data-toggle="tab">
+                         <span class="round-tabs four">
+                           <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
+                        Admin
+                        </p>
+                              <i class="glyphicon glyphicon-cloud"></i>
+                         </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#forum" data-toggle="tab">
+                         <span class="round-tabs five">
+                           <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
+                        Forum
+                        </p>
+                              <i class="glyphicon glyphicon-question-sign"></i>
+                         </span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="intro"> <!--Start intro content-->
+                        <h3 class="head text-center">Introduction</h3>
+                        <div class="row">
+                            {% assign sorted_pages = site.pages | sort:"order" %}
+                            {% for page in sorted_pages %}
+                            {% if page.category == 'intro' %}
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="thumbnail"
+                                     style="border-left: 5px solid #68b2bb;
+                                     border-right: 1px solid #d1e7ea; border-bottom: 1px solid #d1e7ea;">
+                                    <div class="card-header" style="height: 15px; background-color: #d1e7ea">
+                                    </div>
+                                    <div class="caption">
+                                        <h5><b>{{ page.title }}</b></h5>
+                                        <p>{{page.excerpt}}</p>
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                            More</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+
+                    </div> <!--<end intro content>-->
+
+                    <div class="tab-pane fade" id="howto"> <!--Start how to content-->
+                        <h3 class="head text-center">How-To's</h3>
+                        <div class="row">
+                            {% for page in site.pages %}
+                            {% if page.category == 'howto' %}
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="thumbnail"
+                                     style="border-left: 5px solid #0ea862;
+                                     border-right: 1px solid #ceeddf; border-bottom: 1px solid #ceeddf;">
+                                    <div class="card-header" style="height: 15px; background-color: #ceeddf">
+                                    </div>
+                                    <div class="caption">
+                                        <h5><b>{{ page.title }}</b></h5>
+                                        <p>{{page.excerpt}}</p>
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                            More</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            {% elsif page.category == null and page.layout == 'article' %}
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="thumbnail"
+                                     style="border-left: 5px solid #68b2bb;
+                                     border-right: 1px solid #d1e7ea; border-bottom: 1px solid #d1e7ea;">
+                                    <div class="card-header" style="height: 15px; background-color: #d1e7ea">
+                                    </div>
+                                    <div class="caption">
+                                        <h5><b>{{ page.title }}</b></h5>
+                                        <p>{{page.excerpt}}</p>
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                            More</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                    <!--end how to content-->
+
+                    <div class="tab-pane fade" id="governance"> <!--Start governance content-->
+                        <h3 class="head text-center">Governance and Security</h3>
+                        <div class="row">
+                            {% assign sorted_pages = site.pages | sort:"order" %}
+                            {% for page in sorted_pages %}
+                            {% if page.category == 'governance' %}
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="thumbnail"
+                                     style="border-left: 5px solid #7772b4;
+                                     border-right: 1px solid #e3e2f0; border-bottom: 1px solid #e3e2f0">
+                                    <div class="card-header" style="height: 15px; background-color: #e3e2f0">
+                                    </div>
+                                    <div class="caption">
+                                        <h5><b>{{ page.title }}</b></h5>
+                                        <p>{{page.excerpt}}</p>
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                            More</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!--end governance content-->
+
+                    <div class="tab-pane fade" id="admin"> 
+                        <h3 class="head text-center">Administration</h3>
+                        <!-- <p class="narrow text-center">
+                            Stay tuned for articles regarding how to administration.
+                        </p> -->
+                        <div class="row">
+                            {% for page in site.pages %}
+                            {% if page.category == 'admin' %}
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="thumbnail"
+                                     style="border-left: 5px solid #7772b4;
+                                     border-right: 1px solid #e3e2f0; border-bottom: 1px solid #e3e2f0">
+                                    <div class="card-header" style="height: 15px; background-color: #e3e2f0">
+                                    </div>
+                                    <div class="caption">
+                                        <h5><b>{{ page.title }}</b></h5>
+                                        <p>{{page.excerpt}}</p>
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                            More</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                    <!--End dream challenge content-->
+
+                    <div class="tab-pane fade" id="forum"> <!--start help/forum content-->
+                        <div class="text-center">
+                            <i class="img-intro icon-checkmark-circle"></i>
+                        </div>
+                        <h3 class="head text-center">Got Questions?</h3>
+                        <p class="narrow text-center">
+                            Can't find what you're looking for? Try posting a question to our forum.
+                        </p>
+                        <p class="text-center">
+                            <a href="https://www.synapse.org/#!SynapseForum:default" target="_blank"
+                               class="btn btn-primary btn-outline-rounded green"> Forum <span style="margin-left:10px;"
+                                                                                              class="glyphicon glyphicon-new-window"></span></a>
+                        </p>
+                    </div>
+                    <!--End help/forum content-->
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+        </div>
     </div>
-  {% elsif rowfinder == 0 %}
-  <div class="col-md-6 col-xs-12">
-    <div id="hover-background" class="panel panel-default padding-15">
-    <a href="{{ page.url }}.html"><h5 style="color:#185a7a; font-weight: 400">{{ page.title }}</h5></a>
-    <p style="font-size: 1em; margin: 0 0 0 0">
-      {{page.excerpt}}
-      <a href="{{ page.url }}.html">...Read more</a>
-    </p>
-  </div>
-    </div>
+</section>
+
+
+<!-- Nav tabs -->
+
 </div>
-{% else %}
-<div class="span0">{{ page.title }}</div>
-{% endif %}
-{% endif %}
-{% endfor %}
-{% if rowfinder != 0 %}
+
 </div>
-{% endif %}
-</div>
-<div class="panel panel-default padding-15" style="text-align: center; ">
-  <h4>Can't find what you're looking for?
-    Try posting a question on our <a href="https://www.synapse.org/#!SynapseForum:default">Forum</a>.</h4>
-</div>
+
