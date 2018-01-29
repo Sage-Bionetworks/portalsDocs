@@ -34,20 +34,29 @@ We encourage you to form a team with other participants for the challenge. You c
 ## Accessing Challenge Data
 The data stored on the challenge Synapse site can be accessed using the Synapse website or programmatically using the Synapse R or Python clients. Instructions on using Synapse are provided in the [Synapse User Guide](http://docs.synapse.org/). File descriptions are provided on the Data Description page in each challenge wiki.
 
-
 ## Run your Algorithms and Submit to the Challenge
 
-There are multiple ways you can submit to a challenge queue by using the R, Python or web client. The most conventional way is to submit through the web. All submissions must be first uploaded onto a private Synapse page. Follow instructions [here](http://docs.synapse.org/articles/getting_started.html#project-and-data-management-on-synapse) on how to upload to a project. Most challenge queues will be labeled by `challengename-subchallenge#` as a challenge may have different questions that it may want you to answer.
+You can submit to a challenge queue by using the R, Python or web client. In many cases, submitting through the web is easiest. All submissions must be first uploaded into Synapse. Follow instructions [here](http://docs.synapse.org/articles/getting_started.html#project-and-data-management-on-synapse) on how to upload to a project. Most challenge queues will be labeled by `challengename-subchallenge#` as a challenge may have different questions that it may want you to answer.
 
-In the R and Python examples, you will have to know the evaluation ID of the subchallenge you are trying to submit to. The examples below will show you the process of uploading a file to an example project and then submitting that file to the challenge. The submission function takes two optional parameters: `name` and `team`. Name can be provided to serve as a custom name of the submission. If a name isn not provided, the name of the entity being submitted will be used. Teams can optionally be provided to give credit to members of the team that contributed to the submission. 
+In the R and Python examples, you need to know the evaluation ID of the subchallenge to which you you are submitting. The examples below will show you the process of uploading a file to a project and then submitting that file to the challenge evaluation queue.
 
 {% tabs %}
+
+{% tab Web %}
+Navigate to an uploaded file in Synapse and click on `Tools` on the upper right hand corner.
+Select `Submit To Challenge`.
+
+<img id="image" src="/assets/images/howtosubmit.png">
+After doing so, pick the challenge you want to submit to, in this case (My Example Challenge). Click Next and follow the steps to complete your submission.
+
+<img id="toobig" src="/assets/images/submitToChallenge.png">
+{% endtab %}
+
 	{% tab Python %}
 		{% highlight python %}
 import synapseclient
-from synapseclient import File
 syn = synapseclient.login()
-mySubmission = File("/path/to/submission.csv",parent = "syn12345")
+mySubmission = synapseclient.File("/path/to/submission.csv",parent = "syn12345")
 mySub = syn.store(mySubmission)
 
 evaluationId = 123456
@@ -59,24 +68,18 @@ submission = syn.submit(evaluation, mySub, name="Our Final Answer", team="Blue T
 	{% tab R %}
 		{% highlight r %}
 library(synapseClient)
+synapseLogin()
+
 mySubmission <- File("/path/to/submission.csv",parentId="syn12345")
 mySub <- synStore(mySubmission)
-#The evaluationId HAS to be a string here or there will be an error
-submission <- submit(evaluation = "evaluationId", entity = mySub, submissionName="Our Final Answer", teamName="Blue Team")
+#The evaluationId must be provided as a string
+submission <- submit(evaluation="evaluationId", entity=mySub, submissionName="Our Final Answer", teamName="Blue Team")
 		{%endhighlight %}
 	{% endtab %}
 
-	{% tab Web %}
-Navigate to an uploaded file in Synapse and click on `Tools` on the upper right hand corner.
-Select `Submit To Challenge`.
-
-<img id="image" src="/assets/images/howtosubmit.png">
-After doing so, pick the challenge you want to submit to, in this case (My Example Challenge). Click Next and follow the steps to complete your submission.
-
-<img id="toobig" src="/assets/images/submitToChallenge.png">
-	{% endtab %}
-
 {% endtabs %}
+
+The submission function takes two optional parameters: `name` and `team` in Python, `submissionName` and `teamName` in R. The name can be provided to serve as a custom name of the submission. If a name is not not provided, the name of the entity being submitted will be used. A team name can be provided to give credit to members of the team that contributed to the submission.
 
 ## Share Ideas and Ask Questions
 
