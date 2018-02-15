@@ -59,9 +59,10 @@ projWiki = syn.store(projWiki)
 
 {% tab R %} 
 {% highlight r %} 
-library(synapseClient); 
+library(synapser)
+synLogin()
 placeholderText <- "* Cell growth look normally distributed\n* There is evidence of inverse growth between these two cell lines." 
-wiki <- WikiPage(owner=myProject, title="Analysis summary", markdown=placeholderText) 
+wiki <- Wiki(owner="syn123", title="Analysis summary", markdown=placeholderText)  
 wiki <- synStore(wiki) 
 {%endhighlight %} 
 {% endtab %}
