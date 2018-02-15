@@ -48,8 +48,8 @@ file = syn.store(file)
 
 {% tab R %}
 {% highlight r %}
-library(synapseClient)
-synapseLogin()
+library(synapser)
+synLogin()
 
 # Add a local file to an existing project (syn12345) on Synapse
 file <- File(path='/path/to/raw_data.txt', parentId='syn12345')
@@ -114,7 +114,6 @@ file = syn.store(file)
 {% highlight r %}
 # Upload a new version of raw_data.txt
 file <- File(path='/path/to/raw_data.txt', parentId='syn12345')
-file@properties$versionComment <- "Added 5 random normally distributed numbers."
 file <- synStore(file)
 {% endhighlight %}
 {% endtab %}
@@ -165,9 +164,7 @@ file = syn.store(file, forceVersion=False)
 # Get file from Synapse, set download=False since we are only updating annotations
 file <- synGet('syn56789', downloadFile=F)
 # Add annotations 
-synSetAnnotations(file) <- list(fileType = "bam", assay = "RNA-seq")
-# Store the file without creating a new version
-file = synStore(file, forceVersion=F)
+annotations <- synSetAnnotations(file, annotations=list(fileType = "bam", assay = "RNA-seq"))
 {% endhighlight %}
 {% endtab %}
 
@@ -208,9 +205,7 @@ file = syn.store(file, forceVersion=False)
 file <- synGet('syn56789', downloadFile=F)
 # Add provenance 
 act <- Activity(name = 'Example Code', used = '/path/to/example_code')
-generatedBy(file) <- act
-# Store the file without creating a new version
-file = synStore(file, forceVersion=F)
+synStore(file, activity=act)
 {% endhighlight %}
 {% endtab %}
 
