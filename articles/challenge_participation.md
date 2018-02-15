@@ -58,11 +58,12 @@ submission = syn.submit(evaluation, mySub, name="Our Final Answer", team="Blue T
 
 	{% tab R %}
 		{% highlight r %}
-library(synapseClient)
-mySubmission <- File("/path/to/submission.csv",parentId="syn12345")
+library(synapser)
+synLogin()
+mySubmission <- File("/path/to/submission.csv", parentId="syn12345")
 mySub <- synStore(mySubmission)
 #The evaluationId HAS to be a string here or there will be an error
-submission <- submit(evaluation = "evaluationId", entity = mySub, submissionName="Our Final Answer", teamName="Blue Team") 
+submission <- synSubmit(evaluation, mySub, name="Our Final Answer", team="Blue Team") 
 		{%endhighlight %}
 	{% endtab %}
 
