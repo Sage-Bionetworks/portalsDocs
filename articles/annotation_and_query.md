@@ -66,9 +66,9 @@ syn.store(entity)
 
 	{% tab R %}
 		{% highlight r %}
-entity <- File("Sample1_ConditionA.bam",parent="syn00123")
-synSetAnnotations(entity) <- list(fileType = "bam", assay = "RNA-seq")
+entity <- File("Sample1_ConditionA.bam", parent="syn00123")
 entity <- synStore(entity)
+synSetAnnotations(entity, annotations=list(fileType = "bam", assay = "RNA-seq"))
 		{%endhighlight %}
 	{% endtab %}
 	
@@ -117,11 +117,10 @@ entity <- synGet("syn123")
 
 ##### Assigning ONLY one annotation
 
-synSetAnnotation(entity, "filType") <- "bam"
+synSetAnnotation(entity, annotations=list(filType = "bam"))
 # Assigning a set of annotations
-synSetAnnotations(entity) <- list(fileType = "bam", assay = "RNA-seq")
+synSetAnnotations(entity, annotations=list(fileType = "bam", assay = "RNA-seq")
 
-entity <- synStore(entity, forceVersion = FALSE)
 		{%endhighlight %}
 	{% endtab %}
 	
