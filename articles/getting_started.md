@@ -67,8 +67,7 @@ pip install synapseclient
 
 {% tab R %}
 {% highlight r %}
-source("http://depot.sagebase.org/CRAN.R")
-pkgInstall("synapseClient")
+install.packages("synapser", repos=c("https://sage-bionetworks.github.io/ran", "http://cran.fhcrc.org"))
 {%endhighlight %}
 {% endtab %}
 
@@ -113,11 +112,11 @@ syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=
 
 {% tab R %}
 {% highlight r %}
-library(synapseClient)
+library(synapser)
 # If you have your config file set up you can run:
-synapseLogin()
+synLogin()
 # Otherwise, pass in your username and password:
-synapseLogin(username='me@example.com', password='secret', rememberMe=TRUE)
+synLogin(username='me@example.com', password='secret', rememberMe=TRUE)
 {% endhighlight %}
 {% endtab %}
 
@@ -210,8 +209,8 @@ print 'Created project with synapse id: %s' % myProj.id
 
     {% tab R %}
 	{% highlight r %}
-require(synapseClient)
-synapseLogin()
+library(synapser)
+synLogin()
 myProj <- synStore(Project(name="My uniquely named project"))
 print(paste('Created a project with Synapse id', myProj$properties$id, sep = ' '))
 	{%endhighlight %}
@@ -254,7 +253,7 @@ syn.onweb(myProj)
 
     {% tab R %}
 	{% highlight r %}
-onWeb(myProj)
+synOnweb(myProj)
 	{%endhighlight %}
 	{% endtab %}
 
@@ -311,7 +310,7 @@ projWiki = syn.store(projWiki)
     {% tab R %}
 	{% highlight r %}
 placeholderText <- "* Cell growth look normally distributed\n* There is evidence of inverse growth between these two cell lines."
-wiki <- WikiPage(owner=myProject, title="Analysis summary", markdown=placeholderText)
+wiki <- Wiki(owner=myProject, title="Analysis summary", markdown=placeholderText)
 wiki <- synStore(wiki)
 	{%endhighlight %}
 	{% endtab %}
@@ -362,7 +361,7 @@ results_folder = syn.store(results_folder)
 
     {% tab R %}
 	{% highlight r %}
-resultsFolder <- Folder(name = "results", parentId = myProject@properties$id)
+resultsFolder <- Folder(name = "results", parentId = myProject$properties$id)
 resultsFolder <- synStore(resultsFolder)
 	{%endhighlight %}
 	{% endtab %}
@@ -421,7 +420,7 @@ raw_data_file = syn.store(raw_data_file)
 	{% highlight r %}
 
 rawDataFile <- File("data/cell_lines_raw_data.csv", parent=resultsFolder$properties$id)
-synSetAnnotations(rawDataFile) <- list(foo="bar", number1="42", number2="3.1415")
+annotations <- synSetAnnotations(rawDataFile, annotations=list(foo="bar", number1="42", number2="3.1415"))
 rawDataFile <- synStore(rawDataFile)
 
 {% endhighlight %}
