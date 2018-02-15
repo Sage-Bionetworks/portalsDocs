@@ -138,10 +138,11 @@ squared_file <- synStore(squared_file)
 
 # Set provenance for newly created entity syn7209166
 act <- Activity(name = "Squared numbers", used = "syn7208917", executed = "syn7209078")
-generatedBy(data_file) <- act
+synStore(squared_file, activity=act)
+
 # Provenance can also be set using local variables instead of looking up synIds
 act <- Activity(name = "Squared numbers", used = data_file, executed = "syn7209078")
-generatedBy(squared_file) <- act
+synStore(squared_file, activity=act)
 
 {% endhighlight %}
 {% endtab %}
@@ -179,7 +180,7 @@ provenance
 
 {% tab R %}
 {% highlight r %}
-provenance <- generatedBy("syn7209166")
+provenance <- synGetProvenance("syn7209166")
 provenance
 {% endhighlight %}
 {% endtab %}
@@ -248,7 +249,7 @@ act <- Activity(name="filtering",
 finalFile <- synStore(finalFile, activity=act)
 
 # Get the activity now associated with an entity
-act <- synGetActivity(finalFile)
+act <- synGetProvenance(finalFile)
 
 # Now you can set this activity to as many files as you want (file1, file2, etc are Synapse Files)
 finalList <- c(file1, file2, file3)
