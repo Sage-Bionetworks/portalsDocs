@@ -45,7 +45,7 @@ In the R and Python examples, you will have to know the evaluation ID of the sub
 	{% tab Python %}
 		{% highlight python %}
 import synapseclient
-from synapseclient import File, Evaluation
+from synapseclient import File
 syn = synapseclient.login()
 
 parentId = "syn12345" # folder/project to upload your file to
