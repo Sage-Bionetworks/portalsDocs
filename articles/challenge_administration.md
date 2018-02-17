@@ -69,8 +69,7 @@ also be placed with the project but with even tighter access restrictions, so th
 
 ### Connect the Sign-up Team to the Challenge Project 
 
-The API to call is found [here](http://hud.rel.rest.doc.sagebase.org.s3-website-us-east-1.amazonaws.com/POST/challenge.html). This registers the challenge team to the challenge site and creates a challenge Id.
-
+The challenge team you created needs to be connected to the to the challenge.
 
 {% tabs %}
 	{% tab Python %}
