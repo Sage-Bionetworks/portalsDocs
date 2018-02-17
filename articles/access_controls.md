@@ -44,10 +44,10 @@ When you click on the sharing settings for that content, you'll see the current 
 
 It is important to note that you **cannot** set local sharing settings for `Wikis` and `Discussion Forums` as these can only inherit the sharing settings from their parent project. 
 
-## Conditions for Use
+# Conditions for Use
 Some data requires data governance to appropriately manage its use. In Synapse this data is called `Controlled Data` and it is protected by `Conditions for Use`, typically applied in order to comply with the terms under which the data were collected or with other human subjects regulations. For example, human 'omic' data may have `Conditions for Use` imposed by informed consent requirements, legal contracts, or other privacy requirements. It is also appropriate to add `Condition for Use` to data collected from "vulnerable" populations and to content that could potentially harm individuals or groups if misused. If you have any questions about whether conditions for use should be applied to your data, please contact our <a href="mailto:act@sagebase.org">Access and Compliance Team (ACT)</a>.
 
-### Examples of Conditions for Use
+## Examples of Conditions for Use
 `Conditions for Use` vary broadly. Some examples include:
 
 * Specification of what type of research or analysis can be conducted on the data, for example, a data set may only be able to be used for breast cancer research
@@ -59,7 +59,7 @@ Some data requires data governance to appropriately manage its use. In Synapse t
 
 Additionally, use of certain data may require independent review and monitoring of research by an ethics committee (for example, an IRB). This ensures that use of the data meets all applicable human subjects research regulations. 
 
-### Controlled Data
+## Controlled Data
 `Controlled Data` requires appropriate `Conditions for Use`, can only be downloaded and used by authorized Synapse users, and is not transferable unless explicitly specified otherwise. In other words, you cannot share `Controlled Data` with collaborators; aach Synapse user wishing to access controlled data must individually agree to the conditions for use to access that data.
 
 {% include important.html content="Controlled Data may not be redistributed." %}
@@ -73,7 +73,7 @@ Examples of `Controlled Data` include:
 * Data from “vulnerable” populations as defined using OHRP guidelines
 * Data generated with restrictions or requirements for use as outlined in informed consents or legal agreements
 
-### Open Data
+## Open Data
 Synapse `Open Data` is data that does not require `Conditions for Use`. Typically, open data is:
 
 * Data from model organisms, species or strains
