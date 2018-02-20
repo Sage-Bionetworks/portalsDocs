@@ -57,7 +57,7 @@ You can create evaluation queues on the web by navigating to your challenge site
 
 Unforuntately there is not a way to configure the round or quota settings of an evaluation queue from the web. The evaluation id can be found under the **Challenge** tab.  In the case below, the evaluation queue id is 9610091.  
 
-<img src="/assets/images/evaluation_queue_id.png">
+<img style="width: 80%;" src="/assets/images/evaluation_queue_id.png">
 
 Using this value, we can configure the `quota` parameters of this evaluation queue with the R or python client.  
 
@@ -93,10 +93,20 @@ Each Evaluation has its own sharing settings.  The sharing levels are: "Administ
 - "Can submit" allows for Teams or individuals to submit to the Evaluation, but doesn't have access to any of the submissions.
 - "Can view" allows for Teams or individuals to view the submissions on a leaderboard.
 
-To set the sharing setting, go to the **challenge** tab and see your list of Evaluations.  Click on the `share` button per Evaluation and share it with the Teams or individuals you would like.
+To set the sharing setting, go to the **Challenge** tab and see your list of Evaluations.  Click on the `Share` button per Evaluation and share it with the Teams or individuals you would like.
 
 
 ## View Submissions of an Evaluation Queue
+All submissions of an evaluation queue can be views through the use of leaderboard widgets in Wiki pages.  To learn how to create a wiki page, please visit [here](http://docs.synapse.org/articles/wikis.html).  Below are instructions on how to set up a leaderboard. You must know the evaluation id to do so.
+
+<img style="width: 80%;" src="/assets/images/add_leaderboard_widget.png">
+
+
+<img style="width: 80%;" src="/assets/images/configure_leaderboard_widget.png">
+
+
+<img style="width: 80%;" src="/assets/images/leaderboard_on_wiki.png">
+
 
 
 
