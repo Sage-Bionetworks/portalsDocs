@@ -101,10 +101,14 @@ All submissions of an evaluation queue can be views through the use of leaderboa
 
 <img style="width: 80%;" src="/assets/images/add_leaderboard_widget.png">
 
-
+Once you click on **Leaderboard**, the below screen will pop up without any values.  You will have to input your own query statement such as `select * from evaluation_9610091`.  To view all the columns available, click **Refresh Columns**.
 <img style="width: 80%;" src="/assets/images/configure_leaderboard_widget.png">
 
+Clicking **Refresh Columns** will add these default columns.
+<img style="width: 80%;" src="/assets/images/leaderboard_columns.png">
 
+
+If you are happy with your leaderboard configurations, save both the configurations and the wiki page and you will see something like this. 
 <img style="width: 80%;" src="/assets/images/leaderboard_on_wiki.png">
 
 
