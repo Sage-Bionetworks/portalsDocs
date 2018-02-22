@@ -39,7 +39,7 @@ The data stored on the challenge Synapse site can be accessed using the Synapse 
 
 There are multiple ways you can submit to a challenge queue by using the R, Python or web client.  The most conventional way is to submit through the web.  All submissions must be first uploaded onto a private Synapse page.  Follow instructions [here](http://docs.synapse.org/articles/getting_started.html#project-and-data-management-on-synapse) on how to upload to a project. Most challenge queues will be labeled by `challengename-subchallenge#` as a challenge may have different questions that it may want you to answer.
 
-In the R and Python examples, you will have to know the evaluation ID of the subchallenge you are trying to submit to.  The examples below will show you the process of uploading a file to an example project and then submitting that file to the challenge. The submission function takes two optional parameters: `name` and `team`.  Name can be provided to serve as a custom name of the submission. If a name isn not provided, the name of the entity being submitted will be used.  Teams can optionally be provided to give credit to members of the team that contributed to the submission. 
+In the R and Python examples, you will have to know the evaluation ID of the subchallenge you are trying to submit to.  The examples below will show you the process of uploading a file to an example project and then submitting that file to the challenge. The submission function takes **two optional parameters**: `name` and `team`.  Name can be provided to serve as a custom name of the submission. If a name isn not provided, the name of the entity being submitted will be used.  Teams can optionally be provided to give credit to members of the team that contributed to the submission. 
 
 {% tabs %}
 	{% tab Python %}
@@ -47,12 +47,15 @@ In the R and Python examples, you will have to know the evaluation ID of the sub
 import synapseclient
 from synapseclient import File
 syn = synapseclient.login()
-mySubmission = File("/path/to/submission.csv",parent = "syn12345")
-mySub = syn.store(mySubmission)
 
-evaluationId = 123456
-evaluation = syn.getEvaluation(evalutionId)
-submission = syn.submit(evaluation, mySub, name="Our Final Answer", team="Blue Team")
+parentId = "syn12345" # folder/project to upload your file to
+my_prediction_file = File("/path/to/file.csv", parent=parentId)
+my_prediction_file = syn.store(my_prediction_file)
+
+# if you're submitting as a team, get team entity
+team_entity = syn.getTeam("NameOfYourTeam")
+# submit to the challenge queue
+my_submission = syn.submit(evaluation=evaluationId123, entity=my_prediction_file, name="Blue Team", team=team_entity)
 		{% endhighlight %}
 	{% endtab %}
 

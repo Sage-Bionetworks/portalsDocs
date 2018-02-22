@@ -46,7 +46,7 @@ synapseutils.copyWiki(syn, source_project_id, target_project_id)
 
 	{% tab Web %}
 
-This script only works for macs. Download this [file](https://sourceforge.net/projects/createsynapsechallengewiki/files/createChallengeWiki.command/download) and double click the script.  You may have to right click and click open if you have script security settings on your computer. This script will prompt you to login to synapse.  Give it your private project syn0123456, and it will copy the template over. 
+This script only works on Mac OSX. Download this [file](https://sourceforge.net/projects/createsynapsechallengewiki/files/createChallengeWiki.command/download) and double click the script.  You may have to right click and click open if you have script security settings on your computer. This script will prompt you to login to synapse.  Give it your private project syn0123456, and it will copy the template over. 
 
 	{% endtab %}
 
@@ -61,8 +61,7 @@ also be placed with the project but with even tighter access restrictions, so th
 
 ### Connect the Sign-up Team to the Challenge Project 
 
-The API to call is found [here](http://hud.rel.rest.doc.sagebase.org.s3-website-us-east-1.amazonaws.com/POST/challenge.html). This registers the challenge team to the challenge site and creates a challenge Id.
-
+The challenge team you created needs to be connected to the to the challenge.
 
 {% tabs %}
 	{% tab Python %}
