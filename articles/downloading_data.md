@@ -182,7 +182,7 @@ entity = [syn.get(r['file.id']) for r in results]
 {% highlight r %}
 results <- synTableQuery('select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"')
 df <- as.data.frame(results)
-entity <- lapply(df["file.id"], function(x) synGet(x))
+entity <- lapply(df$file.id, function(x) synGet(x))
 {% endhighlight %}
 {% endtab %}
 

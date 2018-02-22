@@ -97,12 +97,12 @@ synapse set-annotations --id syn123 --annotations '{"fileType":"bam", "assay":"R
 		{% highlight python %}
 entity = syn.get("syn123")
 
-##### Assigning ONLY one annotation
+##### Modifying ONLY one annotation
 
 entity.fileType = 'bam'
 entity['fileType'] = 'bam'
 
-##### Assigning a set of annotations
+##### Modifying a set of annotations
 
 entity.annotations = {"fileType":"bam", "assay":"RNA-seq"}
 
@@ -115,10 +115,10 @@ syn.store(entity, forceVersion = F)
 
 entity <- synGet("syn123")
 
-##### Assigning ONLY one annotation
-
+##### Modifying ONLY one annotation
 synSetAnnotation(entity, annotations=list(filType = "bam"))
-# Assigning a set of annotations
+
+##### Modifying a set of annotations
 synSetAnnotations(entity, annotations=list(fileType = "bam", assay = "RNA-seq")
 
 		{%endhighlight %}

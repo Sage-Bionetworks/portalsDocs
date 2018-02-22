@@ -282,7 +282,7 @@ fileHandle <- list(concreteType='org.sagebionetworks.repo.model.file.S3FileHandl
                    key ='s3ObjectKey')
 fileHandle <- synRestPOST('/externalFileHandle/s3', body=toJSON(fileHandle), endpoint = synapseFileServiceEndpoint())
 
-f <- File(dataFileHandleId = fileHandle$id, parentId = projectId)
+f <- File(dataFileHandleId=fileHandle$id, parentId=projectId)
 
 f <- synStore(f)
 {% endhighlight %}

@@ -162,7 +162,7 @@ file = syn.store(file, forceVersion=False)
 {% tab R %}
 {% highlight r %}
 # Get file from Synapse, set download=False since we are only updating annotations
-file <- synGet('syn56789', downloadFile=F)
+file <- synGet('syn56789', downloadFile=FALSE)
 # Add annotations 
 annotations <- synSetAnnotations(file, annotations=list(fileType = "bam", assay = "RNA-seq"))
 {% endhighlight %}
@@ -202,10 +202,10 @@ file = syn.store(file, forceVersion=False)
 {% tab R %}
 {% highlight r %}
 # Get file from Synapse, set download=False since we are only updating annotations
-file <- synGet('syn56789', downloadFile=F)
+file <- synGet('syn56789', downloadFile=FALSE)
 # Add provenance 
 act <- Activity(name = 'Example Code', used = '/path/to/example_code')
-synStore(file, activity=act)
+file <- synStore(file, activity=act, forceVersion=FALSE)
 {% endhighlight %}
 {% endtab %}
 

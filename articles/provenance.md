@@ -142,7 +142,7 @@ synStore(squared_file, activity=act)
 
 # Provenance can also be set using local variables instead of looking up synIds
 act <- Activity(name = "Squared numbers", used = data_file, executed = "syn7209078")
-synStore(squared_file, activity=act)
+squared_file <- synStore(squared_file, activity=act)
 
 {% endhighlight %}
 {% endtab %}

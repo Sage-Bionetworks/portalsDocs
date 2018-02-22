@@ -152,7 +152,7 @@ schema = synapseclient.Schema(name='Jazz Albums', columns=cols, parent=project)
 
 {% tab R %}
 {% highlight r %}
-# Utilities function is not available in synapser_0.1
+# Utilities function is not available in synapser 0.1.25
 cols <- list(
     Column(name='artist', columnType='STRING', maximumSize=20),
     Column(name='album', columnType='STRING', maximumSize=20),
