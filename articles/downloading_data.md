@@ -102,6 +102,29 @@ entity <- synGet("syn3260973", version=1)
 
 See [versioning](http://docs.synapse.org/articles/versioning.html) for more details.
 
+### Links
+
+There are multiple ways of downloading a link in Synapse.  Without specifying the followLink parameter, you will only retrieve the link itself without downloading wherever the link leads to.  There is currently not a way to follow the link in R.
+
+{% tabs %}
+{% tab Command %}
+{% highlight bash %}
+synapse get syn1234 --followLink
+{% endhighlight %}
+{% endtab %}
+{% tab Python %}
+{% highlight python %}
+entity = syn.get("syn1234", followLink=True)
+{% endhighlight %}
+{% endtab %}
+{% tab R %}
+{% highlight r %}
+entity <- synGet("syn1234")
+entityFile = synGet(entity@properties$linksTo$targetId, version = entity@properties$linksTo$targetVersionNumber)
+{%endhighlight %}
+{% endtab %}
+
+{% endtabs %}
 
 ### Download Location
 
