@@ -160,7 +160,7 @@ cols <- list(
     Column(name='catalog', columnType='STRING', maximumSize=20))
 
 project <- synGet('syn1901847')
-schema <- TableSchema(name='Jazz Albums', columns=cols, parent=project)
+schema <- Schema(name='Jazz Albums', columns=cols, parent=project)
 {% endhighlight %}
 {% endtab %}
 
