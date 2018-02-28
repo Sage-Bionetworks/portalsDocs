@@ -38,6 +38,7 @@ To adjust the sharing settings on a project, click the `Project Settings` button
 
 Use the `Add People` feature to add collaborators individually or to add a [team of collaborators](/articles/teams.html).
 
+<a name="share-content"></a>
 ### Sharing Other Content
 You can also adjust the sharing settings for `Folders`, `Files`, and `Tables` separately from their parent project. For example, you may wish to keep a particular folder private while you make the project more broadly available, or share drafts of individual files to collaobrators privately prior to releasing publicly. 
 
