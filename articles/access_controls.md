@@ -52,6 +52,7 @@ It is important to note that you **cannot** set local sharing settings for `Wiki
 # Conditions for Use
 Some data requires data governance to appropriately manage its use. In Synapse this data is called `Controlled Data` and it is protected by `Conditions for Use`, typically applied in order to comply with the terms under which the data were collected or with other human subjects regulations. For example, human 'omic' data may have `Conditions for Use` imposed by informed consent requirements, legal contracts, or other privacy requirements. It is also appropriate to add `Condition for Use` to data collected from "vulnerable" populations and to content that could potentially harm individuals or groups if misused. If you have any questions about whether conditions for use should be applied to your data, please contact our <a href="mailto:act@sagebase.org">Access and Compliance Team (ACT)</a>.
 
+<a name="require-conditions-for-use"></a>
 ## Examples of Conditions for Use
 `Conditions for Use` vary broadly. Some examples include:
 
@@ -64,7 +65,7 @@ Some data requires data governance to appropriately manage its use. In Synapse t
 
 Additionally, use of certain data may require independent review and monitoring of research by an ethics committee (for example, an IRB). This ensures that use of the data meets all applicable human subjects research regulations. 
 
-<a name="require-conditions-for-use"></a>
+<a name="controlled-data"></a>
 ## Controlled Data
 `Controlled Data` requires appropriate `Conditions for Use`, can only be downloaded and used by authorized Synapse users, and is not transferable unless explicitly specified otherwise. In other words, you cannot share `Controlled Data` with collaborators; aach Synapse user wishing to access controlled data must individually agree to the conditions for use to access that data.
 
