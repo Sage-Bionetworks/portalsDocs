@@ -90,6 +90,7 @@ Synapse `Open Data` is data that does not require `Conditions for Use`. Typicall
     * De-identified and non-sensitive, with no known sharing or use restrictions
     * Self-contributed and unambiguously consented for open data sharing and use
 
+<a name="how-to-set-conditions-for-use "></a>
 ## How to Set Conditions for Use?
 If you would like to set `Conditions for Use` for an entire `Project`, please contact the Synapse <a href="mailto:act@sagebase.org">Access and Compliance Team (ACT)</a> directly for assistance. 
 
