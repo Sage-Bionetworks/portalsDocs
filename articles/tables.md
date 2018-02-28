@@ -114,8 +114,8 @@ df = pd.read_csv('path/to/jazzAlbums.csv', index_col=False)
 
 {% tab R %}
 {% highlight r %}
-require(synapseClient)
-synapseLogin()
+library(synapser)
+synLogin()
 
 csvFile <- read.csv('path/to/jazzAlbums.csv')
 
@@ -137,7 +137,7 @@ Navigate to the **Tables** tab on your project. You have to option to insert dat
 <br>
 
 **2. Create table schema:** Each client has a utility function to create Columns from a data frame. 
-Python uses `synapseclient.as_table_columns` and R uses `as.tableColumns`.
+Python uses `synapseclient.as_table_columns`.
 
 {% tabs %}
 
@@ -152,11 +152,15 @@ schema = synapseclient.Schema(name='Jazz Albums', columns=cols, parent=project)
 
 {% tab R %}
 {% highlight r %}
-project <- synGet('syn1901847')
-tcresult <- as.tableColumns(df)
-cols <- tcresult$tableColumns
+# Utilities function is not available in synapser 0.1.25
+cols <- list(
+    Column(name='artist', columnType='STRING', maximumSize=20),
+    Column(name='album', columnType='STRING', maximumSize=20),
+    Column(name='year', columnType='INTEGER'),
+    Column(name='catalog', columnType='STRING', maximumSize=20))
 
-schema <- TableSchema(name='Jazz Albums', columns=cols, parent=project)
+project <- synGet('syn1901847')
+schema <- Schema(name='Jazz Albums', columns=cols, parent=project)
 {% endhighlight %}
 {% endtab %}
 
@@ -266,9 +270,10 @@ syn.store(Table(results.tableId, df))
 {% highlight r %}
 # Change the album value 'Vol. 2' to 'Volume 2' 
 queryResult <- synTableQuery("select * from syn7266590 where album='Vol. 2'")
-queryResult@values['album'] <- 'Volume 2'
+df <- as.data.frame(queryResult)
+df['album'] <- 'Volume 2'
 
-table <- synStore(queryResult)
+table <- synStore(Table("syn7266590", df))
 {% endhighlight %}
 {% endtab %}
 
@@ -309,16 +314,17 @@ syn.store(Table(schema, df))
 {% tab R %}
 {% highlight r %}
 # Define a new column
-newColumn <- TableColumn(name="purchased", columnType="STRING")
+newColumn <- synStore(Column(name="purchased", columnType="STRING"))
 # Add the new column to existing schema
-schema <- synAddColumn(schema, newColumn)
+schema <- schema$addColumn(newColumn)
 schema <- synStore(schema)
 # Query for the newest schema
 queryResult <- synTableQuery('select * from syn7264701')
+df <- as.data.frame(queryResult)
 # Add values
-queryResult@values['purchased'] <- c('yes', 'yes', 'no', 'yes') 
+df['purchased'] <- c('yes', 'yes', 'no', 'yes') 
 # Store the new table
-table <- synStore(queryResult)
+table <- synStore(Table("syn7264701", df))
 {% endhighlight %}
 {% endtab %}
 
@@ -350,9 +356,9 @@ schema = syn.store(schema)
 {% tab R %}
 {% highlight r %}
 # Get the latest table
-table <- synGet('syn7264701')
+schema <- synGet('syn7264701')
 # delete the 'purchased' column
-schema <- synRemoveColumn(table, table@columns[[5]])
+schema <- schema$removeColumn(newColumn)
 # store the new table
 table <- synStore(schema)
 {% endhighlight %}
@@ -388,17 +394,17 @@ schema = syn.store(schema)
 {% tab R %}
 {% highlight r %}
 # Get the latest table
-table <- synGet('syn7266590')
+schema <- synGet('syn7266590')
 # delete the 'purchased' column
-schema <- synRemoveColumn(table, table@columns[[5]])
+schema <- schema$removeColumn(newColumn)
 # store the new table
-table <- synStore(schema)
+schema <- synStore(schema)
 # get the latest table
-table <- synGet('syn7264701')
+schema <- synGet('syn7264701')
 # Define the new column
-newColumn <- TableColumn(name='sold', columnType='STRING')
+newColumn <- Column(name='sold', columnType='STRING')
 # Add the new column to the existing schema
-schema <- synAddColumn(table, newColumn)
+schema <- schema$addColumn(newColumn)
 schema <- synStore(schema)
 {% endhighlight %}
 {% endtab %}
@@ -468,9 +474,9 @@ a = syn.delete(synapseclient.Table(schema,tabledf))
 
 {% tab R %}
 {% highlight r %}
-# Query for the rows you want to delete and call synDeleteRows on the results:
+# Query for the rows you want to delete and call synDelete on the results:
 rowsToDelete <- synTableQuery("select * from syn7264701 where artist='Sonny Rollins'")
-synDeleteRows(rowsToDelete)
+synDelete(rowsToDelete$asRowSet())
 {% endhighlight %}
 {% endtab %}
 
@@ -500,8 +506,9 @@ table = syn.store(synapseclient.Table(schema, df))
 {% tab R %}
 {% highlight r %}
 results <- synTableQuery("select * from syn7264701 where artist='Sonny Rollins'")
-results@values['purchased'] <- c('yes', 'yes')
-table <- synStore(results)
+df <- as.data.frame(results)
+df['purchased'] <- c('yes', 'yes')
+table <- synStore(Table("syn7264701", df))
 {% endhighlight %}
 {% endtab %}
 
@@ -531,7 +538,7 @@ syn.delete(schema)
 {% tab R %}
 {% highlight r %}
 #Deleting the schema deletes the whole table and all rows
-synDelete(table@schema$id)
+synDelete(schema)
 {% endhighlight %}
 {% endtab %}
 
@@ -567,8 +574,8 @@ schema = syn.store(schema)
 {% tab R %}
 {% highlight r %}
 # Add a column for files
-fileColumn <- TableColumn(name='covers', columnType='FILEHANDLEID')
-schema <- synAddColumn(schema, fileColumn)
+fileColumn <- Column(name='covers', columnType='FILEHANDLEID')
+schema <- schema$addColumn(fileColumn)
 schema <- synStore(schema)
 {% endhighlight %}
 {% endtab %}
@@ -598,7 +605,8 @@ df = results.asDataFrame()
 {% tab R %}
 {% highlight r %}
 # get the latest table
-table <- synTableQuery('select * from syn7264701')
+results <- synTableQuery('select * from syn7264701')
+df <- as.data.frame(results)
 {% endhighlight %}
 {% endtab %}
 
@@ -643,16 +651,20 @@ files <- c('./coltraneBlueTrain.jpg', './rollinsBN1558.jpg',
          './rollinsBN4001.jpg','./burrellWarholBN1543.jpg')
 
 # upload to filehandle service
-files <- lapply(files, function(f) synapseClient:::chunkedUploadFile(f))
+files <- lapply(files, function(f) {
+  temp_file <- tempfile(f)
+  write(f, file=temp_file)
+  synUploadSynapseManagedFileHandle(f)
+}
 
 # get the filehandle ids
-fileHandleIds <- sapply(files, function(i) i[1]$id)
+fileHandleIds <- sapply(files, function(f) f[1]$id)
 
 # assign the filehandle ids to the new column
-table@values['covers'] <- fileHandleIds
+df['covers'] <- fileHandleIds
 
 # store the new column
-synStore(table)
+synStore(Table(schema, df))
 {% endhighlight %}
 {% endtab %}
 
@@ -680,7 +692,7 @@ cover_files = syn.downloadTableColumns(results, ['cover'])
 {% tab R %}
 {% highlight r %}
 results <- synTableQuery('select covers from syn7264701')
-coverFiles <- synDownloadTableColumns(results, 'covers')
+coverFiles <- synDownloadTableColumns(results, columns='covers')
 {% endhighlight %}
 {% endtab %}
 

@@ -40,15 +40,7 @@ synapseutils.copyWiki(syn, source_project_id, target_project_id)
 
 	{% tab R %}
 		{% highlight r %}
-library(synapseClient)
-library(RCurl)
-synapseLogin()
-sourceProjectId<-"syn2769515" # This is the ID of the template project
-targetProjectId<-"syn01234"
-x<-getURL("https://gist.github.com/brucehoff/8f5e8975270e3b5d73f9/raw/2a4ac735d7992261bd6c3fdb519940cfbe08fbff/copyWikis.R", .opts=list(followlocation=TRUE))
-source(textConnection(x))
-copyWikis(sourceProjectId, targetProjectId)
-#NOTE:  R Synapse client version 1.6-0 or later is required to correct a problem copying non-ASCII characters.
+# Unfortunately, current synapser version is not supporting this feature.
 		{%endhighlight %}
 	{% endtab %}
 
@@ -91,12 +83,12 @@ challenge.id
 
 	{% tab R %}
 		{% highlight r %}
-library(synapseClient)
-synapseLogin()
-projectId<-"syn123456" # replace with the actual project Synapse ID
-participantTeamId<-"987654" # replace with the actual Team ID
-challenge<-list(projectId=projectId, participantTeamId=participantTeamId)
-challenge<-synRestPOST("/challenge", challenge)
+library(synapser)
+synLogin()
+projectId <- "syn123456" # replace with the actual project Synapse ID
+participantTeamId <- "987654" # replace with the actual Team ID
+challenge <- list(projectId=projectId, participantTeamId=participantTeamId)
+challenge <- synRestPOST("/challenge", toJSON(challenge))
 # retain the challenge ID (distinct from 'projectId', above) for use in several wiki widgets described below)
 challengeId<-challenge$id
 		{%endhighlight %}
@@ -140,8 +132,8 @@ challenge['id']
 
 	{% tab R %}
 		{% highlight r %}
-projectId<-"syn123456" # replace with the actual challenge project ID
-challenge<-synRestGET(sprintf("/entity/%s/challenge", projectId))
+projectId <- "syn123456" # replace with the actual challenge project ID
+challenge <- synRestGET(sprintf("/entity/%s/challenge", projectId))
 challenge$id
 		{%endhighlight %}
 	{% endtab %}
@@ -488,7 +480,11 @@ for sub, status in bundles:
 
 	{% tab R %}
 		{% highlight r %}
-
+# Get submission / annotations
+sub <- synGetSubmission(submissionId)
+annotations <- synGetSubmissionStatus(submissionId)
+# Get all scored submissions in an evaluation queue
+bundles <- as.list(synGetSubmissionBundles(evaluation, status="SCORED"))
 		{%endhighlight %}
 	{% endtab %}
 {% endtabs %}
