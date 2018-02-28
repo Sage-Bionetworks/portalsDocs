@@ -64,6 +64,7 @@ Some data requires data governance to appropriately manage its use. In Synapse t
 
 Additionally, use of certain data may require independent review and monitoring of research by an ethics committee (for example, an IRB). This ensures that use of the data meets all applicable human subjects research regulations. 
 
+<a name="require-conditions-for-use"></a>
 ## Controlled Data
 `Controlled Data` requires appropriate `Conditions for Use`, can only be downloaded and used by authorized Synapse users, and is not transferable unless explicitly specified otherwise. In other words, you cannot share `Controlled Data` with collaborators; aach Synapse user wishing to access controlled data must individually agree to the conditions for use to access that data.
 
