@@ -40,7 +40,7 @@ Use the `Add People` feature to add collaborators individually or to add a [team
 
 <a name="share-content"></a>
 ### Sharing Other Content
-You can also adjust the sharing settings for `Folders`, `Files`, and `Tables` separately from their parent project. For example, you may wish to keep a particular folder private while you make the project more broadly available, or share drafts of individual files to collaobrators privately prior to releasing publicly. 
+You can also adjust the sharing settings for `Folders`, `Files`, and `Tables` separately from their parent project. For example, you may wish to keep a particular folder private while you make the project more broadly available, or share drafts of individual files to collaborators privately prior to releasing publicly. 
 
 By default, all of the content residing within a project inherits the project sharing settings. However, you can override this inheritance by defining a `Local Sharing Setting` for that specific content. To do so, visit the content in question (Folder, File, or Table) and click on the `Tools` menu and then click on the `Sharing Setting` option for that content (the menu option will be labeled with the type of content, e.g. `Folder Sharing Settings` or `File Sharing Settings`, etc.). 
 
