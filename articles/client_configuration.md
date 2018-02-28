@@ -10,7 +10,7 @@ category: howto
 The programmatic clients in Synapse can use a configuration file (called `.synapseConfig`) that can store frequently used client-interactions. The most commonly used example is storing your login credentials for quick and easy authentication when using the programmatic clients. However, this config file can take many more parameters, such as:
 
 - specifying a new cache location
-- add credentials to access files stored outside of Synapse storage (e.g. SFTP, AWS-S3, etc.)
+- add credentials to access files stored outside of Synapse storage (e.g. AWS-S3, etc.)
 
 
 # Example Config File
@@ -21,24 +21,13 @@ The code block below displays an example config file with the available paramete
 ###########################
 # Login Credentials       #
 ###########################
- 
-## Used for logging in to Synapse
-## you may also specify an apikey instead of password. If both password and apikey are specified, the apikey is ignored
-## Alternatively you can use rememberMe=True in synapseclient.login or login subcommand of the commandline client to
-## cache your API key elsewhere.
+## Used for logging in to Synapse.
+## You may also specify an API key instead of a password. If both password and API key are specified, the API key is ignored.
+## Using an API key allows you to authenticate your scripts for an indefinite amount of time. It is important that you treat your API key with the same security as your password.
 #[authentication]
 #username = <username>
 #password = <password>
 #apikey = <apikey>
- 
-## If you have projects with file stored on SFTP servers, you can specify your credentials here
-## You can specify multiple sftp credentials
-#[sftp://some.sftp.url.com]
-#username= <sftpuser>
-#password= <sftppwd>
-#[sftp://a.different.sftp.url.com]
-#username= <sftpuser>
-#password= <sftppwd>
  
  
 ## If you have projects that need to be stored in an S3-like (e.g. AWS S3, Openstack) storage but cannot allow Synapse
@@ -51,24 +40,22 @@ The code block below displays an example config file with the available paramete
  
  
 ###########################
+# Debugging               #
+###########################  
+## If this section is specified, then the Synapse client will print out debug information
+# [debug]
+ 
+ 
+###########################
 # Caching                 #
 ###########################
 ## your downloaded files are cached to avoid repeat downloads of the same file. change 'location' to use a different folder on your computer as the cache location
 # [cache]
 # location = <your cache location>
- 
- 
-###########################
-# Advanced Configurations #
-###########################
- 
-## If this section is specified, then the synapseclient will print out debug information
-# [debug]
- 
-## Some integration tests require a second Synapse user. This should only be necessary for developers
-#[test-authentication]
-#username = <username>
-#password = <password>
-#principalid = <userId>
-
 ```
+
+<br/>
+
+## See Also
+
+[Getting Started](docs.synapse.org/articles/getting_started.html), [Custom Storage Locations](), [Downloading Data]()
