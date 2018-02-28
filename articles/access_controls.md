@@ -32,6 +32,7 @@ There are two primary `Sharing settings`: **Public** and **Private**. The `Publi
  
 {% include important.html content="Synapse users are responsible for determining the appropriate Sharing Setting for any content they upload into Synapse." %}
 
+<a name="how-to-share-content"></a>
 ## How to Share Projects
 To adjust the sharing settings on a project, click the `Project Settings` button. This will open a window listing the Synapse users who have access to the `Project` and their roles. When you create a new `Project` you are the only Synapse user listed in this window, because projects are private by default, and your access level will be `Administrator`. 
 
