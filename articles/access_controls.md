@@ -79,6 +79,7 @@ Examples of `Controlled Data` include:
 * Data from “vulnerable” populations as defined using OHRP guidelines
 * Data generated with restrictions or requirements for use as outlined in informed consents or legal agreements
 
+<a name="open-data"></a>
 ## Open Data
 Synapse `Open Data` is data that does not require `Conditions for Use`. Typically, open data is:
 
