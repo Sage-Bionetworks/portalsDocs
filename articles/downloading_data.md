@@ -37,8 +37,8 @@ entity = syn.get("syn3158111")
 
 {% tab R %}
 {% highlight r %}
-library(synapseClient)
-synapseLogin()
+library(synapser)
+synLogin()
 entity <- synGet("syn3158111")
 {%endhighlight %}
 {% endtab %}
@@ -66,7 +66,7 @@ filepath = entity.path
 
 {% tab R %}
 {% highlight r %}
-filepath <- entity@filePath
+filepath <- entity$path
 {% endhighlight %}
 {% endtab %}
 
@@ -155,28 +155,29 @@ entity <- synGet("syn00123", downloadLocation="/path/to/folder")
 
 ## Finding and Downloading Files
 
-Files in projects can be annotated to facilitate finding them with the information from the metadata tables. Most projects will have a page dedicated to the types of annotations available for query. It is possible to query based on any of the annotations attached to the files.
+Files can be [annotated](/articles/annotation_and_query.html) to facilitate finding them. In order to search the annotations, a [File View](/articles/fileviews.html) must be created first. It is possible to query based on any of the annotations attached to the files.
 
-For example, to find all **mRNA fastq** files originating from **CD34+ cells** in the [PCBC project](https://www.synapse.org/#!Synapse:syn1773109){:target="_blank"} we can query by:
+For example, the [PCBC Project](https://www.synapse.org/#!Synapse:syn1773109){:target="_blank"} has a [table](https://www.synapse.org/#!Synapse:syn7511263){:target="_blank"}) listing sequencing data files that have been annotated. To find all **mRNA fastq** files originating from **CD34+ cells** in the we can query by:
 
 {% tabs %}
 
 {% tab Command %}
 {% highlight bash %}
-synapse query "select * from file where projectId=='syn1773109' AND dataType=='mRNA' AND fileType=='fastq' AND Cell_Type_of_Origin=='CD34+ cells'"
+synapse query 'select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"'
 {% endhighlight %}
 {% endtab %}
 
 
 {% tab Python %}
 {% highlight python %}
-results = syn.chunkedQuery("select * from file where projectId=='syn1773109' AND dataType=='mRNA' AND fileType=='fastq' AND Cell_Type_of_Origin=='CD34+ cells'")
+results = syn.tableQuery('select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"')
 {% endhighlight %}
 {% endtab %}
 
 {% tab R %}
 {% highlight r %}
-results <- synQuery("select * from file where projectId=='syn1773109' AND dataType=='mRNA' AND fileType=='fastq' AND Cell_Type_of_Origin=='CD34+ cells'")
+results <- synTableQuery('select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"')
+df <- as.data.frame(results)
 {% endhighlight %}
 {% endtab %}
 
@@ -184,19 +185,17 @@ results <- synQuery("select * from file where projectId=='syn1773109' AND dataTy
 
 Once you've queried for the files of interest, they can be downloaded using the following:
 
-
 {% tabs %}
 
 {% tab Command %}
 {% highlight bash %}
-synapse get -q "select * from file where projectId=='syn1773109' AND dataType=='mRNA' AND fileType=='fastq' AND Cell_Type_of_Origin=='CD34+ cells'"
+synapse get -q 'select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"'
 {% endhighlight %}
 {% endtab %}
 
-
 {% tab Python %}
 {% highlight python %}
-results = syn.chunkedQuery("select * from file where projectId=='syn1773109' AND dataType=='mRNA' AND fileType=='fastq' AND Cell_Type_of_Origin=='CD34+ cells'")
+results = syn.tableQuery('select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"')
 
 entity = [syn.get(r['file.id']) for r in results]
 {% endhighlight %}
@@ -204,9 +203,9 @@ entity = [syn.get(r['file.id']) for r in results]
 
 {% tab R %}
 {% highlight r %}
-results <- synQuery("select * from file where projectId=='syn1773109' AND dataType=='mRNA' AND fileType=='fastq' AND Cell_Type_of_Origin=='CD34+ cells'")
-
-entity <- lapply(results$file.id, function(x) synGet(x))
+results <- synTableQuery('select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"')
+df <- as.data.frame(results)
+entity <- lapply(df$file.id, function(x) synGet(x))
 {% endhighlight %}
 {% endtab %}
 
@@ -291,5 +290,24 @@ wiki <- synGetWiki(entity, 12345)
 
 <br/>
 
+### Downloading in Bulk
+
+Files can be downloaded in bulk using the `syncFromSynapse` function found in the [synapseutils](http://docs.synapse.org/python/synapseutils.html#module-synapseutils.sync) helper package. This function crawls all the subfolders of the project/folder that you specify and retrieves all the files that have not been downloaded. By default, the files will be downloaded into your `synapseCache`, but a different download location can be specified with the `path` parameter. If you do download to a location out side of `synapseCache`, this function will also create a tab-delimited manifest of all the files along with their metadata (path, provenance, annotations, etc).
+
+
+{% highlight python %}
+# Load required libraries
+import synapseclient
+import synapseutils
+
+# login to Synapse
+syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=True) 
+
+# download all the files in folder syn123 to a local folder called "myFolder"
+all_files = synapseutils.syncFromSynapse(syn, entity='syn123', path='/path/to/myFolder')
+{% endhighlight %}
+
+<br/>
+
 ### See Also
-[Versioning](/articles/versioning.html), [Tables](/articles/tables.html), [Wikis](/articles/wikis.html) 
+[Versioning](/articles/versioning.html), [Tables](/articles/tables.html), [Wikis](/articles/wikis.html), [File Views](/articles/fileviews.html), [Annotations and Queries](/articles/annotation_and_query.html)

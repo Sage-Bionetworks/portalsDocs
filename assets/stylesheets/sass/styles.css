@@ -803,7 +803,6 @@ Styling for code tabs
 .board{
     width: 100%%;
     margin: 60px auto;
-    height: 500px;
     background: #fff;
     /*box-shadow: 10px 10px #ccc,-10px 20px #ddd;*/
 }
@@ -830,7 +829,7 @@ p.narrow{
     height: 2px;
     background: #ddd;
     position: absolute;
-    width: 75%;
+    width: 80%;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -936,7 +935,7 @@ li.active span.round-tabs.five{
     background: #fafafa;
 }
 .nav-tabs > li {
-    width: 25%;
+    width: 20%;
 }
 
 .nav-tabs > li:after {

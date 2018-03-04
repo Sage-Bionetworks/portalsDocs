@@ -9,7 +9,18 @@ category: howto
 #image {
     width: 50%;
 }
+#imageLg {
+    width: 60%;
+}
+#imageXL {
+    width: 100%;
+}
+#imageSmall {
+    width: 25%;
+}
 </style>
+
+
 
 
 # Tables
@@ -22,7 +33,7 @@ information to a heterogeneous collection of files.
 that enable direct access to these data from analysis pipeline code. Unlike most NoSQL systems, the data in Synapse `Tables` 
 is strongly consistent, not eventually consistent. This is an important design consideration for scientific data processing, 
 as analysis on eventually-consistent data sources can limit the types of analysis performed, and may require special coding 
-strategies to ensure reasonable accuracy.
+strategies to ensure reasonable accuracy. 
 
 
 ## Table Schema
@@ -66,8 +77,7 @@ SELECT * FROM syn3079449 WHERE age > 50 ORDER BY "treatmentArm" ASC
 
 # Using Tables
 
-### Overview  
-Synapse allows you to create, modify and query tabular data. A `Table` has a Schema and holds a set of rows conforming to that schema. A Schema is defined in terms of Column objects that specify types from the following choices: 
+ A Schema is defined in terms of Column objects that specify types from the following choices: 
 
 {:.markdown-table}
 | \<columnType> |
@@ -104,8 +114,8 @@ df = pd.read_csv('path/to/jazzAlbums.csv', index_col=False)
 
 {% tab R %}
 {% highlight r %}
-require(synapseClient)
-synapseLogin()
+library(synapser)
+synLogin()
 
 csvFile <- read.csv('path/to/jazzAlbums.csv')
 
@@ -127,7 +137,7 @@ Navigate to the **Tables** tab on your project. You have to option to insert dat
 <br>
 
 **2. Create table schema:** Each client has a utility function to create Columns from a data frame. 
-Python uses `synapseclient.as_table_columns` and R uses `as.tableColumns`.
+Python uses `synapseclient.as_table_columns`.
 
 {% tabs %}
 
@@ -142,11 +152,15 @@ schema = synapseclient.Schema(name='Jazz Albums', columns=cols, parent=project)
 
 {% tab R %}
 {% highlight r %}
-project <- synGet('syn1901847')
-tcresult <- as.tableColumns(df)
-cols <- tcresult$tableColumns
+# Utilities function is not available in synapser 0.1.25
+cols <- list(
+    Column(name='artist', columnType='STRING', maximumSize=20),
+    Column(name='album', columnType='STRING', maximumSize=20),
+    Column(name='year', columnType='INTEGER'),
+    Column(name='catalog', columnType='STRING', maximumSize=20))
 
-schema <- TableSchema(name='Jazz Albums', columns=cols, parent=project)
+project <- synGet('syn1901847')
+schema <- Schema(name='Jazz Albums', columns=cols, parent=project)
 {% endhighlight %}
 {% endtab %}
 
@@ -256,9 +270,10 @@ syn.store(Table(results.tableId, df))
 {% highlight r %}
 # Change the album value 'Vol. 2' to 'Volume 2' 
 queryResult <- synTableQuery("select * from syn7266590 where album='Vol. 2'")
-queryResult@values['album'] <- 'Volume 2'
+df <- as.data.frame(queryResult)
+df['album'] <- 'Volume 2'
 
-table <- synStore(queryResult)
+table <- synStore(Table("syn7266590", df))
 {% endhighlight %}
 {% endtab %}
 
@@ -299,16 +314,17 @@ syn.store(Table(schema, df))
 {% tab R %}
 {% highlight r %}
 # Define a new column
-newColumn <- TableColumn(name="purchased", columnType="STRING")
+newColumn <- synStore(Column(name="purchased", columnType="STRING"))
 # Add the new column to existing schema
-schema <- synAddColumn(schema, newColumn)
+schema <- schema$addColumn(newColumn)
 schema <- synStore(schema)
 # Query for the newest schema
 queryResult <- synTableQuery('select * from syn7264701')
+df <- as.data.frame(queryResult)
 # Add values
-queryResult@values['purchased'] <- c('yes', 'yes', 'no', 'yes') 
+df['purchased'] <- c('yes', 'yes', 'no', 'yes') 
 # Store the new table
-table <- synStore(queryResult)
+table <- synStore(Table("syn7264701", df))
 {% endhighlight %}
 {% endtab %}
 
@@ -340,9 +356,9 @@ schema = syn.store(schema)
 {% tab R %}
 {% highlight r %}
 # Get the latest table
-table <- synGet('syn7264701')
+schema <- synGet('syn7264701')
 # delete the 'purchased' column
-schema <- synRemoveColumn(table, table@columns[[5]])
+schema <- schema$removeColumn(newColumn)
 # store the new table
 table <- synStore(schema)
 {% endhighlight %}
@@ -378,17 +394,17 @@ schema = syn.store(schema)
 {% tab R %}
 {% highlight r %}
 # Get the latest table
-table <- synGet('syn7266590')
+schema <- synGet('syn7266590')
 # delete the 'purchased' column
-schema <- synRemoveColumn(table, table@columns[[5]])
+schema <- schema$removeColumn(newColumn)
 # store the new table
-table <- synStore(schema)
+schema <- synStore(schema)
 # get the latest table
-table <- synGet('syn7264701')
+schema <- synGet('syn7264701')
 # Define the new column
-newColumn <- TableColumn(name='sold', columnType='STRING')
+newColumn <- Column(name='sold', columnType='STRING')
 # Add the new column to the existing schema
-schema <- synAddColumn(table, newColumn)
+schema <- schema$addColumn(newColumn)
 schema <- synStore(schema)
 {% endhighlight %}
 {% endtab %}
@@ -458,9 +474,9 @@ a = syn.delete(synapseclient.Table(schema,tabledf))
 
 {% tab R %}
 {% highlight r %}
-# Query for the rows you want to delete and call synDeleteRows on the results:
+# Query for the rows you want to delete and call synDelete on the results:
 rowsToDelete <- synTableQuery("select * from syn7264701 where artist='Sonny Rollins'")
-synDeleteRows(rowsToDelete)
+synDelete(rowsToDelete$asRowSet())
 {% endhighlight %}
 {% endtab %}
 
@@ -490,8 +506,9 @@ table = syn.store(synapseclient.Table(schema, df))
 {% tab R %}
 {% highlight r %}
 results <- synTableQuery("select * from syn7264701 where artist='Sonny Rollins'")
-results@values['purchased'] <- c('yes', 'yes')
-table <- synStore(results)
+df <- as.data.frame(results)
+df['purchased'] <- c('yes', 'yes')
+table <- synStore(Table("syn7264701", df))
 {% endhighlight %}
 {% endtab %}
 
@@ -521,7 +538,7 @@ syn.delete(schema)
 {% tab R %}
 {% highlight r %}
 #Deleting the schema deletes the whole table and all rows
-synDelete(table@schema$id)
+synDelete(schema)
 {% endhighlight %}
 {% endtab %}
 
@@ -557,8 +574,8 @@ schema = syn.store(schema)
 {% tab R %}
 {% highlight r %}
 # Add a column for files
-fileColumn <- TableColumn(name='covers', columnType='FILEHANDLEID')
-schema <- synAddColumn(schema, fileColumn)
+fileColumn <- Column(name='covers', columnType='FILEHANDLEID')
+schema <- schema$addColumn(fileColumn)
 schema <- synStore(schema)
 {% endhighlight %}
 {% endtab %}
@@ -588,7 +605,8 @@ df = results.asDataFrame()
 {% tab R %}
 {% highlight r %}
 # get the latest table
-table <- synTableQuery('select * from syn7264701')
+results <- synTableQuery('select * from syn7264701')
+df <- as.data.frame(results)
 {% endhighlight %}
 {% endtab %}
 
@@ -633,16 +651,20 @@ files <- c('./coltraneBlueTrain.jpg', './rollinsBN1558.jpg',
          './rollinsBN4001.jpg','./burrellWarholBN1543.jpg')
 
 # upload to filehandle service
-files <- lapply(files, function(f) synapseClient:::chunkedUploadFile(f))
+files <- lapply(files, function(f) {
+  temp_file <- tempfile(f)
+  write(f, file=temp_file)
+  synUploadSynapseManagedFileHandle(f)
+}
 
 # get the filehandle ids
-fileHandleIds <- sapply(files, function(i) i[1]$id)
+fileHandleIds <- sapply(files, function(f) f[1]$id)
 
 # assign the filehandle ids to the new column
-table@values['covers'] <- fileHandleIds
+df['covers'] <- fileHandleIds
 
 # store the new column
-synStore(table)
+synStore(Table(schema, df))
 {% endhighlight %}
 {% endtab %}
 
@@ -670,7 +692,7 @@ cover_files = syn.downloadTableColumns(results, ['cover'])
 {% tab R %}
 {% highlight r %}
 results <- synTableQuery('select covers from syn7264701')
-coverFiles <- synDownloadTableColumns(results, 'covers')
+coverFiles <- synDownloadTableColumns(results, columns='covers')
 {% endhighlight %}
 {% endtab %}
 
@@ -681,13 +703,46 @@ Clicking on any file will download it.
 {% endtab %}
 {% endtabs %}
 
+## Table Facets
+The faceted navigation on `Tables` (also known as **simple search**) can be used to simplify your search without having to use SQL-like queries. Simple search uses radio buttons and sliders to show all available facets in a menu to the left of the `Table` whereas advanced search employs a SQL-like query to filter the `Table`. To use table facets, navigate to a `Table` or a `File View`. For this example, we will be using the [Synapse Table Demo](https://www.synapse.org/#!Synapse:syn3079449/tables/){:target="_blank"} found in the [Wondrous Research Example](https://www.synapse.org/#!Synapse:syn1901847/wiki/56044){:target="_blank"}. Simple and advanced search both allow you to query for features of interest in a`Table` using different methods. 
+
+### Set facets
+In order to use simple search, you must first set columns to be facets in the schema editor. Select **Schema** in the upper right of your table and click on **Edit Schema**. In the resulting pop-up, select **Values** or **Range** from the dropdowns under the **Facet** option. **Values** can be thought of as categories whereas **Range** is a date or number. 
+
+<img id="imageLg" src="/assets/images/set_facets.png">
+
+{% include note.html content="If you change Column Type in the schema, you have to set its facet selection again." %}
+
+
+### See faceted (simple) search
+To see all the facets, click on **Show simple search** found above the SQL-query bar:
+
+<img id="imageLg" src="/assets/images/show_simple_search.png">
+
+#### Use simple search
+Select the features you are interested in to filter the table. 
+
+<img id="imageLg" src="/assets/images/simple_search.png">
+
+#### Toggling between simple and advanced search
+You can toggle from the simple search to the advanced search without losing the query results. For example, if in the simple search you had selected treatmentArm `A`, age of `23:64`, and gender as `female`, the query will be preserved in the advanced search bar. However, this is unidirectional because the advance search allows parameters that are not available with facets. Therefore switching from advanced to simple search will result in resetting the search query.
+
+{% include note.html content="The slider for range in simple search is inclusive." %}
+
+<img id="imageSmall" src="/assets/images/simple_search_query.png">
+<img id="imageXL" src="/assets/images/query_statement_from_simple_search.png">
+
+<br/>
+
+{% include warning.html content="When toggling back to simple search, the query will be reset." %}
+
+<img id="imageLg" src="/assets/images/toggle_advanced_to_simple_search.png">
+
 
 ## More on tables
-There are additional docs available for `Tables` in both Python and R that cover more advanced topics.
+There are additional docs available for `Tables` in Python that cover more advanced topics.
 
 For **Python** check out our [Python Docs](http://docs.synapse.org/python/Table.html#module-synapseclient.table).
-
-For **R**, open up your R session and check out our vignettes by typing `vignette("tables", package="synapseClient")` into your console.
 
 <br/>
 

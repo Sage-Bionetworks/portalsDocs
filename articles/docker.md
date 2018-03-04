@@ -7,8 +7,9 @@ category: howto
 
 # Synapse Docker Registry
 
-Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run.  This can be extremely helpful as software can have many dependencies, so by installing all of them in a container, users can avoid going through the trouble of installing the software on their own computer.  These Docker images can then be stored and distributed on a Docker registry.  The Synapse Docker registry will allow users to create software on a per project basis which can be easily shared across Synapse. Use the  links to learn more about [Docker](https://www.docker.com/products/overview){:target="_blank"} and [Docker registry](https://www.docker.com/products/docker-registry){:target="_blank"}.
+Docker is a tool for creating, running, and managing lightweight virtual machines. These virtual machines make it possible to distribute executable environments with all of the dependencies that can easily be run by others. These Docker images can then be stored and distributed on a Docker registry, a collection of these images. There are a number of open registries on the web, and Synapse hosts a private registry, freely available to our users, which will allow users to create software on a per project basis which can be easily shared across Synapse. Learn more about [Docker](https://www.docker.com/products/overview) and [Docker registry](https://www.docker.com/products/docker-registry).
 
+Synapse users interact with the Synapse Docker registry using the standard Docker client. In Synapse, Docker containers are represented as versioned 'repositories' under the 'Docker' tab. As with Files and Tables, Repositories are organized by project and inherit the access controls from the project.
 
 ## Creating a new Docker image
 Let's begin by creating a custom Docker image.  Users can choose to either modify an existing Docker image or build a Docker image from a Dockerfile.  Docker images must be tagged with 'docker.synapse.org/synapseProjectId/myreponame' to allow images to be saved. 
@@ -49,16 +50,13 @@ When building a Docker image from a Dockerfile simply add a `-t` to the docker b
 docker build -t  docker.synapse.org/syn12345/my-repo path/to/dockerfile
 ```
 
-To learn more about building [Docker images](https://docs.docker.com/engine/getstarted/step_four/).  
+Learn more about building [docker images](https://docs.docker.com/engine/getstarted/step_four/).  
 
-## Storing Docker images in Synapse
+## Storing Docker images in the Synapse Docker Registry
 To store Docker images, use the `docker push` command.  To push to the Synapse Docker Registry, users must be logged into the registry:
 
 ```
-docker login docker.synapse.org
-#Username: (Input Synapse username)
-#Password: 
-#Login Succeeded 
+docker login -u <synapse username> -p <synapse password> docker.synapse.org
 ```
 
 After logging in, view your images and decide which ones to push into the registry.
@@ -73,13 +71,12 @@ docker push docker.synapse.org/syn12345/mytestrepo:version1
 docker push docker.synapse.org/syn12345/my-repo
 ```
 
-## Using Docker images stored in Synapse
+## Using Docker images stored in the Synapse Docker Registry
 To access the Docker images stored in Synapse, simply use the `docker pull` command.
 
+{% include tip.html content="By default, if you do not specify a tag, it will attach latest as the tag.  If you specified a tag on your repository, be sure to pull the repository with the tag." %}
 ```
 docker pull docker.synapse.org/syn12345/my-repo
-#By default, if you do not specify a tag, it will attach "latest" as the tag.  If you specified a tag on your repository, be sure to pull the repository with the tag.
-docker pull docker.synapse.org/syn12345/mytestrepo:version1
 ```
 
 Docker tags can be assigned to later commits. If you want to be explicit about the version of an image then instead of referencing a tag you can reference a digest:
@@ -90,3 +87,5 @@ docker pull docker.synapse.org/syn12345/mytestrepo@sha256:2e36829f986351042e2824
 
 where the digest for a commit is printed to the command line after a successful Docker push. The Synapse web portal displays current digests for a repository's tags on the repository's Synapse page.
 
+{% include note.html content="You can add external repositories, i.e. repositories that live in other registries like DockerHub and quay.io. For these repositories there is no tight integration (Synapse doesn't contact these external registries) but it allows you to list Docker repositories that are relevant to the project but are not within Synapse.
+" %}

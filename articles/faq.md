@@ -74,6 +74,9 @@ Validating your profile is a process where your identity is established through 
 
 # Adding Content
 
+#### I have my research results - How can Synapse help me share them?
+Synapse makes it easy to share files of any sort, with whomever you choose whether a small group of collaborators or the general public. You may share raw data, summarized data, analysis results, or anything in between. We recommend using [Getting started with Synapse guide]({{site.url}}/articles/getting_started.html) for more details on how to upload and manage content.
+
 #### Why do I have to be a certified user to upload content?
 User certification ensures that you understand your responsibilities for sharing data through Synapse, especially data derived from human participants. These responsibilities include making sure that data derived from human participants is de-identified and that all applicable privacy laws and regulations are observed. See the [How to contribute data]({{site.url}}/articles/contribute_and_access_controlled_use_data.html) for more information.
 
@@ -91,6 +94,3 @@ Synapse stores content in Amazon Web Services, which provides a layer of securit
 
 #### Where are my files stored?
 By default, Synapse stores files in Amazon Simple Storage Services (S3). However it is possible to set up Synapse to store files in different locations such as your local SFTP server. For files stored outside of S3, Synapse can be used to organize, manage, and access files through the use of Synapse annotations to store file-specific metadata. (see: [Custom Storage Locations](/articles/custom_storage_location.html))
-
-#### I have my research results - How can Synapse help me share them?
-Synapse makes it easy to share files of any sort, with whomever you choose whether a small group of collaborators or the general public. You may share raw data, summarized data, analysis results, or anything in between. We recommend using [Getting started with Synapse guide]({{site.url}}/articles/getting_started.html) for more details on how to upload and manage content.
