@@ -13,13 +13,12 @@ category: howto
 
 
 # Links
-Synapse `Links` is a feature designed to provide users the ability to create a link to any file, table, folder, or project on Synapse. 
+Synapse `Links` provide users the ability to create a link to any file, table, folder, or project on Synapse. 
 
 
 
 ## Creating a Link
 
-There are currently only ways to create links through the web and Python client. 
 
 {% tabs %}
 
@@ -36,13 +35,27 @@ syn.store(linkEnt)
 {% endhighlight %}
 {% endtab %}
 
+{% tab R %}
+{% highlight r %}
+library(synapser)
+synLogin()
+
+# Add a local file to an existing project (syn12345) on Synapse
+linkEnt <- Link(targetId="syn12345",targetVersion=1, parent="syn2345")
+linkEnt <- synStore(linkEnt)
+#targetId is the synapse id of the file, table, etc that you want to link
+#targetVersion is optional, if no version is defined, the link will always point to the newest version
+#parent is the folder or project where you want to link to exist
+{% endhighlight %}
+{% endtab %}
+
 {% tab Web %}
-Navigate to the file, table, folder or project you want to save a link of. Click Tools and Save Link to .
+Navigate to the file, table, folder or project you want to save a link of. Click Tools and Save Link to...
 <br>
 <img id="image" src="/assets/images/save_link_to_file.png">
 <br>
 
-Select a folder or project that you want to save the link to (This feature is more like bookmarking the file to a specific location)
+Select a folder or project that you want to save the link to (This feature is more like bookmarking the file to a specific location).
 <br>
 <img id="image" src="/assets/images/link_to_parent.png">
 <br>

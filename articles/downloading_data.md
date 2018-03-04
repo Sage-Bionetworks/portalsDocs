@@ -104,7 +104,7 @@ See [versioning](http://docs.synapse.org/articles/versioning.html) for more deta
 
 ### Links
 
-There are multiple ways of downloading a link in Synapse.  Without specifying the followLink parameter, you will only retrieve the link itself without downloading wherever the link leads to.  There is currently not a way to follow the link in R.
+When you click on a link online, it will automatically direct you to the linked entity.  The `followLink` parameter will have to be specified when using the analytical clients or you will only retrieve the link itself without downloading the linked entity.
 
 {% tabs %}
 {% tab Command %}
@@ -114,13 +114,18 @@ synapse get syn1234 --followLink
 {% endtab %}
 {% tab Python %}
 {% highlight python %}
+import synapseclient
+syn = synapseclient.login()
+linkEnt = syn.get("syn1234")
 entity = syn.get("syn1234", followLink=True)
 {% endhighlight %}
 {% endtab %}
 {% tab R %}
 {% highlight r %}
-entity <- synGet("syn1234")
-entityFile = synGet(entity@properties$linksTo$targetId, version = entity@properties$linksTo$targetVersionNumber)
+library(synapser)
+synLogin()
+linkEnt = synGet("syn1234")
+entity = synGet("syn1234",followLink=T)
 {%endhighlight %}
 {% endtab %}
 
