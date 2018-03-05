@@ -56,6 +56,10 @@ The code block below displays an example config file with the available paramete
 
 <br/>
 
+## Create a .synapseConfig file on programmatic client installation
+
+When you install the [Synapse Python client](http://docs.synapse.org/python/#installation), a `.synapseConfig` file filled with examples, much like the sample above, should appear in your home directory if a config file is not already present. You can uncomment and fill out the parameters of interest to you to use. 
+
 ## See Also
 
-[Getting Started](docs.synapse.org/articles/getting_started.html), [Custom Storage Locations](), [Downloading Data]()
+[Getting Started](docs.synapse.org/articles/getting_started.html), [Custom Storage Locations](http://docs.synapse.org/articles/custom_storage_location.html), [Downloading Data](http://docs.synapse.org/articles/downloading_data.html)
