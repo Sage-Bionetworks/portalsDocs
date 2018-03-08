@@ -95,7 +95,7 @@ See the [Using Simple Search](/articles/fileviews.html#using-simple-search) and 
 
 Views can be used to update annotations in bulk. To update other metadata in bulk, such as provenance, please see the [Bulk Processing](/articles/uploading_in_bulk.html) article.
 
-For example, if you would like to add the annotation `dogSays`:`woof` to every file in a `File View` with the synId syn456, you can do:
+For example, if you would like to update the annotation `dogSays`:`bark` to `dogSays`:`woof` in every file in a `File View` with the synId syn456, you can do:
 
 {% tabs %}
 
