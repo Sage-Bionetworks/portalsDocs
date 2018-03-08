@@ -65,6 +65,55 @@ Navigate to the **Files** tab of the project you would like to add the file to. 
 
 {% endtabs %}
 
+## Moving a File
+
+All the clients, programmatic and web, offer a way to move files and folders. Please note that file views and sync manifests **cannot** be used to move files. 
+
+The command line client has a parameter `mv` which can be used to move files and folders. The Python and R clients do not have a specific `move` function, but can be used to modify the `parentId` property of the file/folder to move it. In the web client, there is an option in the `Tools` menu to move files or folders. 
+
+{% tabs %}
+
+{% tab Command %}
+{% highlight bash %}
+# move a file or folder (syn123) to a different folder/project (syn456)
+synapse mv --id syn123 --parentid syn456
+{% endhighlight %}
+{% endtab %}
+
+{% tab Python %}
+{% highlight python %}
+import synapseclient
+syn = synapseclient.login()
+# fetch the file/folder to move (syn123 in this example)
+# note the downloadFile=False parameter to fetch only the file's metadata and not the entire file
+foo = syn.get('syn123', downloadFile=False)
+# change the parentId to the new location, can be a folder or project (syn456 in this example)
+foo.properties.parentId = 'syn456'
+# store the file/folder to move it
+syn.store(foo)
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+library(synapser)
+synLogin()
+# fetch the file/folder to move (syn123 in this example)
+# note the downloadFile=False parameter to fetch only the file's metadata and not the entire file
+foo <- synGet('syn123', downloadFile = FALSE)
+# change the parentId to the new location, can be a folder or project (syn456 in this example)
+foo$properties$parentId <- 'syn10056031'
+# store the file/folder to move it
+synStore(foo)
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+
+{% endtab %}
+
+{% endtabs %}
+
 # Versioning
 
 Versioning is an important component to reusable, reproducible research. There are a number of ways that versioning can be accomplished, including the commonly used filename modification scheme (e.g., 'file.txt', 'file-1.txt', 'file-1a.txt', 'file-final.txt', and then 'file-reallyfinal.txt'). However, this is less than satisfactory for a number of reasons. First, the rules for naming are arbitrary, and may change over time. Second, it is not possible to easily determine (without external documentation) that this set of file changes are related to the same file. Third, it becomes difficult to manage future use of specific versions of the file. Using `File` versioning provided by Synapse solves these issues.
