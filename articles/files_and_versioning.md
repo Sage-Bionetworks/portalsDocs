@@ -69,16 +69,16 @@ Navigate to the **Files** tab of the project you would like to add the file to. 
 
 ## Moving a File
 
-All the clients, programmatic and web, offer a way to move files and folders. Please note that file views and sync manifests **cannot** be used to move files. 
+All Synapse clients offer a way to move files and folders. Please note that [file views](http://docs.synapse.org/articles/views.html) and [sync manifests](http://docs.synapse.org/articles/uploading_in_bulk.html) **cannot** be used to move files. 
 
-The command line client has a parameter `mv` which can be used to move files and folders. The Python and R clients do not have a specific `move` function, but can be used to modify the `parentId` property of the file/folder to move it. In the web client, there is an option in the `Tools` menu to move files or folders. 
+The command line client has a sub-command `mv` which can be used to move files and folders. The Python and R clients do not have a specific `move` function, but can be used to modify the `parentId` property of the file/folder to move it. In the web client, there is an option in the `Tools` menu to move files or folders. 
 
 {% tabs %}
 
 {% tab Command %}
 {% highlight bash %}
 # move a file or folder (syn123) to a different folder/project (syn456)
-synapse mv --id syn123 --parentid syn456
+synapse mv --id syn123 --parentId syn456
 {% endhighlight %}
 {% endtab %}
 
