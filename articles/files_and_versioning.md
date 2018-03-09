@@ -9,6 +9,9 @@ category: howto
 #image {
     width: 40%;
 }
+#smallImage {
+    width: 20%;
+}
 #largeImage { 
     width: 100%;
 }
@@ -32,7 +35,6 @@ Synapse `Files` (as well as `Folders` and `Projects`) are identified by a unique
 synapse store raw_data.txt --parentId syn123456
 {% endhighlight %}
 {% endtab %}
-
 
 {% tab Python %}
 {% highlight python %}
@@ -109,7 +111,10 @@ synStore(foo)
 {% endtab %}
 
 {% tab Web %}
-
+Navigate to the file/folder you would like to move. Select **Tools** -> **Move File**. Browse for the new folder/project or enter the synId to move to. 
+<br/>
+<img id="smallImage" src="/assets/images/moveFile.png"> <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+<img id="image" src="/assets/images/moveFileTo.png">
 {% endtab %}
 
 {% endtabs %}
