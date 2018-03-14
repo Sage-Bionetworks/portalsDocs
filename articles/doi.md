@@ -1,7 +1,7 @@
 ---
 title: "Digital Object Identifiers (DOIs) in Synapse"
 layout: article
-excerpt: Mint DOIs in Synapse to cite your research
+excerpt: Mint DOIs in Synapse to cite your research.
 category: howto
 ---
 
@@ -32,4 +32,4 @@ A Digital Object Identifier (DOI) is an alphanumeric string assigned to uniquely
 
 Navigate to the data or project you'd like to create a DOI for; for example, you can create DOIs for `Files`, `Folders`, or entire `Projects` (support for `Tables` coming soon). From the Tools Menu, select the option for "Create DOI" for the object in question, or choose "Create DOI" from the "Project Settings" menu if minting a DOI for an entire project. 
 
-If you do not see these options, you either do not have permission to do so (only users with Edit or Administrate access may mint DOIs for objects), or a DOI may have already been created. Check the information below the object name for a DOI field; Synapse does not allow you to mint more than one DOI per object. 
+If you do not see these options, you either do not have permission to do so (only users with Edit or Administrator access may mint DOIs for objects), or a DOI may have already been created. Check the information below the object name for a DOI field; Synapse does not allow you to mint more than one DOI per object. 
