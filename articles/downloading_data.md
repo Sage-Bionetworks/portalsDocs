@@ -104,7 +104,7 @@ See [versioning](http://docs.synapse.org/articles/versioning.html) for more deta
 
 ### Links
 
-When you click on a link online, it will automatically direct you to the linked entity.  The `followLink` parameter will have to be specified when using the analytical clients or you will only retrieve the link itself without downloading the linked entity.
+When you click on a Link entity on the Synapse website, it will redirect you to the linked entity.  The `followLink` parameter will have to be specified when using the programmatic clients or you will only retrieve the link itself without downloading the linked entity.
 
 {% tabs %}
 {% tab Command %}
@@ -125,7 +125,7 @@ entity = syn.get("syn1234", followLink=True)
 library(synapser)
 synLogin()
 linkEnt = synGet("syn1234")
-entity = synGet("syn1234",followLink=T)
+entity = synGet("syn1234", followLink=TRUE)
 {%endhighlight %}
 {% endtab %}
 
