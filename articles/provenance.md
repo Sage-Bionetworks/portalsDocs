@@ -185,7 +185,7 @@ deleteProvenance = synDeleteProvenance('syn123')
 {% endtab %}
 
 {% tab Web %}
-Navigate to the entity you would like to delete provenance from (e.g. a File or Folder). In this example, we are deleting provenance from a file. Select **Tools->Edit File Provenance**. In the list of **Used** and **Executed**, click the **"X"** to delete each activity and **Save** your changes.
+Navigate to the entity you would like to delete provenance from (e.g. a File or Folder). In this example, we are deleting provenance from a file. Select **Tools->Edit File Provenance**. In the list of **Used** and **Executed**, click the **X** to delete each activity and **Save** your changes.
 
 <img id="webTab" src="/assets/images/delete_provenance.png">
 
