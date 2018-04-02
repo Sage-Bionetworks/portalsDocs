@@ -158,6 +158,43 @@ To update the provenance on a file, navigate to the `File's` tab and click on th
 
 <br/>
 
+### Deleting Provenance
+
+If at any point you need to delete provenance on an entity, you can do so with the Python, R, or web clients. You must be the person who created the entity to delete provenance. 
+
+{% tabs %}
+
+{% tab Command %}
+{% highlight bash %}
+Currently, deleting provenance is not supported in the command line client.
+{% endhighlight %}
+{% endtab %}
+
+{% tab Python %}
+{% highlight python %}
+# Delete provenance on entity syn123 
+delete_provenance = syn.deleteProvenance('syn123')
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+# Delete provenance on entity syn123
+deleteProvenance = synDeleteProvenance('syn123')
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+Navigate to the entity you would like to delete provenance from (e.g. a File or Folder). In this example, we are deleting provenance from a file. Select **Tools->Edit File Provenance**. In the list of **Used** and **Executed**, click the **"X"** to delete each activity and **Save** your changes.
+
+<img id="webTab" src="/assets/images/delete_provenance.png">
+
+{% endtab %}
+
+{% endtabs %}
+
+
+
 ### Getting and Viewing Provenance
 
 To view the provenance relationships you've created:
