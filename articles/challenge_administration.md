@@ -262,7 +262,7 @@ As submissions arrive from participants, you may need to run a custom scoring sc
 [https://github.com/Sage-Bionetworks/SynapseChallengeTemplates]
 After customizing the application for your scoring needs, create a periodically running job on a server owned by your organization.  A convenient, free web interface for periodically running jobs is Jenkins, [http://jenkins-ci.org/].  Note:  In the Challenge Admin tab mentioned above you must share the Evaluation with the user under whose credentials the Scoring Application is run, providing "Can score" access to this user.
 
-Submission scores and other computational results may be attached to the Submissions themselves.  The sample code shows how to do this.  The results may be retrieved and displayed in a leader board, as described below.
+Submission scores and other computational results may be attached to the Submissions themselves.  The sample code shows how to do this.  The results may be retrieved and displayed in a leaderboard, as described below.
 
 
 #### Python Scoring Application
@@ -421,8 +421,14 @@ Although validation/test data is typically kept secret during a challenge, you s
 
 ### Create a Leaderboard
 
-You can add a dynamic leader board on a wiki page to show the submissions to an Evaluation and their scores.  Click "@" in the lower, right-hand corner of the portal, edit a wiki page, and click Insert > "Synapse API SuperTable".  A table editor allows you to pick from the results your scoring application added to the participants' submissions and display in a sorted, paginated, tabular form.  The scoring application templates mentioned above print out valid sample widget text suitable
-for pasting into the wiki editor.  In the "Challenge Admin" control, described above, you provide "Can View" access to whoever you wish to be able to see the leader board, a choice which can be to make the leader board visible to everyone.
+Leaderboards are sorted, paginated, tabular forms that display submission annotations (such as scores from your scoring application and other metadata). Leaderboards are dynamic and update as annotations/scores change, so can provide real-time insight into how your Challenge is going. The scoring application templates mentioned above print out valid sample widget text suitable for pasting into the wiki editor.  In the "Challenge Admin" control, described above, you provide "Can View" access to whomever you wish to be able to see the leaderboard. 
+
+To add a leaderboard to your Challenge Wiki,
+* First go to the Challenge Project and get the ID of the Evaluation of interest; Challenges can have multiple evaluations so it's important to identify which evaluation you want to summarize.
+* Next, edit the wiki page where you want to add your leaderboard and choose "Insert" and then "Leaderboard". 
+* Finally, you'll configure your leaderboard by entering a query of the form "Select * from Evaluation_12345" where 12345 is the ID from the first step. 
+
+<br>If you have some annotations already then you can click "Refresh Columns" to add display columns for the existing annotations. Otherwise you have to add the columns manually. You can reorder the columns and choose what to sort by. Keep in mind that "private" annotations will not be visible to participants (only to challenge administrators). 
 
 **Test everything on some dry run users**
 
@@ -430,7 +436,7 @@ for pasting into the wiki editor.  In the "Challenge Admin" control, described a
 
 ### Link results to participants' project spaces
 
-If using a "live leader board", simply add a column whose value is "entityId".  This will add a column to the table containing hyperlinks to the submitter's home project.  There they can add a wiki describing their algorithm.  If using a static leader board (wiki table), you may retrieve the entity IDs from the submissions and add them in the wiki editor.  To get the link for each submission, you may use this R script:
+If using a "live leaderboard", simply add a column whose value is "entityId".  This will add a column to the table containing hyperlinks to the submitter's home project.  There they can add a wiki describing their algorithm.  If using a static leaderboard (wiki table), you may retrieve the entity IDs from the submissions and add them in the wiki editor.  To get the link for each submission, you may use this R script:
 
 ```
 library(synapseClient)
