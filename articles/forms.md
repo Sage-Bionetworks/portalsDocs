@@ -23,7 +23,7 @@ In order to use Forms, you'll need to first create a `Table`. Read more about cr
 
 ## Activating and Deactivating 'Alpha' Mode
 
-In the Synapse footer, on the right side, is a little "@" symbol. Clicking this symbol will bring you a pop-up that asks if you want to enter into "alpha mode". Doing so enables a small number of beta features related to new "widgets" in our `Wiki` pages, all available under under the "Insert" menu when you are editing a wiki page. Once alpha mode has been activated, you'll see a little bit of text in the Synapse header that says "Alpha features on / off" with "ON" in bold. 
+In the Synapse footer, on the right side, is a little "@" symbol. Clicking this symbol will bring you a pop-up that asks if you want to enter into "alpha mode". Doing so enables a small number of new, under development features related to new "widgets" in our `Wiki` pages, all available under under the "Insert" menu when you are editing a wiki page. Once alpha mode has been activated, you'll see a little bit of text in the Synapse header that says "Alpha features on / off" with "ON" in bold. 
 
 You can also deactivate alpha mode at any time; the deactivation button is the word "off" the Synapse header and clicking it turns it off and removes the text from the header. 
 
@@ -31,7 +31,9 @@ You can also deactivate alpha mode at any time; the deactivation button is the w
 
 Once alpha mode has been activated, visit the wiki page where you'd like to insert the Form. Click on "Edit Project Wiki" and select the "@ Insert" menu. Select "Synapse Form" from the menu. The widget will insert (currently; this may change in the future) a line of markdown that says:
 
-```${synapseForm?tableId=syn123&successMessage=Your response has been recorded}```
+```
+${synapseForm?tableId=syn123&successMessage=Your response has been recorded}
+```
 
 You will need to insert the proper synID for the Table you created above, and optionally, you can customize the "Success" message for users. When a `Form` is submitted, it will create a new row in a Synapse Table.
 
