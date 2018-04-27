@@ -33,7 +33,13 @@ Once alpha mode has been activated, visit the wiki page where you'd like to inse
 
 ```${synapseForm?tableId=syn123&successMessage=Your response has been recorded}```
 
-You will need to insert the proper synID for the Table you created above, and optionally, you can customize the "Success" message for users. 
+You will need to insert the proper synID for the Table you created above, and optionally, you can customize the "Success" message for users. When a `Form` is submitted, it will create a new row in a Synapse Table.
+
+The question UI is built from the Synapse Table column schema.
+Column names are used as question prompts.
+The possible values for an enum column type, for example, will be a represented by a multiple choice question.
+
+The form is also responsive, so it will render on both large and small screens. 
 
 ## Allowing Others to Contribute
 
