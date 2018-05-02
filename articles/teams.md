@@ -51,7 +51,7 @@ Using this option, you can edit the `Team` name, the `Team` description, the `Te
 ## Delete a Team
 Use the **Delete Team** option to delete all references to the `Team`. If a `Team` has Synapse content shared with it (see "Communications and Project Permissions" below), the `Team` cannot be deleted.
 
-## Leave a team
+## Leave a Team
 Use the **Leave Team** option to be removed from a `Team`. If you want to re-join the `Team`, you may need the Team Manager's permission to join.
 
 You may also remove team members by clicking the **Remove** button next to a member, or promote additional team members to Team Manager, by clicking the option list below the member.
@@ -77,10 +77,6 @@ You may use `Teams` to manage Sharing Settings on `Files`, `Folders` and `Projec
 ## Submitting to a Challenge as a Team
 
 When participating in a Challenge, you may submit solutions as an individual or as a `Team`. The `Team` must be registered with the challenge, which can be done by clicking the **Register a Team** button, typically on the **Forming a Team** page on the challenge wiki. When submitting a `File` to a challenge from the Web Client, you will be given the option to submit the `File` as part of a `Team`. You will then be asked to select from the registered `Teams` of which you are a member, or register an existing `Team` with the challenge, and to verify which team members contributed to the solution. Note that only members who have already registered with the challenge may be selected. 
-
-## Leave a team
-
-You may leave any `Team` of which you are a member. From the team page use menu **Tools**>**Leave Team**.
 
 <br/>
 
