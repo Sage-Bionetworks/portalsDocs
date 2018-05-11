@@ -69,44 +69,20 @@ wiki <- synStore(wiki)
 
 {% endtabs %}
 
-## Wiki Sub-pages
+## Wiki Subpages
 
-A `Project` Wiki can have sub-pages, which will appear nested below the main Wiki page. This will also create a navigation bar on the right side of the page that lists the sub-wiki pages in the order they were created.
-
-### Through a Web Browser
+A `Project` Wiki can have subpages, which will appear nested below the main Wiki page. This will also create a navigation bar on the right side of the page that lists the Wiki subpages in the order they were created.
 
 When on a Project Wiki page, use the **Tools** menu and then click "Add Wiki Subpage". You can then edit this sub-page like any other Wiki page through the **Tools** menu and "Edit Project Wiki".
 
 These pages can be reordered through the Edit Order button below the Wiki page navigation bar to change both the hierarchy and the order of pages within a particular level.
 
-## Wiki Features
-
-### Markdown Language
-The layout and text of a `Wiki` can be customized using Wiki Markdown language. A Formatting Guide is available within the Wiki editing window. For additional markdown functions see [Markdown in Synapse](https://www.synapse.org/#!Wiki:syn2467792/ENTITY/64247){:target="_blank"}. Useful markdown shortcuts are available as separate tools, including: heading, bold, italic, strike-through, code block, sub and superscript.
-
-### Tables in Markdown
-
-To create a table you separate the columns by the pipe character (\|).  A Header can be added by separating the first row by dashes (-).  A header allows the table to be sorted by each column.  A simple table would be created by the following markdown.
-
-    ````
-     Header 1 | Header 2 | Header 3 |
-    --- | --- | --- |
-     a  |  b  |  c  |
-    ````
-
-
-For more table settings see the formatting guide at the top of the wiki editor.
-
-{% include tip.html content="To insert large amounts of text, use the widget \"Table: Paste tabular data\" (see all widgets below)." %}
-
-## Links
-Links can be added to content available from any source with a URL.
+## Wiki Markdown Language
+The layout and text of a `Wiki` can be customized using standard Markdown notation. A Formatting Guide is available within the Wiki editing window. For a reference of Markdown formatting see the [Markdown Formatting Guide](https://www.synapse.org/#!Wiki:syn2467792/ENTITY/64247){:target="_blank"}. Useful Markdown shortcuts are available in the Wiki Editor in a tool bar including: heading, bold, italic, strike-through, code block, sub and superscript. Links can be added to content available from any source with a URL.
 
 ## Wiki Widgets
 
 Widgets are Synapse features that supplement the Markdown text that can be typed into the Wiki editor. These include inserting images, tagging individuals, querying tables, and many more. See the 'Insert' menu while in the Wiki editor for the list of widgets to customize your Wiki.
-
-### Available Widgets
 
 See the 'Insert' list for the following widgets to customize your Wiki design.
 <img src="/assets/images/wiki_insertwidget.png">
@@ -127,17 +103,20 @@ See the 'Insert' list for the following widgets to customize your Wiki design.
 | **Button Link** <br/> Insert a button that links to content within Synapse or elsewhere. **Tip:** buttons can be colored purple by adding `'&highlight=true'` to the end of the widget markdown |<img id="image" src="/assets/images/wiki_insertbutton.png">|
 | **Join Team Button** <br/> Provide a button for people to join Synapse [Teams](/articles/teams.html) | <img id="image" src="/assets/images/wiki_jointeambutton.png"> |
 | **Team Badge** <br/> Creates a link to the `Team` profile | <img id="image" src="/assets/images/wiki_teambadge.png"> |
-| **Genome Browser** <br/> You can add a [Biodalliance genome browser](http://www.biodalliance.org) using tracks from files uploaded to Synapse or from external sources. Choose between Human or Mouse and adjust your tracks for height and color. See the Biodalliance Setup page for [more information](https://www.synapse.org/#!StandaloneWiki:GenomeBrowser) | <img id="image" src="/assets/images/wiki_genomebrowser.png"> |
+| **Genome Browser** <br/> You can add a [Biodalliance genome browser](http://www.biodalliance.org) using tracks from files uploaded to Synapse or from external sources. Choose between Human or Mouse and adjust your tracks for height and color. See the Biodalliance Setup page for [more information](/articles/genome_browser.html) | <img id="image" src="/assets/images/wiki_genomebrowser.png"> |
 | **Video** <br/> Video, Vimeo Video, and YouTube Video insert a video from various sources. | <img id="image" src="/assets/images/wiki_video.png"> |
 
 <br>
 
-### Tagging Synapse Users
+## Tagging Synapse Users
 
 A Synapse user can be tagged by using the 'Tag someone' Widget from the 'Insert' menu. This displays a user badge which can be clicked on to visit the users' profile page. You can also do this by typing '@' while editing a Wiki - just enter the Synapse username or part of their full name in the dialog that appears.
 
 ## Governance
-`Wiki` pages do not have `Conditions for Use` as a feature. Therefore, **do not** put any protected human data (`Controlled Data`) in Synapse `Wikis`. See the Synapse Data Use Procedure document for [details](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}.
+
+{% include important.html content="Wiki pages do not have specific Conditions for Use. Do not put any protected human data (Controlled Data) in Synapse Wikis." %}
+
+See the Synapse Data Use Procedure document for [details](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}.
 
 ## See Also
 [Discussion](/articles/discussion.html)
