@@ -16,7 +16,7 @@ order: 1
 
 # Get Started with Synapse
 
-This getting started is for new users who are interested in learning about Synapse. By following this guide, you will learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
+This getting started guide is for new users who are interested in learning about Synapse. By following this guide, you will learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
 
 * Create your own project and add content to Synapse
 * Understand and use some of the many Synapse features
@@ -26,40 +26,139 @@ This getting started is for new users who are interested in learning about Synap
 ## What is Synapse?
 Synapse is an open source software platform that data scientists can use to carry out, track, and communicate their research in real time. Synapse enables co-location of scientific content (data, code, results) and narrative descriptions of that work. Synapse has seeded a growing number of living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
 
-With Synapse, you can:
+[Sage Bionetworks](http://www.sagebase.org){:target="_blank"} provides Synapse services free of charge to the scientific community through generous support from various [funding sources](/articles/faq.html#how-is-synapse-funded){:target='_blank'}. Synapse hosts many living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
 
+With Synapse, you can:
+=======
 * create your own personal project workspaces
 * populate your projects with files and tables such as data, code, and results as well as the provenance relationships that tie these resources together
 * richly annotate files and tables to increase discoverability and aid in programmatic querying of these resources
-* provide a project narrative which lives right along side the scientific artifacts of your work, via the Synapse Wiki engine
+* provide a project narrative which lives along side the scientific artifacts of your work, via the Synapse `Wiki` tools
 * create a [DOI](http://en.wikipedia.org/wiki/Digital_object_identifier){:target="_blank"} for any resource for easy citation of your work
 * share your work with other Synapse users, teams of users, or make your work public
-* Discuss with researchers in a project using discussion forums
+* discuss with researchers in a project using discussion forums
 
-Synapse was created to encourage open science initiatives to advance our understanding of human health. [Sage Bionetworks](http://www.sagebase.org){:target="_blank"} provides Synapse services free of charge to the scientific community through generous support from the [*National Cancer Institute (NCI)*](http://www.cancer.gov){:target="_blank"}, the [*Washington State Life Science Development Fund (LSDF)*](http://www.lsdfa.org){:target="_blank"}, and the [*National Heart, Lung, and Blood Institute (NIH NHLBI)*](http://www.nhlbi.nih.gov){:target="_blank"}.
-
+<br/>
 Synapse operates under a complete [governance process](/articles/governance.html) that includes well-documented [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}, guidelines and operating procedures, privacy enhancing technologies, as well as the right of audit and external reviews.
 
 # Becoming a Synapse Registered User
 
-Anyone can browse public content in Synapse but in order to download and create content you will need to register for an account:
+Anyone can browse public content on the Synapse web site, but in order to download and create content you will need to register for an account:
 
 <a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>{:target="_blank"}
 
-As Synapse can store human subject data that has sharing and use restrictions, you will also need to become certified and take a quiz about what kinds of items can be shared in Synapse.  To start this process:
+### Becoming a Certified User
+
+Since Synapse can store human subject data that has sharing and use restrictions, before you can create content you will need to become a Certified User and take a quiz about what kinds of items can be shared in Synapse. To start this process:
 
 <a href="https://www.synapse.org/#!Quiz:Certification" class="btn btn-primary">Become a Certified User</a>{:target="_blank"}
 
 Explore our [accounts, certification and profile validation](/articles/accounts_certified_users_and_profile_validation.html) page to find out more information on the different levels of users.  
 
+# Installing Synapse Clients
+<img style="float:right;" src="/assets/images/synapse_apis.png">
+
+Synapse is built on a number of RESTful web APIs that allow users to interact with the system via a number of _clients_. One of these _clients_ is the web client, i.e. the website [www.synapse.org](https://www.synapse.org/). Synapse also provides three programmatic clients (R, Python, and Command Line). Content can be uploaded, downloaded, annotated, and queried from any of these interfaces. In the getting started guide we will run through examples using all three programmatic interfaces.  At any point you can pick the language you would like to see examples in by clicking the corresponding tab at the bottom of every example.  Unless otherwise noted the examples are can be typed into the respective environment.  That is a shell prompt for the command line examples, a Python session such as an ipython notbook of script, and an R session for the R examples.
+
+{% tabs %}
+{% tab Command %}
+
+In a terminal window type the following command and hit enter. (For alternative methods of installation see the Python client installation instructions.)
+
+{% highlight bash %}
+pip install synapseclient
+{% endhighlight %}
+{% endtab %}
+
+
+{% tab Python %}
+{% highlight python %}
+pip install synapseclient
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+install.packages("synapser", repos=c("https://sage-bionetworks.github.io/ran", "http://cran.fhcrc.org"))
+{%endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+Navigate to [www.synapse.org](https://www.synapse.org) - nothing to install
+{% endtab %}
+
+{% endtabs %}
+
+
+## Logging into Synapse
+
+Synapse credentials are required to use the programmatic clients. Register to create an account, and even if you login with a Google account, make sure you go through the extra step of creating a Synapse username and password.
+
+At the command line you can login by specifying your Synapse username and password.
+
+The login credentials can be specified for every Synapse client session, but this is not the recommended practice as your password will be visible. Instead, by passing the `rememberMe` parameter you can cache your credentials for use in future Synapse client sessions.
+
+The full list of possible login parameters for the Python client can be found in the [Python Docs](http://docs.synapse.org/python/Client.html#synapseclient.Synapse.login) and for the R client in the [R Docs](http://docs.synapse.org/r/synapseLogin.html). 
+
+To login with your username/email and password:
+
+{% tabs %}
+
+{% tab Command %}
+{% highlight bash %}
+# by passing --rememberMe the username/password will not need to specified on subsequent calls to Synapse.
+synapse login -u me@example.com -p secret --rememberMe
+{% endhighlight %}
+{% endtab %}
+
+
+{% tab Python %}
+{% highlight python %}
+import synapseclient
+# If you have your config file set up you can run:
+syn = synapseclient.login()
+# Otherwise, pass in your username and password:
+syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=True)
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+library(synapser)
+# If you have your config file set up you can run:
+synLogin()
+# Otherwise, pass in your username and password:
+synLogin(username='me@example.com', password='secret', rememberMe=TRUE)
+{% endhighlight %}
+{% endtab %}
+
+{% endtabs %}
+
+
+### Using a Config File
+
+You can store your credentials in your home directory in a file called `.synapseConfig` (note the period at the beginning of the file which makes this a hidden, system file on Linux-like OS's. The format is as such:
+
+```
+[authentication]
+username: me@example.com
+password: secret
+```
+
 # Project and Data Management on Synapse
 
-Now that you have your Synapse account you can start adding content. All Synapse content is organized according to user-created `Projects`. Select a unique name for your `Project`, such as "My uniquely named project", and create your `Project`. `Projects` are an organizational unit in which you can collaboratively access and share `Wikis` (narratives), `Files` (a distributed file system to store data, code, and results from your work), and `Tables` (web-accessible, sharable, and queryable data where columns can have a user-specified structured schema). Each `Project` also contains a project-specific `Discussion Forum`.
+<img style="float: right" src="/assets/images/project_1.png">
+
+Once you have a Synapse account and have installed a client (or navigated to the Synapse website) you can start adding content. All Synapse content is organized in user-created `Projects`, an organizational unit in which you can collaboratively access and share `Wikis` (narratives), `Files` (a distributed file system to store data, code, and results from your work), and `Tables` (web-accessible, sharable, and queryable data where columns can have a user-specified structured schema). Each `Project` also contains a project-specific `Discussion Forum`.
+
 By default, your newly created `Project` is private; you are the only person who can access it and any content you include in it. To invite others to view or edit your `Project`, click on the Share icon in the upper right hand portion of the screen. For more information on Sharing, please see the [Content Controls](/articles/access_controls.html) article.
 
 As an exercise we are going to create an example `Project` to store some cell line analysis.
+Decide on a unique name for your `Project`. Since `Project` names must be unique in Synapse, let me suggest a project name for you:
 
-Since `Project` names must be unique in Synapse, let me suggest a project name for you: **<span id='random_proj_name'>Foo</span>**<br/>
+**<span id='random_proj_name'>Foo</span>**<br/>
+
+Use this project name in the example scripts below.
 
 <script type="text/javascript">
 var chance = window.Chance.Chance();
@@ -164,13 +263,13 @@ synOnweb(myProj)
 Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the project name in the Projects listing {% endtab %}
 {% endtabs %}
 
-
-
 # Adding a Wiki to your Project
 
 The `Wiki` tab in a `Project` provides a space for you to build narrative content to describe your research. These `Wikis` can also be nested as subpages to build up a hierarchy of content within your `Project` as well as be attached to specific `Files` and `Folders` in your `Project`.  Examples of content that you may want to include are project descriptions, specific aims, progress updates of data generation or analysis, analysis results (either in prose or via markdown-based notebooks such as [knitr](http://yihui.name/knitr/){:target="_blank"} or [IPython notebook](http://ipython.org/notebook.html){:target="_blank"}), or web-accessible publication-like summaries of your research.
 
 `Wiki` pages can contain highly customized content including, but not limited to images, tables, code blocks, LaTeX formatted equations, and scholarly references. Synapse-specific widgets also allow users to embed dynamic content based on other resources stored in Synapse (e.g., Entity List, User/Team badge, Query Table, or Provenance Graph).
+
+See the [Wiki](/articles/wikis.html) user guide for more information and examples.
 
 Here we will create a small `Wiki`:
 
@@ -190,7 +289,7 @@ import org.sagebionetworks.repo.model.wiki.WikiPage;
 
 WikiPage page = new WikiPage();
 page.setTitle("Data Summary");
-page.setMarkdown("* Cell growth look normally distributed\n" + 
+page.setMarkdown("* Cell growth look normally distributed\n" +
 		"* There is evidence of inverse growth between these two cell lines");
 synapseClient.createWikiPage(myProject.getId(), ObjectType.ENTITY, page);
 	{%endhighlight %}
@@ -219,7 +318,6 @@ wiki <- synStore(wiki)
 Go to project page and click the **Tool button** and chose **Edit Project Wiki**.
     {% endtab %}
 {% endtabs %}
-
 
 # Organizing Data: creating Files and Folders
 
@@ -270,7 +368,7 @@ click the **Add Folder** link under the Tools Menu on the Files tab.
 
 Synapse `Files` are also much like files on a local file system -- except they are web-accessible to anyone who has access, can be richly annotated (and queried on), can be embedded as links or images within a Synapse `Wiki`, and can be associated with a [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier){:target="_blank"}. `Files` carry the Conditions for Use of the `Folder` they are placed into in addition to additional specific Conditions for Use they have on their own.
 
-Lets upload a local file `data/cell_lines_raw_data.csv` into this newly created `Folder`. To follow along you can pick any file you have and replace the name with your chosen file. We will also attach some annotations to this file describing the content of the file. In the example, we will associate the key `foo` with the value `bar` along with two numerical annotations.
+Let's upload a local file `data/cell_lines_raw_data.csv` into this newly created `Folder`. To follow along you can pick any file you have and replace the name with your chosen file. We will also attach some annotations to this file describing the content of the file. In the example, we will associate the key `foo` with the value `bar` along with two numerical annotations.
 
 {% tabs %}
 
@@ -370,7 +468,7 @@ usedURL.setUrl("https://github.com/Sage-Bionetworks/synapseTutorials");
 used.add(usedEntity);
 used.add(usedURL);
 newActivity.setUsed(used);
-newActivity = synapseClient.createActivity(newActivity);	
+newActivity = synapseClient.createActivity(newActivity);
     {%endhighlight %}
 	{% endtab %}
 
@@ -385,7 +483,7 @@ plot2 = syn.store(plot2, used=raw_data_file,
 
     {% tab R %}
 	{% highlight r %}
-plot2 <- File(path="/images/plot2.png", parentId=resultsFolder$properties$id) 
+plot2 <- File(path="/images/plot2.png", parentId=resultsFolder$properties$id)
 plot2 <- synStore(plotFileEntity, used=rawDataFile,
     executed='https://github.com/Sage-Bionetworks/synapseTutorials',
     activityName="plot distributions",
@@ -397,98 +495,6 @@ plot2 <- synStore(plotFileEntity, used=rawDataFile,
 click the **Upload or Link to File** button on the Files tab to upload image/plot_2.png.  After uploading click the **Tools** button and chose **Edit Provenance**.
     {% endtab %}
 {% endtabs %}
-
-<br>
-
-# Installing Synapse Clients
-<img style="float:right;" src="/assets/images/synapse_apis.png">
-
-Synapse is built on a number of RESTful web APIs that allow users to interact with the system via a number of _clients_. One of these _clients_ is the web client, i.e. the website [www.synapse.org](https://www.synapse.org/). Synapse also provides three programmatic clients (R, Python, and Command Line). Content can be uploaded, downloaded, annotated, and queried from any of these interfaces. In the getting started guide we will run through examples using all three programmatic interfaces.  At any point you can pick the language you would like to see examples in by clicking the corresponding tab at the bottom of every example.  Unless otherwise noted the examples are can be typed into the respective environment.  That is a shell prompt for the command line examples, a Python session such as an ipython notbook of script, and an R session for the R examples.
-
-{% tabs %}
-{% tab Command %}
-
-In a terminal window type the following command and hit enter. (For alternative methods of installation see the Python client installation instructions.)
-
-{% highlight bash %}
-pip install synapseclient
-{% endhighlight %}
-{% endtab %}
-
-
-{% tab Python %}
-{% highlight python %}
-pip install synapseclient
-{% endhighlight %}
-{% endtab %}
-
-{% tab R %}
-{% highlight r %}
-install.packages("synapser", repos=c("https://sage-bionetworks.github.io/ran", "http://cran.fhcrc.org"))
-{%endhighlight %}
-{% endtab %}
-
-{% tab Web %}
-Navigate to [www.synapse.org](https://www.synapse.org) - nothing to install
-{% endtab %}
-
-{% endtabs %}
-
-
-## Logging into Synapse
-
-Synapse credentials are required to use the programmatic clients. Register to create an account, and even if you login with a Google account, make sure you go through the extra step of creating a Synapse username and password.
-
-At the command line you can login by specifying your Synapse username and password.
-
-The login credentials can be specified for every Synapse client session, but this is not the recommended practice as your password will be visible. Instead, by passing the `rememberMe` parameter you can cache your credentials for use in future Synapse client sessions.
-
-The full list of possible login parameters for the Python client can be found in the [Python Docs](http://docs.synapse.org/python/Client.html#synapseclient.Synapse.login) and for the R client in the [R Docs](http://docs.synapse.org/r/synapseLogin.html). 
-
-To login with your username/email and password:
-
-{% tabs %}
-
-{% tab Command %}
-{% highlight bash %}
-# by passing --rememberMe the username/password will not need to specified on subsequent calls to Synapse.
-synapse login -u me@example.com -p secret --rememberMe
-{% endhighlight %}
-{% endtab %}
-
-
-{% tab Python %}
-{% highlight python %}
-import synapseclient
-# If you have your config file set up you can run:
-syn = synapseclient.login()
-# Otherwise, pass in your username and password:
-syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=True)
-{% endhighlight %}
-{% endtab %}
-
-{% tab R %}
-{% highlight r %}
-library(synapser)
-# If you have your config file set up you can run:
-synLogin()
-# Otherwise, pass in your username and password:
-synLogin(username='me@example.com', password='secret', rememberMe=TRUE)
-{% endhighlight %}
-{% endtab %}
-
-{% endtabs %}
-
-
-### Using a config file
-
-You can store your credentials in your home directory in a file called `.synapseConfig` (note the period at the beginning of the file which makes this a hidden, system file on Linux-like OS's. The format is as such:
-
-```
-[authentication]
-username: me@example.com
-password: secret
-```
 
 ## More Guides
 
