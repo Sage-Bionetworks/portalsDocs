@@ -24,20 +24,17 @@ category: howto
 
 # Overview
 
-`Wikis` are available in Synapse both on the `Project` level and on `Files/Folders` to provide a space to build narrative content to describe the research.
-Every project has a Wiki tab where you can build pages and a hierarchy of subpages as you would with any website. These pages can be reordered through the Edit Order button below the Wiki pages, to change both the hierarchy and the order of pages within a particular level.
+`Wikis` provide a space to write narrative content to describe a project or content within the project. They are available in Synapse on `Projects`, `Folders`, and `Files`. Every `Project` has a separate Wiki tab where you can create pages and a hierarchy of sub-pages.
 
 `Wikis` can also be added to `Folders` and `Files` allowing additional content documentation. `Wikis`, whether they are under the Wiki tab or on a folder, are built in the same way and enables incorporation of highly customized content including, but not limited to: images, tables, code blocks, LaTeX formatted equations, and scholarly references. In addition, Synapse-specific widgets lets you embed dynamic content based on other resources stored in Synapse.
 
 Wikis inherit their sharing settings from the object they are associated with (a Project, Folder, or File), and cannot have separate sharing settings from that object. Anyone (including viewers who are not logged into Synapse if the Project is shared with the public) who has 'View' permissions or greater can see the content of the Wiki page if the object is shared with them.
 
 
-## Creating, editing, and deleting a Wiki
+## Creating, Editing, and Deleting a Wiki
 
-
-### Using the Synapse web portal
+### Through a Web Browser
 After creating a new project, select the Wiki tab. Start a `Wiki` through the Tools menu by selecting the 'Edit Project Wiki' function. Content in this first `Wiki` becomes your `Project`'s home page. Go to the Tools menu to add subpages to your `Wiki`. These will appear as links on the left side of your home page. Adding a `Wiki` to a `Folder` or `File` is done in a similar manner by selecting 'Edit Folder/File Wiki'. Content added to a `Wiki` can be previewed before saving. Each version of a saved `Wiki` is visible under Wiki History where older versions can be restored. To delete a `Wiki` select 'Delete Wiki Page' under Tools.  
-
 
 Use the **Tools** menu and then select **Edit Project/Folder/File wiki**
 
@@ -72,9 +69,19 @@ wiki <- synStore(wiki)
 
 {% endtabs %}
 
+## Wiki Sub-pages
+
+A `Project` Wiki can have sub-pages, which will appear nested below the main Wiki page. This will also create a navigation bar on the right side of the page that lists the sub-wiki pages in the order they were created.
+
+### Through a Web Browser
+
+When on a Project Wiki page, use the **Tools** menu and then click "Add Wiki Subpage". You can then edit this sub-page like any other Wiki page through the **Tools** menu and "Edit Project Wiki".
+
+These pages can be reordered through the Edit Order button below the Wiki page navigation bar to change both the hierarchy and the order of pages within a particular level.
+
 ## Wiki Features
 
-### Markdown language
+### Markdown Language
 The layout and text of a `Wiki` can be customized using Wiki Markdown language. A Formatting Guide is available within the Wiki editing window. For additional markdown functions see [Markdown in Synapse](https://www.synapse.org/#!Wiki:syn2467792/ENTITY/64247){:target="_blank"}. Useful markdown shortcuts are available as separate tools, including: heading, bold, italic, strike-through, code block, sub and superscript.
 
 ### Tables in Markdown
