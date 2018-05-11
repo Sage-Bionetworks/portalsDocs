@@ -9,6 +9,9 @@ category: howto
 #image {
     width: 40%;
 }
+#smallImage {
+    width: 20%;
+}
 #largeImage { 
     width: 100%;
 }
@@ -33,7 +36,6 @@ synapse store raw_data.txt --parentId syn123456
 {% endhighlight %}
 {% endtab %}
 
-
 {% tab Python %}
 {% highlight python %}
 import synapseclient
@@ -48,8 +50,8 @@ file = syn.store(file)
 
 {% tab R %}
 {% highlight r %}
-library(synapseClient)
-synapseLogin()
+library(synapser)
+synLogin()
 
 # Add a local file to an existing project (syn12345) on Synapse
 file <- File(path='/path/to/raw_data.txt', parentId='syn12345')
@@ -61,6 +63,58 @@ file <- synStore(file)
 Navigate to the **Files** tab of the project you would like to add the file to. Click on **Upload or Link to File** to upload a local file from your computer or to link to a URL (such as http or ftp).
 
 <img id="image" src="/assets/images/upload_file_button.png">
+{% endtab %}
+
+{% endtabs %}
+
+## Moving a File
+
+All Synapse clients offer a way to move files and folders. Please note that [file views](http://docs.synapse.org/articles/views.html) and [sync manifests](http://docs.synapse.org/articles/uploading_in_bulk.html) **cannot** be used to move files. 
+
+The command line client has a sub-command `mv` which can be used to move files and folders. The Python and R clients do not have a specific `move` function, but can be used to modify the `parentId` property of the file/folder to move it. In the web client, there is an option in the `Tools` menu to move files or folders. 
+
+{% tabs %}
+
+{% tab Command %}
+{% highlight bash %}
+# move a file or folder (syn123) to a different folder/project (syn456)
+synapse mv --id syn123 --parentId syn456
+{% endhighlight %}
+{% endtab %}
+
+{% tab Python %}
+{% highlight python %}
+import synapseclient
+syn = synapseclient.login()
+# fetch the file/folder to move (syn123 in this example)
+# note the downloadFile=False parameter to fetch only the file's metadata and not the entire file
+foo = syn.get('syn123', downloadFile=False)
+# change the parentId to the new location, can be a folder or project (syn456 in this example)
+foo.properties.parentId = 'syn456'
+# store the file/folder to move it
+syn.store(foo)
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+library(synapser)
+synLogin()
+# fetch the file/folder to move (syn123 in this example)
+# note the downloadFile=False parameter to fetch only the file's metadata and not the entire file
+foo <- synGet('syn123', downloadFile = FALSE)
+# change the parentId to the new location, can be a folder or project (syn456 in this example)
+foo$properties$parentId <- 'syn10056031'
+# store the file/folder to move it
+synStore(foo)
+{% endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+Navigate to the file/folder you would like to move. Select **Tools** -> **Move File**. Browse for the new folder/project or enter the synId to move to. 
+<br/>
+<img id="smallImage" src="/assets/images/moveFile.png"> <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+<img id="image" src="/assets/images/moveFileTo.png">
 {% endtab %}
 
 {% endtabs %}
@@ -114,7 +168,6 @@ file = syn.store(file)
 {% highlight r %}
 # Upload a new version of raw_data.txt
 file <- File(path='/path/to/raw_data.txt', parentId='syn12345')
-file@properties$versionComment <- "Added 5 random normally distributed numbers."
 file <- synStore(file)
 {% endhighlight %}
 {% endtab %}
@@ -163,11 +216,9 @@ file = syn.store(file, forceVersion=False)
 {% tab R %}
 {% highlight r %}
 # Get file from Synapse, set download=False since we are only updating annotations
-file <- synGet('syn56789', downloadFile=F)
+file <- synGet('syn56789', downloadFile=FALSE)
 # Add annotations 
-synSetAnnotations(file) <- list(fileType = "bam", assay = "RNA-seq")
-# Store the file without creating a new version
-file = synStore(file, forceVersion=F)
+annotations <- synSetAnnotations(file, annotations=list(fileType = "bam", assay = "RNA-seq"))
 {% endhighlight %}
 {% endtab %}
 
@@ -205,12 +256,10 @@ file = syn.store(file, forceVersion=False)
 {% tab R %}
 {% highlight r %}
 # Get file from Synapse, set download=False since we are only updating annotations
-file <- synGet('syn56789', downloadFile=F)
+file <- synGet('syn56789', downloadFile=FALSE)
 # Add provenance 
 act <- Activity(name = 'Example Code', used = '/path/to/example_code')
-generatedBy(file) <- act
-# Store the file without creating a new version
-file = synStore(file, forceVersion=F)
+file <- synStore(file, activity=act, forceVersion=FALSE)
 {% endhighlight %}
 {% endtab %}
 

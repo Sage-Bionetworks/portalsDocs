@@ -1,7 +1,7 @@
 ---
 title: Annotations and Queries
 layout: article
-excerpt: Learn about annotations, how to assign and modify them, and how to query them for analysis. 
+excerpt: Learn about using custom metadata, how to assign and modify annotations, and how to query them for analysis. 
 category: howto
 ---
 
@@ -13,39 +13,40 @@ category: howto
 
 # Annotations
 
-Annotations in Synapse are semi-structured metadata that can be added to Projects, Files, Folders, and Tables.
-Annotations can be based on an existing ontology (controlled vocabulary such as a disease Ontology (GO)), an agreed upon set of terms (e.g., describing the results of a sequencing pipeline), or be completely free form (like a tag system). These annotations can be used to systematically describe groups of entities, which provides a way to search and discover Synapse entities.
+Annotations in Synapse are semi-structured custom metadata that can be added to `Projects`, `Files`, `Folders`, and `Tables` to further describe the object in question. Annotations can be based on an existing ontology or controlled vocabulary, or can be created in an <i>ad hoc</i> manner and modified later as the metadata evolves. Annotations can be a powerful tool used to systematically group and/or describe things (files or data, etc.) in Synapse, which then provides a way for those things to be searched for and discovered.
 
-Synapse annotations are structured as key-value pairs: the key is the name of the annotation group while the value provides specifics. An example; let's say you have a collection of alignment files in the BAM file format from an RNA sequencing experiment, each representing a sample and replicate.
-As is common, much of this information may be encoded in the file name (e.g., `Sample1_ConditionA.bam`).
-However, this makes it difficult to find specific groups of files, such as all replicates of `Sample1`.
-Adding this information as Synapse annotations enables a more complete description of the contents of the `File` and allows for discovery.
+Annotations are structured as key-value pairs: the key is the name of the annotation while the value provides specifics. For example, if you have uploaded a collection of alignment files in the BAM file format from an RNA sequencing experiment, each representing a sample and experimental replicate, you can use annotations to add this information to each file in a structured way. Sometimes, users encode this information in file names, e.g., `Sample1_ConditionA.bam`, which makes it "human-readable" but makes it difficult to search for in a systematic way, such as finding all replicates of `Sample1`. Adding this information as Synapse annotations enables a more complete description of the contents of the `File`. 
 
-Continuing this example, the annotations you may want to add are:
+In this case, the annotations you may want to add might look like this: 
 
 * `assay = RNA-seq`
 * `fileType = bam`
 * `sample = 1`
 * `condition = A`
 
-All files you want to be able to search for should have a consistent set of annotations (ie, they should all have the same keys: `assay`, `fileType`, `sample`, and `condition`.) If these samples were part of a dataset with multiple assays, such as RNA-seq and ATAC-seq, you would annotate the file entities with either `assay = RNA-seq` or `assay = ATAC-seq`. Searching for the specific assay would therefore result in the assay specific files
+For the second sample in the same experimental set with the same conditions, the annotations would have the same "keys" but slightly different "values", such as:
 
-<br/>
+* `assay = RNA-seq`
+* `fileType = bam`
+* `sample = 2` (note that we've changed the value here but the rest are the same)
+* `condition = A`
 
-### Types of Annotations
+ If these samples were part of a dataset with multiple assays, such as RNA-seq and ATAC-seq, you would annotate the file entities with either `assay = RNA-seq` or `assay = ATAC-seq`. 
+
+## Types of Annotations
 
 Annotations can be one of four basic types 
 
-* Text (character limit=256)
+* Text (Character Limit = 256)
 * Integer
-* Floating point
-* Date (date and time)
+* Floating Point
+* Date (Date and Time stored as a Timestamp)
 
-<br/>
+You cannot have duplicate annotation keys on the same object in Synapse. 
 
-### How to assign annotations
+### How to Assign Annotations
 
-It is easiest to add annotations when initially uploading a file. This can be done using the command line client, the Python client, the R client, or from the Web. Using the analytical clients facilitates batch and automated population of annotations across many files. The Web client is useful when uploading a single file, or if a minor change needs to be made to annotations on a few files.
+Annotations may be added when initially uploading a file, or at a later date. This can be done using the command line client, the Python client, the R client, or from the Web. Using the analytical clients facilitates batch and automated population of annotations across many files. The Web client is useful when uploading a single file, or if a minor change needs to be made to annotations on a few files.
 
 #### Adding annotations 
 
@@ -66,9 +67,9 @@ syn.store(entity)
 
 	{% tab R %}
 		{% highlight r %}
-entity <- File("Sample1_ConditionA.bam",parent="syn00123")
-synSetAnnotations(entity) <- list(fileType = "bam", assay = "RNA-seq")
+entity <- File("Sample1_ConditionA.bam", parent="syn00123")
 entity <- synStore(entity)
+synSetAnnotations(entity, annotations=list(fileType = "bam", assay = "RNA-seq"))
 		{%endhighlight %}
 	{% endtab %}
 	
@@ -97,12 +98,12 @@ synapse set-annotations --id syn123 --annotations '{"fileType":"bam", "assay":"R
 		{% highlight python %}
 entity = syn.get("syn123")
 
-##### Assigning ONLY one annotation
+##### Modifying ONLY one annotation
 
 entity.fileType = 'bam'
 entity['fileType'] = 'bam'
 
-##### Assigning a set of annotations
+##### Modifying a set of annotations
 
 entity.annotations = {"fileType":"bam", "assay":"RNA-seq"}
 
@@ -115,13 +116,12 @@ syn.store(entity, forceVersion = F)
 
 entity <- synGet("syn123")
 
-##### Assigning ONLY one annotation
+##### Modifying ONLY one annotation
+synSetAnnotation(entity, annotations=list(filType = "bam"))
 
-synSetAnnotation(entity, "filType") <- "bam"
-# Assigning a set of annotations
-synSetAnnotations(entity) <- list(fileType = "bam", assay = "RNA-seq")
+##### Modifying a set of annotations
+synSetAnnotations(entity, annotations=list(fileType = "bam", assay = "RNA-seq")
 
-entity <- synStore(entity, forceVersion = FALSE)
 		{%endhighlight %}
 	{% endtab %}
 	
