@@ -26,7 +26,7 @@ This getting started is for non-technical users who are interested in learning a
 ## What is Synapse?
 Synapse is an open source software platform that data scientists can use to carry out, track, and communicate their research in real time. Synapse enables co-location of scientific content (data, code, results) and narrative descriptions of that work. Synapse has seeded a growing number of living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
 
-[Sage Bionetworks](http://www.sagebase.org){:target="_blank"} provides Synapse services free of charge to the scientific community through generous support from various [funding sources](http://localhost:4000/articles/faq.html#how-is-synapse-funded){:target='_blank'}. Synapse hosts many living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
+[Sage Bionetworks](http://www.sagebase.org){:target="_blank"} provides Synapse services free of charge to the scientific community through generous support from various [funding sources](/articles/faq.html#how-is-synapse-funded){:target='_blank'}. Synapse hosts many living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
 
 With Synapse, you can:
 
@@ -306,7 +306,7 @@ The `Wiki` tab in a `Project` provides a space for you to build narrative conten
 
 `Wiki` pages can contain highly customized content including, but not limited to images, tables, code blocks, LaTeX formatted equations, and scholarly references. Synapse-specific widgets also allow users to embed dynamic content based on other resources stored in Synapse (e.g., Entity List, User/Team badge, Query Table, or Provenance Graph).
 
-See the [Wiki](http://localhost:4000/articles/wikis.html) user guide for more information and examples.
+See the [Wiki](/articles/wikis.html) user guide for more information and examples.
 
 Here we will create a small `Wiki`:
 
@@ -412,7 +412,7 @@ click the **Add Folder** button on the Files tab.
 
 Synapse `Files` are also much like files on a local file system -- except they are web-accessible to anyone who has access, can be richly annotated (and queried on), can be embedded as links or images within a Synapse `Wiki`, and can be associated with a [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier){:target="_blank"}. `Files` carry the Conditions for Use of the `Folder` they are placed into in addition to additional specific Conditions for Use they have on their own.
 
-Lets upload a local file `data/cell_lines_raw_data.csv` into this newly created `Folder`. To follow along you can pick any file you have and replace the name with your chosen file. We will also attach some annotations to this file describing the content of the file. In the example, we will associate the key `foo` with the value `bar` along with two numerical annotations.
+Let's upload a local file `data/cell_lines_raw_data.csv` into this newly created `Folder`. To follow along you can pick any file you have and replace the name with your chosen file. We will also attach some annotations to this file describing the content of the file. In the example, we will associate the key `foo` with the value `bar` along with two numerical annotations.
 
 {% tabs %}
 
