@@ -54,8 +54,8 @@ The command line client does not support the creation of Wiki content. We sugges
 {% tab Python %}
 {% highlight python %}
 projWiki = Wiki(title='Data Summary', owner = myProj)
-markdown = '''* Cell growth look normally distributed. There is evidence of inverse growth between these two cell lines '''
-projWiki['markdown'] = markdown
+markdownText = '''* Cell growth look normally distributed. There is evidence of inverse growth between these two cell lines '''
+projWiki['markdown'] = markdownText
 projWiki = syn.store(projWiki)
 {% endhighlight %}
 {% endtab %}
@@ -64,8 +64,8 @@ projWiki = syn.store(projWiki)
 {% highlight r %}
 library(synapser)
 synLogin()
-placeholderText <- "* Cell growth look normally distributed\n* There is evidence of inverse growth between these two cell lines."
-wiki <- Wiki(owner="syn123", title="Analysis summary", markdown=placeholderText)
+markdownText <- "* Cell growth look normally distributed\n* There is evidence of inverse growth between these two cell lines."
+wiki <- Wiki(owner="syn123", title="Analysis summary", markdown=markdownText)
 wiki <- synStore(wiki)
 {%endhighlight %}
 {% endtab %}
