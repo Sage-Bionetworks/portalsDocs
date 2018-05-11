@@ -71,11 +71,12 @@ wiki <- synStore(wiki)
 
 ## Wiki Subpages
 
-A `Project` Wiki can have subpages, which will appear nested below the main Wiki page. This will also create a navigation bar on the right side of the page that lists the Wiki subpages in the order they were created.
+A `Project` Wiki can have subpages, which will appear nested below the main Wiki page. This will also create a navigation bar on the right side of the page that lists the Wiki subpages in the order they were created. Links to wiki subpages include the `Project` ID, the wiki path, and the ID of the wiki page, e.g. https://www.synapse.org/#!Synapse:syn150935/wiki/27376. The subpage ID can be found in the browser URL bar when the subpage is viewed.
 
-When on a Project Wiki page, use the **Tools** menu and then click "Add Wiki Subpage". You can then edit this sub-page like any other Wiki page through the **Tools** menu and "Edit Project Wiki".
+To add a subpage, use the **Tools** menu and then click "Add Wiki Subpage". You can then edit this sub-page like any other Wiki page through the **Tools** menu and "Edit Project Wiki". 
 
 These pages can be reordered through the Edit Order button below the Wiki page navigation bar to change both the hierarchy and the order of pages within a particular level.
+
 
 ## Wiki Markdown Language
 The layout and text of a `Wiki` can be customized using standard Markdown notation. A Formatting Guide is available within the Wiki editing window. For a reference of Markdown formatting see the [Markdown Formatting Guide](https://www.synapse.org/#!Wiki:syn2467792/ENTITY/64247){:target="_blank"}. Useful Markdown shortcuts are available in the Wiki Editor in a tool bar including: heading, bold, italic, strike-through, code block, sub and superscript. Links can be added to content available from any source with a URL.
