@@ -40,21 +40,13 @@ synapseutils.copyWiki(syn, source_project_id, target_project_id)
 
 	{% tab R %}
 		{% highlight r %}
-library(synapseClient)
-library(RCurl)
-synapseLogin()
-sourceProjectId<-"syn2769515" # This is the ID of the template project
-targetProjectId<-"syn01234"
-x<-getURL("https://gist.github.com/brucehoff/8f5e8975270e3b5d73f9/raw/2a4ac735d7992261bd6c3fdb519940cfbe08fbff/copyWikis.R", .opts=list(followlocation=TRUE))
-source(textConnection(x))
-copyWikis(sourceProjectId, targetProjectId)
-#NOTE:  R Synapse client version 1.6-0 or later is required to correct a problem copying non-ASCII characters.
+# Unfortunately, current synapser version is not supporting this feature.
 		{%endhighlight %}
 	{% endtab %}
 
 	{% tab Web %}
 
-This script only works for macs. Download this [file](https://sourceforge.net/projects/createsynapsechallengewiki/files/createChallengeWiki.command/download) and double click the script.  You may have to right click and click open if you have script security settings on your computer. This script will prompt you to login to synapse.  Give it your private project syn0123456, and it will copy the template over. 
+This script only works on Mac OSX. Download this [file](https://sourceforge.net/projects/createsynapsechallengewiki/files/createChallengeWiki.command/download) and double click the script.  You may have to right click and click open if you have script security settings on your computer. This script will prompt you to login to synapse.  Give it your private project syn0123456, and it will copy the template over. 
 
 	{% endtab %}
 
@@ -69,8 +61,7 @@ also be placed with the project but with even tighter access restrictions, so th
 
 ### Connect the Sign-up Team to the Challenge Project 
 
-The API to call is found [here](http://hud.rel.rest.doc.sagebase.org.s3-website-us-east-1.amazonaws.com/POST/challenge.html). This registers the challenge team to the challenge site and creates a challenge Id.
-
+The challenge team you created needs to be connected to the to the challenge.
 
 {% tabs %}
 	{% tab Python %}
@@ -92,12 +83,12 @@ challenge.id
 
 	{% tab R %}
 		{% highlight r %}
-library(synapseClient)
-synapseLogin()
-projectId<-"syn123456" # replace with the actual project Synapse ID
-participantTeamId<-"987654" # replace with the actual Team ID
-challenge<-list(projectId=projectId, participantTeamId=participantTeamId)
-challenge<-synRestPOST("/challenge", challenge)
+library(synapser)
+synLogin()
+projectId <- "syn123456" # replace with the actual project Synapse ID
+participantTeamId <- "987654" # replace with the actual Team ID
+challenge <- list(projectId=projectId, participantTeamId=participantTeamId)
+challenge <- synRestPOST("/challenge", toJSON(challenge))
 # retain the challenge ID (distinct from 'projectId', above) for use in several wiki widgets described below)
 challengeId<-challenge$id
 		{%endhighlight %}
@@ -141,8 +132,8 @@ challenge['id']
 
 	{% tab R %}
 		{% highlight r %}
-projectId<-"syn123456" # replace with the actual challenge project ID
-challenge<-synRestGET(sprintf("/entity/%s/challenge", projectId))
+projectId <- "syn123456" # replace with the actual challenge project ID
+challenge <- synRestGET(sprintf("/entity/%s/challenge", projectId))
 challenge$id
 		{%endhighlight %}
 	{% endtab %}
@@ -271,7 +262,7 @@ As submissions arrive from participants, you may need to run a custom scoring sc
 [https://github.com/Sage-Bionetworks/SynapseChallengeTemplates]
 After customizing the application for your scoring needs, create a periodically running job on a server owned by your organization.  A convenient, free web interface for periodically running jobs is Jenkins, [http://jenkins-ci.org/].  Note:  In the Challenge Admin tab mentioned above you must share the Evaluation with the user under whose credentials the Scoring Application is run, providing "Can score" access to this user.
 
-Submission scores and other computational results may be attached to the Submissions themselves.  The sample code shows how to do this.  The results may be retrieved and displayed in a leader board, as described below.
+Submission scores and other computational results may be attached to the Submissions themselves.  The sample code shows how to do this.  The results may be retrieved and displayed in a leaderboard, as described below.
 
 
 #### Python Scoring Application
@@ -430,8 +421,14 @@ Although validation/test data is typically kept secret during a challenge, you s
 
 ### Create a Leaderboard
 
-You can add a dynamic leader board on a wiki page to show the submissions to an Evaluation and their scores.  Click "@" in the lower, right-hand corner of the portal, edit a wiki page, and click Insert > "Synapse API SuperTable".  A table editor allows you to pick from the results your scoring application added to the participants' submissions and display in a sorted, paginated, tabular form.  The scoring application templates mentioned above print out valid sample widget text suitable
-for pasting into the wiki editor.  In the "Challenge Admin" control, described above, you provide "Can View" access to whoever you wish to be able to see the leader board, a choice which can be to make the leader board visible to everyone.
+Leaderboards are sorted, paginated, tabular forms that display submission annotations (such as scores from your scoring application and other metadata). Leaderboards are dynamic and update as annotations/scores change, so can provide real-time insight into how your Challenge is going. The scoring application templates mentioned above print out valid sample widget text suitable for pasting into the wiki editor.  In the "Challenge Admin" control, described above, you provide "Can View" access to whomever you wish to be able to see the leaderboard. 
+
+To add a leaderboard to your Challenge Wiki,
+* First go to the Challenge Project and get the ID of the Evaluation of interest; Challenges can have multiple evaluations so it's important to identify which evaluation you want to summarize.
+* Next, edit the wiki page where you want to add your leaderboard and choose "Insert" and then "Leaderboard". 
+* Finally, you'll configure your leaderboard by entering a query of the form "Select * from Evaluation_12345" where 12345 is the ID from the first step. 
+
+<br>If you have some annotations already then you can click "Refresh Columns" to add display columns for the existing annotations. Otherwise you have to add the columns manually. You can reorder the columns and choose what to sort by. Keep in mind that "private" annotations will not be visible to participants (only to challenge administrators). 
 
 **Test everything on some dry run users**
 
@@ -439,7 +436,7 @@ for pasting into the wiki editor.  In the "Challenge Admin" control, described a
 
 ### Link results to participants' project spaces
 
-If using a "live leader board", simply add a column whose value is "entityId".  This will add a column to the table containing hyperlinks to the submitter's home project.  There they can add a wiki describing their algorithm.  If using a static leader board (wiki table), you may retrieve the entity IDs from the submissions and add them in the wiki editor.  To get the link for each submission, you may use this R script:
+If using a "live leaderboard", simply add a column whose value is "entityId".  This will add a column to the table containing hyperlinks to the submitter's home project.  There they can add a wiki describing their algorithm.  If using a static leaderboard (wiki table), you may retrieve the entity IDs from the submissions and add them in the wiki editor.  To get the link for each submission, you may use this R script:
 
 ```
 library(synapseClient)
@@ -489,7 +486,11 @@ for sub, status in bundles:
 
 	{% tab R %}
 		{% highlight r %}
-
+# Get submission / annotations
+sub <- synGetSubmission(submissionId)
+annotations <- synGetSubmissionStatus(submissionId)
+# Get all scored submissions in an evaluation queue
+bundles <- as.list(synGetSubmissionBundles(evaluation, status="SCORED"))
 		{%endhighlight %}
 	{% endtab %}
 {% endtabs %}

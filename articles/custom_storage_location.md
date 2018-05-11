@@ -14,68 +14,11 @@ category: howto
 }
 </style>
 
-# Overview
-While Synapse provides physical storage for files (using Amazon's S3), not all data 'in' Synapse is stored on Synapse controlled locations. For example, data files can physically reside on a user owned S3 buckets, SFTP servers, or a local file server using a proxy servers. Creating a custom storage location allows users ownership and control of their files, especially in cases where there is a large amount of data or cases where there are additional restrictions that need to be set on the data.
 
-## Using SFTP
+# Custom Storage Locations
+While Synapse provides physical storage for files (using Amazon's S3), not all data 'in' Synapse is stored on Synapse controlled locations. For example, data files can physically reside on a user-owned S3 bucket, SFTP servers, or a local file server using a proxy servers. Creating a custom storage location allows users ownership and control of their files, especially in cases where there is a large amount of data or cases where there are additional restrictions that need to be set on the data.
 
-To setup an SFTP as a storage location, the settings on the `Project` need to be changed, specifically the `storageLocation` needs to be set. This is best done using either R or Python but has alpha support in the web browser.
-Customize the code below to set the storage location as your SFTP server:
-
-{% tabs %}
-
-{% tab Python %}
-{% highlight python %}
-import synapseclient
-import json
-syn = synapseclient.login()
-
-destination = { "uploadType":"SFTP",
-    "concreteType":"org.sagebionetworks.repo.model.project.ExternalStorageLocationSetting",
-    "description":"My SFTP upload location", 
-    "supportsSubfolders":True,
-    "url":"sftp://your-sftp-server.com",
-    "banner":"A descriptive banner, tada!"}
-
-destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
-
-project_destination = {"concreteType":"org.sagebionetworks.repo.model.project.UploadDestinationListSetting", 
-    "settingsType":"upload"}
-project_destination['projectId'] = PROJECT
-project_destination['locations'] = [destination['storageLocationId']]
-
-project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
-{% endhighlight %}
-{% endtab %}
-
-{% tab R %}
-{% highlight r %}
-library(synapseClient)
-synapseLogin()
-projectId <- 'syn12345'
-
-destination <- list(uploadType='SFTP', 
-                    concreteType='org.sagebionetworks.repo.model.project.ExternalStorageLocationSetting',
-                    description='My SFTP upload location',
-                    supportsSubfolders=TRUE,
-                    url='https://your-sftp-server.com',
-                    banner='A descriptive banner, tada!')
-                    
-destination <- synRestPOST('/storageLocation', body=destination)
-
-projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
-                           settingsType='upload')
-projectDestination$locations <- list(destination$storageLocationId)
-projectDestination$projectId <- projectId
-
-projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
-
-{% endhighlight %}
-{% endtab %}
-
-{% endtabs %}
-
-
+{% include note.html content="System metadata, annotations, and provenance records are still stored in Synapse's S3 storage." %}
 
 ## Setting Up an External AWS S3 Bucket
 Follow the documentation on Amazon Web Service (AWS) site to **[Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html){:target="_blank"}**. 
@@ -89,7 +32,7 @@ Make the following adjustments to customize it to work with Synapse:
     * Make sure that all the boxes (List, Upload/Delete, View Permissions, and Edit Permissions) have been checked. It should do this by default. 
     * Select the **Add bucket policy** button and copy one of the below policies (read-only or read-write permissions). Change the name of `Resource` from “synapse-share.yourcompany.com” to the name of your new bucket (twice) and ensure that the `Principal` is `"AWS":"325565585839"`. This is Synapse's account number. 
 
-#### Read-write permissions
+### Read-write permissions
 To allow authorized Synapse users to upload data to your bucket set read-write permissions need to be set on that bucket (you allow Synapse to upload and retrieve files):
 
 {% highlight json %}
@@ -137,7 +80,7 @@ Navigate to your bucket on the Amazon Console and select **Upload** to upload yo
 
 <br/>
 
-#### Read-only permissions
+### Read-only permissions
 If you do not want to allow authorized Synapse users to upload data to your bucket but provide read access you can change the permissions to read-only:
 
 {% highlight json %}
@@ -212,21 +155,21 @@ project_destination = syn.restPOST('/projectSettings', body = json.dumps(project
 {% tab R %}
 {% highlight r %}
 #set storage location
-library(synapseClient)
-synapseLogin()
+library(synapser)
+synLogin()
 projectId <- 'syn12345'
 
 destination <- list(uploadType='S3', 
                     concreteType='org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting',
                     bucket='nameofyourbucket')
-destination <- synRestPOST('/storageLocation', body=destination)
+destination <- synRestPOST('/storageLocation', body=toJSON(destination))
 
 projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
                            settingsType='upload')
 projectDestination$locations <- list(destination$storageLocationId)
 projectDestination$projectId <- projectId
 
-projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
+projectDestination <- synRestPOST('/projectSettings', body=toJSON(projectDestination))
 {% endhighlight %}
 {% endtab %}
 
@@ -280,9 +223,9 @@ fileHandle <- list(concreteType='org.sagebionetworks.repo.model.file.S3FileHandl
                    storageLocationId = destination$storageLocationId,
                    bucketName = destination$bucket,
                    key ='s3ObjectKey')
-fileHandle <- synRestPOST('/externalFileHandle/s3', body=fileHandle, endpoint = synapseFileServiceEndpoint())
+fileHandle <- synRestPOST('/externalFileHandle/s3', body=toJSON(fileHandle), endpoint = synapseFileServiceEndpoint())
 
-f <- synapseClient::File(dataFileHandleId = fileHandle$id, parentId = projectId)
+f <- File(dataFileHandleId=fileHandle$id, parentId=projectId)
 
 f <- synStore(f)
 {% endhighlight %}
@@ -293,6 +236,64 @@ f <- synStore(f)
 <br/>
 
 Please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/model/project/ExternalS3StorageLocationSetting.html){:target="_blank"} for more information on setting external storage location settings using our REST API.
+
+## Using SFTP
+
+To setup an SFTP as a storage location, the settings on the `Project` need to be changed, specifically the `storageLocation` needs to be set. This is best done using either R or Python but has alpha support in the web browser.
+Customize the code below to set the storage location as your SFTP server:
+
+{% tabs %}
+
+{% tab Python %}
+{% highlight python %}
+import synapseclient
+import json
+syn = synapseclient.login()
+
+destination = { "uploadType":"SFTP",
+    "concreteType":"org.sagebionetworks.repo.model.project.ExternalStorageLocationSetting",
+    "description":"My SFTP upload location", 
+    "supportsSubfolders":True,
+    "url":"sftp://your-sftp-server.com",
+    "banner":"A descriptive banner, tada!"}
+
+destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
+
+project_destination = {"concreteType":"org.sagebionetworks.repo.model.project.UploadDestinationListSetting", 
+    "settingsType":"upload"}
+project_destination['projectId'] = PROJECT
+project_destination['locations'] = [destination['storageLocationId']]
+
+project_destination = syn.restPOST('/projectSettings', body = json.dumps(project_destination))
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+library(synapseClient)
+synapseLogin()
+projectId <- 'syn12345'
+
+destination <- list(uploadType='SFTP', 
+                    concreteType='org.sagebionetworks.repo.model.project.ExternalStorageLocationSetting',
+                    description='My SFTP upload location',
+                    supportsSubfolders=TRUE,
+                    url='https://your-sftp-server.com',
+                    banner='A descriptive banner, tada!')
+                    
+destination <- synRestPOST('/storageLocation', body=destination)
+
+projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
+                           settingsType='upload')
+projectDestination$locations <- list(destination$storageLocationId)
+projectDestination$projectId <- projectId
+
+projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
+
+{% endhighlight %}
+{% endtab %}
+
+{% endtabs %}
 
 ## Using a Proxy to Access a Local File Server or SFTP Server
 
@@ -327,22 +328,22 @@ project_destination = syn.restPOST('/projectSettings', body = json.dumps(project
 
 {% tab R %}
 {% highlight r %}
-library(synapseClient)
-synapseLogin()
+library(synapser)
+synLogin()
 projectId <- 'syn12345'
 
 destination <- list(uploadType='PROXYLOCAL', 
                     secretKey='your_secret_key', 
                     proxyUrl='https://your-proxy.prod.sagebase.org', 
                     concreteType='org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings')
-destination <- synRestPOST('/storageLocation', body=destination)
+destination <- synRestPOST('/storageLocation', body=toJSON(destination))
 
 projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
                            settingsType='upload')
 projectDestination$locations <- list(destination$storageLocationId)
 projectDestination$projectId <- projectId
 
-projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
+projectDestination <- synRestPOST('/projectSettings', body=toJSON(projectDestination))
 {% endhighlight %}
 {% endtab %}
 
@@ -379,22 +380,22 @@ project_destination = syn.restPOST('/projectSettings', body = json.dumps(project
 
 {% tab R %}
 {% highlight r %}
-library(synapseClient)
-synapseLogin()
+library(synapser)
+synLogin()
 projectId <- 'syn12345'
 
 destination <- list(uploadType='SFTP', 
                     secretKey='your_secret_key', 
                     proxyUrl='https://your-proxy.prod.sagebase.org', 
                     concreteType='org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings')
-destination <- synRestPOST('/storageLocation', body=destination)
+destination <- synRestPOST('/storageLocation', body=toJSON(destination))
 
 projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
                            settingsType='upload')
 projectDestination$locations <- list(destination$storageLocationId)
 projectDestination$projectId <- projectId
 
-projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
+projectDestination <- synRestPOST('/projectSettings', body=toJSON(projectDestination))
 {% endhighlight %}
 {% endtab %}
 
