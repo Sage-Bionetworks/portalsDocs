@@ -4,6 +4,9 @@ html,body{
     height: 100%
 }
 
+p {
+  font-size: 1.1em;
+}
 /* Mixins.scss
  * Snippets of reusable CSS to develop faster and keep code readable
  * ----------------------------------------------------------------- */
@@ -236,7 +239,7 @@ index.html sidebar
 index footer
 */
 
-#footer-index {
+#footer {
     position: absolute;
     /* left: 0; */
     /* right: 0; */
@@ -244,11 +247,11 @@ index footer
     background-color: #1e7098;
 }
 
-#footer-index .navbar-nav > li > a {
+#footer .navbar-nav > li > a {
   color: white;
 }
 
-#footer-index .navbar-nav > li > a:hover {
+#footer .navbar-nav > li > a:hover {
   background-color: #15455F;
 }
 /* 
