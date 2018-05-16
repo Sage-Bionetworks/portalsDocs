@@ -43,7 +43,7 @@ Synapse operates under a complete [governance process](/articles/governance.html
 
 # Becoming a Synapse Registered User
 
-Anyone can browse public content on the Synapse web site, but in order to download and create content you will need to register for an account:
+Anyone can browse public content on the Synapse web site, but in order to download and create content you will need to register for an account using an email address. You will receive an email message for verification to complete the registration process.
 
 <a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>{:target="_blank"}
 
