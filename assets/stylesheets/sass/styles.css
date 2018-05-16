@@ -4,6 +4,9 @@ html,body{
     height: 100%
 }
 
+p {
+  font-size: 1.1em;
+}
 /* Mixins.scss
  * Snippets of reusable CSS to develop faster and keep code readable
  * ----------------------------------------------------------------- */
