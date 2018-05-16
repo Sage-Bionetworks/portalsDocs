@@ -1,6 +1,13 @@
+/* Fix for stick footer from https://stackoverflow.com/questions/11555931/make-footer-stick-to-bottom-of-page-using-twitter-bootstrap */
+
+html,body{
+    height: 100%
+}
+
 /* Mixins.scss
  * Snippets of reusable CSS to develop faster and keep code readable
  * ----------------------------------------------------------------- */
+
 .clearfix {
   zoom: 1; }
   .clearfix:before, .clearfix:after {
@@ -231,12 +238,19 @@ index footer
 
 #footer-index {
     position: absolute;
-    left: 0;
-    right: 0;
+    /* left: 0; */
+    /* right: 0; */
     width: 100%;
     background-color: #1e7098;
 }
 
+#footer-index .navbar-nav > li > a {
+  color: white;
+}
+
+#footer-index .navbar-nav > li > a:hover {
+  background-color: #15455F;
+}
 /* 
 change size of glyphicons on index page
 */
@@ -1158,7 +1172,7 @@ li.active span.round-tabs.five{
     color: #4b4b4b;
 }
 #subjects {
-    height: 100%;
+    /* height: 100%; */
     padding: 2em 7% 2em 7%;
     background-color: #ffffff;
     margin-top: 3em;
