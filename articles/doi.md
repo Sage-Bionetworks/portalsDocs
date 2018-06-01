@@ -26,7 +26,7 @@ category: howto
 
 A Digital Object Identifier (DOI) is an alphanumeric string assigned to uniquely identify an object. It is tied to a metadata description of the object as well as to a digital location, such as a URL, where all the details about the object are accessible. In order to create new DOIs and assign them to your content, it is necessary to use a service to "mint" or create a DOI for your data or project. 
 
-`DOIs` are available in Synapse both on the `Project` level and on `Files/Folders` to provide a mechanism to uniquely identify your data when used in a publication or linked to from elsewhere on the web. For example, the DOI `doi:10.7303/syn2580853` can be represented as a URL, [https://dx.doi.org/10.7303/syn2580853](https://dx.doi.org/10.7303/syn2580853), which automatically resolves to the Synapse `Project` it's associated with, the [AMP-AD Knowledge Portal](https://www.synapse.org/#!Synapse:syn2580853). 
+`DOIs` are available in Synapse both on the `Project` level and on `Files/Folders` to provide a mechanism to uniquely identify your data when used in a publication or linked to from elsewhere on the web. For example, the DOI `doi:10.7303/syn2580853` can be represented as a URL, [https://doi.org/10.7303/syn2580853](https://doi.org/10.7303/syn2580853), which automatically resolves to the Synapse `Project` it's associated with, the [AMP-AD Knowledge Portal](https://www.synapse.org/#!Synapse:syn2580853). 
 
 ## Minting DOIs
 
