@@ -26,6 +26,7 @@ A view is a type of Synapse [Table](/articles/tables.html) that queries across m
 ## Create a File View
 
 To create a `File View`, select the `Project` in which you would like to create the view. The `Project` you choose does not have to contain the files you are including in your view. You will select the files of interest by defining the scope, which is the `Project(s)` and `Folders` that contain your files. 
+{% include note.html content= "The scope of a File View can have a maximum of 10,000 folders or sub-folders." %}
 
 {% tabs %}
 
