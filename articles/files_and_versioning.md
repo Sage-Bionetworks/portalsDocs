@@ -137,7 +137,7 @@ The easiest way to create a new version of an existing Synapse `File` is to use 
 
 Only the file and annotations information are included in the version. Other metadata about a Synapse `File` (such as the description, name, parent, ACL, *and its associated Wiki*) are not part of the version, and will not change between versions.
 
-## Uploading a New Version of a File
+## Uploading a New Version
 To upload a new version of a `File`, the easiest way to do this is to use the same file name and store it in the same location (e.g., the same `parentId`), therefore uploading a new version follows the same steps as uploading a file for the first time. **The only major difference is the practice of adding a comment to the new version in order to easily track differences at a glance**. The example file `raw_data.txt` will now have a version of `2` and a comment describing the change. 
 
 {% tabs %}
