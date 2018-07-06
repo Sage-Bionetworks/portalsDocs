@@ -119,6 +119,10 @@ Navigate to the file/folder you would like to move. Select **Tools** -> **Move F
 
 {% endtabs %}
 
+# File Previews
+
+Some files in Synapse are supported with previews to allow users to peek at the contents of the file before they download it. File Previews can also be embedded in Wikis. A list of what kinds of files are supported with rich previews will be added soon. 
+
 # Versions of Files
 
 Versioning is an important component to reusable, reproducible research. There are a number of ways that versioning can be accomplished, including the commonly used filename modification scheme (e.g., 'file.txt', 'file-1.txt', 'file-1a.txt', 'file-final.txt', and then 'file-reallyfinal.txt'). However, this is less than satisfactory for a number of reasons. First, the rules for naming are arbitrary, and may change over time. Second, it is not possible to easily determine (without external documentation) that this set of file changes are related to the same file. Third, it becomes difficult to manage future use of specific versions of the file. Using `File` versioning provided by Synapse solves these issues.
