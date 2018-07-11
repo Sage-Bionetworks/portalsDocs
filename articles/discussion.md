@@ -15,7 +15,7 @@ category: howto
 
 `Discussion` forums are a way to easily communicate with others, similar to a message board, which is visible to all those with whom a project is shared. In this guide you will learn how to:
 
-* Create a new essage thread
+* Create a new message thread
 * Respond to a current thread
 * Manage notifications
 * Moderate a discussion forum
