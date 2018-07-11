@@ -22,7 +22,7 @@ category: howto
 
 ## Creating a New Message Thread
 
-The `Discussion` tab can be found in the project navigation tabs on your project's main page. Anyone with `Project` access may view discussion threads contained therein, create new threads, or reply to existing threads.
+The `Discussion` tab can be found in the project navigation tabs on your project's main page. Anyone with `Project` access may view discussion threads contained in the project, create new threads, or reply to existing threads.
 
 <img style="width: 65%;" src="/assets/images/Discussion Main.png">
 
@@ -34,7 +34,7 @@ This opens a **New Thread** dialog box in which you can edit text, insert pictur
 
 <img style="width: 50%" src="/assets/images/FormattingGuide.png">
 
-{% include tip.html content="You may tag people by including an '@' symbol followed by their username; tagging users in discussion threads willl send them a notification of the thread, so it can be used to invite others into the discussion." %}
+{% include tip.html content="You may tag people by including an '@' symbol followed by their username; tagging users in discussion threads will send them a notification of the thread, so it can be used to invite others into the discussion." %}
 
 ## Responding to Existing Threads
 Within an existing thread, you may use the `Reply` button to write a reply to an existing discussion. All editing features described above are available for this purpose.
