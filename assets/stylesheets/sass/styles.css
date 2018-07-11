@@ -4,9 +4,8 @@ html,body{
     height: 100%
 }
 
-p {
-  font-size: 1.1em;
-}
+
+
 /* Mixins.scss
  * Snippets of reusable CSS to develop faster and keep code readable
  * ----------------------------------------------------------------- */
@@ -1117,9 +1116,9 @@ li.active span.round-tabs.five{
     margin-top: 20px;
 }
 #search-bar {
-    height: 300px;
+    height: 210px;
     background-color: #1e7098;
-    padding-top: 25px;
+    /* padding-top: 25px; */
 }
 .search-title {
     font-size: 40px;
