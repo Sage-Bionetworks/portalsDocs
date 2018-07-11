@@ -43,7 +43,7 @@ You may edit or delete any forum post you've created by clicking the **pencil** 
 
 ## Managing Notifications
 
-You may subscribe to a `Discussion` forum for a particular `Project` by clicking the `Follow` button on the main discussion page. Once you've subscribed to a forum, you will receive email to your Synapse-registered email address whenever a new thread is created or a reply to an existing thread is posted. You can use the `Unfollow` button at any time to discontinue this subscription. 
+You may subscribe to a `Discussion` forum for a particular `Project` by clicking the `Follow` button on the main discussion page. Once you've subscribed to a forum, you will receive an email to your Synapse-registered email address whenever a new thread is created or a reply to an existing thread is posted. You can use the `Unfollow` button at any time to discontinue this subscription. 
 
 Additionally, you may change notification settings on an individual thread by using the **eye** icon which is visible from within the thread, or by selecting "Follow Thread" or "Unfollow Thread" from the Tools menu. This can be used to stop receiving reply notifications for that individual thread when you've followed all activity in a discussion forum, or to follow activity in only a select thread.
 
