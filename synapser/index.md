@@ -13,7 +13,7 @@ The `synapser` package provides an interface to [Synapse](http://www.synapse.org
 -   fine grained access control
 -   provenance tracking
 
-The `synapser` package lets you communicate with the cloud-hosted Synapse service to access data and create shared data analysis projects from within Python scripts or at the interactive Python console. Other Synapse clients exist for [Python](http://docs.synapse.org/python), [Java](https://github.com/Sage-Bionetworks/Synapse-Repository-Services/tree/develop/client/synapseJavaClient%3E), and [the web browser](https://www.synapse.org).
+The `synapser` package lets you communicate with the cloud-hosted Synapse service to access data and create shared data analysis projects from within Python scripts or at the interactive Python console. Other Synapse clients exist for [Python](docs.synapse.org/python), [Java](https://github.com/Sage-Bionetworks/Synapse-Repository-Services/tree/develop/client/synapseJavaClient%3E), and [the web browser](https://www.synapse.org).
 
 Installation
 ------------
@@ -38,7 +38,7 @@ install.packages("synapser")
 
 Vignettes
 ---------
--   [Synapse R Client Overview](http://docs.synapse.org/synapser/vignettes/synapser.html)
--   [Tables](http://docs.synapse.org/synapser/vignettes/tables.html)
--   [File View](http://docs.synapse.org/synapser/vignettes/fileview.html)
+-   [Synapse R Client Overview](docs.synapse.org/synapser/vignettes/synapser.html)
+-   [Tables](docs.synapse.org/synapser/vignettes/tables.html)
+-   [File View](docs.synapse.org/synapser/vignettes/fileview.html)
 
