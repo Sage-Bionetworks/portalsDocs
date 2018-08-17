@@ -21,6 +21,9 @@ While Synapse provides physical storage for files (using Amazon's S3), not all d
 {% include note.html content="System metadata, annotations, and provenance records are still stored in Synapse's S3 storage." %}
 
 ## Setting Up an External AWS S3 Bucket
+
+**Please note that your S3 Bucket must be in us-east-1 (N. Virginia) for this to work.**
+
 Follow the documentation on Amazon Web Service (AWS) site to **[Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html){:target="_blank"}**. 
 
 <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html" class="btn btn-primary">View AWS Bucket Instructions</a>{:target="_blank"}
