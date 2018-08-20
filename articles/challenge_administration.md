@@ -40,7 +40,12 @@ synapseutils.copyWiki(syn, source_project_id, target_project_id)
 
 	{% tab R %}
 		{% highlight r %}
-# Unfortunately, current synapser version is not supporting this feature.
+library(synapser)
+library(synapserutils)
+synLogin()
+source_project_id = "syn2769515"
+target_project_id = "syn0123456"
+copyWiki(source_project_id, target_project_id)
 		{%endhighlight %}
 	{% endtab %}
 
@@ -83,6 +88,7 @@ challenge.id
 
 	{% tab R %}
 		{% highlight r %}
+library(rjson)
 library(synapser)
 synLogin()
 projectId <- "syn123456" # replace with the actual project Synapse ID
