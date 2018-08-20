@@ -22,7 +22,7 @@ While Synapse provides physical storage for files (using Amazon's S3), not all d
 
 ## Setting Up an External AWS S3 Bucket
 
-**Please note that your S3 Bucket must be in us-east-1 (N. Virginia) for this to work.**
+**Please note that your S3 Bucket must be in the `us-east-1` (N. Virginia) region for this to work.**
 
 Follow the documentation on Amazon Web Service (AWS) site to **[Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html){:target="_blank"}**. 
 
