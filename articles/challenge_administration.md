@@ -88,6 +88,7 @@ challenge.id
 
 	{% tab R %}
 		{% highlight r %}
+library(rjson)
 library(synapser)
 synLogin()
 projectId <- "syn123456" # replace with the actual project Synapse ID
