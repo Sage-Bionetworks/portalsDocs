@@ -58,7 +58,7 @@ The code block below displays an example config file with the available paramete
 
 ## Example Synapse client configuration
 
-When you install the [Synapse Python client](http://docs.synapse.org/python/#installation), a `.synapseConfig` file filled with examples, much like the sample above, should appear in your home directory if a configuration file is not already present. You can uncomment and fill out the parameters of interest for you to use. 
+When you install the [Synapse Python client](https://sage-bionetworks.github.io/synapsePythonClient/build/html/index.html#installation), a `.synapseConfig` file filled with examples, much like the sample above, should appear in your home directory if a configuration file is not already present. You can uncomment and fill out the parameters of interest for you to use. 
 
 Currently, this feature is not available in `synapser` (the Synapse R client).
 

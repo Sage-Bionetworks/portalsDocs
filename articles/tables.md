@@ -742,7 +742,7 @@ You can toggle from the simple search to the advanced search without losing the 
 ## More on tables
 There are additional docs available for `Tables` in Python that cover more advanced topics.
 
-For **Python** check out our [Python Docs](http://docs.synapse.org/python/Table.html#module-synapseclient.table).
+For **Python** check out our [Python Docs](https://sage-bionetworks.github.io/synapsePythonClient/build/html/Table.html#tables).
 
 <br/>
 

@@ -15,7 +15,7 @@ Uploading a large number of files can be tedious when done one at a time, especi
 
 <br/>
 
-Read more about the helper functions on the **[synapseutils](http://docs.synapse.org/python/synapseutils.html#module-synapseutils)** page.
+Read more about the helper functions on the **[synapseutils](https://sage-bionetworks.github.io/synapsePythonClient/build/html/synapseutils.html)** page.
 
 ## Uploading Data in Bulk
 
@@ -34,7 +34,7 @@ The above manifest describes a "file.csv" that will be uploaded to the Synapse f
 
 
 For reference:
-[Tables](http://docs.synapse.org/python/Table.html#module-synapseclient.table) in the Synapse python docs.
+[Tables](https://sage-bionetworks.github.io/synapsePythonClient/build/html/Table.html#module-synapseclient.table) in the Synapse python docs.
 
 Tables from synapseutils docs
 
