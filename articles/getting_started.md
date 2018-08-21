@@ -98,7 +98,7 @@ At the command line you can login by specifying your Synapse username and passwo
 
 The login credentials can be specified for every Synapse client session, but this is not the recommended practice as your password will be visible. Instead, by passing the `rememberMe` parameter you can cache your credentials for use in future Synapse client sessions.
 
-The full list of possible login parameters for the Python client can be found in the [Python Docs](https://python-docs.synapse.org/build/html/Client.html#login) and for the R client in the [R Docs](http://r-docs.synapse.org/articles/synapser.html#connecting-to-synapse). 
+The full list of possible login parameters for the Python client can be found in the [Python Docs](https://python-docs.synapse.org/build/html/Client.html#login) and for the R client in the [R Docs](https://r-docs.synapse.org/articles/synapser.html#connecting-to-synapse). 
 
 To login with your username/email and password:
 
