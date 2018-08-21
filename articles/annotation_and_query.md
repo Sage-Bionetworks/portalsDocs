@@ -78,7 +78,6 @@ To add annotations through the web client, click the `Annotations` button in the
 
 <img src="/assets/images/annotation-button.png">
 	{% endtab %}
-
 {% endtabs %}
 
 <br/>
@@ -132,7 +131,6 @@ To enter multiple Values for a single Key click `Enter` with the cursor in the V
 <img src="/assets/images/annotation-edit-box.png">
 
 	{% endtab %}
-
 {% endtabs %}
 
 <br/>
@@ -271,7 +269,6 @@ Enter your query in the box and click the **Insert** button. Once you save the w
 
 <img id="image" src="/assets/images/query-file-wiki.png">
     {% endtab %}
-
 {% endtabs %}
 
 <br/>
