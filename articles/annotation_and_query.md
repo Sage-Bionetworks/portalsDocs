@@ -20,14 +20,14 @@ Annotations are structured as key-value pairs: the key is the name of the annota
 In this case, the annotations you may want to add might look like this: 
 
 * `assay = RNA-seq`
-* `fileType = bam`
+* `fileFormat = bam`
 * `sample = 1`
 * `condition = A`
 
 For the second sample in the same experimental set with the same conditions, the annotations would have the same "keys" but slightly different "values", such as:
 
 * `assay = RNA-seq`
-* `fileType = bam`
+* `fileFormat = bam`
 * `sample = 2` (note that we've changed the value here but the rest are the same)
 * `condition = A`
 
@@ -35,7 +35,7 @@ For the second sample in the same experimental set with the same conditions, the
 
 ## Types of Annotations
 
-Annotations can be one of four basic types 
+Annotations can be one of four basic types: 
 
 * Text (Character Limit = 256)
 * Integer
@@ -46,21 +46,21 @@ You cannot have duplicate annotation keys on the same object in Synapse.
 
 ### How to Assign Annotations
 
-Annotations may be added when initially uploading a file, or at a later date. This can be done using the command line client, the Python client, the R client, or from the Web. Using the analytical clients facilitates batch and automated population of annotations across many files. The Web client is useful when uploading a single file, or if a minor change needs to be made to annotations on a few files.
+Annotations may be added when initially uploading a file, or at a later date. This can be done using the command line client, the Python client, the R client, or from the Web. Using the analytical clients facilitates batch and automated population of annotations across many files. The Web client can be to bulk update many files using [file views](/articles/views.html).
 
 #### Adding annotations 
 
 {% tabs %}
 	{% tab Command %}
 		{% highlight bash %}
-synapse store Sample1_ConditionA.bam --parentId syn00123 --annotations '{"fileType":"bam", "assay":"RNA-seq"}'
+synapse store Sample1_ConditionA.bam --parentId syn00123 --annotations '{"fileFormat":"bam", "assay":"RNA-seq"}'
 		{% endhighlight %}
 	{% endtab %}
 
 	{% tab Python %}
 		{% highlight python %}
 entity = File(path="Sample1_ConditionA.bam",parent="syn00123")
-entity.annotations = {"fileType":"bam", "assay":"RNA-seq"}
+entity.annotations = {"fileFormat":"bam", "assay":"RNA-seq"}
 syn.store(entity)
 		{% endhighlight %}
 	{% endtab %}
@@ -68,13 +68,12 @@ syn.store(entity)
 	{% tab R %}
 		{% highlight r %}
 entity <- File("Sample1_ConditionA.bam", parent="syn00123")
-entity <- synStore(entity)
-synSetAnnotations(entity, annotations=list(fileType = "bam", assay = "RNA-seq"))
+entity <- synStore(entity, annotations=list(fileFormat = "bam", assay = "RNA-seq"))
 		{%endhighlight %}
 	{% endtab %}
 	
 	{% tab Web %}
-To add annotations through the web client, click the `Annotations` button in the upper right corner on a Project, Folder, or File page.
+To add annotations on a single entity through the web client, click the `Annotations` button in the upper right corner on a Project, Folder, or File page.
 
 <img src="/assets/images/annotation-button.png">
 	{% endtab %}
@@ -83,13 +82,13 @@ To add annotations through the web client, click the `Annotations` button in the
 <br/>
 
 #### Modifying Annotations
-If you have not decided on the annotations to add yet, you can add and modify the annotations at a later time as well, and you can manipulate annotations that have already been uploaded.
+If you have not decided on the annotations to add at the time of upload, you can add and modify the annotations at a later time as well. You can also manipulate annotations that have already been uploaded.
 
 
 {% tabs %}
 	{% tab Command %}
 		{% highlight bash %}
-synapse set-annotations --id syn123 --annotations '{"fileType":"bam", "assay":"RNA-seq"}'
+synapse set-annotations --id syn123 --annotations '{"fileFormat":"bam", "assay":"RNA-seq"}'
 		{% endhighlight %}
 	{% endtab %}
 
@@ -97,14 +96,14 @@ synapse set-annotations --id syn123 --annotations '{"fileType":"bam", "assay":"R
 		{% highlight python %}
 entity = syn.get("syn123")
 
-##### Modifying ONLY one annotation
+##### Modifying ONLY one annotation, please note that if you have any other annotations on this file, it will wipe all those out
 
-entity.fileType = 'bam'
-entity['fileType'] = 'bam'
+entity.fileFormat = 'bam'
+entity['fileFormat'] = 'bam'
 
-##### Modifying a set of annotations
+##### Modifying a set of annotations, please note that if you have any other annotations on this file, it will wipe all those out
 
-entity.annotations = {"fileType":"bam", "assay":"RNA-seq"}
+entity.annotations = {"fileFormat":"bam", "assay":"RNA-seq"}
 
 syn.store(entity, forceVersion = F)
 		{% endhighlight %}
@@ -115,20 +114,25 @@ syn.store(entity, forceVersion = F)
 
 entity <- synGet("syn123")
 
-##### Modifying ONLY one annotation
+##### Modifying ONLY one annotation, please note that if you have any other annotations on this file, it will wipe all those out
 synSetAnnotation(entity, annotations=list(filType = "bam"))
 
-##### Modifying a set of annotations
-synSetAnnotations(entity, annotations=list(fileType = "bam", assay = "RNA-seq")
+##### Modifying a set of annotations, please note that if you have any other annotations on this file, it will wipe all those out
+synSetAnnotations(entity, annotations=list(fileFormat = "bam", assay = "RNA-seq")
 
 		{%endhighlight %}
 	{% endtab %}
 	
 	{% tab Web %}
+(1) To update annotations on a single file:
+
 Click the `Edit` button in the resulting table to add, delete, or modify annotations.
 Start by entering a Key (the name of the annotation), select the type (text, integer etc.,), and enter the Value. For example Key=assay - Value=RNA-seq. Click `Save` to store the annotations for this entity.
 To enter multiple Values for a single Key click `Enter` with the cursor in the Value field.
+
 <img src="/assets/images/annotation-edit-box.png">
+
+(2) To update annotations on multiple files, please refer to our <a href="/article/views.html">File Views article</a>.
 
 	{% endtab %}
 {% endtabs %}
@@ -141,18 +145,17 @@ To enter multiple Values for a single Key click `Enter` with the cursor in the V
 Queries in Synapse look SQL-like:
 
 ```
-SELECT * FROM <data type> WHERE <expression>
+SELECT * FROM <synId> WHERE <expression>
 ```
 
-where currently supported `<data type>` are:
+where currently supported `<synId>` are:
 
 {:.markdown-table}
-| \<data type\> | 
+| \<synId\> | 
 | --------- | 
-| project   | 
-| folder    |
-| file      |
-| entity    |
+| table     | 
+| view      |
+
 
 If you know the entity type you are looking for, searching in `Project`, `File`, or `Folder` is what you want.
 To search over annotations of all entity types, use `Entity`.
@@ -161,7 +164,7 @@ The `<expression>` section are the conditions for limiting the search. Below dem
 
 For complete information on how to form queries and the types of limiting that can be performed, see the [Synapse Query API](https://sagebionetworks.jira.com/wiki/display/PLFM/Repository+Service+API#RepositoryServiceAPI-QueryAPI).
 
-Along with annotations added by users, every entity has a number of fields useful for searching. For a complete list, see [here](http://hud.rel.rest.doc.sagebase.org.s3-website-us-east-1.amazonaws.com/org/sagebionetworks/repo/model/Entity.html). 
+Along with annotations added by users, every entity has a number of fields useful for searching. For a complete list, see [here](https://docs.synapse.org/rest/org/sagebionetworks/repo/model/FileEntity.html). 
 
 Here are some really useful ones:
 
@@ -215,12 +218,12 @@ SELECT * FROM entity WHERE parentId=="syn1524884"
 Annotations are most useful for discovery of similar types of entities. Essentially, all annotations across Synapse are stored in a large table that can be queried to find entities with annotations matching your own criteria. While it can be useful to search for files that exist within an known project or folder, this requires that you know ahead of time where the files are.
 
 If annotations have been diligently added to `Files`, they can be used to discover files of interest.
-For example, you can identify all `Files` annotated as `bam` files (`fileType = bam`) uploaded to Synapse with the following query:
+For example, you can identify all `Files` annotated as `bam` files (`fileFormat = bam`) uploaded to Synapse with the following query:
 
 {% include note.html content="You will only be able to query the files you currently have permission to access." %}
 
 ```
-SELECT * FROM file WHERE fileType=="bam"
+SELECT * FROM file WHERE fileFormat=="bam"
 ```
 
 <br/>
@@ -234,7 +237,7 @@ SELECT * FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A
 Lastly, you can query on a subset of entities that have a specific annotation. You can limit the annotations you want displayed as following.
 
 ```
-SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"
+SELECT id,name,dataType,fileFormat FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"
 ```
 
 <br/>
@@ -244,7 +247,7 @@ Queries can be constructed using one of the analytical clients (command line, Py
 {% tabs %}
 	{% tab Command %}
 		{% highlight bash %}
-synapse query 'SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"'
+synapse query 'SELECT id,name,dataType,fileFormat FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"'
 		{% endhighlight %}
 	{% endtab %}
 
@@ -252,13 +255,13 @@ synapse query 'SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn1
 		{% highlight python %}
 
 
-result = syn.chunkedQuery('SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"')
+result = syn.chunkedQuery('SELECT id,name,dataType,fileFormat FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"')
 		{% endhighlight %}
 	{% endtab %}
 
 	{% tab R %}
 		{% highlight r %}
-result <- synQuery('SELECT id,name,dataType,fileType FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"')
+result <- synQuery('SELECT id,name,dataType,fileFormat FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"')
 		{%endhighlight %}
 	{% endtab %}
 	
