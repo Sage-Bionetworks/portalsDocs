@@ -205,8 +205,8 @@ System.out.println("Created a project with Synapse id " + myProject.getId());
 import synapseclient
 from synapseclient import Wiki, File, Project, Folder
 syn = synapseclient.login()
-myProj = syn.store(Project(name="My uniquely named project"))
-print 'Created project with synapse id: %s' % myProj.id
+myProject = syn.store(Project(name="My uniquely named project"))
+print 'Created project with synapse id: %s' % myProject.id
 	{% endhighlight %}
 	{% endtab %}
 
@@ -214,8 +214,8 @@ print 'Created project with synapse id: %s' % myProj.id
 	{% highlight r %}
 library(synapser)
 synLogin()
-myProj <- synStore(Project(name="My uniquely named project"))
-print(paste('Created a project with Synapse id', myProj$properties$id, sep = ' '))
+myProject <- synStore(Project(name="My uniquely named project"))
+print(paste('Created a project with Synapse id', myProject$properties$id, sep = ' '))
 	{%endhighlight %}
 	{% endtab %}
 
@@ -249,13 +249,13 @@ java.awt.Desktop.getDesktop().browse("https://www.synapse.org/#!Synapse:"+myProj
 
     {% tab Python %}
 	{% highlight python %}
-syn.onweb(myProj)
+syn.onweb(myProject)
 	{% endhighlight %}
 	{% endtab %}
 
     {% tab R %}
 	{% highlight r %}
-synOnweb(myProj)
+synOnweb(myProject)
 	{%endhighlight %}
 	{% endtab %}
 
@@ -298,7 +298,7 @@ synapseClient.createWikiPage(myProject.getId(), ObjectType.ENTITY, page);
 
     {% tab Python %}
 	{% highlight bash %}
-projWiki = Wiki(title='Data Summary', owner = myProj )
+projWiki = Wiki(title='Data Summary', owner = myProject )
 markdown = '''* Cell growth look normally distributed
 * There is evidence of inverse growth between these two cell lines '''
 projWiki['markdown'] = markdown
@@ -346,7 +346,7 @@ resultsFolder = synapseClient.createEntity(resultsFolder);
 
     {% tab Python %}
 	{% highlight python %}
-results_folder = Folder(name='results', parent=myProj)
+results_folder = Folder(name='results', parent=myProject)
 results_folder = syn.store(results_folder)
 
 	{% endhighlight %}
