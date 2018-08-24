@@ -411,8 +411,7 @@ raw_data_file = syn.store(raw_data_file)
     {% tab R %}
 	{% highlight r %}
 
-rawDataFile <- File("data/cell_lines_raw_data.csv", parent=resultsFolder$properties$id)
-annotations <- synSetAnnotations(rawDataFile, annotations=list(foo="bar", number1="42", number2="3.1415"))
+rawDataFile <- File("data/cell_lines_raw_data.csv", parent=resultsFolder$properties$id, annotations=list(foo="bar", number1="42", number2="3.1415"))
 rawDataFile <- synStore(rawDataFile)
 
 {% endhighlight %}
