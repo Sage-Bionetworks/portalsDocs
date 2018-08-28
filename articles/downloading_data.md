@@ -300,7 +300,13 @@ wiki <- synGetWiki(entity, 12345)
 Files can be downloaded in bulk using the `syncFromSynapse` function found in the [synapseutils](https://python-docs.synapse.org/build/html/synapseutils.html#module-synapseutils.sync) helper package. This function crawls all the subfolders of the project/folder that you specify and retrieves all the files that have not been downloaded. By default, the files will be downloaded into your `synapseCache`, but a different download location can be specified with the `path` parameter. If you do download to a location out side of `synapseCache`, this function will also create a tab-delimited manifest of all the files along with their metadata (path, provenance, annotations, etc).
 
 
-{% highlight python %}
+
+
+
+{% tabs %}
+
+  {% tab Python %}
+    {% highlight python %}
 # Load required libraries
 import synapseclient
 import synapseutils
@@ -310,8 +316,24 @@ syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=
 
 # download all the files in folder syn123 to a local folder called "myFolder"
 all_files = synapseutils.syncFromSynapse(syn, entity='syn123', path='/path/to/myFolder')
-{% endhighlight %}
+    {% endhighlight %}
+  {% endtab %}
 
+  {% tab R %}
+    {% highlight r %}
+# Load required libraries
+library(synapser)
+library(synapserutils)
+
+# login to Synapse
+synLogin(email='me@example.com', password='secret', rememberMe=TRUE) 
+
+# download all the files in folder syn123 to a local folder called "myFolder"
+all_files = syncFromSynapse(entity='syn123', path='/path/to/myFolder')
+    {% endhighlight %}
+  {% endtab %}
+
+{% endtabs %}
 <br/>
 
 ### See Also
