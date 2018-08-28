@@ -326,7 +326,7 @@ library(synapser)
 library(synapserutils)
 
 # login to Synapse
-synLogin(email='me@example.com', password='secret', rememberMe=True) 
+synLogin(email='me@example.com', password='secret', rememberMe=TRUE) 
 
 # download all the files in folder syn123 to a local folder called "myFolder"
 all_files = syncFromSynapse(entity='syn123', path='/path/to/myFolder')
