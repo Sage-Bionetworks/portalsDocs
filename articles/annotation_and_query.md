@@ -132,7 +132,7 @@ To enter multiple Values for a single Key click `Enter` with the cursor in the V
 
 <img src="/assets/images/annotation-edit-box.png">
 
-(2) To update annotations on multiple files, please refer to our <a href="/article/views.html">File Views article</a>.
+(2) To update annotations on multiple files, please refer to our <a href="/articles/views.html">File Views article</a>.
 
 	{% endtab %}
 {% endtabs %}
@@ -157,10 +157,17 @@ where currently supported `<synId>` are:
 | view      |
 
 
-If you know the entity type you are looking for, searching in `Project`, `File`, or `Folder` is what you want.
-To search over annotations of all entity types, use `Entity`.
+You can query any `Table` or `View` in Syanpse that you have read access to. 
 
 The `<expression>` section are the conditions for limiting the search. Below demonstrates some examples of limiting searches.
+
+```
+SELECT * FROM syn123456 WHERE fileFormat='fastq'
+```
+
+```
+SELECT * FROM syn123456 WHERE RIN<=6.1
+```
 
 For complete information on how to form queries and the types of limiting that can be performed, see the [Synapse Query API](https://sagebionetworks.jira.com/wiki/display/PLFM/Repository+Service+API#RepositoryServiceAPI-QueryAPI).
 
@@ -177,13 +184,9 @@ Here are some really useful ones:
 
 ### Finding files in a specific project
 
-To find all files in a specific `Project`, you need to know the `projectId`, which is a Synapse identifier (looks like `syn12345`).
-For example, the TCGA Pan-Cancer Project has a `projectId` of syn300013.
-So, the query to find all files and all annotations associated with this `Project` would be:
+To find all files in a specific `Project`, create a `File View` in the web client. For example, if you'd like to see all of the files in a Project with a synID `syn123456`, navigate to your project and go to the **Tables** tab. From there, click **Tools** in teh upper right hand corner and select "Add File View". Select the project `syn123456` and follow the prompts. This will create a tabluar file view that contains every file in the project, which you can now query. For a more in-depth look at this feature, please read our articles on [File Views](/articles/views.html).
 
-```
-SELECT * FROM file WHERE projectId=="syn300013"
-```
+ <a href="/articles/managing_metadata_in_scale.html" target="_blank" class="btn btn-info btn-lg active" role="button" aria-pressed="true">File View Article</a>
 
 
 <br/>
