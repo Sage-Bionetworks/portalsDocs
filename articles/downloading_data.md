@@ -321,7 +321,7 @@ all_files = synapseutils.syncFromSynapse(syn, entity='syn123', path='/path/to/my
 
   {% tab R %}
     {% highlight r %}
-    # Load required libraries
+# Load required libraries
 library(synapser)
 library(synapserutils)
 
