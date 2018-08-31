@@ -458,7 +458,7 @@ Click on the **Edit icon** to the right of the query button to get to the **Edit
 
 **Deleting rows**
 
-To delete rows, query for the rows you want to delete and use the client's `delete` function on the results:
+To delete rows, query for the rows you want to delete and use the `delete` function on the results:
 
 {% tabs %}
 
