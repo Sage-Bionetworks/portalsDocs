@@ -458,11 +458,12 @@ Click on the **Edit icon** to the right of the query button to get to the **Edit
 
 **Deleting rows**
 
+To delete rows, query for the rows you want to delete and use the client's `delete` function on the results:
+
 {% tabs %}
 
 {% tab Python %}
 {% highlight python %}
-# Query for the rows you want to delete and call syn.delete on the results:
 rowsToDelete = syn.tableQuery("select * from %s where artist='Sonny Rollins'" %table.schema.id)
 a = syn.delete(rowsToDelete)
 {% endhighlight %}
@@ -470,7 +471,6 @@ a = syn.delete(rowsToDelete)
 
 {% tab R %}
 {% highlight r %}
-# Query for the rows you want to delete and call synDelete on the results:
 rowsToDelete <- synTableQuery("select * from syn7264701 where artist='Sonny Rollins'")
 synDelete(rowsToDelete)
 {% endhighlight %}
