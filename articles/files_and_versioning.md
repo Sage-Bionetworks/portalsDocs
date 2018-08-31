@@ -125,7 +125,7 @@ Some files in Synapse are supported with previews to allow users to peek at the 
 
 # Versions of Files
 
-Versioning is an important component to reusable, reproducible research. When a Synapse `File` is initially uploaded, it automatically gets a version of `1`. It can be referred to explicitly by its Synapse ID: `syn12345678.1`. Uploading new versions of a file replaces the existing file in Synapse while preserving the previous version. The Synapse ID will remain but the version will increase, e.g., `syn12345678.2`. All versions are accessible through a single entry point (the Synapse ID, `syn12345678`). It is important to note that, by default, any previous versions of the file should still be available - it may be used in provenance relationships or as part of a data release. 
+Versioning is an important component to reusable, reproducible research. When a Synapse `File` is initially uploaded, it automatically gets a version of `1`. It can be referred to explicitly by its Synapse ID: `syn12345678.1`. Uploading a new version of a file replaces the existing file in Synapse while preserving the previous version. The Synapse ID will remain but the version will increase, e.g., `syn12345678.2`. All versions are accessible through a single entry point (the Synapse ID, `syn12345678`). It is important to note that, by default, any previous versions of the file should still be available - they may be used in provenance relationships or as part of a data release. 
 
 Providing the Synapse ID without any versioning information to any of the clients (e.g., `syn12345678`) will always point to the most recent version of the file. In this way, updates to files can be automatically fetched by users by simply omitting the version.
 
@@ -136,7 +136,7 @@ The easiest way to create a new version of an existing Synapse `File` is to use 
 Only the file and annotations information are included in the version. Other metadata about a Synapse `File` (such as the description, name, parent, ACL, *and its associated Wiki*) are not part of the version, and will not change between versions.
 
 ## Uploading a New Version
-To upload a new version of a `File`, the easiest way to do this is to use the same file name and store it in the same location (e.g., the same `parentId`), therefore uploading a new version follows the same steps as uploading a file for the first time. **The only major difference is the additional step of adding a comment to the new version in order to easily track differences at a glance**. The example file `raw_data.txt` will now have a version of `2` and a comment describing the change. 
+Uploading a new version follows the same steps as uploading a file for the first time - use the same file name and store it in the same location (e.g., the same `parentId`). **It is recommended to add a comment to the new version in order to easily track differences at a glance**. The example file `raw_data.txt` will now have a version of `2` and a comment describing the change.
 
 {% tabs %}
 
