@@ -119,8 +119,10 @@ text=Register for the Challenge&successMessage=Registration Request Accepted&
 requestOpenText=Registration Request Accepted&isSimpleRequestButton=true&isChallenge=true}
 ```
 
-You fill in the challenge Team ID and other parameters.  You can configure challenge registration to require that registrants agree to 'terms of use' (ToU) before they are allowed to join the challenge.   Further, mutiple terms can be associated with a single team.  For example, it is common to have participants agree both to the DREAM rules and also to terms that are specific to the particular challenge.  Adding these terms is the function of the Synapse Access and Compliance Team.  Please
-contact them (act@sagebase.org), providing the text of the the ToU and the name and/or ID of the team.
+You fill in the challenge Team ID and other parameters.  You can configure challenge registration to require that registrants agree to 'terms of use' (ToU) before they are allowed to join the challenge.   Further, mutiple terms of use can be associated with a single team.  For example, it is common to have participants agree both to the DREAM rules and also to terms that are specific to the particular challenge.  Adding these terms is the function of the Synapse Access and Compliance Team.  Please
+contact them (act@sagebase.org) and provide the text of the the ToU and the name and/or ID of the team.
+
+{% include note.html content="Please contact the Synapse Access and Compliance Team with the Terms of Use and ID of your team prior to launching the challenge." %}
 
 ### 5 - Configure Team Registration widgets
 
