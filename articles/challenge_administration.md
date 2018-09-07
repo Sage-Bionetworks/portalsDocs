@@ -1,7 +1,7 @@
 ---
-title: Running a Challenge
+title: Challenge Infrastructure
 layout: article
-excerpt: Learn how to administer and start a challenge
+excerpt: Learn how to set-up the wireframe of a challenge. 
 category: admin
 ---
 
