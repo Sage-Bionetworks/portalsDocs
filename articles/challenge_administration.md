@@ -28,7 +28,9 @@ Please visit this [page](/articles/teams.html) to learn more about teams.
 
 Each Project, Folder and File may have an associated wiki page describing it.  The project wiki is a good place for an overview of the challenge and instructions for participating.  For background on how to create and share Projects, Files and Folders, please see our [making a project guide](/articles/making_a_project.html).  
 
-All DREAM challenges should have a live and staging site.  The two projects should be named something like this:  "Your DREAM challenge" and "Your DREAM challenge staging site".  It is important to note that the live site will act as a splash site as the DREAM challenge is in development.  The main challenge project can serve as a 'landing page' for visitors wishing to learn about the challenge, as well as a repository for data files and other resources related to the challenge.  **All edits and changes even after the challenge has launched should be made on the staging site**
+All DREAM challenges should have a live and staging site.  The two projects should be named something like this:  "Your DREAM challenge" and "Your DREAM challenge staging site".  It is important to note that the live site will act as a splash site as the DREAM challenge is in development.  The main challenge project can serve as a 'landing page' for visitors wishing to learn about the challenge, as well as a repository for data files and other resources related to the challenge.  
+
+{% include important.html content="All edits and changes even after the challenge has launched should be made on the staging site." %}
 
 The comprehensive [DREAM Challenge Wiki Template](https://www.synapse.org/#!Synapse:syn2769515/wiki/) is a great starting point for your challenge's wiki pages.  It also helps to have a look at [some examples from previous challenges](https://www.synapse.org/#!Challenges:DREAM).  **This page will act as the staging site until the challenge is ready to be launched.  Then all the pages on the staging site will be copied onto the main site.** To copy the Challenge Wiki Template to your new project:  Say your private project is "syn0123456".   First, ensure your project has no wiki page (deleting the current one if necessary).  Here are the ways to copy a wiki from one project to another.
 
@@ -172,9 +174,11 @@ Click on the Challenge Tab:
 
 ### 1 - Edit Challenge Wiki Privately
 
-Challenge organizers have found it convenient to author wiki pages privately, then publish the result when ready for public view.  Please review steps A2 for more information.  
+Challenge organizers have found it convenient to author wiki pages privately, then publish the result when ready for public view.  Please review [steps A2](/articles/2---creating-dream-challenge-projects) for more information.  
 
-When you are pleased with your edits, please use the [mirrorWiki script](https://github.com/Sage-Bionetworks/DREAM-Utilities/blob/master/mirrorWiki.py) to mirror the staging site changes to the live site so that only changes are made on the staging site. **Note: The wiki titles are matched between the staging and live site, so if you don't want a page to be mirrored over, simply change the name of the wikipage.**
+When you are pleased with your edits, please use the [mirrorWiki script](https://github.com/Sage-Bionetworks/DREAM-Utilities/blob/master/mirrorWiki.py) to mirror the staging site changes to the live site so that only changes are made on the staging site. 
+
+{% include note.html content="The wiki titles are matched between the staging and live site, so if you don't want a page to be mirrored over, simply change the name of the wikipage." %}
 
 ```
 #Usage of mirrowWiki script
@@ -197,7 +201,7 @@ There are cases in which there are no human data concerns but for which a pop-up
 
 Challenge participants submit their entries as Synapse Files to an Evaluation queue ("Evaluation" for short) which you manage.  You may create multiple Evaluation queues to support sub-challenges having different types and rounds of submissions.
 
-Please visit this [page](/articles/evaluation_queues.html) to learn about queues.
+Please visit the [Evaluation Queue article](/articles/evaluation_queues.html) to learn about queues.
 
 #### 3.2 - Enable Challenge Statistics
 
@@ -228,7 +232,7 @@ Synapse has a limit on the volume of email messages sent out.  Currently account
 
 ### 1 - Creating a Scoring Application
 
-As submissions arrive from participants, you may need to run a custom scoring script.  Synapse provides APIs for retrieving and scoring submissions.  A runnable scoring template (versions in Java, R and Python) is available in this [Github repository](https://github.com/Sage-Bionetworks/SynapseChallengeTemplates)
+As submissions arrive from participants, you may need to run a custom scoring script.  Synapse provides APIs for retrieving and scoring submissions.  A runnable scoring template (versions in Java, R and Python) is available in the [Synapse Challenge Template GitHub repository](https://github.com/Sage-Bionetworks/SynapseChallengeTemplates)
 After customizing the application for your scoring needs, create a periodically running job on a server owned by your organization.  A convenient, free web interface for periodically running jobs is [Jenkins](http://jenkins-ci.org/).  Note:  In the Challenge Admin tab mentioned above you must share the Evaluation with the user under whose credentials the Scoring Application is run, providing "Can score" access to this user.
 
 Submission scores and other computational results may be attached to the Submissions themselves.  The sample code shows how to do this.  The results may be retrieved and displayed in a leaderboard, as described below.
@@ -385,11 +389,11 @@ Note: the first 5 * stand for minute (m), hour (h), day of month (dom), and mont
 
 ### 2 - Share Scoring Code with Participants
 
-Although validation/test data is typically kept secret during a challenge, you should make the scoring algorithm itself available to participants.  A straightforward way to do this is to push the code to your Github fork, then link to a Synapse entity or wiki using its Github URL.
+Although validation/test data is typically kept secret during a challenge, you should make the scoring algorithm itself available to participants.  A straightforward way to do this is to push the code to your GitHub fork, then link to a Synapse entity or wiki using its GitHub URL.
 
 ## D - Share the Challenge!
 
-Now that you have successfully configured the challenge. Please view [here](/articles/access_controls.html) to learn how to share the challenge and apply conditions for use on the data.
+Now that you have successfully configured the challenge. Please view the [Access Controls article](/articles/access_controls.html) to learn how to share the challenge and apply conditions for use on the data.
 
 A common pattern is to make the challenge project publicly viewable so all Synapse users can read about the challenge.  Participant data sets are organized in the project, but are limited in access so only challenge participants may see them.  Data used for testing/scoring submissions may
 also be placed with the project but with even tighter access restrictions, so that only challenge organizers may see the data files. 
@@ -444,7 +448,7 @@ for (sid in sids) {
 
 ## F - Challenge Tips & Tricks
 
-Here are some helpful functions that could help with running a challenge.  Every submission has a unique submission id, this should not be confused with synapse ids which start with syn...  A submission can also contain annotations that can be used to display on live leaderboards.  It is good to note that these added annotations can be set to either public or private.  Private annotations cannot be read by people on the live leaderboard unless the READ_PRIVATE_SUBMISSIONS ACL is set on the evaluation queue.
+Here are some helpful functions that could help with running a challenge.  Every submission has a unique submission id, this should not be confused with synapse ids which start with `syn`.  A submission can also contain annotations that can be used to display on live leaderboards.  It is good to note that these added annotations can be set to either public or private.  Private annotations cannot be read by people on the live leaderboard unless the READ_PRIVATE_SUBMISSIONS ACL is set on the evaluation queue.
 
 {% tabs %}
 	{% tab Python %}
