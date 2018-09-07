@@ -11,7 +11,7 @@ This guide is meant to help challenge organizers create a space within Synapse t
 
 ## A - Setting up Challenge infrastructure
 
-This [createChallenge.py](https://github.com/Sage-Bionetworks/DREAM-Utilities/blob/master/createChallenge.py) script helps the setup of the challenge infrastructure (steps A1-5).  
+This [createChallenge.py](https://github.com/Sage-Bionetworks/DREAM-Utilities/blob/master/createChallenge.py) script sets up the challenge infrastructure (steps A1-5).  
 
 **For all DREAM challenges, please contact the Synapse Access and Compliance Team (act@sagebase.org) for step A4!**
 
