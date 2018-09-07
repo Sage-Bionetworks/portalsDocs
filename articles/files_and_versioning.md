@@ -302,6 +302,37 @@ Navigate to where the file is stored in Synapse and click the **File History** b
 
 {% endtabs %}
 
+
+## Deleting a File
+{% tabs %}
+{% tab Python %}
+{% highlight python %}
+syn.delete("syn3260973")
+{% endhighlight %}
+{% endtab %}
+{% tab R %}
+{% highlight r %}
+synDelete("syn3260973") #this command will return NULL 
+{%endhighlight %}
+{% endtab %}
+{% endtabs %}
+
+#Delete a specific file version.
+A specific file version can be deleted by passing the `version` parameter.
+{% tabs %}
+{% tab Python %}
+{% highlight python %}
+syn.delete("syn3260973", version=2)
+{% endhighlight %}
+{% endtab %}
+{% tab R %}
+{% highlight r %}
+synDelete("syn3260973", version=2) #this command will return NULL
+{%endhighlight %}
+{% endtab %}
+{% endtabs %}
+
+
 <br/>
 
 ## See Also
