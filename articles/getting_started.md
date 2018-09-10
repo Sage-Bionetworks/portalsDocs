@@ -87,64 +87,19 @@ To add a `Folder`, click on the `Files` tab, then use the Tools menu and select 
 
 Pick a file to upload in the `Folder` you just created. Use the Tools menu and select **Upload or Link to File**. Use the Browse button to select the file, or drag and drop it to upload, and click Save.
 
-To explore other features available for `Files` and `Folders`, read about [annotating files](https://docs.synapse.org/articles/annotation_and_query.html), [assigning DOIs](https://docs.synapse.org/articles/doi.html), [versioning](https://docs.synapse.org/articles/files_and_versioning.html), [provenance](https://docs.synapse.org/articles/provenance.html),and [sharing settings](https://docs.synapse.org/articles/access_controls.html).
+To explore other features available for `Files` and `Folders`, read about [annotating files](/articles/annotation_and_query.html), [assigning DOIs](/articles/doi.html), [versioning](/articles/files_and_versioning.html), [provenance](/articles/provenance.html),and [sharing settings](/articles/access_controls.html).
 
 # Adding a Wiki to your Project
 
-The `Wiki` tab in a `Project` provides a space for you to build narrative content to describe your research. These `Wikis` can also be nested as subpages to build up a hierarchy of content within your `Project` as well as be attached to specific `Files` and `Folders` in your `Project`.  Examples of content that you may want to include are project descriptions, specific aims, progress updates of data generation or analysis, analysis results (either in prose or via markdown-based notebooks such as [knitr](http://yihui.name/knitr/){:target="_blank"} or [IPython notebook](http://ipython.org/notebook.html){:target="_blank"}), or web-accessible publication-like summaries of your research.
+The `Wiki` tab in a `Project` provides a space for you to write narrative content to describe your project. This `Wiki` can be organized with subpages and a table of contents. 
 
-`Wiki` pages can contain highly customized content including, but not limited to images, tables, code blocks, LaTeX formatted equations, and scholarly references. Synapse-specific widgets also allow users to embed dynamic content based on other resources stored in Synapse (e.g., Entity List, User/Team badge, Query Table, or Provenance Graph).
+`Folders` and `Files` in your `Project` can also have a `Wiki`. You can use this `Wiki` to document the contents of the `Folder` or `File`, similar to a README.
+
+`Wiki` pages are written with [Markdown](https://www.markdownguide.org/), a lightweight syntax for styling text on the web. In addition to standard Markdown, `Wiki` pages can contain customized content, including images, tables, code blocks, LaTeX formatted equations, and scholarly references. Synapse-specific widgets also allow users to embed dynamic content based on other resources stored in Synapse.
 
 See the [Wiki](/articles/wikis.html) user guide for more information and examples.
 
-Here we will create a small `Wiki`:
-
-{% tabs %}
-{% tab Command %}
-	{% highlight bash %}
-The command line client does not support the creation of wiki content.
-We suggest using (to get to the webpage of the project)
-synapse onweb syn###
-where syn### is the Synapse Id of your created project.  Then editing the wiki using the web client.
-	{% endhighlight %}
-{% endtab %}
-
-    {% tab Java %}
-	{% highlight java %}
-import org.sagebionetworks.repo.model.wiki.WikiPage;
-
-WikiPage page = new WikiPage();
-page.setTitle("Data Summary");
-page.setMarkdown("* Cell growth look normally distributed\n" +
-		"* There is evidence of inverse growth between these two cell lines");
-synapseClient.createWikiPage(myProject.getId(), ObjectType.ENTITY, page);
-	{%endhighlight %}
-	{% endtab %}
-
-
-    {% tab Python %}
-	{% highlight bash %}
-projWiki = Wiki(title='Data Summary', owner = myProject )
-markdown = '''* Cell growth look normally distributed
-* There is evidence of inverse growth between these two cell lines '''
-projWiki['markdown'] = markdown
-projWiki = syn.store(projWiki)
-	{% endhighlight %}
-	{% endtab %}
-
-    {% tab R %}
-	{% highlight r %}
-placeholderText <- "* Cell growth look normally distributed\n* There is evidence of inverse growth between these two cell lines."
-wiki <- Wiki(owner=myProject, title="Analysis summary", markdown=placeholderText)
-wiki <- synStore(wiki)
-	{%endhighlight %}
-	{% endtab %}
-
-    {% tab Web %}
-Go to project page and click the **Tool button** and chose **Edit Project Wiki**.
-    {% endtab %}
-{% endtabs %}
-
+Here we will create a `Wiki` for our project. From the project page, click the **Tools button** and choose **Edit Project Wiki**. Add some text describing your `Project`, and then click Save.
 
 ## Local Folder and File Sharing Settings
 
