@@ -21,8 +21,6 @@ This getting started guide is for new users who are interested in learning about
 * Create your own project and add content to Synapse
 * Provide a project narrative which lives along side the scientific artifacts of your work, via the Synapse `Wiki` tools
 * Share your work with other Synapse users, teams of users, or make your work public
-* Install one of the Synapse clients (R, Python or command line)
-* Incorporate Synapse in your workflows to read shared content and upload analysis results
 
 ## What is Synapse?
 Synapse is an open source software platform that data scientists can use to carry out, track, and communicate their research in real time. Synapse enables co-location of scientific content (data, code, results) and narrative descriptions of that work. Synapse has seeded a growing number of living [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
