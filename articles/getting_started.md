@@ -46,32 +46,9 @@ Explore our [accounts, certification and profile validation](/articles/accounts_
 
 # Project and Data Management on Synapse
 
-<img style="float: right" src="/assets/images/project_1.png">
-
 Once you have a Synapse account you can start adding content. All Synapse content is organized in `Projects` where you can collaboratively access and share `Wikis` (narratives) and `Files`. Each `Project` also contains a `Discussion Forum`.
 
-As an exercise we are going to create an example `Project`. Decide on a unique name for your `Project`. Since `Project` names must be unique in Synapse, let me suggest a project name for you:
-
-**<span id='random_proj_name'>Foo</span>**<br/>
-
-Use this project name in the example scripts below.
-
-<script type="text/javascript">
-var chance = window.Chance.Chance();
-var myadj = chance.capitalize(chance.pickone(adjectives));
-var mynoun = chance.capitalize(chance.pickone(nouns));
-var new_random_string = "Project ".concat(myadj, " ", mynoun);
-
-var randomProjNameElement = document.getElementById("random_proj_name");
-randomProjNameElement.innerHTML = new_random_string;
-</script>
-
-{% tabs %}
-    {% tab Web %}
-Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the **Create Project** button
-    {% endtab %}
-{% endtabs %}
-<br>
+As an exercise we are going to create an example `Project`. Decide on a unique name for your `Project`. Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the **Create Project** button.
 
 By default, your newly created `Project` is private; you are the only person who can access it and any content you include in it.  Later on we will share your created `Project` with other users.
 
