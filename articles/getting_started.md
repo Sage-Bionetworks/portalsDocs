@@ -30,7 +30,7 @@ Synapse is an open source software platform that data scientists can use to carr
 <br/>
 Synapse operates under a complete [governance process](/articles/governance.html) that includes well-documented [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}, guidelines and operating procedures, privacy enhancing technologies, as well as the right of audit and external reviews.
 
-# Register for a Synapse Account
+## Register for a Synapse Account
 
 Anyone can browse public content on the Synapse web site, but in order to download and create content you will need to register for an account using an email address. You will receive an email message for verification to complete the registration process.
 
@@ -42,7 +42,7 @@ Since Synapse can store human subject data that has sharing and use restrictions
 
 Explore our [accounts, certification and profile validation](/articles/accounts_certified_users_and_profile_validation.html) page to find out more information on the different levels of users.  
 
-# Project and Data Management on Synapse
+## Project and Data Management on Synapse
 
 Once you have a Synapse account you can start adding content. All Synapse content is organized in `Projects` where you can collaboratively access and share `Wikis` (narratives) and `Files`. Each `Project` also contains a `Discussion Forum`.
 
@@ -54,7 +54,7 @@ Objects like `Files`, `Folders`, `Projects` created in Synapse are assigned uniq
 
 If you want to find your project at a later time you can see your projects on your [profile page](https://www.synapse.org/#!Profile:v/projects).
 
-# Organizing Data: creating Files and Folders
+## Organizing Data: creating Files and Folders
 
 You can use the `Files` tab to share your project's data, code, results, and any other information. Synapse `Files` and `Folders` are identified by a unique identifier. Synapse `Folders` are used to organize content and can contain other `Folders` and `Files`.
 
@@ -64,7 +64,7 @@ Pick a file to upload in the `Folder` you just created. Use the Tools menu and s
 
 To explore other features available for `Files` and `Folders`, read about [annotating files](/articles/annotation_and_query.html), [assigning DOIs](/articles/doi.html), [versioning](/articles/files_and_versioning.html), [provenance](/articles/provenance.html),and [sharing settings](/articles/access_controls.html).
 
-# Adding a Wiki to your Project
+## Adding a Wiki to your Project
 
 The `Wiki` tab in a `Project` provides a space for you to write narrative content to describe your project. This `Wiki` can be organized with subpages and a table of contents. 
 
