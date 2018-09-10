@@ -67,54 +67,6 @@ randomProjNameElement.innerHTML = new_random_string;
 </script>
 
 {% tabs %}
-{% tab Command %}
-	{% highlight bash %}
-synapse create Project -name "My uniquely named project"
-	{% endhighlight %}
-{% endtab %}
-
-
-	{% tab Java %}
-	{% highlight java %}
-import org.sagebionetworks.client.*;
-import org.sagebionetworks.repo.model.*;
-
-public static String PROD_REPO_URL = "https://repo-prod.prod.sagebase.org/repo/v1";
-public static String PROD_AUTH_URL = "https://repo-prod.prod.sagebase.org/auth/v1";
-public static String PROD_FILE_URL = "https://repo-prod.prod.sagebase.org/file/v1";
-
-SynapseClient synapseClient = new SynapseClientImpl();
-synapseClient.setSessionToken(sessionToken);
-synapseClient.setRepositoryEndpoint(PROD_REPO_URL);
-synapseClient.setAuthEndpoint(PROD_AUTH_URL);
-synapseClient.setFileEndpoint(PROD_FILE_URL);
-
-Project myProject = new Project();
-myProject.setName("My uniquely named project");
-myProject = synapseClient.createEntity(myProject);
-System.out.println("Created a project with Synapse id " + myProject.getId());
-	{%endhighlight %}
-	{% endtab %}
-
-    {% tab Python %}
-	{% highlight python %}
-import synapseclient
-from synapseclient import Wiki, File, Project, Folder
-syn = synapseclient.login()
-myProject = syn.store(Project(name="My uniquely named project"))
-print 'Created project with synapse id: %s' % myProject.id
-	{% endhighlight %}
-	{% endtab %}
-
-    {% tab R %}
-	{% highlight r %}
-library(synapser)
-synLogin()
-myProject <- synStore(Project(name="My uniquely named project"))
-print(paste('Created a project with Synapse id', myProject$properties$id, sep = ' '))
-	{%endhighlight %}
-	{% endtab %}
-
     {% tab Web %}
 Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the **Create Project** button
     {% endtab %}
@@ -123,41 +75,19 @@ Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the **C
 
 By default, your newly created `Project` is private; you are the only person who can access it and any content you include in it.  Later on we will share your created `Project` with other users.
 
-Objects like `Files`, `Folders`, `Projects` created in Synapse are assigned unique identifiers which are used for unique reference (a Synapse ID) with the format `syn12345678`. For example, your newly created `Project` will be assigned a Synapse ID.
+Objects like `Files`, `Folders`, `Projects` created in Synapse are assigned unique identifiers which are used for unique reference (a Synapse ID) with the format `syn12345678`. 
 
+If you want to find your project at a later time you can see your projects on your [profile page](https://www.synapse.org/#!Profile:v/projects).
 
-{% include note.html content= " Synapse Ids are used to uniquely identify Files, Folders, Projects and Tables in Synapse." %}
+# Organizing Data: creating Files and Folders
 
-You can view what you have created in Synapse on the web with:
+You can use the `Files` tab to share your project's data, code, results, and any other information. Synapse `Files` and `Folders` are identified by a unique identifier. Synapse `Folders` are used to organize content and can contain other `Folders` and `Files`.
 
-{% tabs %}
-{% tab Command %}
-	{% highlight bash %}
-synapse onweb syn123  #where syn123 is replaced with the synapse Id of your project
-	{% endhighlight %}
-{% endtab %}
+To add a `Folder`, click on the `Files` tab, then use the Tools menu and select **Add New Folder**.
 
-    {% tab Java %}
-	{% highlight java %}
-java.awt.Desktop.getDesktop().browse("https://www.synapse.org/#!Synapse:"+myProject.getId());
-	{%endhighlight %}
-	{% endtab %}
+Pick a file to upload in the `Folder` you just created. Use the Tools menu and select **Upload or Link to File**. Use the Browse button to select the file, or drag and drop it to upload, and click Save.
 
-    {% tab Python %}
-	{% highlight python %}
-syn.onweb(myProject)
-	{% endhighlight %}
-	{% endtab %}
-
-    {% tab R %}
-	{% highlight r %}
-synOnweb(myProject)
-	{%endhighlight %}
-	{% endtab %}
-
-    {% tab Web %}
-Go to your [profile Page](https://www.synapse.org/#!Profile:v) and click the project name in the Projects listing {% endtab %}
-{% endtabs %}
+To explore other features available for `Files` and `Folders`, read about [annotating files](https://docs.synapse.org/articles/annotation_and_query.html), [assigning DOIs](https://docs.synapse.org/articles/doi.html), [versioning](https://docs.synapse.org/articles/files_and_versioning.html), [provenance](https://docs.synapse.org/articles/provenance.html),and [sharing settings](https://docs.synapse.org/articles/access_controls.html).
 
 # Adding a Wiki to your Project
 
@@ -215,112 +145,6 @@ Go to project page and click the **Tool button** and chose **Edit Project Wiki**
     {% endtab %}
 {% endtabs %}
 
-# Organizing Data: creating Files and Folders
-
-The `Files` tab houses a remote file system that you can utilize to share your project's data, code, results, and any other information pertinent to your research. Unlike the file system on your local computer, Synapse `Files` and `Folders` are identified by a unique identifier, are versioned, and can be linked to one another using the Synapse `Provenance` services. These `Files` and `Folders`, like all Synapse content, can be accessed either through the web or through one of our analytical clients using their unique Synapse ID.
-
-Synapse `Folders` are used just as folders are on a local file system -- to organize and segment content. `Folders` can also contain (or be *parents* of) any number of other `Folders` and `Files`.
-
-To add a `Folder`:
-
-{% tabs %}
-
-	{% tab Command %}
-	{% highlight bash %}
-synapse create Folder name="results" parentId=syn123  #where syn123 is replaced by the project Id
-	{% endhighlight %}
-	{% endtab %}
-
-    {% tab Java %}
-	{% highlight java %}
-Folder resultsFolder = new Folder();
-resultsFolder.setParentId(myProject.getId());
-resultsFolder.setName("results");
-resultsFolder = synapseClient.createEntity(resultsFolder);
-	{%endhighlight %}
-	{% endtab %}
-
-    {% tab Python %}
-	{% highlight python %}
-results_folder = Folder(name='results', parent=myProject)
-results_folder = syn.store(results_folder)
-
-	{% endhighlight %}
-	{% endtab %}
-
-    {% tab R %}
-	{% highlight r %}
-resultsFolder <- Folder(name = "results", parentId = myProject$properties$id)
-resultsFolder <- synStore(resultsFolder)
-	{%endhighlight %}
-	{% endtab %}
-
-    {% tab Web %}
-click the **Add Folder** link under the Tools Menu on the Files tab.
-<br>
-    {% endtab %}
-{% endtabs %}
-<br>
-
-Synapse `Files` are also much like files on a local file system -- except they are web-accessible to anyone who has access, can be richly annotated (and queried on), can be embedded as links or images within a Synapse `Wiki`, and can be associated with a [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier){:target="_blank"}. `Files` carry the Conditions for Use of the `Folder` they are placed into in addition to additional specific Conditions for Use they have on their own.
-
-Let's upload a local file `data/cell_lines_raw_data.csv` into this newly created `Folder`. To follow along you can pick any file you have and replace the name with your chosen file. We will also attach some annotations to this file describing the content of the file. In the example, we will associate the key `foo` with the value `bar` along with two numerical annotations.
-
-{% tabs %}
-
-	{% tab Command %}
-	{% highlight bash %}
-
-synapse add data/cell_lines_raw_data.csv --parentId=syn123  --annotations '{"foo": "bar", "number1":42, "number2": 3.14}'
-
-	{% endhighlight %}
-	{% endtab %}
-
-    {% tab Java %}
-	{% highlight java %}
-import org.sagebionetworks.repo.model.file.S3FileHandle;
-
-Long storageLocationId = null;
-Boolean generatePreview = true;
-Boolean forceRestart = null;
-S3FileHandle result = synapseClient.multipartUpload(file, storageLocationId, generatePreview, forceRestart);
-
-FileEntity fileEntity = new FileEntity();
-fileEntity.setDataFileHandleId(result.getId());
-fileEntity = synapseClient.createEntity(fileEntity);
-	{% endhighlight %}
-	{% endtab %}
-
-    {% tab Python %}
-	{% highlight python %}
-
-
-raw_data_file = File(path="data/cell_lines_raw_data.csv", parent=results_folder)
-raw_data_file.foo = 'bar'
-raw_data_file.number1 = 3.14159
-raw_data_file.number2 = 42
-raw_data_file = syn.store(raw_data_file)
-
-	{% endhighlight %}
-	{% endtab %}
-
-    {% tab R %}
-	{% highlight r %}
-
-rawDataFile <- File("data/cell_lines_raw_data.csv", parent=resultsFolder$properties$id, annotations=list(foo="bar", number1="42", number2="3.1415"))
-rawDataFile <- synStore(rawDataFile)
-
-{% endhighlight %}
-{% endtab %}
-
-{% tab Web %}
-
-click the **Upload or Link to File** link in the Tools Menu on the Files tab. Go through the dialogs.  Then click the **Annotations** button on the top right of the screen to add annotations.
-
-    {% endtab %}
-{% endtabs %}
-
-<br>
 
 ## Local Folder and File Sharing Settings
 
