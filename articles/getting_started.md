@@ -101,9 +101,15 @@ See the [Wiki](/articles/wikis.html) user guide for more information and example
 
 Here we will create a `Wiki` for our project. From the project page, click the **Tools button** and choose **Edit Project Wiki**. Add some text describing your `Project`, and then click Save.
 
+To add a `Wiki` to a `Folder` or `File`, click on the `Files` tab and navigate to the `Folder` or `File`, then use the Tools menu and select **Edit Folder Wiki** or **Edit File Wiki**.
+
 ## Local Folder and File Sharing Settings
 
-Access to `Files`, `Tables`, and `Folders` is controlled by the **Sharing setting** that you select for your project. You may also set individual Sharing settings for specific `Files`, `Tables`, or `Folders` within a `Project`.
+By default, access to `Folders` and `Files` is controlled by the **sharing settings** that the project has. You may also set individual sharing settings for specific `Folders` nd `Files` within a `Project`.
+
+To share a `Project` with specific people or make it public, click on the **Project Settings** menu and select **Project Sharing Settings**. For more details, read the [How to Share Projects](/articles/access_controls.html#how-to-share-projects) section of the Sharing Settings and Conditions for Use instructions.
+
+For instructions on changing sharing settings for `Folders` and `Files`, read the [Sharing Other Content](/articles/access_controls.html#sharing-other-content) section of the Sharing Settings and Conditions for Use instructions.
 
 ## More Guides
 
