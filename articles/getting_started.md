@@ -114,3 +114,5 @@ For instructions on changing sharing settings for `Folders` and `Files`, read th
 ## More Guides
 
 Find additional information and tutorials through our <a href="/articles/">User Guide</a>.
+
+For information on using Synapse programmatically, see the documentation for the [Python client](https://python-docs.synapse.org/build/html/index.html), [command line client](https://python-docs.synapse.org/build/html/CommandLineClient.html), and [R client](https://r-docs.synapse.org/)
