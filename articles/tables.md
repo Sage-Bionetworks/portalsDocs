@@ -24,24 +24,24 @@ category: howto
 
 
 # Tables
-Synapse `Tables` is a feature designed to provide users the ability to create web-accessible, sharable, and queryable 
-data where columns can have a user-specified structured schema. Users may define table columns to contain common primitive 
-data types (text, numbers, dates, etc.) or references to other Synapse objects (e.g., `Files`). Therefore, it is possible to 
-organize sample metadata into tables that include columns for desired sample fields, as well as columns that link the sample 
+Synapse `Tables` is a feature designed to provide users the ability to create web-accessible, sharable, and queryable
+data where columns can have a user-specified structured schema. Users may define table columns to contain common primitive
+data types (text, numbers, dates, etc.) or references to other Synapse objects (e.g., `Files`). Therefore, it is possible to
+organize sample metadata into tables that include columns for desired sample fields, as well as columns that link the sample
 information to a heterogeneous collection of files.
-`Tables` may be queried and edited through both the Synapse web portal as well as through our analytical clients 
-that enable direct access to these data from analysis pipeline code. Unlike most NoSQL systems, the data in Synapse `Tables` 
-is strongly consistent, not eventually consistent. This is an important design consideration for scientific data processing, 
-as analysis on eventually-consistent data sources can limit the types of analysis performed, and may require special coding 
-strategies to ensure reasonable accuracy. 
+`Tables` may be queried and edited through both the Synapse web portal as well as through our analytical clients
+that enable direct access to these data from analysis pipeline code. Unlike most NoSQL systems, the data in Synapse `Tables`
+is strongly consistent, not eventually consistent. This is an important design consideration for scientific data processing,
+as analysis on eventually-consistent data sources can limit the types of analysis performed, and may require special coding
+strategies to ensure reasonable accuracy.
 
 
 ## Table Schema
-Synapse `Tables` contain metadata that specifies the types of columns included in the `Table`. These columns can be specified manually, 
+Synapse `Tables` contain metadata that specifies the types of columns included in the `Table`. These columns can be specified manually,
 or Synapse can recommend column types when a user uploads a data file.
 
 ## Table Data
-The data contained within a Synapse `Table` can be retrieved by using a SQL-like query language either through the web portal or through 
+The data contained within a Synapse `Table` can be retrieved by using a SQL-like query language either through the web portal or through
 the analytical clients. **See the [API docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html){:target="_blank"} for an enumeration of the types of queries that can be performed.** Here are a couple of simple examples.
 
 To get all of the columns from a `Table` with id syn3079449, the following query would be used:
@@ -54,7 +54,7 @@ To get only the two columns called "age" and "gender":
 
 ````
 SELECT age, gender FROM syn3079449
-````   
+````
 
 To count the number of rows:
 
@@ -67,7 +67,7 @@ To get all columns, but only rows where age is greater that 50:
 ````
 SELECT * FROM syn3079449 WHERE age > 50
 ````
-    
+
 To get all columns, but only rows where age is greater that 50 - and sort by treatmentArm:
 
 ````
@@ -77,7 +77,7 @@ SELECT * FROM syn3079449 WHERE age > 50 ORDER BY "treatmentArm" ASC
 
 # Using Tables
 
- A Schema is defined in terms of Column objects that specify types from the following choices: 
+ A Schema is defined in terms of Column objects that specify types from the following choices:
 
 {:.markdown-table}
 | \<columnType> |
@@ -126,7 +126,7 @@ df <- as.data.frame(csvFile)
 {% endtab %}
 
 {% tab Web %}
-Navigate to the **Tables** tab on your project. You have to option to insert data directly by clicking on the **Add Table** button or upload a **.csv** or **.tsv** file by clicking the **Upload Table** button. 
+Navigate to the **Tables** tab on your project. You have to option to insert data directly by clicking on the **Add Table** button or upload a **.csv** or **.tsv** file by clicking the **Upload Table** button.
 <br>
 <img id="image" src="/assets/images/addOrUploadTable.png">
 
@@ -136,7 +136,7 @@ Navigate to the **Tables** tab on your project. You have to option to insert dat
 
 <br>
 
-**2. Create table schema:** Each client has a utility function to create Columns from a data frame. 
+**2. Create table schema:** Each client has a utility function to create Columns from a data frame.
 Python uses `synapseclient.as_table_columns`.
 
 {% tabs %}
@@ -165,7 +165,7 @@ schema <- Schema(name='Jazz Albums', columns=cols, parent=project)
 {% endtab %}
 
 {% tab Web %}
-If you upload a file, the Web interface will automatically detect the table schema. After a few prompts, you will arrive at the option to name your table. You can adjust the schema(e.g. Column Name, Column Type, etc) here by clicking on the **Schema Options** button underneath the name. 
+If you upload a file, the Web interface will automatically detect the table schema. After a few prompts, you will arrive at the option to name your table. You can adjust the schema(e.g. Column Name, Column Type, etc) here by clicking on the **Schema Options** button underneath the name.
 <br>
 <img id="image" src="/assets/images/tableSchema.png">
 {% endtab %}
@@ -230,7 +230,7 @@ queryResult <- synTableQuery('select * from syn7264701')
 {% endtab %}
 
 {% tab Web %}
-Tables can be queried by using the Query bar above each table. 
+Tables can be queried by using the Query bar above each table.
 <br>
 <img id="image" src="/assets/images/table_query.png">
 {% endtab %}
@@ -244,14 +244,14 @@ Tables can be queried by using the Query bar above each table.
 Once the schema is settled, changes can be made by adding, appending, and deleting.
 
 When updating, begin by querying the table to ensure you have the latest schema and values.
-           
+
 **Updating existing values**
 
 {% tabs %}
 
 {% tab Python %}
 {% highlight python %}
-# Change the album value 'Vol. 2' to 'Volume 2' 
+# Change the album value 'Vol. 2' to 'Volume 2'
 schema = syn.get(table.schema.id)
 query = syn.tableQuery("select * from %s where album='Vol. 2'" %table.schema.id)
 df = query.asDataFrame()
@@ -268,7 +268,7 @@ syn.store(Table(results.tableId, df))
 
 {% tab R %}
 {% highlight r %}
-# Change the album value 'Vol. 2' to 'Volume 2' 
+# Change the album value 'Vol. 2' to 'Volume 2'
 queryResult <- synTableQuery("select * from syn7266590 where album='Vol. 2'")
 df <- as.data.frame(queryResult)
 df['album'] <- 'Volume 2'
@@ -322,7 +322,7 @@ schema <- synStore(schema)
 queryResult <- synTableQuery('select * from syn7264701')
 df <- as.data.frame(queryResult)
 # Add values
-df['purchased'] <- c('yes', 'yes', 'no', 'yes') 
+df['purchased'] <- c('yes', 'yes', 'no', 'yes')
 # Store the new table
 table <- synStore(Table("syn7264701", df))
 {% endhighlight %}
@@ -417,7 +417,7 @@ To modify information in a column, first begin by **adding** a new column, then 
 
 {% endtabs %}
 
-<br> 
+<br>
 
 
 ### Changing Rows
@@ -436,8 +436,8 @@ table = syn.store(synapseclient.Table(schema, new_rows))
 
 {% tab R %}
 {% highlight r %}
-newRows <- data.frame('artist'=c('Charles Mingus', 'Eugen Cicero'), 
-                      'album'=c('Blues & Roots', 'Rokoko-Jazz'), 
+newRows <- data.frame('artist'=c('Charles Mingus', 'Eugen Cicero'),
+                      'album'=c('Blues & Roots', 'Rokoko-Jazz'),
                       'year'=as.integer(c(1960, 1965)),
                       'catalog'=c('SD 1305', 'SB 15027'))
 schema <- synGet('syn7266590')
@@ -447,7 +447,7 @@ table <- synStore(tableToAppend)
 {% endtab %}
 
 {% tab Web %}
-Click on the **Edit icon** to the right of the query button to get to the **Edit Rows** pop-up. From there, you can add rows by click the **+** at the top. 
+Click on the **Edit icon** to the right of the query button to get to the **Edit Rows** pop-up. From there, you can add rows by click the **+** at the top.
 <br>
 <img id="image" src="/assets/images/table_add_rows.png">
 {% endtab %}
@@ -458,25 +458,21 @@ Click on the **Edit icon** to the right of the query button to get to the **Edit
 
 **Deleting rows**
 
+To delete rows, query for the rows you want to delete and use the `delete` function on the results:
+
 {% tabs %}
 
 {% tab Python %}
 {% highlight python %}
-# Query for the rows you want to delete and call syn.delete on the results:
 rowsToDelete = syn.tableQuery("select * from %s where artist='Sonny Rollins'" %table.schema.id)
-a = syn.delete(rowsToDelete.asRowSet())
-#or if you have already converted your query to data frame you can use:
-schema = syn.get(table.schema.id)
-tabledf = rowsToDelete.asDataFrame()
-a = syn.delete(synapseclient.Table(schema,tabledf))
+a = syn.delete(rowsToDelete)
 {% endhighlight %}
 {% endtab %}
 
 {% tab R %}
 {% highlight r %}
-# Query for the rows you want to delete and call synDelete on the results:
 rowsToDelete <- synTableQuery("select * from syn7264701 where artist='Sonny Rollins'")
-synDelete(rowsToDelete$asRowSet())
+synDelete(rowsToDelete)
 {% endhighlight %}
 {% endtab %}
 
@@ -611,7 +607,7 @@ df <- as.data.frame(results)
 {% endtab %}
 
 {% tab Web %}
-Click **Save** to save your latest schema. 
+Click **Save** to save your latest schema.
 
 <img id="image" src="/assets/images/save_table.png">
 {% endtab %}
@@ -627,7 +623,7 @@ Click **Save** to save your latest schema.
 {% tab Python %}
 {% highlight python %}
 ## the actual data
-files = ['./coltraneBlueTrain.jpg', './rollinsBN1558.jpg', 
+files = ['./coltraneBlueTrain.jpg', './rollinsBN1558.jpg',
 		'./rollinsBN4001.jpg','./burrellWarholBN1543.jpg']
 
 # Upload to filehandle service
@@ -647,7 +643,7 @@ syn.store(Table(schema, df))
 {% tab R %}
 {% highlight r %}
 # the actual data
-files <- c('./coltraneBlueTrain.jpg', './rollinsBN1558.jpg', 
+files <- c('./coltraneBlueTrain.jpg', './rollinsBN1558.jpg',
          './rollinsBN4001.jpg','./burrellWarholBN1543.jpg')
 
 # upload to filehandle service
@@ -669,7 +665,7 @@ synStore(Table(schema, df))
 {% endtab %}
 
 {% tab Web %}
-Click on the **Edit icon** to the right of the **Query** button. In the resulting pop-up, you can upload files by clicking the **Upload icon** then **Browse** and selecting the file from your local directory. Save the new table. 
+Click on the **Edit icon** to the right of the **Query** button. In the resulting pop-up, you can upload files by clicking the **Upload icon** then **Browse** and selecting the file from your local directory. Save the new table.
 
 <img id="image" src="/assets/images/upload_files_to_table.png">
 {% endtab %}
@@ -704,10 +700,10 @@ Clicking on any file will download it.
 {% endtabs %}
 
 ## Table Facets
-The faceted navigation on `Tables` (also known as **simple search**) can be used to simplify your search without having to use SQL-like queries. Simple search uses radio buttons and sliders to show all available facets in a menu to the left of the `Table` whereas advanced search employs a SQL-like query to filter the `Table`. To use table facets, navigate to a `Table` or a `File View`. For this example, we will be using the [Synapse Table Demo](https://www.synapse.org/#!Synapse:syn3079449/tables/){:target="_blank"} found in the [Wondrous Research Example](https://www.synapse.org/#!Synapse:syn1901847/wiki/56044){:target="_blank"}. Simple and advanced search both allow you to query for features of interest in a`Table` using different methods. 
+The faceted navigation on `Tables` (also known as **simple search**) can be used to simplify your search without having to use SQL-like queries. Simple search uses radio buttons and sliders to show all available facets in a menu to the left of the `Table` whereas advanced search employs a SQL-like query to filter the `Table`. To use table facets, navigate to a `Table` or a `File View`. For this example, we will be using the [Synapse Table Demo](https://www.synapse.org/#!Synapse:syn3079449/tables/){:target="_blank"} found in the [Wondrous Research Example](https://www.synapse.org/#!Synapse:syn1901847/wiki/56044){:target="_blank"}. Simple and advanced search both allow you to query for features of interest in a`Table` using different methods.
 
 ### Set facets
-In order to use simple search, you must first set columns to be facets in the schema editor. Select **Schema** in the upper right of your table and click on **Edit Schema**. In the resulting pop-up, select **Values** or **Range** from the dropdowns under the **Facet** option. **Values** can be thought of as categories whereas **Range** is a date or number. 
+In order to use simple search, you must first set columns to be facets in the schema editor. Select **Schema** in the upper right of your table and click on **Edit Schema**. In the resulting pop-up, select **Values** or **Range** from the dropdowns under the **Facet** option. **Values** can be thought of as categories whereas **Range** is a date or number.
 
 <img id="imageLg" src="/assets/images/set_facets.png">
 
@@ -720,7 +716,7 @@ To see all the facets, click on **Show simple search** found above the SQL-query
 <img id="imageLg" src="/assets/images/show_simple_search.png">
 
 #### Use simple search
-Select the features you are interested in to filter the table. 
+Select the features you are interested in to filter the table.
 
 <img id="imageLg" src="/assets/images/simple_search.png">
 
