@@ -57,12 +57,6 @@ copyWiki(source_project_id, target_project_id)
 		{%endhighlight %}
 	{% endtab %}
 
-	{% tab Web %}
-
-This script only works on Mac OSX. Download this [file](https://sourceforge.net/projects/createsynapsechallengewiki/files/createChallengeWiki.command/download) and double click the script.  You may have to right click and click open if you have script security settings on your computer. This script will prompt you to login to synapse.  Give it your private project syn0123456, and it will copy the template over. 
-
-	{% endtab %}
-
 {% endtabs %}
 
 
