@@ -157,7 +157,7 @@ where currently supported `<synId>` are:
 | view      |
 
 
-You can query any `Table` or `View` in Syanpse that you have read access to. 
+You can query any `Table` or `View` in Synapse that you have read access to. 
 
 The `<expression>` section are the conditions for limiting the search. Below demonstrates some examples of limiting searches.
 
@@ -173,12 +173,6 @@ For complete information on how to form queries and the types of limiting that c
 
 Along with annotations added by users, every entity has a number of fields useful for searching. For a complete list, see [here](https://docs.synapse.org/rest/org/sagebionetworks/repo/model/FileEntity.html). 
 
-Here are some really useful ones:
-
-* `projectId` which project the entity is associated with
-* `parentId`: where the entity resides (inside a folder/sub-folder; may also be the project if in the root folder) - useful for finding all files if you know they are in a specific folder
-
-
 
 <br/>
 
@@ -193,12 +187,15 @@ To find all files in a specific `Project`, create a `File View` in the web clien
 
 ### Listing files in a specific folder
 
-To list the `Files` and annotations in a specific `Folder`, you need to know the Synapse ID of the `Folder` (for example syn1524884, which has data from TCGA related to melanoma). All entities in this `Folder` will have a `parentId` of syn1524884.
+To list the `Files` in a specific `Folder`, you need to know the Synapse ID of the `Folder` (for example syn1524884, which has data from TCGA related to melanoma). All entities in this `Folder` will have a `parentId` of syn1524884.
 
-So, the query to find all `Files` and all annotations in this `Folder` would be:
+The function to find all `Files` in this `Folder` is call "getChildren":
 
+```python
+foo = list(syn.getChildren(parent='syn1524884', includeTypes=['file']))
 ```
-SELECT * FROM file WHERE parentId=="syn1524884"
+```r
+foo <- synGetChildren(parent='syn1524884', includeTypes=c('file')
 ```
 
 If you wanted to find all the sub-folders in this `Folder`, you would do:
@@ -226,14 +223,14 @@ For example, you can identify all `Files` annotated as `bam` files (`fileFormat 
 {% include note.html content="You will only be able to query the files you currently have permission to access." %}
 
 ```
-SELECT * FROM file WHERE fileFormat=="bam"
+SELECT * FROM syn123456 WHERE fileFormat="bam"
 ```
 
 <br/>
 Likewise, if you had put the RNA-seq related files described in the section above into a project (for example syn12345) with the described annotations, then you could find all of the files for `Condition A` for `Sample 1`:
 
 ```
-SELECT * FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"
+SELECT * FROM syn123456 WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"
 ```
 
 <br/>
@@ -250,7 +247,7 @@ Queries can be constructed using one of the analytical clients (command line, Py
 {% tabs %}
 	{% tab Command %}
 		{% highlight bash %}
-synapse query 'SELECT id,name,dataType,fileFormat FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"'
+synapse query 'SELECT id,name,dataType,fileFormat FROM syn123456 WHERE sample=1 AND condition="A"'
 		{% endhighlight %}
 	{% endtab %}
 
@@ -258,13 +255,13 @@ synapse query 'SELECT id,name,dataType,fileFormat FROM file WHERE projectId=="sy
 		{% highlight python %}
 
 
-result = syn.chunkedQuery('SELECT id,name,dataType,fileFormat FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"')
+result = syn.tableQuery('SELECT id,name,dataType,fileFormat FROM syn123456 WHERE sample=1 AND condition="A"')
 		{% endhighlight %}
 	{% endtab %}
 
 	{% tab R %}
 		{% highlight r %}
-result <- synQuery('SELECT id,name,dataType,fileFormat FROM file WHERE projectId=="syn12345" AND sample=="1" AND condition=="A"')
+result <- synTableQuery('SELECT id,name,dataType,fileFormat FROM syn123456 WHERE sample=1 AND condition=="A"')
 		{%endhighlight %}
 	{% endtab %}
 	
