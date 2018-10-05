@@ -174,11 +174,14 @@ For complete information on how to form queries and the types of limiting that c
 Along with annotations added by users, every entity has a number of fields useful for searching. For a complete list, see [here](https://docs.synapse.org/rest/org/sagebionetworks/repo/model/FileEntity.html). 
 
 
+<a href="https://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html" target="_blank" class="btn btn-info btn-lg active" role="button" aria-pressed="true">SQL Query Examples</a>
+
+
 <br/>
 
 ### Finding files in a specific project
 
-To find all files in a specific `Project`, create a `File View` in the web client. For example, if you'd like to see all of the files in a Project with a synID `syn123456`, navigate to your project and go to the **Tables** tab. From there, click **Tools** in teh upper right hand corner and select "Add File View". Select the project `syn123456` and follow the prompts. This will create a tabluar file view that contains every file in the project, which you can now query. For a more in-depth look at this feature, please read our articles on [File Views](/articles/views.html).
+To find all files in a specific `Project`, create a `File View` in the web client. For example, if you'd like to see all of the files in a Project with a synID `syn123456`, navigate to your project and go to the **Tables** tab. From there, click **Tools** in the upper right hand corner and select "Add File View". Select the project `syn123456` and follow the prompts. This will create a tabluar file view that contains every file in the project, which you can now query. For a more in-depth look at this feature, please read our articles on [File Views](/articles/views.html).
 
  <a href="/articles/managing_metadata_in_scale.html" target="_blank" class="btn btn-info btn-lg active" role="button" aria-pressed="true">File View Article</a>
 
