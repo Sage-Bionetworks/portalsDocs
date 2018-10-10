@@ -17,7 +17,7 @@ Every entity in Synapse has a unique synID associated with it.  It can be found 
 
 When using the Python, R, or command line clients, files downloaded using the `get` command are stored and/or registered in a cache. By default, the cache location is in your home directory in a hidden folder named `.synapseCache`. Whenever the `get` function is invoked, the cache is checked to see if the same file is already present by checking its MD5 checksum. If it already exists, the file will not be downloaded again.
 
-For the Python and R clients the default download location is the Synapse cache. The command line client downloads to your current working directory. On the web, your browser settings determine where a file is downloaded to. The Synapse cache is not updated to reflect downloads through a web browser. In all cases you can specify the directory in which to download the file.
+For the Python and R clients the default download location is the Synapse cache. The command line client downloads to your current working directory. On the web, your own browser settings determine the download location for files. The Synapse cache is not updated to reflect downloads through a web browser. In all cases you can specify the directory in which to download the file.
 
 For example, to get the experimental protocol file on [Adult Mouse Cardiac Myocyte Isolation](https://www.synapse.org/#!Synapse:syn3158111){:target="_blank"} (syn3158111) from the [Progenitor Cell Biology Consortium (PCBC)](https://www.synapse.org/#!Synapse:syn177310){:target="_blank"} you would run the following:
 
