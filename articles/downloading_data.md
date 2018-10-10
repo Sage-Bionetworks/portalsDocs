@@ -15,7 +15,7 @@ Data in Synapse can be downloaded using the programmatic clients (Python, R, and
 Every entity in Synapse has a unique synID associated with it.  It can be found on every entity page next to `Synapse ID:`, starting with `syn` ending with numbers (i.e. `syn00123`).
 `Files` can be downloaded by using the `get` command. By default, the `File` downloaded will always be the most recent version. If the current version of the `File` has already been downloaded, it will not re-download the `File`.
 
-When using the Python, R, or command line clients, files downloaded using the `get` command are stored and/or registered in a cache. By default, the cache location is in your home directory in a hidden folder named `.synapseCache`. Whenever the `get` function is invoked, the cache is checked to see if the same file is already present by checking it's MD5 checksum. If it already exists, the file will not be downloaded again.
+When using the Python, R, or command line clients, files downloaded using the `get` command are stored and/or registered in a cache. By default, the cache location is in your home directory in a hidden folder named `.synapseCache`. Whenever the `get` function is invoked, the cache is checked to see if the same file is already present by checking its MD5 checksum. If it already exists, the file will not be downloaded again.
 
 For the Python and R clients the default download location is the Synapse cache. The command line client downloads to your current working directory. On the web, your browser settings determine where a file is downloaded to. The Synapse cache is not updated to reflect downloads through a web browser. In all cases you can specify the directory in which to download the file.
 
