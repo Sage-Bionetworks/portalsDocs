@@ -115,9 +115,6 @@ syn.store(entity, forceVersion = F)
 
 entity <- synGet("syn123")
 
-##### Modifying ONLY one annotation
-synSetAnnotation(entity, annotations=list(filType = "bam"))
-
 ##### Modifying a set of annotations
 synSetAnnotations(entity, annotations=list(fileType = "bam", assay = "RNA-seq"))
 
