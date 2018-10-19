@@ -119,7 +119,7 @@ entity <- synGet("syn123")
 synSetAnnotation(entity, annotations=list(filType = "bam"))
 
 ##### Modifying a set of annotations
-synSetAnnotations(entity, annotations=list(fileType = "bam", assay = "RNA-seq")
+synSetAnnotations(entity, annotations=list(fileType = "bam", assay = "RNA-seq"))
 
 		{%endhighlight %}
 	{% endtab %}
