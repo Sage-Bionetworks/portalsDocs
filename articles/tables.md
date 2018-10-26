@@ -32,7 +32,7 @@ To learn more about working with tables using one of our programmatic clients, i
 
 # Creating a Table
 
-Tables require structure data, such as that contained in a .CSV or .TSV file. If your structured data is saved in an Excel format such as .XLS or .XLSX, please "save-as" a .CSV to proceed. This helps ensure your data will import cleanly. 
+Tables require structured data, such as that contained in a `.csv` or `.tsv` file. If your structured data is saved in an Excel format such as `.xls` or `.xlsx`, please "save-as" a `.csv` to proceed.
 
 Navigate to the Tables tab on your project. You have the option to create an empty table by clicking on the **Add Table** button under the Tools menu, or to upload your existing data in `.csv` or `.tsv` format by clicking the **Upload a Table** button. If you create an empty table, you'll need to start by defining your schema (see below). If you create a Table by uploading an existing file, first attach your file, click "Save", and then you will be presented with a preview of your data and some advanced options for defining separators and declaring whether or not your first line is a header. Synapse will automatically attempt to detect the table schema based on these options. 
 
