@@ -49,7 +49,7 @@ Note: Each programmatic client has a utility function to create columns from a d
 
 ## Adding Data to Tables
 
-If you have imported an existing .CSV or .TSV, all of your data will be imported at once. For very large files, it may take a moment for the Table to fully build and index in order to be queried. You can navigate away from the Tables once you have clicked "Create" and you will not lose any data. 
+If you have imported an existing `.csv` or `.tsv`, all of your data will be imported at once. For very large files, it may take a while for the Table to be built and indexed completely before it can be used. You can navigate away from the Tables once you have clicked "Create" and you will not lose any data. 
 
 If you have created an empty Table, you will need to click on "Add Data to Table" to upload a .CSV or .TSV file, or add rows individually through the web UI. To add rows, click on the **Edit Query Results** icon to the right of the query button to get to the **Edit Rows** pop-up. From there, you can add rows by click the **+** at the top.
 <br>
