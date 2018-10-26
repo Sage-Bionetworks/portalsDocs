@@ -45,7 +45,7 @@ Synapse currently supports several kinds of text columns (STRING, LARGE TEXT), d
 
 <img id="image" src="/assets/images/tableSchema.png">
 
-Note: Each analytic client has a utility function to create columns from a data frame. Please see the [Python Docs](https://python-docs.synapse.org/build/html/Table.html) or [R Docs](https://r-docs.synapse.org/articles/tables.html) for examples.
+Note: Each programmatic client has a utility function to create columns from a data frame. Please see the [Python Docs](https://python-docs.synapse.org/build/html/Table.html) or [R Docs](https://r-docs.synapse.org/articles/tables.html) for examples.
 
 ## Adding Data to Tables
 
