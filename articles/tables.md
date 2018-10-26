@@ -25,7 +25,7 @@ Synapse `Tables` are designed to provide users the ability to create web-accessi
 
 `Tables` may be queried and edited through both the Synapse web UI as well as through our programmatic clients. Unlike most NoSQL systems, the data in Synapse `Tables` is strongly consistent, not eventually consistent. This is an important design consideration for scientific data processing, as analysis on eventually-consistent data sources can limit the types of analysis performed, and may require special coding strategies to ensure reasonable accuracy.
 
-To learn more about working with tables using one of our analytic clients, including code examples for the below tasks, see:
+To learn more about working with tables using one of our programmatic clients, including code examples for the below tasks, see:
 * Tables in [Python Docs](https://python-docs.synapse.org/build/html/Table.html).
 * Tables in [R Docs](https://r-docs.synapse.org/articles/tables.html).
 
