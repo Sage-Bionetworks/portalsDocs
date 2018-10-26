@@ -41,7 +41,7 @@ After clicking on "Next", you will see the option to rename your Table and, opti
 ## Defining a Schema
 Synapse `Tables` require that you specify the types of data in each column included in the `Table`. If you are creating an empty Table, these columns can be specified manually by clicking on **Add Column** and selecting the column type you wish to add. If you are uploading an existing file, Synapse will recommend column types during upload. If you allow Synapse to recommend column types, be sure to verify that these column types represent your data well. You will be presented with a best guess under the button labeled "Schema Options" during import. 
 
-Synapse currently supports several kinds of text columsn (STRING, LARGE TEXT), dates (as TIMESTAMP), and a variety of numericcolumns (INTEGER, DOUBLE), and including various Synapse IDs directly (ENTITYID, USER). For a complete list of column types and definitions, please see the [REST docs on columnTypes](https://docs.synapse.org/rest/org/sagebionetworks/repo/model/table/ColumnType.html). 
+Synapse currently supports several kinds of text columns (STRING, LARGE TEXT), dates (as TIMESTAMP), and a variety of numeric columns (INTEGER, DOUBLE), and various Synapse identifiers (ENTITYID, USER). For a complete list of column types and definitions, please see the [REST docs on columnTypes](https://docs.synapse.org/rest/org/sagebionetworks/repo/model/table/ColumnType.html). 
 
 <img id="image" src="/assets/images/tableSchema.png">
 
