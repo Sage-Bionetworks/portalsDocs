@@ -34,11 +34,11 @@ Annotations can be one of four basic types:
 <br/>
 You cannot have duplicate annotation keys on the same object in Synapse. 
 
-## How to assign Annotations
+## How to Assign Annotations
 
 Annotations may be added when initially uploading a file, or at a later date. This can be done using the command line client, the Python client, the R client, or from the Web. Using the analytical clients facilitates batch and automated population of annotations across many files. The Web client can be used to bulk update many files using [file views](/articles/views.html).
 
-### Adding annotations 
+### Adding Annotations 
 
 {% tabs %}
 	{% tab Command %}
@@ -142,11 +142,11 @@ SELECT * FROM <synId> WHERE <expression>
 The `<expression>` section are the conditions for limiting the search. Below demonstrates some examples of limiting searches.
 
 ```
-SELECT * FROM syn123456 WHERE fileFormat='fastq'
+SELECT * FROM syn123456 WHERE "fileFormat"='fastq'
 ```
 
 ```
-SELECT * FROM syn123456 WHERE RIN<=6.1
+SELECT * FROM syn123456 WHERE "RIN"<=6.1
 ```
 
 Along with annotations added by users, every entity has a number of fields useful for searching. For a complete list, see:
@@ -223,7 +223,7 @@ Reproducible queries can be constructed using one of the analytical clients (com
 {% tabs %}
 	{% tab Command %}
 		{% highlight bash %}
-synapse query "SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE specimenID='sampleA_conditionB'"
+synapse query "SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE \"specimenID\"='sampleA_conditionB'"
 		{% endhighlight %}
 	{% endtab %}
 
@@ -231,13 +231,13 @@ synapse query "SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 
 		{% highlight python %}
 
 
-result = syn.tableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE specimenID ='sampleA_conditionB'")
+result = syn.tableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE \"specimenID\" ='sampleA_conditionB'")
 		{% endhighlight %}
 	{% endtab %}
 
 	{% tab R %}
 		{% highlight r %}
- result = synTableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE specimenID ='sampleA_conditionB'")
+ result = synTableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE \"specimenID\" ='sampleA_conditionB'")
  		{%endhighlight %}
 	{% endtab %}
 	
@@ -250,7 +250,7 @@ Enter your query in the box and click the **Insert** button. Once you save the w
 
 <br/>
 
-### How to download based on queries
+### How to Download Based on Queries
 
 You can download files in a folder using queries. Currently this feature is only available in the command line client. For example, if you want to download all files in a folder that has a synapse id of `syn00123`, use
 
