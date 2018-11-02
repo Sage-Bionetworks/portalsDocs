@@ -24,7 +24,7 @@ Annotations are key-value pairs stored as metadata for `Projects`, `Files`, `Fol
 
 ## Types of Annotations
 
-Annotations can be one of four basic types: 
+Annotations can be one of four types: 
 
 * Text (Character Limit = 256)
 * Integer
