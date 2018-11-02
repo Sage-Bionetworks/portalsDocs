@@ -31,9 +31,6 @@ Annotations can be one of four types:
 * Floating Point
 * Date (Date and Time stored as a Timestamp)
 
-<br/>
-You cannot have duplicate annotation keys on the same object in Synapse. 
-
 ## How to Assign Annotations
 
 Annotations may be added when initially uploading a file, or at a later date. This can be done using the command line client, the Python client, the R client, or from the Web. Using the analytical clients facilitates batch and automated population of annotations across many files. The Web client can be used to bulk update many files using [file views](/articles/views.html).
