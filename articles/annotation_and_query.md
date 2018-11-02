@@ -101,7 +101,7 @@ entity <- synGet("syn00123")
 
 ##### Modifying a set of annotations, preserving any existing annotations
 existing_annots <- synGetAnnotations(entity)
-synSetAnnotations(entity,annotations = c(existing_annots, list(fileType = "bam", assay = "rnaSeq")))
+synSetAnnotations(entity, annotations = c(existing_annots, list(fileType = "bam", assay = "rnaSeq")))
 
 ##### Add/update annotations, removing any other existing annotations
 synSetAnnotations(entity, annotations=list(fileType = "bam", assay = "rnaSeq"))
