@@ -234,7 +234,7 @@ result = syn.tableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM 
 
 	{% tab R %}
 		{% highlight r %}
- result = synTableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE \"specimenID\" ='sampleA_conditionB'")
+ result = synTableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE \"specimenID\"='sampleA_conditionB'")
  		{%endhighlight %}
 	{% endtab %}
 	
