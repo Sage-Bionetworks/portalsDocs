@@ -228,7 +228,7 @@ synapse query "SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 
 		{% highlight python %}
 
 
-result = syn.tableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE \"specimenID\" ='sampleA_conditionB'")
+result = syn.tableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE \"specimenID\"='sampleA_conditionB'")
 		{% endhighlight %}
 	{% endtab %}
 
