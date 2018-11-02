@@ -113,7 +113,7 @@ synSetAnnotations(entity, annotations = list(fileType = "bam", assay = "rnaSeq")
 To update annotations on a single file:
 
 Click **File Tools**, **Annotations** and **Edit** to add, delete, or modify annotations.
-Start by entering a Key (the name of the annotation), select the type (text, integer etc.,), and enter the Value. Click `Save` to store the annotations for this entity.
+Start by entering a key (the name of the annotation), select the type (text, integer etc.,), and enter the value. Click `Save` to store the annotations for this entity.
 To enter multiple Values for a single Key click `Enter` with the cursor in the Value field.
 <img src="/assets/images/filetools.png">
 
