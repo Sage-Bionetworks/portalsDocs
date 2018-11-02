@@ -192,7 +192,7 @@ foo <- as.list(synGetChildren(parent='syn1524884', includeTypes=list('file')))
 
 ### Queries on Annotations
 
-If annotations have been diligently added to `Files`, they can be used to discover files of interest from `File View` syn123456.
+If annotations have been added to `Files`, they can be used to discover files of interest from `File View` syn123456.
 For example, you can identify all `Files` annotated as `bam` files (`fileFormat = bam`) with the following query:
 
 ```
