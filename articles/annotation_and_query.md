@@ -81,7 +81,7 @@ synapse set-annotations --id syn00123 --annotations '{"fileFormat":"bam", "assay
 		{% highlight python %}
 entity = syn.get("syn123")
 
-#Please note that existing annotations will be overwritten.To modify ONLY one annotation:
+# Please note that existing annotations will be overwritten. To modify ONLY one annotation:
 
 entity.fileFormat = 'bam'
 entity['fileFormat'] = 'bam'
