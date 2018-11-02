@@ -140,6 +140,57 @@ To set the sharing setting, go to the **Challenge** tab and see your list of Eva
 {% include important.html content="When someone submits to an Evaluation, a copy of the submission is made, so a person with Administrator or Can score access will be able to download the submission even if the submitter deletes the entity." %}
 
 
+## Submitting to an Evaluation Queue
+
+Any Synapse Entity may be submitted to an Evaluation Queue.
+
+{% tabs %}
+{% tab Python %}
+{% highlight python %}
+import synapseclient
+
+syn = synapseclient.login()
+
+evaluation_id = "9610091"
+my_submission_entity = "syn1234567"
+
+submission = syn.submit(
+    evaluation = evaluation_id,
+    entity = my_submission_entity,
+    name = "My Submission", # An arbitrary name for your submission
+    team = "My Team Name") # Optional, can also pass a Team object or id
+
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+library(synapser)
+
+synLogin()
+
+evaluation_id <- "9610091"
+my_submission_entity <- "syn1234567"
+
+submission <- synSubmit(
+    evaluation = evaluation_id,
+    entity = my_submission_entity,
+    name = "My Submission", # An arbitrary name for your submission
+    team = "My Team Name") # Optional, can also pass a Team object or id
+		{%endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+To submit a File to an Evaluation Queue, navigate to the File in the web UI and -- under the File Tools menu -- select "Submit File To Challenge".
+
+<img src="/assets/images/submit_file_to_challenge.png">
+
+To submit some other type of Entity to an Evaluation Queue, follow the instructions specific to the Challenge. Normally, there will be a "Submit to Challenge" button on the "How To Participate" wiki subpage. Clicking this allows you to navigate to or search for the Entity you would like to submit. If you are the challenge administrator and would like to create a submission button, follow the instructions
+[here](https://docs.synapse.org/articles/challenge_administration.html#33---add-a-submit-button-to-your-wiki-optional).
+
+{% endtab %}
+{% endtabs %}
+
 ## View Submissions of an Evaluation Queue
 
 All submissions of an Evaluation queue can be views through the through the use of a leaderboard.  To learn how to create a wiki page, please visit [here](http://docs.synapse.org/articles/wikis.html).  Below are instructions on how to set up a leaderboard. You must know the **evaluation Id** to do so; see the section on how to "Configure an Evaluation Queue" for instructions on finding the evaluation Id.
