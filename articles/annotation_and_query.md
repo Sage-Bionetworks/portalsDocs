@@ -104,7 +104,7 @@ existing_annots <- synGetAnnotations(entity)
 synSetAnnotations(entity, annotations = c(existing_annots, list(fileType = "bam", assay = "rnaSeq")))
 
 ##### Add/update annotations, removing any other existing annotations
-synSetAnnotations(entity, annotations=list(fileType = "bam", assay = "rnaSeq"))
+synSetAnnotations(entity, annotations = list(fileType = "bam", assay = "rnaSeq"))
 
 		{%endhighlight %}
 	{% endtab %}
