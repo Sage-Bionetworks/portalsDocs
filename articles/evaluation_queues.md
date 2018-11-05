@@ -185,9 +185,6 @@ To submit a File to an Evaluation Queue, navigate to the File in the web UI and 
 
 <img src="/assets/images/submit_file_to_challenge.png">
 
-To submit some other type of Entity to an Evaluation Queue, follow the instructions specific to the Challenge. Normally, there will be a "Submit to Challenge" button on the "How To Participate" wiki subpage. Clicking this allows you to navigate to or search for the Entity you would like to submit. If you are the challenge administrator and would like to create a submission button, follow the instructions
-[here](https://docs.synapse.org/articles/challenge_administration.html#33---add-a-submit-button-to-your-wiki-optional).
-
 {% endtab %}
 {% endtabs %}
 
