@@ -1,4 +1,4 @@
----
+﻿---
 title: Evaluation Queues
 layout: article
 excerpt: An queue accepts submission of Synapse entities for evaluation. 
