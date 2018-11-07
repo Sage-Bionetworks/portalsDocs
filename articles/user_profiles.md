@@ -1,7 +1,7 @@
 ---
-title: "Teams"
+title: "User Profiles"
 layout: article
-excerpt: Form teams to easily manage groups of users for purposes of project access, communication, and challenges.  
+excerpt: Create your user account and manage your profile  
 category: howto
 ---
 
