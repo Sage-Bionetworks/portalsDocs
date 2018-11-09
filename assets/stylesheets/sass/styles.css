@@ -243,7 +243,7 @@ index footer
     /* left: 0; */
     /* right: 0; */
     width: 100%;
-    background-color: #1e7098;
+    background-color: #2B688F;
 }
 
 #footer .navbar-nav > li > a {
@@ -264,7 +264,7 @@ change size of glyphicons on index page
 .glyphicon.glyphicon-file {
     font-size: 35px;
     margin-bottom: 20px;
-    color: #1e7098
+    color: #2B688F
 }
 
 .glyphicon.glyphicon-comment {
@@ -275,7 +275,7 @@ change size of glyphicons on index page
 .glyphicon.glyphicon-book {
     font-size: 35px;
     margin-bottom: 20px;
-    color: #1e7098
+    color: #2B688F
 }
 
 .action a {
@@ -325,14 +325,14 @@ section:last-child, .section:last-child, section.last, .section.last {
   font-weight: 600;
 }
 .header a {
-  color: #1e7098;
+  color: #2B688F;
 }
 .subaction {
   color: black;
   font-size: 12px;
 }
 .action small {
-   color: #1e7098;
+   color: #2B688F;
 }
 
 #bootstrap-overrides .navbar-nav>li>a,
@@ -781,6 +781,7 @@ body { padding-top: 50px; }
 
 .navbar-fixed-top {
     top: -50px; /* you'll have to figure out the exact number here */
+    background-color: #2B688F;
 }
 
 .navbar-fixed-top, .navbar-fixed-bottom {
@@ -1110,14 +1111,14 @@ li.active span.round-tabs.five{
 #gs-button {
     float:left;
     color: white;
-    background-color: #1e7098;
+    background-color: #2B688F;
     text-shadow: 0 0 0;
     text-transform: uppercase;
     margin-top: 20px;
 }
 #search-bar {
     height: 210px;
-    background-color: #1e7098;
+    background-color: #2B688F;
     /* padding-top: 25px; */
 }
 .search-title {
@@ -1189,7 +1190,7 @@ li.active span.round-tabs.five{
     background-color: #ffffff;
 }
 .subject-card:hover {
-    border: 2px solid #1e7098;
+    border: 2px solid #2B688F;
     box-shadow: 0 9px 14px 0 rgba(0,0,0,0.1);
 }
 .subject-card span{
