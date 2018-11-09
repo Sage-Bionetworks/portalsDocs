@@ -1210,7 +1210,5 @@ li.active span.round-tabs.five{
 /*End landing page styling*/
 
 /* Match font size of ordered lists to the rest of text*/
-ol {
-    font-size: 1.1em;
-    padding-bottom: 5px;
+ol {    padding-bottom: 10px;
 }
