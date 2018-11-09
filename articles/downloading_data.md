@@ -37,8 +37,8 @@ entity = syn.get("syn3158111")
 
 {% tab R %}
 {% highlight r %}
-library(synapseClient)
-synapseLogin()
+library(synapser)
+synLogin()
 entity <- synGet("syn3158111")
 {%endhighlight %}
 {% endtab %}
@@ -66,7 +66,7 @@ filepath = entity.path
 
 {% tab R %}
 {% highlight r %}
-filepath <- entity@filePath
+filepath <- entity$path
 {% endhighlight %}
 {% endtab %}
 
@@ -102,6 +102,34 @@ entity <- synGet("syn3260973", version=1)
 
 See [versioning](http://docs.synapse.org/articles/versioning.html) for more details.
 
+### Links
+
+When you click on a Link entity on the Synapse website, it will redirect you to the linked entity.  The `followLink` parameter will have to be specified when using the programmatic clients or you will only retrieve the link itself without downloading the linked entity.
+
+{% tabs %}
+{% tab Command %}
+{% highlight bash %}
+synapse get syn1234 --followLink
+{% endhighlight %}
+{% endtab %}
+{% tab Python %}
+{% highlight python %}
+import synapseclient
+syn = synapseclient.login()
+linkEnt = syn.get("syn1234")
+entity = syn.get("syn1234", followLink=True)
+{% endhighlight %}
+{% endtab %}
+{% tab R %}
+{% highlight r %}
+library(synapser)
+synLogin()
+linkEnt = synGet("syn1234")
+entity = synGet("syn1234", followLink=TRUE)
+{%endhighlight %}
+{% endtab %}
+
+{% endtabs %}
 
 ### Download Location
 
@@ -154,6 +182,7 @@ results = syn.tableQuery('select * from syn7511263 where dataType="mRNA" AND fil
 {% tab R %}
 {% highlight r %}
 results <- synTableQuery('select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"')
+df <- as.data.frame(results)
 {% endhighlight %}
 {% endtab %}
 
@@ -180,8 +209,8 @@ entity = [syn.get(r['file.id']) for r in results]
 {% tab R %}
 {% highlight r %}
 results <- synTableQuery('select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"')
-
-entity <- lapply(results$file.id, function(x) synGet(x))
+df <- as.data.frame(results)
+entity <- lapply(df$file.id, function(x) synGet(x))
 {% endhighlight %}
 {% endtab %}
 
@@ -268,10 +297,16 @@ wiki <- synGetWiki(entity, 12345)
 
 ### Downloading in Bulk
 
-Files can be downloaded in bulk using the `syncFromSynapse` function found in the [synapseutils](http://docs.synapse.org/python/synapseutils.html#module-synapseutils.sync) helper package. This function crawls all the subfolders of the project/folder that you specify and retrieves all the files that have not been downloaded. By default, the files will be downloaded into your `synapseCache`, but a different download location can be specified with the `path` parameter. If you do download to a location out side of `synapseCache`, this function will also create a tab-delimited manifest of all the files along with their metadata (path, provenance, annotations, etc).
+Files can be downloaded in bulk using the `syncFromSynapse` function found in the [synapseutils](https://python-docs.synapse.org/build/html/synapseutils.html#module-synapseutils.sync) helper package. This function crawls all the subfolders of the project/folder that you specify and retrieves all the files that have not been downloaded. By default, the files will be downloaded into your `synapseCache`, but a different download location can be specified with the `path` parameter. If you do download to a location out side of `synapseCache`, this function will also create a tab-delimited manifest of all the files along with their metadata (path, provenance, annotations, etc).
 
 
-{% highlight python %}
+
+
+
+{% tabs %}
+
+  {% tab Python %}
+    {% highlight python %}
 # Load required libraries
 import synapseclient
 import synapseutils
@@ -281,8 +316,24 @@ syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=
 
 # download all the files in folder syn123 to a local folder called "myFolder"
 all_files = synapseutils.syncFromSynapse(syn, entity='syn123', path='/path/to/myFolder')
-{% endhighlight %}
+    {% endhighlight %}
+  {% endtab %}
 
+  {% tab R %}
+    {% highlight r %}
+# Load required libraries
+library(synapser)
+library(synapserutils)
+
+# login to Synapse
+synLogin(email='me@example.com', password='secret', rememberMe=TRUE) 
+
+# download all the files in folder syn123 to a local folder called "myFolder"
+all_files = syncFromSynapse(entity='syn123', path='/path/to/myFolder')
+    {% endhighlight %}
+  {% endtab %}
+
+{% endtabs %}
 <br/>
 
 ### See Also

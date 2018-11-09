@@ -1,7 +1,7 @@
 ---
 title: "Integrating Synapse in your RNA-Seq workflow"
 layout: article
-category: inpractice
+category: limbo
 excerpt: Easily manage groups of users for purposes of project access, communication, and challenges by forming teams.  
 ---
 
@@ -127,8 +127,6 @@ star_genome_index = star_genome_index.format(genome_dir=ref_genome_dir, genome_f
 
 #### Map adrenal & brain tissue reads
 
-#constructing a basic command to run the mapping
-#this command could be replaced by any mapper of choice
 {% tabs %}
 {% tab Command %}
 {% highlight bash %}
@@ -139,7 +137,8 @@ star_genome_index = star_genome_index.format(genome_dir=ref_genome_dir, genome_f
 
 {% tab Python %}
 {% highlight python %}
-
+#constructing a basic command to run the mapping
+#this command could be replaced by any mapper of choice
 basic_star_command_template = STAR_executable +' --runThreadN 1 --genomeDir {genome_dir} --outFileNamePrefix  {prefix} --outSAMunmapped Within --readFilesIn {read_1}'
 
 {% endhighlight %}
@@ -179,11 +178,14 @@ brain_star_command = basic_star_command_template.format(genome_dir = ref_genome_
 {% endtab %}
 {% endtabs %}
 
-###Lets store the analysis provenance now in Synapse
+
+### Lets store the analysis provenance now in Synapse
+
 Key things required
 * A synapse user account
 * A personal synapse project to store the data and/or analysis
 For help refer to Synapse Getting Started Guide
+
 {% tabs %}
 {% tab Command %}
 {% highlight bash %}
@@ -192,6 +194,7 @@ For help refer to Synapse Getting Started Guide
 {% endtab %}
 {% tab Python %}
 {% highlight python %}
+
 #create a project
 project_name = 'RNA_Seq_Project-%s'  % randomword(5) ##mainly to create a random unique project name
 myProj = syn.store(Project(project_name))
@@ -220,7 +223,9 @@ adrenal_mapped_file = syn.store(adrenal_mapped_file, used = used, executed= exec
 {% endtab %}
 {% endtabs %}
 
-###Lets continue with counting the reads / gene
+
+### Lets continue with counting the reads / gene
+
 and this time lets push the provenance as we go to synapse
 Key things needed
 genes/features to count against
@@ -233,7 +238,7 @@ htseq: software to count the reads falling in each gene
 annotation_file = 'syn2468559' #pre-stored in synaspe
 annotation_file = syn.get(annotation_file)
 
-#lets create a folder to keep the counts
+# lets create a folder to keep the counts
 counts_folder = syn.store(synapseclient.Folder('counts', parentId=myProj.id))
 In [15]:
 counts_files = []
