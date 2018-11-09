@@ -19,9 +19,9 @@ This tutorial will teach you the steps of participating in a challenge.
 
 ## Challenge Registration
 If you do not have a Synapse account, please go to our [getting started guide](http://docs.synapse.org/articles/getting_started.html#becoming-a-certified-user) to become a certified Synapse user.
-Participants **must** be registered for the challenge if they want to submit and participate. The registration button can be found on the home page or `How to Participate` page for every challenge. In order to be fully registered for any challenge, you must:
+Participants **must** be registered for the challenge if they want to submit and participate. The registration button can be found on the home page or `How to Participate` page for every challenge. In order to be fully registered for any challenge, you must have a Synapse account. In addition, DREAM Challenges require that you:
 
-(1) have a Synapse account and become a [certified user](http://docs.synapse.org/articles/getting_started.html#becoming-a-certified-user);
+(1) become a [certified user](http://docs.synapse.org/articles/getting_started.html#becoming-a-certified-user);
 <br/>
 (2) agree to the DREAM Rules of participation, and
 <br/>
