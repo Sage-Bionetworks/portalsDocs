@@ -1,4 +1,4 @@
----
+﻿---
 title: Evaluation Queues
 layout: article
 excerpt: An queue accepts submission of Synapse entities for evaluation. 
@@ -139,6 +139,54 @@ To set the sharing setting, go to the **Challenge** tab and see your list of Eva
 
 {% include important.html content="When someone submits to an Evaluation, a copy of the submission is made, so a person with Administrator or Can score access will be able to download the submission even if the submitter deletes the entity." %}
 
+
+## Submitting to an Evaluation Queue
+
+Any Synapse Entity may be submitted to an Evaluation Queue.
+
+{% tabs %}
+{% tab Python %}
+{% highlight python %}
+import synapseclient
+
+syn = synapseclient.login()
+
+evaluation_id = "9610091"
+my_submission_entity = "syn1234567"
+
+submission = syn.submit(
+    evaluation = evaluation_id,
+    entity = my_submission_entity,
+    name = "My Submission", # An arbitrary name for your submission
+    team = "My Team Name") # Optional, can also pass a Team object or id
+
+{% endhighlight %}
+{% endtab %}
+
+{% tab R %}
+{% highlight r %}
+library(synapser)
+
+synLogin()
+
+evaluation_id <- "9610091"
+my_submission_entity <- "syn1234567"
+
+submission <- synSubmit(
+    evaluation = evaluation_id,
+    entity = my_submission_entity,
+    name = "My Submission", # An arbitrary name for your submission
+    team = "My Team Name") # Optional, can also pass a Team object or id
+		{%endhighlight %}
+{% endtab %}
+
+{% tab Web %}
+To submit a File to an Evaluation Queue, navigate to the File in the web UI and -- under the File Tools menu -- select "Submit File To Challenge".
+
+<img src="/assets/images/submit_file_to_challenge.png">
+
+{% endtab %}
+{% endtabs %}
 
 ## View Submissions of an Evaluation Queue
 
