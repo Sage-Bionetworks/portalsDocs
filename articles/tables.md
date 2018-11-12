@@ -114,7 +114,7 @@ To delete the entire Table, click on **Tools** and then select **Delete Table** 
 
 # Querying Table Data
 The data contained within a Synapse `Table` can be retrieved by using a SQL-like query language either through the web portal or through
-the analytical clients. **See the [API docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html){:target="_blank"} for an enumeration of the types of queries that can be performed.** Here are a couple of simple examples.
+the analytical clients. **See the [API docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html){:target="_blank"} for an enumeration of the types of queries that can be performed.** Here are a couple of examples.
 
 To get all of the columns from a `Table` with id syn3079449, the following query would be used:
 
