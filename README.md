@@ -126,7 +126,7 @@ Connection refused error:
                     Connection refused - connect(2)
 jekyll 3.1.2 | Error:  Connection refused - connect(2)
 ```
-When you get this error, simply run this command several times before regenerating again.
+When you get this error, run this command several times before regenerating again.
 ```
 ulimit -n 10000
 ```
