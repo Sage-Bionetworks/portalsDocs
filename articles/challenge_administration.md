@@ -178,7 +178,7 @@ Challenge organizers have found it convenient to author wiki pages privately, th
 
 If significant modifications to the public wiki are required, you can first edit the staging project wiki to test your edits. Once you are satisfied with your wiki edits, you can use the [mirrorWiki script](https://github.com/Sage-Bionetworks/DREAM-Utilities/blob/master/mirrorWiki.py) to mirror the staging site changes to the live site so that only changes are made on the staging site. As mentioned above, for the initial copying of staging wiki content to the live site, please follow the instructions in [step A2](/articles/2---creating-dream-challenge-projects)
 
-{% include note.html content="The wiki titles are matched between the staging and live site, so if you don't want a page to be mirrored over, simply change the name of the wikipage." %}
+{% include note.html content="The wiki titles are matched between the staging and live site, so if you don't want a page to be mirrored over, change the name of the wikipage." %}
 
 ```
 #Usage of mirrowWiki script
@@ -418,7 +418,7 @@ To add a leaderboard to your Challenge Wiki,
 
 ### 2 - Link results to participants' project spaces
 
-If using a "live leaderboard", simply add a column whose value is "entityId".  This will add a column to the table containing hyperlinks to the submitter's home project.  There they can add a wiki describing their algorithm.  If using a static leaderboard (wiki table), you may retrieve the entity IDs from the submissions and add them in the wiki editor.  To get the link for each submission, you may use this R script:
+If using a "live leaderboard", add a column whose value is "entityId".  This will add a column to the table containing hyperlinks to the submitter's home project.  There they can add a wiki describing their algorithm.  If using a static leaderboard (wiki table), you may retrieve the entity IDs from the submissions and add them in the wiki editor.  To get the link for each submission, you may use this R script:
 
 ```
 library(synapseClient)
