@@ -16,7 +16,7 @@ order: 1
 
 # Get Started with Synapse
 
-This getting started guide is for new users who are interested in learning about Synapse. By following this guide, you will learn fundamental Synapse features by performing some simple tasks. You’ll learn how to:
+This getting started guide is for new users who are interested in learning about Synapse. By following this guide, you will learn fundamental Synapse features by performing some common tasks. You’ll learn how to:
 
 * Create your own project and add content to Synapse
 * Provide a project narrative which lives along side the scientific artifacts of your work, via the Synapse `Wiki` tools
