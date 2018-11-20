@@ -21,7 +21,7 @@ Read more about the helper functions on the **[synapseutils](https://python-docs
 
 #### Creating a Manifest
 
-Files to be uploaded are specified in a tab separated (`.tsv`) manifest. The manifest has columns that contain information about each file to be uploaded along with metadata (annotations) that will be associated with the file in Synapse. Specifically, the manifest has a set of required columns (the directory `path` of the file to be uploaded, the Synapse id of the folder or `parent` the file will be uploaded to), and columns for provenance and annotations. A simple example manifest that uploads a single file:
+Files to be uploaded are specified in a tab separated (`.tsv`) manifest. The manifest has columns that contain information about each file to be uploaded along with metadata (annotations) that will be associated with the file in Synapse. Specifically, the manifest has a set of required columns (the directory `path` of the file to be uploaded, the Synapse id of the folder or `parent` the file will be uploaded to), and columns for provenance and annotations. Here's an example manifest that uploads a single file:
 
 {:.markdown-table}
 | path | parent | name | used | executed | emotion| species |

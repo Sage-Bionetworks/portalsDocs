@@ -42,7 +42,7 @@ For `Teams` for which you are a Team Manager, you may invite or delete `Team` me
 
 Using the **Invite Users** option, you can find and invite registered Synapse users to join your `Team`. You can search by Synapse user name, or, if the user has entered, their first and last name. Users will be sent an email indicating they have been invited to join the `Team` and must confirm the invitation prior to being included.
 
-You can also invite users by email - just enter the email of the person whom you want to invite. They will recieve an email indicating they have been invited to join the `Team` and must confirm the invitation prior to being included. If they have a Synapse account associated with the email address, they will be able to log in and join the `Team`. If they do not have a Synapse account associated with the email address, they will be prompted to create one prior to joining the `Team`. 
+You can also invite users by email by entering the email of the person whom you want to invite. They will recieve an email indicating they have been invited to join the `Team` and must confirm the invitation prior to being included. If they have a Synapse account associated with the email address, they will be able to log in and join the `Team`. If they do not have a Synapse account associated with the email address, they will be prompted to create one prior to joining the `Team`. 
 
 You may also remove team members by clicking the **Remove** button next to a member, or promote additional team members to Team Manager, by clicking the option list below the member.
 

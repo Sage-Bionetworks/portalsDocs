@@ -33,7 +33,7 @@ The code block below displays an example config file with the available paramete
 ## If you have projects that need to be stored in an S3-like (e.g. AWS S3, Openstack) storage but cannot allow Synapse
 ## to manage access your storage you may put your credentials here.
 ## To avoid duplicating credentials with that used by the AWS Command Line Client,
-## simply put the profile name form your ~/.aws/credentials file
+## put the profile name form your ~/.aws/credentials file
 ## more information about aws credentials can be found here http://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html
 #[https://s3.amazonaws.com/bucket_name] # this is the bucket's endpoint
 #profile_name=local_credential_profile_name

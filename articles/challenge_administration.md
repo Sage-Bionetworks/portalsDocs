@@ -57,12 +57,6 @@ copyWiki(source_project_id, target_project_id)
 		{%endhighlight %}
 	{% endtab %}
 
-	{% tab Web %}
-
-This script only works on Mac OSX. Download this [file](https://sourceforge.net/projects/createsynapsechallengewiki/files/createChallengeWiki.command/download) and double click the script.  You may have to right click and click open if you have script security settings on your computer. This script will prompt you to login to synapse.  Give it your private project syn0123456, and it will copy the template over. 
-
-	{% endtab %}
-
 {% endtabs %}
 
 
@@ -178,7 +172,7 @@ Challenge organizers have found it convenient to author wiki pages privately, th
 
 If significant modifications to the public wiki are required, you can first edit the staging project wiki to test your edits. Once you are satisfied with your wiki edits, you can use the [mirrorWiki script](https://github.com/Sage-Bionetworks/DREAM-Utilities/blob/master/mirrorWiki.py) to mirror the staging site changes to the live site so that only changes are made on the staging site. As mentioned above, for the initial copying of staging wiki content to the live site, please follow the instructions in [step A2](/articles/2---creating-dream-challenge-projects)
 
-{% include note.html content="The wiki titles are matched between the staging and live site, so if you don't want a page to be mirrored over, simply change the name of the wikipage." %}
+{% include note.html content="The wiki titles are matched between the staging and live site, so if you don't want a page to be mirrored over, change the name of the wikipage." %}
 
 ```
 #Usage of mirrowWiki script
@@ -232,7 +226,7 @@ Synapse has a limit on the volume of email messages sent out.  Currently account
 
 ### 1 - Creating a Scoring Application
 
-As submissions arrive from participants, you may need to run a custom scoring script.  Synapse provides APIs for retrieving and scoring submissions.  A runnable scoring template (versions in Java, R and Python) is available in the [Synapse Challenge Template GitHub repository](https://github.com/Sage-Bionetworks/SynapseChallengeTemplates)
+As submissions arrive from participants, you may need to run a custom scoring script.  Synapse provides APIs for retrieving and scoring submissions.  A runnable scoring template (versions in Java, R and Python) is available in the [Synapse Challenge Agent GitHub repository](https://github.com/Sage-Bionetworks/SynapseChallengeAgents)
 After customizing the application for your scoring needs, create a periodically running job on a server owned by your organization.  A convenient, free web interface for periodically running jobs is [Jenkins](http://jenkins-ci.org/).  Note:  In the Challenge Admin tab mentioned above you must share the Evaluation with the user under whose credentials the Scoring Application is run, providing "Can score" access to this user.
 
 Submission scores and other computational results may be attached to the Submissions themselves.  The sample code shows how to do this.  The results may be retrieved and displayed in a leaderboard, as described below.
@@ -241,7 +235,7 @@ Submission scores and other computational results may be attached to the Submiss
 #### Python Scoring Application
 
 ```
-git clone https://github.com/Sage-Bionetworks/SynapseChallengeTemplates.git
+git clone https://github.com/Sage-Bionetworks/SynapseChallengeAgents.git
 ```
 
 
@@ -418,7 +412,7 @@ To add a leaderboard to your Challenge Wiki,
 
 ### 2 - Link results to participants' project spaces
 
-If using a "live leaderboard", simply add a column whose value is "entityId".  This will add a column to the table containing hyperlinks to the submitter's home project.  There they can add a wiki describing their algorithm.  If using a static leaderboard (wiki table), you may retrieve the entity IDs from the submissions and add them in the wiki editor.  To get the link for each submission, you may use this R script:
+If using a "live leaderboard", add a column whose value is "entityId".  This will add a column to the table containing hyperlinks to the submitter's home project.  There they can add a wiki describing their algorithm.  If using a static leaderboard (wiki table), you may retrieve the entity IDs from the submissions and add them in the wiki editor.  To get the link for each submission, you may use this R script:
 
 ```
 library(synapseClient)
