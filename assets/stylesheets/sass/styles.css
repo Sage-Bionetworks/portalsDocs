@@ -364,14 +364,14 @@ section:last-child, .section:last-child, section.last, .section.last {
   background-position-y: 0px;
 }
 
-/** #bootstrap-overrides code {
+#bootstrap-overrides code {
     padding: 2px 4px;
     font-size: 90%;
     color: #555555;
     background-color: #f5f5f5;
     border-radius: 3px;
     font-family: Consolas, "Courier New", monospace;
-} **/
+}
 
 .navbar-collapse.in {
     overflow: hidden;
