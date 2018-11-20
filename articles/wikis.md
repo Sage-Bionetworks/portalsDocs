@@ -111,7 +111,7 @@ See the 'Insert' list for the following widgets to customize your Wiki design.
 
 ## Tagging Synapse Users
 
-A Synapse user can be tagged by using the 'Tag someone' Widget from the 'Insert' menu. This displays a user badge which can be clicked on to visit the users' profile page. You can also do this by typing '@' while editing a Wiki - just enter the Synapse username or part of their full name in the dialog that appears.
+A Synapse user can be tagged by using the 'Tag someone' Widget from the 'Insert' menu. This displays a user badge which can be clicked on to visit the users' profile page. You can also do this by typing '@' while editing a Wiki by entering the Synapse username or part of their full name in the dialog that appears.
 
 ## Governance
 
