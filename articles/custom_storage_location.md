@@ -21,6 +21,9 @@ While Synapse provides physical storage for files (using Amazon's S3), not all d
 {% include note.html content="System metadata, annotations, and provenance records are still stored in Synapse's S3 storage." %}
 
 ## Setting Up an External AWS S3 Bucket
+
+**Please note that your S3 Bucket must be in the `us-east-1` (N. Virginia) region for this to work.**
+
 Follow the documentation on Amazon Web Service (AWS) site to **[Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html){:target="_blank"}**. 
 
 <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html" class="btn btn-primary">View AWS Bucket Instructions</a>{:target="_blank"}
@@ -105,7 +108,7 @@ If you do not want to allow authorized Synapse users to upload data to your buck
 <br/>
 
 ### Make sure to enable cross-origin resource sharing (CORS)
-In **Properties**, click **Edit CORS configuration**. In the resulting pop-up, edit the configuration so that Synapse is included  in the `AllowedOrigin` tag. An example of CORS content that would allow this is:
+In **Permissions**, click **CORS configuration**. In the CORS configuration editor, edit the configuration so that Synapse is included  in the `AllowedOrigin` tag. An example CORS configuration that would allow this is:
 {% highlight html %}
 <CORSConfiguration>
     <CORSRule>
