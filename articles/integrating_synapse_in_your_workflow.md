@@ -1,7 +1,7 @@
 ---
 title: "Integrating Synapse in your RNA-Seq workflow"
 layout: article
-category: limbo
+category: inpractice
 excerpt: Easily manage groups of users for purposes of project access, communication, and challenges by forming teams.  
 ---
 
