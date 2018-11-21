@@ -4,10 +4,11 @@
   "dependencies": {
     "accum": "0.3.6",
     "alt": "0.15.4",
-    "browserify": "11.0.0",
+    "browserify": "^16.2.3",
     "cheerio": "^0.22.0",
     "esprima-fb": "^15001.1.0-dev-harmony-fb",
-    "jscs": "^2.5.0",
+    "jscs": "^3.0.7",
+    "lodash": "^4.17.11",
     "lunr": "0.5.11",
     "minimatch": "^3.0.2",
     "ramda": "0.13.0",
