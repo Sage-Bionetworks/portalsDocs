@@ -1,7 +1,7 @@
 ---
 title: "Integrating Synapse in your RNA-Seq workflow"
 layout: article
-category: inpractice
+category: limbo
 excerpt: Easily manage groups of users for purposes of project access, communication, and challenges by forming teams.  
 ---
 
@@ -64,10 +64,6 @@ Let's store the results and provenance in Synapse.
 {% highlight bash %}
 # create a project
 synapse create Project --name demo-rnaseq-workflow
-
-# create a folder to store the bams
-# Use Synapse ID reported from the above command to use as the parent ID
-synapse create Folder --name mapped-files --parentId syn123456789
 
 # Use Synapse ID reported from the above command to use as the parent ID
 synapse store brain.sam --parentId syn234567890 --used brain.fastq ref-genome/hg19\_chr19\_subregion.fasta
