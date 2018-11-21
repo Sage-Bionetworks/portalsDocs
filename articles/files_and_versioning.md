@@ -151,20 +151,54 @@ synapse store raw_data.txt --parentId syn123456
 
 {% tab Python %}
 {% highlight python %}
-# Upload a new version of raw_data.txt 
-from synapseclient import File
+# Upload a new version of raw_data.txt, EXPLICIT UPDATE EXAMPLE
+import synapseclient
 
-file = File(path='/path/to/raw_data.txt', parent='syn12345')
-file.versionComment = "Added 5 random normally distributed numbers."
-file = syn.store(file)
+# fetch the file in Synapse
+file_to_update = syn.get('syn2222', downloadFile=False)
+
+# save the local path to the new version of the file
+file_to_update.path = '/path/to/new/version/of/raw_data.txt'
+
+# add a version comment
+file_to_update.versionComment = 'Added 5 random normally distributed numbers.'
+
+# store the new file
+updated_file = syn.store(file_to_update)
+
+# Upload a new version of raw_data.txt, IMPLICIT UPDATE EXAMPLE
+# Assuming that there is a file created with: 
+syn.store(File('path/to/old/raw_data.txt', parentId='syn123456'))
+
+# To create a new version of that file, make sure you store it with the exact same name
+new_file = syn.store(File('path/to/new_version/raw_data.txt',  parentId='syn123456'))
+
 {% endhighlight %}
 {% endtab %}
 
 {% tab R %}
 {% highlight r %}
-# Upload a new version of raw_data.txt
-file <- File(path='/path/to/raw_data.txt', parentId='syn12345',versionComment="add version comments here.")
-file <- synStore(file)
+# Upload a new version of raw_data.txt, EXPLICIT UPDATE EXAMPLE
+library(synapser)
+
+# fetch the file in Synapse, where "syn2222" is the synID of the file in Synapse
+file_to_update <- synGet('syn2222', downloadFile=FALSE)
+
+# save the local path to the new version of the file
+file_to_update$properties$path <- '/path/to/new/version/of/raw_data.txt'
+
+# add a version comment
+file_to_update$properties$versionComment <- 'Added 5 random normally distributed numbers.'
+
+# store the new file
+updated_file <- synStore(file_to_update)
+
+# Upload a new version of raw_data.txt, IMPLICIT UPDATE EXAMPLE
+# Assuming that there is a file created with: 
+synStore(File('path/to/old/raw_data.txt', parentId='syn123456'))
+
+# To create a new version of that file, make sure you store it with the exact same name
+new_file <- synStore(File('path/to/new_version/raw_data.txt',  parentId='syn123456')) 
 {% endhighlight %}
 {% endtab %}
 
