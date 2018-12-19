@@ -85,12 +85,13 @@ Click on the **edit** icon to the right of the **Query** button to update table 
 
 ## Changing or Adding Columns
 
-{% include note.html content="To be compatible across multiple languages the common practice of using dots (.) in column names in R is not supported in Synapse Tables." %}
 **Adding new columns**
 
-To add columns, click on the **Schema** button. From there, select the **Edit Schema** button and then add columns using the **Add Column** button located at the bottom of the pop-up.
+To add columns, click on the **Schema** button. From there, select the **Edit Schema** button and then add columns using the **Add Column** button located at the bottom of the pop-up. Note that to be compatible across multiple languages the common practice of using dots (.) in column names in R is not supported in Synapse Tables.
 <br>
 <img id="image" src="/assets/images/table_updating_columns.png">
+
+{% include warning.html content="Column names must be 256 characters or less. There are three reserved words that cannot be used: ROW_ID, ROW_VERSION, ROW_ETAG (case insensitive)." %}
 
 **Deleting columns**
 
