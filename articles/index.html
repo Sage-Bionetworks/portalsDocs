@@ -2,20 +2,18 @@
 title: User Guide
 layout: default
 ---
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"
-      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
 
 <script>
-    $(function () {
+    $(function() {
         $('.thumbnail').matchHeight();
     });
 
-    $(function () {
+    $(function() {
         $('a[title]').tooltip();
     });
-
 </script>
 
 <style>
@@ -24,18 +22,16 @@ layout: default
     }
 </style>
 
-
 <section style="margin-top: -70px; padding-top: 50px;">
     <div class="container">
         <div class="row">
             <div class="board">
-                <ul class="nav nav-tabs" id="myTab"
-                    style="margin-top: -70px; border: 2px solid transparent;">
+                <ul class="nav nav-tabs" id="myTab" style="margin-top: -70px; border: 2px solid transparent;">
                     <div class="liner"></div>
                     <li class="active">
 
                         <a href="#intro" data-toggle="tab">
-                      <span class="round-tabs one">
+                            <span class="round-tabs one">
                         <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
                         Intro
                         </p>
@@ -47,7 +43,7 @@ layout: default
 
                     <li>
                         <a href="#howto" data-toggle="tab">
-                     <span class="round-tabs two">
+                            <span class="round-tabs two">
                        <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
                         How-To's
                         </p>
@@ -59,7 +55,7 @@ layout: default
 
                     <li>
                         <a href="#governance" data-toggle="tab">
-                     <span class="round-tabs three">
+                            <span class="round-tabs three">
                        <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
                         Governance
                         </p>
@@ -70,7 +66,7 @@ layout: default
 
                     <li>
                         <a href="#admin" data-toggle="tab">
-                         <span class="round-tabs four">
+                            <span class="round-tabs four">
                            <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
                         Admin
                         </p>
@@ -81,7 +77,7 @@ layout: default
 
                     <li>
                         <a href="#forum" data-toggle="tab">
-                         <span class="round-tabs five">
+                            <span class="round-tabs five">
                            <p style="font-size: small; margin-top: -50px; padding-bottom: 0;margin-bottom: 0;height: 52px;">
                         Forum
                         </p>
@@ -93,49 +89,46 @@ layout: default
                 </ul>
 
                 <div class="tab-content">
-                    <div class="tab-pane fade in active" id="intro"> <!--Start intro content-->
+                    <div class="tab-pane fade in active" id="intro">
+                        <!--Start intro content-->
                         <h3 class="head text-center">Introduction</h3>
                         <div class="row">
-                            {% assign sorted_pages = site.pages | sort:"order" %}
-                            {% for page in sorted_pages %}
-                            {% if page.category == 'intro' %}
+                            {% assign sorted_pages = site.pages | sort:"order" %} {% for page in sorted_pages %} {% if page.category == 'intro' %}
                             <div class="col-xs-12 col-sm-6 col-md-6">
-                                <div class="thumbnail"
-                                     style="border-left: 5px solid #68b2bb;
+                                <div class="thumbnail" style="border-left: 5px solid #68b2bb;
                                      border-right: 1px solid #d1e7ea; border-bottom: 1px solid #d1e7ea;">
                                     <div class="card-header" style="height: 15px; background-color: #d1e7ea">
                                     </div>
                                     <div class="caption">
                                         <h5><b>{{ page.title }}</b></h5>
                                         <p>{{page.excerpt}}</p>
-                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Learn
                                             More</a>
                                     </div>
 
                                 </div>
                             </div>
 
-                            {% endif %}
-                            {% endfor %}
+                            {% endif %} {% endfor %}
                         </div>
 
-                    </div> <!--<end intro content>-->
+                    </div>
+                    <!--<end intro content>-->
 
-                    <div class="tab-pane fade" id="howto"> <!--Start how to content-->
+                    <div class="tab-pane fade" id="howto">
+                        <!--Start how to content-->
                         <h3 class="head text-center">How-To's</h3>
                         <div class="row">
-                            {% for page in site.pages %}
-                            {% if page.category == 'howto' %}
+                            {% for page in site.pages %} {% if page.category == 'howto' %}
                             <div class="col-xs-12 col-sm-6 col-md-4">
-                                <div class="thumbnail"
-                                     style="border-left: 5px solid #0ea862;
+                                <div class="thumbnail" style="border-left: 5px solid #0ea862;
                                      border-right: 1px solid #ceeddf; border-bottom: 1px solid #ceeddf;">
                                     <div class="card-header" style="height: 15px; background-color: #ceeddf">
                                     </div>
                                     <div class="caption">
                                         <h5><b>{{ page.title }}</b></h5>
                                         <p>{{page.excerpt}}</p>
-                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Learn
                                             More</a>
                                     </div>
 
@@ -144,89 +137,81 @@ layout: default
 
                             {% elsif page.category == null and page.layout == 'article' %}
                             <div class="col-xs-12 col-sm-6 col-md-4">
-                                <div class="thumbnail"
-                                     style="border-left: 5px solid #68b2bb;
+                                <div class="thumbnail" style="border-left: 5px solid #68b2bb;
                                      border-right: 1px solid #d1e7ea; border-bottom: 1px solid #d1e7ea;">
                                     <div class="card-header" style="height: 15px; background-color: #d1e7ea">
                                     </div>
                                     <div class="caption">
                                         <h5><b>{{ page.title }}</b></h5>
                                         <p>{{page.excerpt}}</p>
-                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Learn
                                             More</a>
                                     </div>
 
                                 </div>
                             </div>
 
-
-                            {% endif %}
-                            {% endfor %}
+                            {% endif %} {% endfor %}
                         </div>
 
                     </div>
                     <!--end how to content-->
 
-                    <div class="tab-pane fade" id="governance"> <!--Start governance content-->
+                    <div class="tab-pane fade" id="governance">
+                        <!--Start governance content-->
                         <h3 class="head text-center">Governance and Security</h3>
                         <div class="row">
-                            {% assign sorted_pages = site.pages | sort:"order" %}
-                            {% for page in sorted_pages %}
-                            {% if page.category == 'governance' %}
+                            {% assign sorted_pages = site.pages | sort:"order" %} {% for page in sorted_pages %} {% if page.category == 'governance' %}
                             <div class="col-xs-12 col-sm-6 col-md-6">
-                                <div class="thumbnail"
-                                     style="border-left: 5px solid #7772b4;
+                                <div class="thumbnail" style="border-left: 5px solid #7772b4;
                                      border-right: 1px solid #e3e2f0; border-bottom: 1px solid #e3e2f0">
                                     <div class="card-header" style="height: 15px; background-color: #e3e2f0">
                                     </div>
                                     <div class="caption">
                                         <h5><b>{{ page.title }}</b></h5>
                                         <p>{{page.excerpt}}</p>
-                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Learn
                                             More</a>
                                     </div>
 
                                 </div>
                             </div>
 
-                            {% endif %}
-                            {% endfor %}
+                            {% endif %} {% endfor %}
                         </div>
                     </div>
                     <!--end governance content-->
 
-                    <div class="tab-pane fade" id="admin"> 
+                    <div class="tab-pane fade" id="admin">
                         <h3 class="head text-center">Administration</h3>
                         <!-- <p class="narrow text-center">
                             Stay tuned for articles regarding how to administration.
                         </p> -->
                         <div class="row">
-                            {% for page in site.pages %}
-                            {% if page.category == 'admin' %}
+                            {% for page in site.pages %} {% if page.category == 'admin' %}
                             <div class="col-xs-12 col-sm-6 col-md-6">
-                                <div class="thumbnail"
-                                     style="border-left: 5px solid #7772b4;
+                                <div class="thumbnail" style="border-left: 5px solid #7772b4;
                                      border-right: 1px solid #e3e2f0; border-bottom: 1px solid #e3e2f0">
                                     <div class="card-header" style="height: 15px; background-color: #e3e2f0">
                                     </div>
                                     <div class="caption">
                                         <h5><b>{{ page.title }}</b></h5>
                                         <p>{{page.excerpt}}</p>
-                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Read
+                                        <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Learn
                                             More</a>
                                     </div>
 
                                 </div>
                             </div>
 
-                            {% endif %}
-                            {% endfor %}
+                            {% endif %} {% endfor %}
                         </div>
 
                     </div>
                     <!--End dream challenge content-->
 
-                    <div class="tab-pane fade" id="forum"> <!--start help/forum content-->
+                    <div class="tab-pane fade" id="forum">
+                        <!--start help/forum content-->
                         <div class="text-center">
                             <i class="img-intro icon-checkmark-circle"></i>
                         </div>
@@ -235,8 +220,7 @@ layout: default
                             Can't find what you're looking for? Try posting a question to our forum.
                         </p>
                         <p class="text-center">
-                            <a href="https://www.synapse.org/#!SynapseForum:default" target="_blank"
-                               class="btn btn-primary btn-outline-rounded green"> Forum <span style="margin-left:10px;"
+                            <a href="https://www.synapse.org/#!SynapseForum:default" target="_blank" class="btn btn-primary btn-outline-rounded green"> Forum <span style="margin-left:10px;"
                                                                                               class="glyphicon glyphicon-new-window"></span></a>
                         </p>
                     </div>
@@ -249,10 +233,8 @@ layout: default
     </div>
 </section>
 
-
 <!-- Nav tabs -->
 
 </div>
 
 </div>
-
