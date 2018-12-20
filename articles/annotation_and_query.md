@@ -31,6 +31,12 @@ Annotations may be added when initially uploading a file or at a later date. Thi
 
 ### Adding Annotations 
 
+To add annotations on a single entity through the web client, click the `Annotations` button in the upper right corner on a Project, Folder, or File page.
+
+<img src="/assets/images/webAnnotation.png">
+
+To add annotations on multiple files, please refer to our Synapse in Practice article <a href="/articles/managing_custom_metadata_at_scale.html">"Managing Custom Metadata at Scale"</a> for a tutorial on how to do this efficiently and effectively leveraging <a href="/articles/views.html"></a>.
+
 {% tabs %}
 	{% tab Command %}
 		{% highlight bash %}
@@ -52,17 +58,23 @@ entity <- File("sampleA_conditionB.bam", parent="syn00123")
 entity <- synStore(entity, annotations=list(fileFormat = "bam", assay = "rnaSeq"))
 		{%endhighlight %}
 	{% endtab %}
-	
-	{% tab Web %}
-To add annotations on a single entity through the web client, click the `Annotations` button in the upper right corner on a Project, Folder, or File page.
-
-<img src="/assets/images/webAnnotation.png">
-	{% endtab %}
 {% endtabs %}
 
 <br/>
 
+
 ### Modifying Annotations
+
+To update annotations on a single file:
+
+Click **File Tools**, **Annotations** and **Edit** to add, delete, or modify annotations. Start by entering a key (the name of the annotation), select the type (text, integer etc.,), and enter the value. Click `Save` to store the annotations for this entity. To enter multiple Values for a single Key click `Enter` with the cursor in the Value field.
+
+<img src="/assets/images/filetools.png">
+
+<img src="/assets/images/annotationsDetail.png">
+
+To modify annotations on multiple files, please refer to our Synapse in Practice article <a href="/articles/managing_custom_metadata_at_scale.html">"Managing Custom Metadata at Scale"</a> for a tutorial on how to do this efficiently and effectively leveraging <a href="/articles/views.html"></a>.
+
 
 {% tabs %}
 	{% tab Command %}
@@ -102,23 +114,7 @@ synSetAnnotations(entity, annotations = list(fileType = "bam", assay = "rnaSeq")
 
 		{%endhighlight %}
 	{% endtab %}
-	
-	{% tab Web %}
-To update annotations on a single file:
-
-Click **File Tools**, **Annotations** and **Edit** to add, delete, or modify annotations.
-Start by entering a key (the name of the annotation), select the type (text, integer etc.,), and enter the value. Click `Save` to store the annotations for this entity.
-To enter multiple Values for a single Key click `Enter` with the cursor in the Value field.
-<img src="/assets/images/filetools.png">
-
-<img src="/assets/images/annotationsDetail.png">
-
-To update annotations on multiple files, please refer to our <a href="/articles/views.html">File Views article</a>.
-
-	{% endtab %}
 {% endtabs %}
-
-<br/>
 
 
 # Queries
@@ -142,18 +138,11 @@ SELECT * FROM syn123456 WHERE "RIN"<=6.1
 
 Along with annotations added by users, every entity has a number of fields useful for searching. For a complete list, see:
 
-
 <a href="https://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html" target="_blank" class="btn btn-info btn-lg active" role="button" aria-pressed="true">SQL Query Examples</a>
-
-
-<br/>
 
 ### Finding Files in a Specific Project
 
 To find all files in a specific `Project`, create a `File View` in the web client. For example, if you'd like to see all files in a `Project`, navigate to your project and then the `Tables` tab. From there, click **Tables Tools** and **Add File View**. Click **Add container** and **Enter Synapse Id** to create a tabluar file view that contains every file in the project, which you can now query. Importantly, if you want to later query on annotations, you must select **Add All Annotations**. For a more in-depth look at this feature, please read our articles on [File Views](/articles/views.html).
-
-
-<br/>
 
 ### Listing Files in a Specific Folder
 
@@ -181,9 +170,6 @@ foo <- as.list(synGetChildren(parent='syn1524884', includeTypes=list('file')))
 	{% endtab %}
 {% endtabs %}
 
-
-<br/>
-
 ### Queries on Annotations
 
 If annotations have been added to `Files`, they can be used to discover files of interest from `File View` syn123456.
@@ -193,21 +179,17 @@ For example, you can identify all `Files` annotated as `bam` files (`fileFormat 
 SELECT * FROM syn123456 WHERE "fileFormat"='bam'
 ```
 
-<br/>
-Likewise, if you had put the rnaSeq related files described in the section above into the project syn00123 with the described annotations, then you could find all of the files for `conditionB` and `sampleA`:
+Likewise, if you had put the RNA-Seq related files described in the section above into the project syn00123 with the described annotations, then you could find all of the files for `conditionB` and `sampleA`:
 
 ```
 SELECT * FROM syn123456 WHERE "projectId"='syn00123' AND "specimenID"='sampleA_conditionB'
 ```
 
-<br/>
 Lastly, you can query on a subset of entities that have a specific annotation. You can limit the annotations you want displayed as following.
 
 ```
 SELECT specimenID,genomeBuild,fileFormat,platform FROM file WHERE "projectId"='syn00123' AND "specimenID"='sampleA_conditionB'
 ```
-
-<br/>
 
 Reproducible queries can be constructed using one of the analytical clients (command line, Python, and R) and on the web client, query results can be displayed in a table on a wiki page.
 
@@ -220,7 +202,6 @@ synapse query "SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 
 
 	{% tab Python %}
 		{% highlight python %}
-
 
 result = syn.tableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE \"specimenID\"='sampleA_conditionB'")
 		{% endhighlight %}
@@ -258,7 +239,6 @@ SELECT * FROM syn123 where "chemicalStructure" = '4"-chemical'
 #OR
 SELECT * FROM syn123 where "chemicalStructure" = '4''-chemical'
 ```
-
 
 # See Also
 [Downloading Data](/articles/downloading_data.html), [Tables](/articles/tables.html)
