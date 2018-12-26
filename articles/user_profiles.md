@@ -9,7 +9,7 @@ category: howto
 
 Anyone can browse public content on the Synapse web site, but in order to download and create content you will need to register for an account using an email address. You will receive an email message for verification to complete the registration process.
 
-<a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>{:target="_blank"}
+<a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>
 
 Certain actions in Synapse require additional steps, such as Certification or Validation. Explore our [accounts, certification and profile validation](/articles/accounts_certified_users_and_profile_validation.html) page to find out more information on the different levels of users.
 

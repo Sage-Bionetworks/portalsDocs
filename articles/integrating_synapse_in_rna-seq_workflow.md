@@ -2,12 +2,12 @@
 title: "Integrating Synapse in your RNA-Seq workflow"
 layout: article
 category: inpractice
-excerpt: Easily manage groups of users for purposes of project access, communication, and challenges by forming teams.  
+excerpt: Using Synapse in an RNA-Seq workflow to manage files and track processing steps.  
 ---
 
 # Goals
 
-The goal is to demonstrate how to use Synapse in a RNA-Seq workflow to manage files and track processing steps.
+The goal is to demonstrate how to use Synapse in an RNA-Seq workflow to manage files and track processing steps.
 
 ## Getting Raw Data
 The first step is to download the data onto the computer where you will be processing it.

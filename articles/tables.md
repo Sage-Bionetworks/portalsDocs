@@ -1,7 +1,7 @@
 ---
 title: Tables
 layout: article
-excerpt: The basics of creating, modifying, and querying tabular data on Synapse.
+excerpt: Creating, modifying, and querying tabular data on Synapse.
 category: howto
 ---
 
@@ -85,12 +85,13 @@ Click on the **edit** icon to the right of the **Query** button to update table 
 
 ## Changing or Adding Columns
 
-{% include note.html content="To be compatible across multiple languages the common practice of using dots (.) in column names in R is not supported in Synapse Tables." %}
 **Adding new columns**
 
-To add columns, click on the **Schema** button. From there, select the **Edit Schema** button and then add columns using the **Add Column** button located at the bottom of the pop-up.
+To add columns, click on the **Schema** button. From there, select the **Edit Schema** button and then add columns using the **Add Column** button located at the bottom of the pop-up. Note that to be compatible across multiple languages the common practice of using dots (.) in column names in R is not supported in Synapse Tables.
 <br>
 <img id="image" src="/assets/images/table_updating_columns.png">
+
+{% include warning.html content="Column names must be 256 characters or less. There are three reserved words that cannot be used: ROW_ID, ROW_VERSION, ROW_ETAG (case insensitive)." %}
 
 **Deleting columns**
 
@@ -113,8 +114,9 @@ To delete the entire Table, click on **Tools** and then select **Delete Table** 
 <img id="image" src="/assets/images/delete_table.png">
 
 # Querying Table Data
-The data contained within a Synapse `Table` can be retrieved by using a SQL-like query language either through the web portal or through
-the analytical clients. **See the [API docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html){:target="_blank"} for an enumeration of the types of queries that can be performed.** Here are a couple of examples.
+The data contained within a Synapse `Table` can be retrieved by using a SQL-like query language either through the web portal or through the analytical clients. **See the [API docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html) for an enumeration of the types of queries that can be performed.** 
+
+## Selecting and Filtering Data
 
 To get all of the columns from a `Table` with id syn3079449, the following query would be used:
 
@@ -128,12 +130,6 @@ To get only the two columns called "age" and "gender":
 SELECT age, gender FROM syn3079449
 ````
 
-To count the number of rows:
-
-````
-SELECT count(*) FROM syn3079449
-````
-
 To get all columns, but only rows where age is greater that 50:
 
 ````
@@ -145,6 +141,36 @@ To get all columns, but only rows where age is greater that 50 - and sort by tre
 ````
 SELECT * FROM syn3079449 WHERE age > 50 ORDER BY "treatmentArm" ASC
 ````
+
+## Using Advanced SQL Queries to Aggregate Data
+More advanced SQL functions are also supported, such as COUNT, SELECT AS, and GROUP_CONCAT statements. Please **see the [API docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html) for an enumeration of the types of queries that can be performed.** 
+
+To count the number of rows:
+
+````
+SELECT count(*) FROM syn3079449
+````
+
+To select and rename a subset of columns for use in Wiki widgets: 
+
+````
+SELECT age AS "Age at Diagnosis", gender AS "Gender" FROM syn3079449
+````
+
+To find out how many distinct treatment arms were studied, by gender:
+
+````
+SELECT count(distinct(treatmentArm)) AS "Number of Treatments", gender FROM syn3079449 group by gender 
+````
+
+To list out the distinct treatent arms that were studied, by gender: 
+
+````
+SELECT GROUP_CONCAT(distinct(treatmentArm) SEPARATOR ', ') AS "Available Treatments", gender as "By Gender" FROM syn3079449 group by gender
+````
+
+{% include tip.html content="Many more examples can be found in the <a href='http://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html'>API Docs</a>." %}
+
 
 # Using Table Facets
 The faceted navigation on `Tables` (also known as **simple search**) can be used to simplify your search without having to use SQL-like queries. Simple search uses radio buttons and sliders to show all available facets in a menu to the left of the `Table` whereas advanced search employs a SQL-like query to filter the `Table`. To use table facets, navigate to a `Table` or a `File View`. Simple and advanced search both allow you to query for features of interest in a`Table` using different methods.

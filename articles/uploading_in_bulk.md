@@ -19,7 +19,7 @@ Read more about the helper functions on the **[synapseutils](https://python-docs
 
 ## Uploading Data in Bulk
 
-#### Creating a Manifest
+### Creating a Manifest
 
 Files to be uploaded are specified in a tab separated (`.tsv`) manifest. The manifest has columns that contain information about each file to be uploaded along with metadata (annotations) that will be associated with the file in Synapse. Specifically, the manifest has a set of required columns (the directory `path` of the file to be uploaded, the Synapse id of the folder or `parent` the file will be uploaded to), and columns for provenance and annotations. Here's an example manifest that uploads a single file:
 
@@ -48,7 +48,7 @@ To review:
 
 Download the [template](/assets/downloads/example_manifest_template.tsv).
 
-#### Validate the Manifest
+### Validate the Manifest
 
 The format of the manifest file (called 'filesToUpload.tsv' in this example) can be validated prior to uploading by using the parameter `dryRun = True` in `syncToSynapse`:
 
@@ -66,7 +66,7 @@ foo = synapseutils.syncToSynapse(syn, manifestFile='filesToUpload.tsv', dryRun=T
 
 <br/>
 
-#### Uploading Files
+### Uploading Files
 
 Using the validated manifest above, you can now upload the files to Synapse. Once the upload has completed you will receive an email notification. This notification will also notify you if there were any errors during upload. 
 
@@ -74,9 +74,6 @@ Using the validated manifest above, you can now upload the files to Synapse. Onc
 # upload files using manifest
 bar = synapseutils.syncToSynapse(syn, manifestFile='filesToUpload.tsv')
 {% endhighlight %}
-
-<br/>
-
 
 
 ## Downloading Data in Bulk
@@ -109,5 +106,5 @@ Please note that you cannot move things with a manifest. If the parentId is chan
 {% include note.html content="Changing the parent synId in a manifest creates a copy of the file. It does not move it." %}
 
 
-### See Also
+# See Also
 [Downloading Data](/articles/downloading_data.html), [Provenance](/articles/provenance.html), [Annotations and Queries](/articles/annotation_and_query.html), [File Views](/articles/fileviews.html), [Files and Versioning](/articles/files_and_versioning.html)
