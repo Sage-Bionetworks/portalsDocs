@@ -2,7 +2,7 @@
 title: Challenge Infrastructure
 layout: article
 excerpt: Learn how to set-up the wireframe of a challenge. 
-category: admin
+category: howto
 ---
 
 ## Challenge Guide Overview
