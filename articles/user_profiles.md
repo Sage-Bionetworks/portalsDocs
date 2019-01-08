@@ -48,5 +48,9 @@ Sign out of Synapse and sign back in using Google by clicking "Sign in with Goog
 
 Synapse sends platform notifications via email, but does so only to the single email address you have selected to be your `Primary` or `Notification Email`. You can manage this in `Settings`. This is the same email that Synapse will use to pass on messages sent to your `username@synapse.org` email address by other users, such as `Mentions` in discussion forums or direct emails sent by other users to you. 
 
+### Deactivating Your Account
+
+Please contact us to deactivate your Synapse account. 
+
 # See Also
 [Accounts, Certification and Profile Validation](/articles/accounts_certified_users_and_profile_validation.html), [Discussion](/articles/discussion.html)
