@@ -85,27 +85,20 @@ Click on the **edit** icon to the right of the **Query** button to update table 
 
 ## Changing or Adding Columns
 
-**Adding new columns**
-
-To add columns, click on the **Schema** button. From there, select the **Edit Schema** button and then add columns using the **Add Column** button located at the bottom of the pop-up. Note that to be compatible across multiple languages the common practice of using dots (.) in column names in R is not supported in Synapse Tables.
+To add columns, click on the **Schema** button. From there, select the **Edit Schema** button and then add columns using the **Add Column** button located at the bottom of the pop-up.
 <br>
 <img id="image" src="/assets/images/table_updating_columns.png">
 
 {% include warning.html content="Column names must be 256 characters or less. There are three reserved words that cannot be used: ROW_ID, ROW_VERSION, ROW_ETAG (case insensitive)." %}
 
-**Deleting columns**
-
 To delete columns, click on the **Schema** button. From there, click the **Edit Schema** button and then select the columns you would like to delete and delete them by clicking the **trash can** icon at the top.
 <br>
 <img id="image" src="/assets/images/table_deleting_columns.png">
-
-**Modifying existing columns**
 
 To modify information in a column, first begin by **adding** a new column, then **copy** the data from the column you would like to change into the newly created column, make the changes in the new column, and **delete** the old one.
  In this example, we are chaning the **Column Type** of **Header_1** into **Boolean** and setting the **Default Value** to **true**.
 
  <img id="image" src="/assets/images/table_modifying_columns.png">
-
 
 ## Deleting the Whole Table
 
@@ -171,7 +164,6 @@ SELECT GROUP_CONCAT(distinct(treatmentArm) SEPARATOR ', ') AS "Available Treatme
 
 {% include tip.html content="Many more examples can be found in the <a href='http://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html'>API Docs</a>." %}
 
-
 # Using Table Facets
 The faceted navigation on `Tables` (also known as **simple search**) can be used to simplify your search without having to use SQL-like queries. Simple search uses radio buttons and sliders to show all available facets in a menu to the left of the `Table` whereas advanced search employs a SQL-like query to filter the `Table`. To use table facets, navigate to a `Table` or a `File View`. Simple and advanced search both allow you to query for features of interest in a`Table` using different methods.
 
@@ -196,6 +188,7 @@ You can toggle from the simple search to the advanced search without losing the 
 {% include note.html content="The slider for range in simple search is inclusive." %}
 
 <img id="imageSmall" src="/assets/images/simple_search_query.png">
+
 <img id="imageXL" src="/assets/images/query_statement_from_simple_search.png">
 
 {% include warning.html content="When toggling back to simple search, the query will be reset." %}
@@ -206,31 +199,22 @@ You can toggle from the simple search to the advanced search without losing the 
 
 Synapse `Tables` support a special column type called `File` which contain a file handle, an identifier of a file stored in Synapse. Here’s an example of how to upload files into Synapse, associate them with a table and read them back later.
 
-**1. Add a new column for files in the table we're currently working with**
+First, add a new column for files in the table we're currently working with. To add columns, click on the **Schema** button. From there, select the **Edit Schema** button and then add columns using the **Add Column** button located at the bottom of the pop-up and set the **Column Type** as **File**.
 
-To add columns, click on the **Schema** button. From there, select the **Edit Schema** button and then add columns using the **Add Column** button located at the bottom of the pop-up and set the **Column Type** as **File**.
-<br>
 <img id="image" src="/assets/images/table_updating_columns.png">
 
-**2. Retrieve the most current table and save as a data frame**
-
-Click **Save** to save your latest schema.
+Next, retrieve the most current table and save as a data frame. Click **Save** to save your latest schema.
 
 <img id="image" src="/assets/images/save_table.png">
 
-**3. Upload the files:** 
-
-Click on the **Edit icon** to the right of the **Query** button. In the resulting pop-up, you can upload files by clicking the **Upload icon** then **Browse** and selecting the file from your local directory. Save the new table.
+Next, upload the files; click on the **Edit icon** to the right of the **Query** button. In the resulting pop-up, you can upload files by clicking the **Upload icon** then **Browse** and selecting the file from your local directory. Save the new table.
 
 <img id="image" src="/assets/images/upload_files_to_table.png">
 
-<br/>
-
-**4. Query the table and download the album cover files**
-
-Clicking on any file will download it.
+Finally, query the table and download the album cover files. Clicking on any file will download it.
 
 <img id="image" src="/assets/images/download_files_from_table.png">
 
 # See Also
+
 [Annotations and Queries](/articles/annotation_and_query.html), [Downloading Data](/articles/downloading_data.html), [Files and Versioning](/articles/versioning.html)
