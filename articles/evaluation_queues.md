@@ -20,7 +20,7 @@ To create a queue, you must first create a Synapse project. To learn how to do s
 
 <br/>
 
-Additionally, you can pass in an optional **quota** parameter; please note that these options are only possible to implement through the Python or R client, not the web. It can be configured with the following terms:
+Additionally, you can pass in an optional **quota** parameter using the R, Python, or web clients. It can be configured with the following terms:
 
    - **firstRoundStart** - The date/time at which the first round begins in UTC
    - **roundDurationMillis** -  The duration of each round in milliseconds
@@ -88,6 +88,8 @@ You can create Evaluation queues on the web by navigating to your challenge site
 
 {% endtab %}
 {% endtabs %}
+
+In the web client, the quota can be modified under the **Challenge** tab by clicking `Edit` for the Evaluations that require a quota.
 
 ## Configure an Evaluation Queue 
 
