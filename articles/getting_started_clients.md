@@ -37,7 +37,7 @@ installation bit
 
 ## R
 
-The `synapser` package is available for R 3.4 and 3.5.  
+The `synapser` package is available for R version 3.4 and 3.5.  
 
 ```
 install.packages("synapser", repos=c("https://sage-bionetworks.github.io/ran", "http://cran.fhcrc.org"))
@@ -49,9 +49,9 @@ library(synapser)
 synLogin("me@nowhere.com", "secret")
 ```
 
-For connecting to Synapse with stored login credentials, visit the `synapser` [Overview page](https://r-docs.synapse.org/articles/synapser.html). 
+To connect to Synapse with stored login credentials, visit the `synapser` [Overview page](https://r-docs.synapse.org/articles/synapser.html). Visit the [`synapser` R docs](https://r-docs.synapse.org) for complete documentation.
 
 
 # To Report an Issue 
 
-Issues or bugs can be reported at the [R client](https://github.com/Sage-Bionetworks/synapsePythonClient/issues), [Python and command line client](https://github.com/Sage-Bionetworks/synapser) Github Issues pages. 
+Report client-specific issues or bugs at the [R client](https://github.com/Sage-Bionetworks/synapsePythonClient/issues), [Python and command line client](https://github.com/Sage-Bionetworks/synapser) Github Issues pages. 
