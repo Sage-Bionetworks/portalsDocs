@@ -17,11 +17,17 @@ Clients provide a strategy to upload, download and query Synapse entities progra
 
 ## Command Line
 
-The `synapseclient` package .... 
+The Synapse command line client comes with the Synapse Python package. To install the Synapse command line client, please make sure that you have `Python` and `pip` installed. 
+[Instruction on `Python` installation](https://www.python.org/downloads/)
+[Instruction on `pip` installation](https://pip.pypa.io/en/stable/installing/)
 
-
+After installing `pip` and `python`, in your terminal (MacOS) or Command Prompt (Windows), run the following command:
 ```
-installation bit
+pip install synapseclient
+```
+```
+synapseclient login "username" "password"
+synapseclient -h
 ```
 
 [command line client](https://python-docs.synapse.org/build/html/CommandLineClient.html)
@@ -31,7 +37,7 @@ installation bit
 The `synapseclient` package See the [Python client docs](https://python-docs.synapse.org/build/html/index.html#more-information) for supported versions of Python. 
 
 ```
-installation bit
+pip install synapseclient
 ```
 [Python client](https://python-docs.synapse.org/build/html/index.html)
 
@@ -46,7 +52,7 @@ install.packages("synapser")
 
 ```
 library(synapser)
-synLogin("me@nowhere.com", "secret")
+synLogin("username", "password")
 ```
 
 To connect to Synapse with stored login credentials, visit the `synapser` [Overview page](https://r-docs.synapse.org/articles/synapser.html). Visit the [`synapser` R docs](https://r-docs.synapse.org) for complete documentation.
