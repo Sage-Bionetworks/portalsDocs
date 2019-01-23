@@ -30,16 +30,16 @@ synapseclient login "username" "password"
 synapseclient -h
 ```
 
-For more documentation on the command line client see [here](https://python-docs.synapse.org/build/html/CommandLineClient.html).
+For more documentation on the command line client, see the [`synapseclient` docs](https://python-docs.synapse.org/build/html/CommandLineClient.html).
 
 ## Python
 
-The `synapseclient` package See the [Python client docs](https://python-docs.synapse.org/build/html/index.html#more-information) for supported versions of Python. 
+The `synapseclient` package is available to use Python to access Synapse. See the [Python client docs](https://python-docs.synapse.org/build/html/index.html#overview) for supported versions of Python. 
 
 ```
 pip install synapseclient
 ```
-[Python client](https://python-docs.synapse.org/build/html/index.html)
+For complete documentation of the Python client, visit the [`synapseclient` docs](https://python-docs.synapse.org/build/html/index.html).
 
 ## R
 
@@ -55,7 +55,7 @@ library(synapser)
 synLogin("username", "password")
 ```
 
-To connect to Synapse with stored login credentials, visit the `synapser` [Overview page](https://r-docs.synapse.org/articles/synapser.html). Visit the [`synapser` R docs](https://r-docs.synapse.org) for complete documentation.
+To connect to Synapse with stored login credentials, visit the `synapser` [Overview page](https://r-docs.synapse.org/articles/synapser.html). For more documentation on the R client, see [`synapser` R docs](https://r-docs.synapse.org).
 
 
 # To Report an Issue 
