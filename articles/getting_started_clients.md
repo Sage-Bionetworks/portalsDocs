@@ -21,7 +21,7 @@ The Synapse command line client is implemented in Python and comes with the Syna
 [Instruction on `Python` installation](https://www.python.org/downloads/)
 [Instruction on `pip` installation](https://pip.pypa.io/en/stable/installing/)
 
-After installing `pip` and `python`, in your terminal (MacOS) or Command Prompt (Windows), run the following command:
+After installing `pip` and `python`, in your terminal (Mac OS or GNU/Linux) or Command Prompt (Windows), run the following command:
 ```
 pip install synapseclient
 ```
