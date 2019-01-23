@@ -8,7 +8,7 @@ order: 2
 
 # Introduction
 
-Clients provide a strategy to upload, download and query Synapse entities programmatically. This page provides installation and login instructions to get you started. Packages to interface and access data within Synapse are available for: 
+Clients provide a way to use Synapse programmatically. This page shows you how to install and login to get you started. Packages to interface and access data within Synapse are available for: 
 
 * Command Line
 * Python
