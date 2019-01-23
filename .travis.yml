@@ -12,4 +12,3 @@ script:
 branches:
   only:
     - master
-after_success: bundle exec s3_website push
