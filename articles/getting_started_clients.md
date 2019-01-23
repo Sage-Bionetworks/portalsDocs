@@ -30,7 +30,7 @@ synapseclient login "username" "password"
 synapseclient -h
 ```
 
-[command line client](https://python-docs.synapse.org/build/html/CommandLineClient.html)
+For more documentation on the command line client see [here](https://python-docs.synapse.org/build/html/CommandLineClient.html).
 
 ## Python
 
