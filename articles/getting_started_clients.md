@@ -60,4 +60,4 @@ To connect to Synapse with stored login credentials, visit the `synapser` [Overv
 
 # To Report an Issue 
 
-Report client-specific issues or bugs at the [R client](https://github.com/Sage-Bionetworks/synapsePythonClient/issues), [Python and command line client](https://github.com/Sage-Bionetworks/synapser) Github Issues pages. 
+Report client-specific issues or bugs at the [R client](https://github.com/Sage-Bionetworks/synapser/issues) or [Python (including the command line client)](https://github.com/Sage-Bionetworks/synapsePythonClient/issues) GitHub Issues pages. If you have questions on how to use the clients to interact with Synapse, please ask in the [Synapse Help Forum](https://www.synapse.org/#!SynapseForum:default).
