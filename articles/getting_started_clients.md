@@ -17,7 +17,7 @@ Clients provide a way to use Synapse programmatically. This page shows you how t
 
 ## Command Line
 
-The Synapse command line client comes with the Synapse Python package. To install the Synapse command line client, please make sure that you have `Python` and `pip` installed. 
+The Synapse command line client is implemented in Python and comes with the Synapse Python package. To install the Synapse command line client, please make sure that you have `Python` and `pip` installed. 
 [Instruction on `Python` installation](https://www.python.org/downloads/)
 [Instruction on `pip` installation](https://pip.pypa.io/en/stable/installing/)
 
