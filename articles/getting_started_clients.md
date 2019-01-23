@@ -6,7 +6,7 @@ category: intro
 order: 2
 ---
 
-# Get Started with Synapse Clients
+# Introduction
 
 Clients provide a strategy to upload, download and query Synapse entities programmatically. This page provides installation and login instructions to get you started. Packages to interface and access data within Synapse are available for: 
 
