@@ -84,7 +84,7 @@ query <- synTableQuery('SELECT * FROM syn123')
 
 ## Update Annotations in Bulk
 
-Views can be used to update annotations in bulk. To update other metadata in bulk, such as provenance, please see the [Bulk Processing](/articles/uploading_in_bulk.html) article. 
+Views can be used to update annotations in bulk. To add new annotations, see the [Annotations](https://docs.synapse.org/articles/annotation_and_query.html#adding-annotations) article. To update other metadata in bulk, such as provenance, see the [Bulk Processing](/articles/uploading_in_bulk.html) article. 
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/ij9AqLsoDk0?rel=0" frameborder="0" allowfullscreen></iframe>
 
