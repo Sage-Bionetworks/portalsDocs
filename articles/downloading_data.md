@@ -21,7 +21,6 @@ For the Python and R clients the default download location is the Synapse cache.
 
 For example, to get the experimental protocol file on [Adult Mouse Cardiac Myocyte Isolation](https://www.synapse.org/#!Synapse:syn3158111){:target="_blank"} (syn3158111) from the [Progenitor Cell Biology Consortium (PCBC)](https://www.synapse.org/#!Synapse:syn177310){:target="_blank"} you would run the following:
 
-
 {% tabs %}
 
 {% tab Command %}
@@ -164,7 +163,7 @@ entity <- synGet("syn00123", downloadLocation="/path/to/folder")
 
 ## Finding and Downloading Files
 
-Files can be [annotated](/articles/annotation_and_query.html) to facilitate finding them. In order to search the annotations, a [File View](/articles/fileviews.html) must be created first. It is possible to query based on any of the annotations attached to the files.
+Files can be [annotated](/articles/annotation_and_query.html) to facilitate finding them. In order to search the annotations, a [File View](/articles/views.html) must be created first. It is possible to query based on any of the annotations attached to the files.
 
 For example, the [PCBC Project](https://www.synapse.org/#!Synapse:syn1773109){:target="_blank"} has a [table](https://www.synapse.org/#!Synapse:syn7511263){:target="_blank"}) listing sequencing data files that have been annotated. To find all **mRNA fastq** files originating from **CD34+ cells** in the we can query by:
 
@@ -341,4 +340,4 @@ all_files = syncFromSynapse(entity='syn123', path='/path/to/myFolder')
 <br/>
 
 ### See Also
-[Versioning](/articles/versioning.html), [Tables](/articles/tables.html), [Wikis](/articles/wikis.html), [File Views](/articles/fileviews.html), [Annotations and Queries](/articles/annotation_and_query.html)
+[Versioning](/articles/versioning.html), [Tables](/articles/tables.html), [Wikis](/articles/wikis.html), [File Views](/articles/views.html), [Annotations and Queries](/articles/annotation_and_query.html)
