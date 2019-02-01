@@ -9,7 +9,7 @@ category: howto
 
 Anyone can browse public content on the Synapse web site, but in order to download and create content you will need to register for an account using an email address. You will receive an email message for verification to complete the registration process.
 
-<a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>{:target="_blank"}
+<a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>
 
 Certain actions in Synapse require additional steps, such as Certification or Validation. Explore our [accounts, certification and profile validation](/articles/accounts_certified_users_and_profile_validation.html) page to find out more information on the different levels of users.
 
@@ -47,6 +47,10 @@ Sign out of Synapse and sign back in using Google by clicking "Sign in with Goog
 ### Notification Email
 
 Synapse sends platform notifications via email, but does so only to the single email address you have selected to be your `Primary` or `Notification Email`. You can manage this in `Settings`. This is the same email that Synapse will use to pass on messages sent to your `username@synapse.org` email address by other users, such as `Mentions` in discussion forums or direct emails sent by other users to you. 
+
+### Deactivating Your Account
+
+Please contact us to deactivate your Synapse account. 
 
 # See Also
 [Accounts, Certification and Profile Validation](/articles/accounts_certified_users_and_profile_validation.html), [Discussion](/articles/discussion.html)
