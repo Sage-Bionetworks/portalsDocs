@@ -31,7 +31,7 @@ Because permissions are additive, a user who is in all three teams will have the
 
 Sometimes, users wish to retain private spaces within public projects, or otherwise create sharing settings on project components (folders, tables, etc.) that are different from the overall project permissions. This is possible using Local Sharing Settings. You can use teams for group permissions even with local sharing settings, which can help streamline administration even more. 
 
-For example, to create a private folder within a public project, you would make the entire project public using the "Make Public" button. Then, create a new folder, and click on "Create Local Sharing Settings". Remove the two entries for the public, which are listed as follows:
+For example, to create a private folder within a public project, you would make the entire project public using the "Make Public" button. Then, create a new folder, click on "Create Local Sharing Settings", and click the "Make Private" button. Confirm that this removes the "All registered Synapse users - Can Download" and "Anyone on the web - Can View" from the list.
 
 The folder with then be shared only with the specific user groups that the entire project is shared with, and not the general public. Note that creating local sharing settings can sometimes alter the permissions model unintentionally; see below for how to triage your sharing settings. 
 
