@@ -27,7 +27,7 @@ Annotations can be one of four types:
 
 ## How to Assign Annotations
 
-Annotations may be added when initially uploading a file or at a later date. This can be done using the command line client, the Python client, the R client, or from the web. Using the programmatic clients facilitates batch and automated population of annotations across many files. The web client can be used to bulk update many files using [file views](/articles/views.html).
+Annotations may be added when initially uploading a file or at a later date. This can be done using the command line client, the [Python client](https://python-docs.synapse.org/build/html/Views.html#updating-annotations-using-view), the [R client](https://r-docs.synapse.org/articles/views.html#updating-annotations-using-view), or from the web. Using the programmatic clients facilitates batch and automated population of annotations across many files. The web client can be used to bulk update many files using [file views](/articles/views.html).
 
 ### Adding Annotations 
 
