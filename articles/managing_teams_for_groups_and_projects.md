@@ -33,7 +33,6 @@ Sometimes, users wish to retain private spaces within public projects, or otherw
 
 For example, to create a private folder within a public project, you would make the entire project public using the "Make Public" button. Then, create a new folder, and click on "Create Local Sharing Settings". Remove the two entries for the public, which are listed as follows:
 * All registered Synapse users - Can Download
-* Anyone on the web - Can View
 
 The folder with then be shared only with the specific user groups that the entire project is shared with, and not the general public. Note that creating local sharing settings can sometimes alter the permissions model unintentionally; see below for how to triage your sharing settings. 
 
