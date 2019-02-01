@@ -14,7 +14,7 @@ When thinking through the process of creating a permissions model for your proje
 * Who needs to be able to edit or add content to this project?
 * Who should be in charge of changing permissions on this project, to modify either of the above? 
 * Does any content in this project need different permissions than the whole project? For example:
-  * Raw data vs. processed data folders with different permissions
+  * Raw vs. processed data folders with different permissions
   * Internal meeting notes in a private folder vs. methodolodgy and SOP documents shared publicly
 
 ## Using Teams for Permissions
