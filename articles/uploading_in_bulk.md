@@ -26,7 +26,6 @@ Files to be uploaded are specified in a tab separated (`.tsv`) manifest. The man
 | --- | --- | --- | --- | --- | --- | --- |
 | /path/to/file.csv | syn123 | Tardar Sauce | syn654 | https://github.com/your/code/repo | grumpy | cat |
 
-
 The above manifest describes a "file.csv" that will be uploaded to the Synapse folder `syn123` and named "Tardar Sauce". The manifest describes the provenance of the file indicating that it was generated using code deposited in GitHub (https://github.com/your/code/repo) from the data in `syn654`. Additionally, the file has been annotated with; `emotion:grumpy` and `species:cat`. Additonal annotations would be added through more columns (e.g. assay, fileFormat, cellType, etc.).
 
 For reference:
@@ -37,7 +36,6 @@ To review:
 * the **name** is only necessary if the displayed name in Synapse should be different than the name of the uploaded file
 * **used** and **executed** are for provenance and optional (but helpful!),
 * **emotion** and **species** are for annotations and also optional (but also helpful!)
-
 
 Download the [template](/assets/downloads/example_manifest_template.tsv).
 
