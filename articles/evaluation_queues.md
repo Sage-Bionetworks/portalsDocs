@@ -10,15 +10,13 @@ An Evaluation queue allows for people to submit Synapse Files, Docker images, et
 
 ## Create an Evaluation Queue 
 
-To create a queue, you must first create a Synapse project. To learn how to do so, please follow instructions [here](http://docs.synapse.org/articles/getting_started.html#project-and-data-management-on-synapse). An Evaluation Queue can take several parameters that you can use to fine tune it to your preferences. The minimum requirements to create a queue are:
+To create a queue, you must first create a Synapse project. To learn how to do so, please follow instructions [here](/articles/getting_started.html#project-and-data-management-on-synapse). An Evaluation Queue can take several parameters that you can use to fine tune it to your preferences. The minimum requirements to create a queue are:
 
    - **name** – Unique name of the evaluation
    - **description** – A short description of the evaluation
    - **contentSource** – Synapse Project associated with the evaluation
    - **submissionReceiptMessage** – Message to display to users upon submission
    - **submissionInstructionsMessage** – Message to display to users detailing acceptable formatting for submissions.
-
-<br/>
 
 Additionally, you can pass in an optional **quota** parameter using the R, Python, or web clients. It can be configured with the following terms:
 
@@ -27,15 +25,11 @@ Additionally, you can pass in an optional **quota** parameter using the R, Pytho
    - **numberOfRounds** - The number of rounds, or null if there is no end
    - **submissionLimit** - The maximum number of submissions per team/participant per round. Please keep in mind that the system will prevent additional submissions by a user/team once they have hit this number of submissions.
    
-   
-
-<br/>
 
 {% include note.html content="The name of your evaluation queue MUST be unique, otherwise the queue will not be created." %}
 
 The example below shows how to create a queue using all of the parameters described:
  
-
 {% tabs %}
 {% tab Python %}
 {% highlight python %}
@@ -127,7 +121,6 @@ synStore(evaluation)
 
 {% endtabs %}
 
-
 ## Share an Evaluation Queue
 
 Each Evaluation has its own sharing settings, which limit who can interact with the Evaluation and in what way:
@@ -138,9 +131,7 @@ Each Evaluation has its own sharing settings, which limit who can interact with 
 
 To set the sharing setting, go to the **Challenge** tab and see your list of Evaluations.  Click on the `Share` button per Evaluation and share it with the Teams or individuals you would like.
 
-
 {% include important.html content="When someone submits to an Evaluation, a copy of the submission is made, so a person with Administrator or Can score access will be able to download the submission even if the submitter deletes the entity." %}
-
 
 ## Submitting to an Evaluation Queue
 
@@ -192,7 +183,7 @@ To submit a File to an Evaluation Queue, navigate to the File in the web UI and 
 
 ## View Submissions of an Evaluation Queue
 
-All submissions of an Evaluation queue can be views through the through the use of a leaderboard.  To learn how to create a wiki page, please visit [here](http://docs.synapse.org/articles/wikis.html).  Below are instructions on how to set up a leaderboard. You must know the **evaluation Id** to do so; see the section on how to "Configure an Evaluation Queue" for instructions on finding the evaluation Id.
+All submissions of an Evaluation queue can be views through the through the use of a leaderboard.  To learn how to create a wiki page, please visit [here](/articles/wikis.html).  Below are instructions on how to set up a leaderboard. You must know the **evaluation Id** to do so; see the section on how to "Configure an Evaluation Queue" for instructions on finding the evaluation Id.
 
 #### Adding Leaderboard Widget
 
