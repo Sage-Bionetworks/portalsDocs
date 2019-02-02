@@ -19,7 +19,7 @@ When using the Python, R, or command line clients, files downloaded using the `g
 
 For the Python and R clients the default download location is the Synapse cache. The command line client downloads to your current working directory. On the web, your own browser settings determine the download location for files. The Synapse cache is not updated to reflect downloads through a web browser. In all cases you can specify the directory in which to download the file.
 
-For example, to get the experimental protocol file on [Adult Mouse Cardiac Myocyte Isolation](https://www.synapse.org/#!Synapse:syn3158111){:target="_blank"} (syn3158111) from the [Progenitor Cell Biology Consortium (PCBC)](https://www.synapse.org/#!Synapse:syn177310){:target="_blank"} you would run the following:
+For example, to get the experimental protocol file on [Adult Mouse Cardiac Myocyte Isolation](https://www.synapse.org/#!Synapse:syn3158111) (syn3158111) from the [Progenitor Cell Biology Consortium (PCBC)](https://www.synapse.org/#!Synapse:syn177310) you would run the following:
 
 {% tabs %}
 
@@ -80,7 +80,7 @@ filepath <- entity$path
 
 If there are multiple versions of a `File`, a specific version can be downloaded by passing the `version` parameter.
 
-In this example, there are multiple versions of an [miRNA FASTQ file](https://www.synapse.org/#!Synapse:syn3260973){:target="_blank"} (syn3260973) from the Progenitor Cell Biology Consortium. To download the first version:
+In this example, there are multiple versions of an [miRNA FASTQ file](https://www.synapse.org/#!Synapse:syn3260973) (syn3260973) from the Progenitor Cell Biology Consortium. To download the first version:
 
 {% tabs %}
 {% tab Command %}
@@ -101,9 +101,7 @@ entity <- synGet("syn3260973", version=1)
 
 {% endtabs %}
 
-<br/>
-
-See [versioning](http://docs.synapse.org/articles/versioning.html) for more details.
+See [versioning](/articles/versioning.html) for more details.
 
 ### Links
 
@@ -159,13 +157,11 @@ entity <- synGet("syn00123", downloadLocation="/path/to/folder")
 
 {% endtabs %}
 
-
-
 ## Finding and Downloading Files
 
 Files can be [annotated](/articles/annotation_and_query.html) to facilitate finding them. In order to search the annotations, a [File View](/articles/views.html) must be created first. It is possible to query based on any of the annotations attached to the files.
 
-For example, the [PCBC Project](https://www.synapse.org/#!Synapse:syn1773109){:target="_blank"} has a [table](https://www.synapse.org/#!Synapse:syn7511263){:target="_blank"}) listing sequencing data files that have been annotated. To find all **mRNA fastq** files originating from **CD34+ cells** in the we can query by:
+For example, the [PCBC Project](https://www.synapse.org/#!Synapse:syn1773109) has a [table](https://www.synapse.org/#!Synapse:syn7511263) listing sequencing data files that have been annotated. To find all **mRNA fastq** files originating from **CD34+ cells** in the we can query by:
 
 {% tabs %}
 
@@ -174,7 +170,6 @@ For example, the [PCBC Project](https://www.synapse.org/#!Synapse:syn1773109){:t
 synapse query 'select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"'
 {% endhighlight %}
 {% endtab %}
-
 
 {% tab Python %}
 {% highlight python %}
@@ -250,13 +245,11 @@ files = synapseutils.syncFromSynapse(syn, 'syn2390898')
 
 ### Download Tables
 
-Please view [here](http://docs.synapse.org/articles/tables.html#making-changes-to-tables) to learn how to use `Tables`.
-
+Please view [here](/articles/tables.html) to learn how to use `Tables`.
 
 ### Download Wikis
 
 The structure of a project's `Wiki` page can be extracted through the R and Python clients.  The id, title and parent `Wiki` page of each sub-`Wiki` page is also determined through the same method.
-
 
 {% tabs %}
 
@@ -275,9 +268,7 @@ wiki <- synGetWikiHeaders(entity)
 
 {% endtabs %}
 
-
 The Markdown and other information of a `Project` sub-`Wiki` page can be obtained by knowing the id of the `Wiki`. The `Wiki` page id can either be obtained through the above method or can be found in the URL "www.synapse.org/#!Synapse:syn00123/wiki/**12345**" where 12345 is the `Wiki` page id. 
-
 
 {% tabs %}
 
@@ -296,15 +287,9 @@ wiki <- synGetWiki(entity, 12345)
 
 {% endtabs %}
 
-<br/>
-
 ### Downloading in Bulk
 
 Files can be downloaded in bulk using the `syncFromSynapse` function found in the [synapseutils](https://python-docs.synapse.org/build/html/synapseutils.html#module-synapseutils.sync) helper package. This function crawls all the subfolders of the project/folder that you specify and retrieves all the files that have not been downloaded. By default, the files will be downloaded into your `synapseCache`, but a different download location can be specified with the `path` parameter. If you do download to a location out side of `synapseCache`, this function will also create a tab-delimited manifest of all the files along with their metadata (path, provenance, annotations, etc).
-
-
-
-
 
 {% tabs %}
 
@@ -337,7 +322,6 @@ all_files = syncFromSynapse(entity='syn123', path='/path/to/myFolder')
   {% endtab %}
 
 {% endtabs %}
-<br/>
 
-### See Also
+# See Also
 [Versioning](/articles/versioning.html), [Tables](/articles/tables.html), [Wikis](/articles/wikis.html), [File Views](/articles/views.html), [Annotations and Queries](/articles/annotation_and_query.html)
