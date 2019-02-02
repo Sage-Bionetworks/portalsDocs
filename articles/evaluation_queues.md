@@ -12,19 +12,18 @@ An Evaluation queue allows for people to submit Synapse Files, Docker images, et
 
 To create a queue, you must first create a Synapse project. To learn how to do so, please follow instructions [here](/articles/getting_started.html#project-and-data-management-on-synapse). An Evaluation Queue can take several parameters that you can use to fine tune it to your preferences. The minimum requirements to create a queue are:
 
-   - **name** – Unique name of the evaluation
-   - **description** – A short description of the evaluation
-   - **contentSource** – Synapse Project associated with the evaluation
-   - **submissionReceiptMessage** – Message to display to users upon submission
-   - **submissionInstructionsMessage** – Message to display to users detailing acceptable formatting for submissions.
+  - **name** – Unique name of the evaluation
+  - **description** – A short description of the evaluation
+  - **contentSource** – Synapse Project associated with the evaluation
+  - **submissionReceiptMessage** – Message to display to users upon submission
+  - **submissionInstructionsMessage** – Message to display to users detailing acceptable formatting for submissions.
 
 Additionally, you can pass in an optional **quota** parameter using the R, Python, or web clients. It can be configured with the following terms:
 
-   - **firstRoundStart** - The date/time at which the first round begins in UTC
-   - **roundDurationMillis** -  The duration of each round in milliseconds
-   - **numberOfRounds** - The number of rounds, or null if there is no end
-   - **submissionLimit** - The maximum number of submissions per team/participant per round. Please keep in mind that the system will prevent additional submissions by a user/team once they have hit this number of submissions.
-   
+  - **firstRoundStart** - The date/time at which the first round begins in UTC
+  - **roundDurationMillis** -  The duration of each round in milliseconds
+  - **numberOfRounds** - The number of rounds, or null if there is no end
+  - **submissionLimit** - The maximum number of submissions per team/participant per round. Please keep in mind that the system will prevent additional submissions by a user/team once they have hit this number of submissions. 
 
 {% include note.html content="The name of your evaluation queue MUST be unique, otherwise the queue will not be created." %}
 
