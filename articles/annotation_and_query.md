@@ -38,26 +38,26 @@ To add annotations on a single entity through the web client, click the `Annotat
 To add annotations on multiple files, please refer to our Synapse in Practice article <a href="/articles/managing_custom_metadata_at_scale.html">"Managing Custom Metadata at Scale"</a> for a tutorial on how to do this efficiently and effectively leveraging <a href="/articles/views.html"></a>.
 
 {% tabs %}
-	{% tab Command %}
-		{% highlight bash %}
+{% tab Command %}
+{% highlight bash %}
 synapse store sampleA_conditionB.bam --parentId syn00123 --annotations '{"fileFormat":"bam", "assay":"rnaSeq"}'
-		{% endhighlight %}
-	{% endtab %}
+{% endhighlight %}
+{% endtab %}
 
-	{% tab Python %}
-		{% highlight python %}
+{% tab Python %}
+{% highlight python %}
 entity = File(path="sampleA_conditionB.bam",parent="syn00123")
 entity.annotations = {"fileFormat":"bam", "assay":"rnaSeq"}
 syn.store(entity)
-		{% endhighlight %}
-	{% endtab %}
+{% endhighlight %}
+{% endtab %}
 
-	{% tab R %}
-		{% highlight r %}
+{% tab R %}
+{% highlight r %}
 entity <- File("sampleA_conditionB.bam", parent="syn00123")
 entity <- synStore(entity, annotations=list(fileFormat = "bam", assay = "rnaSeq"))
-		{%endhighlight %}
-	{% endtab %}
+{% endhighlight %}
+{% endtab %}
 {% endtabs %}
 
 <br/>
@@ -77,14 +77,14 @@ To modify annotations on multiple files, please refer to our Synapse in Practice
 
 
 {% tabs %}
-	{% tab Command %}
-		{% highlight bash %}
+{% tab Command %}
+{% highlight bash %}
 synapse set-annotations --id syn00123 --annotations '{"fileFormat":"bam", "assay":"rnaSeq"}'
-		{% endhighlight %}
-	{% endtab %}
+{% endhighlight %}
+{% endtab %}
 
-	{% tab Python %}
-		{% highlight python %}
+{% tab Python %}
+{% highlight python %}
 entity = syn.get("syn123")
 
 # Please note that existing annotations will be overwritten. To modify ONLY one annotation:
@@ -97,11 +97,11 @@ entity['fileFormat'] = 'bam'
 entity.annotations = {"fileFormat":"bam", "assay":"rnaSeq"}
 
 syn.store(entity, forceVersion = F)
-		{% endhighlight %}
-	{% endtab %}
+{% endhighlight %}
+{% endtab %}
 
-	{% tab R %}
-		{% highlight r %}
+{% tab R %}
+{% highlight r %}
 
 entity <- synGet("syn00123")
 
@@ -112,10 +112,9 @@ synSetAnnotations(entity, annotations = c(existing_annots, list(fileType = "bam"
 ##### Add/update annotations, removing any other existing annotations
 synSetAnnotations(entity, annotations = list(fileType = "bam", assay = "rnaSeq"))
 
-		{%endhighlight %}
-	{% endtab %}
+{% endhighlight %}
+{% endtab %}
 {% endtabs %}
-
 
 # Queries
 {% include note.html content="You will only be able to query the files you currently have permission to access." %}
@@ -151,23 +150,21 @@ To list the `Files` in a specific `Folder`, you need to know the synID of the `F
 The function to find all `Files` in this `Folder` is called "getChildren":
 
 {% tabs %}
-
-	{% tab Python %}
-		{% highlight Python %}
+{% tab Python %}
+{% highlight Python %}
 
 foo = list(syn.getChildren(parent='syn1524884', includeTypes=['file']))
 
-		{% endhighlight %}
-	{% endtab %}
+{% endhighlight %}
+{% endtab %}
 
-
-	{% tab R %}
-		{% highlight r %}
+{% tab R %}
+{% highlight r %}
 
 foo <- as.list(synGetChildren(parent='syn1524884', includeTypes=list('file')))
 
-		{% endhighlight %}
-	{% endtab %}
+{% endhighlight %}
+{% endtab %}
 {% endtabs %}
 
 ### Queries on Annotations
@@ -193,34 +190,30 @@ SELECT specimenID,genomeBuild,fileFormat,platform FROM file WHERE "projectId"='s
 
 Reproducible queries can be constructed using one of the analytical clients (command line, Python, and R) and on the web client, query results can be displayed in a table on a wiki page.
 
-{% tabs %}
-	{% tab Command %}
-		{% highlight bash %}
-synapse query "SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE \"specimenID\"='sampleA_conditionB'"
-		{% endhighlight %}
-	{% endtab %}
+In a project, from the wiki page click `Wiki Tools` in the upper right corner to `Edit Project Wiki`. Click `Insert` and choose `Table: Query on Files/Folders`.
+Enter your query in the box and click the **Insert** button. Once you save the wiki page, the results will be displayed as a table.
 
-	{% tab Python %}
-		{% highlight python %}
+{% tabs %}
+{% tab Command %}
+{% highlight bash %}
+synapse query "SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE \"specimenID\"='sampleA_conditionB'"
+{% endhighlight %}
+{% endtab %}
+
+{% tab Python %}
+{% highlight python %}
 
 result = syn.tableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE \"specimenID\"='sampleA_conditionB'")
-		{% endhighlight %}
-	{% endtab %}
+{% endhighlight %}
+{% endtab %}
 
-	{% tab R %}
-		{% highlight r %}
- result = synTableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE \"specimenID\"='sampleA_conditionB'")
- 		{%endhighlight %}
-	{% endtab %}
-	
-	{% tab Web %}	
-In a project, from the wiki page click `Wiki Tools` in the upper right corner to `Edit Project Wiki`.
-Click `Insert` and choose `Table: Query on Files/Folders`.
-Enter your query in the box and click the **Insert** button. Once you save the wiki page, the results will be displayed as a table.
-    {% endtab %}
+{% tab R %}
+{% highlight r %}
+
+result = synTableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE \"specimenID\"='sampleA_conditionB'")
+ {% endhighlight %}
+{% endtab %}
 {% endtabs %}
-
-<br/>
 
 ### How to Download Based on Queries
 
