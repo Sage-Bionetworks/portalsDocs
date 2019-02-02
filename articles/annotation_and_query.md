@@ -121,19 +121,19 @@ synSetAnnotations(entity, annotations = list(fileType = "bam", assay = "rnaSeq")
 
 Queries in Synapse look SQL-like and you can query any `Table` or `View` with `<synId>`. 
 
-```
+{% highlight sql %}
 SELECT * FROM <synId> WHERE <expression>
-```
+{% endhighlight %}
 
 The `<expression>` section are the conditions for limiting the search. Below demonstrates some examples of limiting searches.
 
-```
+{% highlight sql %}
 SELECT * FROM syn123456 WHERE "fileFormat"='fastq'
-```
+{% endhighlight %}
 
-```
+{% highlight sql %}
 SELECT * FROM syn123456 WHERE "RIN"<=6.1
-```
+{% endhighlight %}
 
 Along with annotations added by users, every entity has a number of fields useful for searching. For a complete list, see:
 
@@ -172,21 +172,21 @@ foo <- as.list(synGetChildren(parent='syn1524884', includeTypes=list('file')))
 If annotations have been added to `Files`, they can be used to discover files of interest from `File View` syn123456.
 For example, you can identify all `Files` annotated as `bam` files (`fileFormat = bam`) with the following query:
 
-```
+{% highlight sql %}
 SELECT * FROM syn123456 WHERE "fileFormat"='bam'
-```
+{% endhighlight %}
 
 Likewise, if you had put the RNA-Seq related files described in the section above into the project syn00123 with the described annotations, then you could find all of the files for `conditionB` and `sampleA`:
 
-```
+{% highlight sql %}
 SELECT * FROM syn123456 WHERE "projectId"='syn00123' AND "specimenID"='sampleA_conditionB'
-```
+{% endhighlight %}
 
 Lastly, you can query on a subset of entities that have a specific annotation. You can limit the annotations you want displayed as following.
 
-```
+{% highlight sql %}
 SELECT specimenID,genomeBuild,fileFormat,platform FROM file WHERE "projectId"='syn00123' AND "specimenID"='sampleA_conditionB'
-```
+{% endhighlight %}
 
 Reproducible queries can be constructed using one of the analytical clients (command line, Python, and R) and on the web client, query results can be displayed in a table on a wiki page.
 
@@ -219,19 +219,19 @@ result = synTableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM s
 
 You can download files in a folder using queries. Currently this feature is only available in the command line client. For example, if you want to download all files in a folder that has a synapse id of `syn00123`, use
 
-```
+{% highlight sql %}
 synapse get -q "SELECT * FROM file WHERE parentId = 'syn00123'"
-```
+{% endhighlight %}
 
 ## Troubleshooting
 
 Single quotes in Synapse queries must be replaced by double quotes or two single quotes. In order to query for the `chemicalStructure` of `4'-chemical`: 
 
-```
+{% highlight sql %}
 SELECT * FROM syn123 where "chemicalStructure" = '4"-chemical'
 #OR
 SELECT * FROM syn123 where "chemicalStructure" = '4''-chemical'
-```
+{% endhighlight %}
 
 # See Also
 [Downloading Data](/articles/downloading_data.html), [Tables](/articles/tables.html)
