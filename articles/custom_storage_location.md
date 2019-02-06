@@ -127,6 +127,41 @@ In **Permissions**, click **CORS configuration**. In the CORS configuration edit
 <br/>
 For more information, please read: [How Do I Configure CORS on My Bucket?](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html#how-do-i-enable-cors){:target="_blank"}
 
+### Setup bucket with AWS cloudformation
+
+You can also use AWS Cloudformation to provision a custom Synapse bucket.
+
+Instructions:
+1. Download the CF [template](https://github.com/Sage-Bionetworks/scicomp-provisioner/blob/master/templates/SynapseExternalBucket-v2.yaml).
+2. Use the [awscli](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/index.html) or
+[aws console](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create) to execute the template which will provision the bucket.
+
+Example using the awscli:
+```
+aws cloudformation create-stack \
+--stack-name MyCustomSynapseBucket \
+--template-body file://SynapseExternalBucket.yaml \
+--parameters ParameterKey=Department,ParameterValue=Cancer ParameterKey=Project,ParameterValue=Mammography \
+ParameterKey=OwnerEmail,ParameterValue=joe.smith@company.com ParameterKey=AllowWriteBucket,ParameterValue=true
+ParameterKey=SynapseUserName,ParameterValue=jsmith
+```
+
+The above example shows required parameters.  The following are optional parameters:
+```
+# (Optional) true (default) to encrypt bucket, false for no encryption
+EncryptBucket: 'false'
+# (Optional) 'Enabled' to enable bucket versioning, default is 'Suspended'
+BucketVersioning: 'Enabled'
+# (Optional) 'Enabled' to enable bucket data life cycle rule, default is 'Disabled'
+EnableDataLifeCycle: 'Enabled'
+# (Optional) S3 bucket objects will transition into this storage class: GLACIER(default), STANDARD_IA, ONEZONE_IA
+LifecycleDataStorageClass: 'STANDARD_IA'
+# (Optional) Number of days until S3 objects are moved to the LifecycleDataStorageClass, default is 30
+LifecycleDataTransition: '90'
+# (Optional) Number of days (from creation) when objects are deleted from S3 and LifecycleDataStorageClass, default is 365000
+LifecycleDataExpiration: '1825'
+```
+
 ### Set S3 Bucket as Upload Location
 
 By default, your `Project/Folder` uses Synapse storage. You can use the external bucket configured above via our programmatic clients or web client.
