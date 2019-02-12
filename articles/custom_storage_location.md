@@ -25,7 +25,7 @@ While Synapse provides physical storage for files (using Amazon's S3), not all d
 There are two ways to setup an External AWS S3 Bucket.
 
 * [Setup with AWS Console](#setup-with-aws-console) - Manual setup using the [AWS Console].
-* [Setup with AWS Cloudformation](#setup-with-cloudformation) - Automated setup using [AWS cloudformation].
+* [Setup with AWS Cloudformation](#setup-with-cloudformation) - Automated setup using [AWS Cloudformation].
 
 **Please note that your S3 Bucket must be in the `us-east-1` (N. Virginia) region for this to work.**
 
@@ -139,7 +139,7 @@ For more information, please read: [How Do I Configure CORS on My Bucket?](https
 ### Setup with AWS Cloudformation
 
 For convienance [AWS Cloudformation] can be used to provision a custom AWS S3 bucket for use with Synapse.
-Using this approach will result in the exact same bucket as described in [Setup with AWS Conole](#setup-with-aws-console).
+Using this approach will result in the exact same bucket as described in [Setup with AWS Console](#setup-with-aws-console).
 
 Instructions:
 1. Download the [CF template](https://github.com/Sage-Bionetworks/scicomp-provisioner/blob/master/templates/SynapseExternalBucket-v2.yaml).
@@ -161,6 +161,9 @@ The above example shows required parameters:
 * Project -   An project tag.  Can be any arbitarty text
 * OwnerEmail - An bucket owner tag.  A valid email.
 * SynapseUserName - The Synapse account user name.
+__Note__: Department, Project, OwnerEmail are only used to
+[tag the bucket](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html)
+and can be arbitrary.
 
 
 The following are optional parameters:
@@ -182,6 +185,10 @@ LifecycleDataExpiration: '1825'
 # (Optional) Restrict downloading files from this bucket to only AWS resources (e.g. EC2 , Lambda) within the same region as this bucket. default is false.
 SameRegionResourceAccessToBucket: 'true'
 ```
+
+After executing the cloudformation command view the
+[AWS cloudformation dashboard](https://console.aws.amazon.com/cloudformation/home)
+to verify whether the bucket was provisioned successfully.
 
 
 ### Set S3 Bucket as Upload Location
@@ -463,4 +470,4 @@ projectDestination <- synRestPOST('/projectSettings', body=toJSON(projectDestina
 
 
 [AWS Console]: https://console.aws.amazon.com/console/
-[AWS Cloudformation]: https://aws.amazon.com/cloudformation/
+[AWS Cloudformation]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html
