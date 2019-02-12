@@ -20,9 +20,17 @@ While Synapse provides physical storage for files (using Amazon's S3), not all d
 
 {% include note.html content="System metadata, annotations, and provenance records are still stored in Synapse's S3 storage." %}
 
+
 ## Setting Up an External AWS S3 Bucket
+There are two ways to setup an External AWS S3 Bucket.
+
+* [Setup with AWS Console](#setup-with-aws-console) - Manual setup using the [AWS Console].
+* [Setup with AWS Cloudformation](#setup-with-cloudformation) - Automated setup using [AWS cloudformation].
 
 **Please note that your S3 Bucket must be in the `us-east-1` (N. Virginia) region for this to work.**
+
+
+### Setup with AWS Console
 
 Follow the documentation on Amazon Web Service (AWS) site to **[Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html){:target="_blank"}**. 
 
@@ -127,27 +135,38 @@ In **Permissions**, click **CORS configuration**. In the CORS configuration edit
 <br/>
 For more information, please read: [How Do I Configure CORS on My Bucket?](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html#how-do-i-enable-cors){:target="_blank"}
 
-### Setup bucket with AWS cloudformation
 
-You can also use AWS Cloudformation to provision a custom Synapse bucket.
+### Setup with AWS Cloudformation
+
+For convienance [AWS Cloudformation] can be used to provision a custom AWS S3 bucket for use with Synapse.
+Using this approach will result in the exact same bucket as described in [Setup with AWS Conole](#setup-with-aws-console).
 
 Instructions:
-1. Download the CF [template](https://github.com/Sage-Bionetworks/scicomp-provisioner/blob/master/templates/SynapseExternalBucket-v2.yaml).
-2. Use the [awscli](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/index.html) or
-[aws console](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create) to execute the template which will provision the bucket.
+1. Download the [CF template](https://github.com/Sage-Bionetworks/scicomp-provisioner/blob/master/templates/SynapseExternalBucket-v2.yaml).
+2. Use the [AWS Command Line](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/index.html) or
+[AWS Console](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create) to execute the
+template which will automatically provision the bucket.
 
-Example using the awscli:
+Example using the the `awscli`:
 ```
 aws cloudformation create-stack \
 --stack-name MyCustomSynapseBucket \
 --template-body file://SynapseExternalBucket.yaml \
 --parameters ParameterKey=Department,ParameterValue=Cancer ParameterKey=Project,ParameterValue=Mammography \
-ParameterKey=OwnerEmail,ParameterValue=joe.smith@company.com ParameterKey=AllowWriteBucket,ParameterValue=true
-ParameterKey=SynapseUserName,ParameterValue=jsmith
+ParameterKey=OwnerEmail,ParameterValue=joe.smith@company.com ParameterKey=SynapseUserName,ParameterValue=jsmith
 ```
 
-The above example shows required parameters.  The following are optional parameters:
+The above example shows required parameters:
+* Department - An department tag.  Can be any arbitarty text
+* Project -   An project tag.  Can be any arbitarty text
+* OwnerEmail - An bucket owner tag.  A valid email.
+* SynapseUserName - The Synapse account user name.
+
+
+The following are optional parameters:
 ```
+# (Optional) true for read-write, false (default) for read-only bucket
+AllowWriteBucket: 'true'
 # (Optional) true (default) to encrypt bucket, false for no encryption
 EncryptBucket: 'false'
 # (Optional) 'Enabled' to enable bucket versioning, default is 'Suspended'
@@ -160,7 +179,10 @@ LifecycleDataStorageClass: 'STANDARD_IA'
 LifecycleDataTransition: '90'
 # (Optional) Number of days (from creation) when objects are deleted from S3 and LifecycleDataStorageClass, default is 365000
 LifecycleDataExpiration: '1825'
+# (Optional) Restrict downloading files from this bucket to only AWS resources (e.g. EC2 , Lambda) within the same region as this bucket. default is false.
+SameRegionResourceAccessToBucket: 'true'
 ```
+
 
 ### Set S3 Bucket as Upload Location
 
@@ -439,3 +461,6 @@ projectDestination <- synRestPOST('/projectSettings', body=toJSON(projectDestina
 
 {% endtabs %}
 
+
+[AWS Console]: https://console.aws.amazon.com/console/
+[AWS Cloudformation]: https://aws.amazon.com/cloudformation/
