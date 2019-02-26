@@ -21,29 +21,8 @@ To create a `File View`, select the `Project` in which you would like to create 
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/qWjVlw2_n2w?rel=0" frameborder="0" allowfullscreen></iframe>
 
-{% tabs %}
-
-{% tab Python %}
-{% highlight python %}
-import synapseclient
-from synapseclient import EntityViewSchema
-syn = synapseclient.login()
-
-# define your scope, you can do this by getting the entity with "syn.get" or by using just the synId
-# two folders will be defined in this scope using both methods
-folder1 = syn.get('syn111')
-folder2 = 'syn222'
-
-# create a view named "My Fileview" to upload to project syn333
-entity_view = EntityViewSchema(name='My Fileview', parent='syn333', scopes=[folder1, folder2])
-
-# store the view in Synapse
-entity_view = syn.store(entity_view)
-
-{% endhighlight %}
-{% endtab %}
-
-{% endtabs %}
+<br/>
+Instructions for creating `Views` using the clients can be found in the [Python docs](https://python-docs.synapse.org/build/html/Views.html) and in the [R docs](https://r-docs.synapse.org/articles/views.html). 
 
 ## Create a Project View
 
@@ -88,11 +67,8 @@ Views can be used to update annotations in bulk. To add new annotations, see the
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/ij9AqLsoDk0?rel=0" frameborder="0" allowfullscreen></iframe>
 
-For example, if you would like to update the annotation `dogSays`:`bark` to `dogSays`:`woof` in every file in a `File View` with the synId syn456, you can do:
+For example, if you would like to use the Python client to update the annotation `dogSays`:`bark` to `dogSays`:`woof` in every file in a `File View` with the synId syn456, you can do:
 
-{% tabs %}
-
-{% tab Python %}
 {% highlight python %}
 from synapseclient import Table
 
@@ -107,11 +83,9 @@ bar['dogSays'] = 'woof'
 fv = syn.store(synapseclient.Table(foo.tableId, bar))
 
 {% endhighlight %}
-{% endtab %}
-
-{% endtabs %}
 
 ### Using Simple Search
+
 Views are in `Simple Search` mode by default. You can filter out `Projects` or `Files` of interest by selecting what characteristics you like using the facet menu on the left. You can toggle between simple and advanced search using the `Show advanced search/Show simple search` link.
 
 <img id="image" src="/assets/images/fileViewFacetedSearch.png">
@@ -122,18 +96,18 @@ In advanced search, you can use a SQL-like query to search for items in that vie
 <img id="image" src="/assets/images/fileViewAdvancedSearch.png">
 
 ## Insert a View into a Wiki
+
 Views can also be placed inside a [`Wiki`](/articles/wikis.html) once they have been created. You can embed the entire view or a subset of a query on it. 
 
 To insert a file view with a synId of `syn8146547`:
 
 In the **Edit Project Wiki** window, select **Table: Query on a Synapse Table/View** under the **Insert** dropdown. To embed the entire file view into the wiki enter `SELECT * FROM syn8146547` in the resulting pop-up.
 
-
 To embed a subset of the file view, like the advanced search query in the previous example, enter `SELECT * FROM syn8146547 WHERE Cell_Type = 'PSC'`. 
 
 <img id="image" src="/assets/images/subsetFileViewWiki.png">
 
-**Save** the query and the edits to the `Wiki` to embed the file view.
+Save the query and the edits to the `Wiki` to embed the view.
 
 # See Also
 [Annotations and Queries](/articles/annotation_and_query.html), [Tables](/articles/tables.html), [Wikis](/articles/wikis.html)
