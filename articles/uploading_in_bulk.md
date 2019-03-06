@@ -7,7 +7,7 @@ category: howto
 
 # Uploading and Downloading Data in Bulk
 
-Uploading a large number of files can be tedious when uploading one at a time on the web, especially if you want to set [annotations](http://docs.synapse.org/articles/annotation_and_query.html) and [provenance](http://docs.synapse.org/articles/provenance.html). The command line, Python client and R client have a convenient function for bulk upload and download called `sync`. The uploads require a tab delimited *manifest* where each file to be uploaded and it's annotations are specified as a row in the manifest file. In this article we will cover how to: 
+Working with a large number of files on the web can be tedious, especially if you want to download, upload, or set [annotations](http://docs.synapse.org/articles/annotation_and_query.html) and [provenance](http://docs.synapse.org/articles/provenance.html). The command line, Python client and R client have convenience functions for bulk upload and download. Uploading require a tab delimited *manifest* where each file to be uploaded and, optionally, annotations to be applied, are specified as a row in the file. Downloading in bulk requires identifying a container (`Folder`, `Project`, `Table`, or `View`) that contains the files of interest. In this article we will cover how to: 
 	
 * create a manifest 
 * upload the files in bulk
