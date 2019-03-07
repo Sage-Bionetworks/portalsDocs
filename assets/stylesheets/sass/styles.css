@@ -1,12 +1,26 @@
 /* Fix for stick footer from https://stackoverflow.com/questions/11555931/make-footer-stick-to-bottom-of-page-using-twitter-bootstrap */
 
-html,body{
-    height: 100%
+ 
+
+html,body {
+  height: 100%;
 }
 
 #image {
   max-width: 100%;
 }
+
+/** Fonts and general articles and text styling **/
+
+.panel ol, .panel ul {
+  padding-bottom: 10px !important;
+}
+
+.panel code {
+  border-radius: 3px;
+  font-family: Monaco, Consolas, "Courier New", monospace;
+}
+
 
 /* Mixins.scss
  * Snippets of reusable CSS to develop faster and keep code readable
@@ -43,15 +57,11 @@ html,body{
   background-color: white;
 }
 
-
 article pre {
   font-size: 13px !important; }
 
 .container > section {
   margin-top: 60px; }
-
-strong {
-  color: #666666; }
 
 .highlight {
   line-height: 25px;
@@ -144,69 +154,64 @@ h2 {
 
 
 
-/* 
-Nav-bar table of contents css
-*/
-
-#toc .toc-h1 {
-    padding-left: 0px;
-}
-
-#toc .toc-h2 {
-     padding-left: 15px;
-}
-
-#toc .toc-h3 {
-     padding-left: 30px;
-}
-
-#toc .toc-h4 {
-     padding-left: 45px;
-}
-
-#toc .toc-h5 {
-     padding-left: 60px;
-}
-
+/** Nav-bar table of contents css **/
 #toc ul {
-    margin: 0;
-    padding: 0;
-   list-style-type: none;
-   font-size: 1.0em;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 #toc li {
-    padding: 5px 10px;
+  padding: 5px 0px;
 }
 
-/*
-Tables render with borders in markdown
-*/
+#toc .toc-h1 {
+  padding-left: 0px;
+}
 
+#toc .toc-h2 {
+  padding-left: 10px;
+}
+
+#toc .toc-h3 {
+  padding-left: 20px;
+}
+
+#toc .toc-h4 {
+  padding-left: 30px;
+}
+
+#toc .toc-h5 {
+  padding-left: 40px;
+}
+
+ 
+/* Tables render with borders in markdown */
 table.markdown-table {
-  padding: 0; }
- .markdown-table tr {
-    border-top: 1px solid #cccccc;
-    background-color: white;
-    margin: 0;
-    padding: 0; }
-  .markdown-table tr:nth-child(2n) {
-      background-color: #f8f8f8; }
-   .markdown-table tr th {
-      font-weight: bold;
-      border: 1px solid #cccccc;
-      text-align: left;
-      margin: 0;
-      padding: 6px 13px; }
-  .markdown-table tr td {
-      border: 1px solid #cccccc;
-      text-align: left;
-      margin: 0;
-      padding: 6px 13px; }
-    .markdown-table tr th :first-child, .markdown-table tr td :first-child {
-      margin-top: 0; }
-    .markdown-table tr th :last-child, .markdown-table tr td :last-child {
-      margin-bottom: 0; }
+  margin: 0 0 20px 0;
+}
+
+.markdown-table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-table tr th {
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.markdown-table tr td {
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+
+
 
 /*
 index.html sidebar
@@ -366,14 +371,7 @@ section:last-child, .section:last-child, section.last, .section.last {
   background-position-y: 0px;
 }
 
-#bootstrap-overrides code {
-   /* padding: 2px 4px; */
-    font-size: 100%;
-   /* color: #555555; */
-   /* background-color: #f5f5f5; */
-    border-radius: 3px;
-    font-family: Monaco, Consolas, "Courier New", monospace;
-}
+
 
 .navbar-collapse.in {
     overflow: hidden;
@@ -1186,6 +1184,3 @@ li.active span.round-tabs.five{
 
 /*End landing page styling*/
 
-/* Match font size of ordered lists to the rest of text*/
-ol {    padding-bottom: 10px;
-}

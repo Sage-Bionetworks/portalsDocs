@@ -24,25 +24,17 @@ layout: default
     <h5 class="search-text">Find articles and examples for using Synapse in your research</h5>
     <div id="landing-cse">
         <script>
-            (function() {
-                var cx = '004392328299901121883:dlvsk1-fk4y';
+              (function() {
+                var cx = '017897990821435998616:zyxa_umz9ys';
                 var gcse = document.createElement('script');
                 gcse.type = 'text/javascript';
                 gcse.async = true;
                 gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
                 var s = document.getElementsByTagName('script')[0];
                 s.parentNode.insertBefore(gcse, s);
-            })();
-            $(function() {
-                if (window.location.pathname && window.location.pathname != '/') {
-                    $("ul.nav li a").each(function(){
-                        if($(this).attr("href") == window.location.pathname)
-                            $(this).parent().addClass("active");
-                    })
-                }
-            });
-        </script>
-        <gcse:search></gcse:search>
+              })();
+            </script>
+            <gcse:search></gcse:search>
     </div>
 </div>
 <div class="col-xs-12 col-md-12 col-lg-12" id="subjects">
