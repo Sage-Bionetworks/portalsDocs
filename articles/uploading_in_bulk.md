@@ -36,7 +36,7 @@ The required columns in the manifest are:
 
 <br/>
 
-The above manifest describes a "file.csv" that will be uploaded to the Synapse folder `syn123` and named "Tardar Sauce". The manifest describes the provenance of the file indicating that it was generated using code deposited in GitHub (https://github.com/your/code/repo) from the data in `syn654`. Additionally, the file has been annotated with; `emotion:grumpy` and `species:cat`. Additonal annotations are associated with the file by adding column variables (e.g. assay, fileFormat, cellType, etc.).
+The above manifest describes a "file.csv" that will be uploaded to the Synapse folder `syn123` and named "Tardar Sauce". The manifest describes the provenance of the file indicating that it was generated using code deposited in GitHub (https://github.com/your/code/repo) from the data in `syn654`. Additionally, the file has been annotated with `emotion: grumpy` and `species: cat`. Additional annotations could be associated with the file by adding more columns.
 
 To review:
 * the **path** and **parent** columns are required
