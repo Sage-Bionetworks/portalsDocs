@@ -42,15 +42,15 @@ To create a `Project`:
 1. Click the **Create Project** button.
 1. Decide on a unique name for your `Project` and click Save.
 
-By default, your newly created `Project` is private; you are the only person who can access it and any content you include in it.  In another tutorial you will learn how to share your created `Project` with other users.
+By default, your newly created `Project` is private. You are the only person who can access it, including any content in it. In another tutorial you will learn how to share your project with other users.
 
-Objects created in Synapse, like `Files`, `Folders`, `Projects`,  are assigned a Synapse ID, unique identifiers used for reference with the format `syn12345678`.
+Synapse projects are assigned a Synapse ID, unique identifiers used for reference with the format `syn12345678`.
 
 To find your project at any time, you can see your projects on your [dashboard](https://www.synapse.org/#!Profile:v/projects).
 
 ## Organizing Data: creating Files and Folders
 
-You can use the `Files` tab to share your project's data, code, results, and any other information. Synapse `Files` and `Folders` are identified by a unique identifier (Synapse ID). Synapse `Folders` are used to organize content and can contain other `Folders` and `Files`.
+You can use the `Files` tab to upload data, code, results, and other information to your project. Synapse Folders are used to organize content and can contain other Folders and Files. Synapse `Folders` and `Files` are also assigned a unique identifier (Synapse ID).
 
 To add a `Folder`:
 
@@ -63,24 +63,22 @@ To upload a file into that folder:
 1.  Use the Tools menu and select **Upload or Link to File**.
 1. Use the Browse button to select the file, or drag and drop it to upload and click Save.
 
-To explore other features available for `Files` and `Folders`, read about [annotating files](/articles/annotation_and_query.html), [assigning DOIs](/articles/doi.html), [versioning](/articles/files_and_versioning.html), [provenance](/articles/provenance.html),and [sharing settings](/articles/access_controls.html).
+To explore other features available for files and folders, read about [annotating files](/articles/annotation_and_query.html), [assigning DOIs](/articles/doi.html), [versioning](/articles/files_and_versioning.html), [provenance](/articles/provenance.html),and [sharing settings](/articles/access_controls.html).
 
 ## Adding a Wiki to your Project
 
-A Wiki is a document that can be edited by multiple people on the web. The `Wiki` tab in a `Project` provides a space for a description of your project. This `Wiki` can be organized with subpages and a table of contents.
+A Wiki is a document that can be edited by multiple people on the web. The Wiki tab in a project provides a space to write a description. This Wiki can be organized with subpages and a table of contents. Folders and files in your project can also have a wiki. You can use the wiki to document the contents of the folder or file, similar to a README.
 
-`Folders` and `Files` in your `Project` can also have a `Wiki`. You can use the `Wiki` to document the contents of the `Folder` or `File`, similar to a README.
-
-`Wiki` pages are written with [Markdown](https://www.markdownguide.org/), a lightweight syntax for styling text on the web. In addition to standard Markdown, `Wiki` pages can contain customized content, including images, tables, code blocks, LaTeX formatted equations, and scholarly references. Synapse Wiki widgets also allow you to embed content based on other resources stored in Synapse.
+Wiki pages are written with [Markdown](https://www.markdownguide.org/), a lightweight syntax for styling text on the web. In addition to standard Markdown, `Wiki` pages can contain customized content, including images, tables, code blocks, LaTeX formatted equations, and scholarly references. Synapse Wiki widgets also allow you to embed content based on other resources stored in Synapse.
 
 See the [Wiki](/articles/wikis.html) user guide for more information and examples.
 
-Create a Project `Wiki`:
+Create a Project wiki:
 
 1. From the project page, click the **Tools button** and choose **Edit Project Wiki**.
 1. Add some text describing your project, and then click Save.
 
-To add a `Wiki` to a `Folder` or `File`:
+To add a wiki to a folder or file:
 
 1. Click on the Files tab and navigate to the Folder or File.
 1. Use the Tools menu and select **Edit Folder Wiki** or **Edit File Wiki**.
@@ -88,9 +86,14 @@ To add a `Wiki` to a `Folder` or `File`:
 
 ## Local Folder and File Sharing Settings
 
-By default, access to `Folders` and `Files` is controlled by the **sharing settings** that the project has. You may also set individual sharing settings for specific `Folders` and `Files` within a `Project`.
+By default, access to folders and files is controlled by the same **sharing settings** as the project. You may set different sharing settings for specific folders and files in a project.
 
-You may share a `Project` with specific people or make it public. To do this click on the **Project Settings** menu and select **Project Sharing Settings**. For more details, read the [How to Share Projects](/articles/access_controls.html#how-to-share-projects) section of the Sharing Settings and Conditions for Use instructions.
+You may share a `Project` with specific people or make it public.
+
+1. Click on the **Project Settings** menu and select **Project Sharing Settings**.
+1. Add individuals or teams with different permissions.
+
+For more details, read the [How to Share Projects](/articles/access_controls.html#how-to-share-projects) section of the Sharing Settings and Conditions for Use instructions.
 
 For instructions on changing sharing settings for `Folders` and `Files`, read the [Sharing Other Content](/articles/access_controls.html#sharing-other-content) section of the Sharing Settings and Conditions for Use instructions.
 
