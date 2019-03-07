@@ -8,19 +8,17 @@ order: 1
 
 # Get Started with Synapse
 
-This guide is for new users who are interested in learning about Synapse. Here you will learn fundamental Synapse features by performing some common tasks. You’ll learn how to:
+This guide is for new users who are interested in learning about Synapse. You will learn fundamental Synapse features by performing some common tasks:
 
 * Create your own project and add content to Synapse
-* Provide a project description which lives alongside your materials, via the Synapse `Wiki` tools
-* Share your work with other Synapse users, teams of users, or make your work public
+* Provide a project description alongside your materials via the Synapse `Wiki` tools
+* Share your work with other Synapse users, teams of users, or the public
 
 ## What is Synapse?
 
-Synapse is an open source platform that can be used to carry out, track, and communicate research. Synapse allows scientific content (data, code, results) and descriptions of that work to be stored in the same location. Synapse hosts a growing number of [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) including [Sage/DREAM Challenges](http://dreamchallenges.org/).
+Synapse is an open source collaborative platform. It can store data, code, results, and descriptions research work. Synapse hosts many [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects). It also hosts crowdsourced competitions, including [DREAM Challenges](http://dreamchallenges.org/). [Sage Bionetworks](http://www.sagebionetworks.org) provides Synapse services free of charge to the scientific community through generous support from various [funding sources](/articles/faq.html#how-is-synapse-funded).
 
-[Sage Bionetworks](http://www.sagebionetworks.org) provides Synapse services free of charge to the scientific community through generous support from various [funding sources](/articles/faq.html#how-is-synapse-funded){:target='_blank'}.
-
-Synapse operates under a complete [governance process](/articles/governance.html) that includes [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}, guidelines and operating procedures, privacy enhancing technologies, as well as the right of audit and external reviews.
+Synapse operates under a thorough [governance process](/articles/governance.html). This includes [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4), guidelines, and operating procedures.
 
 ## Register for a Synapse Account
 
@@ -28,17 +26,21 @@ Anyone can browse public content on the Synapse web site, but to download and cr
 
 <a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>{:target="_blank"}
 
-Synapse can store human subject data that has sharing and use restrictions. Before you can upload files you will need to take a quiz about what kinds of items can be shared in Synapse. To start this process:
+Synapse can store human subject data with sharing and use restrictions. Before you can upload files, you must demonstrate you understand what you can share in Synape. To start this process:
 
 <a href="https://www.synapse.org/#!Quiz:Certification" class="btn btn-primary">Become a Certified User</a>{:target="_blank"}
 
-Explore our [accounts, certification and profile validation](/articles/accounts_certified_users_and_profile_validation.html) page for more information on the different levels of users.
+Read the [accounts, certification, and profile validation](/articles/accounts_certified_users_and_profile_validation.html) page to learn more about the different levels of users.
 
 ## Project and Data Management on Synapse
 
-Once you have a Synapse account you can start adding content. All Synapse content is organized in `Projects` where you can collaboratively access and share `Wikis` (descriptions of your Project) and `Files`. Each `Project` also contains a `Discussion Forum`.
+Synapse content is organized in `Projects`. In a project you can upload files and write descriptions (Wikis). Each Project also contains a discussion forum.
 
-As an exercise we are going to create an example `Project`. Go to your [projects list](https://www.synapse.org/#!Profile:v/projects) on your dashboard. Click the **Create Project** button. Decide on a unique name for your `Project` and click Save.
+To create a `Project`:
+
+1. Go to your [projects list](https://www.synapse.org/#!Profile:v/projects) on your dashboard.
+1. Click the **Create Project** button.
+1. Decide on a unique name for your `Project` and click Save.
 
 By default, your newly created `Project` is private; you are the only person who can access it and any content you include in it.  In another tutorial you will learn how to share your created `Project` with other users.
 
