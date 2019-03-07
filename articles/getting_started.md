@@ -24,11 +24,11 @@ Synapse operates under a thorough [governance process](/articles/governance.html
 
 Anyone can browse public content on the Synapse web site, but to download and create content you will need to register for an account using an email address. You will receive an email message for verification to complete the registration process.
 
-<a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>{:target="_blank"}
+<a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>
 
 Synapse can store human subject data with sharing and use restrictions. Before you can upload files, you must demonstrate you understand what you can share in Synape. To start this process:
 
-<a href="https://www.synapse.org/#!Quiz:Certification" class="btn btn-primary">Become a Certified User</a>{:target="_blank"}
+<a href="https://www.synapse.org/#!Quiz:Certification" class="btn btn-primary">Become a Certified User</a>
 
 Read the [accounts, certification, and profile validation](/articles/accounts_certified_users_and_profile_validation.html) page to learn more about the different levels of users.
 
