@@ -7,9 +7,9 @@ order: 2
 ---
 
 
-# What is a Synapse Project? 
+# Projects in Synapse 
 
-Synapse `Projects` are online workspaces where researchers can collaborate and organize their work, regardless of whether they're working independently, collaborating in small working groups, or sharing their research across large consortia. Here are just a few things you can do with a Synapse Project: 
+`Projects` in Synapse serve as workspaces where researchers collaborate.  Researchers using Synapse can work in private or collaborate in groups. Some users share their research across large consortia. Projects support the following:
 
 * **Organize Your Work**: With Synapse you can organize the parts in your workflow (data, code, etc) into a hierarchy like a file system. With the tabs across the top of each project, you can easily navigate to your [Wikis](http://docs.synapse.org/articles/wikis.html), [Files and Folders](http://docs.synapse.org/articles/files_and_versioning.html), SQL-based [Tables](http://docs.synapse.org/articles/tables.html), and even conduct conversations using [Discussion Forums](http://docs.synapse.org/articles/discussion.html). 
 
@@ -30,6 +30,6 @@ and use it in your project. Other projects using your data are displayed automat
 
 ## Create Your First Project
 
-You can create a project from your Profile page; visit this page by clicking on your name in the header of Synapse once you've logged in. You'll see your profile as well as tabs for Projects, Teams, and Settings (and Challenges, if you've joined any). When you are on the Projects tab, click on Create a New Project. You'll be prompted to enter your project name to get started. 
+Visit your Profile page by clicking on your name in the header of Synapse once you've logged in. You'll see your profile as well as tabs for Projects, Teams, and Settings (and Challenges, if you've joined any). When you are on the Projects tab, click on Create a New Project. You'll be prompted to enter your project name to get started. 
 
 Visit our [Getting Started](/articles/getting_started.html) guide for more information how to begin using Synapse. 
