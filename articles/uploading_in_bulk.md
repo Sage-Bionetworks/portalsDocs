@@ -22,7 +22,12 @@ Working with a large number of files on the web can be tedious, especially if yo
 
 Files to be uploaded are specified in a tab separated (`.tsv`) manifest. The manifest has columns that contain information about each file to be uploaded along with annotations that will be associated with the file in Synapse.
 
-The required columns in the manifest are `path`, the directory of the file to be uploaded, and `parent`, the synId of the folder. It is optional to link code repositories via the `executed` column. Here is an example manifest that uploads a single file:
+The required columns in the manifest are:
+
+ - `path`: the directory of the file to be uploaded
+ -  `parent`: the Synapse ID of the Folder to upload to
+ 
+ It is optional to link provenance - the `used` column can indicate files that were used to create the one being uploaded, and the `executed` column can indicate code (in Synapse or on the web) that was used to generate the file. Here is an example manifest that uploads a single file:
 
 {:.markdown-table}
 | path | parent | name | used | executed | emotion| species |
