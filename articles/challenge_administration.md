@@ -16,7 +16,7 @@ This guide is meant to help organizers create a **challenge space** within Synap
 
 ## A - Challenge Space Creation
 
-Steps A1-5 below will be completed for you by using the `createchallenge` command after installing the[challengeutils](https://github.com/Sage-Bionetworks/challengeutils) python package.  This documentation below serves to provide detailed descriptions for each of the steps.
+Steps A1-5 below will be completed for you by using the `createchallenge` command after installing the [challengeutils](https://github.com/Sage-Bionetworks/challengeutils) python package.  This documentation below serves to provide detailed descriptions for each of the steps.
 
 **For all DREAM challenges, please contact the Synapse Access and Compliance Team (act@sagebase.org) for step A4!**
 
