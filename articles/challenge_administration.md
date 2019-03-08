@@ -6,16 +6,21 @@ category: howto
 ---
 
 ## Challenge Guide Overview
-This guide is meant to help challenge organizers create a space within Synapse to host the challenge, giving participants a place to learn about the challenge, join the challenge community, submit entries, track progress and view results.
+
+This guide is meant to help organizers create a **challenge space** within Synapse to host a crowd-sourced challenge.  This space gives participants a place to learn about the challenge, join the challenge community, submit entries, track progress and view results.  This document will focus on:
+
+* Creation
+* Configuration
+* Scoring
 
 
-## A - Creating a Challenge Space
+## A - Challenge Space Creation
 
 Steps A1-5 below will be completed for you by using the `createchallenge` command after installing the[challengeutils](https://github.com/Sage-Bionetworks/challengeutils) python package.  This documentation below serves to provide detailed descriptions for each of the steps.
 
 **For all DREAM challenges, please contact the Synapse Access and Compliance Team (act@sagebase.org) for step A4!**
 
-### 1 - Creating Challenge Projects
+### 1 - Challenge Projects
 
 It is recommended for all challenges to have a live and staging Synapse Project.  The two projects should be named something like this:  "Exciting Challenge Site" and "Exciting Challenge Staging Site".  The 'live' challenge project can serve as a 'landing page' for visitors wishing to learn about the challenge, as well as a repository for data files and other resources related to the challenge while the challenge is in development (staging).
 
@@ -25,7 +30,7 @@ The comprehensive [DREAM Challenge Wiki Template](https://www.synapse.org/#!Syna
 
 To use the Challenge Wiki Template, we recommend using [challengeutils](https://github.com/Sage-Bionetworks/challengeutils) to assist you in the creation of your challenge space.
 
-### 2 - Creating Synapse Teams
+### 2 - Synapse Teams
 
 Here are the teams required and recommended for challenges.
 
@@ -38,7 +43,7 @@ Here are the teams required and recommended for challenges.
 Please visit this [page](/articles/teams.html) to learn more about teams. All three of these teams are created by using [challengeutils](https://github.com/Sage-Bionetworks/challengeutils).
 
 
-### 3 - Connect the Participant Team to the Challenge Project 
+### 3 - Connecting Participant Team to Challenge Project 
 
 The participant team you created needs to be connected to the to the challenge to allow for participants to register for the challenge.
 
@@ -75,7 +80,7 @@ challengeId<-challenge$id
        {% endtab %}
 	{% tab Web %}
 
-Navigate to your challenge site (E.g. www.synapse.org/#!Synapse:syn12345) and click on Tools, Run Challenge and insert your challenge team name.
+Navigate to your challenge site and add `/challenge` to the end of the URL (E.g. www.synapse.org/#!Synapse:syn12345/challenge).  Click on `Challenge Tools`, `Run Challenge` and insert your challenge team name.
 
 <img src="/assets/images/attachTeamToChallenge.png">
 
@@ -83,7 +88,7 @@ Navigate to your challenge site (E.g. www.synapse.org/#!Synapse:syn12345) and cl
 	{% endtab %}
 {% endtabs %}
 
-### 4 - Add a Sign-up button
+### 4 - Adding a Sign-up button
 
 You can add a "Join" button on a wiki page to allow people to join your challenge.  Edit a wiki page, and click Insert > "Join Team Button".  A 'widget' will be added to your wiki page like this:
 
@@ -98,7 +103,7 @@ contact them (act@sagebase.org) and provide the text of the the ToU and the name
 
 {% include note.html content="Please contact the Synapse Access and Compliance Team with the Terms of Use and ID of your team prior to launching the challenge." %}
 
-### 5 - Configure Team Registration widgets
+### 5 - Team Registration widgets
 
 The challenge wiki template has placeholders for widgets which (1) register teams with the challenge, (2) list registered teams, and (3) list participants who have not joined any registered team.  At the time of this writing the templates appear in Sect. "How to participate" and "Participants & Teams".  Edit the markdown to see the widget definitions:
 
@@ -142,7 +147,7 @@ Click on the Challenge Tab:
 {% endtabs %}
 
 
-## B - Configuring a Challenge
+## B - Challenge Space Configuration
 
 ### 1 - Edit Challenge Wiki Privately
 
@@ -171,30 +176,12 @@ Challenge participants submit their entries as Synapse Files to an Evaluation qu
 
 Please visit the [Evaluation Queue article](/articles/evaluation_queues.html) to learn about queues.
 
-#### 3.2 - Enable Challenge Statistics
+### 4 - Share the Challenge!
 
-Share your Evaluations with the service account 'evaluationstatistics', giving 'Can Score' access.  This will result in a statistical summary of your challenge appearing on this [page](https://www.synapse.org/#!Synapse:syn2504723). The specific steps are:
-- Navigate to your Challenge project in Synapse
-- Click on the `Challenge` tab
-- Next to each Evaluation submission queue click `Share`
-- In the `name` field type `evaluationstatistics`.  The new entry will appear in the list of accessors above.
-- Next to the new entry use the pull down menu to change `Can View` to `Can Score.`
-- Click Save.
+Now that you have successfully configured the challenge. Please view the [Access Controls article](/articles/access_controls.html) to learn how to share the challenge and apply conditions for use on the data.
 
+A common pattern is to make the challenge project publicly viewable so all Synapse users can read about the challenge.  Participant data sets are organized in the project, but are limited in access so only challenge participants may see them.  Data used for testing/scoring submissions may also be placed with the project but with even tighter access restrictions, so that only challenge organizers may see the data files. 
 
-#### 3.3 - Add a Submit button to your wiki (Optional)
-
-You can add a "Submit" button on a wiki page to allow people to submit entries to the Evaluation you set up.  Edit a wiki page, and click Insert > "Submit to Evaluation Button".  A 'widget' will be added to your wiki page like this:
-
-```
-${evalsubmit?subchallengeIdList=evalId1,evalId2&unavailableMessage=Join the team to submit to the challenge}
-```
-
-You customize the subchallengeIdList and other parameters.  The IDs in the subchallengeIdList are those shown in the Challenge Admin project tab. 
-
-#### 3.4 - Large email volumes
-
-Synapse has a limit on the volume of email messages sent out.  Currently accounts may not send more than ten messages per minute.  If you feel your scoring application needs to send larger volumes, please contact Synapse administration.
 
 ## C - Scoring Submissions
 Every submission has a unique submission id, this should not be confused with synapse ids which start with `syn`.  A submission can also contain annotations that can be used to display on live leaderboards.  It is good to note that these added annotations can be set to either public or private.  Private annotations cannot be read by people on the live leaderboard unless the READ_PRIVATE_SUBMISSIONS ACL is set on the evaluation queue.  Learn more about submissions in the [Evaluation Queue article](/articles/evaluation_queues.html)
@@ -228,21 +215,9 @@ bundles <- as.list(synGetSubmissionBundles(evaluation, status="SCORED"))
 {% endtabs %}
 
 
-### 2 - Share Scoring Code with Participants
+### 1 - Revealing Submissions and Scores
 
-Although validation/test data is typically kept secret during a challenge, you should make the scoring algorithm itself available to participants.  A straightforward way to do this is to push the code to your GitHub fork, then link to a Synapse entity or wiki using its GitHub URL.
-
-## D - Share the Challenge!
-
-Now that you have successfully configured the challenge. Please view the [Access Controls article](/articles/access_controls.html) to learn how to share the challenge and apply conditions for use on the data.
-
-A common pattern is to make the challenge project publicly viewable so all Synapse users can read about the challenge.  Participant data sets are organized in the project, but are limited in access so only challenge participants may see them.  Data used for testing/scoring submissions may also be placed with the project but with even tighter access restrictions, so that only challenge organizers may see the data files. 
-
-## E - Revealing Submissions and Scores
-
-### 1 - Create a Leaderboard
-
-Leaderboards are sorted, paginated, tabular forms that display submission annotations (such as scores from your scoring application and other metadata). Leaderboards are dynamic and update as annotations/scores change, so can provide real-time insight into how your Challenge is going. The scoring application templates mentioned above print out valid sample widget text suitable for pasting into the wiki editor.  In the "Challenge Admin" control, described above, you provide "Can View" access to whomever you wish to be able to see the leaderboard. 
+To reveal submissions of a challenge, organizers can create a leaderboard. Leaderboards are sorted, paginated, tabular forms that display submission annotations (such as scores from your scoring application and other metadata). Leaderboards are dynamic and update as annotations/scores change, so can provide real-time insight into how your Challenge is going. The scoring application templates mentioned above print out valid sample widget text suitable for pasting into the wiki editor.  In the "Challenge Admin" control, described above, you provide "Can View" access to whomever you wish to be able to see the leaderboard. 
 
 To add a leaderboard to your Challenge Wiki,
 * First go to the Challenge Project and get the ID of the Evaluation of interest; Challenges can have multiple evaluations so it's important to identify which evaluation you want to summarize.
@@ -250,8 +225,4 @@ To add a leaderboard to your Challenge Wiki,
 * Finally, you'll configure your leaderboard by entering a query of the form "Select * from Evaluation_12345" where 12345 is the ID from the first step. 
 
 <br>If you have some annotations already then you can click "Refresh Columns" to add display columns for the existing annotations. Otherwise you have to add the columns manually. You can reorder the columns and choose what to sort by. Keep in mind that "private" annotations will not be visible to participants (only to challenge administrators). 
-
-**Test everything on some dry run users**
-
-**DON'T SKIP THIS STEP!!!**  Really.  Get some friends to try to go through the whole process of signing up and submitting to the challenge, starting with just a link to synapse.org.  Do this 2 weeks before you intend to launch publicly so you can actually do the little bug fixing needed to smooth things out for the larger launch.
 
