@@ -99,6 +99,10 @@ Images can be inserted using either Markdown or HTML, it all depends on your pre
 ```
 
 ## Install Dependencies
+To install bundler (mac, install brew first):
+
+    brew install ruby
+    gem install bundler
 
 With Bundler:
 
