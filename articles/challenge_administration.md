@@ -36,7 +36,7 @@ Here are the teams required and recommended for challenges.
 
 * **Challenge Participant Team** - Synapse Projects must have a participant team associated with them for them to be a challenge.  This will allow users to register for your challenge.
 
-* **Challenge Administrator Team** - This team is highly recommended to help assist in administrator access to challegne resources.
+* **Challenge Administrator Team** - This team is highly recommended to help assist in administrator access to challenge resources.
 
 * **Challenge Pre-registration Team** - This team is recommended for when the challenge is under development.  It allows participants to join a mailing list to receive notification of challenge launch news.
 
