@@ -14,7 +14,7 @@ This guide is meant to help organizers create a **challenge space** within Synap
 * Scoring
 
 
-## A - Challenge Space Creation
+## Create a Challenge Space
 
 Steps A1-5 below will be completed for you by using the `createchallenge` command after installing the [challengeutils](https://github.com/Sage-Bionetworks/challengeutils) python package.  This documentation below serves to provide detailed descriptions for each of the steps.
 
