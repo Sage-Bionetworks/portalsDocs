@@ -28,7 +28,9 @@ The command `createchallenge` creates two Synapse projects:
 
 The command `createchallenge` requires you to provide a unique name for the challenge. If you specify "My Awesome Challenge", the Synapse projects "My Awesome Challenge" (live project) and "My Awesome Challenge - staging" will be created.
 
-The comprehensive [DREAM Challenge Wiki Template](https://www.synapse.org/#!Synapse:syn18058986/wiki/) is a great starting point for your challenge's wiki pages.  It also helps to have a look at [some examples from previous challenges](http://dreamchallenges.org/).  For background on how to create and share Projects, Files, Folders and wikipages, please see our [making a project guide](/articles/making_a_project.html).  
+The wiki of the staging challenge project will be initialize with the [DREAM Challenge Wiki Template](https://www.synapse.org/#!Synapse:syn18058986/wiki/). Before editing it with content relevant to your challenge, please have a look at [some examples from past challenges](http://dreamchallenges.org/).
+
+For background on how to create and share Projects, Files, Folders and wiki pages, please see our article [Making a Project](/articles/making_a_project.html).  
 
 {% include important.html content="All edits and changes even after the challenge has launched should be made on the staging site." %}
 
