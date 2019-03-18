@@ -22,7 +22,11 @@ Steps A1-5 below will be completed for you by using the `createchallenge` comman
 
 ### 1 - Challenge Projects
 
-It is recommended for all challenges to have a live and staging Synapse Project.  The two projects should be named something like this:  "Exciting Challenge Site" and "Exciting Challenge Staging Site".  The 'live' challenge project can serve as a 'landing page' for visitors wishing to learn about the challenge, as well as a repository for data files and other resources related to the challenge while the challenge is in development (staging).
+The command `createchallenge` creates two Synapse projects:
+- **Live challenge project.** The 'live' challenge project can serve as a 'landing page' for visitors wishing to learn about the challenge, as well as a repository for data files and other resources related to the challenge.
+- **Staging challenge project.** This project is used by the organizers during the development of the challenge to share files and draft the challenge wiki.
+
+The command `createchallenge` requires you to provide a unique name for the challenge. If you specify "My Awesome Challenge", the Synapse projects "My Awesome Challenge" (live project) and "My Awesome Challenge - staging" will be created.
 
 The comprehensive [DREAM Challenge Wiki Template](https://www.synapse.org/#!Synapse:syn18058986/wiki/) is a great starting point for your challenge's wiki pages.  It also helps to have a look at [some examples from previous challenges](http://dreamchallenges.org/).  For background on how to create and share Projects, Files, Folders and wikipages, please see our [making a project guide](/articles/making_a_project.html).  
 
