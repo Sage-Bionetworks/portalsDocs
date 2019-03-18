@@ -37,7 +37,7 @@ For background on how to create and share Projects, Files, Folders and wiki page
 
 ### 2 - Synapse Teams
 
-Here are the teams required and recommended for challenges.
+Here are the Synapse Teams created by the tool `createchallenge`:
 
 * **Challenge Participant Team** - Synapse Projects must have a participant team associated with them for them to be a challenge.  This will allow users to register for your challenge.
 
