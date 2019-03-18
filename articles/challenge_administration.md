@@ -41,7 +41,7 @@ Here are the Synapse Teams created by the tool `createchallenge`:
 
 * **Challenge Participant Team.** This Synapse Team will include the individual participants and teams that register to the challenge.
 
-* **Challenge Administrator Team** - This team is highly recommended to help assist in administrator access to challenge resources.
+* **Challenge Administrator Team.** The challenge organizers must be added to this list. This allows organizers to share files and edit the content of the wiki on the staging project, for example.
 
 * **Challenge Pre-registration Team** - This team is recommended for when the challenge is under development.  It allows participants to join a mailing list to receive notification of challenge launch news.
 
