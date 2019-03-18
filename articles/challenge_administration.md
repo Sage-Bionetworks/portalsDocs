@@ -7,7 +7,7 @@ category: howto
 
 ## Challenge Guide Overview
 
-This guide is meant to help organizers create a **challenge space** within Synapse to host a crowd-sourced challenge.  This space gives participants a place to learn about the challenge, join the challenge community, submit entries, track progress and view results.  This document will focus on:
+This guide is meant to help organizers create a **challenge space** within Synapse to host a crowd-sourced challenge.  This space gives participants a place to learn about the challenge, join the challenge community, submit entries, track their progress and view results.  This document will focus on:
 
 * Creation
 * Configuration
