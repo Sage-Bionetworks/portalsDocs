@@ -34,7 +34,6 @@ For background on how to create and share Projects, Files, Folders and wiki page
 
 {% include important.html content="All edits and changes even after the challenge has launched should be made on the staging site." %}
 
-To use the Challenge Wiki Template, we recommend using [challengeutils](https://github.com/Sage-Bionetworks/challengeutils) to assist you in the creation of your challenge space.
 
 ### 2 - Synapse Teams
 
