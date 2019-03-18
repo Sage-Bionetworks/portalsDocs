@@ -11,7 +11,7 @@ This guide is meant to help organizers create a **challenge space** within Synap
 
 * Creation of the challenge space
 * Configuration of the challenge space
-* Scoring
+* Scoring of the submitted entries
 
 
 ## Create a Challenge Space
