@@ -39,7 +39,7 @@ For background on how to create and share Projects, Files, Folders and wiki page
 
 Here are the Synapse Teams created by the tool `createchallenge`:
 
-* **Challenge Participant Team** - Synapse Projects must have a participant team associated with them for them to be a challenge.  This will allow users to register for your challenge.
+* **Challenge Participant Team.** This Synapse Team will include the individual participants and teams that register to the challenge.
 
 * **Challenge Administrator Team** - This team is highly recommended to help assist in administrator access to challenge resources.
 
