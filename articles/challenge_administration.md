@@ -97,45 +97,13 @@ Please visit the [Evaluation Queue article](/articles/evaluation_queues.html) to
 
 ## Interacting with Submissions
 
-Every submission has a unique submission id, this should not be confused with synapse ids which start with `syn`.  A submission can also contain annotations that can be used to display on live leaderboards.  It is good to note that these added annotations can be set to either public or private.  Private annotations cannot be read by people on the live leaderboard unless the READ_PRIVATE_SUBMISSIONS ACL is set on the evaluation queue.  Learn more about submissions in the [Evaluation Queue article](/articles/evaluation_queues.html)
-
-{% tabs %}
-	{% tab Python %}
-		{% highlight python %}
-#Get submission / annotations
-sub = syn.getSubmission(submissionId)
-annotations = syn.getSubmissionStatus(submissionId)
-#Get all scored submissions in an evaluation queue
-e = syn.getEvaluation(e)
-bundles = syn.getSubmissionBundles(e, status = "SCORED")
-for sub, status in bundles:
-	#validate submission
-	#score submission
-	print(sub)
-	print(status)
-		{% endhighlight %}
-	{% endtab %}
-
-	{% tab R %}
-		{% highlight r %}
-# Get submission / annotations
-sub <- synGetSubmission(submissionId)
-annotations <- synGetSubmissionStatus(submissionId)
-# Get all scored submissions in an evaluation queue
-bundles <- as.list(synGetSubmissionBundles(evaluation, status="SCORED"))
-		{%endhighlight %}
-	{% endtab %}
-{% endtabs %}
+Throughout the challenge, participants will continuously submit to the evaluation queues.  Organizers should deploy a automated job that will continuously validate and score participant submissions.  The `status` of a submission can be stored to the submission status and annotations, such as `score`, can also be added. To learn more about interacting with submissions, please take a closer look at this list of [commands](https://python-docs.synapse.org/build/html/index.html#evaluations).  
 
 
 ### Revealing Submissions and Scores
 
-To reveal submissions of a challenge, organizers can create a leaderboard. Leaderboards are sorted, paginated, tabular forms that display submission annotations (such as scores from your scoring application and other metadata). Leaderboards are dynamic and update as annotations/scores change, so can provide real-time insight into how your Challenge is going. The scoring application templates mentioned above print out valid sample widget text suitable for pasting into the wiki editor.  In the "Challenge Admin" control, described above, you provide "Can View" access to whomever you wish to be able to see the leaderboard. 
+When organizers are ready to reveal scores to participants, they can create a leaderboard. Leaderboards are sorted, paginated, tabular forms that display submission annotations (such as scores from your scoring application and other metadata). They are dynamic and update as annotations/scores change, so can provide real-time insight into how your challenge is going. 
 
-To add a leaderboard to your Challenge Wiki,
-* First go to the Challenge Project and get the ID of the Evaluation of interest; Challenges can have multiple evaluations so it's important to identify which evaluation you want to summarize.
-* Next, edit the wiki page where you want to add your leaderboard and choose "Insert" and then "Leaderboard". 
-* Finally, you'll configure your leaderboard by entering a query of the form "Select * from Evaluation_12345" where 12345 is the ID from the first step. 
+Learn more about adding leaderboards in the [Evaluation Queue article](/articles/evaluation_queues.html)
 
-<br>If you have some annotations already then you can click "Refresh Columns" to add display columns for the existing annotations. Otherwise you have to add the columns manually. You can reorder the columns and choose what to sort by. Keep in mind that "private" annotations will not be visible to participants (only to challenge administrators). 
 
