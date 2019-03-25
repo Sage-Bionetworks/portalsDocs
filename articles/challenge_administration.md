@@ -83,7 +83,7 @@ For background on how to create and share Projects, Files, Folders and Wiki page
 
 Please view this [page](/articles/access_controls.html) to learn how to add conditions for use on the data.
 
-Synapse has the ability to apply access restrictions to sensitive, human data, so that legal requirements are met before participants access such data.  If human are being used in the challenge, or if you have any question about sensitivity of the challenge data, you must contact the Synapse Access and Compliance Team (act@sagebase.org) who will help put in place the necessary data access approval procedure.  
+Synapse has the ability to apply access restrictions to sensitive data (e.g. human data), so that legal requirements are met before participants access such data.  If human data are being used in the challenge, or if you have any question about sensitivity of the challenge data, please contact the Synapse Access and Compliance Team (act@sagebase.org) for support to ensure that the necessary data access approval procedure are put in place. 
 
 There are cases in which there are no human data concerns but for which a pop-up agreement needs to be presented before download data for the first time.  Contact the Access and Compliance Team to set up this agreement. 
 
