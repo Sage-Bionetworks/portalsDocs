@@ -97,7 +97,7 @@ Please visit the [Evaluation Queue article](/articles/evaluation_queues.html) to
 
 ## Interacting with Submissions
 
-Throughout the challenge, participants will continuously submit to the evaluation queues.  Organizers should deploy a automated job that will continuously validate and score participant submissions.  The `status` of a submission can be stored to the submission status and annotations, such as `score`, can also be added. To learn more about interacting with submissions, please take a closer look at this list of [commands](https://python-docs.synapse.org/build/html/index.html#evaluations).  
+Throughout the challenge, participants will continuously submit to the evaluation queues.  Organizers should deploy an automated job that will continuously validate and score participant submissions.  The `status` of a submission can be stored to the submission status and annotations, such as `score`, can also be added. To learn more about interacting with submissions, please take a closer look at this list of [commands](https://python-docs.synapse.org/build/html/index.html#evaluations).  
 
 
 ### Revealing Submissions and Scores
