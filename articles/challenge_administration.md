@@ -92,11 +92,11 @@ To launch the space, make evaluation queues accessible to participants and the *
 
 ## Interacting with Submissions
 
-Throughout the challenge, participants will continuously submit to the evaluation queues.  Organizers should deploy an automated job that will continuously validate and score participant submissions.  The `status` of a submission can be stored to the submission status and annotations, such as `score`, can also be added. To learn more about interacting with submissions, please take a closer look at this list of [commands](https://python-docs.synapse.org/build/html/index.html#evaluations).  
+Throughout the challenge, participants will continuously submit to the evaluation queues. To manage continuous submissions, organizers can automate validation and scoring with the Synapse python client [evaluation commands](https://python-docs.synapse.org/build/html/index.html#evaluations).  
 
 ### Revealing Submissions and Scores
 
-Organizers can create a leaderboard when scores are ready to be revealed to participants. Leaderboards are sorted, paginated, tabular forms that display submission annotations (such as scores from your scoring application and other metadata). They are dynamic and update as annotations/scores change, so can provide real-time insight into how your challenge is going. 
+Organizers can create a leaderboard when scores are ready to be revealed to participants. Leaderboards are sorted, paginated, tabular forms that display submission annotations (e.g. scores from the scoring application and other metadata) and update as annotations or scores change. A leaderboard can provide real-time insight into the progress of a challenge. 
 
 Learn more about adding leaderboards in the [Evaluation Queue article](/articles/evaluation_queues.html).
 
