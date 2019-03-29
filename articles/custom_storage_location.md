@@ -22,8 +22,6 @@ While Synapse provides physical storage for files (using Amazon's S3), not all d
 
 ## Setting Up an External AWS S3 Bucket
 
-**Please note that your S3 Bucket must be in the `us-east-1` (N. Virginia) region for this to work.**
-
 Follow the documentation on Amazon Web Service (AWS) site to **[Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html){:target="_blank"}**. 
 
 <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html" class="btn btn-primary">View AWS Bucket Instructions</a>{:target="_blank"}
@@ -42,7 +40,7 @@ To allow authorized Synapse users to upload data to your bucket set read-write p
 {
     "Statement": [
         {
-            "Action": "s3:ListBucket*",
+            "Action": [ "s3:ListBucket*", "s3:GetBucketLocation" ],
             "Effect": "Allow",
             "Resource": "arn:aws:s3:::thisisthenameofmybucket",
             "Principal": { "AWS": "325565585839" }
@@ -90,7 +88,7 @@ If you do not want to allow authorized Synapse users to upload data to your buck
 {
     "Statement": [
         {
-            "Action": "s3:ListBucket*",
+            "Action": [ "s3:ListBucket*", "s3:GetBucketLocation" ],
             "Effect": "Allow",
             "Resource": "arn:aws:s3:::synapse-share.yourcompany.com",
             "Principal": { "AWS": "325565585839" }
