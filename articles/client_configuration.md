@@ -2,7 +2,7 @@
 title: Client Configuration
 layout: article
 excerpt: How to fine-tune your config file.
-category: api-client
+category: apiclient
 ---
 
 # Overview
