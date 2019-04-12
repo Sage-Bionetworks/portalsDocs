@@ -2,7 +2,7 @@
 title: Client Configuration
 layout: article
 excerpt: How to fine-tune your config file.
-category: howto
+category: api-client
 ---
 
 # Overview
@@ -28,8 +28,8 @@ The code block below displays an example config file with the available paramete
 #username = <username>
 #password = <password>
 #apikey = <apikey>
- 
- 
+
+
 ## If you have projects that need to be stored in an S3-like (e.g. AWS S3, Openstack) storage but cannot allow Synapse
 ## to manage access your storage you may put your credentials here.
 ## To avoid duplicating credentials with that used by the AWS Command Line Client,
@@ -37,15 +37,15 @@ The code block below displays an example config file with the available paramete
 ## more information about aws credentials can be found here http://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html
 #[https://s3.amazonaws.com/bucket_name] # this is the bucket's endpoint
 #profile_name=local_credential_profile_name
- 
- 
+
+
 ###########################
 # Debugging               #
-###########################  
+###########################
 ## If this section is specified, then the Synapse client will print out debug information
 # [debug]
- 
- 
+
+
 ###########################
 # Caching                 #
 ###########################
@@ -58,7 +58,7 @@ The code block below displays an example config file with the available paramete
 
 ## Example Synapse client configuration
 
-When you install the [Synapse Python client](https://python-docs.synapse.org/build/html/index.html#installation), a `.synapseConfig` file filled with examples, much like the sample above, should appear in your home directory if a configuration file is not already present. You can uncomment and fill out the parameters of interest for you to use. 
+When you install the [Synapse Python client](https://python-docs.synapse.org/build/html/index.html#installation), a `.synapseConfig` file filled with examples, much like the sample above, should appear in your home directory if a configuration file is not already present. You can uncomment and fill out the parameters of interest for you to use.
 
 Currently, this feature is not available in `synapser` (the Synapse R client).
 
