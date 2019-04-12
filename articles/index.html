@@ -3,6 +3,9 @@ title: User Guide
 layout: default
 ---
 
+{% assign doclist = site.pages | sort: 'order' %}
+
+
 <div class="col-xs-12 col-md-12 col-lg-12" id="subjects">
     <ul class="nav nav-tabs" id="myTab" style="margin-top: -70px; border: 2px solid transparent;">
     <div class="col-xs-12 col-sm-3">
@@ -61,7 +64,7 @@ layout: default
                         <!--Start intro content-->
                         <h3>Introduction</h3>
                         <div class="row">
-                            {% for page in site.pages %} {% if page.category == 'intro' %}
+                            {% for page in doclist %} {% if page.category == 'intro' %}
                                 <ul>
                                     <li><b><a href="{{ page.url }}.html">{{ page.title }}</a></b>: {{page.excerpt}}</li>
                                     </ul>
@@ -75,7 +78,7 @@ layout: default
                         <!--Start how to content-->
                         <h3>How To Articles</h3>
                         <div class="row">
-                            {% for page in site.pages %} {% if page.category == 'howto' %}
+                            {% for page in doclist %} {% if page.category == 'howto' %}
                                 <ul>
                                     <li><b><a href="{{ page.url }}.html">{{ page.title }}</a></b>: {{page.excerpt}}</li>
                                     </ul>
@@ -89,7 +92,7 @@ layout: default
                         <!--Start governance content-->
                         <h3>Governance and Security</h3>
                         <div class="row">
-                            {% for page in site.pages %} {% if page.category == 'governance' %}
+                            {% for page in doclist %} {% if page.category == 'governance' %}
                                 <ul>
                                     <li><b><a href="{{ page.url }}.html">{{ page.title }}</a></b>: {{page.excerpt}}</li>
                                     </ul>
@@ -103,7 +106,7 @@ layout: default
                         <!--Start api-client content-->
                         <h3>API Clients</h3>
                         <div class="row">
-                            {% for page in site.pages %} {% if page.category == 'apiclient' %}
+                            {% for page in doclist %} {% if page.category == 'apiclient' %}
                                 <ul>
                                     <li><b><a href="{{ page.url }}.html">{{ page.title }}</a></b>: {{page.excerpt}}</li>
                                     </ul>
@@ -119,7 +122,7 @@ layout: default
                         <h3>In Practice</h3>
                     <!-- start synapse in practice content -->
                         <div class="row">
-                            {% for page in site.pages %} {% if page.category == 'inpractice' %}
+                            {% for page in doclist %} {% if page.category == 'inpractice' %}
                                 <ul>
                                     <li><b><a href="{{ page.url }}.html">{{ page.title }}</a></b>: {{page.excerpt}}</li>
                                     </ul>

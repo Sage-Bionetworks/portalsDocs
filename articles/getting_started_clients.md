@@ -3,7 +3,7 @@ title: "Getting Started with the Synapse API Clients"
 layout: article
 excerpt: Use Synapse programmatically.
 category: apiclient
-order: 2
+order: 1
 ---
 
 # Introduction
