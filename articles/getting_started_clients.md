@@ -14,6 +14,7 @@ The API clients provide a way to use Synapse programmatically. This page shows y
 * Python
 * R
 
+To manage stored login credentials, visit the [Client Configuration page](https://docs.synapse.org/articles/client_configuration.html). 
 
 ## Command Line
 
@@ -55,7 +56,7 @@ library(synapser)
 synLogin("username", "password")
 ```
 
-To connect to Synapse with stored login credentials, visit the `synapser` [Overview page](https://r-docs.synapse.org/articles/synapser.html). For more documentation on the R client, see [`synapser` R docs](https://r-docs.synapse.org).
+For more documentation on the R client, see [`synapser` R docs](https://r-docs.synapse.org). 
 
 
 # To Report an Issue
