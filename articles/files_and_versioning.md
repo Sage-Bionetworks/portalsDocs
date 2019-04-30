@@ -185,10 +185,10 @@ library(synapser)
 file_to_update <- synGet('syn2222', downloadFile=FALSE)
 
 # save the local path to the new version of the file
-file_to_update$properties$path <- '/path/to/new/version/of/raw_data.txt'
+file_to_update$path <- '/path/to/new/version/of/raw_data.txt'
 
 # add a version comment
-file_to_update$properties$versionComment <- 'Added 5 random normally distributed numbers.'
+file_to_update$versionComment <- 'Added 5 random normally distributed numbers.'
 
 # store the new file
 updated_file <- synStore(file_to_update)
