@@ -16,7 +16,7 @@ Visit the [Python `synapseclient` docs](https://python-docs.synapse.org/build/ht
 
 ## For Developers
 
-### Customize `.synapseConfig` File 
+### Customize the Synapse Configuration File 
 
 The `.synapseConfig` file can take parameters for frequently used client-interactions, such as:
 
