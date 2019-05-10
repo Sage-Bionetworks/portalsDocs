@@ -1,67 +1,40 @@
 ---
 title: Client Configuration
 layout: article
-excerpt: How to fine-tune your config file.
+excerpt: How to store login credentials and fine-tune your config file.
 category: apiclient
 order: 2
 ---
 
-# Overview
-
-The programmatic clients in Synapse can use a configuration file (called `.synapseConfig`) that can store frequently used client-interactions. The most commonly used example is storing your login credentials for quick and easy authentication when using the programmatic clients. However, this config file can take many more parameters, such as:
-
-- specifying a new cache location
-- add credentials to access files stored outside of Synapse storage (e.g. AWS-S3, etc.)
+# Client Configuration
 
 
-# Example Config File
+## For Users
 
-The code block below displays an example config file with the available parameters commented out. This file should be named `.synapseConfig` and saved to your home directory. Please note the period at the beginning of the file which makes this a hidden, system file on Linux-like OS's since it will contain sensitive information.
+Store login credentials from the current `login()` using the `rememberMe = TRUE` parameter. You should use the `rememberMe` feature on a personal computer of which you are the only Synapse user.
+Visit the [Python `synapseclient` docs](https://python-docs.synapse.org/build/html/Client.html#synapseclient.Synapse.login) and [R `synapser` docs](https://r-docs.synapse.org/reference/synLogin.html) for examples. 
 
-```bash
-###########################
-# Login Credentials       #
-###########################
-## Used for logging in to Synapse.
-## You may also specify an API key instead of a password. If both password and API key are specified, the API key is ignored.
-## Using an API key allows you to authenticate your scripts for an indefinite amount of time. It is important that you treat your API key with the same security as your password.
-#[authentication]
-#username = <username>
-#password = <password>
-#apikey = <apikey>
+## For Developers
 
+### Customize the Synapse Configuration File 
 
-## If you have projects that need to be stored in an S3-like (e.g. AWS S3, Openstack) storage but cannot allow Synapse
-## to manage access your storage you may put your credentials here.
-## To avoid duplicating credentials with that used by the AWS Command Line Client,
-## put the profile name form your ~/.aws/credentials file
-## more information about aws credentials can be found here http://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html
-#[https://s3.amazonaws.com/bucket_name] # this is the bucket's endpoint
-#profile_name=local_credential_profile_name
+Synapse configuration parameters for frequently used client-interactions can be set in a specific file. By default, the file is in the user's home directory and is called `.synapseConfig`. For example, you can set:
 
+- a new cache location
+- credentials to access files stored outside of Synapse (e.g. AWS-S3, etc.)
+- an API key to authenticate login
 
-###########################
-# Debugging               #
-###########################
-## If this section is specified, then the Synapse client will print out debug information
-# [debug]
+Please note the period at the beginning of the file which makes this a hidden, system file on Linux-like OS's since it will contain sensitive information. 
 
+When you install the [Synapse Python client](https://python-docs.synapse.org/build/html/index.html#installation), a [`.synapseConfig` file filled with examples](https://github.com/Sage-Bionetworks/synapsePythonClient/blob/master/synapseclient/.synapseConfig) should appear in your home directory if a configuration file is not already present. You can uncomment and fill out the parameters of interest.
 
-###########################
-# Caching                 #
-###########################
-## your downloaded files are cached to avoid repeat downloads of the same file. change 'location' to use a different folder on your computer as the cache location
-# [cache]
-# location = <your cache location>
-```
+You may also [customize a `.synapseConfig` file](https://r-docs.synapse.org/articles/manageSynapseCredentials.html#letting-the-operating-system-manage-your-synapse-credentials) when you install the [Synapse R client](https://r-docs.synapse.org/index.html#installation).
 
+### Where to find your API Key 
+
+From your [Synapse homepage](https://www.synapse.org/), navigate to your user menu and select **Settings** from the drop-down menu. Your Synapse API key is made visible by selecting **Show API Key**. In the case the confidentiality of the API key is compromised, or you would like to invalidate your API key, select **Change API Key**. 
 <br/>
 
-## Example Synapse client configuration
-
-When you install the [Synapse Python client](https://python-docs.synapse.org/build/html/index.html#installation), a `.synapseConfig` file filled with examples, much like the sample above, should appear in your home directory if a configuration file is not already present. You can uncomment and fill out the parameters of interest for you to use.
-
-Currently, this feature is not available in `synapser` (the Synapse R client).
 
 ## See Also
 
