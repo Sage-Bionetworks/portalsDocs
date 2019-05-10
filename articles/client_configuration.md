@@ -18,7 +18,7 @@ Visit the [Python `synapseclient` docs](https://python-docs.synapse.org/build/ht
 
 ### Customize the Synapse Configuration File 
 
-The `.synapseConfig` file can take parameters for frequently used client-interactions, such as:
+Synapse configuration parameters for frequently used client-interactions can be set in a specific file. By default, the file is in the user's home directory and is called `.synapseConfig`. For example, you can set:
 
 - a new cache location
 - credentials to access files stored outside of Synapse (e.g. AWS-S3, etc.)
