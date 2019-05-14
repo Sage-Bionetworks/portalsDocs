@@ -60,7 +60,7 @@ As a certified user with a validated profile, you can access more features and d
 A validated profile is one where your identity is established through a combination of your profile information, your ORCID, your signed oath, and an external credential. This profile validation enables greater transparency within the research community, promoting a reciprocal relationship between you and participants as data donors. You will need a validated profile prior to requesting access to data collected through research apps.
 
 ### Get Your Profile Validated  
-Go to your [Synapse profile homepage](https://www.synapse.org/#!Profile:v){:target="_blank"} (click your name/picture on upper banner of the screen to get there) and use the links in the validation box:
+Go to the settings area of your [Synapse profile homepage](https://www.synapse.org/#!Profile:v/settings){:target="_blank"} (click your name/picture on upper banner of the screen, then select Settings to get there) and use the links in the Profile Validation box:
 1. Confirm your user profile is complete including **your full name, current affiliation, and city/country.**
 1. Link to your ORCID profile. **Make sure your profile is public and populate it with at least one piece of information about yourself in addition to your name.**
 1. Physically sign (in ink), initial, and submit the Synapse [Oath](/assets/other/oath.html)
