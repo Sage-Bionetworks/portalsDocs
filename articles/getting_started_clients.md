@@ -47,7 +47,7 @@ For complete documentation of the Python client, visit the [`synapseclient` docs
 The `synapser` package is available for R version 3.4 and 3.5.
 
 ```
-install.packages("synapser", repos=c("https://sage-bionetworks.github.io/ran", "http://cran.fhcrc.org"))
+install.packages("synapser", repos=c("http://ran.synapse.org", "http://cran.fhcrc.org"))
 install.packages("synapser")
 ```
 
