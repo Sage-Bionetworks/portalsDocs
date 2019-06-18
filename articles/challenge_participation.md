@@ -43,10 +43,9 @@ The submission function takes **two optional parameters**: `name` and `team`.  N
 
 The examples below will show you the process of uploading a file to a project and then submitting that file to the challenge evaluation queue.
 
-{% tabs %}
+##### Python
 
-	{% tab Python %}
-		{% highlight python %}
+```python
 import synapseclient
 syn = synapseclient.login()
 
@@ -58,28 +57,25 @@ my_submission_file = syn.store(my_submission_file)
 team_entity = syn.getTeam("NameOfYourTeam")
 # submit to the challenge evaluation queue
 my_submission = syn.submit(evaluation=evaluationId, entity=my_submission_file, name="Blue Team", team=team_entity)
-		{% endhighlight %}
-	{% endtab %}
+```
 
-	{% tab R %}
-		{% highlight r %}
+##### R
+
+```r
 library(synapser)
 synLogin()
 my_submission_file <- File("/path/to/submission.csv", parentId="syn12345")
 my_submission_file <- synStore(my_submission_file)
 #The evaluationId must be a string here or there will be an error
 submission <- synSubmit(evaluationId, my_submission_file, name="Our Final Answer", team="Blue Team") 
-		{% endhighlight %}
-	{% endtab %}
+```
 
-	{% tab Web %}
+##### Web
+
 Navigate to an uploaded file in Synapse and click on `Tools` on the upper right hand corner.
 Select `Submit To Challenge`.  After doing so, pick the challenge you want to submit to, and follow the steps to complete your submission.
 
 <img id="toobig" src="/assets/images/submit_file_to_challenge.png">
-	{% endtab %}
-	
-{% endtabs %}
 
 The submission function takes two optional parameters: `name` and `team` in Python, `submissionName` and `teamName` in R. The name can be provided to serve as a custom name of the submission. If a name is not not provided, the name of the entity being submitted will be used. A team name can be provided to give credit to members of the team that contributed to the submission.
 

@@ -8,7 +8,7 @@ order: 3
 
 # Overview
 
-Data in Synapse can be downloaded using the programmatic clients (Python, R, and command line) as well as the web client. 
+Data in Synapse can be downloaded using the programmatic clients (Python, R, and command line) as well as the web client.
 
 ## Downloading a File
 
@@ -21,60 +21,52 @@ For the Python and R clients the default download location is the Synapse cache.
 
 For example, to get the experimental protocol file on [Adult Mouse Cardiac Myocyte Isolation](https://www.synapse.org/#!Synapse:syn3158111) (syn3158111) from the [Progenitor Cell Biology Consortium (PCBC)](https://www.synapse.org/#!Synapse:syn177310) you would run the following:
 
-{% tabs %}
+##### Command line
 
-{% tab Command %}
-{% highlight bash %}
+```bash
 synapse get syn3158111
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab Python %}
-{% highlight python %}
+##### Python
+
+```python
 import synapseclient
 syn = synapseclient.Synapse()
 syn.login()
 entity = syn.get("syn3158111")
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab R %}
-{% highlight r %}
+##### R
+
+```r
 library(synapser)
 synLogin()
 entity <- synGet("syn3158111")
-{%endhighlight %}
-{% endtab %}
-
-{% endtabs %}
+```
 
 <br/>
 
 Once a `File` has been downloaded, you can find the filepath using the following:
 
-{% tabs %}
+##### Command line
 
-{% tab Command %}
-{% highlight bash %}
+```bash
 # When downloading using the command line client, it will print the filepath of where the file was saved to.
-{% endhighlight %}
-{% endtab %}
+```
 
+##### Python
 
-{% tab Python %}
-{% highlight python %}
+```python
 filepath = entity.path
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab R %}
-{% highlight r %}
+##### R
+
+```r
 filepath <- entity$path
-{% endhighlight %}
-{% endtab %}
+```
 
-{% endtabs %}
-
+<br/>
 
 ### Versions
 
@@ -82,24 +74,23 @@ If there are multiple versions of a `File`, a specific version can be downloaded
 
 In this example, there are multiple versions of an [miRNA FASTQ file](https://www.synapse.org/#!Synapse:syn3260973) (syn3260973) from the Progenitor Cell Biology Consortium. To download the first version:
 
-{% tabs %}
-{% tab Command %}
-{% highlight bash %}
-synapse get syn3260973 -v 1
-{% endhighlight %}
-{% endtab %}
-{% tab Python %}
-{% highlight python %}
-entity = syn.get("syn3260973", version=1)
-{% endhighlight %}
-{% endtab %}
-{% tab R %}
-{% highlight r %}
-entity <- synGet("syn3260973", version=1)
-{%endhighlight %}
-{% endtab %}
+##### Command line
 
-{% endtabs %}
+```bash
+synapse get syn3260973 -v 1
+```
+
+##### Python
+
+```python
+entity = syn.get("syn3260973", version=1)
+```
+
+##### R
+
+```r
+entity <- synGet("syn3260973", version=1)
+```
 
 See [versioning](/articles/versioning.html) for more details.
 
@@ -107,55 +98,53 @@ See [versioning](/articles/versioning.html) for more details.
 
 When you click on a Link entity on the Synapse website, it will redirect you to the linked entity.  The `followLink` parameter will have to be specified when using the programmatic clients or you will only retrieve the link itself without downloading the linked entity.
 
-{% tabs %}
-{% tab Command %}
-{% highlight bash %}
+##### Command line
+
+```bash
 synapse get syn1234 --followLink
-{% endhighlight %}
-{% endtab %}
-{% tab Python %}
-{% highlight python %}
+```
+
+##### Python
+
+```python
 import synapseclient
 syn = synapseclient.login()
 linkEnt = syn.get("syn1234")
 entity = syn.get("syn1234", followLink=True)
-{% endhighlight %}
-{% endtab %}
-{% tab R %}
-{% highlight r %}
+```
+
+##### R
+
+```r
 library(synapser)
 synLogin()
 linkEnt = synGet("syn1234")
 entity = synGet("syn1234", followLink=TRUE)
-{%endhighlight %}
-{% endtab %}
+```
 
-{% endtabs %}
+<br/>
 
 ### Download Location
 
 To override the default download location (to not download to the Synapse cache directory, for example), you can specify the `downloadLocation` parameter.
 
-{% tabs %}
-{% tab Command %}
-{% highlight bash %}
+##### Command line
+
+```bash
 synapse get syn00123 --downloadLocation /path/to/folder
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab Python %}
-{% highlight python %}
+##### Python
+
+```python
 entity = syn.get("syn00123", downloadLocation="/path/to/folder")
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab R %}
-{% highlight r %}
+##### R
+
+```r
 entity <- synGet("syn00123", downloadLocation="/path/to/folder")
-{%endhighlight %}
-{% endtab %}
-
-{% endtabs %}
+```
 
 ## Finding and Downloading Files
 
@@ -163,28 +152,24 @@ Files can be [annotated](/articles/annotation_and_query.html) to facilitate find
 
 For example, the [PCBC Project](https://www.synapse.org/#!Synapse:syn1773109) has a [table](https://www.synapse.org/#!Synapse:syn7511263) listing sequencing data files that have been annotated. To find all **mRNA fastq** files originating from **CD34+ cells** in the we can query by:
 
-{% tabs %}
+##### Command line
 
-{% tab Command %}
-{% highlight bash %}
+```bash
 synapse query 'select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"'
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab Python %}
-{% highlight python %}
+##### Python
+
+```python
 results = syn.tableQuery('select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"')
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab R %}
-{% highlight r %}
+##### R
+
+```r
 results <- synTableQuery('select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"')
 df <- as.data.frame(results)
-{% endhighlight %}
-{% endtab %}
-
-{% endtabs %}
+```
 
 Once you've queried for the files of interest, they can be downloaded using the following:
 
