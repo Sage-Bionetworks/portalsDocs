@@ -7,7 +7,7 @@ category: inpractice
 
 # Managing Custom Metadata in Scale
 
-This vignette will string together some of the concepts from [Annotations and Queries](/articles/annotation_and_query.md), [Views](/articles/views.md), [Uploading and Downloading Data in Bulk](/articles/uploading_in_bulk.md) in order to **create a manifest** `velociraptor_manifest.txt`, **upload** 100 files and **edit** annotations on these files programmatically with the Synapse clients. 
+This vignette will combine concepts from [Annotations and Queries](/articles/annotation_and_query.md), [Views](/articles/views.md), [Uploading and Downloading Data in Bulk](/articles/uploading_in_bulk.md) in order to **create a manifest** `velociraptor_manifest.txt`, **upload** 100 files and **edit** annotations on these files using the Synapse clients. 
 
 ## Annotation dictionaries
 The Sage Bionetworks Systems Biology and Computational Oncology teams maintain [annotation dictionaries](https://github.com/sage-bionetworks/synapseAnnotations) in GitHub. You can use the terms found in the synapseAnnotations GitHub repo as a starting point for you own annotations.
