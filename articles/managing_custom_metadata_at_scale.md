@@ -14,7 +14,7 @@ The Sage Bionetworks Systems Biology and Computational Oncology teams maintain [
 
 
 ## Create a Manifest and Batch Upload the Files with Annotations
-To batch upload files, create a tab-delimited manifest which contains, at minimum, the columns `path` and `parent`. But the real magic happens when you start to add additional annotations as columns. So for example, your manifest might have the following headers: `path`, `parent`, `specimenID`, `assay`, `species`, `platform`, `sex`, and `fileFormat`.  
+To batch upload files, create a tab-delimited manifest which contains, at minimum, the columns `path` and `parent`. You can also add additional annotations as columns in your manifest. For example, your manifest might have the following headers: `path`, `parent`, `specimenID`, `assay`, `species`, `platform`, `sex`, and `fileFormat`.  
 
 **path**: is the local path to your file <br>
 **parent**: is the Synapse ID (in the format syn123456) that the files will be uploaded to <br>
