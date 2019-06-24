@@ -173,60 +173,52 @@ df <- as.data.frame(results)
 
 Once you've queried for the files of interest, they can be downloaded using the following:
 
-{% tabs %}
+##### Command line
 
-{% tab Command %}
-{% highlight bash %}
+```bash
 synapse get -q 'select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"'
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab Python %}
-{% highlight python %}
+##### Python
+
+```python
 results = syn.tableQuery('select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"')
 
 entity = [syn.get(r['file.id']) for r in results]
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab R %}
-{% highlight r %}
+##### R
+
+```r
 results <- synTableQuery('select * from syn7511263 where dataType="mRNA" AND fileType="fastq" AND Cell_Type_of_Origin="CD34+ cells"')
 df <- as.data.frame(results)
 entity <- lapply(df$file.id, function(x) synGet(x))
-{% endhighlight %}
-{% endtab %}
-
-{% endtabs %}
+```
 
 ### Recursive Downloads
 
 The folder structure that is present on Synapse can be maintained by recursive downloading. 
 
-{% tabs %}
+##### Command line
 
-{% tab Command %}
-{% highlight bash %}
+```bash
 synapse get -r syn2390898
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab Python %}
-{% highlight python %}
+##### Python
+
+```python
 import synapseutils
 import synapseclient
 syn = synapseclient.login()
 files = synapseutils.syncFromSynapse(syn, 'syn2390898')
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab R %}
-{% highlight r %}
+##### R
+
+```r
 # Unfortunately, this feature is not currently available in the R client
-{% endhighlight %}
-{% endtab %}
-
-{% endtabs %}
+```
 
 ### Download Tables
 
@@ -236,50 +228,41 @@ Please view [here](/articles/tables.html) to learn how to use `Tables`.
 
 The structure of a project's `Wiki` page can be extracted through the R and Python clients.  The id, title and parent `Wiki` page of each sub-`Wiki` page is also determined through the same method.
 
-{% tabs %}
+##### Python
 
-{% tab Python %}
-{% highlight python %}
+```python
 wiki = syn.getWikiHeaders("syn00123")
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab R %}
-{% highlight r %}
+##### R
+
+```r
 entity <- synGet("syn00123")
 wiki <- synGetWikiHeaders(entity)
-{%endhighlight %}
-{% endtab %}
-
-{% endtabs %}
+```
 
 The Markdown and other information of a `Project` sub-`Wiki` page can be obtained by knowing the id of the `Wiki`. The `Wiki` page id can either be obtained through the above method or can be found in the URL "www.synapse.org/#!Synapse:syn00123/wiki/**12345**" where 12345 is the `Wiki` page id. 
 
-{% tabs %}
+##### Python
 
-{% tab Python %}
-{% highlight python %}
+```python
 wiki = syn.getWiki("syn00123", 12345)
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab R %}
-{% highlight r %}
+##### R
+
+```r
 entity <- synGet("syn00123")
 wiki <- synGetWiki(entity, 12345)
-{%endhighlight %}
-{% endtab %}
-
-{% endtabs %}
+```
 
 ### Downloading in Bulk
 
 Files can be downloaded in bulk using the `syncFromSynapse` function found in the [synapseutils](https://python-docs.synapse.org/build/html/synapseutils.html#module-synapseutils.sync) helper package. This function crawls all the subfolders of the project/folder that you specify and retrieves all the files that have not been downloaded. By default, the files will be downloaded into your `synapseCache`, but a different download location can be specified with the `path` parameter. If you do download to a location out side of `synapseCache`, this function will also create a tab-delimited manifest of all the files along with their metadata (path, provenance, annotations, etc).
 
-{% tabs %}
+##### Python
 
-  {% tab Python %}
-    {% highlight python %}
+```python
 # Load required libraries
 import synapseclient
 import synapseutils
@@ -289,11 +272,11 @@ syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=
 
 # download all the files in folder syn123 to a local folder called "myFolder"
 all_files = synapseutils.syncFromSynapse(syn, entity='syn123', path='/path/to/myFolder')
-    {% endhighlight %}
-  {% endtab %}
+```
 
-  {% tab R %}
-    {% highlight r %}
+##### R
+
+```r
 # Load required libraries
 library(synapser)
 library(synapserutils)
@@ -303,10 +286,7 @@ synLogin(email='me@example.com', password='secret', rememberMe=TRUE)
 
 # download all the files in folder syn123 to a local folder called "myFolder"
 all_files = syncFromSynapse(entity='syn123', path='/path/to/myFolder')
-    {% endhighlight %}
-  {% endtab %}
-
-{% endtabs %}
+```
 
 # See Also
 [Versioning](/articles/versioning.html), [Tables](/articles/tables.html), [Wikis](/articles/wikis.html), [File Views](/articles/views.html), [Annotations and Queries](/articles/annotation_and_query.html)
