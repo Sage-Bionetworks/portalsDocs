@@ -195,7 +195,7 @@ result = synTableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM s
 
 ### How to Download Based on Queries
 
-You can download files in a folder using queries. Currently this feature is only available in the command line client. For example, if you want to download all files in a folder that has a synapse id of `syn00123`, use
+You can download files in a folder using queries. Currently this feature is only available in the command line client. For example, if you want to download all files in a File View that has a synapse id of `syn00123`, use
 
 ```sql
 synapse get -q "SELECT * FROM file WHERE parentId = 'syn00123'"
