@@ -8,3 +8,8 @@ permalink: /:title
 highlighter: pygments
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+
+toc:
+  min_level: 1 # default: 1
+  max_level: 4 # default: 6
+
