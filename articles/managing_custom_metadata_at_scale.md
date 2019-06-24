@@ -58,7 +58,7 @@ To create your File `View`:
 6. **Add All Annotations** at the end of the opened window will add all existing annotations. 
 7. Click **Finish** to create the `View`.
 
-## Do a One-Off Annotation Update or Deletion (Web)
+## Perform a One-time Annotation Update or Deletion (Web)
 An annotation for a single sample can be modified in the Web client `View` in the case that `specimenID`:`delta_1` needs to be updated to `specimenID`:`echo_1`.
 
 1. Select **Tables Tools** and **Edit Query Results**.
