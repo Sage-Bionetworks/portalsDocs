@@ -59,7 +59,7 @@ To create your File `View`:
 7. Click **Finish** to create the `View`.
 
 ## Perform a One-time Annotation Update or Deletion (Web)
-An annotation for a single sample can be modified in the Web client `View` in the case that `specimenID`:`delta_1` needs to be updated to `specimenID`:`echo_1`.
+An annotation for a single file can be modified in the Web client `View` in the case that `specimenID`:`delta_1` needs to be updated to `specimenID`:`echo_1`.
 
 1. Select **Tables Tools** and **Edit Query Results**.
 2. Find the value you want to change or delete in the pop-up and edit the field.
