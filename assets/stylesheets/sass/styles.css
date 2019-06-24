@@ -359,13 +359,13 @@ section:last-child, .section:last-child, section.last, .section.last {
 }
 
 
-*[id]:before {
+/** *[id]:before {
     display: block;
     content: " ";
     margin-top: -75px;
     height: 75px;
     visibility: hidden;
-}
+} **/
 
 #bootstrap-overrides .btn:hover {
   background-position-y: 0px;

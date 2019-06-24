@@ -67,7 +67,7 @@ file <- synStore(file)
 
 All Synapse clients offer a way to move files and folders. Please note that [File Views](/articles/views.html) and [sync manifests](/articles/uploading_in_bulk.html) **cannot** be used to move files. 
 
-The command line client has a sub-command `mv` which can be used to move files and folders. The Python and R clients do not have a specific `move` function, but can be used to modify the `parentId` property of the file/folder to move it. In the web client, there is an option in the `Tools` menu to move files or folders. 
+The command line client has a sub-command `mv` which can be used to move files and folders. The Python client provides the [syn.move](https://python-docs.synapse.org/build/html/Client.html#synapseclient.Synapse.move) command, and the R client has [synMove()](https://r-docs.synapse.org/reference/synMove.html).
 
 ##### Web
 
@@ -183,10 +183,10 @@ library(synapser)
 file_to_update <- synGet('syn2222', downloadFile=FALSE)
 
 # save the local path to the new version of the file
-file_to_update$properties$path <- '/path/to/new/version/of/raw_data.txt'
+file_to_update$path <- '/path/to/new/version/of/raw_data.txt'
 
 # add a version comment
-file_to_update$properties$versionComment <- 'Added 5 random normally distributed numbers.'
+file_to_update$versionComment <- 'Added 5 random normally distributed numbers.'
 
 # store the new file
 updated_file <- synStore(file_to_update)
