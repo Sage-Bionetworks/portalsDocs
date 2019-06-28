@@ -63,7 +63,7 @@ An annotation for a single file can be modified in the Web client `View` in the 
 
 1. Select **Tables Tools** and **Edit Query Results**.
 2. Find the value you want to change or delete in the pop-up and edit the field.
-3. Scroll down to the bottom and click **Save** to update the file `View`.
+3. Scroll down to the bottom and click **Save** to update the file View.
 
 ## Do a Bulk Annotation Update or Deletion
 
