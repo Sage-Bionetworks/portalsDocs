@@ -51,7 +51,7 @@ Since the files have been uploaded with annotations, a file View allows users to
 
 To create your File View: 
 1. Navigate to your Project.
-2. Go to the `Tables` tab, select **Tables Tools** in the upper right corner, and click **Add File `View`**.
+2. Go to the Tables tab, select **Tables Tools** in the upper right corner, and click **Add File View**.
 3. In the resulting pop-up, give the new `View` a name. 
 4. Select the container (Synapse Project or Folder) of files, and click **Next**. In this case, you would want the synID of the `parent` column in the manifest.
 5. Select the columns you would like to keep. Since we are going to edit the annotations later, please make sure you have the column `etag` listed as one of your columns.
