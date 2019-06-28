@@ -47,7 +47,7 @@ Files can be uploaded in one go with a manifest file. If you would like to do a 
 And ta-da! Your files have been uploaded!
 
 ## Create a File `View` (Web)
-Since the files have been uploaded with annotations, a file `View` allows us to be able to query, facet, and bulk manipulate the files and metadata.
+Since the files have been uploaded with annotations, a file View allows users to query, facet, and bulk manipulate the files and metadata.
 
 To create your File `View`: 
 1. Navigate to your Project.
