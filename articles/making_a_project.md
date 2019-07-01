@@ -15,7 +15,7 @@ order: 2
 
 * **Store Data, Code, and Results**: You can upload your data, code, and results to Synapse, or store a reference to their location in your local computer system or on the web. Everything can be stored as Files, hosted by Synapse, in your own external cloud storage, or using [Docker Containers](http://docs.synapse.org/articles/docker.html). 
 
-* **Control Access or Release Your Work Publicly**: You have complete control over how users and groups can interact with your work. Work privately or collaborate openly, and everything in between.
+* **Control Access or Release Your Work Publicly**: You have complete control over how users and groups can interact with your work. Work privately, openly, or somewhere in between.
 
 * **Custom, Searchable Annotations**: Assign any key/value pair you want. Those values become searchable and available to those granted access.
 
