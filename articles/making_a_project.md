@@ -23,7 +23,7 @@ order: 2
 
 * **Attach Figures and Documents**: Upload documents and images via the website or programmatically.
 
-* **Describe and Version**: Describe each of the elements in your workflow, and then practice version control when you see fit. This allows you to explicitly record which version of the code you ran on which version of the data.
+* **Describe and Version**: Describe each element in your workflow and practice version control when you see fit. This allows you to explicitly record which version of the code you ran on which version of the data.
 
 * **Create Links and See Usage**: You can make a link to store data from elsewhere on Synapse
 and use it in your project. Other projects using your data are displayed automatically.
