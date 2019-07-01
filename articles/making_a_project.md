@@ -25,7 +25,6 @@ order: 2
 
 * **Describe and Version**: Describe each element in your workflow and practice version control when you see fit. This allows you to explicitly record which version of the code you ran on which version of the data.
 
-* **Create Links and See Usage**: You can make a link to store data from elsewhere on Synapse
 
 ## Create Your First Project
 
