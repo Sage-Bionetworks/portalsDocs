@@ -41,13 +41,13 @@ See **Creating a Manifest** in [Uploading and Downloading Data in Bulk](/article
 
 Files can be uploaded in one go with a manifest file. If you would like to do a "dry run" validation of the file before uploading, you can add the parameter `dryRun = True` to the function `syncToSynapse`. Please note that the `dryRun` feature checks everything but does **not** upload the files.
 
-* validate the manifest and upload files in the [Python client or command line](https://python-docs.synapse.org/build/html/synapseutils.html#synapseutils.sync.syncToSynapse).
+* validate the manifest and upload files in the [Python client](https://python-docs.synapse.org/build/html/synapseutils.html#synapseutils.sync.syncToSynapse).
 * validate the manifest and upload files in the [R client](https://github.com/Sage-Bionetworks/synapserutils#batch-process). 
 
 And ta-da! Your files have been uploaded!
 
 ## Create a File View (Web)
-Since the files have been uploaded with annotations, a file View allows users to query, facet, and bulk manipulate the files and metadata.
+Since the files have been uploaded with annotations, a file [View](/articles/views.md) allows users to query, facet, and bulk manipulate the files and metadata.
 
 To create your File View: 
 1. Navigate to your Project.
