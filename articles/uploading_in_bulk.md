@@ -1,7 +1,7 @@
 ---
 title: Uploading and Downloading Data in Bulk
 layout: article
-excerpt: Learn about uploading files with annotations and provenance in bulk.
+excerpt: Learn about bulk processes with files, annotations and provenance.
 category: howto
 ---
 
