@@ -185,7 +185,7 @@ SELECT * FROM syn123456 WHERE "projectId"='syn00123' AND "specimenID"='sampleA_c
 Lastly, you can query on a subset of entities that have a specific annotation. You can limit the annotations you want displayed as following.
 
 {% highlight sql %}
-SELECT specimenID,genomeBuild,fileFormat,platform FROM file WHERE "projectId"='syn00123' AND "specimenID"='sampleA_conditionB'
+SELECT specimenID,genomeBuild,fileFormat,platform FROM syn123456 WHERE "projectId"='syn00123' AND "specimenID"='sampleA_conditionB'
 {% endhighlight %}
 
 Reproducible queries can be constructed using one of the analytical clients (command line, Python, and R) and on the web client, query results can be displayed in a table on a wiki page.
@@ -217,10 +217,10 @@ result = synTableQuery("SELECT specimenID,genomeBuild,fileFormat,platform FROM s
 
 ### How to Download Based on Queries
 
-You can download files in a folder using queries. Currently this feature is only available in the command line client. For example, if you want to download all files in a folder that has a synapse id of `syn00123`, use
+You can download files in a folder using queries. Currently this feature is only available in the command line client. For example, if you want to download all files in a File View that has a synapse id of `syn00123`, use
 
 {% highlight sql %}
-synapse get -q "SELECT * FROM file WHERE parentId = 'syn00123'"
+synapse get -q "SELECT * FROM syn00123"
 {% endhighlight %}
 
 ## Troubleshooting

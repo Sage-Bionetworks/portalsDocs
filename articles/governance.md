@@ -12,7 +12,7 @@ Synapse operates under comprehensive governance policies. These policies delinea
 
 ### [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=5){:target="_blank"}
 
-The Synapse Terms and Conditions of Use establishes the use, disclaimers, and limitation of liability governing the use of Synapse. For example, this document states users must adhere to all applicable laws and regulations to protect the privacy of research participants' data. By using Syanpse, you are agreeing to abide by each of these terms and conditions.
+The Synapse Terms and Conditions of Use establishes the use, disclaimers, and limitation of liability governing the use of Synapse. For example, this document states users must adhere to all applicable laws and regulations to protect the privacy of research participants' data. By using Synapse, you are agreeing to abide by each of these terms and conditions.
 
 ### [Data Use Procedure](https://s3.amazonaws.com/static.synapse.org/governance/SynapseCommonsDataUseProcedure.pdf?v=4){:target="_blank"}
 
