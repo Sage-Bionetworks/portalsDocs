@@ -46,20 +46,20 @@ Files can be uploaded in one go with a manifest file. If you would like to do a 
 
 And ta-da! Your files have been uploaded!
 
-## Create a File `View` (Web)
+## Create a File View (Web)
 Since the files have been uploaded with annotations, a file View allows users to query, facet, and bulk manipulate the files and metadata.
 
 To create your File View: 
 1. Navigate to your Project.
 2. Go to the Tables tab, select **Tables Tools** in the upper right corner, and click **Add File View**.
-3. In the resulting pop-up, give the new `View` a name. 
+3. In the resulting pop-up, give the new View a name. 
 4. Select the container (Synapse Project or Folder) of files, and click **Next**. In this case, you would want the synID of the `parent` column in the manifest.
 5. Select the columns you would like to keep. Since we are going to edit the annotations later, please make sure you have the column `etag` listed as one of your columns.
 6. **Add All Annotations** at the end of the opened window will add all existing annotations. 
-7. Click **Finish** to create the `View`.
+7. Click **Finish** to create the View.
 
 ## Perform a One-time Annotation Update or Deletion (Web)
-An annotation for a single file can be modified in the Web client `View` in the case that `specimenID`:`delta_1` needs to be updated to `specimenID`:`echo_1`.
+An annotation for a single file can be modified in the Web client View in the case that `specimenID`:`delta_1` needs to be updated to `specimenID`:`echo_1`.
 
 1. Select **Tables Tools** and **Edit Query Results**.
 2. Find the value you want to change or delete in the pop-up and edit the field.
@@ -73,24 +73,24 @@ A bulk annotation update is required in the case that `species`:`Velociraptor mo
 
 To download the annotation values from the Web client: 
 
-1. Navigate to the file `View` of choice. 
-2. Click the **Download Options** button to the right of the query bar of the file `View`. 
-3. Click **Export Table** to download the file `View`. Be sure to have `Include row metadata (Row Id and Row Version)` selected when downloading. 
+1. Navigate to the file View of choice. 
+2. Click the **Download Options** button to the right of the query bar of the file View. 
+3. Click **Export Table** to download the file View. Be sure to have `Include row metadata (Row Id and Row Version)` selected when downloading. 
 
-Now that you have the file `View` downloaded, you can edit the values using your tool of preference, whether that is Python, R, Excel, LibreOffice, etc.
+Now that you have the file View downloaded, you can edit the values using your tool of preference, whether that is Python, R, Excel, LibreOffice, etc.
 
-With the changes saved, go back to the file `View` in your browser. 
-1. Click **View Tools** located at the upper right of the file `View`
+With the changes saved, go back to the file View in your browser. 
+1. Click **View Tools** located at the upper right of the file View
 2. Select **Upload Data to View** from the dropdown. 
 3. Browse and choose the edited file 
 4. Click **Next** to preview the uploaded file. 
-5. Click **Update Table** to update the file `View` and populate the changes to all the files in Synapse.
+5. Click **Update Table** to update the file View and populate the changes to all the files in Synapse.
 
 ### Programmatic Clients
 
-Alternatively, download the `View` with the R or Python client: 
+Alternatively, download the View with the R or Python client: 
 
-1. Query for the `View` with [`synTableQuery()`](https://r-docs.synapse.org/reference/synTableQuery.html) or [`syn.tableQuery()`](https://python-docs.synapse.org/build/html/Client.html#synapseclient.Synapse.tableQuery). **To delete all the annotations of a key, you have to keep the column in the file view but remove the values.** 
+1. Query for the View with [`synTableQuery()`](https://r-docs.synapse.org/reference/synTableQuery.html) or [`syn.tableQuery()`](https://python-docs.synapse.org/build/html/Client.html#synapseclient.Synapse.tableQuery). **To delete all the annotations of a key, you have to keep the column in the file view but remove the values.** 
 2. Update and then store the annotations in the [R client](https://r-docs.synapse.org/articles/views.html#updating-annotations-using-view) or [Python client](https://python-docs.synapse.org/build/html/Views.html#updating-annotations-using-view).
 
 <br>
