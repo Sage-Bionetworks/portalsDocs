@@ -7,7 +7,7 @@ category: inpractice
 
 # Managing Custom Metadata in Scale
 
-This vignette will combine concepts from [Annotations and Queries](/articles/annotation_and_query.md), [Views](/articles/views.md), [Uploading and Downloading Data in Bulk](/articles/uploading_in_bulk.md) in order to **create a manifest** `velociraptor_manifest.txt`, **upload** 100 files and **edit** annotations on these files using the Synapse clients. 
+This vignette will combine concepts from [Annotations and Queries](/articles/annotation_and_query.html), [Views](/articles/views.html), [Uploading and Downloading Data in Bulk](/articles/uploading_in_bulk.html) in order to **create a manifest** `velociraptor_manifest.txt`, **upload** 100 files and **edit** annotations on these files using the Synapse clients. 
 
 ## Annotation dictionaries
 The Sage Bionetworks Systems Biology and Computational Oncology teams maintain [annotation dictionaries](https://github.com/sage-bionetworks/synapseAnnotations) in GitHub. You can use the terms found in the synapseAnnotations GitHub repo as a starting point for you own annotations.
@@ -35,7 +35,7 @@ Here it is in a visual example:
 
 <br>
 
-See **Creating a Manifest** in [Uploading and Downloading Data in Bulk](/articles/uploading_in_bulk.md#Creating-a-Manifest) for additional details.
+See **Creating a Manifest** in [Uploading and Downloading Data in Bulk](/articles/uploading_in_bulk.html#Creating-a-Manifest) for additional details.
 
 **Save** this file in a tab-delimited format called `velociraptor_manifest.tsv`.
 
@@ -47,7 +47,7 @@ Files can be uploaded in one go with a manifest file. If you would like to do a 
 And ta-da! Your files have been uploaded!
 
 ## Create a File View (Web)
-Since the files have been uploaded with annotations, a file [View](/articles/views.md) allows users to query, facet, and bulk manipulate the files and metadata.
+Since the files have been uploaded with annotations, a file [View](/articles/views.html) allows users to query, facet, and bulk manipulate the files and metadata.
 
 To create your File View: 
 1. Navigate to your Project.
