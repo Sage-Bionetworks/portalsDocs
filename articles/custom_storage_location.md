@@ -29,9 +29,8 @@ Follow the documentation on Amazon Web Service (AWS) site to **[Create a Bucket]
 Make the following adjustments to customize it to work with Synapse:  
 
 * When the AWS instructions prompt you to `Create a Bucket - Select a Bucket Name and Region`, use a unique name. For example, `thisisthenameofmybucket`. 
-* Select the newly created bucket and click the **Properties** button. Expand the **Permissions** section and:  
-    * Make sure that all the boxes (List, Upload/Delete, View Permissions, and Edit Permissions) have been checked. It should do this by default. 
-    * Select the **Add bucket policy** button and copy one of the below policies (read-only or read-write permissions). Change the name of `Resource` from “synapse-share.yourcompany.com” to the name of your new bucket (twice) and ensure that the `Principal` is `"AWS":"325565585839"`. This is Synapse's account number. 
+* Select the newly created bucket and click the **Permissions** tab.
+    * Select the **Bucket Policy** button and copy one of the below policies (read-only or read-write permissions). Change the name of `Resource` from “synapse-share.yourcompany.com” to the name of your new bucket (twice) and ensure that the `Principal` is `"AWS":"325565585839"`. This is Synapse's account number. 
 
 ### Read-write permissions
 To allow authorized Synapse users to upload data to your bucket set read-write permissions need to be set on that bucket (you allow Synapse to upload and retrieve files):
