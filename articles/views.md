@@ -39,27 +39,23 @@ A view can be queried exactly the same as any other `Table` in Synapse. Please s
 
 For example, to query for everything in `syn123`:
 
-{% tabs %}
+##### Command Line
 
-{% tab Command %}
-{% highlight bash %}
+```bash
 synapse query 'SELECT * FROM syn123'
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab Python %}
-{% highlight python %}
+##### Python
+
+```python
 query = syn.tableQuery('SELECT * FROM syn123')
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab R %}
-{% highlight r %}
+##### R
+
+```r
 query <- synTableQuery('SELECT * FROM syn123')
-{% endhighlight %}
-{% endtab %}
-
-{% endtabs %}
+```
 
 ## Update Annotations in Bulk
 
@@ -69,7 +65,7 @@ Views can be used to update annotations in bulk. To add new annotations, see the
 
 For example, if you would like to use the Python client to update the annotation `dogSays`:`bark` to `dogSays`:`woof` in every file in a `File View` with the synId syn456, you can do:
 
-{% highlight python %}
+```python
 from synapseclient import Table
 
 foo = syn.tableQuery('select * from syn456')
@@ -81,8 +77,7 @@ bar['dogSays'] = 'woof'
 
 # store the fileview with the new annotation in Synapse
 fv = syn.store(synapseclient.Table(foo.tableId, bar))
-
-{% endhighlight %}
+```
 
 ### Using Simple Search
 
