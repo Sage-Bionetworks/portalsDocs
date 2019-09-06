@@ -224,9 +224,7 @@ Please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo
 
 ## Setting Up an External Google Cloud Storage Bucket
 
-Follow the documentation on Google Cloud's site to **[Create a Bucket](https://cloud.google.com/storage/docs/creating-buckets){:target="_blank"}**. 
-
-<a href="https://cloud.google.com/storage/docs/creating-buckets" class="btn btn-primary">View Google Cloud Storage Bucket Instructions</a>{:target="_blank"}
+Follow the documentation on Google Cloud's site to **[Create a Bucket](https://cloud.google.com/storage/docs/creating-buckets){:target="_blank"}**.
 
 Make the following adjustments to customize it to work with Synapse:  
 
