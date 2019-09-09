@@ -55,20 +55,18 @@ If you see violations of our Community Standards, email privacyofficer@sagebase.
 *Attribution*
 This Code of Conduct is adapted from the [Contributor Covenant, version 1.4](https://www.contributor-covenant.org/version/1/4/code-of-conduct.html).
 
-
-
 ### Becoming a Registered User
 
 In order to become a `Registered User`, users must agree to the Terms and Conditions of Use, the Data Use Procedure, and Privacy Policy. Users must declare to:
 
--	Act ethically and responsibly
--	Protect and respect data participant’s privacy and confidentiality
--	Abide by the principles for responsible data use and handling as described in the Synapse Governance Documents
--	Take full responsibility for my use of data, software, and other Synapse content
--	Share content only when authorized
--	Not hack Synapse
--	Comply with by all applicable laws and regulations
--	Adhere to the Synapse Code of Conduct
+- Act ethically and responsibly
+- Protect and respect data participant’s privacy and confidentiality
+- Abide by the principles for responsible data use and handling as described in the Synapse Governance Documents
+- Take full responsibility for my use of data, software, and other Synapse content
+- Share content only when authorized
+- Not hack Synapse
+- Comply with by all applicable laws and regulations
+- Adhere to the Synapse Code of Conduct
 
 ### Oversight, Audits, and Adjudication
 
