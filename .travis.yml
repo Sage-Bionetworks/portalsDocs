@@ -1,6 +1,8 @@
 language: ruby
 rvm:
   - 2.1
+before_install:
+  - gem install bundler -v '< 2'
 install:
   - bundle install
   - npm install
@@ -10,4 +12,3 @@ script:
 branches:
   only:
     - master
-after_success: bundle exec s3_website push

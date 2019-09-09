@@ -27,17 +27,22 @@ Synapse `Files` (as well as `Folders` and `Projects`) are identified by a unique
 
 ## Uploading a File
 
-{% tabs %}
+##### Web
 
-{% tab Command %}
-{% highlight bash %}
+Navigate to the **Files** tab of the project to which you would like to add the file. Click on the Tools Menu and then on **Upload or Link to File** to upload a local file from your computer or to link to a URL.
+
+<img id="image" src="/assets/images/upload_file_button.png">
+
+##### Command line
+
+```bash
 # Add a local file to an existing project (syn12345) on Synapse
 synapse store raw_data.txt --parentId syn123456
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab Python %}
-{% highlight python %}
+##### Python
+
+```python
 import synapseclient
 from synapseclient import File
 syn = synapseclient.login()
@@ -45,45 +50,42 @@ syn = synapseclient.login()
 # Add a local file to an existing project (syn12345) on Synapse
 file = File(path='/path/to/raw_data.txt', parent='syn12345')
 file = syn.store(file)
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab R %}
-{% highlight r %}
+##### R
+
+```r
 library(synapser)
 synLogin()
 
 # Add a local file to an existing project (syn12345) on Synapse
 file <- File(path='/path/to/raw_data.txt', parentId='syn12345')
 file <- synStore(file)
-{% endhighlight %}
-{% endtab %}
-
-{% tab Web %}
-Navigate to the **Files** tab of the project to which you would like to add the file. Click on the Tools Menu and then on **Upload or Link to File** to upload a local file from your computer or to link to a URL.
-
-<img id="image" src="/assets/images/upload_file_button.png">
-{% endtab %}
-
-{% endtabs %}
+```
 
 ## Moving a File
 
 All Synapse clients offer a way to move files and folders. Please note that [File Views](/articles/views.html) and [sync manifests](/articles/uploading_in_bulk.html) **cannot** be used to move files. 
 
-The command line client has a sub-command `mv` which can be used to move files and folders. The Python and R clients do not have a specific `move` function, but can be used to modify the `parentId` property of the file/folder to move it. In the web client, there is an option in the `Tools` menu to move files or folders. 
+The command line client has a sub-command `mv` which can be used to move files and folders. The Python client provides the [syn.move](https://python-docs.synapse.org/build/html/Client.html#synapseclient.Synapse.move) command, and the R client has [synMove()](https://r-docs.synapse.org/reference/synMove.html).
 
-{% tabs %}
+##### Web
 
-{% tab Command %}
-{% highlight bash %}
+Navigate to the file/folder you would like to move. Select **Tools** -> **Move File**. Browse for the new folder/project or enter the synId to move to. 
+<br/>
+<img id="smallImage" src="/assets/images/moveFile.png"> <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+<img id="image" src="/assets/images/moveFileTo.png">
+
+##### Command line
+
+```bash
 # move a file or folder (syn123) to a different folder/project (syn456)
 synapse mv --id syn123 --parentId syn456
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab Python %}
-{% highlight python %}
+##### Python
+
+```python
 import synapseclient
 syn = synapseclient.login()
 # fetch the file/folder to move (syn123 in this example)
@@ -93,11 +95,11 @@ foo = syn.get('syn123', downloadFile=False)
 foo.properties.parentId = 'syn456'
 # store the file/folder to move it
 syn.store(foo)
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab R %}
-{% highlight r %}
+##### R
+
+```r
 library(synapser)
 synLogin()
 # fetch the file/folder to move (syn123 in this example)
@@ -107,17 +109,7 @@ foo <- synGet('syn123', downloadFile = FALSE)
 foo$properties$parentId <- 'syn10056031'
 # store the file/folder to move it
 synStore(foo)
-{% endhighlight %}
-{% endtab %}
-
-{% tab Web %}
-Navigate to the file/folder you would like to move. Select **Tools** -> **Move File**. Browse for the new folder/project or enter the synId to move to. 
-<br/>
-<img id="smallImage" src="/assets/images/moveFile.png"> <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-<img id="image" src="/assets/images/moveFileTo.png">
-{% endtab %}
-
-{% endtabs %}
+```
 
 # File Previews
 
@@ -125,15 +117,9 @@ Some files in Synapse are supported with previews to allow users to peek at the 
 
 # Versions of Files
 
-Versioning is an important component to reusable, reproducible research. There are a number of ways that versioning can be accomplished, including the commonly used filename modification scheme (e.g., 'file.txt', 'file-1.txt', 'file-1a.txt', 'file-final.txt', and then 'file-reallyfinal.txt'). However, this is less than satisfactory for a number of reasons. First, the rules for naming are arbitrary, and may change over time. Second, it is not possible to easily determine (without external documentation) that this set of file changes are related to the same file. Third, it becomes difficult to manage future use of specific versions of the file. Using `File` versioning provided by Synapse solves these issues.
+Versioning is an important component to reusable, reproducible research. When a Synapse `File` is initially uploaded, it automatically gets a version of `1`. It can be referred to explicitly by its Synapse ID: `syn12345678.1`. Uploading a new version of a file replaces the existing file in Synapse while preserving the previous version. The Synapse ID will remain but the version will increase, e.g., `syn12345678.2`. All versions are accessible through a single entry point (the Synapse ID, `syn12345678`). It is important to note that, by default, any previous versions of the file should still be available - they may be used in provenance relationships or as part of a data release. 
 
-When a Synapse `File` is initially uploaded, it automatically gets a version of `1`. It can be referred to explicitly by its Synapse ID: `syn12345678.1`. After uploading a file to Synapse, you may find the need to change it. For example, you modified the code that creates the file, changing its contents. Or, you found an error and needed to make a manual change. Uploading new versions of a file to replace an existing one in Synapse is the answer.
-
-It is important to note that, by default, any previous versions of the file should still be available - it may be used in provenance relationships or as part of a data release. To handle these types of situations, files re-uploaded to Synapse create a new version.
-
-If the contents of a file are changed and you indicate that you want to replace an existing Synapse `File` with a new one (through the web interface from the Tools menu by selecting 'Upload a New Version of the File', or through the programmatic clients), the Synapse ID will remain but the version will increase, e.g., `syn12345678.2`. Hence, this is a standard, transparent way to determine how a file has changed and the relationship over time between the versions. It also provides a single entry point (the Synapse ID, `syn12345678`) to find the file and determine if there are multiple versions. Further, it allows for downstream use of specific versions of the `File`, and other users can always come back to see if new versions exist and have been subsequently processed as well.
-
-Providing the Synapse ID without any versioning information to any of the clients (e.g., `syn12345678`) will always point to the most recent version of the file. In this way, updates to files can be automatically fetched by users by simply omitting the version.
+Providing the Synapse ID without any versioning information to any of the clients (e.g., `syn12345678`) will always point to the most recent version of the file. In this way, updates to files can be automatically fetched by users by omitting the version.
 
 If a DOI has been created for a Synapse file, it is automatically versioned as well, so specific versions can be cited in other places.
 
@@ -142,51 +128,76 @@ The easiest way to create a new version of an existing Synapse `File` is to use 
 Only the file and annotations information are included in the version. Other metadata about a Synapse `File` (such as the description, name, parent, ACL, *and its associated Wiki*) are not part of the version, and will not change between versions.
 
 ## Uploading a New Version
-To upload a new version of a `File`, the easiest way to do this is to use the same file name and store it in the same location (e.g., the same `parentId`), therefore uploading a new version follows the same steps as uploading a file for the first time. **The only major difference is the practice of adding a comment to the new version in order to easily track differences at a glance**. The example file `raw_data.txt` will now have a version of `2` and a comment describing the change. 
+Uploading a new version follows the same steps as uploading a file for the first time - use the same file name and store it in the same location (e.g., the same `parentId`). **It is recommended to add a comment to the new version in order to easily track differences at a glance**. The example file `raw_data.txt` will now have a version of `2` and a comment describing the change.
 
-{% tabs %}
-
-{% tab Command %}
-{% highlight bash %}
-# Upload a new version of raw_data.txt 
-synapse store raw_data.txt --parentId syn123456 
-#Currently there is no option to add a version comment when uploading via command line. We recommend adding the comment via the web client.
-{% endhighlight %}
-{% endtab %}
-
-
-{% tab Python %}
-{% highlight python %}
-# Upload a new version of raw_data.txt 
-from synapseclient import File
-
-file = File(path='/path/to/raw_data.txt', parent='syn12345')
-file.versionComment = "Added 5 random normally distributed numbers."
-file = syn.store(file)
-{% endhighlight %}
-{% endtab %}
-
-{% tab R %}
-{% highlight r %}
-# Upload a new version of raw_data.txt
-file <- File(path='/path/to/raw_data.txt', parentId='syn12345')
-file <- synStore(file)
-{% endhighlight %}
-{% endtab %}
-
-{% tab Web %}
+##### Web
 Navigate to the file on Synapse and click the **Tools** button. Select **Upload A New Version Of The File** from the dropdown menu and upload or link to your file in the resulting pop-up. 
 
 <img id="image" src="/assets/images/upload_new_version_file.png">
 
-Once the new version has been uploaded, select the **File History** button and then **Edit Version Info** to add the version comment.
+Once the new version has been uploaded, click the **Tools** button and select the **File History** button. Then select **Edit Version Info** to add the version comment.
 
 <img id="image" src="/assets/images/add_version_comment.png">
 
-{% endtab %}
+##### Command line
 
-{% endtabs %}
+```bash
+# Upload a new version of raw_data.txt 
+synapse store raw_data.txt --parentId syn123456 
+#Currently there is no option to add a version comment when uploading via command line. We recommend adding the comment via the web client.
+```
 
+##### Python
+
+```python
+# Upload a new version of raw_data.txt, EXPLICIT UPDATE EXAMPLE
+import synapseclient
+
+# fetch the file in Synapse
+file_to_update = syn.get('syn2222', downloadFile=False)
+
+# save the local path to the new version of the file
+file_to_update.path = '/path/to/new/version/of/raw_data.txt'
+
+# add a version comment
+file_to_update.versionComment = 'Added 5 random normally distributed numbers.'
+
+# store the new file
+updated_file = syn.store(file_to_update)
+
+# Upload a new version of raw_data.txt, IMPLICIT UPDATE EXAMPLE
+# Assuming that there is a file created with: 
+syn.store(File('path/to/old/raw_data.txt', parentId='syn123456'))
+
+# To create a new version of that file, make sure you store it with the exact same name
+new_file = syn.store(File('path/to/new_version/raw_data.txt',  parentId='syn123456'))
+```
+
+##### R
+
+```r
+# Upload a new version of raw_data.txt, EXPLICIT UPDATE EXAMPLE
+library(synapser)
+
+# fetch the file in Synapse, where "syn2222" is the synID of the file in Synapse
+file_to_update <- synGet('syn2222', downloadFile=FALSE)
+
+# save the local path to the new version of the file
+file_to_update$path <- '/path/to/new/version/of/raw_data.txt'
+
+# add a version comment
+file_to_update$versionComment <- 'Added 5 random normally distributed numbers.'
+
+# store the new file
+updated_file <- synStore(file_to_update)
+
+# Upload a new version of raw_data.txt, IMPLICIT UPDATE EXAMPLE
+# Assuming that there is a file created with: 
+synStore(File('path/to/old/raw_data.txt', parentId='syn123456'))
+
+# To create a new version of that file, make sure you store it with the exact same name
+new_file <- synStore(File('path/to/new_version/raw_data.txt',  parentId='syn123456')) 
+```
 
 ## Updating Annotations or Provenance Without Changing Versions
 Any change to a `File` will automatically update its version. If this isn't the desired behavior, such as minor cahnges to the metadata, you can set `forceVersion=False` with the Python or R clients. For command line, the commands `set-annotations` and `set-provenance` will update the metadata without creating a new version. Adding/updating annotations and provenance in the web client will also not cause a version change.
@@ -195,145 +206,138 @@ Any change to a `File` will automatically update its version. If this isn't the 
 
 **Setting annotations without changing version**
 
-{% tabs %}
+##### Web
 
-{% tab Command %}
-{% highlight bash %}
+Please refer to the [Annotations and Queries](/articles/annotation_and_query.html) article for instructions on adding/editing annotations via the web client.
+
+##### Command line
+
+```bash
 # Set annotation on file (syn56789)
 synapse set-annotations --id syn56789 --annotations '{"fileType":"bam", "assay":"RNA-seq"}'
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab Python %}
-{% highlight python %}
+##### Python
+
+```python
 # Get file from Synapse, set download=False since we are only updating annotations
 file = syn.get('syn56789', download=False)
 # Add annotations 
 file.annotations = {"fileType":"bam", "assay":"RNA-seq"}
 # Store the file without creating a new version
 file = syn.store(file, forceVersion=False)
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab R %}
-{% highlight r %}
+##### R
+
+```r
 # Get file from Synapse, set download=False since we are only updating annotations
 file <- synGet('syn56789', downloadFile=FALSE)
 # Add annotations 
 annotations <- synSetAnnotations(file, annotations=list(fileType = "bam", assay = "RNA-seq"))
-{% endhighlight %}
-{% endtab %}
-
-{% tab Web %}
-Please refer to the [Annotations and Queries](/articles/annotation_and_query.html) article for instructions on adding/editing annotations via the web client.
-{% endtab %}
-
-{% endtabs %}
-
-<br/>
+```
 
 **Setting provenance without changing version**
 
-{% tabs %}
+##### Web
+Please refer to the [Provenance](/articles/provenance.html) article for instructions on adding/editing annotations via the web client.
 
-{% tab Command %}
-{% highlight bash %}
-# Setting provenance (syn56789)
+##### Command line
+
+```bash
 synapse set-provenance -id syn56789 -executed ./path/to/example_code
-{% endhighlight %}
-{% endtab %}
+```
 
+##### Python
 
-{% tab Python %}
-{% highlight python %}
+```python
 # Get file from Synapse, set download=False since we are only updating provenance
 file = syn.get('syn56789', download=False)
-# Add provenance 
+# Add provenance
 file = syn.setProvenance(file, activity = Activity(used = '/path/to/example_code'))
 # Store the file without creating a new version
 file = syn.store(file, forceVersion=False)
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab R %}
-{% highlight r %}
+##### R
+
+```r
 # Get file from Synapse, set download=False since we are only updating annotations
 file <- synGet('syn56789', downloadFile=FALSE)
 # Add provenance 
 act <- Activity(name = 'Example Code', used = '/path/to/example_code')
 file <- synStore(file, activity=act, forceVersion=FALSE)
-{% endhighlight %}
-{% endtab %}
-
-{% tab Web %}
-Please refer to the [Provenance](/articles/provenance.html) article for instructions on adding/editing annotations via the web client.
-{% endtab %}
-
-{% endtabs %}
+```
 
 ## Downloading a Specific Version
 By default, the `File` downloaded will always be the most recent version. However, a specific version can be downloaded by passing the `version` parameter.
 
-{% tabs %}
-{% tab Command %}
-{% highlight bash %}
-# Retrieve the first version of a file from Synapse
-synapse get syn56789 -v 1
-{% endhighlight %}
-{% endtab %}
+##### Web
 
-{% tab Python %}
-{% highlight python %}
-entity = syn.get("syn3260973", version=1)
-{% endhighlight %}
-{% endtab %}
-
-{% tab R %}
-{% highlight r %}
-entity <- synGet("syn3260973", version=1)
-{%endhighlight %}
-{% endtab %}
-
-{% tab Web %}
 Navigate to where the file is stored in Synapse and click the **File History** button to show a list of all versions. Select the version you could like to download and once the page has refreshed, click the blue **Download** button next to the name of the file.
 
 <img id='largeImage' src='/assets/images/download_specific_version.png'>
-{% endtab %}
 
-{% endtabs %}
+##### Command line
 
+```bash
+# Retrieve the first version of a file from Synapse
+synapse get syn56789 -v 1
+```
+
+##### Python
+
+```python
+entity = syn.get("syn3260973", version=1)
+```
+
+##### R
+
+```r
+entity <- synGet("syn3260973", version=1)
+```
 
 ## Deleting a File
-{% tabs %}
-{% tab Python %}
-{% highlight python %}
-syn.delete("syn3260973")
-{% endhighlight %}
-{% endtab %}
-{% tab R %}
-{% highlight r %}
-synDelete("syn3260973") #this command will return NULL 
-{%endhighlight %}
-{% endtab %}
-{% endtabs %}
+
+##### Command line
+
+```bash
+synapse delete syn56789
+```
+
+##### Python
+
+```python
+entity = syn.delete("syn56789")
+```
+
+##### R
+
+```r
+entity <- synDelete("syn56789")
+```
 
 #Delete a specific file version.
+
 A specific file version can be deleted by passing the `version` parameter.
-{% tabs %}
-{% tab Python %}
-{% highlight python %}
-syn.delete("syn3260973", version=2)
-{% endhighlight %}
-{% endtab %}
-{% tab R %}
-{% highlight r %}
-synDelete("syn3260973", version=2) #this command will return NULL
-{%endhighlight %}
-{% endtab %}
-{% endtabs %}
 
+##### Command line
 
-<br/>
+```bash
+synapse delete syn56789 -v 1
+```
+
+##### Python
+
+```python
+entity = syn.delete("syn56789", version=1)
+```
+
+##### R
+
+```r
+entity <- synDelete("syn56789", , version = 1)
+```
 
 ## See Also
 [Provenance](/articles/provenance.html), [Annotations and Queries](/articles/annotation_and_query.html), [Downloading Data](/articles/downloading_data.html)

@@ -40,34 +40,30 @@ Use the **Tools** menu and then select **Edit Project/Folder/File wiki**
 
 <img src="/assets/images/wiki_editprojectwiki.png">
 
-### Using R/Python
-{% tabs %}
-{% tab Command %}
-{% highlight bash %}
-The command line client does not support the creation of Wiki content. We suggest using (to get to the webpage of the project) `synapse onweb syn###` where `syn###` is the Synapse Id of your created project. Then editing the Wiki using the web client.
-{% endhighlight %}
-{% endtab %}
+##### Command Line
 
-{% tab Python %}
-{% highlight python %}
+```bash
+The command line client does not support the creation of Wiki content. We suggest using (to get to the webpage of the project) `synapse onweb syn###` where `syn###` is the Synapse Id of your created project. Then editing the Wiki using the web client.
+```
+
+##### Python
+
+```python
 projWiki = Wiki(title='Data Summary', owner = myProj)
 markdownText = '''* Cell growth look normally distributed. There is evidence of inverse growth between these two cell lines '''
 projWiki['markdown'] = markdownText
 projWiki = syn.store(projWiki)
-{% endhighlight %}
-{% endtab %}
+```
 
-{% tab R %}
-{% highlight r %}
+##### R
+
+```r
 library(synapser)
 synLogin()
 markdownText <- "* Cell growth look normally distributed\n* There is evidence of inverse growth between these two cell lines."
 wiki <- Wiki(owner="syn123", title="Analysis summary", markdown=markdownText)
 wiki <- synStore(wiki)
-{%endhighlight %}
-{% endtab %}
-
-{% endtabs %}
+```
 
 ## Wiki Subpages
 
@@ -111,7 +107,7 @@ See the 'Insert' list for the following widgets to customize your Wiki design.
 
 ## Tagging Synapse Users
 
-A Synapse user can be tagged by using the 'Tag someone' Widget from the 'Insert' menu. This displays a user badge which can be clicked on to visit the users' profile page. You can also do this by typing '@' while editing a Wiki - just enter the Synapse username or part of their full name in the dialog that appears.
+A Synapse user can be tagged by using the 'Tag someone' Widget from the 'Insert' menu. This displays a user badge which can be clicked on to visit the users' profile page. You can also do this by typing '@' while editing a Wiki by entering the Synapse username or part of their full name in the dialog that appears.
 
 ## Governance
 

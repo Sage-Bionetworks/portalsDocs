@@ -60,4 +60,5 @@ In case of accidental deletion, moderators may also undelete threads to restore 
 Moderators may also "pin" important threads using the **pin** icon located next to the original post within the thread page. This causes the thread to be highlighted on the top of the thread list on the `Discussion` main page, and to remain at the top of the list even once newer threads are posted. Moderators may also "unpin" threads.
 
 <img style="width: 65%;" src="/assets/images/ModeratorButtons.png">
+
 # See Also [Wikis](/articles/wikis.html)
