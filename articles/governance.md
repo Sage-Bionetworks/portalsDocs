@@ -22,13 +22,13 @@ The Synapse [Data Use Procedure](https://s3.amazonaws.com/static.synapse.org/gov
 
 The [Privacy Policy](https://s3.amazonaws.com/static.synapse.org/governance/SynapsePrivacyPolicy.pdf?v=5) explains how Sage Bionetworks aims to protect personal information received, used and disclosed in connection with Synapse from `Registered Users` and non-registered visitors.
 
-### Code of Conduct
+## Code of Conduct
 
-The Code of Conduct delineates the rules and expected behavioral norms of Synapse users. It reflects Sage Bionetworks’ core values and culture of inclusion, respect, and courtesy. 
+The Code of Conduct delineates the rules and expected behavioral norms of Synapse users. It reflects Sage Bionetworks’ core values and culture of inclusion, respect, and courtesy.
 
 Members of the Synapse Community come from around the world. They have diverse sets of skills, personalities, and experiences. The Synapse community is open and positive. We expect members to follow our Community Standards, and we do not tolerate harassment.
 
-#### Synapse Community Standards
+### Synapse Community Standards
 
 A participant in the Synapse Community:
 
@@ -54,7 +54,7 @@ If you see violations of our Community Standards, email privacyofficer@sagebase.
 *Attribution*
 This Code of Conduct is adapted from the [Contributor Covenant, version 1.4](https://www.contributor-covenant.org/version/1/4/code-of-conduct.html).
 
-### Becoming a Registered User
+## Becoming a Registered User
 
 In order to become a `Registered User`, users must agree to the Terms and Conditions of Use, the Data Use Procedure, and Privacy Policy. Users must declare to:
 
@@ -67,11 +67,11 @@ In order to become a `Registered User`, users must agree to the Terms and Condit
 - Comply with by all applicable laws and regulations
 - Adhere to the Synapse Code of Conduct
 
-### Oversight, Audits, and Adjudication
+## Oversight, Audits, and Adjudication
 
 The Synapse Access and Compliance Team (ACT) monitors public activities on Synapse through periodic audits to assess compliance with the Synapse governance policies. For example, through these audits, the ACT verifies that public content shared on Synapse has appropriate `Conditions for Use`. The ACT does not monitor activities or content placed in private `Projects`. The ACT supports ethical use of Synapse, including adjudicating suspected unauthorized and/or unethical use of data, as well as "unsportsmanlike" behavior within the Synapse research commons. The ACT relies on the community of researchers and research participants for vigilance against unauthorized and/or unethical use of Synapse. Additionally, we rely on the community to hold itself to the highest standard of collegial behavior. People unable or unwilling to meet these standards may be expelled from Synapse. Do not hesitate to get in touch with the ACT (<mailto:act@synapse.org>) if you have questions or suggestions about Synapse governance, including the policies, ethics, or rules for data sharing on Synapse.
 
-It is your responsibility to contact the ACT (<mailto:act@synapse.org>) if: 
+It is your responsibility to contact the ACT (<mailto:act@synapse.org>) if:
 
 - You suspect that data is improperly shared on Synapse
 - You are concerned that data shared on Synapse is improperly or incompletely de-identified
