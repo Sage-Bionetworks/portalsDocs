@@ -51,8 +51,7 @@ Participating in Synapse is a choice. Sage Bionetworks, as the host of the Synap
 
 If you see violations of our Community Standards, please email <mailto:privacyofficer@sagebase.org>. The Synapse Access and Compliance Team (ACT) investigates all reports and decides what to do. We do not hold hearings or allow for appeals. We are committed to protect the confidentiality of victims and of anyone who reports an incident.
 
-*Attribution*
-This Code of Conduct is adapted from the [Contributor Covenant, version 1.4](https://www.contributor-covenant.org/version/1/4/code-of-conduct.html).
+*This Code of Conduct is adapted from the [Contributor Covenant, version 1.4](https://www.contributor-covenant.org/version/1/4/code-of-conduct.html).*
 
 ## Becoming a Registered User
 
