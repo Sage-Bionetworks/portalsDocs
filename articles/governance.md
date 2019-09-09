@@ -33,20 +33,20 @@ Members of the Synapse Community come from around the world. They have diverse s
 
 A participant in the Synapse Community:
 
--	Welcomes others
--	Uses inclusive language
--	Shares experiences and knowledge
--	Respects other viewpoints and ideas
--	Shows empathy and kindness when interacting with others
+- Welcomes others
+- Uses inclusive language
+- Shares experiences and knowledge
+- Respects other viewpoints and ideas
+- Shows empathy and kindness when interacting with others
   
 Here are examples of behavior that do not meet the Synapse Community Standards:
 
--	Insulting or derogatory comments
--	Personal or political attacks
--	Trolling
--	Sexual language or images
--	Sharing private information without permission (e.g. sharing someone’s physical or electronic address)
--	Other conduct reasonably considered inappropriate in a professional setting
+- Insulting or derogatory comments
+- Personal or political attacks
+- Trolling
+- Sexual language or images
+- Sharing private information without permission (e.g. sharing someone’s physical or electronic address)
+- Other conduct reasonably considered inappropriate in a professional setting
 
 Participating in Synapse is a choice. Sage Bionetworks, as the host of the Synapse Community, has the right and responsibility to remove, edit, or reject contributions that are not aligned to this Code of Conduct. Sage Bionetworks may also ban temporarily, or permanently, any person who does not meet the Community Standards and whose behaviors they deem inappropriate, threatening, offensive, or harmful.
 
