@@ -29,7 +29,7 @@ The Code of Conduct delineates the rules and expected behavioral norms of Synaps
 
 Members of the Synapse Community come from around the world. They have diverse sets of skills, personalities, and experiences. The Synapse community is open and positive. We expect members to follow our Community Standards, and we do not tolerate harassment.
 
-Synapse Community Standards
+#### Synapse Community Standards
 
 A participant in the Synapse Community:
 
