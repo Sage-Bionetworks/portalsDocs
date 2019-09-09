@@ -74,11 +74,9 @@ The Synapse Access and Compliance Team (ACT) monitors public activities on Synap
 
 It is your responsibility to contact the ACT (<mailto:act@synapse.org>) if: 
 
--	You suspect that data is improperly shared on Synapse
--	You are concerned that data shared on Synapse is improperly or incompletely de-identified
--	You suspect unauthorized use of Synapse data
-
-<br>
+- You suspect that data is improperly shared on Synapse
+- You are concerned that data shared on Synapse is improperly or incompletely de-identified
+- You suspect unauthorized use of Synapse data
 
 {% include important.html content="By using Synapse you consent to these Governance policies and procedures." %}
 <br>
