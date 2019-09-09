@@ -49,7 +49,7 @@ Here are examples of behavior that do not meet the Synapse Community Standards:
 
 Participating in Synapse is a choice. Sage Bionetworks, as the host of the Synapse Community, has the right and responsibility to remove, edit, or reject contributions that are not aligned to this Code of Conduct. Sage Bionetworks may also ban temporarily, or permanently, any person who does not meet the Community Standards and whose behaviors they deem inappropriate, threatening, offensive, or harmful.
 
-If you see violations of our Community Standards, email privacyofficer@sagebase.org. The Synapse Access and Compliance Team (ACT) investigates all reports and decides what to do. We do not hold hearings or allow for appeals. We are committed to protect the confidentiality of victims and of anyone who reports an incident.
+If you see violations of our Community Standards, please email <mailto:privacyofficer@sagebase.org>. The Synapse Access and Compliance Team (ACT) investigates all reports and decides what to do. We do not hold hearings or allow for appeals. We are committed to protect the confidentiality of victims and of anyone who reports an incident.
 
 *Attribution*
 This Code of Conduct is adapted from the [Contributor Covenant, version 1.4](https://www.contributor-covenant.org/version/1/4/code-of-conduct.html).
