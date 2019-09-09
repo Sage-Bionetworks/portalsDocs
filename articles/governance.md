@@ -8,7 +8,7 @@ order: 1
 
 # Synapse Commons Governance Overview
 
-Synapse operates under comprehensive governance policies. These policies delineate Synapse users’ rights and responsibilities. They also specify the rights and responsibilities of Sage Bionetworks and of the Synapse Access and Compliance Team (ACT). 
+Synapse operates under comprehensive governance policies. These policies delineate Synapse users’ rights and responsibilities. They also specify the rights and responsibilities of Sage Bionetworks and of the Synapse Access and Compliance Team (ACT).
 
 ### [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=5){:target="_blank"}
 
@@ -70,7 +70,7 @@ In order to become a `Registered User`, users must agree to the Terms and Condit
 
 ### Oversight, Audits, and Adjudication
 
-The Synapse Access and Compliance Team (ACT) monitors public activities on Synapse through periodic audits to assess compliance with the Synapse governance policies. For example, through these audits, the ACT verifies that public content shared on Synapse has appropriate `Conditions for Use`. The ACT does not monitor activities or content placed in private `Projects`. The ACT supports ethical use of Synapse, including adjudicating suspected unauthorized and/or unethical use of data, as well as "unsportsmanlike" behavior within the Synapse research commons. The ACT relies on the community of researchers and research participants for vigilance against unauthorized and/or unethical use of Synapse. Additionally, we rely on the community to hold itself to the highest standard of collegial behavior. People unable or unwilling to meet these standards may be expelled from Synapse. Do not hesitate to get in touch with the ACT (<mailto:act@synapse.org>) if you have questions or suggestions about Synapse governance, including the policies, ethics, or rules for data sharing on Synapse. 
+The Synapse Access and Compliance Team (ACT) monitors public activities on Synapse through periodic audits to assess compliance with the Synapse governance policies. For example, through these audits, the ACT verifies that public content shared on Synapse has appropriate `Conditions for Use`. The ACT does not monitor activities or content placed in private `Projects`. The ACT supports ethical use of Synapse, including adjudicating suspected unauthorized and/or unethical use of data, as well as "unsportsmanlike" behavior within the Synapse research commons. The ACT relies on the community of researchers and research participants for vigilance against unauthorized and/or unethical use of Synapse. Additionally, we rely on the community to hold itself to the highest standard of collegial behavior. People unable or unwilling to meet these standards may be expelled from Synapse. Do not hesitate to get in touch with the ACT (<mailto:act@synapse.org>) if you have questions or suggestions about Synapse governance, including the policies, ethics, or rules for data sharing on Synapse.
 
 It is your responsibility to contact the ACT (<mailto:act@synapse.org>) if: 
 
@@ -79,8 +79,3 @@ It is your responsibility to contact the ACT (<mailto:act@synapse.org>) if:
 - You suspect unauthorized use of Synapse data
 
 {% include important.html content="By using Synapse you consent to these Governance policies and procedures." %}
-<br>
-
-
-
-
