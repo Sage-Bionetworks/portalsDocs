@@ -6,22 +6,21 @@ category: governance
 order: 1
 ---
 
-# Synapse Commons Governance Overview
+# Governance Overview
 
 Synapse operates under comprehensive governance policies. These policies delineate Synapse users’ rights and responsibilities. They also specify the rights and responsibilities of Sage Bionetworks and of the Synapse Access and Compliance Team (ACT).
 
-### [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=5){:target="_blank"}
+## Terms and Conditions of Use
 
-The Synapse Terms and Conditions of Use establishes the use, disclaimers, and limitation of liability governing Synapse. By using Synapse, you are agreeing to abide by each of these terms and conditions.
+The Synapse [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=5) establishes the use, disclaimers, and limitation of liability governing Synapse. By using Synapse, you are agreeing to abide by each of these terms and conditions.
 
-### [Data Use Procedure](https://s3.amazonaws.com/static.synapse.org/governance/SynapseCommonsDataUseProcedure.pdf?v=4){:target="_blank"}
+## Data Use Procedure
 
-The Synapse Data Use Procedure describes the standard operating procedures for use of data within Synapse. For example, it defines `Open Data` and `Controlled Data`. This policy clarifies the requirements for uploading and downloading data to and from Synapse.
+The Synapse [Data Use Procedure](https://s3.amazonaws.com/static.synapse.org/governance/SynapseCommonsDataUseProcedure.pdf?v=4) describes the standard operating procedures for use of data within Synapse. For example, it defines `Open Data` and `Controlled Data`. This policy clarifies the requirements for uploading and downloading data to and from Synapse.
 
-### [Privacy Policy](https://s3.amazonaws.com/static.synapse.org/governance/SynapsePrivacyPolicy.pdf?v=5){:target="_blank"}
+## Privacy Policy
 
-The Privacy Policy explains how Sage Bionetworks aims to protect personal information received, used and disclosed in connection with Synapse 
-from `Registered Users` and non-registered visitors.
+The [Privacy Policy](https://s3.amazonaws.com/static.synapse.org/governance/SynapsePrivacyPolicy.pdf?v=5) explains how Sage Bionetworks aims to protect personal information received, used and disclosed in connection with Synapse from `Registered Users` and non-registered visitors.
 
 ### Code of Conduct
 
