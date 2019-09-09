@@ -111,9 +111,25 @@ foo$properties$parentId <- 'syn10056031'
 synStore(foo)
 ```
 
-# File Previews
+## Deleting a File
 
-Some files in Synapse are supported with previews to allow users to peek at the contents of the file before they download it. File Previews can also be embedded in Wikis. A list of what kinds of files are supported with rich previews will be added soon. 
+##### Command line
+
+```bash
+synapse delete syn56789
+```
+
+##### Python
+
+```python
+entity = syn.delete("syn56789")
+```
+
+##### R
+
+```r
+entity <- synDelete("syn56789")
+```
 
 # Versions of Files
 
@@ -288,14 +304,41 @@ synapse get syn56789 -v 1
 ##### Python
 
 ```python
-entity = syn.get("syn3260973", version=1)
+entity = syn.get("syn56789", version=1)
 ```
 
 ##### R
 
 ```r
-entity <- synGet("syn3260973", version=1)
+entity <- synGet("syn56789", version=1)
 ```
+
+## Deleting a Specific File Version
+
+A specific file version can be deleted by passing the `version` parameter.
+
+##### Command line
+
+```bash
+synapse delete syn56789 -v 1
+```
+
+##### Python
+
+```python
+entity = syn.delete("syn56789", version=1)
+```
+
+##### R
+
+```r
+# Calling `synDelete` returns NULL
+synDelete("syn56789", version = 1)
+```
+
+## File Previews
+
+Some files in Synapse are supported with previews to allow users to peek at the contents of the file before they download it. File Previews can also be embedded in Wikis.
 
 ## See Also
 [Provenance](/articles/provenance.html), [Annotations and Queries](/articles/annotation_and_query.html), [Downloading Data](/articles/downloading_data.html)
