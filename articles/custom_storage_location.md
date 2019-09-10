@@ -247,7 +247,7 @@ gsutil cp owner.txt gs://nameofmybucket/nameofmyfolder
 
 ##### Web
 
-Navigate to your bucket on the Amazon Console and select the **Upload files** button to upload your text file.
+Navigate to your bucket on the Google Cloud Console and select the **Upload files** button to upload your text file.
 
 <br/>
 
