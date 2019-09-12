@@ -1,7 +1,7 @@
 ---
 title: "Using Synapse as an OAuth 2.0 Server"
 layout: article
-excerpt: Follow these steps to register an OAuth Client and link it to Synapse.
+excerpt: Follow these steps to register an OAuth Client and authorize access to Synapse.
 category: howto
 ---
 
@@ -70,13 +70,13 @@ syn.restDELETE(uri='/oauth2/client/'+client_id, endpoint=syn.authEndpoint)
 
 To login via Synapse your client should redirect the browser from your application to `https://signing.synapse.org`, with the standard OAuth 2.0 request parameters:
 
-- `client_id`=<your client id>
+- `client_id`=`<your client id>`
 - `scope`=`openid`
-- `redirect_uri`=<the redirect uri registered with your client>
+- `redirect_uri`=`<the redirect uri registered with your client>`
 - `response_type`=`code`
-- `state`=<any state you want returned>
-- `nonce`=<some string to be returned in the ID token>
-- `claims`=<a JSON object>
+- `state`=`<any state you want returned>`
+- `nonce`=`<some string to be returned in the ID token>`
+- `claims`=`<a JSON object>`
 
 Synapse supports the `claims` request parameter, a JSON document containing the details of the user identity information you would like returned, as described [here](https://openid.net/specs/openid-connect-core-1_0.html#ClaimsParameter).  The list of supported claims is given here TBD.  For most claims the value to include in the JSON document is `null`.  The exception is the `team` claim, for which you provide the IDs of one or more teams, the membership of which you wish to inquire about.  Synapse will return the IDs of the subset of the given list of teams to which the user belongs.  Here is an example of a claims parameter JSON object:
 
