@@ -68,7 +68,7 @@ syn.restDELETE(uri='/oauth2/client/'+client_id, endpoint=syn.authEndpoint)
 
 ```
 
-To login via Synapse your client should redirect the browser from your application to `https://signing.synapse.org`, with the standard OAuth 2.0 request parameters:
+To login via Synapse your client should redirect the browser from your application to `https://signin.synapse.org`, with the standard OAuth 2.0 request parameters:
 
 - `client_id`=`<your client id>`
 - `scope`=`openid`
