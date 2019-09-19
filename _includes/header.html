@@ -41,7 +41,7 @@
     </button>
 
     <a href="{{ '/' | relative_url }}" class="navbar-brand" style="color:white"><img src="https://www.synapse.org/images/logo.svg" alt="Synapse Logo" style="width:35px; height:35px; padding-right: 0; position: relative; top:-7px"></a>
-    <a href="/" class="navbar-brand" style="color:white; padding-left:6px; font-size: 1.5em">SYNAPSE DOCS</a>
+    <a href="{{ '/' | relative_url }}" class="navbar-brand" style="color:white; padding-left:6px; font-size: 1.5em">SYNAPSE DOCS</a>
 </div>
     <nav class="collapse navbar-collapse" id="sd-navbar">
         <ul class="nav navbar-nav col-lg-7">
@@ -49,7 +49,7 @@
                 <a href="{{'/articles/getting_started.html' | relative_url}}">Getting started</a>
             </li>
             <li>
-                <a href="{{"/articles/" | relative_url}}"">User Guide</a>
+                <a href="{{'/articles/' | relative_url}}">User Guide</a>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">API Docs <span class="caret"></span></a>
