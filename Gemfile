@@ -13,4 +13,4 @@ gem "jekyll-code-example-tag"
 gem "redcarpet"
 gem "pygments.rb"
 gem "json"
-gem "s3_website"
+gem 'github-pages', group: :jekyll_plugins
