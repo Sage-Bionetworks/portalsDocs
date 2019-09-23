@@ -35,6 +35,6 @@ SELECT id,currentVersion,fileFormat,assay,genomeBuild,modifiedOn FROM syn1709737
 
 Navigate to **Wiki Tools** to **Edit Project Wiki** or to **Folder Tools** to **Edit Folder Wiki**. From the edit `Wiki` view, select **Insert** and **Table:Query on a Synapse Table/View** to insert the intended `File View` query. The result is a direct link to relevant files from a `Wiki` page with narrative content to provide additional context. 
 
-<img id="image" src="/assets/images/inPractice_embeddedView.png">
+<img id="image" src="../assets/images/inPractice_embeddedView.png">
 
 
