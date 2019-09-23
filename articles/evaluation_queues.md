@@ -11,7 +11,7 @@ An Evaluation queue allows for people to submit Synapse Files, Docker images, et
 
 ## Create an Evaluation Queue 
 
-To create a queue, you must first create a Synapse project. To learn how to do so, please follow instructions [here](/articles/getting_started.html#project-and-data-management-on-synapse). An Evaluation Queue can take several parameters that you can use to fine tune it to your preferences. The minimum requirements to create a queue are:
+To create a queue, you must first create a Synapse project. To learn how to do so, please follow instructions [here](getting_started.md#project-and-data-management-on-synapse). An Evaluation Queue can take several parameters that you can use to fine tune it to your preferences. The minimum requirements to create a queue are:
 
 * name – Unique name of the evaluation
 * description – A short description of the evaluation
@@ -165,7 +165,7 @@ submission <- synSubmit(
 
 ## View Submissions of an Evaluation Queue
 
-All submissions of an Evaluation queue can be views through the through the use of a leaderboard.  To learn how to create a wiki page, please visit [here](/articles/wikis.html).  Below are instructions on how to set up a leaderboard. You must know the **evaluation Id** to do so; see the section on how to "Configure an Evaluation Queue" for instructions on finding the evaluation Id.
+All submissions of an Evaluation queue can be views through the through the use of a leaderboard.  To learn how to create a wiki page, please visit [here](wikis.md).  Below are instructions on how to set up a leaderboard. You must know the **evaluation Id** to do so; see the section on how to "Configure an Evaluation Queue" for instructions on finding the evaluation Id.
 
 ### Adding Leaderboard Widget
 
