@@ -6,7 +6,7 @@ category: howto
 ---
 
 # Overview 
-A view is a type of Synapse [Table](/articles/tables.html) that queries across metadata ([Annotations](/articles/annotation_and_query.html)) for particular items (currently: projects or files) with a particular "scope". A `File View` lists all `Files` or `Tables` within one or more `Folders` or `Projects`. A `Project View` lists all `Projects` you've added to the view. Views can:
+A view is a type of Synapse [Table](tables.md) that queries across metadata ([Annotations](annotation_and_query.md)) for particular items (currently: projects or files) with a particular "scope". A `File View` lists all `Files` or `Tables` within one or more `Folders` or `Projects`. A `Project View` lists all `Projects` you've added to the view. Views can:
 
  * Allow `Projects`, `Files`, and `Tables` to be easily searched and queried
  * Allow view/editing metadata attributes in bulk
@@ -35,7 +35,7 @@ Views can be edited to change the scope of the view (e.g. the Project or Folder 
 Note that it may take a few moments for the updated View to rebuild as it queries across the system. 
 
 ## Query a View
-A view can be queried exactly the same as any other `Table` in Synapse. Please see [Tables](/articles/tables.html) for more examples. See the [Using Simple Search](/articles/views.html#using-simple-search) and [Using Advanced Search](/articles/views.html#using-advanced-search) sections below.
+A view can be queried exactly the same as any other `Table` in Synapse. Please see [Tables](tables.md) for more examples. See the [Using Simple Search](views.md#using-simple-search) and [Using Advanced Search](views.md#using-advanced-search) sections below.
 
 For example, to query for everything in `syn123`:
 
@@ -92,7 +92,7 @@ In advanced search, you can use a SQL-like query to search for items in that vie
 
 ## Insert a View into a Wiki
 
-Views can also be placed inside a [`Wiki`](/articles/wikis.html) once they have been created. You can embed the entire view or a subset of a query on it. 
+Views can also be placed inside a [`Wiki`](wikis.md) once they have been created. You can embed the entire view or a subset of a query on it. 
 
 To insert a file view with a synId of `syn8146547`:
 
@@ -105,4 +105,4 @@ To embed a subset of the file view, like the advanced search query in the previo
 Save the query and the edits to the `Wiki` to embed the view.
 
 # See Also
-[Annotations and Queries](/articles/annotation_and_query.html), [Tables](/articles/tables.html), [Wikis](/articles/wikis.html)
+[Annotations and Queries](annotation_and_query.md), [Tables](tables.md), [Wikis](wikis.md)
