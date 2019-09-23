@@ -217,4 +217,4 @@ Finally, query the table and download the album cover files. Clicking on any fil
 
 # See Also
 
-[Annotations and Queries](annotation_and_query.md), [Downloading Data](downloading_data.md), [Files and Versioning](versioning.md)
+[Annotations and Queries](annotation_and_query.md), [Downloading Data](downloading_data.md), [Files and Versioning](files_and_versioning.md)
