@@ -18,7 +18,7 @@ This guide is for new users who are interested in learning about Synapse. You wi
 
 Synapse is an open source collaborative platform. It can store data, code, results, and descriptions research work. Synapse hosts many [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects). It also hosts crowdsourced competitions, including [DREAM Challenges](http://dreamchallenges.org/). [Sage Bionetworks](http://www.sagebionetworks.org) provides Synapse services free of charge to the scientific community through generous support from various [funding sources](/articles/faq.html#how-is-synapse-funded).
 
-Synapse operates under a thorough [governance process](/articles/governance.html). This includes [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4), guidelines, and operating procedures.
+Synapse operates under a thorough [governance process](governance.md). This includes [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4), guidelines, and operating procedures.
 
 ## Register for a Synapse Account
 
