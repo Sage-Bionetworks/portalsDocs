@@ -17,7 +17,7 @@ category: howto
 
 # Provenance
 
-<img id="image" style="float:right" src="/assets/images/provenanceWorkflowDemo.png">
+<img id="image" style="float:right" src="../assets/images/provenanceWorkflowDemo.png">
 
 
 Reproducible research is a fundamental responsibility of scientists, but the best practices for achieving it are not established in computational biology. The Synapse “Provenance” system is one of many solutions you can use to make your work reproducible by you and others.
@@ -99,7 +99,7 @@ To continue our example above, we'll now add some new results from our initial d
 ##### Web
 To update the provenance on a file, navigate to the `File's` tab and click on the `File` that you would like to update. Click on the **Tools** dropdown in the upper right hand corner and select **Edit Provenance**. In the resulting pop-up, enter the relevant information. 
 
-<img id="webTab" src="/assets/images/editProvenance.png">
+<img id="webTab" src="../assets/images/editProvenance.png">
 
 ##### Command Line
 
@@ -150,7 +150,7 @@ You must be the person who created the entity to delete provenance.
 
 Navigate to the entity you would like to delete provenance from (e.g. a File or Folder). In this example, we are deleting provenance from a file. Select **Tools->Edit File Provenance**. In the list of **Used** and **Executed**, click the **X** to delete each activity and **Save** your changes.
 
-<img id="webTab" src="/assets/images/delete_provenance.png">
+<img id="webTab" src="../assets/images/delete_provenance.png">
 
 ##### Command Line
 
@@ -177,7 +177,7 @@ deleteProvenance = synDeleteProvenance('syn123')
 ##### Web
 Navigate to the `File's` page to view its provenance. Clicking on the triple dots above entities will expand it to show the `File's` full provenance.
 
-<img id="image" src="/assets/images/expandProvenance.png">
+<img id="image" src="../assets/images/expandProvenance.png">
 
 ##### Command Line
 
@@ -263,4 +263,4 @@ finalList <- lapply(finalList, function(x) synStore(x, activity=act))
 ```
 
 ### See Also
-[Files and Versioning](/articles/versioning.html), [Annotations and Queries](/articles/annotation_and_query.html)
+[Files and Versioning](versioning.md), [Annotations and Queries](annotation_and_query.md)
