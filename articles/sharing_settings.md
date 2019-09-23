@@ -7,7 +7,7 @@ order: 2
 ---
 
 # Access Control
-Synapse has two ways to control who can access your content. `Sharing Settings` determine _who_ can access content, and is akin to individual or group (team) permissions. `Conditions for Use` determine _how_ data can be used by those users who have been granted access. All content in Synapse has `Sharing Settings` but not all content has `Conditions for Use`. See the [Conditions for Use](/articles/access_control.html) article for information about those settings - this article covers sharing settings only.
+Synapse has two ways to control who can access your content. `Sharing Settings` determine _who_ can access content, and is akin to individual or group (team) permissions. `Conditions for Use` determine _how_ data can be used by those users who have been granted access. All content in Synapse has `Sharing Settings` but not all content has `Conditions for Use`. See the [Conditions for Use](access_control.md) article for information about those settings - this article covers sharing settings only.
 
 <a name="sharing-setting"></a>
 
@@ -30,7 +30,7 @@ There are two primary `Sharing settings`: **Public** and **Private**. The `Publi
 ## How to Share Projects
 To adjust the sharing settings on a project, click the `Project Settings` button. This will open a window listing the Synapse users who have access to the `Project` and their roles. When you create a new `Project` you are the only Synapse user listed in this window, because projects are private by default, and your access level will be `Administrator`.
 
-Use the `Add People` feature to add collaborators individually or to add a [team of collaborators](/articles/teams.html).
+Use the `Add People` feature to add collaborators individually or to add a [team of collaborators](teams.md).
 
 <a name="share-files-folders-and-tables"></a>
 ## Sharing Files, Folders, and Tables

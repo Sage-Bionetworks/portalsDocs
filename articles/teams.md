@@ -28,7 +28,7 @@ A listing of all `Teams` to which you belong is available on the **Teams** tab o
 
 From your [Profile Page](https://www.synapse.org/#!Profile:v), which can be accessed by clicking your name in the top right corner, click on the **Teams** tab as seen below.
 
-<img id="image" style="float: right;" src="/assets/images/Teams_user_list.png">
+<img id="image" style="float: right;" src="../assets/images/Teams_user_list.png">
 
 Enter a team name in the dialog box and click **Create Team**. If the team name already exists, you will be prompted to enter a new team name.
 
@@ -66,7 +66,7 @@ Use the **Leave Team** option to be removed from a `Team`. If you want to re-joi
 
 You may search among team members by name or Synapse user name using the search box on the upper right side of the `Team` page.
 
-<img id="image" style="float: right;" src="/assets/images/Teams_teamscreenshot.png">
+<img id="image" style="float: right;" src="../assets/images/Teams_teamscreenshot.png">
 
 ## Communications and Project Permissions
 
@@ -81,4 +81,4 @@ When participating in a Challenge, you may submit solutions as an individual or 
 <br/>
 
 ### See Also
-[Wikis](/articles/wikis.html), [Files and Versioning](/articles/versioning.html), [Sharing Settings](/articles/access_controls.html)
+[Wikis](wikis.md), [Files and Versioning](versioning.md), [Sharing Settings](access_controls.md)

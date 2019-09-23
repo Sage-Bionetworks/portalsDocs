@@ -43,7 +43,7 @@ Synapse `Tables` require that you specify the types of data in each column inclu
 
 Synapse currently supports several kinds of text columns (STRING, LARGE TEXT), dates (as TIMESTAMP), and a variety of numeric columns (INTEGER, DOUBLE), and various Synapse identifiers (ENTITYID, USER). For a complete list of column types and definitions, please see the [REST docs on columnTypes](https://docs.synapse.org/rest/org/sagebionetworks/repo/model/table/ColumnType.html). 
 
-<img id="image" src="/assets/images/tableSchema.png">
+<img id="image" src="../assets/images/tableSchema.png">
 
 Note: Each programmatic client has a utility function to create columns from a data frame. Please see the [Python Docs](https://python-docs.synapse.org/build/html/Table.html) or [R Docs](https://r-docs.synapse.org/articles/tables.html) for examples.
 
@@ -53,7 +53,7 @@ If you have imported an existing `.csv` or `.tsv`, all of your data will be impo
 
 If you have created an empty Table, you will need to click on "Add Data to Table" to upload a `.csv` or `.tsv` file, or add rows individually through the web UI. To add rows, click on the **Edit Query Results** icon to the right of the query button to get to the **Edit Rows** pop-up. From there, you can add rows by clicking the **+** at the top.
 <br>
-<img id="image" src="/assets/images/table_add_rows.png">
+<img id="image" src="../assets/images/table_add_rows.png">
 
 **Deleting rows**
 
@@ -61,13 +61,13 @@ To delete rows, query for the rows you want to delete and use the `delete` funct
 
 Click on the **Edit icon** to the right of the query button to get to the **Edit Rows** pop-up. From there, you can delete rows by checking the boxes of the rows you would like to delete and then clicking the **Trash Can** icon.
 <br>
-<img id="image" src="/assets/images/table_delete_rows.png">
+<img id="image" src="../assets/images/table_delete_rows.png">
 
 **Modifying existing rows**
 
 To modify row entries, click on the **Edit icon** to the right of the **Query** button. In the resulting pop-up, you can adjust each entry as you please. In this example, the first and last entry of row two have been updated.
 <br>
-<img id="image" src="/assets/images/table_modify_rows.png">
+<img id="image" src="../assets/images/table_modify_rows.png">
 
 # Modifying Tables
 
@@ -81,30 +81,30 @@ When updating, begin by querying the table to ensure you have the latest schema 
 
 Click on the **edit** icon to the right of the **Query** button to update table values.
 <br>
-<img id="image" src="/assets/images/table_update_values.png">
+<img id="image" src="../assets/images/table_update_values.png">
 
 ## Changing or Adding Columns
 
 To add columns, click on the **Schema** button. From there, select the **Edit Schema** button and then add columns using the **Add Column** button located at the bottom of the pop-up.
 <br>
-<img id="image" src="/assets/images/table_updating_columns.png">
+<img id="image" src="../assets/images/table_updating_columns.png">
 
 {% include warning.html content="Column names must be 256 characters or less. There are three reserved words that cannot be used: ROW_ID, ROW_VERSION, ROW_ETAG (case insensitive)." %}
 
 To delete columns, click on the **Schema** button. From there, click the **Edit Schema** button and then select the columns you would like to delete and delete them by clicking the **trash can** icon at the top.
 <br>
-<img id="image" src="/assets/images/table_deleting_columns.png">
+<img id="image" src="../assets/images/table_deleting_columns.png">
 
 To modify information in a column, first begin by **adding** a new column, then **copy** the data from the column you would like to change into the newly created column, make the changes in the new column, and **delete** the old one.
  In this example, we are chaning the **Column Type** of **Header_1** into **Boolean** and setting the **Default Value** to **true**.
 
- <img id="image" src="/assets/images/table_modifying_columns.png">
+ <img id="image" src="../assets/images/table_modifying_columns.png">
 
 ## Deleting the Whole Table
 
 To delete the entire Table, click on **Tools** and then select **Delete Table** from the resulting dropdown.
 <br>
-<img id="image" src="/assets/images/delete_table.png">
+<img id="image" src="../assets/images/delete_table.png">
 
 # Querying Table Data
 The data contained within a Synapse `Table` can be retrieved by using a SQL-like query language either through the web portal or through the analytical clients. **See the [API docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html) for an enumeration of the types of queries that can be performed.** 
@@ -170,30 +170,30 @@ The faceted navigation on `Tables` (also known as **simple search**) can be used
 ## Set Facets
 In order to use simple search, you must first set columns to be facets in the schema editor. Select **Schema** in the upper right of your table and click on **Edit Schema**. In the resulting pop-up, select **Values** or **Range** from the dropdowns under the **Facet** option. **Values** can be thought of as categories whereas **Range** is a date or number.
 
-<img id="imageLg" src="/assets/images/set_facets.png">
+<img id="imageLg" src="../assets/images/set_facets.png">
 
 {% include note.html content="If you change Column Type in the schema, you have to set its facet selection again." %}
 
 To see all the facets, click on **Show simple search** found above the SQL-query bar:
 
-<img id="imageLg" src="/assets/images/show_simple_search.png">
+<img id="imageLg" src="../assets/images/show_simple_search.png">
 
 Select the features you are interested in to filter the table.
 
-<img id="imageLg" src="/assets/images/simple_search.png">
+<img id="imageLg" src="../assets/images/simple_search.png">
 
 ## Toggling between Simple and Advanced Search
 You can toggle from the simple search to the advanced search without losing the query results. For example, if in the simple search you had selected treatmentArm `A`, age of `23:64`, and gender as `female`, the query will be preserved in the advanced search bar. However, this is unidirectional because the advanced search allows parameters that are not available with facets. Therefore switching from advanced to simple search will result in resetting the search query.
 
 {% include note.html content="The slider for range in simple search is inclusive." %}
 
-<img id="imageSmall" src="/assets/images/simple_search_query.png">
+<img id="imageSmall" src="../assets/images/simple_search_query.png">
 
-<img id="imageXL" src="/assets/images/query_statement_from_simple_search.png">
+<img id="imageXL" src="../assets/images/query_statement_from_simple_search.png">
 
 {% include warning.html content="When toggling back to simple search, the query will be reset." %}
 
-<img id="imageLg" src="/assets/images/toggle_advanced_to_simple_search.png">
+<img id="imageLg" src="../assets/images/toggle_advanced_to_simple_search.png">
 
 # Working with Files in a Table
 
@@ -201,20 +201,20 @@ Synapse `Tables` support a special column type called `File` which contain a fil
 
 First, add a new column for files in the table we're currently working with. To add columns, click on the **Schema** button. From there, select the **Edit Schema** button and then add columns using the **Add Column** button located at the bottom of the pop-up and set the **Column Type** as **File**.
 
-<img id="image" src="/assets/images/table_updating_columns.png">
+<img id="image" src="../assets/images/table_updating_columns.png">
 
 Next, retrieve the most current table and save as a data frame. Click **Save** to save your latest schema.
 
-<img id="image" src="/assets/images/save_table.png">
+<img id="image" src="../assets/images/save_table.png">
 
 Next, upload the files; click on the **Edit icon** to the right of the **Query** button. In the resulting pop-up, you can upload files by clicking the **Upload icon** then **Browse** and selecting the file from your local directory. Save the new table.
 
-<img id="image" src="/assets/images/upload_files_to_table.png">
+<img id="image" src="../assets/images/upload_files_to_table.png">
 
 Finally, query the table and download the album cover files. Clicking on any file will download it.
 
-<img id="image" src="/assets/images/download_files_from_table.png">
+<img id="image" src="../assets/images/download_files_from_table.png">
 
 # See Also
 
-[Annotations and Queries](/articles/annotation_and_query.html), [Downloading Data](/articles/downloading_data.html), [Files and Versioning](/articles/versioning.html)
+[Annotations and Queries](annotation_and_query.md), [Downloading Data](downloading_data.md), [Files and Versioning](versioning.md)

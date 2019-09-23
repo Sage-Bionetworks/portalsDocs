@@ -104,6 +104,6 @@ For instructions on changing sharing settings for `Folders` and `Files`, read th
 
 ## More Guides
 
-Find additional information in our [User Guide](/synapseDocs/articles).
+Find additional information in our [User Guide](./).
 
 
