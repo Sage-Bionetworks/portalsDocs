@@ -22,4 +22,4 @@ Changing the wiki order does not change the ID of the wiki page.
 If you want to create new pages within an existing hierarchy rather than moving them each time, you can navigate to the parent wiki page and click on "Add Wiki Subpage". This will automatically add a wiki page nested underneath the page you previously selected, at the bottom of any other existing subpages. From there, you can create and manage your content. To reorganize this page within the hierarchy, see the instructions above. 
 
 ## See Also
-[Wikis](/articles/wikis.html)
+[Wikis](wikis.md)

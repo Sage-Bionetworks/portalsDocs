@@ -38,4 +38,4 @@ From your [Synapse homepage](https://www.synapse.org/), navigate to your user me
 
 ## See Also
 
-[Getting Started](docs.synapse.org/articles/getting_started.html), [Custom Storage Locations](http://docs.synapse.org/articles/custom_storage_location.html), [Downloading Data](http://docs.synapse.org/articles/downloading_data.html)
+[Getting Started](getting_started.md), [Custom Storage Locations](custom_storage_location.md), [Downloading Data](downloading_data.md)
