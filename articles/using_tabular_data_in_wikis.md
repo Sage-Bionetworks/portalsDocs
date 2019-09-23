@@ -21,7 +21,7 @@ A `Project` can contain multiple studies, various assays and extensive `Files`, 
 
 This study contains rnaSeq and SNP genomic data, as depicted in the fileview scope below. The scope can be further restricted to rnaSeq-specific data with [additional queries](https://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html) on the embedded `Table`. 
 
-[<img id="image" src="assets/images/inPractice_studyContainer.png">
+<img id="image" src="../assets/images/inPractice_studyContainer.png">
 
 ## Restrict Query
 
