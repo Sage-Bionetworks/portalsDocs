@@ -9,11 +9,11 @@ category: inpractice
 
 `Wiki` widgets are tools to support narrative content. Embedded `Wiki` `Tables` can enable quick access to `Files` of highest importance and orient users to the resources contained in a collaborative project. `Wiki` `Tables` accept queries of existing `Tables` or `File Views`, providing a strategy to restrict scope and focus content.
 
-More information on related concepts is available on the [Tables](https://docs.synapse.org/articles/tables.html), [Making a Project](https://docs.synapse.org/articles/making_a_project.html), [Views](https://docs.synapse.org/articles/views.html) and [Wikis](https://docs.synapse.org/articles/wikis.html) pages. 
+More information on related concepts is available on the [Tables](tables.md), [Making a Project](making_a_project.md), [Views](views.md) and [Wikis](wikis.md) pages.
 
 ## Start with a File View or Table 
 
-The [Views](https://docs.synapse.org/articles/views.html) page provides steps to list `Files` and `Folders` within   `Views` and `Tables`. This will be the content embedded in the `Wiki`. 
+The [Views](views.md) page provides steps to list `Files` and `Folders` within `Views` and `Tables`. This will be the content embedded in the `Wiki`.
 
 ## Focus Scope
 
