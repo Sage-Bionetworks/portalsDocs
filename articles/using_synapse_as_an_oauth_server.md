@@ -16,10 +16,10 @@ category: howto
 
 
 # Registering and linking an OAuth 2.0 Client
-Synapse implements the [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) protocol, which is an extension of OAuth 2.0.  The Open ID Connect endpoint is `https://repo-prod.prod.sagebase.org/auth/v1`, and the Open ID Configuration (aka the "discovery document") is published in the standard location: [https://repo-prod.prod.sagebase.org/auth/v1/.well-known/openid-configuration](https://repo-prod.prod.sagebase.org/auth/v1/.well-known/openid-configuration).
+The [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) protocol, which is an extension of OAuth 2.0, has been implemented in Synapse. The Synapse Open ID Connect endpoints are given by the Open ID Configuration (aka the "discovery document"): [https://repo-prod.prod.sagebase.org/auth/v1/.well-known/openid-configuration](https://repo-prod.prod.sagebase.org/auth/v1/.well-known/openid-configuration).
 
 ## Create an OAuth 2.0 Client
-You can create a client programmatically as follows:
+You can create a client as shown below.   The API reference documents are [here](https://docs.synapse.org/rest/#org.sagebionetworks.auth.OpenIDConnectController), and the following instructions show how to invoke them from Python:
 
 
 ##### Python
@@ -29,7 +29,7 @@ import synapseclient
 import json
 syn = synapseclient.login()
 
-clientMetaData = {
+client_meta_data = {
   'client_name': 'Your client name',
   'redirect_uris': [
     'https://yourhost.com/user/login'
@@ -40,29 +40,33 @@ clientMetaData = {
   'userinfo_signed_response_alg': 'RS256'
 }
 
-clientMetaData = syn.restPOST(uri='/oauth2/client', endpoint=syn.authEndpoint, body=json.dumps(clientMetaData))
+client_meta_data = syn.restPOST(uri='/oauth2/client', 
+	endpoint=syn.authEndpoint, body=json.dumps(client_meta_data))
 
-client_id = clientMetaData['client_id']
+client_id = client_meta_data['client_id']
 
-clientIdAndSecret = syn.restPOST(uri='/oauth2/client/secret/'+client_id, endpoint=syn.authEndpoint, body='')
+# generate and retrieve the client secret
+client_id_and_secret = syn.restPOST(uri='/oauth2/client/secret/'+client_id, 
+	endpoint=syn.authEndpoint, body='')
 
-print(clientIdAndSecret)
-
+print(client_id_and_secret)
 ```
 
-The client URI, policy URI, and terms of service URI are optional, as is the `userinfo_signed_response_alg` parameter.  Further, you can optionally include a `sector_identifier_uri` parameter.  This is an advanced feature described [here](https://openid.net/specs/openid-connect-registration-1_0.html#SectorIdentifierValidation) and is relevant if the client uses multiple hosts because Synapse only returns `pairwise` subject values to its OAuth clients.
+The client URI, policy URI, and terms of service URI are optional, as is the `userinfo_signed_response_alg` parameter. Further, you can optionally include a `sector_identifier_uri` parameter. This is an advanced feature described [here](https://openid.net/specs/openid-connect-registration-1_0.html#SectorIdentifierValidation) and is relevant if the client uses multiple hosts because Synapse only returns `pairwise` subject values to its OAuth clients.
 
 
-The returned `client_id` and `client_secret` will be needed later when getting an access token.  The secret is only returned once.  (Synapse does not keep it.)  If lost, you can generate a new secret but the previous one will be invalidated.
+The returned `client_id` and `client_secret` will be needed later when getting an access token. The secret is only returned once. (It is not stored in Synapse.)  If lost, you can generate a new secret but the previous one will be invalidated.
 
 You can retrieve, update, and delete your client programmatically as well:
 
 ```python
-clientMetaData = syn.restGET(uri='/oauth2/client/'+client_id, endpoint=syn.authEndpoint)
+client_meta_data = syn.restGET(uri='/oauth2/client/'+client_id, 
+	endpoint=syn.authEndpoint)
 
-clientMetaData['policy_uri'] = 'https://yourhost.com/updated_policy'
+client_meta_data['policy_uri'] = 'https://yourhost.com/updated_policy'
 
-clientMetaData = syn.restPUT(uri='/oauth2/client/'+client_id, endpoint=syn.authEndpoint, clientMetaData)
+client_meta_data = syn.restPUT(uri='/oauth2/client/'+client_id, 
+	endpoint=syn.authEndpoint, body=json.dumps(client_meta_data))
 
 syn.restDELETE(uri='/oauth2/client/'+client_id, endpoint=syn.authEndpoint)
 
@@ -78,7 +82,7 @@ To login via Synapse your client should redirect the browser from your applicati
 - `nonce`=`<some string to be returned in the ID token>`
 - `claims`=`<a JSON object>`
 
-Synapse supports the `claims` request parameter, a JSON document containing the details of the user identity information you would like returned, as described [here](https://openid.net/specs/openid-connect-core-1_0.html#ClaimsParameter).  The list of supported claims is given here TBD.  For most claims the value to include in the JSON document is `null`.  The exception is the `team` claim, for which you provide the IDs of one or more teams, the membership of which you wish to inquire about.  Synapse will return the IDs of the subset of the given list of teams to which the user belongs.  Here is an example of a claims parameter JSON object:
+Synapse supports the `claims` request parameter, a JSON document containing the details of the user identity information you would like returned, as described [here](https://openid.net/specs/openid-connect-core-1_0.html#ClaimsParameter). The list of supported claims is given [here](https://docs.synapse.org/rest/org/sagebionetworks/repo/model/oauth/OIDCClaimName.html). For most claims the value to include in the JSON document is `null`. The exception is the `team` claim, for which you provide the IDs of one or more teams, the membership of which you wish to inquire about. Synapse will return the IDs of the subset of the given list of teams to which the user belongs. Here is an example of a claims parameter JSON object:
 
 ```
  {
@@ -99,13 +103,13 @@ Synapse supports the `claims` request parameter, a JSON document containing the 
   }
 ```
 
-Following the user's consent, Synapse will redirect back to your specified redirect URI with an authorization code and your 'state' data.  You can then exchange the authorization code for a ID token and access token in the standard way.  Here is an example using cUrl:
+Following the user's consent, Synapse will redirect back to your specified redirect URI with an authorization code and your 'state' data. You can then exchange the authorization code for a ID token and access token in the standard way. Here is an example using `curl`:
 
 ```
 curl -H "Authorization:Basic XXXXXXXXXXX" -X POST "https://repo-prod.prod.sagebase.org/auth/v1/oauth2/token?grant_type=authorization_code&redirect_uri=<redirect URI>&code=<authorization code>
 
 ```
-where `<redirect URI>` is as before and `<authorization code>` is the value returned to your application by Synapse.  The request is authorized using the `client_id` and `client_secret` provided by Synapse, encoded in the header in the standard way: joined with a ':' separator and base 64 encoded.  Synapse responds with an ID Token and access token:
+where `<redirect URI>` is as before and `<authorization code>` is the value returned to your application by Synapse. The request is authorized using the `client_id` and `client_secret` provided by Synapse, encoded in the header in the standard way: joined with a ':' separator and base 64 encoded. Synapse responds with an ID Token and access token:
 
 
 ```
@@ -115,14 +119,14 @@ where `<redirect URI>` is as before and `<authorization code>` is the value retu
 }
 ```
 
-Each token is a signed JSON Web Token.  The public key(s) used to verify the token signatures are available at the JSON Web Key Set (jwks) URL listed in the OpenID Configuration document.  The ID Token contains the requested user identity information.  The access token can be used to authorize future requests.  To get an updated ID Token using the access token as authorization, send a request to the `userinfo` endpoint:
+Each token is a signed JSON Web Token. The public key(s) used to verify the token signatures are available at the JSON Web Key Set (jwks) URL listed in the OpenID Configuration document. The ID Token contains the requested user identity information. The access token can be used to authorize future requests. To get an updated ID Token using the access token as authorization, send a request to the `userinfo` endpoint:
 
 ```
 curl -H "Authorization:Bearer <access token>" https://repo-prod.prod.sagebase.org/auth/v1/oauth2/userinfo
 
 ```
 
-where <access token> is the value returned above.  If the `'userinfo_signed_response_alg': 'RS256'` option was included in the client registration then the result will be returned as another signed JSON Web Token, otherwise a simple JSON object will be returned.
+where <access token> is the value returned above. If the `'userinfo_signed_response_alg': 'RS256'` option was included in the client registration then the result will be returned as another signed JSON Web Token, otherwise a simple JSON object will be returned.
 
 
 
