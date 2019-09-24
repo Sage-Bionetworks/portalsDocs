@@ -14,7 +14,7 @@ The API clients provide a way to use Synapse programmatically. This page shows y
 * Python
 * R
 
-To manage stored login credentials, visit the [Client Configuration page](https://docs.synapse.org/articles/client_configuration.html). 
+To manage stored login credentials, visit the [Client Configuration page](client_configuration.md). 
 
 ## Command Line
 

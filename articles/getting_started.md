@@ -16,7 +16,7 @@ This guide is for new users who are interested in learning about Synapse. You wi
 
 ## What is Synapse?
 
-Synapse is an open source collaborative platform. It can store data, code, results, and descriptions research work. Synapse hosts many [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects). It also hosts crowdsourced competitions, including [DREAM Challenges](http://dreamchallenges.org/). [Sage Bionetworks](http://www.sagebionetworks.org) provides Synapse services free of charge to the scientific community through generous support from various [funding sources](/articles/faq.html#how-is-synapse-funded).
+Synapse is an open source collaborative platform. It can store data, code, results, and descriptions research work. Synapse hosts many [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects). It also hosts crowdsourced competitions, including [DREAM Challenges](http://dreamchallenges.org/). [Sage Bionetworks](http://www.sagebionetworks.org) provides Synapse services free of charge to the scientific community through generous support from various [funding sources](faq.md#how-is-synapse-funded).
 
 Synapse operates under a thorough [governance process](governance.md). This includes [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4), guidelines, and operating procedures.
 
@@ -30,7 +30,7 @@ Synapse can store human subject data with sharing and use restrictions. Before y
 
 <a href="https://www.synapse.org/#!Quiz:Certification" class="btn btn-primary">Become a Certified User</a>
 
-Read the [accounts, certification, and profile validation](/articles/accounts_certified_users_and_profile_validation.html) page to learn more about the different levels of users.
+Read the [accounts, certification, and profile validation](accounts_certified_users_and_profile_validation.md) page to learn more about the different levels of users.
 
 ## Project and Data Management on Synapse
 
@@ -48,6 +48,7 @@ Synapse projects are assigned a Synapse ID, unique identifiers used for referenc
 
 To find your project at any time, you can see your projects on your [dashboard](https://www.synapse.org/#!Profile:v/projects).
 
+
 ## Organizing Data: creating Files and Folders
 
 You can use the `Files` tab to upload data, code, results, and other information to your project. Synapse Folders are used to organize content and can contain other Folders and Files. Synapse `Folders` and `Files` are also assigned a unique identifier (Synapse ID).
@@ -63,7 +64,7 @@ To upload a file into that folder:
 1.  Use the Tools menu and select **Upload or Link to File**.
 1. Use the Browse button to select the file, or drag and drop it to upload and click Save.
 
-To explore other features available for files and folders, read about [annotating files](/articles/annotation_and_query.html), [assigning DOIs](/articles/doi.html), [versioning](/articles/files_and_versioning.html), [provenance](/articles/provenance.html),and [sharing settings](/articles/access_controls.html).
+To explore other features available for files and folders, read about [annotating files](annotation_and_query.md), [assigning DOIs](doi.md), [versioning](files_and_versioning.md), [provenance](provenance.md),and [sharing settings](access_controls.md).
 
 ## Adding a Wiki to your Project
 
@@ -71,7 +72,7 @@ A Wiki is a document that can be edited by multiple people on the web. The Wiki 
 
 Wiki pages are written with [Markdown](https://www.markdownguide.org/), a lightweight syntax for styling text on the web. In addition to standard Markdown, `Wiki` pages can contain customized content, including images, tables, code blocks, LaTeX formatted equations, and scholarly references. Synapse Wiki widgets also allow you to embed content based on other resources stored in Synapse.
 
-See the [Wiki](/articles/wikis.html) user guide for more information and examples.
+See the [Wiki](wikis.md) user guide for more information and examples.
 
 Create a Project wiki:
 
@@ -93,12 +94,14 @@ You may share a `Project` with specific people or make it public.
 1. Click on the **Project Settings** menu and select **Project Sharing Settings**.
 1. Add individuals or teams with different permissions.
 
-For more details, read the [How to Share Projects](/articles/access_controls.html#how-to-share-projects) section of the Sharing Settings and Conditions for Use instructions.
+For more details, read the [How to Share Projects](access_controls.md#how-to-share-projects) section of the Sharing Settings and Conditions for Use instructions.
 
-For instructions on changing sharing settings for `Folders` and `Files`, read the [Sharing Other Content](/articles/access_controls.html#sharing-other-content) section of the Sharing Settings and Conditions for Use instructions.
+For instructions on changing sharing settings for `Folders` and `Files`, read the [Sharing Other Content](access_controls.md#sharing-other-content) section of the Sharing Settings and Conditions for Use instructions.
 
 ## More Guides
 
-Find additional information in our <a href="/articles/">User Guide</a>.
+Find additional information in our [User Guide](./).
 
 For information on using Synapse programmatically, see the documentation for the [Python client](https://python-docs.synapse.org/build/html/index.html), [command line client](https://python-docs.synapse.org/build/html/CommandLineClient.html), and [R client](https://r-docs.synapse.org/)
+
+
