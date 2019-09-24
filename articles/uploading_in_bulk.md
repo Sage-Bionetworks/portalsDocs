@@ -7,7 +7,7 @@ category: howto
 
 # Uploading and Downloading Data in Bulk
 
-Working with a large number of files on the web can be tedious, especially if you want to download, upload, or set [annotations](http://docs.synapse.org/articles/annotation_and_query.html) and [provenance](http://docs.synapse.org/articles/provenance.html). The command line, Python client and R client have convenience functions for bulk upload and download. Uploading require a tab delimited *manifest* where each file to be uploaded and, optionally, annotations to be applied, are specified as a row in the file. Downloading in bulk requires identifying a container (`Folder`, `Project`, `Table`, or `View`) that contains the files of interest. In this article we will cover how to: 
+Working with a large number of files on the web can be tedious, especially if you want to download, upload, or set [annotations](annotation_and_query.md) and [provenance](provenance.md). The command line, Python client and R client have convenience functions for bulk upload and download. Uploading require a tab delimited *manifest* where each file to be uploaded and, optionally, annotations to be applied, are specified as a row in the file. Downloading in bulk requires identifying a container (`Folder`, `Project`, `Table`, or `View`) that contains the files of interest. In this article we will cover how to: 
 
 	
 * create a manifest 
@@ -47,7 +47,7 @@ To review:
 * **used** and **executed** are optional for provenance (but helpful!),
 * **emotion** and **species** are optional annotations (but also helpful!)
 
-Download the [template](/assets/downloads/example_manifest_template.tsv).
+Download the [template]({{ '/assets/downloads/example_manifest_template.tsv' | relative_url }}).
 
 ### Validate the Manifest and Upload Files
 
@@ -69,11 +69,11 @@ Files can be downloaded in bulk using the `syncFromSynapse` function. This funct
 
 ## Editing in Bulk
 
-You can edit files in bulk by changing the values in the manifest and pushing it up to Synapse using the `syncToSynapse` function. The manifest allows you to modify everything: file path, provenance, annotations, and versions. However, if only annotations are being updated, we recommend using our [File Views](/articles/views.html) feature. 
+You can edit files in bulk by changing the values in the manifest and pushing it up to Synapse using the `syncToSynapse` function. The manifest allows you to modify everything: file path, provenance, annotations, and versions. However, if only annotations are being updated, we recommend using our [File Views](views.md) feature. 
 
 Please note that you cannot move things with a manifest. If the parentId is changed, it will create a copy and the file will exist in two different locations. 
 
 {% include note.html content="Changing the parent synId in a manifest creates a copy of the file. It does not move it." %}
 
 # See Also
-[Downloading Data](/articles/downloading_data.html), [Provenance](/articles/provenance.html), [Annotations and Queries](/articles/annotation_and_query.html), [File Views](/articles/views.html), [Files and Versioning](/articles/files_and_versioning.html)
+[Downloading Data](downloading_data.md), [Provenance](provenance.md), [Annotations and Queries](annotation_and_query.md), [File Views](views.md), [Files and Versioning](files_and_versioning.md)

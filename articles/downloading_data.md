@@ -92,7 +92,7 @@ entity = syn.get("syn3260973", version=1)
 entity <- synGet("syn3260973", version=1)
 ```
 
-See [versioning](/articles/versioning.html) for more details.
+See [versioning](versioning.md) for more details.
 
 ### Links
 
@@ -148,7 +148,7 @@ entity <- synGet("syn00123", downloadLocation="/path/to/folder")
 
 ## Finding and Downloading Files
 
-Files can be [annotated](/articles/annotation_and_query.html) to facilitate finding them. In order to search the annotations, a [File View](/articles/views.html) must be created first. It is possible to query based on any of the annotations attached to the files.
+Files can be [annotated](annotation_and_query.md) to facilitate finding them. In order to search the annotations, a [File View](views.md) must be created first. It is possible to query based on any of the annotations attached to the files.
 
 For example, the [PCBC Project](https://www.synapse.org/#!Synapse:syn1773109) has a [table](https://www.synapse.org/#!Synapse:syn7511263) listing sequencing data files that have been annotated. To find all **mRNA fastq** files originating from **CD34+ cells** in the we can query by:
 
@@ -222,7 +222,7 @@ files = synapseutils.syncFromSynapse(syn, 'syn2390898')
 
 ### Download Tables
 
-Please view [here](/articles/tables.html) to learn how to use `Tables`.
+Please view [here](tables.md) to learn how to use `Tables`.
 
 ### Download Wikis
 
@@ -289,4 +289,4 @@ all_files = syncFromSynapse(entity='syn123', path='/path/to/myFolder')
 ```
 
 # See Also
-[Versioning](/articles/versioning.html), [Tables](/articles/tables.html), [Wikis](/articles/wikis.html), [File Views](/articles/views.html), [Annotations and Queries](/articles/annotation_and_query.html)
+[Versioning](versioning.md), [Tables](tables.md), [Wikis](wikis.md), [File Views](views.md), [Annotations and Queries](annotation_and_query.md)

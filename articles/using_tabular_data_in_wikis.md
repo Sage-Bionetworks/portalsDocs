@@ -9,11 +9,11 @@ category: inpractice
 
 `Wiki` widgets are tools to support narrative content. Embedded `Wiki` `Tables` can enable quick access to `Files` of highest importance and orient users to the resources contained in a collaborative project. `Wiki` `Tables` accept queries of existing `Tables` or `File Views`, providing a strategy to restrict scope and focus content.
 
-More information on related concepts is available on the [Tables](https://docs.synapse.org/articles/tables.html), [Making a Project](https://docs.synapse.org/articles/making_a_project.html), [Views](https://docs.synapse.org/articles/views.html) and [Wikis](https://docs.synapse.org/articles/wikis.html) pages. 
+More information on related concepts is available on the [Tables](tables.md), [Making a Project](making_a_project.md), [Views](views.md) and [Wikis](wikis.md) pages.
 
 ## Start with a File View or Table 
 
-The [Views](https://docs.synapse.org/articles/views.html) page provides steps to list `Files` and `Folders` within   `Views` and `Tables`. This will be the content embedded in the `Wiki`. 
+The [Views](views.md) page provides steps to list `Files` and `Folders` within `Views` and `Tables`. This will be the content embedded in the `Wiki`.
 
 ## Focus Scope
 
@@ -21,7 +21,7 @@ A `Project` can contain multiple studies, various assays and extensive `Files`, 
 
 This study contains rnaSeq and SNP genomic data, as depicted in the fileview scope below. The scope can be further restricted to rnaSeq-specific data with [additional queries](https://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html) on the embedded `Table`. 
 
-<img id="image" src="/assets/images/inPractice_studyContainer.png">
+<img id="image" src="../assets/images/inPractice_studyContainer.png">
 
 ## Restrict Query
 
@@ -35,6 +35,6 @@ SELECT id,currentVersion,fileFormat,assay,genomeBuild,modifiedOn FROM syn1709737
 
 Navigate to **Wiki Tools** to **Edit Project Wiki** or to **Folder Tools** to **Edit Folder Wiki**. From the edit `Wiki` view, select **Insert** and **Table:Query on a Synapse Table/View** to insert the intended `File View` query. The result is a direct link to relevant files from a `Wiki` page with narrative content to provide additional context. 
 
-<img id="image" src="/assets/images/inPractice_embeddedView.png">
+<img id="image" src="../assets/images/inPractice_embeddedView.png">
 
 
