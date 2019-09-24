@@ -43,7 +43,7 @@ Synapse `Tables` require that you specify the types of data in each column inclu
 
 Synapse currently supports several kinds of text columns (STRING, LARGE TEXT), dates (as TIMESTAMP), and a variety of numeric columns (INTEGER, DOUBLE), and various Synapse identifiers (ENTITYID, USER). For a complete list of column types and definitions, please see the [REST docs on columnTypes](https://docs.synapse.org/rest/org/sagebionetworks/repo/model/table/ColumnType.html). 
 
-<img id="image" src="/assets/images/tableSchema.png">
+<img id="image" src="../assets/images/tableSchema.png">
 
 Note: Each programmatic client has a utility function to create columns from a data frame. Please see the [Python Docs](https://python-docs.synapse.org/build/html/Table.html) or [R Docs](https://r-docs.synapse.org/articles/tables.html) for examples.
 
@@ -217,4 +217,5 @@ Finally, query the table and download the album cover files. Clicking on any fil
 
 # See Also
 
-[Annotations and Queries](annotation_and_query.md), [Downloading Data](downloading_data.md), [Files and Versioning](versioning.md)
+[Annotations and Queries](annotation_and_query.md), [Downloading Data](downloading_data.md), [Files and Versioning](files_and_versioning.md)
+
