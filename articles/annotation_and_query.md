@@ -27,7 +27,7 @@ Annotations can be one of four types:
 
 ## How to Assign Annotations
 
-Annotations may be added when initially uploading a file or at a later date. This can be done using the command line client, the [Python client](https://python-docs.synapse.org/build/html/Views.html#updating-annotations-using-view), the [R client](https://r-docs.synapse.org/articles/views.html#updating-annotations-using-view), or from the web. Using the programmatic clients facilitates batch and automated population of annotations across many files. The web client can be used to bulk update many files using [file views](/articles/views.html).
+Annotations may be added when initially uploading a file or at a later date. This can be done using the command line client, the [Python client](https://python-docs.synapse.org/build/html/Views.html#updating-annotations-using-view), the [R client](https://r-docs.synapse.org/articles/views.html#updating-annotations-using-view), or from the web. Using the programmatic clients facilitates batch and automated population of annotations across many files. The web client can be used to bulk update many files using [file views](views.md).
 
 ### Adding Annotations 
 
@@ -35,7 +35,7 @@ To add annotations on a single entity through the web client, click the `Annotat
 
 <img src="/assets/images/webAnnotation.png">
 
-To add annotations on multiple files, please refer to our Synapse in Practice article <a href="/articles/managing_custom_metadata_at_scale.html">"Managing Custom Metadata at Scale"</a> for a tutorial on how to do this efficiently and effectively leveraging <a href="/articles/views.html">File Views</a>.
+To add annotations on multiple files, please refer to our Synapse in Practice article [Managing Custom Metadata at Scale](managing_custom_metadata_at_scale.md) for a tutorial on how to do this efficiently and effectively leveraging [file views](views.md).
 
 ##### Command line
 
@@ -70,7 +70,7 @@ Click **File Tools**, **Annotations** and **Edit** to add, delete, or modify ann
 
 <img src="/assets/images/annotationsDetail.png">
 
-To modify annotations on multiple files, please refer to our Synapse in Practice article <a href="/articles/managing_custom_metadata_at_scale.html">"Managing Custom Metadata at Scale"</a> for a tutorial on how to do this efficiently and effectively leveraging <a href="/articles/views.html">File Views</a>.
+To add annotations on multiple files, please refer to our Synapse in Practice article [Managing Custom Metadata at Scale](managing_custom_metadata_at_scale.md) for a tutorial on how to do this efficiently and effectively leveraging [file views](views.md).
 
 ##### Command line
 
@@ -133,7 +133,7 @@ Along with annotations added by users, every entity has a number of fields usefu
 
 ### Finding Files in a Specific Project
 
-To find all files in a specific `Project`, create a `File View` in the web client. For example, if you'd like to see all files in a `Project`, navigate to your project and then the `Tables` tab. From there, click **Tables Tools** and **Add File View**. Click **Add container** and **Enter Synapse Id** to create a tabluar file view that contains every file in the project, which you can now query. Importantly, if you want to later query on annotations, you must select **Add All Annotations**. For a more in-depth look at this feature, please read our articles on [File Views](/articles/views.html).
+To find all files in a specific `Project`, create a `File View` in the web client. For example, if you'd like to see all files in a `Project`, navigate to your project and then the `Tables` tab. From there, click **Tables Tools** and **Add File View**. Click **Add container** and **Enter Synapse Id** to create a tabluar file view that contains every file in the project, which you can now query. Importantly, if you want to later query on annotations, you must select **Add All Annotations**. For a more in-depth look at this feature, please read our articles on [File Views](views.md).
 
 ### Listing Files in a Specific Folder
 
@@ -212,4 +212,4 @@ SELECT * FROM syn123 where "chemicalStructure" = '4''-chemical'
 ```
 
 # See Also
-[Downloading Data](/articles/downloading_data.html), [Tables](/articles/tables.html)
+[Downloading Data](downloading_data.md), [Tables](tables.md)

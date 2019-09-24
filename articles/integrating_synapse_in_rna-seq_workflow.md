@@ -16,13 +16,13 @@ The data used in this example is a small RNA-Seq dataset for adrenal and brain t
 
 Here, we access two `fastq` files and a small region of chr19 (300000-350000 Mb) of the hg19 reference genome directly by their Synapse identifiers and download them to our local computer.
 
-{% highlight bash %}
+```shell
 # Get brain fastq file
 synapse get syn2468554
 
 # Get adrenal fastq file
 synapse get syn2468552
-{% endhighlight %}
+```
 
 
 ## Map the Raw Reads
@@ -30,38 +30,35 @@ Now that we have the data, you can then use the alignment tool of choice to map 
 
 ## Setting Up the Local Environment
 
-{% highlight bash %}
+```shell
 mkdir demo-rnaseq-workflow
 
 #dir to store the STAR genome index for the reference genome
 mkdir ref-genome
-
-{% endhighlight %}
+```
 
 ## Creating a Genome Index
 
-{% highlight bash %}
-
+```shell
 # the reference genome
 # downloads as hg19_chr19_subregion.fasta
 synapse get --downloadLocation ref-genome/ syn2468557
 
 #create a STAR genome index
 STAR --runMode genomeGenerate --genomeDir ref_genome --genomeFastaFiles ref-genome/hg19\_chr19\_subregion.fasta
-
-{% endhighlight %}
+```
 
 ## Map Adrenal and Brain Tissue Reads
 
-{% highlight bash %}
+```shell
 star --runThreadN 1 --genomeDir ref-genome/ --outFileNamePrefix brain --outSAMunmapped Within --readFilesIn brain.fastq
 
 star --runThreadN 1 --genomeDir ref-genome/ --outFileNamePrefix adrenal --outSAMunmapped Within --readFilesIn adrenal.fastq
-{% endhighlight %}
+```
 
 Let's store the results and provenance in Synapse.
 
-{% highlight bash %}
+```shell
 # create a project
 synapse create Project --name demo-rnaseq-workflow
 
@@ -69,4 +66,4 @@ synapse create Project --name demo-rnaseq-workflow
 synapse store brain.sam --parentId syn234567890 --used brain.fastq ref-genome/hg19\_chr19\_subregion.fasta
 
 synapse store adrenal.sam --parentId syn234567890 --used adrenal.fastq ref-genome/hg19\_chr19\_subregion.fasta
-{% endhighlight %}
+```

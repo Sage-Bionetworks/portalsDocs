@@ -28,7 +28,7 @@ The table below summarizes the user privileges for each level.
 *Your ability to download a `File` or `Table` depends on your Synapse user type AND fulfilling the `Conditions for Use`, if any, of the `File` or `Table`.  
 
 ## User Responsibilities
-You are solely responsible for your actions on Synapse. You are required to abide by the [Synapse Terms and Conditions of Use]( https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"} and all policies and principles described in the [Synapse governance documents]({{site.url}}/articles/governance.html). We strongly encourage you to familiarize yourself with these documents. Please contact the Synapse Access and Compliance Team (<mailto:act@synapse.org>) if you have any questions.
+You are solely responsible for your actions on Synapse. You are required to abide by the [Synapse Terms and Conditions of Use]( https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"} and all policies and principles described in the [Synapse governance documents](governance.md). We strongly encourage you to familiarize yourself with these documents. Please contact the Synapse Access and Compliance Team (<mailto:act@synapse.org>) if you have any questions.
 {% include important.html content="By using Synapse you consent to all Synapse governance policies and procedures." %}
 
 ## About Creating, Updating, and Deleting Synapse Accounts
