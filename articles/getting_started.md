@@ -16,31 +16,34 @@ This guide is for new users who are interested in learning about Synapse. You wi
 
 ## What is Synapse?
 
-Synapse is an open source collaborative platform. It can store data, code, results, and descriptions research work. Synapse hosts many [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects). It also hosts crowdsourced competitions, including [DREAM Challenges](http://dreamchallenges.org/). [Sage Bionetworks](http://www.sagebionetworks.org) provides Synapse services free of charge to the scientific community through generous support from various [funding sources](/articles/faq.html#how-is-synapse-funded).
+Synapse is a collaborative research platform that allows individuals and teams to share, track, and discuss their data and analysis in projects. Synapse is built to work on the web. We provide access to Synapse features and services for programmers through a REST API, [Python client](https://python-docs.synapse.org/build/html/index.html), [command line client](https://python-docs.synapse.org/build/html/CommandLineClient.html), and [R client](https://r-docs.synapse.org/). 
+
+
+Synapse hosts many [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects). It also hosts crowdsourced competitions, including [DREAM Challenges](http://dreamchallenges.org/). [Sage Bionetworks](http://www.sagebionetworks.org) provides Synapse services free of charge to the scientific community through generous support from various [funding sources](/articles/faq.html#how-is-synapse-funded).
 
 Synapse operates under a thorough [governance process](/articles/governance.html). This includes [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4), guidelines, and operating procedures.
 
-## Register for a Synapse Account
+## Create Your Account
+Anyone can browse public content on the Synapse web site. To download and create content, you will need to [register for an account](https://www.synapse.org/register) using an email address. You will receive an email message for verification to complete the registration process.
 
-Anyone can browse public content on the Synapse web site, but to download and create content you will need to register for an account using an email address. You will receive an email message for verification to complete the registration process.
+## Getting Certified
 
-<a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>
+Synapse is a data sharing platform approved for storing data from human subjects research. This requires special care and thought. To upload files, Sage Bionetworks requires you demonstrate awareness of privacy and security issues. 
 
-Synapse can store human subject data with sharing and use restrictions. Before you can upload files, you must demonstrate you understand what you can share in Synape. To start this process:
-
-<a href="https://www.synapse.org/#!Quiz:Certification" class="btn btn-primary">Become a Certified User</a>
-
-Read the [accounts, certification, and profile validation](/articles/accounts_certified_users_and_profile_validation.html) page to learn more about the different levels of users.
+You can complete this by taking a short [Certification Quiz](https://www.synapse.org/#!Quiz:Certification).
 
 ## Project and Data Management on Synapse
 
-Synapse content is organized in `Projects`. In a project you can upload files and write descriptions (Wikis). Each Project also contains a discussion forum.
+Synapse `Projects` are online workspaces where researchers can collaborate and organize their work. Synapse supports all kinda of working groups: individuals, small teams, and large consortia.
 
 To create a `Project`:
 
 1. Go to your [projects list](https://www.synapse.org/#!Profile:v/projects) on your dashboard.
 1. Click the **Create Project** button.
 1. Decide on a unique name for your `Project` and click Save.
+
+Read about [`Projects`](making_a_project.md) in the user guide.
+
 
 By default, your newly created `Project` is private. You are the only person who can access it, including any content in it. In another tutorial you will learn how to share your project with other users.
 
