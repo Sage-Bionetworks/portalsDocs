@@ -26,6 +26,8 @@ Visit your [Profile Page](https://www.synapse.org/#!Profile:v), which can be acc
 <br/>
 You can also find a link to edit your profile under [Settings](https://www.synapse.org/#!Profile:v/settings), which can be accessed by clicking your name in the top right corner and selecting "Settings" from the menu. 
 
+{% include important.html content="Do not reuse passwords from other sites. We recommend generating a unique password and using a secure password manager to protect your Synapse account." %}
+
 ## Changing Your Settings
 
 `Settings` include your password, your preferred date/time format, and your Synapse API key. You can also visit your settings page to add more than one email address to your Synapse account. 
