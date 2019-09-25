@@ -20,6 +20,7 @@ category: howto
 * Find teams, and identify and manage the teams to which you belong
 * Use teams for communications and project permissions
 * Submit to a challenge as a team
+
 <br>
 
 A listing of all `Teams` to which you belong is available on the **Teams** tab of your [Profile Page](https://www.synapse.org/#!Profile:v), which can be accessed by clicking your name in the top right corner.
@@ -47,20 +48,24 @@ You can also invite users by email by entering the email of the person whom you 
 You may also remove team members by clicking the **Remove** button next to a member, or promote additional team members to Team Manager, by clicking the option list below the member.
 
 ### Edit Team
+
 Using this option, you can edit the `Team` name, the `Team` description, the `Team` icon, and change `Team` settings. This includes allowing users to join the team without a Team Manager's permission (the default is to require Team Manager's permission). You can also change team email preferences. This setting can allow Synapse users who are not in the `Team` to email the `Team`. See the section below "Communications and Project Permissions" for more information about team emails.
 
 ### Delete a Team
+
 Use the **Delete Team** option to delete all references to the `Team`. If a `Team` has Synapse content shared with it (see "Communications and Project Permissions" below), the `Team` cannot be deleted.
 
 ## Finding Teams
+
 You may search for Synapse `Teams` using the **Search All Teams** button on the **Teams** tab of your User Profile Page. You may also search `Teams` using the general search box in the header of each Synapse page by prefacing the search with **@** (e.g. @PCBC), or use the [Team Search Page](https://www.synapse.org/#!TeamSearch:).
 
 ### Join a Team
+
 For `Teams` to which you do not belong, you may view the team members and contact information, as well as request to join the `Team` via the **Request to Join Team** button on the `Team` page.
 
 ### Leave a Team
-Use the **Leave Team** option to be removed from a `Team`. If you want to re-join the `Team`, you may need the Team Manager's permission to join.
 
+Use the **Leave Team** option to be removed from a `Team`. If you want to re-join the `Team`, you may need the Team Manager's permission to join.
 
 ## Search for Members
 
@@ -76,9 +81,10 @@ You may use `Teams` to manage Sharing Settings on `Files`, `Folders` and `Projec
 
 ## Submitting to a Challenge as a Team
 
-When participating in a Challenge, you may submit solutions as an individual or as a `Team`. The `Team` must be registered with the challenge, which can be done by clicking the **Register a Team** button, typically on the **Forming a Team** page on the challenge wiki. When submitting a `File` to a challenge from the Web Client, you will be given the option to submit the `File` as part of a `Team`. You will then be asked to select from the registered `Teams` of which you are a member, or register an existing `Team` with the challenge, and to verify which team members contributed to the solution. Note that only members who have already registered with the challenge may be selected. 
+When participating in a Challenge, you may submit solutions as an individual or as a `Team`. The `Team` must be registered with the challenge, which can be done by clicking the **Register a Team** button, typically on the **Forming a Team** page on the challenge wiki. When submitting a `File` to a challenge from the Web Client, you will be given the option to submit the `File` as part of a `Team`. You will then be asked to select from the registered `Teams` of which you are a member, or register an existing `Team` with the challenge, and to verify which team members contributed to the solution. Note that only members who have already registered with the challenge may be selected.
 
 <br/>
 
 ### See Also
+
 [Wikis](wikis.md), [Files and Versioning](versioning.md), [Sharing Settings](access_controls.md)
