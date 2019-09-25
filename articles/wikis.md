@@ -30,10 +30,10 @@ category: howto
 
 Wikis inherit their sharing settings from the object they are associated with (a Project, Folder, or File), and cannot have separate sharing settings from that object. Anyone (including viewers who are not logged into Synapse if the Project is shared with the public) who has 'View' permissions or greater can see the content of the Wiki page if the object is shared with them.
 
-
 ## Creating, Editing, and Deleting a Wiki
 
 ### Through a Web Browser
+
 After creating a new project, select the Wiki tab. Start a `Wiki` through the Tools menu by selecting the 'Edit Project Wiki' function. Content in this first `Wiki` becomes your `Project`'s home page. Go to the Tools menu to add subpages to your `Wiki`. These will appear as links on the left side of your home page. Adding a `Wiki` to a `Folder` or `File` is done in a similar manner by selecting 'Edit Folder/File Wiki'. Content added to a `Wiki` can be previewed before saving. Each version of a saved `Wiki` is visible under Wiki History where older versions can be restored. To delete a `Wiki` select 'Delete Wiki Page' under Tools.  
 
 Use the **Tools** menu and then select **Edit Project/Folder/File wiki**
@@ -42,9 +42,7 @@ Use the **Tools** menu and then select **Edit Project/Folder/File wiki**
 
 ##### Command Line
 
-```bash
 The command line client does not support the creation of Wiki content. We suggest using (to get to the webpage of the project) `synapse onweb syn###` where `syn###` is the Synapse Id of your created project. Then editing the Wiki using the web client.
-```
 
 ##### Python
 
@@ -73,8 +71,8 @@ To add a subpage, use the **Tools** menu and then click "Add Wiki Subpage". You 
 
 These pages can be reordered through the Edit Order button below the Wiki page navigation bar to change both the hierarchy and the order of pages within a particular level.
 
-
 ## Wiki Markdown Language
+
 The layout and text of a `Wiki` can be customized using standard Markdown notation. A Formatting Guide is available within the Wiki editing window. For a reference of Markdown formatting see the [Markdown Formatting Guide](https://www.synapse.org/#!Wiki:syn2467792/ENTITY/64247){:target="_blank"}. Useful Markdown shortcuts are available in the Wiki Editor in a tool bar including: heading, bold, italic, strike-through, code block, sub and superscript. Links can be added to content available from any source with a URL.
 
 ## Wiki Widgets
@@ -82,6 +80,7 @@ The layout and text of a `Wiki` can be customized using standard Markdown notati
 Widgets are Synapse features that supplement the Markdown text that can be typed into the Wiki editor. These include inserting images, tagging individuals, querying tables, and many more. See the 'Insert' menu while in the Wiki editor for the list of widgets to customize your Wiki.
 
 See the 'Insert' list for the following widgets to customize your Wiki design.
+
 <img src="/assets/images/wiki_insertwidget.png">
 
 {% include tip.html content="To edit widgets after they have been added to the wiki, see the widget edit button in the upper left hand corner of the Wiki editing window." %}
@@ -116,4 +115,5 @@ A Synapse user can be tagged by using the 'Tag someone' Widget from the 'Insert'
 See the Synapse Data Use Procedure document for [details](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}.
 
 ## See Also
+
 [Discussion](discussion.md)
