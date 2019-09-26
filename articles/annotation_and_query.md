@@ -32,7 +32,7 @@ Annotations may be added when initially uploading a file or at a later date. Thi
 
 To add annotations on a single entity through the web client, click the `Annotations` button in the upper right corner on a Project, Folder, or File page.
 
-<img src="/assets/images/webAnnotation.png">
+![Annotation web location](../assets/images/webAnnotation.png)
 
 To add annotations on multiple files, please refer to our Synapse in Practice article [Managing Custom Metadata at Scale](managing_custom_metadata_at_scale.md) for a tutorial on how to do this efficiently and effectively leveraging [file views](views.md).
 
@@ -65,9 +65,9 @@ To update annotations on a single file:
 
 Click **File Tools**, **Annotations** and **Edit** to add, delete, or modify annotations. Start by entering a key (the name of the annotation), select the type (text, integer etc.,), and enter the value. Click `Save` to store the annotations for this entity. To enter multiple Values for a single Key click `Enter` with the cursor in the Value field.
 
-<img src="/assets/images/filetools.png">
+![Annotation filetools location](../assets/images/filetools.png)
 
-<img src="/assets/images/annotationsDetail.png">
+![Annotation editor](../assets/images/annotationsDetail.png)
 
 To add annotations on multiple files, please refer to our Synapse in Practice article [Managing Custom Metadata at Scale](managing_custom_metadata_at_scale.md) for a tutorial on how to do this efficiently and effectively leveraging [file views](views.md).
 
