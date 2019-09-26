@@ -17,15 +17,14 @@ category: howto
 }
 </style>
 
-
 # Links
+
 Synapse `Links` provide users the ability to create a link to any File, Table, Folder, or Project on Synapse. 
-
-
 
 ## Creating a Link
 
 ##### Web
+
 Navigate to the file, table, folder or project you want to save a link of. Click Tools and Save Link to.
 <br>
 <img id="toobig" src="../assets/images/save_link_to_file.png">
@@ -70,4 +69,5 @@ linkEnt <- synStore(linkEnt)
 ```
 
 ### See Also
+
 [Annotations and Queries](annotation_and_query.md), [Downloading Data](downloading_data.md), [Files and Versioning](versioning.md)

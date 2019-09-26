@@ -27,7 +27,6 @@ Participants **must** be registered for the challenge if they want to submit and
 <br/>
 (3) agree to the Terms of Use to work with the Challenge data.
 
-
 ## Join or Create a Team
 We encourage you to form a team with other participants for the challenge. You can either join a team or create your own team of collaborators. See instructions on how to form a team [here](teams.md). It is important to note that you **cannot** be on more than one team. Once you have submitted as a team or individual, you will not be able to submit as another team. If you decide to be part of a team, please register your team to the challenge - there will be a place to do this in every challenge wiki.
 
@@ -67,7 +66,7 @@ synLogin()
 my_submission_file <- File("/path/to/submission.csv", parentId="syn12345")
 my_submission_file <- synStore(my_submission_file)
 #The evaluationId must be a string here or there will be an error
-submission <- synSubmit(evaluationId, my_submission_file, name="Our Final Answer", team="Blue Team") 
+submission <- synSubmit(evaluationId, my_submission_file, name="Our Final Answer", team="Blue Team")
 ```
 
 ##### Web

@@ -14,7 +14,7 @@ The API clients provide a way to use Synapse programmatically. This page shows y
 * Python
 * R
 
-To manage stored login credentials, visit the [Client Configuration page](client_configuration.md). 
+To manage stored login credentials, visit the [Client Configuration page](client_configuration.md).
 
 ## Command Line
 
@@ -23,9 +23,11 @@ The Synapse command line client is implemented in Python and comes with the Syna
 [Instruction on `pip` installation](https://pip.pypa.io/en/stable/installing/)
 
 After installing `pip` and `python`, in your terminal (Mac OS or GNU/Linux) or Command Prompt (Windows), run the following command:
+
 ```
 pip install synapseclient
 ```
+
 ```
 synapseclient login "username" "password"
 synapseclient -h
@@ -57,7 +59,6 @@ synLogin("username", "password")
 ```
 
 For more documentation on the R client, see [`synapser` R docs](https://r-docs.synapse.org). 
-
 
 # To Report an Issue
 

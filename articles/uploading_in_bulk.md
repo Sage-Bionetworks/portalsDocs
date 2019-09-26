@@ -61,7 +61,7 @@ Using the validated manifest above, you can now upload the files to Synapse by r
 Files can be downloaded in bulk using the `syncFromSynapse` function. This function allows you to download all the files in a folder or project along with all the annotations and provenance on those files. A manifest file called SYNAPSE_METADATA_MANIFEST.tsv that contains the metadata will also be added in the path.
 
 * download files in the [Python client or command line](https://python-docs.synapse.org/build/html/synapseutils.html#synapseutils.sync.syncFromSynapse).
-* download files in the [R client](https://github.com/Sage-Bionetworks/synapserutils#download-data-in-bulk). 
+* download files in the [R client](https://github.com/Sage-Bionetworks/synapserutils#download-data-in-bulk).
 
 ## Editing in Bulk
 
