@@ -22,7 +22,7 @@ category: howto
 
 # Tables
 
-Synapse `Tables` are designed to provide users the ability to create web-accessible, sharable, and queryable data. Columns in tables have a user-specified, structured schema. Users define table columns to contain common primitive data types (text, numbers, dates, etc.) or references to other Synapse objects (e.g., `Files`). 
+Synapse `Tables` are designed to provide users the ability to create web-accessible, sharable, and queryable data. Columns in tables have a user-specified, structured schema. Users define table columns to contain common primitive data types (text, numbers, dates, etc.) or references to other Synapse objects (e.g., `Files`).
 
 `Tables` may be queried and edited through both the Synapse web UI as well as through our programmatic clients. Unlike most NoSQL systems, the data in Synapse `Tables` is strongly consistent, not eventually consistent. This is an important design consideration for scientific data processing, as analysis on eventually-consistent data sources can limit the types of analysis performed, and may require special coding strategies to ensure reasonable accuracy.
 
@@ -155,7 +155,7 @@ To count the number of rows:
 SELECT count(*) FROM syn3079449
 ```
 
-To select and rename a subset of columns for use in Wiki widgets: 
+To select and rename a subset of columns for use in Wiki widgets:
 
 ```sql
 SELECT age AS "Age at Diagnosis", gender AS "Gender" FROM syn3079449
@@ -164,10 +164,10 @@ SELECT age AS "Age at Diagnosis", gender AS "Gender" FROM syn3079449
 To find out how many distinct treatment arms were studied, by gender:
 
 ```sql
-SELECT count(distinct(treatmentArm)) AS "Number of Treatments", gender FROM syn3079449 group by gender 
+SELECT count(distinct(treatmentArm)) AS "Number of Treatments", gender FROM syn3079449 group by gender
 ```
 
-To list out the distinct treatent arms that were studied, by gender: 
+To list out the distinct treatent arms that were studied, by gender:
 
 ```sql
 SELECT GROUP_CONCAT(distinct(treatmentArm) SEPARATOR ', ') AS "Available Treatments", gender as "By Gender" FROM syn3079449 group by gender

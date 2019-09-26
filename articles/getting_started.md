@@ -48,7 +48,6 @@ Synapse projects are assigned a Synapse ID, unique identifiers used for referenc
 
 To find your project at any time, you can see your projects on your [dashboard](https://www.synapse.org/#!Profile:v/projects).
 
-
 ## Organizing Data: creating Files and Folders
 
 You can use the `Files` tab to upload data, code, results, and other information to your project. Synapse Folders are used to organize content and can contain other Folders and Files. Synapse `Folders` and `Files` are also assigned a unique identifier (Synapse ID).
@@ -61,7 +60,7 @@ To add a `Folder`:
 
 To upload a file into that folder:
 
-1.  Use the Tools menu and select **Upload or Link to File**.
+1. Use the Tools menu and select **Upload or Link to File**.
 1. Use the Browse button to select the file, or drag and drop it to upload and click Save.
 
 To explore other features available for files and folders, read about [annotating files](annotation_and_query.md), [assigning DOIs](doi.md), [versioning](files_and_versioning.md), [provenance](provenance.md),and [sharing settings](access_controls.md).
@@ -103,5 +102,3 @@ For instructions on changing sharing settings for `Folders` and `Files`, read th
 Find additional information in our [User Guide](./).
 
 For information on using Synapse programmatically, see the documentation for the [Python client](https://python-docs.synapse.org/build/html/index.html), [command line client](https://python-docs.synapse.org/build/html/CommandLineClient.html), and [R client](https://r-docs.synapse.org/)
-
-

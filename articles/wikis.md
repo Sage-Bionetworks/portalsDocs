@@ -38,7 +38,7 @@ After creating a new project, select the Wiki tab. Start a `Wiki` through the To
 
 Use the **Tools** menu and then select **Edit Project/Folder/File wiki**
 
-<img src="/assets/images/wiki_editprojectwiki.png">
+![Edit Wiki Location](../assets/images/wiki_editprojectwiki.png)
 
 ##### Command Line
 
@@ -67,7 +67,7 @@ wiki <- synStore(wiki)
 
 A `Project` Wiki can have subpages, which will appear nested below the main Wiki page. This will also create a navigation bar on the right side of the page that lists the Wiki subpages in the order they were created. Links to wiki subpages include the `Project` ID, the wiki path, and the ID of the wiki page, e.g. https://www.synapse.org/#!Synapse:syn150935/wiki/27376. The subpage ID can be found in the browser URL bar when the subpage is viewed.
 
-To add a subpage, use the **Tools** menu and then click "Add Wiki Subpage". You can then edit this sub-page like any other Wiki page through the **Tools** menu and "Edit Project Wiki". 
+To add a subpage, use the **Tools** menu and then click "Add Wiki Subpage". You can then edit this sub-page like any other Wiki page through the **Tools** menu and "Edit Project Wiki".
 
 These pages can be reordered through the Edit Order button below the Wiki page navigation bar to change both the hierarchy and the order of pages within a particular level.
 
@@ -81,7 +81,7 @@ Widgets are Synapse features that supplement the Markdown text that can be typed
 
 See the 'Insert' list for the following widgets to customize your Wiki design.
 
-<img src="/assets/images/wiki_insertwidget.png">
+![Wiki insert widget](../assets/images/wiki_insertwidget.png)
 
 {% include tip.html content="To edit widgets after they have been added to the wiki, see the widget edit button in the upper left hand corner of the Wiki editing window." %}
 
