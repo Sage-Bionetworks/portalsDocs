@@ -14,7 +14,7 @@ Annotations are key-value pairs stored as metadata for `Projects`, `Files`, `Fol
 
  In this case, the annotations you may want to add might look like this: 
 
- <img src="/assets/images/annotationsComplete.png">
+ ![Annotation example](../assets/images/annotationsComplete.png)
 
 ## Types of Annotations
 
