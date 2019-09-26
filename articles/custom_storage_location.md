@@ -134,7 +134,7 @@ import json
 syn = synapseclient.login()
 PROJECT = 'syn12345'
 
-destination = {'uploadType':'S3', 
+destination = {'uploadType':'S3',
                'concreteType':'org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting',
                'bucket':'nameofyourbucket'}
 destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
@@ -155,12 +155,12 @@ library(synapser)
 synLogin()
 projectId <- 'syn12345'
 
-destination <- list(uploadType='S3', 
+destination <- list(uploadType='S3',
                     concreteType='org.sagebionetworks.repo.model.project.ExternalS3StorageLocationSetting',
                     bucket='nameofyourbucket')
 destination <- synRestPOST('/storageLocation', body=toJSON(destination))
 
-projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.UploadDestinationListSetting', 
+projectDestination <- list(concreteType='org.sagebionetworks.repo.model.project.UploadDestinationListSetting',
                            settingsType='upload')
 projectDestination$locations <- list(destination$storageLocationId)
 projectDestination$projectId <- projectId
@@ -293,9 +293,9 @@ import json
 syn = synapseclient.login()
 PROJECT = 'syn12345'
 
-destination = {"uploadType":"PROXYLOCAL", 
-               "secretKey":"your_secret_key", 
-               "proxyUrl":"https://your-proxy.prod.sagebase.org", 
+destination = {"uploadType":"PROXYLOCAL",
+               "secretKey":"your_secret_key",
+               "proxyUrl":"https://your-proxy.prod.sagebase.org",
                "concreteType":"org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings"}
 destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
 
@@ -314,9 +314,9 @@ library(synapser)
 synLogin()
 projectId <- 'syn12345'
 
-destination <- list(uploadType='PROXYLOCAL', 
-                    secretKey='your_secret_key', 
-                    proxyUrl='https://your-proxy.prod.sagebase.org', 
+destination <- list(uploadType='PROXYLOCAL',
+                    secretKey='your_secret_key',
+                    proxyUrl='https://your-proxy.prod.sagebase.org',
                     concreteType='org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings')
 destination <- synRestPOST('/storageLocation', body=toJSON(destination))
 
@@ -340,8 +340,8 @@ import json
 syn = synapseclient.login()
 PROJECT = 'syn12345'
 
-destination = {"uploadType":"SFTP", 
-               "secretKey":"your_secret_key", 
+destination = {"uploadType":"SFTP",
+               "secretKey":"your_secret_key",
                "proxyUrl":"https://your-proxy.prod.sagebase.org",
                "concreteType":"org.sagebionetworks.repo.model.project.ProxyStorageLocationSettings"}
 destination = syn.restPOST('/storageLocation', body=json.dumps(destination))
