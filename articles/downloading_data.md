@@ -197,7 +197,7 @@ entity <- lapply(df$file.id, function(x) synGet(x))
 
 ### Recursive Downloads
 
-The folder structure that is present on Synapse can be maintained by recursive downloading. 
+The folder structure that is present on Synapse can be maintained by recursive downloading.
 
 ##### Command line
 
@@ -241,7 +241,7 @@ entity <- synGet("syn00123")
 wiki <- synGetWikiHeaders(entity)
 ```
 
-The Markdown and other information of a `Project` sub-`Wiki` page can be obtained by knowing the id of the `Wiki`. The `Wiki` page id can either be obtained through the above method or can be found in the URL "www.synapse.org/#!Synapse:syn00123/wiki/**12345**" where 12345 is the `Wiki` page id. 
+The Markdown and other information of a `Project` sub-`Wiki` page can be obtained by knowing the id of the `Wiki`. The `Wiki` page id can either be obtained through the above method or can be found in the URL "www.synapse.org/#!Synapse:syn00123/wiki/**12345**" where 12345 is the `Wiki` page id.
 
 ##### Python
 
@@ -268,7 +268,7 @@ import synapseclient
 import synapseutils
 
 # login to Synapse
-syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=True) 
+syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=True)
 
 # download all the files in folder syn123 to a local folder called "myFolder"
 all_files = synapseutils.syncFromSynapse(syn, entity='syn123', path='/path/to/myFolder')
@@ -282,7 +282,7 @@ library(synapser)
 library(synapserutils)
 
 # login to Synapse
-synLogin(email='me@example.com', password='secret', rememberMe=TRUE) 
+synLogin(email='me@example.com', password='secret', rememberMe=TRUE)
 
 # download all the files in folder syn123 to a local folder called "myFolder"
 all_files = syncFromSynapse(entity='syn123', path='/path/to/myFolder')
