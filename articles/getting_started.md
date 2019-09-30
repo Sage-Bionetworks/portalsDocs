@@ -30,26 +30,29 @@ Anyone can browse public content on the Synapse web site. To download and create
 
 Synapse is a data sharing platform approved for storing data from human subjects research. This requires special care and thought. To upload files, Sage Bionetworks requires you demonstrate awareness of privacy and security issues. 
 
-You can complete this by taking a short [Certification Quiz](https://www.synapse.org/#!Quiz:Certification).
+You can complete this by taking a [Certification Quiz](https://www.synapse.org/#!Quiz:Certification).
 
 ## Project and Data Management on Synapse
 
 Synapse `Projects` are online workspaces where researchers can collaborate and organize their work. Synapse supports all kinda of working groups: individuals, small teams, and large consortia.
 
-To create a `Project`:
+To create a new `Project`:
 
-1. Go to your [projects list](https://www.synapse.org/#!Profile:v/projects) on your dashboard.
-1. Click the **Create Project** button.
-1. Decide on a unique name for your `Project` and click Save.
+1. Navigate to the User Menu and click on [`Projects`](https://www.synapse.org/#!Profile:v/projects).
+2. Click the **Create a New Project** button.
+3. Decide on a unique name for your `Project` and click Save.
+
+Your projects [dashboard](https://www.synapse.org/#!Profile:v/projects) stores your collection of projects.
 
 Read about [`Projects`](making_a_project.md) in the user guide.
 
+By default, your newly created `Project` is private. You are the only person who can access it, including any content in it. Read about [`Sharing Settings`](/sharing_settings.html) to distribute your data to a broader audience.
 
-By default, your newly created `Project` is private. You are the only person who can access it, including any content in it. In another tutorial you will learn how to share your project with other users.
+## Synapse IDs
 
-Synapse projects are assigned a Synapse ID, unique identifiers used for reference with the format `syn12345678`.
+Synapse projects are assigned a Synapse ID, a globally unique identifiers used for reference with the format `syn12345678`. Often abbreviated to "synID", the ID of an object never changes, even if the name does.
 
-To find your project at any time, you can see your projects on your [dashboard](https://www.synapse.org/#!Profile:v/projects).
+
 
 ## Organizing Data: creating Files and Folders
 
