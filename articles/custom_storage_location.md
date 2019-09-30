@@ -30,7 +30,7 @@ Make the following adjustments to customize it to work with Synapse:
 
 * When the AWS instructions prompt you to `Create a Bucket - Select a Bucket Name and Region`, use a unique name. For example, `thisisthenameofmybucket`.
 * Select the newly created bucket and click the **Permissions** tab.
-    * Select the **Bucket Policy** button and copy one of the below policies (read-only or read-write permissions). Change the name of `Resource` from “synapse-share.yourcompany.com” to the name of your new bucket (twice) and ensure that the `Principal` is `"AWS":"325565585839"`. This is Synapse's account number.
+  * Select the **Bucket Policy** button and copy one of the below policies (read-only or read-write permissions). Change the name of `Resource` from “synapse-share.yourcompany.com” to the name of your new bucket (twice) and ensure that the `Principal` is `"AWS":"325565585839"`. This is Synapse's account number.
 
 ### Read-write permissions
 
@@ -57,9 +57,9 @@ To allow authorized Synapse users to upload data to your bucket set read-write p
 
 <br/>
 
-For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **<a href="/assets/downloads/owner.txt" download="owner.txt">owner.txt</a>** file with your Synapse username and uploading it to your bucket. You can upload the file with the Amazon Web Console or if you have  the [AWS command line client](https://aws.amazon.com/cli/){:target="_blank"}, you can upload using the command line.
+For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an (**owner.txt**)[../assets/downloads/owner.txt] file with your Synapse username and uploading it to your bucket. You can upload the file with the Amazon Web Console or if you have  the [AWS command line client](https://aws.amazon.com/cli/){:target="_blank"}, you can upload using the command line.
 
-<img id="imageSmall" src="/assets/images/ownerTxt.png">
+<img id="imageSmall" src="../assets/images/ownerTxt.png">
 
 ##### Command line
 
@@ -70,7 +70,7 @@ aws s3 cp owner.txt s3://nameofmybucket/nameofmyfolder
 
 ##### Web
 
-<img id="imageSmall" src="/assets/images/uploadAWS.png">
+<img id="imageSmall" src="../assets/images/uploadAWS.png">
 
 Navigate to your bucket on the Amazon Console and select **Upload** to upload your text file.
 
@@ -172,7 +172,7 @@ projectDestination <- synRestPOST('/projectSettings', body=toJSON(projectDestina
 
  Navigate to your **Project/Folder -> Tools -> Change Storage Location**. In the resulting pop-up, select the `Amazon S3 Bucket` option and fill in the relevant information, where Bucket is the name of your external bucket, Base Key is the name of the folder in your bucket to upload to, and Banner is a short description such as who owns the storage location:
 
-<img id="image" src="/assets/images/external_s3.png">
+<img id="image" src="../assets/images/external_s3.png">
 
 <br/>
 
