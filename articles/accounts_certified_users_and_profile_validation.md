@@ -25,16 +25,6 @@ The table below summarizes the user privileges for each level.
 | Add Provenance | | | X |
 
 
-<table class="markdown-table border text-align-center">
-<tr><th></th><th>  Anonymous  </th><th> Registered  </th><th> Certified</th></tr>
-<tr><td>Browse Public Project Catalog  </td><td>  X </td><td>  X  </td><td> X </td></tr>
-<tr><td>Browse Public File Catalog  </td><td>  X </td><td>  X  </td><td> X</td></tr>
-<tr><td>Create a Project  </td><td>    </td><td>  X  </td><td> X</td></tr>
-<tr><td>Add Wiki Content  </td><td>    </td><td>  X  </td><td> X</td></tr>
-<tr><td>Download Files/Tables* </td><td>    </td><td>  X  </td><td> X</td></tr>
-<tr><td>Upload Files/Tables </td><td>    </td><td>    </td><td> X</td></tr>
-<tr><td>Add Provenance </td><td>    </td><td>     </td><td> X</td></tr>
-</table>
 
 *Your ability to download a `File` or `Table` depends on your Synapse user type AND fulfilling the `Conditions for Use`, if any, of the `File` or `Table`.  
 
