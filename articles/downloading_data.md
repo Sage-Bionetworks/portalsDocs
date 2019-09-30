@@ -19,7 +19,7 @@ When using the Python, R, or command line clients, files downloaded using the `g
 
 For the Python and R clients the default download location is the Synapse cache. The command line client downloads to your current working directory. On the web, your own browser settings determine the download location for files. The Synapse cache is not updated to reflect downloads through a web browser. In all cases you can specify the directory in which to download the file.
 
-For example, to get the experimental protocol file on [Adult Mouse Cardiac Myocyte Isolation](https://www.synapse.org/#!Synapse:syn3158111) (syn3158111) from the [Progenitor Cell Biology Consortium (PCBC)](https://www.synapse.org/#!Synapse:syn177310) you would run the following:
+For example, to get the experimental protocol file on [Adult Mouse Cardiac Myocyte Isolation](https://www.synapse.org/#!Synapse:syn3158111) (syn3158111) from the [Progenitor Cell Biology Consortium (PCBC)](https://www.synapse.org/#!Synapse:syn1773109) you would run the following:
 
 ##### Command line
 
