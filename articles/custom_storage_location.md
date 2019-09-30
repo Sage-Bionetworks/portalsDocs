@@ -57,7 +57,7 @@ To allow authorized Synapse users to upload data to your bucket set read-write p
 
 <br/>
 
-For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an (**owner.txt**)[../assets/downloads/owner.txt] file with your Synapse username and uploading it to your bucket. You can upload the file with the Amazon Web Console or if you have  the [AWS command line client](https://aws.amazon.com/cli/){:target="_blank"}, you can upload using the command line.
+For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **[owner.txt](../assets/downloads/owner.txt)** file with your Synapse username and uploading it to your bucket. You can upload the file with the Amazon Web Console or if you have  the [AWS command line client](https://aws.amazon.com/cli/){:target="_blank"}, you can upload using the command line.
 
 <img id="imageSmall" src="../assets/images/ownerTxt.png">
 
