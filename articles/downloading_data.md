@@ -289,4 +289,5 @@ all_files = syncFromSynapse(entity='syn123', path='/path/to/myFolder')
 ```
 
 # See Also
+
 [Versioning](versioning.md), [Tables](tables.md), [Wikis](wikis.md), [File Views](views.md), [Annotations and Queries](annotation_and_query.md)

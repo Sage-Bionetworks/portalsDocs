@@ -64,4 +64,6 @@ Moderators may also "pin" important threads using the **pin** icon located next 
 
 <img style="width: 65%;" src="/assets/images/ModeratorButtons.png">
 
-# See Also [Wikis](wikis.md)
+# See Also 
+
+[Wikis](wikis.md)
