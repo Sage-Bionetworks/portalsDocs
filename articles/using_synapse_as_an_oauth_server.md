@@ -18,10 +18,10 @@ External web applications can now log in to Synapse and access users' identity a
 
 
 # Registering and linking an OAuth 2.0 Client
-The details of the Synapse Open ID Connect implementation are published on the web in a standard Open ID Configuration document (aka the "discovery document"): [https://repo-prod.prod.sagebase.org/auth/v1/.well-known/openid-configuration](https://repo-prod.prod.sagebase.org/auth/v1/.well-known/openid-configuration).  The documenty includes the web endpoints for registration, authorization, and token generation, as well as the scope of resources that can be requested, and the formats in which Synapse will return information.
+The details of the Synapse Open ID Connect implementation are published on the web in a standard Open ID Configuration document (aka the "discovery document"): [https://repo-prod.prod.sagebase.org/auth/v1/.well-known/openid-configuration](https://repo-prod.prod.sagebase.org/auth/v1/.well-known/openid-configuration).  The document includes the web endpoints for registration, authorization, and token generation, as well as the scope of resources that can be requested, and the formats in which Synapse will return information.
 
 ## Create an OAuth 2.0 Client
-An external application can be registered with Synapse as a "cient" application by following the steps below.   The API reference documents for what follows are [here](https://docs.synapse.org/rest/#org.sagebionetworks.auth.OpenIDConnectController), and the following instructions show how to invoke them from Python:
+An external application can be registered with Synapse as a "client" application by following the steps below.   The API reference documents for what follows are [here](https://docs.synapse.org/rest/#org.sagebionetworks.auth.OpenIDConnectController), and the following instructions show how to invoke them from Python:
 
 
 ##### Python
