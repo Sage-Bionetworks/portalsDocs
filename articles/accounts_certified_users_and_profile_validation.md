@@ -13,6 +13,7 @@ order: 3
 There are three levels of users in Synapse: `Anonymous`, `Registered`, and `Certified`.
 The table below summarizes the user privileges for each level.  
 
+
 | | Anonymous | Registered | Certified |
 | :---- | :----: | :----: | :----: |
 | Browse Public Project Catalog | X | X | X |
