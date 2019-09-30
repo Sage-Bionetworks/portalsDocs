@@ -14,8 +14,6 @@ Working with a large number of files on the web can be tedious, especially if yo
 * modify files in bulk using a manifest
 * download the files in bulk
 
-<br/>
-
 ## Uploading Data in Bulk
 
 ### Creating a Manifest
@@ -33,8 +31,6 @@ The required columns in the manifest are:
 | path | parent | name | used | executed | emotion| species |
 | --- | --- | --- | --- | --- | --- | --- |
 | /path/to/file.csv | syn123 | Tardar Sauce | syn654 | https://github.com/your/code/repo | grumpy | cat |
-
-<br/>
 
 The above manifest describes a "file.csv" that will be uploaded to the Synapse folder `syn123` and named "Tardar Sauce". The manifest describes the provenance of the file indicating that it was generated using code deposited in GitHub (https://github.com/your/code/repo) from the data in `syn654`. Additionally, the file has been annotated with `emotion: grumpy` and `species: cat`. Additional annotations could be associated with the file by adding more columns.
 
