@@ -258,7 +258,7 @@ wiki <- synGetWiki(entity, 12345)
 
 ### Downloading in Bulk
 
-Files can be downloaded in bulk using the `syncFromSynapse` function found in the [synapseutils](https://python-docs.synapse.org/build/html/synapseutils.html#module-synapseutils.sync) helper package. This function crawls all the subfolders of the project/folder that you specify and retrieves all the files that have not been downloaded. By default, the files will be downloaded into your `synapseCache`, but a different download location can be specified with the `path` parameter. If you do download to a location out side of `synapseCache`, this function will also create a tab-delimited manifest of all the files along with their metadata (path, provenance, annotations, etc).
+Files can be downloaded in bulk using the `syncFromSynapse` function found in the [synapseutils](https://python-docs.synapse.org/build/html/synapseutils.html#synapseutils.sync.syncFromSynapse) helper package. This function crawls all the subfolders of the project/folder that you specify and retrieves all the files that have not been downloaded. By default, the files will be downloaded into your `synapseCache`, but a different download location can be specified with the `path` parameter. If you do download to a location out side of `synapseCache`, this function will also create a tab-delimited manifest of all the files along with their metadata (path, provenance, annotations, etc).
 
 ##### Python
 
