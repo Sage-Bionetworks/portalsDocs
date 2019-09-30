@@ -79,6 +79,7 @@ You will receive a notification email when your profile has been validated and a
 ### Acceptable Documentation for Identity Verification
 
 Acceptable forms of documentation, in English, are:
+
 * A letter from a signing official on letterhead attesting to your identity. _Please note that you can not serve as your own signing official_ ([template here](../assets/other/signing_official_template.md)) OR
 * A notarized letter attesting to your identity ([template here](../assets/other/notarized_letter_template.md)) OR
 * A copy of your professional license (e.g., a photocopy of your medical license)
