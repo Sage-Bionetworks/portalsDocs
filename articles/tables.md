@@ -55,7 +55,6 @@ If you have imported an existing `.csv` or `.tsv`, all of your data will be impo
 
 If you have created an empty Table, you will need to click on "Add Data to Table" to upload a `.csv` or `.tsv` file, or add rows individually through the web UI. To add rows, click on the **Edit Query Results** icon to the right of the query button to get to the **Edit Rows** pop-up. From there, you can add rows by clicking the **+** at the top.
 
-<br>
 <img id="image" src="../assets/images/table_add_rows.png">
 
 **Deleting rows**
@@ -64,14 +63,12 @@ To delete rows, query for the rows you want to delete and use the `delete` funct
 
 Click on the **Edit icon** to the right of the query button to get to the **Edit Rows** pop-up. From there, you can delete rows by checking the boxes of the rows you would like to delete and then clicking the **Trash Can** icon.
 
-<br>
 <img id="image" src="../assets/images/table_delete_rows.png">
 
 **Modifying existing rows**
 
 To modify row entries, click on the **Edit icon** to the right of the **Query** button. In the resulting pop-up, you can adjust each entry as you please. In this example, the first and last entry of row two have been updated.
 
-<br>
 <img id="image" src="../assets/images/table_modify_rows.png">
 
 # Modifying Tables
@@ -86,21 +83,18 @@ When updating, begin by querying the table to ensure you have the latest schema 
 
 Click on the **edit** icon to the right of the **Query** button to update table values.
 
-<br>
 <img id="image" src="../assets/images/table_update_values.png">
 
 ## Changing or Adding Columns
 
 To add columns, click on the **Schema** button. From there, select the **Edit Schema** button and then add columns using the **Add Column** button located at the bottom of the pop-up.
 
-<br>
 <img id="image" src="../assets/images/table_updating_columns.png">
 
 {% include warning.html content="Column names must be 256 characters or less. There are three reserved words that cannot be used: ROW_ID, ROW_VERSION, ROW_ETAG (case insensitive)." %}
 
 To delete columns, click on the **Schema** button. From there, click the **Edit Schema** button and then select the columns you would like to delete and delete them by clicking the **trash can** icon at the top.
 
-<br>
 <img id="image" src="../assets/images/table_deleting_columns.png">
 
 To modify information in a column, first begin by **adding** a new column, then **copy** the data from the column you would like to change into the newly created column, make the changes in the new column, and **delete** the old one.
@@ -112,7 +106,6 @@ To modify information in a column, first begin by **adding** a new column, then 
 
 To delete the entire Table, click on **Tools** and then select **Delete Table** from the resulting dropdown.
 
-<br>
 <img id="image" src="../assets/images/delete_table.png">
 
 # Querying Table Data
@@ -173,7 +166,7 @@ To list out the distinct treatent arms that were studied, by gender:
 SELECT GROUP_CONCAT(distinct(treatmentArm) SEPARATOR ', ') AS "Available Treatments", gender as "By Gender" FROM syn3079449 group by gender
 ```
 
-{% include tip.html content="Many more examples can be found in the <a href='http://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html'>API Docs</a>." %}
+{% include tip.html content="Many more examples can be found in the [API Docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html')." %}
 
 # Using Table Facets
 

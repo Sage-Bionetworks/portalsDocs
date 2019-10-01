@@ -32,7 +32,6 @@ You may also [customize a `.synapseConfig` file](https://r-docs.synapse.org/arti
 ### Where to find your API Key
 
 From your [Synapse homepage](https://www.synapse.org/), navigate to your user menu and select **Settings** from the drop-down menu. Your Synapse API key is made visible by selecting **Show API Key**. In the case the confidentiality of the API key is compromised, or you would like to invalidate your API key, select **Change API Key**.
-<br/>
 
 ## See Also
 
