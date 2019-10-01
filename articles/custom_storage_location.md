@@ -22,7 +22,7 @@ While Synapse provides physical storage for files (using Amazon's S3), not all d
 
 ## Setting Up an External AWS S3 Bucket
 
-Follow the documentation on Amazon Web Service (AWS) site to **[Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html){:target="_blank"}**. Buckets are not required to be located in the US.
+Follow the documentation on Amazon Web Service (AWS) site to **[Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)**. Buckets are not required to be located in the US.
 
 <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html" class="btn btn-primary">View AWS Bucket Instructions</a>{:target="_blank"}
 
@@ -54,8 +54,6 @@ To allow authorized Synapse users to upload data to your bucket set read-write p
     ]
 }
 ```
-
-<br/>
 
 For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an (**owner.txt**)[../assets/downloads/owner.txt] file with your Synapse username and uploading it to your bucket. You can upload the file with the Amazon Web Console or if you have  the [AWS command line client](https://aws.amazon.com/cli/){:target="_blank"}, you can upload using the command line.
 
@@ -97,8 +95,6 @@ If you do not want to allow authorized Synapse users to upload data to your buck
 }
 ```
 
-<br/>
-
 ### Make sure to enable cross-origin resource sharing (CORS)
 
 In **Permissions**, click **CORS configuration**. In the CORS configuration editor, edit the configuration so that Synapse is included  in the `AllowedOrigin` tag. An example CORS configuration that would allow this is:
@@ -117,8 +113,6 @@ In **Permissions**, click **CORS configuration**. In the CORS configuration edit
 </CORSConfiguration>
 ```
 
-<br/>
-<br/>
 For more information, please read: [How Do I Configure CORS on My Bucket?](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html#how-do-i-enable-cors){:target="_blank"}
 
 ### Set S3 Bucket as Upload Location
@@ -174,8 +168,6 @@ projectDestination <- synRestPOST('/projectSettings', body=toJSON(projectDestina
 
 <img id="image" src="../assets/images/external_s3.png">
 
-<br/>
-
 ### Adding Files in Your S3 Bucket to Synapse
 
 If your bucket is set for read-write access, files can be added to the bucket using the standard Synapse interface (web or programmatic).
@@ -220,9 +212,7 @@ f <- File(dataFileHandleId=fileHandle$id, parentId=projectId)
 f <- synStore(f)
 ```
 
-<br/>
-
-Please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/model/project/ExternalS3StorageLocationSetting.html){:target="_blank"} for more information on setting external storage location settings using our REST API.
+Please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/model/project/ExternalS3StorageLocationSetting.html) for more information on setting external storage location settings using our REST API.
 
 ## Using SFTP
 
@@ -279,7 +269,7 @@ projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 
 ## Using a Proxy to Access a Local File Server or SFTP Server
 
-For files stored outside of Amazon, an additional proxy is needed to validate the pre-signed URL and then proxy the requested file contents.  View more information **[here](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"}** about the process as well as about creating a [local proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki/Setup-Proxy-Local){:target="_blank"} or a [SFTP proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"}.
+For files stored outside of Amazon, an additional proxy is needed to validate the pre-signed URL and then proxy the requested file contents.  View more information **[here](https://github.com/Sage-Bionetworks/file-proxy/wiki)** about the process as well as about creating a [local proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki/Setup-Proxy-Local){:target="_blank"} or a [SFTP proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"}.
 
 #### Set Project Settings for a Local Proxy
 
