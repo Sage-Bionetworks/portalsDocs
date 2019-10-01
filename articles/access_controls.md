@@ -57,16 +57,16 @@ Synapse `Open Data` is data that does not require `Conditions for Use`. Typicall
 * Data from model organisms, species or strains
 * Non-biological data, like that used for the calibration of instruments
 * Human data that are:
-    * Publicly available elsewhere
-    * Anonymous
-    * De-identified and non-sensitive, with no known sharing or use restrictions
-    * Self-contributed and unambiguously consented for open data sharing and use
+  * Publicly available elsewhere
+  * Anonymous
+  * De-identified and non-sensitive, with no known sharing or use restrictions
+  * Self-contributed and unambiguously consented for open data sharing and use
 
 <a name="how-to-set-conditions-for-use "></a>
 
 ## How to Set Conditions for Use?
 
-If you would like to set `Conditions for Use` for an entire `Project`, please contact the Synapse <a href="mailto:act@sagebase.org">Access and Compliance Team (ACT)</a> directly for assistance.
+If you would like to set `Conditions for Use` for an entire `Project`, please contact the Synapse [Access and Compliance Team (ACT)](mailto:act@sagebase.org) directly for assistance.
 
 By default, content within a `Folder` or `Project` inherit the `Conditions for Use` of the parent `Folder` or `Project`. As with sharing settings, you can set local conditions for use for individual `Folders`, `Files` and `Tables` but only **in addition to** the existing parent `Project`/`Folder’s` conditions for use. In other words, all content within a Folder or Project has, at a minimum, the `Conditions for Use` of its parent Folder or Project, and may have **additional** local conditions for use as needed. You cannot create a Folder, File, or Table that has fewer conditions for use than its parent or that has conditions for use that conflict with the conditions for use of the parent.
 
