@@ -75,7 +75,7 @@ These pages can be reordered through the Edit Order button below the Wiki page n
 
 
 ## Wiki Markdown Language
-The layout and text of a `Wiki` can be customized using standard Markdown notation. A Formatting Guide is available within the Wiki editing window. For a reference of Markdown formatting see the [Markdown Formatting Guide](https://www.synapse.org/#!Wiki:syn2467792/ENTITY/64247){:target="_blank"}. Useful Markdown shortcuts are available in the Wiki Editor in a tool bar including: heading, bold, italic, strike-through, code block, sub and superscript. Links can be added to content available from any source with a URL.
+The layout and text of a `Wiki` can be customized using standard Markdown notation. A Formatting Guide is available within the Wiki editing window. For a reference of Markdown formatting see the [Markdown Formatting Guide](https://www.synapse.org/#!Wiki:syn2467792/ENTITY/64247). Useful Markdown shortcuts are available in the Wiki Editor in a tool bar including: heading, bold, italic, strike-through, code block, sub and superscript. Links can be added to content available from any source with a URL.
 
 ## Wiki Widgets
 
@@ -113,7 +113,7 @@ A Synapse user can be tagged by using the 'Tag someone' Widget from the 'Insert'
 
 {% include important.html content="Wiki pages do not have specific Conditions for Use. Do not put any protected human data (Controlled Data) in Synapse Wikis." %}
 
-See the Synapse Data Use Procedure document for [details](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}.
+See the Synapse Data Use Procedure document for [details](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4).
 
 ## See Also
 [Discussion](/articles/discussion.html)

@@ -26,7 +26,7 @@ Provenance is a concept describing the origin of something; in Synapse it is use
 
 ## The basic elements of Synapse provenance
 
-The model Synapse uses for provenance is based on the [W3C provenance spec](https://www.w3.org/standards/techs/provenance#w3c_all){:target="_blank"} where items are derived from an **activity** which has components that were **used**  and components that were **executed**.  Think of the used items as input files and executed items as software or code.  Both used and executed can either be items in Synapse or URLs such as a link to a github commit or a link to specific version of a software tool.  
+The model Synapse uses for provenance is based on the [W3C provenance spec](https://www.w3.org/standards/techs/provenance#w3c_all) where items are derived from an **activity** which has components that were **used**  and components that were **executed**.  Think of the used items as input files and executed items as software or code.  Both used and executed can either be items in Synapse or URLs such as a link to a github commit or a link to specific version of a software tool.  
 
 The Synapse clients for command line, Python, and R support creating and editing of provenance relationships. The Web client allows editing of provenance once the file has been uploaded.
 
@@ -39,18 +39,18 @@ On the right is a Synapse visualization of provenance relationships that is demo
 ### Setting Provenance When Uploading a File
 
 Let's begin with a script that generates a list of normally distributed random numbers and saves the output to a file. 
-For example, you have an R script file called [generate_random_data.R](https://www.synapse.org/#!Synapse:syn7205215){:target="_blank"} and you've saved the output to a data file called [random_numbers.txt](https://www.synapse.org/#!Synapse:syn7208917){:target="_blank"}. We'll begin by uploading the files to Synapse and then set their provenance.  
+For example, you have an R script file called [generate_random_data.R](https://www.synapse.org/#!Synapse:syn7205215) and you've saved the output to a data file called [random_numbers.txt](https://www.synapse.org/#!Synapse:syn7208917). We'll begin by uploading the files to Synapse and then set their provenance.  
 
 #### Upload a file and add provenance
 
-For this example, we'll use a `Project` that already exists ([*Wondrous Research Example* : syn1901847](https://www.synapse.org/#!Synapse:syn1901847/files/){:target="_blank"}). The [code file](https://www.synapse.org/#!Synapse:syn7205215){:target="_blank"} is already saved in Synapse with synId `syn7205215` so we'll upload the data file to this `Project`, or in Synapse terminology, the project will be the parent of the new entities. 
+For this example, we'll use a `Project` that already exists ([*Wondrous Research Example* : syn1901847](https://www.synapse.org/#!Synapse:syn1901847/files/)). The [code file](https://www.synapse.org/#!Synapse:syn7205215) is already saved in Synapse with synId `syn7205215` so we'll upload the data file to this `Project`, or in Synapse terminology, the project will be the parent of the new entities. 
 
-As the [random_numbers.txt file](https://www.synapse.org/#!Synapse:syn7208917){:target="_blank"} was generated from the above script, we are going to specify this using provenance. 
+As the [random_numbers.txt file](https://www.synapse.org/#!Synapse:syn7208917) was generated from the above script, we are going to specify this using provenance. 
 
 There are a couple ways to set provenance information for a Synapse entity. The `used` and `executed` arguments specify resources used and code executed in the process of creating the entity. Code can be stored in Synapse(as we did in the previous step) or, better yet, linked by URL to a source code versioning system like GitHub or SVN. As an example, we'll specify 2 somewhat contrived sources of provenance:
 
-1. Synapse entity by synId: [syn7205215](https://www.synapse.org/#!Synapse:syn7205215){:target="_blank"} (the code file)
-2. URL to a page describing [normal distributions](http://mathworld.wolfram.com/NormalDistribution.html){:target="_blank"}
+1. Synapse entity by synId: [syn7205215](https://www.synapse.org/#!Synapse:syn7205215) (the code file)
+2. URL to a page describing [normal distributions](http://mathworld.wolfram.com/NormalDistribution.html)
 
 <br/>
 
@@ -94,7 +94,7 @@ Once the data file is uploaded, it will provide the synId assigned to it. In thi
 
 ### Editing Provenance
 
-To continue our example above, we'll now add some new results from our initial data file. We're going to take the results in random_numbers.txt and square them. The script to square the numbers will be [square.R](https://www.synapse.org/#!Synapse:syn7209078){:target="_blank"} and we'll save the output to a data file, [squares.txt](https://www.synapse.org/#!Synapse:syn7209166){:target="_blank"}. As with the previous example, the code file is already saved in Synapse, so we'll upload the data file and set its provenance.
+To continue our example above, we'll now add some new results from our initial data file. We're going to take the results in random_numbers.txt and square them. The script to square the numbers will be [square.R](https://www.synapse.org/#!Synapse:syn7209078) and we'll save the output to a data file, [squares.txt](https://www.synapse.org/#!Synapse:syn7209166). As with the previous example, the code file is already saved in Synapse, so we'll upload the data file and set its provenance.
 
 ##### Web
 To update the provenance on a file, navigate to the `File's` tab and click on the `File` that you would like to update. Click on the **Tools** dropdown in the upper right hand corner and select **Edit Provenance**. In the resulting pop-up, enter the relevant information. 

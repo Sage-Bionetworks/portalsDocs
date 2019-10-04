@@ -13,7 +13,7 @@ Data shared in Synapse may have `Conditions for Use` that define restrictions on
 
 You must be a `Certified User` to contribute data to Synapse. You are responsible for determining if the data you would like to contribute is `Controlled Use` and therefore requires `Conditions for Use`. Carefully consider the specific risks and appropriate protections required before sharing your data. 
 
-If there are no ethical, legal or regulatory reasons to impose `Conditions for Use`, the data can be used for any lawful research purpose. All human data shared in Synapse, with or without `Conditions for Use`, must be de-identified according to **HIPAA standards** and comply with all applicable privacy laws and regulations. Guidance on de-identification according to HIPAA rules can be found [here](http://www.hhs.gov/ocr/privacy){:target="_blank"}. 
+If there are no ethical, legal or regulatory reasons to impose `Conditions for Use`, the data can be used for any lawful research purpose. All human data shared in Synapse, with or without `Conditions for Use`, must be de-identified according to **HIPAA standards** and comply with all applicable privacy laws and regulations. Guidance on de-identification according to HIPAA rules can be found [here](http://www.hhs.gov/ocr/privacy). 
 
 `Conditions for Use` can be set at the `Project`, `Folder`, `File` and `Table` level. We recommend grouping `Files` that require the same `Conditions for Use` in a dedicated `Folder` within your `Project`. For more information about setting `Conditions for Use` please see [Access Controls and Data Governance](/articles/access_controls.html).
 
