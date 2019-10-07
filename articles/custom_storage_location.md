@@ -55,7 +55,7 @@ To allow authorized Synapse users to upload data to your bucket set read-write p
 }
 ```
 
-For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **[owner.txt](../assets/downloads/owner.txt)** file with your Synapse username and uploading it to your bucket. You can upload the file with the Amazon Web Console or if you have  the [AWS command line client](https://aws.amazon.com/cli/){:target="_blank"}, you can upload using the command line.
+For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **[owner.txt](../assets/downloads/owner.txt)** file with your Synapse username and uploading it to your bucket. You can upload the file with the Amazon Web Console or if you have  the [AWS command line client](https://aws.amazon.com/cli/), you can upload using the command line.
 
 <img id="imageSmall" src="../assets/images/ownerTxt.png">
 
@@ -113,7 +113,7 @@ In **Permissions**, click **CORS configuration**. In the CORS configuration edit
 </CORSConfiguration>
 ```
 
-For more information, please read: [How Do I Configure CORS on My Bucket?](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html#how-do-i-enable-cors){:target="_blank"}
+For more information, please read: [How Do I Configure CORS on My Bucket?](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html#how-do-i-enable-cors)
 
 ### Set S3 Bucket as Upload Location
 
@@ -269,7 +269,7 @@ projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 
 ## Using a Proxy to Access a Local File Server or SFTP Server
 
-For files stored outside of Amazon, an additional proxy is needed to validate the pre-signed URL and then proxy the requested file contents.  View more information **[here](https://github.com/Sage-Bionetworks/file-proxy/wiki)** about the process as well as about creating a [local proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki/Setup-Proxy-Local){:target="_blank"} or a [SFTP proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki){:target="_blank"}.
+For files stored outside of Amazon, an additional proxy is needed to validate the pre-signed URL and then proxy the requested file contents.  View more information **[here](https://github.com/Sage-Bionetworks/file-proxy/wiki)** about the process as well as about creating a [local proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki/Setup-Proxy-Local) or a [SFTP proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki).
 
 #### Set Project Settings for a Local Proxy
 
