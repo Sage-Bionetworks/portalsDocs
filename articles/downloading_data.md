@@ -19,7 +19,7 @@ When using the Python, R, or command line clients, files downloaded using the `g
 
 For the Python and R clients the default download location is the Synapse cache. The command line client downloads to your current working directory. On the web, your own browser settings determine the download location for files. The Synapse cache is not updated to reflect downloads through a web browser. In all cases you can specify the directory in which to download the file.
 
-For example, to get the experimental protocol file on [Adult Mouse Cardiac Myocyte Isolation](https://www.synapse.org/#!Synapse:syn3158111) (syn3158111) from the [Progenitor Cell Biology Consortium (PCBC)](https://www.synapse.org/#!Synapse:syn177310) you would run the following:
+For example, to get the experimental protocol file on [Adult Mouse Cardiac Myocyte Isolation](https://www.synapse.org/#!Synapse:syn3158111) (syn3158111) from the [Progenitor Cell Biology Consortium (PCBC)](https://www.synapse.org/#!Synapse:syn1773109) you would run the following:
 
 ##### Command line
 
@@ -92,7 +92,7 @@ entity = syn.get("syn3260973", version=1)
 entity <- synGet("syn3260973", version=1)
 ```
 
-See [versioning](/articles/versioning.html) for more details.
+See [versioning](versioning.md) for more details.
 
 ### Links
 
@@ -148,7 +148,7 @@ entity <- synGet("syn00123", downloadLocation="/path/to/folder")
 
 ## Finding and Downloading Files
 
-Files can be [annotated](/articles/annotation_and_query.html) to facilitate finding them. In order to search the annotations, a [File View](/articles/views.html) must be created first. It is possible to query based on any of the annotations attached to the files.
+Files can be [annotated](annotation_and_query.md) to facilitate finding them. In order to search the annotations, a [File View](views.md) must be created first. It is possible to query based on any of the annotations attached to the files.
 
 For example, the [PCBC Project](https://www.synapse.org/#!Synapse:syn1773109) has a [table](https://www.synapse.org/#!Synapse:syn7511263) listing sequencing data files that have been annotated. To find all **mRNA fastq** files originating from **CD34+ cells** in the we can query by:
 
@@ -197,7 +197,7 @@ entity <- lapply(df$file.id, function(x) synGet(x))
 
 ### Recursive Downloads
 
-The folder structure that is present on Synapse can be maintained by recursive downloading. 
+The folder structure that is present on Synapse can be maintained by recursive downloading.
 
 ##### Command line
 
@@ -222,7 +222,7 @@ files = synapseutils.syncFromSynapse(syn, 'syn2390898')
 
 ### Download Tables
 
-Please view [here](/articles/tables.html) to learn how to use `Tables`.
+Please view [here](tables.md) to learn how to use `Tables`.
 
 ### Download Wikis
 
@@ -241,7 +241,7 @@ entity <- synGet("syn00123")
 wiki <- synGetWikiHeaders(entity)
 ```
 
-The Markdown and other information of a `Project` sub-`Wiki` page can be obtained by knowing the id of the `Wiki`. The `Wiki` page id can either be obtained through the above method or can be found in the URL "www.synapse.org/#!Synapse:syn00123/wiki/**12345**" where 12345 is the `Wiki` page id. 
+The Markdown and other information of a `Project` sub-`Wiki` page can be obtained by knowing the id of the `Wiki`. The `Wiki` page id can either be obtained through the above method or can be found in the URL "www.synapse.org/#!Synapse:syn00123/wiki/**12345**" where 12345 is the `Wiki` page id.
 
 ##### Python
 
@@ -258,7 +258,7 @@ wiki <- synGetWiki(entity, 12345)
 
 ### Downloading in Bulk
 
-Files can be downloaded in bulk using the `syncFromSynapse` function found in the [synapseutils](https://python-docs.synapse.org/build/html/synapseutils.html#module-synapseutils.sync) helper package. This function crawls all the subfolders of the project/folder that you specify and retrieves all the files that have not been downloaded. By default, the files will be downloaded into your `synapseCache`, but a different download location can be specified with the `path` parameter. If you do download to a location out side of `synapseCache`, this function will also create a tab-delimited manifest of all the files along with their metadata (path, provenance, annotations, etc).
+Files can be downloaded in bulk using the `syncFromSynapse` function found in the [synapseutils](https://python-docs.synapse.org/build/html/synapseutils.html#synapseutils.sync.syncFromSynapse) helper package. This function crawls all the subfolders of the project/folder that you specify and retrieves all the files that have not been downloaded. By default, the files will be downloaded into your `synapseCache`, but a different download location can be specified with the `path` parameter. If you do download to a location out side of `synapseCache`, this function will also create a tab-delimited manifest of all the files along with their metadata (path, provenance, annotations, etc).
 
 ##### Python
 
@@ -268,7 +268,7 @@ import synapseclient
 import synapseutils
 
 # login to Synapse
-syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=True) 
+syn = synapseclient.login(email='me@example.com', password='secret', rememberMe=True)
 
 # download all the files in folder syn123 to a local folder called "myFolder"
 all_files = synapseutils.syncFromSynapse(syn, entity='syn123', path='/path/to/myFolder')
@@ -282,11 +282,11 @@ library(synapser)
 library(synapserutils)
 
 # login to Synapse
-synLogin(email='me@example.com', password='secret', rememberMe=TRUE) 
+synLogin(email='me@example.com', password='secret', rememberMe=TRUE)
 
 # download all the files in folder syn123 to a local folder called "myFolder"
 all_files = syncFromSynapse(entity='syn123', path='/path/to/myFolder')
 ```
 
 # See Also
-[Versioning](/articles/versioning.html), [Tables](/articles/tables.html), [Wikis](/articles/wikis.html), [File Views](/articles/views.html), [Annotations and Queries](/articles/annotation_and_query.html)
+[Versioning](versioning.md), [Tables](tables.md), [Wikis](wikis.md), [File Views](views.md), [Annotations and Queries](annotation_and_query.md)

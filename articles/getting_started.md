@@ -16,6 +16,7 @@ This guide is for new users who are interested in learning about Synapse. You wi
 
 ## What is Synapse?
 
+
 Synapse is a collaborative research platform that allows individuals and teams to share, track, and discuss their data and analysis in projects. Synapse is built to work on the web. We provide access to Synapse features and services for programmers through a REST API, [Python client](https://python-docs.synapse.org/build/html/index.html), [command line client](https://python-docs.synapse.org/build/html/CommandLineClient.html), and [R client](https://r-docs.synapse.org/). 
 
 Synapse hosts many [research projects](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects). It also hosts crowdsourced competitions, including [DREAM Challenges](http://dreamchallenges.org/). [Sage Bionetworks](http://www.sagebionetworks.org) provides Synapse services free of charge to the scientific community through generous support from various [funding sources](/articles/faq.html#how-is-synapse-funded).
@@ -81,6 +82,7 @@ See the [Wiki](/articles/wikis.html) User Guide for more information and example
 The default setting for new Projects in Synapse is **private**. As a project owner, you choose who to share with, and how. You can find Project sharing settings under the **Project Settings** menu. Permissions or sharing settings at the Project level are automatically inherited by all Files and Folders within the Project. If needed, you can **Create Local Sharing Settings** to make certain Files or Folders have permissions that differ from the parent Project.
 
 Groups of users can form Teams for collaboration. Teams can be used for permissions and for communication. Sharing things with teams instead of individual users can provide simiplicity for administrators.
+
 
 For more details, visit the [Sharing Settings](/articles/access_controls.html) and [Teams](/articles/teams.html) User Guide.
 
