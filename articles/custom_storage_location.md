@@ -252,13 +252,7 @@ Navigate to your bucket on the Google Cloud Console and select the **Upload file
 
 Follow the instructions for [Setting CORS on a bucket](https://cloud.google.com/storage/docs/configuring-cors. You may have to install the [gsutil application](https://cloud.google.com/storage/docs/gsutil).
 
-Using **gsutil**, you can set the CORS configuration with the command:
-
-```console
-gsutil cors set cors-json-file.json gs://example-bucket
-```
-
-Where `cors-json-file.json` is a local file that contains a valid CORS configuration, like the configuration below. The configuration must include Synapse as a permitted `origin`. An example CORS configuration that would allow this is:
+The configuration must include Synapse as a permitted `origin`. An example CORS configuration that would allow this is:
 
 ```json
 [
@@ -270,6 +264,14 @@ Where `cors-json-file.json` is a local file that contains a valid CORS configura
     }
 ]
 ```
+
+Using **gsutil**, you can set the CORS configuration with the command:
+
+```console
+gsutil cors set cors-json-file.json gs://example-bucket
+```
+
+where `cors-json-file.json` is a local file that contains a valid CORS configuration.
 
 For more information, please read: [Configuring cross-origin resource sharing (CORS)](https://cloud.google.com/storage/docs/configuring-cors).
 
