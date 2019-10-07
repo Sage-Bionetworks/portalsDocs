@@ -24,11 +24,11 @@ The Synapse command line client is implemented in Python and comes with the Syna
 
 After installing `pip` and `python`, in your terminal (Mac OS or GNU/Linux) or Command Prompt (Windows), run the following command:
 
-```
+```console
 pip install synapseclient
 ```
 
-```
+```console
 synapseclient login "username" "password"
 synapseclient -h
 ```
@@ -39,26 +39,27 @@ For more documentation on the command line client, see the [`synapseclient` docs
 
 The `synapseclient` package is available to use Python to access Synapse. See the [Python client docs](https://python-docs.synapse.org/build/html/index.html#overview) for supported versions of Python.
 
-```
+```python
 pip install synapseclient
 ```
+
 For complete documentation of the Python client, visit the [`synapseclient` docs](https://python-docs.synapse.org/build/html/index.html).
 
 ## R
 
 The `synapser` package is available for R version 3.4 and 3.5.
 
-```
+```R
 install.packages("synapser", repos=c("http://ran.synapse.org", "http://cran.fhcrc.org"))
 install.packages("synapser")
 ```
 
-```
+```R
 library(synapser)
 synLogin("username", "password")
 ```
 
-For more documentation on the R client, see [`synapser` R docs](https://r-docs.synapse.org). 
+For more documentation on the R client, see [`synapser` R docs](https://r-docs.synapse.org).
 
 # To Report an Issue
 

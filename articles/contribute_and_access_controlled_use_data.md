@@ -32,7 +32,7 @@ To access `Controlled Use` data you must fulfill the `Conditions for Use` set by
 
 ### Bridge Data
 
-Synapse houses data collected through research apps. This data is called Bridge data. This data has been donated by thousands of volunteers 
+Synapse houses data collected through research apps. This data is called Bridge data. This data has been donated by thousands of volunteers
 from around the world. Bridge data is only accessible to Users with a `Validated Profile`. To learn more see [Synapse User Credentials](accounts_certified_users_and_profile_validation.md#validated-profile).
 
 {% include warning.html content="Controlled and Bridge data may not be redistributed." %}

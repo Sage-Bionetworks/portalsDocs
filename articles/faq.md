@@ -31,22 +31,26 @@ We allow groups to get started for free by subsidizing relatively moderate amoun
 
 #### How is Synapse funded?
 
-[Sage Bionetworks](http://www.sagebase.org){:target="_blank"} provides Synapse services free of charge to the scientific community through generous support from the [*National Cancer Institute (NCI)*](http://www.cancer.gov){:target="_blank"}, the [*National Heart, Lung, and Blood Institute (NIH NHLBI)*](http://www.nhlbi.nih.gov){:target="_blank"}, the [*Children’s Tumor Foundation (CTF)*](http://www.ctf.org/){:target="_blank"}, the [*Alfred P. Sloan Foundation*](http://www.sloan.org/){:target="_blank"}, the [*National Insitute on Aging (NIA)*](https://www.nia.nih.gov/){:target="_blank"}, and the [*National Institute of Mental Health (NIMH)*](http://www.nimh.nih.gov/index.shtml){:target="_blank"}.
+[Sage Bionetworks](http://www.sagebase.org) provides Synapse services free of charge to the scientific community through generous support from the [*National Cancer Institute (NCI)*](http://www.cancer.gov), the [*National Heart, Lung, and Blood Institute (NIH NHLBI)*](http://www.nhlbi.nih.gov), the [*Children’s Tumor Foundation (CTF)*](http://www.ctf.org/), the [*Alfred P. Sloan Foundation*](http://www.sloan.org/), the [*National Insitute on Aging (NIA)*](https://www.nia.nih.gov/), and the [*National Institute of Mental Health (NIMH)*](http://www.nimh.nih.gov/index.shtml).
 
 #### Is Synapse a data analysis platform?
 
 Not directly. Synapse helps you manage data, analysis and results. However, using the programmatic interfaces built into Synapse makes it easy to set up analytical pipelines and *ad hoc* analysis that interacts with Synapse. By default Synapse uses Amazon’s cloud infrastructure (S3) for storage, making it simple to allocate large compute resources and collocate them next to data storage.
 
 #### Who uses Synapse?
+
 Anyone age 13 or older may use Synapse. We have highlighted a series of [research communities](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) that are currently using Synapse for their collaborative work and some [open resources](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects) hosted in Synapse.
 
 #### Is there someone that can help me use Synapse in my collaboration?
+
  Our [Discussion Forum](https://www.synapse.org/#!SynapseForum:default) is a great place to reach out to the broader Synapse community to find others that may be interested in a collaboration. You can also reach us directly via email at [SynapseInfo@sagebase.org](mailto:SynapseInfo@sagebase.org).
 
 #### What are the Synapse Terms of Use?
-The [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4) fully describes the governance terms and conditions of Synapse.  In order to register on Synapse, you must review and agree to the terms of the Synapse Awareness and Ethics Pledge. For more information see the complete Synapse [Governance policies]({{site.url}}/articles/governance.html).
+
+The [Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4) fully describes the governance terms and conditions of Synapse.  In order to register on Synapse, you must review and agree to the terms of the Synapse Awareness and Ethics Pledge. For more information see the complete Synapse [Governance policies](governance.md).
 
 #### Is Synapse open source?
+
 Yes, Synapse is released under the [Apache 2.0 License](https://github.com/Sage-Bionetworks/Synapse-Repository-Services/blob/develop/LICENSE) The source code is available on [GitHub](https://github.com/Sage-Bionetworks/). Synapse is also offered free of charge as a hosted Software as a Service (SaaS) at https://www.synapse.org/.
 
 #### I am a developer - is there API documentation?
@@ -58,10 +62,12 @@ Yes, Synapse is built on top of a RESTful service that is automatically [documen
 Synapse was developed with the philosophy to encourage collaboration across institutional boundaries and is therefore provided as “Software As A Service” with a single instance used by all users. This makes it easy both to discover new content and share with new collaborators. We do support private project spaces where content sharing is controlled by the individual user. In addition, Synapse has the ability to reference resources that are stored elsewhere. This allows Synapse to store metadata about the content such as annotations, descriptive wiki pages and provenance but not the actual data. Currently Synapse has specific support for files stored at URLs, on SFTP servers, on AWS S3 and arbitrary file servers (see: [Custom Storage Locations](custom_storage_location.md)).
 
 #### What do I do if I find a bug?
+
 You may browse open issues or file a bug through our [Jira](https://sagebionetworks.jira.com/) tracker system. To file a bug, use the blue “Create” button in the top center of the page. Please be sure to include your email address in your submission so we may follow up with you.
 
 #### How do I get started?
-Whether you are looking to access content or use Synapse to track your own work, start by [registering](https://www.synapse.org/#!RegisterAccount:0) for a Synapse user account. Before uploading files, you will need to take a short [certification quiz](https://www.synapse.org/#!Quiz:Certification) that demonstrates your understanding of the ethical considerations in sharing data and the manner in which data is managed and shared in Synapse. See the [Getting Started guide](/articles/getting_started.html) for tips on how to access data, create your own project, and share content with others.
+
+Whether you are looking to access content or use Synapse to track your own work, start by [registering](https://www.synapse.org/#!RegisterAccount:0) for a Synapse user account. Before uploading files, you will need to take a short [certification quiz](https://www.synapse.org/#!Quiz:Certification) that demonstrates your understanding of the ethical considerations in sharing data and the manner in which data is managed and shared in Synapse. See the [Getting Started guide](getting_started.md) for tips on how to access data, create your own project, and share content with others.
 
 # Accessing Content
 
@@ -71,6 +77,7 @@ This will depend if the content is public or private. If private, you will need 
 All public data is queryable. For more information see [help on querying](annotation_and_query.md) or from the “Search” box in the top right corner of any Synapse page.
 
 #### I have heard Synapse hosts several public datasets. How do I find them?
+
 Synapse hosts multiple research communities that generate data which is released to the public. A description of some of these communities can be found on the [Synapse Research Communities Page](https://www.synapse.org/#!StandaloneWiki:ResearchCommunities) and [public resources page](https://www.synapse.org/#!StandaloneWiki:OpenResearchProjects).
 
 #### What does a Synapse account let me do than I can’t do without it?
@@ -78,6 +85,7 @@ Synapse hosts multiple research communities that generate data which is released
 You can browse public content in Synapse without registering. However, without an account you cannot add new content to Synapse, nor can you upload or download `Files` or `Tables`. With an account you can create `Projects` and `Wikis`, download `Open Data` and request access to `Controlled Data`. Further, an account lets you collaborate with other Synapse users and create user teams. For more information see the [User Credentials](accounts_certified_users_and_profile_validation.md) page.
 
 #### What is a validated profile?
+
 Validating your profile is a process where your identity is established through a combination of your profile information, your [ORCID](http://orcid.org/), a signed oath, and an external credential. Validation increases transparency between researchers and data donors. A validated profile is needed for access to specific datasets, and is currently required for access to data collected through Sage Bionetworks’ [research apps](http://sagebase.org/mobile-health/overview/). Profile validation instructions can be found on your profile page. Click on the ‘Request Profile Validation’ link to see the required steps.
 
 # Adding Content
@@ -91,6 +99,7 @@ Synapse makes it easy to share files of any sort, with whomever you choose wheth
 User certification ensures that you understand your responsibilities for sharing data through Synapse, especially data derived from human participants. These responsibilities include making sure that data derived from human participants is de-identified and that all applicable privacy laws and regulations are observed. See the [How to contribute data](contribute_and_access_controlled_use_data.md) for more information.
 
 #### How do I get certified?
+
 To become a certified user, you will need to pass a brief [quiz](https://www.synapse.org/#!Quiz:Certification).
 
 #### Is everything I share on Synapse public?
@@ -102,6 +111,7 @@ No. Use `Sharing settings` to control who can see the content you create. By def
 Yes. Synapse has an IRB-approved data governance procedure that employs `Conditions for Use` to allow for the sharing of sensitive data in a controlled manner. You can learn more by reading our [Sharing Settings and Conditions for Use](access_controls.md) documentation and [Governance documentation](governance.md). If you have questions or would like assistance in applying `Conditions of Use` to your data, please contact the Synapse Access and Compliance Team at [act@sagebase.org](mailto:act@sagebase.org).
 
 #### How do I know the content I put in Synapse will be secure? What security measures does Synapse have?
+
 Synapse stores content in Amazon Web Services, which provides a layer of security measures designed and implemented by [Amazon](https://aws.amazon.com/security/). While Synapse is an open access site, each user has control over who may access their content by using `Sharing settings`.
 
 #### Where are my files stored?

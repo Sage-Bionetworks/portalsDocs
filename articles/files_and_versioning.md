@@ -72,7 +72,7 @@ The command line client has a sub-command `mv` which can be used to move files a
 ##### Web
 
 Navigate to the file/folder you would like to move. Select **Tools** -> **Move File**. Browse for the new folder/project or enter the synId to move to.
-<br/>
+
 <img id="smallImage" src="/assets/images/moveFile.png"> <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
 <img id="image" src="/assets/images/moveFileTo.png">
 
