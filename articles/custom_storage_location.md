@@ -224,23 +224,20 @@ Please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo
 
 ## Setting Up an External Google Cloud Storage Bucket
 
-Follow the documentation on Google Cloud's site to **[Create a Bucket](https://cloud.google.com/storage/docs/creating-buckets){:target="_blank"}**.
+Follow the documentation on Google Cloud's site to **[Create a Bucket](https://cloud.google.com/storage/docs/creating-buckets)**.
 
 Make the following adjustments to customize it to work with Synapse:  
 
 * Select the newly created bucket and click the **Permissions** tab.
-    * Select the **Add members** button and enter the member `synapse-svc-prod@uplifted-crow-246820.iam.gserviceaccount.com`. This is Synapse's service account. Give the account the permissions "Storage Legacy Bucket Reader" and "Storage Object Viewer" for read permission. To allow Synapse to upload files, additionally grant the "Storage Legacy Bucket Writer" permission.
+  * Select the **Add members** button and enter the member `synapse-svc-prod@uplifted-crow-246820.iam.gserviceaccount.com`. This is Synapse's service account. Give the account the permissions "Storage Legacy Bucket Reader" and "Storage Object Viewer" for read permission. To allow Synapse to upload files, additionally grant the "Storage Legacy Bucket Writer" permission.
 
+For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **<a href="../assets/downloads/owner.txt" download="owner.txt">owner.txt</a>** file with your Synapse username and uploading it to your bucket. You can upload the file with the Google Cloud Platform Console, or using the command line [gsutil application](https://cloud.google.com/storage/docs/gsutil).
 
-<br/>
-
-For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **<a href="/assets/downloads/owner.txt" download="owner.txt">owner.txt</a>** file with your Synapse username and uploading it to your bucket. You can upload the file with the Google Cloud Platform Console, or using the [gsutil application](https://cloud.google.com/storage/docs/gsutil){:target="_blank"}, you can upload using the command line. 
-
-<img id="imageSmall" src="/assets/images/ownerTxt.png">
+<img id="imageSmall" src="../assets/images/ownerTxt.png">
 
 ##### Command line
 
-```bash
+```console
 # copy your owner.txt file to your s3 bucket
 gsutil cp owner.txt gs://nameofmybucket/nameofmyfolder
 ```
@@ -249,18 +246,17 @@ gsutil cp owner.txt gs://nameofmybucket/nameofmyfolder
 
 Navigate to your bucket on the Google Cloud Console and select the **Upload files** button to upload your text file.
 
-<br/>
-
 ### Make sure to enable cross-origin resource sharing (CORS)
-Follow the instructions for [Setting CORS on a bucket](https://cloud.google.com/storage/docs/configuring-cors){:target="_blank"}. You may have to insall the [gsutil application](https://cloud.google.com/storage/docs/gsutil){:target="_blank"}.
 
-Using **gsutil**, you can set the CORS configuration with the command 
+Follow the instructions for [Setting CORS on a bucket](https://cloud.google.com/storage/docs/configuring-cors. You may have to insall the [gsutil application](https://cloud.google.com/storage/docs/gsutil).
 
-```
+Using **gsutil**, you can set the CORS configuration with the command:
+
+```console
 gsutil cors set cors-json-file.json gs://example-bucket
 ```
 
-Where cors-json-file.json is a local file that contains a valid CORS configuration, like the configuration below. The configuration must include Synapse as a permitted `origin`. An example CORS configuration that would allow this is:
+Where `cors-json-file.json` is a local file that contains a valid CORS configuration, like the configuration below. The configuration must include Synapse as a permitted `origin`. An example CORS configuration that would allow this is:
 
 ```json
 [
@@ -273,12 +269,11 @@ Where cors-json-file.json is a local file that contains a valid CORS configurati
 ]
 ```
 
-<br/>
-For more information, please read: [Configuring cross-origin resource sharing (CORS)](https://cloud.google.com/storage/docs/configuring-cors){:target="_blank"}
+For more information, please read: [Configuring cross-origin resource sharing (CORS)](https://cloud.google.com/storage/docs/configuring-cors).
 
 ### Set Google Cloud Bucket as Upload Location
 
-By default, your `Project` uses Synapse storage. You can use the external bucket configured above via our programmatic clients or web client.
+By default, your Project uses Synapse storage. You can use the external bucket configured above via our programmatic clients or web client.
 
 ##### Python
 
@@ -326,8 +321,6 @@ projectDestination <- synRestPOST('/projectSettings', body=toJSON(projectDestina
 ##### Web
 
  Navigate to your **Project/Folder -> Tools -> Change Storage Location**. In the resulting pop-up, select the `Google Cloud Storage Bucket` option and fill in the relevant information, where Bucket is the name of your external bucket, Base Key is the name of the folder in your bucket to upload to, and Banner is a short description such as who owns the storage location.
-
-<br/>
 
 Please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/model/project/ExternalGoogleCloudStorageLocationSetting.html){:target="_blank"} for more information on setting external storage location settings using our REST API.
 
