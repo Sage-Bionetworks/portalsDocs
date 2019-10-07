@@ -231,7 +231,7 @@ Follow the documentation on Google Cloud's site to **[Create a Bucket](https://c
 Make the following adjustments to customize it to work with Synapse:  
 
 * Select the newly created bucket and click the **Permissions** tab.
-  * Select the **Add members** button and enter the member `synapse-svc-prod@uplifted-crow-246820.iam.gserviceaccount.com`. This is Synapse's service account. Give the account the permissions "Storage Legacy Bucket Reader" and "Storage Object Viewer" for read permission. To allow Synapse to upload files, additionally grant the "Storage Legacy Bucket Writer" permission.
+* Select the **Add members** button and enter the member `synapse-svc-prod@uplifted-crow-246820.iam.gserviceaccount.com`. This is Synapse's service account. Give the account the permissions "Storage Legacy Bucket Reader" and "Storage Object Viewer" for read permission. To allow Synapse to upload files, additionally grant the "Storage Legacy Bucket Writer" permission.
 
 For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **<a href="../assets/downloads/owner.txt" download="owner.txt">owner.txt</a>** file with your Synapse username and uploading it to your bucket. You can upload the file with the Google Cloud Platform Console, or using the command line [gsutil application](https://cloud.google.com/storage/docs/gsutil).
 
@@ -250,7 +250,7 @@ Navigate to your bucket on the Google Cloud Console and select the **Upload file
 
 ### Make sure to enable cross-origin resource sharing (CORS)
 
-Follow the instructions for [Setting CORS on a bucket](https://cloud.google.com/storage/docs/configuring-cors. You may have to insall the [gsutil application](https://cloud.google.com/storage/docs/gsutil).
+Follow the instructions for [Setting CORS on a bucket](https://cloud.google.com/storage/docs/configuring-cors. You may have to install the [gsutil application](https://cloud.google.com/storage/docs/gsutil).
 
 Using **gsutil**, you can set the CORS configuration with the command:
 
