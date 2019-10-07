@@ -166,8 +166,6 @@ To list out the distinct treatent arms that were studied, by gender:
 SELECT GROUP_CONCAT(distinct(treatmentArm) SEPARATOR ', ') AS "Available Treatments", gender as "By Gender" FROM syn3079449 group by gender
 ```
 
-{% include tip.html content="Many more examples can be found in the [API Docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html')." %}
-
 # Using Table Facets
 
 The faceted navigation on `Tables` (also known as **simple search**) can be used to simplify your search without having to use SQL-like queries. Simple search uses radio buttons and sliders to show all available facets in a menu to the left of the `Table` whereas advanced search employs a SQL-like query to filter the `Table`. To use table facets, navigate to a `Table` or a `File View`. Simple and advanced search both allow you to query for features of interest in a`Table` using different methods.
