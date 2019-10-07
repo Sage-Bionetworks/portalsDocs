@@ -12,7 +12,8 @@ Docker is a tool for creating, running, and managing lightweight virtual machine
 Synapse users interact with the Synapse Docker registry using the standard Docker client. In Synapse, Docker containers are represented as versioned 'repositories' under the 'Docker' tab. As with Files and Tables, Repositories are organized by project and inherit the access controls from the project.
 
 ## Creating a new Docker image
-Let's begin by creating a custom Docker image.  Users can choose to either modify an existing Docker image or build a Docker image from a Dockerfile.  Docker images must be tagged with 'docker.synapse.org/synapseProjectId/myreponame' to allow images to be saved. 
+
+Let's begin by creating a custom Docker image.  Users can choose to either modify an existing Docker image or build a Docker image from a Dockerfile.  Docker images must be tagged with 'docker.synapse.org/synapseProjectId/myreponame' to allow images to be saved.
 
 **Tagging an existing Docker image to save onto the Synapse registry**
 
@@ -31,9 +32,9 @@ docker images
 Tag the Docker image:
 
 ```
-docker tag f8d79ba03c00 docker.synapse.org/syn12345/mytestrepo:version1 
+docker tag f8d79ba03c00 docker.synapse.org/syn12345/mytestrepo:version1
 #or
-docker tag ubuntu:latest docker.synapse.org/syn12345/mytestrepo:version1 
+docker tag ubuntu:latest docker.synapse.org/syn12345/mytestrepo:version1
 #syntax: docker.synapse.org/<projectId>/<repoName>:<tag>
 ```
 
@@ -53,6 +54,7 @@ docker build -t  docker.synapse.org/syn12345/my-repo path/to/dockerfile
 Learn more about building [docker images](https://docs.docker.com/engine/getstarted/step_four/).  
 
 ## Storing Docker images in the Synapse Docker Registry
+
 To store Docker images, use the `docker push` command.  To push to the Synapse Docker Registry, users must be logged into the registry:
 
 ```
@@ -72,6 +74,7 @@ docker push docker.synapse.org/syn12345/my-repo
 ```
 
 ## Using Docker images stored in the Synapse Docker Registry
+
 To access the Docker images stored in Synapse, use the `docker pull` command.
 
 {% include tip.html content="By default, if you do not specify a tag, it will attach latest as the tag.  If you specified a tag on your repository, be sure to pull the repository with the tag." %}

@@ -17,12 +17,11 @@ category: howto
 
 # Provenance
 
-<img id="image" style="float:right" src="/assets/images/provenanceWorkflowDemo.png">
-
+<img id="image" style="float:right" src="../assets/images/provenanceWorkflowDemo.png">
 
 Reproducible research is a fundamental responsibility of scientists, but the best practices for achieving it are not established in computational biology. The Synapse “Provenance” system is one of many solutions you can use to make your work reproducible by you and others.
 
-Provenance is a concept describing the origin of something; in Synapse it is used to describe the connections between workflow steps that derive a particular file of results. Data analysis often involves multiple steps to go from a raw data file to a finished analysis.  Synapse’s Provenance Tools allow users to keep track of each step involved in an analysis, and share those steps with other users. 
+Provenance is a concept describing the origin of something; in Synapse it is used to describe the connections between workflow steps that derive a particular file of results. Data analysis often involves multiple steps to go from a raw data file to a finished analysis.  Synapse’s Provenance Tools allow users to keep track of each step involved in an analysis, and share those steps with other users.
 
 ## The basic elements of Synapse provenance
 
@@ -31,8 +30,6 @@ The model Synapse uses for provenance is based on the [W3C provenance spec](http
 The Synapse clients for command line, Python, and R support creating and editing of provenance relationships. The Web client allows editing of provenance once the file has been uploaded.
 
 On the right is a Synapse visualization of provenance relationships that is demonstrated in the following section using our programmatic and web clients. In this example, we have two scripts, one that generates random numbers and another that takes a list of numbers and computes their squares. The project's workflow looks like the image to the right.
-
-
 
 <br/>
 
@@ -43,9 +40,9 @@ For example, you have an R script file called [generate_random_data.R](https://w
 
 #### Upload a file and add provenance
 
-For this example, we'll use a `Project` that already exists ([*Wondrous Research Example* : syn1901847](https://www.synapse.org/#!Synapse:syn1901847/files/)). The [code file](https://www.synapse.org/#!Synapse:syn7205215) is already saved in Synapse with synId `syn7205215` so we'll upload the data file to this `Project`, or in Synapse terminology, the project will be the parent of the new entities. 
+For this example, we'll use a `Project` that already exists ([*Wondrous Research Example* : syn1901847](https://www.synapse.org/#!Synapse:syn1901847/files/)). The [code file](https://www.synapse.org/#!Synapse:syn7205215) is already saved in Synapse with synId `syn7205215` so we'll upload the data file to this `Project`, or in Synapse terminology, the project will be the parent of the new entities.
 
-As the [random_numbers.txt file](https://www.synapse.org/#!Synapse:syn7208917) was generated from the above script, we are going to specify this using provenance. 
+As the [random_numbers.txt file](https://www.synapse.org/#!Synapse:syn7208917) was generated from the above script, we are going to specify this using provenance.
 
 There are a couple ways to set provenance information for a Synapse entity. The `used` and `executed` arguments specify resources used and code executed in the process of creating the entity. Code can be stored in Synapse(as we did in the previous step) or, better yet, linked by URL to a source code versioning system like GitHub or SVN. As an example, we'll specify 2 somewhat contrived sources of provenance:
 
@@ -53,7 +50,6 @@ There are a couple ways to set provenance information for a Synapse entity. The 
 2. URL to a page describing [normal distributions](http://mathworld.wolfram.com/NormalDistribution.html)
 
 <br/>
-
 
 ##### Web
 
@@ -63,13 +59,13 @@ Navigate to the `File's` tab and click on the `File` that you would like to upda
 
 ##### Command Line
 
-```bash
+```console
 synapse add random_numbers.txt --parentId syn1901847 --executed syn7205215 --used http://mathworld.wolfram.com/NormalDistribution.html
 ```
 
 Alternatively in the command line client, if you have downloaded the file, you can specify a local path as such:
 
-```bash
+```console
 synapse add random_numbers.txt --parentId syn1901847 --executed ./generate_random_data.R --used http://mathworld.wolfram.com/NormalDistribution.html
 ```
 
@@ -97,13 +93,14 @@ Once the data file is uploaded, it will provide the synId assigned to it. In thi
 To continue our example above, we'll now add some new results from our initial data file. We're going to take the results in random_numbers.txt and square them. The script to square the numbers will be [square.R](https://www.synapse.org/#!Synapse:syn7209078) and we'll save the output to a data file, [squares.txt](https://www.synapse.org/#!Synapse:syn7209166). As with the previous example, the code file is already saved in Synapse, so we'll upload the data file and set its provenance.
 
 ##### Web
-To update the provenance on a file, navigate to the `File's` tab and click on the `File` that you would like to update. Click on the **Tools** dropdown in the upper right hand corner and select **Edit Provenance**. In the resulting pop-up, enter the relevant information. 
 
-<img id="webTab" src="/assets/images/editProvenance.png">
+To update the provenance on a file, navigate to the `File's` tab and click on the `File` that you would like to update. Click on the **Tools** dropdown in the upper right hand corner and select **Edit Provenance**. In the resulting pop-up, enter the relevant information.
+
+<img id="webTab" src="../assets/images/editProvenance.png">
 
 ##### Command Line
 
-```bash
+```console
 # Add the data file to Synapse
 synapse add squares.txt -parentId syn1901847 
 # Set the provenance for newly created entity syn7209166 using synId
@@ -150,13 +147,11 @@ You must be the person who created the entity to delete provenance.
 
 Navigate to the entity you would like to delete provenance from (e.g. a File or Folder). In this example, we are deleting provenance from a file. Select **Tools->Edit File Provenance**. In the list of **Used** and **Executed**, click the **X** to delete each activity and **Save** your changes.
 
-<img id="webTab" src="/assets/images/delete_provenance.png">
+<img id="webTab" src="../assets/images/delete_provenance.png">
 
 ##### Command Line
 
-```bash
 Currently, deleting provenance is not supported in the command line client.
-```
 
 ##### Python
 
@@ -177,11 +172,11 @@ deleteProvenance = synDeleteProvenance('syn123')
 ##### Web
 Navigate to the `File's` page to view its provenance. Clicking on the triple dots above entities will expand it to show the `File's` full provenance.
 
-<img id="image" src="/assets/images/expandProvenance.png">
+<img id="image" src="../assets/images/expandProvenance.png">
 
 ##### Command Line
 
-```bash
+```console
 synapse get-provenance -id syn7209166
 ```
 
@@ -207,16 +202,15 @@ An `Activity` is a Synapse object that helps keep track of what objects were 'us
 * Many outputs can be 'generatedBy' the same `Activity`
 
 If an activity isn't assigned to an entity and then stored, a separate graph will be created for each file that the activity generated. 
-The following example is used to assign the same activity to multiple files resulting in one provenance graph: 
+The following example is used to assign the same activity to multiple files resulting in one provenance graph:
 
 ##### Web
+
 Unfortunately, the web interface currently does not support assigning the same activity to multiple files.
 
 ##### Command Line
 
-```bash
 Unfortunately, command line currently does not support assigning the same activity to multiple files.
-```
 
 ##### Python
 
@@ -263,4 +257,5 @@ finalList <- lapply(finalList, function(x) synStore(x, activity=act))
 ```
 
 ### See Also
-[Files and Versioning](/articles/versioning.html), [Annotations and Queries](/articles/annotation_and_query.html)
+
+[Files and Versioning](versioning.md), [Annotations and Queries](annotation_and_query.md)

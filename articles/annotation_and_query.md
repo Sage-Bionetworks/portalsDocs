@@ -9,16 +9,15 @@ category: howto
 
 Annotations are key-value pairs stored as metadata for `Projects`, `Files`, `Folders`, and `Tables` that help users to find and query data. Annotations can be based on an existing ontology or controlled vocabulary, or can be created in an <i>ad hoc</i> manner and modified later as the metadata evolves. Annotations can be a powerful tool used to systematically group and/or describe things (files or data, etc.) in Synapse, which then provides a way for those things to be searched for and discovered.
 
+ For example, if you have uploaded a collection of alignment files in the BAM file format from an RNA-sequencing experiment, each representing a sample and experimental replicate, you can use annotations to add this information to each file in a structured way. Sometimes, users encode this information in file names, e.g., `sampleA_conditionB.bam`, which makes it "human-readable" but makes it difficult to search for in a systematic way, such as finding all replicates of `sampleA_conditionB`. Adding this information as Synapse annotations enables a more complete description of the contents of the `File`.
 
- For example, if you have uploaded a collection of alignment files in the BAM file format from an RNA-sequencing experiment, each representing a sample and experimental replicate, you can use annotations to add this information to each file in a structured way. Sometimes, users encode this information in file names, e.g., `sampleA_conditionB.bam`, which makes it "human-readable" but makes it difficult to search for in a systematic way, such as finding all replicates of `sampleA_conditionB`. Adding this information as Synapse annotations enables a more complete description of the contents of the `File`. 
+ In this case, the annotations you may want to add might look like this:
 
- In this case, the annotations you may want to add might look like this: 
-
- <img src="/assets/images/annotationsComplete.png">
+![Annotation example](../assets/images/annotationsComplete.png)
 
 ## Types of Annotations
 
-Annotations can be one of four types: 
+Annotations can be one of four types:
 
 * Text (Character Limit = 256)
 * Integer
@@ -27,15 +26,15 @@ Annotations can be one of four types:
 
 ## How to Assign Annotations
 
-Annotations may be added when initially uploading a file or at a later date. This can be done using the command line client, the [Python client](https://python-docs.synapse.org/build/html/Views.html#updating-annotations-using-view), the [R client](https://r-docs.synapse.org/articles/views.html#updating-annotations-using-view), or from the web. Using the programmatic clients facilitates batch and automated population of annotations across many files. The web client can be used to bulk update many files using [file views](/articles/views.html).
+Annotations may be added when initially uploading a file or at a later date. This can be done using the command line client, the [Python client](https://python-docs.synapse.org/build/html/Views.html#updating-annotations-using-view), the [R client](https://r-docs.synapse.org/articles/views.html#updating-annotations-using-view), or from the web. Using the programmatic clients facilitates batch and automated population of annotations across many files. The web client can be used to bulk update many files using [file views](views.md).
 
-### Adding Annotations 
+### Adding Annotations
 
 To add annotations on a single entity through the web client, click the `Annotations` button in the upper right corner on a Project, Folder, or File page.
 
-<img src="/assets/images/webAnnotation.png">
+![Annotation web location](../assets/images/webAnnotation.png)
 
-To add annotations on multiple files, please refer to our Synapse in Practice article <a href="/articles/managing_custom_metadata_at_scale.html">"Managing Custom Metadata at Scale"</a> for a tutorial on how to do this efficiently and effectively leveraging <a href="/articles/views.html">File Views</a>.
+To add annotations on multiple files, please refer to our Synapse in Practice article [Managing Custom Metadata at Scale](managing_custom_metadata_at_scale.md) for a tutorial on how to do this efficiently and effectively leveraging [file views](views.md).
 
 ##### Command line
 
@@ -66,11 +65,11 @@ To update annotations on a single file:
 
 Click **File Tools**, **Annotations** and **Edit** to add, delete, or modify annotations. Start by entering a key (the name of the annotation), select the type (text, integer etc.,), and enter the value. Click `Save` to store the annotations for this entity. To enter multiple Values for a single Key click `Enter` with the cursor in the Value field.
 
-<img src="/assets/images/filetools.png">
+![Annotation filetools location](../assets/images/filetools.png)
 
-<img src="/assets/images/annotationsDetail.png">
+![Annotation editor](../assets/images/annotationsDetail.png)
 
-To modify annotations on multiple files, please refer to our Synapse in Practice article <a href="/articles/managing_custom_metadata_at_scale.html">"Managing Custom Metadata at Scale"</a> for a tutorial on how to do this efficiently and effectively leveraging <a href="/articles/views.html">File Views</a>.
+To add annotations on multiple files, please refer to our Synapse in Practice article [Managing Custom Metadata at Scale](managing_custom_metadata_at_scale.md) for a tutorial on how to do this efficiently and effectively leveraging [file views](views.md).
 
 ##### Command line
 
@@ -109,9 +108,10 @@ synSetAnnotations(entity, annotations = list(fileType = "bam", assay = "rnaSeq")
 ```
 
 # Queries
+
 {% include note.html content="You will only be able to query the files you currently have permission to access." %}
 
-Queries in Synapse look SQL-like and you can query any `Table` or `View` with `<synId>`. 
+Queries in Synapse look SQL-like and you can query any `Table` or `View` with `<synId>`.
 
 ```sql
 SELECT * FROM <synId> WHERE <expression>
@@ -133,7 +133,7 @@ Along with annotations added by users, every entity has a number of fields usefu
 
 ### Finding Files in a Specific Project
 
-To find all files in a specific `Project`, create a `File View` in the web client. For example, if you'd like to see all files in a `Project`, navigate to your project and then the `Tables` tab. From there, click **Tables Tools** and **Add File View**. Click **Add container** and **Enter Synapse Id** to create a tabluar file view that contains every file in the project, which you can now query. Importantly, if you want to later query on annotations, you must select **Add All Annotations**. For a more in-depth look at this feature, please read our articles on [File Views](/articles/views.html).
+To find all files in a specific `Project`, create a `File View` in the web client. For example, if you'd like to see all files in a `Project`, navigate to your project and then the `Tables` tab. From there, click **Tables Tools** and **Add File View**. Click **Add container** and **Enter Synapse Id** to create a tabluar file view that contains every file in the project, which you can now query. Importantly, if you want to later query on annotations, you must select **Add All Annotations**. For a more in-depth look at this feature, please read our articles on [File Views](views.md).
 
 ### Listing Files in a Specific Folder
 
@@ -203,7 +203,7 @@ synapse get -q "SELECT * FROM file WHERE parentId = 'syn00123'"
 
 ## Troubleshooting
 
-Single quotes in Synapse queries must be replaced by double quotes or two single quotes. In order to query for the `chemicalStructure` of `4'-chemical`: 
+Single quotes in Synapse queries must be replaced by double quotes or two single quotes. In order to query for the `chemicalStructure` of `4'-chemical`:
 
 ```sql
 SELECT * FROM syn123 where "chemicalStructure" = '4"-chemical'
@@ -212,4 +212,5 @@ SELECT * FROM syn123 where "chemicalStructure" = '4''-chemical'
 ```
 
 # See Also
-[Downloading Data](/articles/downloading_data.html), [Tables](/articles/tables.html)
+
+[Downloading Data](downloading_data.md), [Tables](tables.md)
