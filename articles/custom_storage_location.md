@@ -24,7 +24,7 @@ While Synapse provides physical storage for files (using Amazon's S3), not all d
 
 Follow the documentation on Amazon Web Service (AWS) site to **[Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)**. Buckets are not required to be located in the US.
 
-<a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html" class="btn btn-primary">View AWS Bucket Instructions</a>{:target="_blank"}
+<a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html" class="btn btn-primary">View AWS Bucket Instructions</a>
 
 Make the following adjustments to customize it to work with Synapse:  
 
