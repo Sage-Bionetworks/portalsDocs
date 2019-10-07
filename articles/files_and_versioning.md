@@ -12,16 +12,16 @@ category: howto
 #smallImage {
     width: 20%;
 }
-#largeImage { 
+#largeImage {
     width: 100%;
 }
 </style>
 
 # Files
 
-Synapse `Files` can be created by uploading or linking to digital files on the web. They are accessible to anyone who has [access](/articles/access_controls.html), can be annotated with custom metadata, can be embedded into Synapse `Wiki` pages, and can be associated with a [DOI](/articles/doi.html). `Files` carry the Conditions for Use of the Synapse `Folder` they are placed in, plus any additional specific Conditions for Use they have on their own.
+Synapse `Files` can be created by uploading or linking to digital files on the web. They are accessible to anyone who has [access](access_controls.md), can be annotated with custom metadata, can be embedded into Synapse `Wiki` pages, and can be associated with a [DOI](doi.md). `Files` carry the Conditions for Use of the Synapse `Folder` they are placed in, plus any additional specific Conditions for Use they have on their own.
 
-By default, `Files` uploaded to Synapse are stored in 'Synapse Storage', which is freely available to you. `Files` can also be stored on your own Amazon S3 bucket (see [Custom Storage Locations](/articles/custom_storage_location.html)) or other custom locations. Furthermore, if you don't want to upload a file (it has external restrictions on sharing, is really large, for example) you can also link to the file. In this way, the file will be accessible through the Synapse clients when you are on the computer that the file is stored, but can be annotated, queried, and documented with a Wiki through Synapse. Lastly, you can provide web-accessible links as Synapse files, which will redirect to that location. All of the same Synapse `File` features are available are available on external links as well.
+By default, `Files` uploaded to Synapse are stored in 'Synapse Storage', which is freely available to you. `Files` can also be stored on your own Amazon S3 bucket (see [Custom Storage Locations](custom_storage_location.md)) or other custom locations. Furthermore, if you don't want to upload a file (it has external restrictions on sharing, is really large, for example) you can also link to the file. In this way, the file will be accessible through the Synapse clients when you are on the computer that the file is stored, but can be annotated, queried, and documented with a Wiki through Synapse. Lastly, you can provide web-accessible links as Synapse files, which will redirect to that location. All of the same Synapse `File` features are available are available on external links as well.
 
 Synapse `Files` (as well as `Folders` and `Projects`) are identified by a unique identifier called a Synapse ID. It takes the form `syn12345678`. This identifier can be used to refer to a specific file on the web and through the clients.
 
@@ -65,13 +65,13 @@ file <- synStore(file)
 
 ## Moving a File
 
-All Synapse clients offer a way to move files and folders. Please note that [File Views](/articles/views.html) and [sync manifests](/articles/uploading_in_bulk.html) **cannot** be used to move files. 
+All Synapse clients offer a way to move files and folders. Please note that [File Views](views.md) and [sync manifests](uploading_in_bulk.md) **cannot** be used to move files.
 
 The command line client has a sub-command `mv` which can be used to move files and folders. The Python client provides the [syn.move](https://python-docs.synapse.org/build/html/Client.html#synapseclient.Synapse.move) command, and the R client has [synMove()](https://r-docs.synapse.org/reference/synMove.html).
 
 ##### Web
 
-Navigate to the file/folder you would like to move. Select **Tools** -> **Move File**. Browse for the new folder/project or enter the synId to move to. 
+Navigate to the file/folder you would like to move. Select **Tools** -> **Move File**. Browse for the new folder/project or enter the synId to move to.
 <br/>
 <img id="smallImage" src="/assets/images/moveFile.png"> <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
 <img id="image" src="/assets/images/moveFileTo.png">
@@ -144,10 +144,12 @@ The easiest way to create a new version of an existing Synapse `File` is to use 
 Only the file and annotations information are included in the version. Other metadata about a Synapse `File` (such as the description, name, parent, ACL, *and its associated Wiki*) are not part of the version, and will not change between versions.
 
 ## Uploading a New Version
+
 Uploading a new version follows the same steps as uploading a file for the first time - use the same file name and store it in the same location (e.g., the same `parentId`). **It is recommended to add a comment to the new version in order to easily track differences at a glance**. The example file `raw_data.txt` will now have a version of `2` and a comment describing the change.
 
 ##### Web
-Navigate to the file on Synapse and click the **Tools** button. Select **Upload A New Version Of The File** from the dropdown menu and upload or link to your file in the resulting pop-up. 
+
+Navigate to the file on Synapse and click the **Tools** button. Select **Upload A New Version Of The File** from the dropdown menu and upload or link to your file in the resulting pop-up.
 
 <img id="image" src="/assets/images/upload_new_version_file.png">
 
@@ -159,7 +161,7 @@ Once the new version has been uploaded, click the **Tools** button and select th
 
 ```bash
 # Upload a new version of raw_data.txt 
-synapse store raw_data.txt --parentId syn123456 
+synapse store raw_data.txt --parentId syn123456
 #Currently there is no option to add a version comment when uploading via command line. We recommend adding the comment via the web client.
 ```
 
@@ -212,10 +214,11 @@ updated_file <- synStore(file_to_update)
 synStore(File('path/to/old/raw_data.txt', parentId='syn123456'))
 
 # To create a new version of that file, make sure you store it with the exact same name
-new_file <- synStore(File('path/to/new_version/raw_data.txt',  parentId='syn123456')) 
+new_file <- synStore(File('path/to/new_version/raw_data.txt',  parentId='syn123456'))
 ```
 
 ## Updating Annotations or Provenance Without Changing Versions
+
 Any change to a `File` will automatically update its version. If this isn't the desired behavior, such as minor cahnges to the metadata, you can set `forceVersion=False` with the Python or R clients. For command line, the commands `set-annotations` and `set-provenance` will update the metadata without creating a new version. Adding/updating annotations and provenance in the web client will also not cause a version change.
 
 {% include important.html content="Because Provenance is tracked by version, set forceVersion=False for minor changes to avoid breaking Provenance." %}
@@ -224,7 +227,7 @@ Any change to a `File` will automatically update its version. If this isn't the 
 
 ##### Web
 
-Please refer to the [Annotations and Queries](/articles/annotation_and_query.html) article for instructions on adding/editing annotations via the web client.
+Please refer to the [Annotations and Queries](annotation_and_query.md) article for instructions on adding/editing annotations via the web client.
 
 ##### Command line
 
@@ -238,7 +241,7 @@ synapse set-annotations --id syn56789 --annotations '{"fileType":"bam", "assay":
 ```python
 # Get file from Synapse, set download=False since we are only updating annotations
 file = syn.get('syn56789', download=False)
-# Add annotations 
+# Add annotations
 file.annotations = {"fileType":"bam", "assay":"RNA-seq"}
 # Store the file without creating a new version
 file = syn.store(file, forceVersion=False)
@@ -249,14 +252,14 @@ file = syn.store(file, forceVersion=False)
 ```r
 # Get file from Synapse, set download=False since we are only updating annotations
 file <- synGet('syn56789', downloadFile=FALSE)
-# Add annotations 
+# Add annotations
 annotations <- synSetAnnotations(file, annotations=list(fileType = "bam", assay = "RNA-seq"))
 ```
 
 **Setting provenance without changing version**
 
 ##### Web
-Please refer to the [Provenance](/articles/provenance.html) article for instructions on adding/editing annotations via the web client.
+Please refer to the [Provenance](provenance.md) article for instructions on adding/editing annotations via the web client.
 
 ##### Command line
 
@@ -280,12 +283,13 @@ file = syn.store(file, forceVersion=False)
 ```r
 # Get file from Synapse, set download=False since we are only updating annotations
 file <- synGet('syn56789', downloadFile=FALSE)
-# Add provenance 
+# Add provenance
 act <- Activity(name = 'Example Code', used = '/path/to/example_code')
 file <- synStore(file, activity=act, forceVersion=FALSE)
 ```
 
 ## Downloading a Specific Version
+
 By default, the `File` downloaded will always be the most recent version. However, a specific version can be downloaded by passing the `version` parameter.
 
 ##### Web
@@ -341,4 +345,5 @@ synDelete("syn56789", version = 1)
 Some files in Synapse are supported with previews to allow users to peek at the contents of the file before they download it. File Previews can also be embedded in Wikis.
 
 ## See Also
-[Provenance](/articles/provenance.html), [Annotations and Queries](/articles/annotation_and_query.html), [Downloading Data](/articles/downloading_data.html)
+
+[Provenance](provenance.md), [Annotations and Queries](annotation_and_query.md), [Downloading Data](downloading_data.md)
