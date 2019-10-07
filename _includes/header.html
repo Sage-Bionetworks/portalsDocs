@@ -8,29 +8,23 @@
     <meta content='Synapse Documentation' name='description' />
     <meta content='Sage Bionetworks' name='author' />
 
-    <link href='https://cdn-www.synapse.org/css/bootstrap-custom-theme.min.css' rel='stylesheet' type='text/css' /> 
-    <link href='/assets/stylesheets/pygments.css' media='screen' rel='stylesheet' type='text/css' />
-    <link href='/assets/stylesheets/sass/styles.css' media='screen' rel='stylesheet' type='text/css' />
+    <link href='//cdn-www.synapse.org/css/bootstrap-custom-theme.min.css' rel='stylesheet' type='text/css' /> 
+    <link href="{{ '/assets/stylesheets/sass/styles.css' | relative_url }}" media='screen' rel='stylesheet' type='text/css' />
     <link href='//www.synapse.org/Portal.css' media='screen' rel='stylesheet' type='text/css' />
 
-    <script src='/assets/javascripts/jquery-1.7.min.js' type='text/javascript'></script>
-    <script src='/assets/javascripts/toc.js'></script>
-    <script src='/assets/javascripts/google-analytics.js'></script>
-    <script src='https://fb.me/react-0.13.3.min.js'></script>
+    <script src="{{ '/assets/javascripts/jquery-1.7.min.js' | relative_url }}" type='text/javascript'></script>
+    <script src="{{ '/assets/javascripts/toc.js' | relative_url }}"></script>
+    <script src="{{ '/assets/javascripts/google-analytics.js' | relative_url }}"></script>
+    <script src='//fb.me/react-0.13.3.min.js'></script>
 
-    <!-- <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script> -->
     <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
-    <!-- <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/additional-methods.js"></script> -->
     <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/additional-methods.min.js"></script>
 
-    <script type='text/javascript' src='/js/all.js'></script>
     <meta content='text/html;charset=utf-8' http-equiv='Content-Type' />
 
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   
-    <script src='/assets/javascripts/google-analytics.js' type='text/javascript'></script>
-
 </head>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" id="bootstrap-overrides">
@@ -42,31 +36,26 @@
         <span class="icon-bar"></span>
     </button>
 
-    <a href="/" class="navbar-brand" style="color:white"><img src="https://www.synapse.org/images/logo.svg" alt="Synapse Logo" style="width:35px; height:35px; padding-right: 0; position: relative; top:-7px"></a>
-    <a href="/" class="navbar-brand" style="color:white; padding-left:6px; font-size: 1.5em">SYNAPSE DOCS</a>
+    <a href="{{ '/' | relative_url }}" class="navbar-brand" style="color:white"><img src="https://www.synapse.org/images/logo.svg" alt="Synapse Logo" style="width:35px; height:35px; padding-right: 0; position: relative; top:-7px"></a>
+    <a href="{{ '/' | relative_url }}" class="navbar-brand" style="color:white; padding-left:6px; font-size: 1.5em">SYNAPSE DOCS</a>
 </div>
     <nav class="collapse navbar-collapse" id="sd-navbar">
         <ul class="nav navbar-nav col-lg-7">
             <li>
-                <a href="/articles/getting_started.html">Getting started</a>
+                <a href="{{'/articles/getting_started.html' | relative_url}}">Getting started</a>
             </li>
             <li>
-                <a href="/articles/">User Guide</a>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">API Docs <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="//python-docs.synapse.org/build/html/CommandLineClient.html">Command Line</a></li>
-                    <li><a href="//python-docs.synapse.org/">Python</a></li>
-                    <li><a href="//r-docs.synapse.org/">R</a></li>
-                    <li><a href="//docs.synapse.org/rest">REST APIs</a></li>
-                </ul>
+                <a href="{{'/articles/' | relative_url}}">User Guide</a>
+                
             </li>
             <li>
-                <a href="/articles/governance.html">Governance</a>
+                <a href="{{'/articles/api_documentation.html' | relative_url}}">API docs</a>
             </li>
             <li>
-                <a href='/articles/faq.html'>FAQ</a>
+                <a href="{{'articles/governance.html' | relative_url}}">Governance</a>
+            </li>
+            <li>
+                <a href="{{'articles/faq.html' | relative_url}}">FAQ</a>
             </li>
             <li>
                 <a href='https://www.synapse.org/#!SynapseForum:default'>Forum</a>
@@ -75,7 +64,7 @@
         <div id='cse' class='col-lg-2 col-md-2 col-sm-4 col-xs-12'>
             <script>
               (function() {
-                var cx = '017897990821435998616:zyxa_umz9ys';
+                var cx = '011610888334356746975:s7xjazjl8uy';
                 var gcse = document.createElement('script');
                 gcse.type = 'text/javascript';
                 gcse.async = true;

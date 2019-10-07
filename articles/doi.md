@@ -24,12 +24,16 @@ category: howto
 
 # Overview
 
-A Digital Object Identifier (DOI) is an alphanumeric string assigned to uniquely identify an object. It is tied to a metadata description of the object as well as to a digital location, such as a URL, where all the details about the object are accessible. In order to create new DOIs and assign them to your content, it is necessary to use a service to "mint" or create a DOI for your data or project. 
+A Digital Object Identifier (DOI) is a persistent identifier assigned to uniquely identify a digital object. A DOI is defined by a digital location like a URL and a description of the object. This description includes attribution and a creation or publication date. Creating and assigning a new DOI is commonly known as "minting". Minting a DOI for things in Synapse allow you to reference them when used elsewhere, such as in a publication or on an external website.
 
-`DOIs` are available in Synapse both on the `Project` level and on `Files/Folders` to provide a mechanism to uniquely identify your data when used in a publication or linked to from elsewhere on the web. For example, the DOI `doi:10.7303/syn2580853` can be represented as a URL, [https://doi.org/10.7303/syn2580853](https://doi.org/10.7303/syn2580853), which automatically resolves to the Synapse `Project` it's associated with, the [AMP-AD Knowledge Portal](https://www.synapse.org/#!Synapse:syn2580853). 
+DOIs are available in Synapse for Projects, Files, Folders, and Tables. DOIs that are for objects stored in Synapse have a prefix of `doi:10.7303`. They are then followed by the Synapse ID of the object being linked to, such as `syn2580853`, which is a Synapse project. The DOI `doi:10.7303/syn2580853` can be represented as a URL, [https://doi.org/10.7303/syn2580853](https://doi.org/10.7303/syn2580853), which automatically redirects to the associated Synapse Project, the [AMP-AD Knowledge Portal](https://www.synapse.org/#!Synapse:syn2580853).
 
 ## Minting DOIs
 
-Navigate to the data or project you'd like to create a DOI for; for example, you can create DOIs for `Files`, `Folders`, or entire `Projects` (support for `Tables` coming soon). From the Tools Menu, select the option for "Create DOI" for the object in question, or choose "Create DOI" from the "Project Settings" menu if minting a DOI for an entire project. 
+1. Navigate to the data or project you'd like to create a DOI for.
+1. From the Tools Menu, select the option for "Create DOI" for the object in question, or choose "Create DOI" from the "Project Settings" menu if minting a DOI for an entire project.
+1. Fill out the form as needed - you can add other creators if there are other individuals who contributed to the object. You can select a resource type which describes what type of object it is. The title and publication year can be changed, but this is not advisable.
 
-If you do not see these options, you either do not have permission to do so (only users with Edit or Administrator access may mint DOIs for objects), or a DOI may have already been created. Check the information below the object name for a DOI field; Synapse does not allow you to mint more than one DOI per object. 
+If you do not see these options, you either do not have permission to do so. Only users with Edit access or above may mint DOIs for objects. You can also update an existing DOI if information has changed.
+
+Files in Synapse can have multiple versions. Their DOI format includes the version number appended at the end, like `10.7303/syn3539963.1`. If a new version is created, a new DOI will also need to be created.

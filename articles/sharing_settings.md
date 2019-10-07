@@ -13,6 +13,7 @@ Synapse has two ways to control who can access your content. `Sharing Settings`,
 <a name="sharing-setting"></a>
 
 # Sharing Settings
+
 You can use the `Sharing Settings` to grant different levels of access to individuals or `Teams`. Often, users leverage these features to invite people to view or collaborate on a Synapse `Project`. Here are the kinds of access currently supported:
 
 * Can view
@@ -28,13 +29,15 @@ You can use the `Sharing Settings` to grant different levels of access to indivi
 {% include important.html content="Synapse users are responsible for determining the appropriate Sharing Setting for any content they upload into Synapse." %}
 
 <a name="how-to-share-content"></a>
+
 ## How to Share Projects
 
 To adjust the sharing settings on a project, click the `Project Settings` button. This will open a window listing the Synapse users who have access to the `Project` and their roles. When you create a new `Project` you are the only Synapse user listed in this window, because projects are private by default, and your access level will be `Administrator`.
 
-Use the `Add People` feature to add collaborators individually or to add a [team of collaborators](/articles/teams.html).
+Use the `Add People` feature to add collaborators individually or to add a [team of collaborators](teams.md).
 
 <a name="share-files-folders-and-tables"></a>
+
 ## Sharing Files, Folders, and Tables
 
 You can adjust the sharing settings for `Folders`, `Files`, and `Tables` separately from their parent project. For example, you may wish to keep a particular folder private while you make the project public. Or you may want to share drafts of individual files to collaborators first prior to sharing them publicly.

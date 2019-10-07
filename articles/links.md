@@ -17,19 +17,29 @@ category: howto
 }
 </style>
 
-
 # Links
+
 Synapse `Links` provide users the ability to create a link to any File, Table, Folder, or Project on Synapse. 
-
-
 
 ## Creating a Link
 
+##### Web
 
-{% tabs %}
+Navigate to the file, table, folder or project you want to save a link of. Click Tools and Save Link to.
 
-{% tab Python %}
-{% highlight python %}
+<img id="toobig" src="../assets/images/save_link_to_file.png">
+
+Select a folder or project that you want to save the link to (This feature is more like bookmarking the file to a specific location).
+
+<img id="image" src="../assets/images/link_to_parent.png">
+
+The final result looks like:
+
+<img id="link" src="../assets/images/link_entity.png">
+
+##### Python
+
+```python
 import synapseclient
 syn = synapseclient.login()
 
@@ -39,12 +49,11 @@ syn = synapseclient.login()
 # parent is the folder or project where you want to link to exist
 linkEnt = synapseclient.Link(targetId="syn12345", targetVersion=1, parent="syn2345")
 linkEnt = syn.store(linkEnt)
+```
 
-{% endhighlight %}
-{% endtab %}
+##### R
 
-{% tab R %}
-{% highlight r %}
+```r
 library(synapser)
 synLogin()
 
@@ -54,29 +63,8 @@ synLogin()
 # parent is the folder or project where you want to link to exist
 linkEnt <- Link(targetId="syn12345", targetVersion=1, parent="syn2345")
 linkEnt <- synStore(linkEnt)
-
-{% endhighlight %}
-{% endtab %}
-
-{% tab Web %}
-Navigate to the file, table, folder or project you want to save a link of. Click Tools and Save Link to.
-<br>
-<img id="toobig" src="/assets/images/save_link_to_file.png">
-<br>
-
-Select a folder or project that you want to save the link to (This feature is more like bookmarking the file to a specific location).
-<br>
-<img id="image" src="/assets/images/link_to_parent.png">
-<br>
-
-The final result looks like:
-<br>
-<img id="link" src="/assets/images/link_entity.png">
-<br>
-
-{% endtab %}
-{% endtabs %}
-
+```
 
 ### See Also
-[Annotations and Queries](/articles/annotation_and_query.html), [Downloading Data](/articles/downloading_data.html), [Files and Versioning](/articles/versioning.html)
+
+[Annotations and Queries](annotation_and_query.md), [Downloading Data](downloading_data.md), [Files and Versioning](versioning.md)
