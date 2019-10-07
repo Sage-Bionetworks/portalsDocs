@@ -110,7 +110,7 @@ A Synapse user can be tagged by using the 'Tag someone' Widget from the 'Insert'
 
 {% include important.html content="Wiki pages do not have specific Conditions for Use. Do not put any protected human data (Controlled Data) in Synapse Wikis." %}
 
-See the Synapse Data Use Procedure document for [details](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4){:target="_blank"}.
+See the Synapse Data Use Procedure document for [details](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4).
 
 ## See Also
 
