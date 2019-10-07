@@ -56,9 +56,9 @@ To allow authorized Synapse users to upload data to your bucket set read-write p
 
 <br/>
 
-For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **<a href="/assets/downloads/owner.txt" download="owner.txt">owner.txt</a>** file with your Synapse username and uploading it to your bucket. You can upload the file with the Amazon Web Console or if you have  the [AWS command line client](https://aws.amazon.com/cli/), you can upload using the command line. 
+For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating an **<a href="../assets/downloads/owner.txt" download="owner.txt">owner.txt</a>** file with your Synapse username and uploading it to your bucket. You can upload the file with the Amazon Web Console or if you have  the [AWS command line client](https://aws.amazon.com/cli/), you can upload using the command line.
 
-<img id="imageSmall" src="/assets/images/ownerTxt.png">
+<img id="imageSmall" src="../assets/images/ownerTxt.png">
 
 ##### Command line
 
@@ -69,7 +69,7 @@ aws s3 cp owner.txt s3://nameofmybucket/nameofmyfolder
 
 ##### Web
 
-<img id="imageSmall" src="/assets/images/uploadAWS.png">
+<img id="imageSmall" src="../assets/images/uploadAWS.png">
 
 Navigate to your bucket on the Amazon Console and select **Upload** to upload your text file.
 
@@ -169,7 +169,7 @@ projectDestination <- synRestPOST('/projectSettings', body=toJSON(projectDestina
 
  Navigate to your **Project/Folder -> Tools -> Change Storage Location**. In the resulting pop-up, select the `Amazon S3 Bucket` option and fill in the relevant information, where Bucket is the name of your external bucket, Base Key is the name of the folder in your bucket to upload to, and Banner is a short description such as who owns the storage location:
 
-<img id="image" src="/assets/images/external_s3.png">
+<img id="image" src="../assets/images/external_s3.png">
 
 
 <br/>
@@ -382,7 +382,8 @@ projectDestination <- synRestPOST('/projectSettings', body = projectDestination)
 For files stored outside of Amazon, an additional proxy is needed to validate the pre-signed URL and then proxy the requested file contents.  View more information **[here](https://github.com/Sage-Bionetworks/file-proxy/wiki)** about the process as well as about creating a [local proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki/Setup-Proxy-Local) or a [SFTP proxy](https://github.com/Sage-Bionetworks/file-proxy/wiki).
 
 #### Set Project Settings for a Local Proxy
-You must have a key ("your_secret_key") to allow Synapse to interact with the filesystem. 
+
+You must have a key ("your_secret_key") to allow Synapse to interact with the filesystem.
 
 ##### Python
 
