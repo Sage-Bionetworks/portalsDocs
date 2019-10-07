@@ -324,7 +324,7 @@ projectDestination <- synRestPOST('/projectSettings', body=toJSON(projectDestina
 
 ##### Web
 
- Navigate to your **Project/Folder -> Tools -> Change Storage Location**. In the resulting pop-up, select the `Google Cloud Storage Bucket` option and fill in the relevant information, where Bucket is the name of your external bucket, Base Key is the name of the folder in your bucket to upload to, and Banner is a short description such as who owns the storage location.
+ Navigate to your **Project/Folder -> Tools -> Change Storage Location**. In the resulting pop-up, select the **Google Cloud Storage Bucket** option and fill in the relevant information, where Bucket is the name of your external bucket, Base Key is the name of the folder in your bucket to upload to, and Banner is a short description such as who owns the storage location.
 
 Please see the [REST docs](http://docs.synapse.org/rest/org/sagebionetworks/repo/model/project/ExternalGoogleCloudStorageLocationSetting.html) for more information on setting external storage location settings using our REST API.
 
