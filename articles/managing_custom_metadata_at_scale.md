@@ -17,14 +17,14 @@ The Sage Bionetworks Systems Biology and Computational Oncology teams maintain [
 
 To batch upload files, create a tab-delimited manifest which contains, at minimum, the columns `path` and `parent`. You can also add additional annotations as columns in your manifest. For example, your manifest might have the following headers: `path`, `parent`, `specimenID`, `assay`, `species`, `platform`, `sex`, and `fileFormat`.  
 
-**path**: is the local path to your file <br>
-**parent**: is the Synapse ID (in the format syn123456) that the files will be uploaded to <br>
-**specimenID**: is the unique identifier for each of your specimens <br>
-**assay**: is the technology used to generate the data in this file (e.g. rnaSeq, ChIPSeq, wholeGenomeSeq) <br>
-**species**: is the species of your sample (e.g. Mouse, Human, Triceratops) <br>
-**platform**: is hardware used to generate the data (e.g. HiSeq2500, Affy6.0, HoodDNASequencer) <br>
-**sex**: e.g. male or female <br>
-**fileFormat**: is the type of file (e.g. fastq, R script) <br>
+**path**: is the local path to your file
+**parent**: is the Synapse ID (in the format syn123456) that the files will be uploaded to
+**specimenID**: is the unique identifier for each of your specimens
+**assay**: is the technology used to generate the data in this file (e.g. rnaSeq, ChIPSeq, wholeGenomeSeq)
+**species**: is the species of your sample (e.g. Mouse, Human, Triceratops)
+**platform**: is hardware used to generate the data (e.g. HiSeq2500, Affy6.0, HoodDNASequencer)
+**sex**: e.g. male or female
+**fileFormat**: is the type of file (e.g. fastq, R script)
 
 Here it is in a visual example:
 
@@ -33,8 +33,6 @@ Here it is in a visual example:
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | /local/path/to/velociraptor_b.fastq | syn123 | blue_1 | wholeGenomeSeq | Velociraptor mongoliensis | HoodDNASequencer | female | fastq |
 | /local/path/to/velociraptor_d.fastq | syn123 | delta_1 | wholeGenomeSeq | Velociraptor mongoliensis | HoodDNASequencer | female | fastq |
-
-<br>
 
 See **Creating a Manifest** in [Uploading and Downloading Data in Bulk](uploading_in_bulk.md#Creating-a-Manifest) for additional details.
 
@@ -97,5 +95,3 @@ Alternatively, download the View with the R or Python client:
 
 1. Query for the View with [`synTableQuery()`](https://r-docs.synapse.org/reference/synTableQuery.html) or [`syn.tableQuery()`](https://python-docs.synapse.org/build/html/Client.html#synapseclient.Synapse.tableQuery). **To delete all the annotations of a key, you have to keep the column in the file view but remove the values.**
 2. Update and then store the annotations in the [R client](https://r-docs.synapse.org/articles/views.html#updating-annotations-using-view) or [Python client](https://python-docs.synapse.org/build/html/Views.html#updating-annotations-using-view).
-
-<br>

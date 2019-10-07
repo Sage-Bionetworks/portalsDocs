@@ -183,6 +183,7 @@ Clicking **Refresh Columns** will add these default columns.
 <img style="width: 80%;" src="/assets/images/leaderboard_columns.png">
 
 ### Saving Leaderboard Widget
-If you are happy with your leaderboard configurations, save both the configurations and the wiki page to see the Leaderboard. 
+
+If you are happy with your leaderboard configurations, save both the configurations and the wiki page to see the Leaderboard.
 
 <img style="width: 80%;" src="/assets/images/leaderboard_on_wiki.png">

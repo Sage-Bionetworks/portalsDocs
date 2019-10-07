@@ -17,13 +17,13 @@ Let's begin by creating a custom Docker image.  Users can choose to either modif
 
 **Tagging an existing Docker image to save onto the Synapse registry**
 
-```
+``` console
 docker pull ubuntu
 ```
 
 To tag an existing Docker image, users can use the IMAGE ID or the repo name.  The IMAGE ID can be found by doing:
 
-```
+``` console
 docker images
 #REPOSITORY	TAG	IMAGE ID	CREATED	SIZE
 #ubuntu	latest	f8d79ba03c00	6 days ago	126.4 MB
@@ -31,7 +31,7 @@ docker images
 
 Tag the Docker image:
 
-```
+``` console
 docker tag f8d79ba03c00 docker.synapse.org/syn12345/mytestrepo:version1
 #or
 docker tag ubuntu:latest docker.synapse.org/syn12345/mytestrepo:version1
@@ -40,14 +40,14 @@ docker tag ubuntu:latest docker.synapse.org/syn12345/mytestrepo:version1
 
 You can also choose to not tag your image with an explicit tag, which will by default tag it with `latest`.
 
-```
+``` console
 docker tag f8d79ba03c00 docker.synapse.org/syn12345/mytestrepo
 ```
 
 **Build your own image from a Dockerfile**
 When building a Docker image from a Dockerfile, add a `-t` to the docker build command with the correct Synapse Docker registry tag.
 
-```
+``` console
 docker build -t  docker.synapse.org/syn12345/my-repo path/to/dockerfile
 ```
 
@@ -57,13 +57,13 @@ Learn more about building [docker images](https://docs.docker.com/engine/getstar
 
 To store Docker images, use the `docker push` command.  To push to the Synapse Docker Registry, users must be logged into the registry:
 
-```
+``` console
 docker login -u <synapse username> -p <synapse password> docker.synapse.org
 ```
 
 After logging in, view your images and decide which ones to push into the registry.
 
-```
+``` console
 docker images
 #REPOSITORY                                 TAG                 IMAGE ID            CREATED             SIZE
 #docker.synapse.org/syn12345/mytestrepo   version1            f8d79ba03c00        6 days ago          126.4 MB
@@ -78,13 +78,14 @@ docker push docker.synapse.org/syn12345/my-repo
 To access the Docker images stored in Synapse, use the `docker pull` command.
 
 {% include tip.html content="By default, if you do not specify a tag, it will attach latest as the tag.  If you specified a tag on your repository, be sure to pull the repository with the tag." %}
-```
+
+``` console
 docker pull docker.synapse.org/syn12345/my-repo
 ```
 
 Docker tags can be assigned to later commits. If you want to be explicit about the version of an image then instead of referencing a tag you can reference a digest:
 
-```
+``` console
 docker pull docker.synapse.org/syn12345/mytestrepo@sha256:2e36829f986351042e28242ae386913645a7b41b25844fb39b29af0bdf8dcb63
 ```
 

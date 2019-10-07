@@ -22,7 +22,6 @@ To create a `File View`, select the `Project` in which you would like to create 
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/qWjVlw2_n2w?rel=0" frameborder="0" allowfullscreen></iframe>
 
-<br/>
 Instructions for creating `Views` using the clients can be found in the [Python docs](https://python-docs.synapse.org/build/html/Views.html) and in the [R docs](https://r-docs.synapse.org/articles/views.html).
 
 ## Create a Project View
@@ -85,13 +84,13 @@ fv = syn.store(synapseclient.Table(foo.tableId, bar))
 
 Views are in `Simple Search` mode by default. You can filter out `Projects` or `Files` of interest by selecting what characteristics you like using the facet menu on the left. You can toggle between simple and advanced search using the `Show advanced search/Show simple search` link.
 
-<img id="image" src="/assets/images/fileViewFacetedSearch.png">
+<img id="image" src="../assets/images/fileViewFacetedSearch.png">
 
 ### Using Advanced Search
 
 In advanced search, you can use a SQL-like query to search for items in that view. In the example below, we're selecting for all files that have a `Cell Type` of `PSC`.
 
-<img id="image" src="/assets/images/fileViewAdvancedSearch.png">
+<img id="image" src="../assets/images/fileViewAdvancedSearch.png">
 
 ## Insert a View into a Wiki
 
@@ -103,7 +102,7 @@ In the **Edit Project Wiki** window, select **Table: Query on a Synapse Table/Vi
 
 To embed a subset of the file view, like the advanced search query in the previous example, enter `SELECT * FROM syn8146547 WHERE Cell_Type = 'PSC'`.
 
-<img id="image" src="/assets/images/subsetFileViewWiki.png">
+<img id="image" src="../assets/images/subsetFileViewWiki.png">
 
 Save the query and the edits to the `Wiki` to embed the view.
 
