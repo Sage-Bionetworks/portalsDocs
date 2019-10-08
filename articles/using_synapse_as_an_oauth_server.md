@@ -16,8 +16,7 @@ category: howto
 
 External web applications can now log in to Synapse and access users' identity and resources, with their consent and with a select, limited scope.  This is accomplished using a secure and industry-standard protocol called [OpenID Connect (OIDC)](https://openid.net/specs/openid-connect-core-1_0.html), which is an extension of OAuth 2.0.
 
-
-# Registering and linking an OAuth 2.0 Client
+## Registering and linking an OAuth 2.0 Client
 The details of the Synapse Open ID Connect implementation are published on the web in a standard Open ID Configuration document (aka the "discovery document"): [https://repo-prod.prod.sagebase.org/auth/v1/.well-known/openid-configuration](https://repo-prod.prod.sagebase.org/auth/v1/.well-known/openid-configuration).  The document includes the web endpoints for registration, authorization, and token generation, as well as the scope of resources that can be requested, and the formats in which Synapse will return information.
 
 ## Create an OAuth 2.0 Client

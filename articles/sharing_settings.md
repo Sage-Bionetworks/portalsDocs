@@ -6,13 +6,13 @@ category: governance
 order: 2
 ---
 
-# Access Control
+## Access Control
 
 Synapse has two ways to control who can access your content. `Sharing Settings`, or permissions, determine _who_ can access content and at what level. `Conditions for Use` define _how_ users with access may use the data. All content in Synapse has `Sharing Settings` but not all content has `Conditions for Use`. See the [Conditions for Use](/articles/access_control.html) article for information about those settings. This article covers sharing settings only.
 
 <a name="sharing-setting"></a>
 
-# Sharing Settings
+## Sharing Settings
 
 You can use the `Sharing Settings` to grant different levels of access to individuals or `Teams`. Often, users leverage these features to invite people to view or collaborate on a Synapse `Project`. Here are the kinds of access currently supported:
 

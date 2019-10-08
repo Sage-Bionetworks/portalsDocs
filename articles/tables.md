@@ -20,8 +20,6 @@ category: howto
 }
 </style>
 
-# Tables
-
 Synapse `Tables` are designed to provide users the ability to create web-accessible, sharable, and queryable data. Columns in tables have a user-specified, structured schema. Users define table columns to contain common primitive data types (text, numbers, dates, etc.) or references to other Synapse objects (e.g., `Files`).
 
 `Tables` may be queried and edited through both the Synapse web UI as well as through our programmatic clients. Unlike most NoSQL systems, the data in Synapse `Tables` is strongly consistent, not eventually consistent. This is an important design consideration for scientific data processing, as analysis on eventually-consistent data sources can limit the types of analysis performed, and may require special coding strategies to ensure reasonable accuracy.

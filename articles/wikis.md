@@ -22,8 +22,6 @@ category: howto
 }
 </style>
 
-# Overview
-
 `Wikis` provide a space to write narrative content to describe a project or content within the project. They are available in Synapse on `Projects`, `Folders`, and `Files`. Every `Project` has a separate Wiki tab where you can create pages and a hierarchy of sub-pages.
 
 `Wikis` can also be added to `Folders` and `Files` allowing additional content documentation. `Wikis`, whether they are under the Wiki tab or on a folder, are built in the same way and enables incorporation of highly customized content including, but not limited to: images, tables, code blocks, LaTeX formatted equations, and scholarly references. In addition, Synapse-specific widgets lets you embed dynamic content based on other resources stored in Synapse.
