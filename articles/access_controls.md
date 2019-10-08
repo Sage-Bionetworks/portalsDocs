@@ -6,8 +6,6 @@ category: governance
 order: 2
 ---
 
-# Access Controls
-
 Synapse has two ways to control who can access your content. Sharing Settings determine _who_ can access content, and is akin to individual or group (team) permissions. Conditions for Use determine _how_ data can be used by those users who have been granted access. All content in Synapse has Sharing Settings but not all content has Conditions for Use. See the [Sharing Settings](sharing_settings.md) article for information about those settings - this article covers conditions for use only.
 
 <a name="conditions-for-use"></a>

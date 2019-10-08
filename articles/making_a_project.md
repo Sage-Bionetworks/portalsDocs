@@ -6,10 +6,6 @@ category: howto
 order: 2
 ---
 
-
-
-# Projects in Synapse 
-
 `Projects` in Synapse serve as workspaces where researchers collaborate. Researchers using Synapse can work in private or collaborate in groups. Some users share their research across large consortia. Projects support the following:
 
 * **Organize Your Work**: With Synapse you can organize the parts in your workflow (data, code, etc) into a hierarchy like a file system. With the tabs across the top of each project, you can easily navigate to your [Wikis](wikis.md), [Files and Folders](files_and_versioning.md), SQL-based [Tables](tables.md), and even conduct conversations using [Discussion Forums](discussion.md).

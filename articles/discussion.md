@@ -1,5 +1,5 @@
 ---
-title: Discussion
+title: Discussion Forums
 layout: article
 excerpt: Explore the features of the discussion forum and how to use it to help your collaborations.
 category: howto
@@ -10,8 +10,6 @@ category: howto
     width: 50%;
 }
 </style>
-
-# Discussion Forums
 
 `Discussion` forums are a way to easily communicate with others, similar to a message board, which is visible to all those with whom a project is shared. In this guide you will learn how to:
 

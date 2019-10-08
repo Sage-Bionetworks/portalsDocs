@@ -14,8 +14,6 @@ category: howto
 }
 </style>
 
-# Custom Storage Locations
-
 While Synapse provides physical storage for files (using Amazon's S3), not all data 'in' Synapse is stored on Synapse controlled locations. For example, data files can physically reside on a user-owned S3 bucket, SFTP servers, or a local file server using a proxy servers. Creating a custom storage location allows users ownership and control of their files, especially in cases where there is a large amount of data or cases where there are additional restrictions that need to be set on the data.
 
 {% include note.html content="System metadata, annotations, and provenance records are still stored in Synapse's S3 storage." %}

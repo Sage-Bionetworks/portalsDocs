@@ -6,8 +6,6 @@ category: intro
 order: 4
 ---
 
-# General
-
 #### What is Synapse?
 
 Synapse is a collaborative informatics platform dedicated to supporting large-scale pooling of data, knowledge, and expertise across institutional boundaries to solve research problems.  Synapse helps scientists solve a series of problems:
