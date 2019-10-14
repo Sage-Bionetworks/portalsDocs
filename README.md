@@ -15,6 +15,9 @@ scientists use to carry out, track, and communicate their research in real time.
 
 Synapse Docs is generated using [Github Pages](https://pages.github.com/). Follow the standard [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) guide.
 
+To build locally, follow the instructions found [here](https://help.github.com/en/articles/testing-your-github-pages-site-locally-with-jekyll). You will need Jekyll, Ruby, and the Ruby package manager, Bundler.
+
+
 Internal development can be performed by branching from `gh-pages` to your own feature branch, making changes, pushing the branch to this repository, and opening a pull request. Pull requests against the `gh-pages` branch require a review before merging.
 
 ### Creating a page
