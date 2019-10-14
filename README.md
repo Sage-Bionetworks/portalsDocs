@@ -9,7 +9,8 @@ scientists use to carry out, track, and communicate their research in real time.
 
 - Assign GitHub issue to yourself to track work in progress and prevent duplicate efforts. If you don't know what you should work on, look for things tagged with `help-wanted` or `good-first-issue`.
 - Create a [feature branch](https://guides.github.com/introduction/flow/) from the `gh-pages` branch to make your changes or new contribution.
-- Use a Markdown editor (e.g. Typora) to visualize edits locally. 
+- Using a Markdown editor lke Typora, VS Code, or Sublime Text will allow you to visualize how your Markdown looks locally. You can also make your changes directly in the GitHub website or any other text editor.
+- To build locally, follow the instructions found [here](https://help.github.com/en/articles/testing-your-github-pages-site-locally-with-jekyll).
 - Open a [pull request](https://help.github.com/en/articles/about-pull-requests) against the `gh-pages` branch and [request a review](https://help.github.com/en/articles/requesting-a-pull-request-review).
 - Merge requires approving review by a repository administrator.
 
