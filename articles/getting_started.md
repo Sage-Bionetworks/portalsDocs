@@ -49,7 +49,7 @@ Synapse Projects are assigned a Synapse ID, a globally unique identifier used fo
 
 ## Organizing Content in `Files` and `Folders`
 
-Projects contain Files, which can be organized into Folders. Folders and Files also have their own unique Synapse IDs and can be moved within or across Projects. Uploaded files are stored within Synapse storage.
+Projects contain Files, which can be organized into Folders. Folders and Files also have their own unique Synapse IDs and can be moved within or between Projects. Uploaded files are stored within Synapse storage.
 
 Use the **Tools Menu** to upload a file: 
 
