@@ -17,8 +17,6 @@ category: howto
 }
 </style>
 
-# Links
-
 Synapse `Links` provide users the ability to create a link to any File, Table, Folder, or Project on Synapse. 
 
 ## Creating a Link
@@ -26,19 +24,16 @@ Synapse `Links` provide users the ability to create a link to any File, Table, F
 ##### Web
 
 Navigate to the file, table, folder or project you want to save a link of. Click Tools and Save Link to.
-<br>
+
 <img id="toobig" src="../assets/images/save_link_to_file.png">
-<br>
 
 Select a folder or project that you want to save the link to (This feature is more like bookmarking the file to a specific location).
-<br>
+
 <img id="image" src="../assets/images/link_to_parent.png">
-<br>
 
 The final result looks like:
-<br>
+
 <img id="link" src="../assets/images/link_entity.png">
-<br>
 
 ##### Python
 

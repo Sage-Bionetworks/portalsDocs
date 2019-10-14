@@ -1,11 +1,9 @@
 ---
-title: "User Profiles"
+title: "User Accounts"
 layout: article
 excerpt: Create your user account and manage your profile  
 category: howto
 ---
-
-# User Accounts
 
 Anyone can browse public content on the Synapse web site, but in order to download and create content you will need to register for an account using an email address. You will receive an email message for verification to complete the registration process.
 
@@ -23,8 +21,6 @@ Visit your [Profile Page](https://www.synapse.org/#!Profile:v), which can be acc
 * Upload an (optional) profile picture
 * Include a brief (optional) biography
 * Link your ORCID credentials
-
-<br/>
 
 You can also find a link to edit your profile under [Settings](https://www.synapse.org/#!Profile:v/settings), which can be accessed by clicking your name in the top right corner and selecting "Settings" from the menu.
 

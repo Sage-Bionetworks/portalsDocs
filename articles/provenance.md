@@ -15,8 +15,6 @@ category: howto
 }
 </style>
 
-# Provenance
-
 <img id="image" style="float:right" src="../assets/images/provenanceWorkflowDemo.png">
 
 Reproducible research is a fundamental responsibility of scientists, but the best practices for achieving it are not established in computational biology. The Synapse “Provenance” system is one of many solutions you can use to make your work reproducible by you and others.
@@ -30,8 +28,6 @@ The model Synapse uses for provenance is based on the [W3C provenance spec](http
 The Synapse clients for command line, Python, and R support creating and editing of provenance relationships. The Web client allows editing of provenance once the file has been uploaded.
 
 On the right is a Synapse visualization of provenance relationships that is demonstrated in the following section using our programmatic and web clients. In this example, we have two scripts, one that generates random numbers and another that takes a list of numbers and computes their squares. The project's workflow looks like the image to the right.
-
-<br/>
 
 ### Setting Provenance When Uploading a File
 
@@ -48,8 +44,6 @@ There are a couple ways to set provenance information for a Synapse entity. The 
 
 1. Synapse entity by synId: [syn7205215](https://www.synapse.org/#!Synapse:syn7205215) (the code file)
 2. URL to a page describing [normal distributions](http://mathworld.wolfram.com/NormalDistribution.html)
-
-<br/>
 
 ##### Web
 
@@ -140,7 +134,7 @@ squared_file <- synStore(squared_file, activity=act)
 
 ### Deleting Provenance
 
-If at any point you need to delete provenance on an entity, you can do so. 
+If at any point you need to delete provenance on an entity, you can do so.
 You must be the person who created the entity to delete provenance.
 
 ##### Web

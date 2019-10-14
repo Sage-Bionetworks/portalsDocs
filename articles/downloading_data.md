@@ -6,8 +6,6 @@ category: intro
 order: 3
 ---
 
-# Overview
-
 Data in Synapse can be downloaded using the programmatic clients (Python, R, and command line) as well as the web client.
 
 ## Downloading a File
@@ -44,8 +42,6 @@ synLogin()
 entity <- synGet("syn3158111")
 ```
 
-<br/>
-
 Once a `File` has been downloaded, you can find the filepath using the following:
 
 ##### Command line
@@ -65,8 +61,6 @@ filepath = entity.path
 ```r
 filepath <- entity$path
 ```
-
-<br/>
 
 ### Versions
 
@@ -121,8 +115,6 @@ synLogin()
 linkEnt = synGet("syn1234")
 entity = synGet("syn1234", followLink=TRUE)
 ```
-
-<br/>
 
 ### Download Location
 
@@ -289,4 +281,5 @@ all_files = syncFromSynapse(entity='syn123', path='/path/to/myFolder')
 ```
 
 # See Also
+
 [Versioning](versioning.md), [Tables](tables.md), [Wikis](wikis.md), [File Views](views.md), [Annotations and Queries](annotation_and_query.md)

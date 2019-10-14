@@ -11,8 +11,6 @@ category: howto
 }
 </style>
 
-# Teams
-
 `Teams` are a way to easily manage groups of users for the purposes of project access, communication, and challenge participation. In this guide you will learn how to:
 
 * Create and manage a team
@@ -82,8 +80,6 @@ You may use `Teams` to manage Sharing Settings on `Files`, `Folders` and `Projec
 ## Submitting to a Challenge as a Team
 
 When participating in a Challenge, you may submit solutions as an individual or as a `Team`. The `Team` must be registered with the challenge, which can be done by clicking the **Register a Team** button, typically on the **Forming a Team** page on the challenge wiki. When submitting a `File` to a challenge from the Web Client, you will be given the option to submit the `File` as part of a `Team`. You will then be asked to select from the registered `Teams` of which you are a member, or register an existing `Team` with the challenge, and to verify which team members contributed to the solution. Note that only members who have already registered with the challenge may be selected.
-
-<br/>
 
 ### See Also
 

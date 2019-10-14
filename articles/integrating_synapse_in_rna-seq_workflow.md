@@ -5,7 +5,7 @@ category: inpractice
 excerpt: Using Synapse in an RNA-Seq workflow to manage files and track processing steps.  
 ---
 
-# Goals
+## Goals
 
 The goal is to demonstrate how to use Synapse in an RNA-Seq workflow to manage files and track processing steps.
 
@@ -25,8 +25,8 @@ synapse get syn2468554
 synapse get syn2468552
 ```
 
-
 ## Map the Raw Reads
+
 Now that we have the data, you can then use the alignment tool of choice to map these reads. We will use [STAR](http://bioinformatics.oxfordjournals.org/content/early/2012/10/25/bioinformatics.bts635) to map the reads
 
 ## Setting Up the Local Environment

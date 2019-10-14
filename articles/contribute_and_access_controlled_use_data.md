@@ -8,8 +8,6 @@ order: 4
 
 <a name="contributing-data"></a>
 
-# Contributing Data
-
 Data shared in Synapse may have `Conditions for Use` that define restrictions on how it may be disclosed or what the data set may contain based on privacy laws or regulation.
 
 You must be a `Certified User` to contribute data to Synapse. You are responsible for determining if the data you would like to contribute is `Controlled Use` and therefore requires `Conditions for Use`. Carefully consider the specific risks and appropriate protections required before sharing your data.
@@ -32,7 +30,7 @@ To access `Controlled Use` data you must fulfill the `Conditions for Use` set by
 
 ### Bridge Data
 
-Synapse houses data collected through research apps. This data is called Bridge data. This data has been donated by thousands of volunteers 
+Synapse houses data collected through research apps. This data is called Bridge data. This data has been donated by thousands of volunteers
 from around the world. Bridge data is only accessible to Users with a `Validated Profile`. To learn more see [Synapse User Credentials](accounts_certified_users_and_profile_validation.md#validated-profile).
 
 {% include warning.html content="Controlled and Bridge data may not be redistributed." %}

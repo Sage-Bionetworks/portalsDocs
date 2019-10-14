@@ -5,11 +5,12 @@ excerpt: Using Synapse teams for group permissions in projects.
 category: inpractice
 ---
 
-# Creating Permissions Models for Synapse Projects
+## Creating Permissions Models for Synapse Projects
 
 Synapse supports several different kinds of project permissions. These are described in more detail as "sharing settings" in the article on [access controls](access_controls.md#sharing-settings). Additionally, Synapse supports setting "local sharing settings" that allow you to make your project public while keeping some folders, files, or tables private. To do this, you would use local sharing settings. Permissions and sharing settings within Synapse are otherwise hierarchical; that is, if you set permissions on a project, everything within that project inherits those permissions until local sharing settings have been created.
 
 When thinking through the process of creating a permissions model for your project, consider the following questions:
+
 * Who needs to be able to view this project?
 * Who needs to be able to edit or add content to this project?
 * Who should be in charge of changing permissions on this project, to modify either of the above?

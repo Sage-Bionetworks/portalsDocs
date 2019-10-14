@@ -6,8 +6,6 @@ category: apiclient
 order: 2
 ---
 
-# Client Configuration
-
 ## For Users
 
 Store login credentials from the current `login()` using the `rememberMe = TRUE` parameter. You should use the `rememberMe` feature on a personal computer of which you are the only Synapse user.
@@ -32,7 +30,6 @@ You may also [customize a `.synapseConfig` file](https://r-docs.synapse.org/arti
 ### Where to find your API Key
 
 From your [Synapse homepage](https://www.synapse.org/), navigate to your user menu and select **Settings** from the drop-down menu. Your Synapse API key is made visible by selecting **Show API Key**. In the case the confidentiality of the API key is compromised, or you would like to invalidate your API key, select **Change API Key**.
-<br/>
 
 ## See Also
 
