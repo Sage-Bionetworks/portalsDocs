@@ -7,7 +7,7 @@ scientists use to carry out, track, and communicate their research in real time.
 
 ## Contributing Guide
 
-- Assign github issue to yourself to track revisions.
+- Assign GitHub issue to yourself to track work in progress and prevent duplicate efforts. If you don't know what you should work on, look for things tagged with `help-wanted` or `good-first-issue`.
 - Create a [feature branch](https://guides.github.com/introduction/flow/) to make you revisions.
 - Use a Markdown editor (e.g. Typora) to visualize edits locally. 
 - Open a PR and request a review.
