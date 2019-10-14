@@ -18,8 +18,6 @@ To create a `File View`, select the `Project` in which you would like to create 
 
 {% include note.html content= "The scope of a File View can have a maximum of 10,000 folders or sub-folders." %}
 
-<iframe width="100%" height="480" src="https://www.youtube.com/embed/qWjVlw2_n2w?rel=0" frameborder="0" allowfullscreen></iframe>
-
 Instructions for creating `Views` using the clients can be found in the [Python docs](https://python-docs.synapse.org/build/html/Views.html) and in the [R docs](https://r-docs.synapse.org/articles/views.html).
 
 ## Create a Project View
