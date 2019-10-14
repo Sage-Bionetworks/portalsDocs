@@ -1,6 +1,6 @@
 ---
 title: User Guide
-layout: default
+layout: index
 ---
 
 {% assign doclist = site.pages | sort: 'order' %}
@@ -26,6 +26,7 @@ layout: default
             <hr>
             <span>Browse short "How To" articles on leveraging specific features in Synapse.</span>
         </div>
+        </a>
     </div>
    <!-- <div class="col-xs-12 col-sm-3">
         <a href="/articles/api_documentation.html">
@@ -59,89 +60,77 @@ layout: default
     </div>
     </ul>
 
-                <div class="tab-content">
-                    <div class="tab-pane active" id="intro">
-                        <!--Start intro content-->
-                        <h3>Introduction</h3>
-                        <div class="row">
-                            {% for page in doclist %} {% if page.category == 'intro' %}
-                                <ul>
-                                    <li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.excerpt}}</li>
-                                    </ul>
-                                {% endif %} {% endfor %}
-                        </div>
-
-                    </div>
-                    <!--<end intro content>-->
-
-                    <div class="tab-pane active" id="howto">
-                        <!--Start how to content-->
-                        <h3>How To Articles</h3>
-                        <div class="row">
-                            {% for page in doclist %} {% if page.category == 'howto' %}
-                                <ul>
-                                    <li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.excerpt}}</li>
-                                    </ul>
-                            {% endif %} {% endfor %}
-                        </div>
-
-                    </div>
-                    <!--end how to content-->
-
-                    <div class="tab-pane active" id="governance">
-                        <!--Start governance content-->
-                        <h3>Governance and Security</h3>
-                        <div class="row">
-                            {% for page in doclist %} {% if page.category == 'governance' %}
-                                <ul>
-                                    <li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.excerpt}}</li>
-                                    </ul>
-                            {% endif %} {% endfor %}
-                        </div>
-
-                    </div>
-                    <!--end governance content-->
-
-                    <div class="tab-pane active" id="apiclient">
-                        <!--Start api-client content-->
-                        <h3>API Clients</h3>
-                        <div class="row">
-                            {% for page in doclist %} {% if page.category == 'apiclient' %}
-                                <ul>
-                                    <li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.excerpt}}</li>
-                                    </ul>
-                                {% endif %} {% endfor %}
-                        </div>
-
-                    </div>
-
-                    </div>
-                    <!--<end intro content>-->
-
-                    <div class="tab-pane active" id="admin">
-                        <h3>In Practice</h3>
-                    <!-- start synapse in practice content -->
-                        <div class="row">
-                            {% for page in doclist %} {% if page.category == 'inpractice' %}
-                                <ul>
-                                    <li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.excerpt}}</li>
-                                    </ul>
-                            {% endif %} {% endfor %}
-                        </div>
-
-                    </div>
-                    <!--End synapse in practice content-->
-
-
-                    <div class="clearfix"></div>
-                </div>
-
-            </div>
+<div class="tab-content">
+    <div class="tab-pane active" id="intro">
+        <!--Start intro content-->
+        <h3>Introduction</h3>
+        <div class="row">
+            {% for page in doclist %} {% if page.category == 'intro' %}
+                <ul>
+                    <li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.excerpt}}</li>
+                    </ul>
+                {% endif %} {% endfor %}
         </div>
     </div>
+    <!-- <end intro content> -->
+    <div class="tab-pane active" id="howto">
+        <!--Start how to content-->
+        <h3>How To Articles</h3>
+        <div class="row">
+            {% for page in doclist %} {% if page.category == 'howto' %}
+                <ul>
+                    <li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.excerpt}}</li>
+                    </ul>
+            {% endif %} {% endfor %}
+        </div>
 
-<!-- Nav tabs -->
+    </div>
+    <!--end how to content-->
 
-</div>
+    <div class="tab-pane active" id="governance">
+        <!--Start governance content-->
+        <h3>Governance and Security</h3>
+        <div class="row">
+            {% for page in doclist %} {% if page.category == 'governance' %}
+                <ul>
+                    <li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.excerpt}}</li>
+                    </ul>
+            {% endif %} {% endfor %}
+        </div>
 
+    </div>
+    <!--end governance content-->
+
+    <div class="tab-pane active" id="apiclient">
+        <!--Start api-client content-->
+        <h3>API Clients</h3>
+        <div class="row">
+            {% for page in doclist %} {% if page.category == 'apiclient' %}
+                <ul>
+                    <li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.excerpt}}</li>
+                    </ul>
+                {% endif %} {% endfor %}
+        </div>
+
+    </div>
+
+    </div>
+    <!--<end intro content>-->
+
+    <div class="tab-pane active" id="admin">
+        <h3>In Practice</h3>
+    <!-- start synapse in practice content -->
+        <div class="row">
+            {% for page in doclist %} {% if page.category == 'inpractice' %}
+                <ul>
+                    <li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.excerpt}}</li>
+                    </ul>
+            {% endif %} {% endfor %}
+        </div>
+
+    </div>
+    <!--End synapse in practice content-->
+
+
+    <div class="clearfix"></div>
 </div>
