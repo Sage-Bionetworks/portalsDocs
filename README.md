@@ -10,7 +10,7 @@ scientists use to carry out, track, and communicate their research in real time.
 - Assign GitHub issue to yourself to track work in progress and prevent duplicate efforts. If you don't know what you should work on, look for things tagged with `help-wanted` or `good-first-issue`.
 - Create a [feature branch](https://guides.github.com/introduction/flow/) from the `gh-pages` branch to make your changes or new contribution.
 - Use a Markdown editor (e.g. Typora) to visualize edits locally. 
-- Open a PR and request a review.
+- Open a [pull request](https://help.github.com/en/articles/about-pull-requests) against the `gh-pages` branch and [request a review](https://help.github.com/en/articles/requesting-a-pull-request-review).
 - Merge requires approving review by product manager or ....
 
 Synapse Docs is generated using [Github Pages](https://pages.github.com/). Follow the standard [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) guide.
