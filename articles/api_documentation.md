@@ -37,7 +37,7 @@ layout: index
         </a>
     </div>
     <div class="col-xs-12 col-sm-3">
-        <a href="https://rest-docs.synapse.org/">
+        <a href="https://rest-docs.synapse.org/rest/">
             <div class="subject-card">
                 <img src="../assets/images/api_gears.png" alt="gears_icon" style="width: 2.0em;"/>
                 <h5>REST API</h5>
