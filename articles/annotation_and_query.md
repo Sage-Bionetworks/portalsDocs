@@ -35,7 +35,7 @@ To add annotations on a single entity through the web client, click the `Annotat
 
 <img src="/assets/images/webAnnotation.png">
 
-To add annotations on multiple files, please refer to our Synapse in Practice article <a href="/articles/managing_custom_metadata_at_scale.html">"Managing Custom Metadata at Scale"</a> for a tutorial on how to do this efficiently and effectively leveraging <a href="/articles/views.html"></a>.
+To add annotations on multiple files, please refer to our Synapse in Practice article <a href="/articles/managing_custom_metadata_at_scale.html">"Managing Custom Metadata at Scale"</a> for a tutorial on how to do this efficiently and effectively leveraging <a href="/articles/views.html">File Views</a>.
 
 ##### Command line
 
@@ -70,7 +70,7 @@ Click **File Tools**, **Annotations** and **Edit** to add, delete, or modify ann
 
 <img src="/assets/images/annotationsDetail.png">
 
-To modify annotations on multiple files, please refer to our Synapse in Practice article <a href="/articles/managing_custom_metadata_at_scale.html">"Managing Custom Metadata at Scale"</a> for a tutorial on how to do this efficiently and effectively leveraging <a href="/articles/views.html"></a>.
+To modify annotations on multiple files, please refer to our Synapse in Practice article <a href="/articles/managing_custom_metadata_at_scale.html">"Managing Custom Metadata at Scale"</a> for a tutorial on how to do this efficiently and effectively leveraging <a href="/articles/views.html">File Views</a>.
 
 ##### Command line
 
