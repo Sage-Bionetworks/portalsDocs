@@ -87,6 +87,9 @@ Images can be inserted using either Markdown or HTML, it all depends on your pre
 <img src="/assets/images/image1.jpg" alt="alt text">
 ```
 
+### Inserting code 
+The docs may contain a high level overview of a feature, but should link to the [Python docs](https://python-docs.synapse.org/build/html/index.html) and [synapser](https://r-docs.synapse.org/articles/synapser.html) docs, pointing to the relevant anchor, for code examples. This is to ensure code is validated with the client release cycles. 
+
 ## License
 
 Distributed under the Eclipse Public License, the same as Clojure.
