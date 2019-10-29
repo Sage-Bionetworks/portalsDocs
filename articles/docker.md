@@ -91,3 +91,18 @@ where the digest for a commit is printed to the command line after a successful 
 
 {% include note.html content="You can add external repositories, i.e. repositories that live in other registries like DockerHub and quay.io. For these repositories there is no tight integration (Synapse doesn't contact these external registries) but it allows you to list Docker repositories that are relevant to the project but are not within Synapse.
 " %}
+
+## Debugging Issues
+
+Unfortunately, while using the Docker client with the Synapse Docker registry, you may encounter an `unauthorized: authentication required` error. This can be caused by an erroneous user name or password or other reasons. To differentiate between the two a user can type:
+
+```
+docker login docker.synapse.org
+```
+
+Once login succeeds, the correct credentials will be cached on the machine, so any further issues can be attributed to sharing settings or trashing of the repo, as described below.
+
+* To pull a Docker repo' you must have download access in the sharing settings of the parent project.
+* To push a Docker repo' you must be a Synapse certified user and have create permission if the repo does not exist or update permission if it does.
+* Any operation will fail if the repo is in the trash can.
+Note: In Synapse, Docker repo's have names of the form: docker.synapse.org/syn123456/path/to/repo, where syn123456 is the project ID, so it should be clear which project's sharing settings to check.
