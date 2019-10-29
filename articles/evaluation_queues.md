@@ -181,6 +181,15 @@ Clicking **Refresh Columns** will add these default columns.
 
 <img style="width: 80%;" src="/assets/images/leaderboard_columns.png">
 
+#### Leaderboard renderers
+
+* userid: Renders any Synapse user id to a Synapse user profile
+* date/epochdate: Renders epochtime in milliseconds to local time
+* markdown link: Support link in markdown format `[my link](url.com)`
+* synapseid: Renders any Synapse Entity id to the actual Synapse entity
+* cancelcontrol: Allows for cancellation of submissions.
+
+
 ### Saving Leaderboard Widget
 If you are happy with your leaderboard configurations, save both the configurations and the wiki page to see the Leaderboard. 
 
