@@ -185,3 +185,17 @@ Clicking **Refresh Columns** will add these default columns.
 If you are happy with your leaderboard configurations, save both the configurations and the wiki page to see the Leaderboard.
 
 <img style="width: 80%;" src="/assets/images/leaderboard_on_wiki.png">
+
+### Adding Submit to Evaluation Widget
+
+<img style="width: 80%;" src="/assets/images/add_submission_widget.png">
+
+Aside from directing people to submit to an evaluation queue by navigating to an Synapse Entity, you can also add a `Submit To Evaluation` widget on a wiki page. Here you will get an option of allowing people to submit to evaluation queues of a project or a single evaluation queue.
+
+<img style="width: 80%;" src="/assets/images/submit_to_evaluation_widget.png">
+
+
+**Alpha Mode Feature:** Ability for users to fill out a from as their submission.
+
+<img style="width: 80%;" src="/assets/images/submission_react_widget.png">
+
