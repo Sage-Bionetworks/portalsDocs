@@ -128,6 +128,10 @@ To set the sharing setting, go to the **Challenge** tab and see your list of Eva
 
 Any Synapse Entity may be submitted to an Evaluation Queue.
 
+In the R and Python examples, you need to know the ID of the evaluation queue which you you are submitting to.  This ID is usually provided to you by administrators of the queue. 
+The submission function takes **two optional parameters**: `name` and `team`.  Name can be provided to serve as a custom name of the submission. If a name is not provided, the name of the entity being submitted will be used. Teams can optionally be provided to give credit to members of the team that contributed to the submission.
+
+
 ##### Python
 
 ```python
@@ -161,6 +165,15 @@ submission <- synSubmit(
     name = "My Submission", # An arbitrary name for your submission
     team = "My Team Name") # Optional, can also pass a Team object or id
 ```
+
+##### Web
+
+Navigate to an uploaded file in Synapse and click on `Tools` on the upper right hand corner.
+Select `Submit To Challenge`.  After doing so, pick the challenge you want to submit to, and follow the steps to complete your submission.
+
+<img id="toobig" src="/assets/images/submit_file_to_challenge.png">
+
+
 
 ## View Submissions of an Evaluation Queue
 
