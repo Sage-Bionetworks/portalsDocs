@@ -184,7 +184,7 @@ Clicking **Refresh Columns** will add these default columns.
 
 * userid: Renders any Synapse user id to a Synapse user profile
 * date/epochdate: Renders epochtime in milliseconds to local time
-* markdown link: Support link in markdown format `[my link](url.com)`
+* markdown link: Support Synapse wiki markdown format`
 * synapseid: Renders any Synapse Entity id to the actual Synapse entity
 * cancelcontrol: Allows for cancellation of submissions.
 
