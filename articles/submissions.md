@@ -11,36 +11,9 @@ category: howto
 }
 </style>
 
-# Submission
+## Submissions
 
-Every submission you make to an Evaluation queue has a unique submission id attached to it.  This id should not be confused with Synapse ids which start with syn...  All submissions have a Submission and SubmissionStatus object attached to it.  A submission can also contain annotations that can be used to display on live leaderboards.  It is good to note that these added annotations can be set to either public or private.  Private annotations cannot be read by people on the live leaderboard unless the READ_PRIVATE_SUBMISSIONS ACL is set on the evaluation queue.
+Every submission you make to an Evaluation queue has a unique id.  This id should not be confused with Synapse ids which start with `syn...`.  All submissions have a `Submission` and `SubmissionStatus` object.  Annotations can be added to a `SubmissionStatus` to be displayed on leaderboards.  Each of these added annotations can be set to either public or private.  Private annotations cannot be read by people on the a leaderboard unless the Team or Synapse user has `Can Score` or `Admin` permissions on the evaluation queue.  Public annotations can be viewed by any Team or user that at least has `Can View` permissions.  See more about [evaluation queues](evaluation_queues.md).
 
-{% tabs %}
-	{% tab Python %}
-		{% highlight python %}
-import synapseclient
-syn = synapseclient.login()
-#Get submission / annotations
-sub = syn.getSubmission(submissionId)
-annotations = syn.getSubmissionStatus(submissionId)
-#Get all scored submissions in an evaluation queue
-e = syn.getEvaluation(e)
-bundles = syn.getSubmissionBundles(e, status = "SCORED")
-for sub, status in bundles:
-	print(sub)
-	print(status)
-		{% endhighlight %}
-	{% endtab %}
 
-	{% tab R %}
-		{% highlight r %}
-# Get submission / annotations
-library(synapseClient)
-synapseLogin()
-sub <- synGetSubmission(submissionId)
-annotations <- synGetSubmissionStatus(submissionId)
-# Get all scored submissions in an evaluation queue
-bundles <- as.list(synGetSubmissionBundles(evaluation, status="SCORED"))
-		{%endhighlight %}
-	{% endtab %}
-{% endtabs %}
+
