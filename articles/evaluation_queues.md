@@ -6,12 +6,11 @@ excerpt: An queue accepts submission of Synapse entities for evaluation.
 category: howto
 ---
 
-# Evaluation Queues
 An Evaluation queue allows for people to submit Synapse Files, Docker images, etc. for evaluation.  They are designed to support open-access data analysis and modeling challenges in Synapse. This framework provides tools for administrators to collect and analyze data models from Synapse users created for a specific goal or purpose.
 
-## Create an Evaluation Queue 
+## Create an Evaluation Queue
 
-To create a queue, you must first create a Synapse project. To learn how to do so, please follow instructions [here](/articles/getting_started.html#project-and-data-management-on-synapse). An Evaluation Queue can take several parameters that you can use to fine tune it to your preferences. The minimum requirements to create a queue are:
+To create a queue, you must first create a Synapse project. To learn how to do so, please follow instructions [here](getting_started.md#project-and-data-management-on-synapse). An Evaluation Queue can take several parameters that you can use to fine tune it to your preferences. The minimum requirements to create a queue are:
 
 * name – Unique name of the evaluation
 * description – A short description of the evaluation
@@ -24,7 +23,7 @@ Additionally, you can pass in an optional **quota** parameter using the R, Pytho
 * firstRoundStart - The date/time at which the first round begins in UTC
 * roundDurationMillis -  The duration of each round in milliseconds
 * numberOfRounds - The number of rounds, or null if there is no end
-* submissionLimit - The maximum number of submissions per team/participant per round. Please keep in mind that the system will prevent additional submissions by a user/team once they have hit this number of submissions. 
+* submissionLimit - The maximum number of submissions per team/participant per round. Please keep in mind that the system will prevent additional submissions by a user/team once they have hit this number of submissions.
 
 {% include note.html content="The name of your evaluation queue MUST be unique, otherwise the queue will not be created." %}
 
@@ -76,7 +75,7 @@ synStore(evaluation)
 
 You can create Evaluation queues on the web by navigating to your challenge site by adding `/admin` to the url (E.g. www.synapse.org/#!Synapse:syn12345/admin).  Click **Tools** on the right corner and **Add Evaluation Queue** and follow the prompts.
 
-<img src="/assets/images/create_evaluation_queues.png">
+![Create evaluation queue](../assets/images/create_evaluation_queues.png)
 
 In the web client, the quota can be modified under the **Challenge** tab by clicking `Edit` for the Evaluations that require a quota.
 
@@ -165,7 +164,7 @@ submission <- synSubmit(
 
 ## View Submissions of an Evaluation Queue
 
-All submissions of an Evaluation queue can be views through the through the use of a leaderboard.  To learn how to create a wiki page, please visit [here](/articles/wikis.html).  Below are instructions on how to set up a leaderboard. You must know the **evaluation Id** to do so; see the section on how to "Configure an Evaluation Queue" for instructions on finding the evaluation Id.
+All submissions of an Evaluation queue can be views through the through the use of a leaderboard.  To learn how to create a wiki page, please visit [here](wikis.md).  Below are instructions on how to set up a leaderboard. You must know the **evaluation Id** to do so; see the section on how to "Configure an Evaluation Queue" for instructions on finding the evaluation Id.
 
 ### Adding Leaderboard Widget
 
@@ -182,6 +181,7 @@ Clicking **Refresh Columns** will add these default columns.
 <img style="width: 80%;" src="/assets/images/leaderboard_columns.png">
 
 ### Saving Leaderboard Widget
-If you are happy with your leaderboard configurations, save both the configurations and the wiki page to see the Leaderboard. 
+
+If you are happy with your leaderboard configurations, save both the configurations and the wiki page to see the Leaderboard.
 
 <img style="width: 80%;" src="/assets/images/leaderboard_on_wiki.png">
