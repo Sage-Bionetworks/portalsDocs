@@ -39,7 +39,7 @@ layout: default
             <div class="caption">
                 <h5><b>{{ page.title }}</b></h5>
                 <p>{{page.excerpt}}</p>
-                <a href="{{ page.url }}.html" class="btn btn-default btn-sm" role="button">Learn More</a>
+                <a href="{{ page.url | relative_url }}" class="btn btn-default btn-sm" role="button">Learn More</a>
             </div>
 
         </div>
