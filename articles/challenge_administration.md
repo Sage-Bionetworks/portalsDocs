@@ -66,14 +66,15 @@ Challenge participants can submit Synapse Entities (e.g. `File`, `Folder`, `Proj
 Please visit the [Evaluation Queue article](evaluation_queues.md) to learn more about queue configuration.
 
 One of the features of Synapse for DREAM Challenges is the live compilation of submission statistics for all evaluation queues.  You can see the stat's for various challenges [here](https://www.synapse.org/#!Synapse:syn2504723/wiki/65150).  In order to activate statistics for your evaluation queues:
-- Navigate to your Challenge project in Synapse
-- Click on the Challenge tab
-- Next to each Evaluation submission queue click Share
-- In the name field type `evaluationstatistics`. The new entry will appear in the list of accessors above.
-- Next to the new entry use the pull down menu to change Can View to Can Score.
-- Click Save.
 
-Statistics are updated weekly and retroactively. (You need not have enabled statistics at the beginning of your challenge to have the entire history reported.)
+1. Navigate to your Challenge project in Synapse.
+1. Click on the Challenge tab.
+1. Next to each Evaluation submission queue, click Share.
+1. In the name field type `evaluationstatistics`. The new entry will appear in the list of accessors above.
+1. Next to the new entry use the pull down menu to change Can View to Can Score.
+1. Click Save.
+
+Statistics are updated weekly. They are also retroactive - you do not have to enable statistics at the beginning of your challenge to have the entire history reported.
 
 <br/>
 
