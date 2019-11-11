@@ -115,7 +115,7 @@ SELECT * FROM <synId> WHERE <expression>
 
 The <expression> section are the conditions for limiting a search. Every entity has properties useful for searching:
 
-- All entities (Projects, Files, Folders, Tables/Views, Docker containers): `id`, `name`, `createdOn`, `createdBy`, modifiedOn, `modifiedBy`, `etag`, `type`, `parentId`, `benefactorId`, `projectId`
+- All entities (Projects, Files, Folders, Tables/Views, Docker containers): `id`, `name`, `createdOn`, `createdBy`, `modifiedOn`, `modifiedBy`, `etag`, `type`, `parentId`, `benefactorId`, `projectId`
 
 - Versionable entities (Files, Table/Views): `currentVersion`
 
