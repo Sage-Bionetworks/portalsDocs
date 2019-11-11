@@ -121,7 +121,7 @@ The <expression> section are the conditions for limiting a search. Every entity 
 
 - Files only: `dataFileHandleId`
 
-File also have md5, file size and content type as properties. These properties are not available in a View and not searchable.
+Files also have an `contentMd5`, `contentSize` and `contentType` as properties. These properties are not available in a View and are not searchable.
 
 ```sql
 SELECT * FROM syn123456 WHERE "id" = 'syn00012'
