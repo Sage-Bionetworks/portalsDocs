@@ -9,6 +9,12 @@ Docker is a tool for creating, running, and managing lightweight virtual machine
 
 Synapse users interact with the Synapse Docker registry using the standard Docker client. In Synapse, Docker containers are represented as versioned 'repositories' under the 'Docker' tab. As with Files and Tables, repositories are organized by project and inherit the access permissions from the parent project. [Local Sharing Settings](https://docs.synapse.org/articles/sharing_settings.html#sharing-files-folders-and-tables) can be applied directly to the repository if permissions should differ from the project.
 
+To learn more about working with Docker using one of our programmatic clients, including code examples for the below tasks, see:
+
+* Docker in [Python Docs](https://python-docs.synapse.org/build/html/Entity.html?highlight=docker#synapseclient.entity.DockerRepository).
+* Docker in [R Docs](https://r-docs.synapse.org/articles/docker.html).
+
+
 ## Creating a new Docker image
 
 Let's begin by creating a custom Docker image.  Users can choose to either modify an existing Docker image or build a Docker image from a Dockerfile.  Docker images must be tagged with 'docker.synapse.org/synapseProjectId/myreponame' to allow images to be saved.
