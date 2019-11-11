@@ -128,7 +128,7 @@ To set the sharing setting, go to the **Challenge** tab and see your list of Eva
 
 Any Synapse entity may be submitted to an Evaluation Queue.
 
-In the R and Python examples, you need to know the ID of the evaluation queue which you you are submitting to.  This ID is usually provided to you by administrators of the queue. 
+In the R and Python examples, you need to know the ID of the evaluation queue. This ID must be provided to you by administrators of the queue. 
 The submission function takes **two optional parameters**: `name` and `team`.  Name can be provided to serve as a custom name of the submission. If a name is not provided, the name of the entity being submitted will be used. Teams can optionally be provided to give credit to members of the team that contributed to the submission.
 
 
