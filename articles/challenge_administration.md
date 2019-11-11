@@ -75,7 +75,6 @@ One of the features of Synapse for DREAM Challenges is the live compilation of s
 1. Click Save.
 
 Statistics are updated weekly. They are also retroactive - you do not have to enable statistics at the beginning of your challenge to have the entire history reported.
-<br/>
 
 ## Launch the Challenge Space
 
