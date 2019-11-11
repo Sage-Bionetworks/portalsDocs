@@ -113,7 +113,7 @@ Queries in Synapse look SQL-like and you can query any Table or View with `<synI
 SELECT * FROM <synId> WHERE <expression>
 ```
 
-The <expression> section are the conditions for limiting a search. Every entity has system metadata useful for searching:
+The <expression> section are the conditions for limiting a search. Every entity has properties useful for searching:
 
 - All entities (Projects, Files, Folders, Tables/Views, Docker containers): `id`, `name`, `createdOn`, `createdBy`, modifiedOn, `modifiedBy`, `etag`, `type`, `parentId`, `benefactorId`, `projectId`
 
