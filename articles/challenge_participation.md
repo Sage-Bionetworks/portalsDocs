@@ -37,7 +37,7 @@ The data stored on the challenge Synapse site can be accessed using the Synapse 
 
 ## Run your Algorithms and Submit to the Challenge
 
-You can submit to a challenge queue by using the R, Python or web client. In many cases, submitting through the web is easiest. All submissions must be first uploaded into Synapse. Follow instructions [here](getting_started.md#project-and-data-management-on-synapse) on how to upload to a project. Most challenge queues will be labeled by `challengename-subchallenge#` as a challenge may have different questions that it may want you to answer.  Learn more about submitting to [evaluation queues](evaluation_queues.md)
+You can submit to a challenge queue by using the R, Python or web client. All submissions must be first uploaded to Synapse. Follow these [instructions](getting_started.md#project-and-data-management-on-synapse) to learn how to upload to a project. Most challenge queues will be labeled by `challengename-subchallenge#` as a challenge may have different questions that it may want you to answer.  Learn more about submitting to [evaluation queues](evaluation_queues.md)
 
 
 ## Share Ideas and Ask Questions
