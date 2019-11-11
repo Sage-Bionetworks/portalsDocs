@@ -8,7 +8,7 @@ order: 2
 
 ## Access Control
 
-Synapse has two ways to control who can access your content. `Sharing Settings`, or permissions, determine _who_ can access content and at what level. `Conditions for Use` define _how_ users with access may use the data. All content in Synapse has `Sharing Settings` but not all content has `Conditions for Use`. See the [Conditions for Use](/articles/access_control.html) article for information about those settings. This article covers sharing settings only.
+Synapse has two ways to control who can access your content. `Sharing Settings`, or permissions, determine _who_ can access content and at what level. `Conditions for Use` define _how_ users with access may use the data. All content in Synapse has Sharing Settings but not all content has Conditions for Use. See the [Conditions for Use](/articles/access_control.html) article for information about those settings. This article covers sharing settings only.
 
 <a name="sharing-setting"></a>
 
@@ -22,7 +22,7 @@ When sharing with specific users and teams, Synapse supports the following permi
 
 ### View permissions
 
-View permissions give a Synapse user the ability to see that something in Synapse exists (like a project, file, or folder). They can discover it using Synapse search, and it will be visible to them if included in a [view](articles/views.html). If there are [annotations](https://docs.synapse.org/articles/annotation_and_query.html) associated with it, they can see these as well. They cannot see the contents of a file, including if a preview of the file is available in the web. The only permissions that can be granted to the public (anonymous users) are view permissions.
+View permissions give a Synapse user the ability to see that something in Synapse exists (like a project, file, or folder). They can discover it using Synapse search, and it will be visible to them if included in a [view](articles/views.html). If there are [annotations](https://docs.synapse.org/articles/annotation_and_query.html) associated with it, they can see these as well. They cannot see the contents of a file, including if a preview of the file is available in the web. View permissions are the only permissions that can be granted to the public (anonymous users).
 
 ### Download permissions
 
