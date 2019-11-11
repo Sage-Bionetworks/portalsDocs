@@ -169,7 +169,7 @@ submission <- synSubmit(
 ##### Web
 
 Navigate to an uploaded file in Synapse and click on `Tools` on the upper right hand corner.
-Select `Submit To Challenge`.  After doing so, pick the challenge you want to submit to, and follow the steps to complete your submission.
+Select **Submit To Challenge** to pick the challenge for your submission. Follow the provided steps to complete your submission.
 
 <img id="toobig" src="/assets/images/submit_file_to_challenge.png">
 
