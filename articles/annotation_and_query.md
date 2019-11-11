@@ -113,17 +113,22 @@ Queries in Synapse look SQL-like and you can query any `Table` or `View` with `<
 SELECT * FROM <synId> WHERE <expression>
 ```
 
-The `<expression>` section are the conditions for limiting the search. Below demonstrates some examples of limiting searches.
+The `<expression>` section are the conditions for limiting a search.  Every entity has system metadata useful for searching:
+
+- All entities (Projects, Files, Folders, Tables/Views, Docker containers): id, name, createdOn, createdBy, modifiedOn, modifiedBy, etag, type, parentId, benefactorId, projectId
+
+- Versionable entities (Files, Table/Views): currentVersion
+
+- Files only: dataFileHandleId
+
+File also have md5, file size and content type as properties. These properties are no available in a View and not searchable.
+
 
 ```sql
-SELECT * FROM syn123456 WHERE "fileFormat"='fastq'
+SELECT * FROM syn123456 WHERE "id" = 'syn00012'
 ```
 
-```sql
-SELECT * FROM syn123456 WHERE "RIN"<=6.1
-```
-
-Along with annotations added by users, every entity has a number of fields useful for searching. For a complete list, see:
+ For a complete list of example queries, see:
 
 <a href="https://rest-docs.synapse.org/rest/org/sagebionetworks/repo/web/controller/TableExamples.html" target="_blank" class="btn btn-info btn-lg active" role="button" aria-pressed="true">SQL Query Examples</a>
 
