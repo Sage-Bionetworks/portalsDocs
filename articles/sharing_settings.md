@@ -30,7 +30,15 @@ Download permissions give a Synapse user the ability to see the contents of a Fi
 
 ### Edit permissions
 
-Edit permissions allows a Synapse user to make changes to something in Synapse. Edit permissions are cumulative with view and download permissions. They can change the name of an entity. They can [change the annotations](/articles/annotation_and_query.html#modifying-annotations) associated with an entity, including removing existing annotations. They can [create a new version](/articles/files_and_versioning.html#uploading-a-new-version) of a file. They can make changes to a [Wiki](/articles/wikis.html). A user can also [change the storage location settings](/articles/custom_storage_location.html) of a Project or Folder. A user with edit permissions cannot delete the entity shared with them.
+Edit permissions allows a Synapse user to make changes to something in Synapse. Edit permissions are cumulative with view and download permissions. A user with edit permissions can:
+
+- change the name of an entity.
+- [change the annotations](/articles/annotation_and_query.html#modifying-annotations) associated with an entity, including removing existing annotations.
+- [create a new version](/articles/files_and_versioning.html#uploading-a-new-version) of a file
+- make changes to a [Wiki](/articles/wikis.html).
+- [change the storage location settings](/articles/custom_storage_location.html) of a Project or Folder.
+
+A user with edit permissions cannot delete the entity shared with them.
 
 ### Edit and delete permissions
 
