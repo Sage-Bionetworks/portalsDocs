@@ -26,7 +26,7 @@ category: howto
 
 Wiki pages can be written using text, [Markdown](https://www.markdownguide.org/), or basic HTML. Additionally, you can embed dynamic content based on other resources stored in Synapse.
 
-Wikis inherit their [sharing settings](https://docs.synapse.org/articles/sharing_settings.html) from the Project, Folder, or File it is associated with, and cannot have separate sharing settings. Anyone with 'View' permissions or greater can see the content of the Wiki page. When a Project, Folder or File is shared with the public, Wikis are visible to viewers who are not logged in to Synapse.
+A Wiki inherits it's [sharing settings](https://docs.synapse.org/articles/sharing_settings.html) from the Project, Folder, or File it is associated with, and cannot have separate sharing settings. Anyone with 'view' permissions or greater can see the content of the Wiki page. When a Project, Folder or File is shared with the public, the associated Wiki is visible to viewers who are not logged in to Synapse.
 
 ## Creating, Editing, and Deleting a Wiki
 
