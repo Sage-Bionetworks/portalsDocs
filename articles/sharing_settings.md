@@ -22,7 +22,7 @@ When sharing with specific users and teams, Synapse supports the following permi
 
 ### View permissions
 
-View permissions give a Synapse user the ability to see that something in Synapse exists (like a project, file, or folder). They can discover it using Synapse search, and it will be visible to them if included in a [view](articles/views.html). If there are [annotations](https://docs.synapse.org/articles/annotation_and_query.html) associated with it, they can see these as well. They cannot see the contents of a file, including if a preview of the file is available in the web. View permissions are the only permissions that can be granted to the public (anonymous users).
+View permissions give a Synapse user the ability to see that something in Synapse exists (like a Project, File, or Folder). They can discover it using Synapse search, and it will be visible to them if included in a [View](articles/views.html). If there are [annotations](https://docs.synapse.org/articles/annotation_and_query.html) associated with it, they can see these as well. They cannot see the contents of a File, including if a preview of the file is available in the web. View permissions are the only permissions that can be granted to the public (anonymous users).
 
 ### Download permissions
 
