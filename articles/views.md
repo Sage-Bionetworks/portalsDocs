@@ -58,8 +58,6 @@ query <- synTableQuery('SELECT * FROM syn123')
 
 Views can be used to update annotations in bulk. To add new annotations, see the [Annotations](annotation_and_query.md#adding-annotations) article. To update other metadata in bulk, such as provenance, see the [Bulk Processing](uploading_in_bulk.md) article.
 
-<iframe width="100%" height="480" src="https://www.youtube.com/embed/ij9AqLsoDk0?rel=0" frameborder="0" allowfullscreen></iframe>
-
 For example, if you would like to use the Python client to update the annotation `dogSays`:`bark` to `dogSays`:`woof` in every file in a `File View` with the synId syn456, you can do:
 
 ```python
