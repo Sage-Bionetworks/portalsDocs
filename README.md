@@ -40,7 +40,7 @@ category: intro
 
 ### Style Guide 
 
-The title in the [YAML front matter block](https://jekyllrb.com/docs/front-matter/) will populate as a level 1 header. Therefore, please do not supply a H1 header in the markdown! 
+- The title in the [YAML front matter block](https://jekyllrb.com/docs/front-matter/) will populate as a level 1 header. Therefore, please do not supply a H1 header in the markdown! 
 ```
 ---
 title: "Wikis"
@@ -54,6 +54,7 @@ Start of short summary about wikis.
 - Article content should begin with a short summary describing what the page is about.
 - Synapse entity types or features are only emphasized in the top-most Overview section on each page. e.g. `File` , `Project` 
   - In all subsequent sections, these entity types or features are referred to as proper nouns and capitalized. e.g. File, Project
+- Synapse buttons are emphasized as **bold**. e.g Click **File Tools**.
 
 ### Using alert tags
 
