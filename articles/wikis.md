@@ -22,7 +22,7 @@ category: howto
 }
 </style>
 
-`Wikis` provide a space to write narrative content to describe a project or content within the project. They are available in Synapse on `Projects`, `Folders`, and `Files`. Every `Project` has a separate Wiki tab where you can create pages and a hierarchy of sub-pages.
+`Wikis` provide a space to write narrative content to describe a project or content within the project. They are available in Synapse on `Projects`, `Folders`, and `Files`. Every Project has a separate Wiki tab where you can create pages and a hierarchy of sub-pages.
 
 Wiki pages can be written using text, [Markdown](https://www.markdownguide.org/), or basic HTML. Additionally, you can embed dynamic content based on other resources stored in Synapse.
 
