@@ -26,7 +26,7 @@ category: howto
 
 `Wikis` can also be added to `Folders` and `Files` allowing additional content documentation. `Wikis`, whether they are under the Wiki tab or on a folder, are built in the same way and enables incorporation of highly customized content including, but not limited to: images, tables, code blocks, LaTeX formatted equations, and scholarly references. In addition, Synapse-specific widgets lets you embed dynamic content based on other resources stored in Synapse.
 
-Wikis inherit their sharing settings from the object they are associated with (a Project, Folder, or File), and cannot have separate sharing settings from that object. Anyone (including viewers who are not logged into Synapse if the Project is shared with the public) who has 'View' permissions or greater can see the content of the Wiki page if the object is shared with them.
+Wikis inherit their [sharing settings](https://docs.synapse.org/articles/sharing_settings.html) from the Project, Folder, or File it is associated with, and cannot have separate sharing settings. Anyone with 'View' permissions or greater can see the content of the Wiki page. When a Project, Folder or File is shared with the public, Wikis are visible to viewers who are not logged in to Synapse.
 
 ## Creating, Editing, and Deleting a Wiki
 
