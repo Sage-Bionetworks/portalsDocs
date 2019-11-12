@@ -26,7 +26,7 @@ View permissions give a Synapse user the ability to see that something in Synaps
 
 ### Download permissions
 
-Download permissions give a Synapse user the ability to see the contents of a file entity and download the file to their own computer. Having download permissions includes also having view permissions.
+Download permissions give a Synapse user the ability to see the contents of a File entity and download the file to their own computer. Having download permissions includes also having view permissions.
 
 ### Edit permissions
 
