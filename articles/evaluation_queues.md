@@ -195,5 +195,4 @@ Aside from directing people to submit to an evaluation queue by navigating to an
 <img style="width: 80%;" src="/assets/images/submit_to_evaluation_widget.png">
 
 
-<img style="width: 80%;" src="/assets/images/submission_react_widget.png">
 
