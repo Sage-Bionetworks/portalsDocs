@@ -161,10 +161,15 @@ submission <- synSubmit(
     name = "My Submission", # An arbitrary name for your submission
     team = "My Team Name") # Optional, can also pass a Team object or id
 ```
+## Submissions
 
-## View Submissions of an Evaluation Queue
+Every submission you make to an Evaluation queue has a unique id.  This id should not be confused with Synapse ids which start with syn....  All submissions have a `Submission` and `SubmissionStatus` object.
 
-All submissions of an Evaluation queue can be views through the through the use of a leaderboard.  To learn how to create a wiki page, please visit [here](wikis.md).  Below are instructions on how to set up a leaderboard. You must know the **evaluation Id** to do so; see the section on how to "Configure an Evaluation Queue" for instructions on finding the evaluation Id.
+### Viewing Submissions
+
+All Submissions to an Evaluation queue can be viewed through a leaderboard.  Annotations can be added to a SubmissionStatus to be displayed.  Each of these added annotations can be set to either public or private.  Private annotations cannot be read by people on the a leaderboard unless the Team or Synapse user has **Can Score** or **Admin** permissions on the Evaluation queue.  Public annotations can be viewed by any Team or user that at least has **Can View** permissions.
+
+To learn how to create a wiki page, please visit [here](wikis.md).  Below are instructions on how to set up a leaderboard. You must know the Evaluation queue ID to do so; see the section on how to "Configure an Evaluation Queue" for instructions on finding the ID.
 
 ### Adding Leaderboard Widget
 
