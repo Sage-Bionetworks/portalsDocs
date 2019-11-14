@@ -181,12 +181,14 @@ Clicking **Refresh Columns** will add these default columns.
 <img style="width: 80%;" src="/assets/images/leaderboard_columns.png">
 
 #### Leaderboard renderers
+The appearance of columns in a leaderboard can be modified by changing the renderer used. You can change this by changing the value for the 'Renderer' attribute when configuring the leaderboard widget. These are the available renderers:
 
-* userid: Renders any Synapse user id to a Synapse user profile
-* date/epochdate: Renders epochtime in milliseconds to local time
-* markdown link: Support Synapse wiki markdown format`
-* synapseid: Renders any Synapse Entity id to the actual Synapse entity
-* cancelcontrol: Allows for cancellation of submissions.
+* userid: Renders a Synapse user ID to a Synapse user profile badge
+* date: Renders epochtime in milliseconds to local time.  The user can also select to show dates in UTC (in user settings) rather than local time.
+* epochdate: Deprecated
+* markdown link: Renders text added as Synapse Wiki Markdown
+* synapseid: Renders any Synapse Entity ID to a clickable Synapse entity badge
+* cancelcontrol: Renders a button that allows for the cancellation of submissions
 
 
 ### Saving Leaderboard Widget
