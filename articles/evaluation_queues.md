@@ -194,7 +194,6 @@ Aside from directing people to submit to an evaluation queue by navigating to an
 
 <img style="width: 80%;" src="/assets/images/submit_to_evaluation_widget.png">
 
-**Alpha Mode Feature:** Present a custom HTML form to the user to fill out during submission.  This form is built using [react JSON schema](https://react-jsonschema-form.readthedocs.io/en/latest/). Both a `ui` and `JSON schema` need to be uploaded into Synapse.  A Parent Container must also be assigned when using this feature.  This Container must have Synapse Folders named after the Synapse userids that may be using this evaluation queue service.  These users must have `write` permissions to their respective directories.
 
 <img style="width: 80%;" src="/assets/images/submission_react_widget.png">
 
