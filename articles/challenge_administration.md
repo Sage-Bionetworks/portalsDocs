@@ -65,7 +65,7 @@ Challenge participants can submit Synapse Entities (e.g. `File`, `Folder`, `Proj
 
 Please visit the [Evaluation Queue article](evaluation_queues.md) to learn more about queue configuration.
 
-One of the features of Synapse for DREAM Challenges is the live compilation of submission statistics for all evaluation queues, including total submission count, count per individual/team, count per submission state (scored, invalid) and count per week.  You can see the statistics for various challenges [here](https://www.synapse.org/#!Synapse:syn2504723/wiki/65150).  In order to activate statistics for your evaluation queues:
+One of the features of Synapse for DREAM Challenges is the live compilation of submission statistics for all evaluation queues, including total submission count, count per individual/team, count per submission state (scored, invalid) and count per week.  You can see the statistics for various challenges [here](https://www.synapse.org/#!Synapse:syn2504723/wiki/65150).  In order to activate statistics for your evaluation queues, you must be an administrator of the challenge Project. Each queue needs to be configured to generate the statistics. To do this:
 
 1. Navigate to your Challenge project in Synapse.
 1. Click on the Challenge tab.
