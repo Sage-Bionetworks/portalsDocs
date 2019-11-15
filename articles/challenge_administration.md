@@ -65,6 +65,17 @@ Challenge participants can submit Synapse Entities (e.g. `File`, `Folder`, `Proj
 
 Please visit the [Evaluation Queue article](evaluation_queues.md) to learn more about queue configuration.
 
+One of the features of Synapse for DREAM Challenges is the live compilation of submission statistics for all evaluation queues, including total submission count, count per individual/team, count per submission state (scored, invalid) and count per week.  You can see the statistics for various challenges [here](https://www.synapse.org/#!Synapse:syn2504723/wiki/65150).  In order to activate statistics for your evaluation queues, you must be an administrator of the challenge Project. Each queue needs to be configured to generate the statistics. To do this:
+
+1. Navigate to your Challenge project in Synapse.
+1. Click on the Challenge tab.
+1. Next to each Evaluation submission queue, click Share.
+1. In the name field type `evaluationstatistics`. The new entry will appear in the list of accessors above.
+1. Next to the new entry use the pull down menu to change Can View to Can Score.
+1. Click Save.
+
+Statistics are updated weekly. They are also retroactive - you do not have to enable statistics at the beginning of your challenge to have the entire history reported.
+
 ## Launch the Challenge Space
 
 To launch the space, share the evaluation queues with the participant `Team` and use the `copyWiki` command provided by [synapseutils](https://github.com/Sage-Bionetworks/synapsePythonClient) to deploy the initial **Staging** `Wiki` to the **Live** challenge `Project`. The `Wiki` of the **Live** `Project` will then be replaced by the `Wiki` in the **Staging** `Project`.
