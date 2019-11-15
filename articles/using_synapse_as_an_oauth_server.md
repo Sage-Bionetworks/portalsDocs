@@ -21,7 +21,7 @@ The details of the Synapse Open ID Connect implementation are published on the w
 
 All the OAuth clients in Synapse need to be verified after creation and before usage: if a unverified client is used to perform requests Synapse will prevent their execution replying with a [HTTP 403 Forbidden](https://en.wikipedia.org/wiki/HTTP_403) response.
 
-In order to verify an OAuth client please contact the Synapse Access and Compliance Team at <act@sagebase.org> detailing:
+In order to verify an OAuth client please contact <synapseinfo@sagebase.org> detailing:
 
 - Your name
 - The id of the client to be verified (See below on how to obtain the client id)
