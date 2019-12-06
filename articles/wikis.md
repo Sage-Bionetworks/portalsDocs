@@ -22,17 +22,17 @@ category: howto
 }
 </style>
 
-`Wikis` provide a space to write narrative content to describe a project or content within the project. They are available in Synapse on `Projects`, `Folders`, and `Files`. Every `Project` has a separate Wiki tab where you can create pages and a hierarchy of sub-pages.
+`Wikis` provide a space to write narrative content to describe a project or content within the project. They are available in Synapse on `Projects`, `Folders`, and `Files`. Every Project has a separate Wiki tab where you can create pages and a hierarchy of sub-pages.
 
-`Wikis` can also be added to `Folders` and `Files` allowing additional content documentation. `Wikis`, whether they are under the Wiki tab or on a folder, are built in the same way and enables incorporation of highly customized content including, but not limited to: images, tables, code blocks, LaTeX formatted equations, and scholarly references. In addition, Synapse-specific widgets lets you embed dynamic content based on other resources stored in Synapse.
+Wiki pages can be written using text, [Markdown](https://www.markdownguide.org/), or basic HTML. Additionally, you can embed dynamic content based on other resources stored in Synapse.
 
-Wikis inherit their sharing settings from the object they are associated with (a Project, Folder, or File), and cannot have separate sharing settings from that object. Anyone (including viewers who are not logged into Synapse if the Project is shared with the public) who has 'View' permissions or greater can see the content of the Wiki page if the object is shared with them.
+A Wiki inherits it's [sharing settings](https://docs.synapse.org/articles/sharing_settings.html) from the Project, Folder, or File it is associated with, and cannot have separate sharing settings. Anyone with 'view' permissions or greater can see the content of the Wiki page. When a Project, Folder or File is shared with the public, the associated Wiki is visible to viewers who are not logged in to Synapse.
 
 ## Creating, Editing, and Deleting a Wiki
 
 ### Through a Web Browser
 
-After creating a new project, select the Wiki tab. Start a `Wiki` through the Tools menu by selecting the 'Edit Project Wiki' function. Content in this first `Wiki` becomes your `Project`'s home page. Go to the Tools menu to add subpages to your `Wiki`. These will appear as links on the left side of your home page. Adding a `Wiki` to a `Folder` or `File` is done in a similar manner by selecting 'Edit Folder/File Wiki'. Content added to a `Wiki` can be previewed before saving. Each version of a saved `Wiki` is visible under Wiki History where older versions can be restored. To delete a `Wiki` select 'Delete Wiki Page' under Tools.  
+After creating a new project, select the Wiki tab. Start a Wiki through the Tools menu by selecting the **Edit Project Wiki** function. Content in this first Wiki becomes your Project's home page. Go to the Tools menu to add subpages to your Wiki. These will appear as links on the left side of your home page. Adding a Wiki to a Folder or File is done in a similar manner by selecting 'Edit Folder/File Wiki'. Content added to a Wiki can be previewed before saving. Each version of a saved Wiki is visible under Wiki History where older versions can be restored. To delete a `Wiki` select **Delete Wiki Page** under Tools.  
 
 Use the **Tools** menu and then select **Edit Project/Folder/File wiki**
 
@@ -63,15 +63,15 @@ wiki <- synStore(wiki)
 
 ## Wiki Subpages
 
-A `Project` Wiki can have subpages, which will appear nested below the main Wiki page. This will also create a navigation bar on the right side of the page that lists the Wiki subpages in the order they were created. Links to wiki subpages include the `Project` ID, the wiki path, and the ID of the wiki page, e.g. https://www.synapse.org/#!Synapse:syn150935/wiki/27376. The subpage ID can be found in the browser URL bar when the subpage is viewed.
+A Project Wiki can have subpages, which will appear nested below the main Wiki page. This will also create a navigation bar on the right side of the page that lists the Wiki subpages in the order they were created. Links to wiki subpages include the Project ID, the wiki path, and the ID of the wiki page, e.g. https://www.synapse.org/#!Synapse:syn150935/wiki/27376. The subpage ID can be found in the browser URL bar when the subpage is viewed.
 
-To add a subpage, use the **Tools** menu and then click "Add Wiki Subpage". You can then edit this sub-page like any other Wiki page through the **Tools** menu and "Edit Project Wiki".
+To add a subpage, use the **Tools** menu and then click **Add Wiki Subpage**. You can then edit this sub-page like any other Wiki page through the **Tools** menu and **Edit Project Wiki**.
 
-These pages can be reordered through the Edit Order button below the Wiki page navigation bar to change both the hierarchy and the order of pages within a particular level.
+These pages can be reordered through the **Edit Order** button below the Wiki page navigation bar to change both the hierarchy and the order of pages within a particular level.
 
 ## Wiki Markdown Language
 
-The layout and text of a `Wiki` can be customized using standard Markdown notation. A Formatting Guide is available within the Wiki editing window. For a reference of Markdown formatting see the [Markdown Formatting Guide](https://www.synapse.org/#!Wiki:syn2467792/ENTITY/64247). Useful Markdown shortcuts are available in the Wiki Editor in a tool bar including: heading, bold, italic, strike-through, code block, sub and superscript. Links can be added to content available from any source with a URL.
+The layout and text of a Wiki can be customized using standard Markdown notation. A Formatting Guide is available within the Wiki editing window. For a reference of Markdown formatting see the [Markdown Formatting Guide](https://www.synapse.org/#!Wiki:syn2467792/ENTITY/64247). Useful Markdown shortcuts are available in the Wiki Editor in a tool bar including: heading, bold, italic, strike-through, code block, sub and superscript. Links can be added to content available from any source with a URL.
 
 ## Wiki Widgets
 
@@ -90,10 +90,10 @@ See the 'Insert' list for the following widgets to customize your Wiki design.
 | **File Preview** <br/> Embeds a preview window for csv, txt and image files||
 | **Provenance** <br/> Embeds the provenance graph created for a file |  <img id="image" src="../assets/images/wiki_provenance.png"> |
 | **Table of Contents** <br/> Creates a content list that links to sections of the wiki based on headers and subheaders |  <img id="image" src="../assets/images/wiki_tableofcontents.png"> |
-| **Entity List** <br/> A list of Synapse `Folders`, `Files` or `Tables` can be easily created by browsing to the Synapse location or searching by entity name or Synapse ID. The table lists entity name, date entity was created, who created it, and for `Files` and `Tables` - version and version notes|  <img id="tableImage" src="../assets/images/wiki_entitylist.png"> |
+| **Entity List** <br/> A list of Synapse Folders, Files or Tables can be easily created by browsing to the Synapse location or searching by entity name or Synapse ID. The table lists entity name, date entity was created, who created it, and for Files and Tables - version and version notes|  <img id="tableImage" src="../assets/images/wiki_entitylist.png"> |
 | **Table: Paste tabular data** <br/> A table can be created of any data by pasting tab delimited content into this widget window.  |  <img id="image" src="../assets/images/wiki_tablepastetabular.png"> |
-| **Table: Query on a Synapse `Table`** <br/> Provides a Query for any Synapse `Table` and displays the information in the`Wiki`. |  <img id="tableImage" src="../assets/images/wiki_queryonsyntable.png"> |
-| **Query on `Files`/`Folders`** <br/> Provides a Query based an annotations (need link) added to `Files` and `Folders`. Columns in the Query table can be renamed and ordered through the 'Add Column Renderer' | <img id="tableImage" src="../assets/images/wiki_tablequeryonfiles.png"> |
+| **Table: Query on a Synapse `Table`** <br/> Provides a Query for any Synapse Table and displays the information in the Wiki. |  <img id="tableImage" src="../assets/images/wiki_queryonsyntable.png"> |
+| **Query on `Files`/`Folders`** <br/> Provides a Query based an annotations (need link) added to Files and Folders. Columns in the Query table can be renamed and ordered through the 'Add Column Renderer' | <img id="tableImage" src="../assets/images/wiki_tablequeryonfiles.png"> |
 | **Button Link** <br/> Insert a button that links to content within Synapse or elsewhere. **Tip:** buttons can be colored purple by adding `'&highlight=true'` to the end of the widget markdown |<img id="image" src="../assets/images/wiki_insertbutton.png">|
 | **Join Team Button** <br/> Provide a button for people to join Synapse [Teams](teams.md) | <img id="image" src="../assets/images/wiki_jointeambutton.png"> |
 | **Team Badge** <br/> Creates a link to the `Team` profile | <img id="image" src="../assets/images/wiki_teambadge.png"> |

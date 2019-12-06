@@ -19,6 +19,14 @@ External web applications can now log in to Synapse and access users' identity a
 ## Registering and linking an OAuth 2.0 Client
 The details of the Synapse Open ID Connect implementation are published on the web in a standard Open ID Configuration document (aka the "discovery document"): [https://repo-prod.prod.sagebase.org/auth/v1/.well-known/openid-configuration](https://repo-prod.prod.sagebase.org/auth/v1/.well-known/openid-configuration).  The document includes the web endpoints for registration, authorization, and token generation, as well as the scope of resources that can be requested, and the formats in which Synapse will return information.
 
+All the OAuth clients in Synapse need to be verified after creation and before usage: if a unverified client is used to perform requests Synapse will prevent their execution replying with a [HTTP 403 Forbidden](https://en.wikipedia.org/wiki/HTTP_403) response.
+
+In order to verify an OAuth client please contact <synapseinfo@sagebase.org> detailing:
+
+- Your name
+- The id of the client to be verified (See below on how to obtain the client id)
+- A description of your application
+
 ## Create an OAuth 2.0 Client
 An external application can be registered with Synapse as a "client" application by following the steps below.   The API reference documents for what follows are [here](https://rest-docs.synapse.org/rest/#org.sagebionetworks.auth.OpenIDConnectController), and the following instructions show how to invoke them from Python:
 
@@ -54,12 +62,45 @@ client_id_and_secret = syn.restPOST(uri='/oauth2/client/secret/'+client_id,
 print(client_id_and_secret)
 ```
 
+##### R
+
+```r
+library(synapser)
+library(rjson)
+synLogin()
+
+client_meta_data <- list(
+  client_name='Your client name',
+  redirect_uris= list(
+    'https://yourhost.com/user/login'
+  ),
+  client_uri='https://yourhost.com/index.html',
+  policy_uri='https://yourhost.com/policy',
+  tos_uri='https://yourhost.com/terms_of_service',
+  userinfo_signed_response_alg='RS256'
+)
+
+# Create the client:
+client_meta_data<-synRestPOST('/oauth2/client', toJSON(client_meta_data), 
+  'https://repo-prod.prod.sagebase.org/auth/v1')
+
+client_id <-  client_meta_data$client_id
+
+# Generate and retrieve the client secret:
+client_id_and_secret<-synRestPOST(paste0('/oauth2/client/secret/',client_id), 
+  '', 'https://repo-prod.prod.sagebase.org/auth/v1')
+
+print(client_id_and_secret)
+```
+
 The client URI, policy URI, and terms of service URI are optional, as is the `userinfo_signed_response_alg` parameter. You can optionally include a `sector_identifier_uri` parameter, an advanced feature described [here](https://openid.net/specs/openid-connect-registration-1_0.html#SectorIdentifierValidation), relevant if the client uses multiple hosts since Synapse only returns `pairwise` subject values to its OAuth clients.
 
 
 The returned `client_id` and `client_secret` will be needed later when getting an access token. The secret is only returned once. (It is not stored in Synapse.)  If lost, you can generate a new secret but the previous one will be invalidated.
 
 You can retrieve, update, and delete your client programmatically using the following commands:
+
+##### Python
 
 ```python
 # Retrieve a client using its ID:
@@ -74,6 +115,25 @@ client_meta_data = syn.restPUT(uri='/oauth2/client/'+client_id,
 
 # Delete a client:
 syn.restDELETE(uri='/oauth2/client/'+client_id, endpoint=syn.authEndpoint)
+
+```
+
+##### R
+
+```r
+# Retrieve a client using its ID:
+client_meta_data <- synRestGET(paste0('/oauth2/client/',client_id), 
+	'https://repo-prod.prod.sagebase.org/auth/v1')
+
+client_meta_data$policy_uri <- 'https://yourhost.com/updated_policy'
+
+# Update a client's metadata:
+client_meta_data <- synRestPUT(paste0('/oauth2/client/',client_id), 
+	toJSON(client_meta_data), 'https://repo-prod.prod.sagebase.org/auth/v1')
+
+# Delete a client:
+synRestDELETE(paste0('/oauth2/client/',client_id), 
+	'https://repo-prod.prod.sagebase.org/auth/v1')
 
 ```
 

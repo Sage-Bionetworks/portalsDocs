@@ -37,48 +37,8 @@ The data stored on the challenge Synapse site can be accessed using the Synapse 
 
 ## Run your Algorithms and Submit to the Challenge
 
-You can submit to a challenge queue by using the R, Python or web client. In many cases, submitting through the web is easiest. All submissions must be first uploaded into Synapse. Follow instructions [here](getting_started.md#project-and-data-management-on-synapse) on how to upload to a project. Most challenge queues will be labeled by `challengename-subchallenge#` as a challenge may have different questions that it may want you to answer.
+You can submit to a challenge queue by using the R, Python or web client. All submissions must be first uploaded to Synapse. Follow these [instructions](getting_started.md#project-and-data-management-on-synapse) to learn how to upload to a project. Most challenge queues will be labeled by `challengename-subchallenge#` as a challenge may have different questions that it may want you to answer.  Learn more about submitting to [evaluation queues](evaluation_queues.md)
 
-In the R and Python examples, you need to know the evaluation ID of the subchallenge to which you you are submitting. The ID of the evaluation queue should be specified in the submission instructions specific to the challenge, but often times the queue you should submit to will also be labeled with the name of its relevant subchallenge in the _Challenge_s tab within the challenge project, under the _Evaluation Queues_ section.
-The submission function takes **two optional parameters**: `name` and `team`.  Name can be provided to serve as a custom name of the submission. If a name is not provided, the name of the entity being submitted will be used. Teams can optionally be provided to give credit to members of the team that contributed to the submission.
-
-The examples below will show you the process of uploading a file to a project and then submitting that file to the challenge evaluation queue.
-
-##### Python
-
-```python
-import synapseclient
-syn = synapseclient.login()
-
-parentId = "syn12345" # folder/project to upload your file to
-my_submission_file = File("/path/to/file.csv", parent=parentId)
-my_submission_file = syn.store(my_submission_file)
-
-# if you're submitting as a team, get team entity
-team_entity = syn.getTeam("NameOfYourTeam")
-# submit to the challenge evaluation queue
-my_submission = syn.submit(evaluation=evaluationId, entity=my_submission_file, name="Blue Team", team=team_entity)
-```
-
-##### R
-
-```r
-library(synapser)
-synLogin()
-my_submission_file <- File("/path/to/submission.csv", parentId="syn12345")
-my_submission_file <- synStore(my_submission_file)
-#The evaluationId must be a string here or there will be an error
-submission <- synSubmit(evaluationId, my_submission_file, name="Our Final Answer", team="Blue Team")
-```
-
-##### Web
-
-Navigate to an uploaded file in Synapse and click on `Tools` on the upper right hand corner.
-Select `Submit To Challenge`.  After doing so, pick the challenge you want to submit to, and follow the steps to complete your submission.
-
-<img id="toobig" src="/assets/images/submit_file_to_challenge.png">
-
-The submission function takes two optional parameters: `name` and `team` in Python, `submissionName` and `teamName` in R. The name can be provided to serve as a custom name of the submission. If a name is not not provided, the name of the entity being submitted will be used. A team name can be provided to give credit to members of the team that contributed to the submission.
 
 ## Share Ideas and Ask Questions
 

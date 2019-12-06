@@ -40,7 +40,7 @@ category: intro
 
 ### Style Guide 
 
-The title in the [YAML front matter block](https://jekyllrb.com/docs/front-matter/) will populate as a level 1 header. Therefore, please do not supply a H1 header in the markdown! 
+- The title in the [YAML front matter block](https://jekyllrb.com/docs/front-matter/) will populate as a level 1 header. Therefore, please do not supply a H1 header in the markdown! 
 ```
 ---
 title: "Wikis"
@@ -54,6 +54,7 @@ Start of short summary about wikis.
 - Article content should begin with a short summary describing what the page is about.
 - Synapse entity types or features are only emphasized in the top-most Overview section on each page. e.g. `File` , `Project` 
   - In all subsequent sections, these entity types or features are referred to as proper nouns and capitalized. e.g. File, Project
+- Synapse buttons are emphasized as **bold**. e.g Click **File Tools**.
 
 ### Using alert tags
 
@@ -86,6 +87,9 @@ Images can be inserted using either Markdown or HTML, it all depends on your pre
 ![alt text](/assets/images/image1.jpg)
 <img src="/assets/images/image1.jpg" alt="alt text">
 ```
+
+### Inserting code 
+The docs may contain a high level overview of a feature, but should link to the [Python docs](https://python-docs.synapse.org/build/html/index.html) and [synapser](https://r-docs.synapse.org/articles/synapser.html) docs, pointing to the relevant anchor, for code examples. This is to ensure code is validated with the client release cycles. 
 
 ## License
 
