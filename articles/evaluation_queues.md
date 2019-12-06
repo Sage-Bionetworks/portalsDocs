@@ -168,8 +168,7 @@ submission <- synSubmit(
 ```
 ## Submissions
 
-
-Every submission you make to an Evaluation queue has a unique id.  This id should not be confused with Synapse ids which start with syn....  All submissions have a `Submission` and `SubmissionStatus` object.
+Every submission you make to an Evaluation queue has a unique ID.  This ID should not be confused with Synapse IDs which start with syn. All submissions have a `Submission` and `SubmissionStatus` object.
 
 ##### Web
 
@@ -178,16 +177,13 @@ Select **Submit To Challenge** to pick the challenge for your submission. Follow
 
 <img id="toobig" src="/assets/images/submit_file_to_challenge.png">
 
-
-
 ## View Submissions of an Evaluation Queue
-
 
 ### Viewing Submissions
 
-All Submissions to an Evaluation queue can be viewed through a leaderboard.  Annotations can be added to a SubmissionStatus to be displayed.  Each of these added annotations can be set to either public or private.  Private annotations cannot be read by people on the a leaderboard unless the Team or Synapse user has **Can Score** or **Admin** permissions on the Evaluation queue.  Public annotations can be viewed by any Team or user that at least has **Can View** permissions.
+All Submissions to an Evaluation queue can be viewed through a leaderboard.  Annotations can be added to a SubmissionStatus to be displayed.  Each of these added annotations can be set to either public or private.  Private annotations cannot be read by people on the a leaderboard unless the Team or Synapse user has **Can Score** or **Admin** permissions on the Evaluation queue.  Public annotations can be viewed by any Team or user that have **Can View** permissions.
 
-To learn how to create a wiki page, please visit [here](wikis.md).  Below are instructions on how to set up a leaderboard. You must know the Evaluation queue ID to do so; see the section on how to "Configure an Evaluation Queue" for instructions on finding the ID.
+You must know the Evaluation queue ID to do so; see the section on how to "Configure an Evaluation Queue" for instructions on finding the ID.
 
 ### Adding Leaderboard Widget
 
@@ -208,3 +204,7 @@ Clicking **Refresh Columns** will add these default columns.
 If you are happy with your leaderboard configurations, save both the configurations and the wiki page to see the Leaderboard.
 
 <img style="width: 80%;" src="/assets/images/leaderboard_on_wiki.png">
+
+# See Also
+
+To learn how to create a Wiki page, please visit [the Wikis article](wikis.md).
