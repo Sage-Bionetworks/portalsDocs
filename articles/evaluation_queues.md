@@ -181,7 +181,7 @@ Select **Submit To Challenge** to pick the challenge for your submission. Follow
 
 ### Viewing Submissions
 
-All Submissions to an Evaluation queue can be viewed through a leaderboard.  Annotations can be added to a SubmissionStatus to be displayed.  Each of these added annotations can be set to either public or private.  Private annotations cannot be read by people on the a leaderboard unless the Team or Synapse user has **Can Score** or **Admin** permissions on the Evaluation queue.  Public annotations can be viewed by any Team or user that have **Can View** permissions.
+All submissions to an Evaluation Queue can be viewed through a leaderboard.  Annotations can be added to a SubmissionStatus object to be displayed.  Each of these added annotations can be set to either public or private.  Private annotations cannot be read by people on the a leaderboard unless the Team or Synapse user has **Can Score** or **Admin** permissions on the Evaluation queue.  Public annotations can be viewed by any Team or user that have **Can View** permissions.
 
 You must know the Evaluation queue ID to do so; see the section on how to "Configure an Evaluation Queue" for instructions on finding the ID.
 
