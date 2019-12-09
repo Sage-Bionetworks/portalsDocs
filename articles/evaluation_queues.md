@@ -179,11 +179,7 @@ Select **Submit To Challenge** to pick the challenge for your submission. Follow
 
 ## View Submissions of an Evaluation Queue
 
-### Viewing Submissions
-
-All submissions to an Evaluation Queue can be viewed through a leaderboard.  Annotations can be added to a SubmissionStatus object to be displayed.  Each of these added annotations can be set to either public or private.  Private annotations cannot be read by people on the a leaderboard unless the Team or Synapse user has **Can Score** or **Admin** permissions on the Evaluation queue.  Public annotations can be viewed by any Team or user that have **Can View** permissions.
-
-You must know the Evaluation queue ID to do so; see the section on how to "Configure an Evaluation Queue" for instructions on finding the ID.
+Submissions can be viewed through Leaderboard widgets on wikipages.
 
 ### Adding Leaderboard Widget
 
@@ -191,7 +187,9 @@ You must know the Evaluation queue ID to do so; see the section on how to "Confi
 
 ### Configuring Leaderboard Widget
 
-Once you click on **Leaderboard**, you will have to input your own query statement such as `select * from evaluation_9610091`.  Remember, 9610091 should be replaced with your own evaluation Id. To view all the columns available, click **Refresh Columns**.
+Submission annotations can be added to a SubmissionStatus object to be displayed.  Each of these added annotations can be set to either public or private.  Private annotations cannot be read by people on the a leaderboard unless the Team or Synapse user has **Can Score** or **Admin** permissions on the Evaluation queue.  Public annotations can be viewed by any Team or user that have **Can View** permissions.
+
+Once you click on **Leaderboard**, you will have to input your own query statement such as `select * from evaluation_9610091`.  Remember, 9610091 should be replaced with your own evaluation queue ID. To view all the columns available, click **Refresh Columns**.
 
 <img style="width: 80%;" src="/assets/images/configure_leaderboard_widget.png">
 
