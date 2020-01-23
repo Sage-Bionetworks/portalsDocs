@@ -1,12 +1,10 @@
 ---
-title: Welcome to Synapse Documentation
+title: Synapse Documentation
 description: Synapse is a collaborative, open-source research platform that allows teams to share data, track analyses, and collaborate.
 layout: index
 ---
 
-<div class="col-xs-12 col-md-12 col-lg-12" id="search-bar">
-    <h3 class="search-title">Search All Articles</h3>
-    <h5 class="search-text">Find articles and examples for using Synapse in your research</h5>
+<div class="col-xs-12 col-md-12 col-lg-12">
     <div id="landing-cse">
         <script>
               (function() {
