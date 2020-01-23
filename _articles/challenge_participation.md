@@ -2,7 +2,7 @@
 title: Participating in a Challenge
 layout: article
 excerpt: Learn how to participate in challenges.
-category: howto
+category: how-to
 ---
 
 <style>

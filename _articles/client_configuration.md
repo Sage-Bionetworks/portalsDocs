@@ -2,7 +2,7 @@
 title: Client Configuration
 layout: article
 excerpt: How to store login credentials and fine-tune your config file.
-category: apiclient
+category: API-client
 order: 2
 ---
 
