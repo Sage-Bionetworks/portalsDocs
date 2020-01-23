@@ -435,7 +435,7 @@ Custom css stying for google search bar
     /*float: right;*/
     /*min-width: 10px;*/
     /*max-width: 20%;*/
-    padding: 20px 0 0 0;
+    padding: 10px 0 0 10px;
 
 }
 .cse .gsc-control-cse:after,
@@ -764,11 +764,7 @@ b {
     color: #15C;
 }
 
-
-body { padding-top: 50px; }
-
 .navbar-fixed-top {
-    top: -50px; /* you'll have to figure out the exact number here */
     background-color: #2B688F;
 }
 
@@ -1061,13 +1057,13 @@ li.active span.round-tabs.five{
 
 /*Landing page styling*/
 #tagline {
-    text-align: left;
-    padding: 1em 2em 2em 8em;
+    text-align: center;
+    padding: 1em 2em 1em 2em;
     line-height: 2em;
     font-size: 1.25em;
     color: #4b4b4b;
-    margin-top: -60px;
-    margin-bottom: 10px;
+    /* margin-top: -60px; */
+    /* margin-bottom: 10px; */
 }
 #title {
     font-weight: inherit;
