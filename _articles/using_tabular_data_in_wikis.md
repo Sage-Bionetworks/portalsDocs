@@ -2,7 +2,7 @@
 title: Using Tabular Data in Wikis
 layout: article
 excerpt: Use Tables in wikis to augment team communication in projects. 
-category: inpractice
+category: in-practice
 ---
 
 ## Use a Wiki Table Widget to Feature a Data Subset

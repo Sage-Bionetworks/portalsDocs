@@ -1,7 +1,7 @@
 ---
 title: "Integrating Synapse in your RNA-Seq workflow"
 layout: article
-category: inpractice
+category: in-practice
 excerpt: Using Synapse in an RNA-Seq workflow to manage files and track processing steps.  
 ---
 

@@ -2,7 +2,7 @@
 title: "Views"
 layout: article
 excerpt: Use project and file views to query across multiple projects and folders.
-category: howto
+category: how-to
 ---
 
 A view is a type of Synapse [Table](tables.md) that queries across metadata ([Annotations](annotation_and_query.md)) for particular items (currently: projects or files) with a particular "scope". A `File View` lists all `Files` or `Tables` within one or more `Folders` or `Projects`. A `Project View` lists all `Projects` you've added to the view. Views can:

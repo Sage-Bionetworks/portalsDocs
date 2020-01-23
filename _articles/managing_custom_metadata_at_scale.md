@@ -2,7 +2,7 @@
 title: Managing Custom Metadata at Scale
 layout: article
 excerpt: Update metadata in bulk using file views and programmatic clients.
-category: inpractice
+category: in-practice
 ---
 
 This vignette will combine concepts from [Annotations and Queries](annotation_and_query.md), [Views](views.md), [Uploading and Downloading Data in Bulk](uploading_in_bulk.md) in order to **create a manifest** `velociraptor_manifest.txt`, **upload** 100 files and **edit** annotations on these files using the Synapse clients.

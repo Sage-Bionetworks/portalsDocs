@@ -2,7 +2,7 @@
 title: "Digital Object Identifiers (DOIs) in Synapse"
 layout: article
 excerpt: Mint DOIs in Synapse to cite your research.
-category: howto
+category: how-to
 ---
 
 <style>

@@ -2,7 +2,7 @@
 title: "Getting Started with Synapse"
 layout: article
 excerpt: A getting started guide for new users who are interested in learning about Synapse.
-category: intro
+category: get-started
 order: 1
 ---
 
