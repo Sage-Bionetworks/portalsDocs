@@ -23,13 +23,16 @@ layout: index
     {% endfor %}
     </ul>
 
-{% assign groups = site.articles | group_by: "category" | sort: "name" %}
+{% assign groups = site.articles | group_by: "category" | sort: "order"  %}
 
 {% for category in categories %}
 
     <div class="tab-pane active" id="{{ category.name }}">
 
     <h3>{{ category.title }}</h3>
+
+    <p>{{ category.excerpt }}</p>
+
     {% for group in groups %} {% if group.name contains category.name %}
     <ul>
     {% assign pages = group.items | sort: "order" %}
