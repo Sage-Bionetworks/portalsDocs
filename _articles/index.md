@@ -2,6 +2,7 @@
 title: Articles
 layout: index
 ---
+<center> These are the main instructions for using Synapse on the web and through the programmatic clients. Pick an area that interests you, or read them in order, to improve your knowledge of Synapse. </center>
 
 <!-- {% assign doclist = site.pages | sort: 'order' %} -->
 {% assign categories = site.categories | sort: "order" %}
@@ -30,7 +31,6 @@ layout: index
     <div class="tab-pane active" id="{{ category.name }}">
 
     <h3>{{ category.title }}</h3>
-
     <p>{{ category.excerpt }}</p>
 
     {% for group in groups %} {% if group.name contains category.name %}
