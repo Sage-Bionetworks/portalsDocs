@@ -13,3 +13,5 @@ collections:
     output: true
   categories:
     output: false
+  sections:
+    output: false
