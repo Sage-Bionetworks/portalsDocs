@@ -17,7 +17,7 @@ layout: index
         <div class="subject-card">
             <h5>{{ category.title }}</h5>
             <hr>
-            <span>{{ category.excerpt }}</span>
+            <p>{{ category.explanation }}</p>
         </div>
         </a>
     </div>
