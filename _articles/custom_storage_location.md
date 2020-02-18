@@ -2,7 +2,7 @@
 title: "Custom Storage Locations"
 layout: article
 excerpt: Follow these steps to set up custom storage locations and access them with Synapse. 
-category: how-to
+category: admin-and-settings
 ---
 
 <style>
