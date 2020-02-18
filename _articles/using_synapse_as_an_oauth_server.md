@@ -2,7 +2,7 @@
 title: "Using Synapse as an OAuth 2.0 Server"
 layout: article
 excerpt: Follow these steps to register an OAuth Client and authorize access to Synapse.
-category: how-to
+category: admin-and-settings
 ---
 
 <style>
