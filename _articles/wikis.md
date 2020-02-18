@@ -2,7 +2,7 @@
 title: "Wikis"
 layout: article
 excerpt: Create wikis to provide narrative content for your research.
-category: how-to
+category: [ collaboration-and-communication, synapse-101 ]
 ---
 
 <style>

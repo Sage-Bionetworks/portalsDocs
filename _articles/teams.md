@@ -2,7 +2,7 @@
 title: "Teams"
 layout: article
 excerpt: Form teams to easily manage groups of users for purposes of project access, communication, and challenges.  
-category: how-to
+category: collaboration-and-communication
 ---
 
 <style>
