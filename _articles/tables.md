@@ -2,7 +2,7 @@
 title: Tables
 layout: article
 excerpt: Creating, modifying, and querying tabular data on Synapse.
-category: how-to
+category: managing-data
 ---
 
 <style>
