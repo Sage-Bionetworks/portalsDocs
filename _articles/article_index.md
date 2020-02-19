@@ -1,5 +1,5 @@
 ---
-title: Articles
+title: Articles Index
 layout: index
 description: All documentation articles about Synapse.
 ---
