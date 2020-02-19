@@ -2,7 +2,7 @@
 title: Governance Overview
 layout: article
 excerpt: A look at the Synapse governance process.
-category: [governance, synapse-101]
+category: [ governance, onboarding ]
 order: 1
 ---
 

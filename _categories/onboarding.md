@@ -1,5 +1,5 @@
 ---
-name: synapse-101
+name: onboarding
 title: Onboarding
 excerpt: Get a brief overview of some of the main components of Synapse.
 explanation: Get a brief overview of some of the main components of Synapse.
