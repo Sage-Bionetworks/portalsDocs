@@ -2,7 +2,7 @@
 title: Genome Browser
 layout: article
 excerpt: How to Configure the Genome Browser Widget
-category: how-to
+category: [reproducible-research]
 ---
 
 ## Biodalliance Setup
