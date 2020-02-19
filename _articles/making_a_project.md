@@ -2,7 +2,7 @@
 title: Making a Project
 layout: article
 excerpt: An overview of Synapse Projects.
-category: [projects, synapse-101]
+category: [projects, onboarding]
 order: 2
 ---
 
