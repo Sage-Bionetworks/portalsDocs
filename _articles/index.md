@@ -1,48 +1,47 @@
 ---
 title: Articles
 layout: index
+description: These are the main instructions for using Synapse. Pick an section that interests you or read them in order.
 ---
-<center> These are the main instructions for using Synapse on the web and through the programmatic clients. Pick an area that interests you, or read them in order, to improve your knowledge of Synapse. </center>
+
+<div class="col-xs-12 col-md-12 col-lg-12" id="subjects">
 
 <!-- {% assign doclist = site.pages | sort: 'order' %} -->
 {% assign categories = site.categories | sort: "order" %}
+{% assign sections = site.sections | sort: "order" %}
+{% assign category_groups = site.categories | group_by: "section" | sort: "order"  %}
 
-<div class="col-xs-12 col-sm-12 col-lg-12" id="subjects">
-    <ul class="nav nav-tabs" id="myTab" style="margin-top: -70px; border: 2px solid transparent;">
+{% for section in sections %}
 
-    {% for category in categories %}
+<!-- <div class="tab-pane active" id="{{ section.name }}"> -->
 
-    <div class="col-xs-12 col-sm-3">
-        <a href="#{{ category.name }}">
-        <div class="subject-card">
-            <h5>{{ category.title }}</h5>
-            <hr>
-            <p>{{ category.explanation }}</p>
-        </div>
-        </a>
-    </div>
-    {% endfor %}
-    </ul>
+<h3>{{ section.title }}</h3>
+<p>{{ section.explanation }}</p>
 
-{% assign groups = site.articles | group_by: "category" | sort: "order"  %}
+{% for group in category_groups %} {% if group.name contains section.name %}
+{% assign pages = group.items | sort: "order" %}
 
-{% for category in categories %}
+<div class="col-xs-12 col-md-12 col-lg-12 col-sm-12" id="subjects" style="background-color: transparent;">
 
-    <div class="tab-pane active" id="{{ category.name }}">
-
-    <h3>{{ category.title }}</h3>
-    <p>{{ category.excerpt }}</p>
-
-    {% for group in groups %} {% if group.name contains category.name %}
-    <ul>
-    {% assign pages = group.items | sort: "order" %}
-
-    {% for page in pages %}
-        <li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.excerpt}}</li>    {%endfor%}
-    </ul>
-    {% endif %} {%endfor%}
-    </div>
+{% for page in pages %}
+<div class="col-xs-12 col-sm-4">
+<a href="article_index.html#{{ page.name }}">
+<div class="subject-card">
+    <h5>{{ page.title }}</h5>
+    <hr>
+    <p>{{ page.excerpt }}</p>
+</div>
+</a>
+</div>
 {% endfor %}
 
-    <div class="clearfix"></div>
 </div>
+
+{% endif %} {%endfor%}
+<!-- </div> -->
+{% endfor %}
+
+
+</div>
+
+<div class="clearfix"></div>
