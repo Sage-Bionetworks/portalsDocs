@@ -2,7 +2,7 @@
 title: "User Types including Certified Users"
 layout: article
 excerpt: Find out about the three levels of Synapse users and the privileges and responsibilities associated with each level.
-category: governance
+category: [governance, synapse-101]
 order: 3
 ---
 

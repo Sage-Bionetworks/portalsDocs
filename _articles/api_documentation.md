@@ -1,7 +1,9 @@
 ---
 title: API Documentation
 description: Technical documentation for using the Python, R, command line clients and RESTful APIs.
+excerpt: Technical documentation for using the Python, R, command line clients and RESTful APIs.
 layout: index
+category: API-client
 ---
 
 
