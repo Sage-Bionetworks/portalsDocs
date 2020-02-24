@@ -8,22 +8,28 @@ description: All documentation articles about Synapse.
 
 {% assign categories = site.categories | sort: "order" %}
 {% assign sections = site.sections | sort: "order" %}
-{% assign groups = site.articles | group_by: "category" | sort: "order"  %}
+{% assign grouped_articles = site.articles | group_by: "category" | sort: "order"  %}
 
 {% for category in categories %}
+
 <div class="tab-pane active" id="{{ category.name }}">
 
+{% for group in grouped_articles %}
+{% if group.name contains category.name and group.items.size > 0 %}
+{% assign pages = group.items | sort: "order" %}
+{% break %}
+{% endif %}
+{%endfor%}
+
+<b>Size {{ pages.size }}</b>
 <h3>{{ category.title }}</h3>
 <p>{{ category.excerpt }}</p>
 
-{% for group in groups %} {% if group.name contains category.name %}
 <ul>
-{% assign pages = group.items | sort: "order" %}
 
 {% for page in pages %}
 <li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.excerpt}}</li>    {%endfor%}
 </ul>
-{% endif %} {%endfor%}
 </div>
 
 <!-- TODO replace this with style -->
