@@ -25,6 +25,11 @@ description: All documentation articles about Synapse.
 </ul>
 {% endif %} {%endfor%}
 </div>
+
+<!-- TODO replace this with style -->
+<br/>
+<br/>
+
 {% endfor %}
 
 </div>
