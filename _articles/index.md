@@ -15,8 +15,9 @@ description: These are the main instructions for using Synapse. Pick an section 
 
 <!-- <div class="tab-pane active" id="{{ section.name }}"> -->
 
-<h3>{{ section.title }}</h3>
-<p>{{ section.explanation }}</p>
+<!-- TODO: centering is being done via html tag, but should be css -->
+<center><h3>{{ section.title }}</h3>
+<p>{{ section.explanation }}</p></center>
 
 {% for group in category_groups %} {% if group.name contains section.name %}
 {% assign pages = group.items | sort: "order" %}
