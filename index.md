@@ -49,7 +49,7 @@ layout: index
         </a>
     </div>
     <div class="col-xs-12 col-md-6 col-lg-4">
-        <a href="{{'articles/synapse_in_practice.html' | relative_url}}">
+        <a href="{{'articles/#governance' | relative_url}}">
         <div class="subject-card">
             <h5>Governance</h5>
             <hr>
@@ -58,7 +58,7 @@ layout: index
         </a>
     </div>
     <div class="col-xs-12 col-md-6 col-lg-4">
-        <a href="{{'articles/synapse_in_practice.html' | relative_url}}">
+        <a href="{{'articles/faq.html' | relative_url}}">
         <div class="subject-card">
             <h5>FAQ</h5>
             <hr>
@@ -67,7 +67,7 @@ layout: index
         </a>
     </div>
     <div class="col-xs-12 col-md-6 col-lg-4">
-        <a href="{{'articles/synapse_in_practice.html' | relative_url}}">
+        <a href="https://www.synapse.org/#!SynapseForum:default">
         <div class="subject-card">
             <h5>Forum</h5>
             <hr>
