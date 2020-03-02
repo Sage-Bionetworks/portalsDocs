@@ -14,14 +14,14 @@ description: All documentation articles about Synapse.
 <div class="tab-pane active" id="{{ category.name }}">
 
 <h3>{{ category.title }}</h3>
-<p>{{ category.excerpt }}</p>
+<p>{{ category.explanation }}</p>
 
 {% for group in groups %} {% if group.name contains category.name %}
 <ul>
 {% assign pages = group.items | sort: "order" %}
 
 {% for page in pages %}
-<li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.excerpt}}</li>    {%endfor%}
+<li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.explanation}}</li>    {%endfor%}
 </ul>
 {% endif %} {%endfor%}
 </div>
