@@ -12,10 +12,10 @@ description: All documentation articles about Synapse.
 
 <!-- Onboarding needs a specific ordering that is difficult to get with a loop.
 	 Instead, we have to hardcode the ordering for the onboarding category.
-	 Note that if the except changes in the article, it will not reflect the
+	 Note that if the excerpt changes in the article, it will not reflect the
 	 change on the index page. The excerpt must be updated here.
 -->
-<div class="tab-pane active" id="Onboarding">
+<div class="tab-pane active" id="onboarding">
 
 <h3>Onboarding</h3>
 <p>Get a brief overview of some of the main components of Synapse.</p>
