@@ -12,9 +12,9 @@ description: All documentation articles about Synapse.
 
 {% for category in categories %}
 
-<!--- The get started 'category' is only used for the card on the index page. --->
-<!--- It should be skipped here. --->
-{% unless category.name == "get-started" %}
+<!--- The get started and onboarding 'categories' are only used for the card on the index page. --->
+<!--- They should be skipped here. --->
+{% unless category.name == "get-started" or category.name == "onboarding" %}
 
 <div class="tab-pane active" id="{{ category.name }}">
 
