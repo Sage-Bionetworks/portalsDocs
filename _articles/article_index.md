@@ -21,7 +21,7 @@ description: All documentation articles about Synapse.
 {% assign pages = group.items | sort: "order" %}
 
 {% for page in pages %}
-<li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.explanation}}</li>    {%endfor%}
+<li><b><a href="{{ page.url | relative_url}}">{{ page.title }}</a></b>: {{page.excerpt}}</li>    {%endfor%}
 </ul>
 {% endif %} {%endfor%}
 </div>
