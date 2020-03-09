@@ -1,7 +1,7 @@
 ---
 title: API Documentation
-description: Technical documentation for using the Python, R, command line clients and RESTful APIs.
-excerpt: Technical documentation for using the Python, R, command line clients and RESTful APIs.
+description: Technical documentation for interacting with Synapse using R, Python, command line, and the REST API.
+excerpt: Technical documentation for interacting with Synapse using R, Python, command line, and the REST API.
 layout: index
 category: API-client
 ---

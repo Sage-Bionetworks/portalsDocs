@@ -53,7 +53,7 @@ layout: index
         <div class="subject-card">
             <h5>Governance</h5>
             <hr>
-            <span>Requirements ad best practices for using Synapse in a compliant, ethical, and considerate manner.</span>
+            <span>Requirements and best practices for using Synapse in a compliant and ethical manner.</span>
         </div>
         </a>
     </div>
