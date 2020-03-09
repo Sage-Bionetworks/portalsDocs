@@ -1,8 +1,8 @@
 ---
 title: Making a Project
 layout: article
-excerpt: An overview of Synapse Projects.
-category: [projects, onboarding]
+excerpt: All content in Synapse is stored within Projects. Start here to set up your first Project.
+category: [onboarding]
 order: 2
 ---
 
