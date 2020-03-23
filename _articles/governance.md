@@ -2,7 +2,7 @@
 title: Governance Overview
 layout: article
 excerpt: Learn the values of the Synapse community and how to share data consistent with Synapse governance policies. 
-category: [ governance, onboarding ]
+category: governance
 order: 1
 ---
 

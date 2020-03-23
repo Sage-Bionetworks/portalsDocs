@@ -2,7 +2,7 @@
 title: Discussion Forums
 layout: article
 excerpt: Communicate with collaborators and other community members with the Synapse Discussion Forum.
-category: [collaboration-and-communication, onboarding]
+category: collaboration-and-communication
 ---
 
 <style>
