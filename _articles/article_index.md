@@ -44,7 +44,7 @@ description: All documentation articles about Synapse.
 <div class="tab-pane active" id="{{ category.name }}">
 
 <h3>{{ category.title }}</h3>
-<p>{{ category.excerpt }}</p>
+<p>{{ category.explanation }}</p>
 
 {% for group in grouped_articles %}
 {% if group.name contains category.name and group.items.size > 0 %}
