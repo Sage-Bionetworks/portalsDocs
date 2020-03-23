@@ -4,5 +4,5 @@ title: Challenges
 excerpt: Synapse is being used to run Scientific Computing Challenges. Use these articles to find out more!
 explanation: Synapse is being used to run Scientific Computing Challenges. Use these articles to find out more!
 section: core-components
-order: 3
+order: 9
 ---

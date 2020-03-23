@@ -2,7 +2,7 @@
 title: Discussion Forums
 layout: article
 excerpt: Explore the features of the discussion forum and how to use it to help your collaborations.
-category: [collaboration-and-communication, onboarding]
+category: collaboration-and-communication
 ---
 
 <style>

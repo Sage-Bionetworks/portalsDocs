@@ -2,7 +2,7 @@
 title: "Getting Started with the Synapse API Clients"
 layout: article
 excerpt: Use Synapse programmatically.
-category: [API-client, onboarding]
+category: API-client
 order: 1
 ---
 

@@ -67,7 +67,8 @@ layout: index
         </a>
     </div>
     <div class="col-xs-12 col-md-6 col-lg-4">
-        <a href="{{'articles/discussion.html' | relative_url}}">
+        <a href="https://www.synapse.org/#!SynapseForum:default">
+
         <div class="subject-card">
             <h5>Forum</h5>
             <hr>
