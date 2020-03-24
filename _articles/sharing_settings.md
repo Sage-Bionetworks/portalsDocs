@@ -2,7 +2,7 @@
 title: "Sharing Settings"
 layout: article
 excerpt: Sharing settings determine who can access content in Synapse.
-category: [ governance, admin-and-settings ]
+category: governance
 order: 2
 ---
 

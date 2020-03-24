@@ -2,7 +2,7 @@
 title: "Managing Teams for Groups and Projects"
 layout: article
 excerpt: Using Synapse teams for group permissions in projects.
-category: [collaboration-and-communication, in-practice]
+category: collaboration-and-communication
 ---
 
 ## Creating Permissions Models for Synapse Projects
