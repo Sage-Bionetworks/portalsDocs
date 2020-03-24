@@ -1,7 +1,7 @@
 ---
-title: "Downloading Data"
+title: "Get Started with Downloading Data"
 layout: article
-excerpt: Learn the best practices of finding and downloading files.
+excerpt: Start here to learn the syntax and first steps to download data using the Synapse programmatic clients.
 category: managing-data
 order: 3
 ---

@@ -1,7 +1,7 @@
 ---
 title: Governance Overview
 layout: article
-excerpt: A look at the Synapse governance process.
+excerpt: Learn the values of the Synapse community and how to share data consistent with Synapse governance policies. 
 category: governance
 order: 1
 ---

@@ -1,7 +1,7 @@
 ---
 title: Managing Custom Metadata at Scale
 layout: article
-excerpt: Update metadata in bulk using file views and programmatic clients.
+excerpt: Update Annotations in bulk using File Views and programmatic clients.
 category: metadata-and-annotations
 ---
 

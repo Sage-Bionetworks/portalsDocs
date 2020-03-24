@@ -1,7 +1,7 @@
 ---
 title: "User Accounts"
 layout: article
-excerpt: Create your user account and manage your profile  
+excerpt: Create your Synapse user account and manage your profile.  
 category: admin-and-settings
 ---
 

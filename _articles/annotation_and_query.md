@@ -1,7 +1,7 @@
 ---
 title: Annotations and Queries
 layout: article
-excerpt: Learn about using custom metadata, how to assign and modify annotations, and how to query them for analysis. 
+excerpt: Learn how to assign and modify Annotations as custom metadata and construct queries to find the files you need. 
 category: metadata-and-annotations
 ---
 

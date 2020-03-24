@@ -1,7 +1,7 @@
 ---
 title: Files and Versioning
 layout: article
-excerpt: Uploading and managing files and versions in Synapse.
+excerpt: Upload and manage file versions in Synapse.
 category: managing-data
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: Uploading and Downloading Data in Bulk
+title: Upload and Download Data in Bulk
 layout: article
-excerpt: Learn about bulk processes with files, annotations and provenance.
+excerpt: Learn how to upload and download data in bulk using a manifest file and the Synapse programmatic clients. 
 category: managing-data
 ---
 
