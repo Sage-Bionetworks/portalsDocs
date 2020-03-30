@@ -65,4 +65,4 @@ linkEnt <- synStore(linkEnt)
 
 ### See Also
 
-[Annotations and Queries](annotation_and_query.md), [Downloading Data](downloading_data.md), [Files and Versioning](versioning.md)
+[Annotations and Queries]({% link _articles/annotation_and_query.md %}), [Downloading Data]({% link _articles/downloading_data.md %}), [Files and Versioning]({% link _articles/versioning.md %})

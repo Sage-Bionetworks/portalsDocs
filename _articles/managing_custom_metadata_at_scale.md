@@ -5,7 +5,7 @@ excerpt: Update Annotations in bulk using File Views and programmatic clients.
 category: metadata-and-annotations
 ---
 
-This vignette will combine concepts from [Annotations and Queries](annotation_and_query.md), [Views](views.md), [Uploading and Downloading Data in Bulk](uploading_in_bulk.md) in order to **create a manifest** `velociraptor_manifest.txt`, **upload** 100 files and **edit** annotations on these files using the Synapse clients.
+This vignette will combine concepts from [Annotations and Queries]({% link _articles/annotation_and_query.md %}), [Views]({% link _articles/views.md %}), [Uploading and Downloading Data in Bulk]({% link _articles/uploading_in_bulk.md %}) in order to **create a manifest** `velociraptor_manifest.txt`, **upload** 100 files and **edit** annotations on these files using the Synapse clients.
 
 ## Annotation dictionaries
 
@@ -45,7 +45,7 @@ And ta-da! Your files have been uploaded!
 
 ## Create a File View (Web)
 
-Since the files have been uploaded with annotations, a file [View](views.md) allows users to query, facet, and bulk manipulate the files and metadata.
+Since the files have been uploaded with annotations, a file [View]({% link _articles/views.md %}) allows users to query, facet, and bulk manipulate the files and metadata.
 
 To create your File View:
 

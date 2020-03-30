@@ -33,4 +33,4 @@ From your [Synapse homepage](https://www.synapse.org/), navigate to your user me
 
 ## See Also
 
-[Getting Started](getting_started.md), [Custom Storage Locations](custom_storage_location.md), [Downloading Data](downloading_data.md)
+[Getting Started]({% link _articles/getting_started.md %}), [Custom Storage Locations]({% link _articles/custom_storage_location.md %}), [Downloading Data]({% link _articles/downloading_data.md %})

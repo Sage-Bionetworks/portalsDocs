@@ -216,4 +216,4 @@ If you are happy with your leaderboard configurations, save both the configurati
 
 # See Also
 
-To learn how to create a Wiki page, please visit [the Wikis article](wikis.md).
+To learn how to create a Wiki page, please visit [the Wikis article]({% link _articles/wikis.md %}).
