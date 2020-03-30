@@ -83,4 +83,4 @@ When participating in a Challenge, you may submit solutions as an individual or 
 
 ### See Also
 
-[Wikis]({% link _articles/wikis.md %}), [Files and Versioning]({% link _articles/versioning.md %}), [Sharing Settings]({% link _articles/access_controls.md %})
+[Wikis]({{ site.baseurl }}{% link _articles/wikis.md %}), [Files and Versioning]({{ site.baseurl }}{% link _articles/versioning.md %}), [Sharing Settings]({{ site.baseurl }}{% link _articles/access_controls.md %})

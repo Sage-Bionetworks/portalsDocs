@@ -29,7 +29,7 @@ Participants **must** be registered for the challenge if they want to submit and
 
 ## Join or Create a Team
 
-We encourage you to form a team with other participants for the challenge. You can either join a team or create your own team of collaborators. See instructions on how to form a team [here]({% link _articles/teams.md %}). It is important to note that you **cannot** be on more than one team. Once you have submitted as a team or individual, you will not be able to submit as another team. If you decide to be part of a team, please register your team to the challenge - there will be a place to do this in every challenge wiki.
+We encourage you to form a team with other participants for the challenge. You can either join a team or create your own team of collaborators. See instructions on how to form a team [here]({{ site.baseurl }}{% link _articles/teams.md %}). It is important to note that you **cannot** be on more than one team. Once you have submitted as a team or individual, you will not be able to submit as another team. If you decide to be part of a team, please register your team to the challenge - there will be a place to do this in every challenge wiki.
 
 ## Accessing Challenge Data
 
@@ -37,11 +37,11 @@ The data stored on the challenge Synapse site can be accessed using the Synapse 
 
 ## Run your Algorithms and Submit to the Challenge
 
-You can submit to a challenge queue by using the R, Python or web client. All submissions must be first uploaded to Synapse. Follow these [instructions]({% link _articles/getting_started.md %}) to learn how to upload to a project. Most challenge queues will be labeled by `challengename-subchallenge#` as a challenge may have different questions that it may want you to answer.  Learn more about submitting to [evaluation queues]({% link _articles/evaluation_queues.md %})
+You can submit to a challenge queue by using the R, Python or web client. All submissions must be first uploaded to Synapse. Follow these [instructions]({{ site.baseurl }}{% link _articles/getting_started.md %}) to learn how to upload to a project. Most challenge queues will be labeled by `challengename-subchallenge#` as a challenge may have different questions that it may want you to answer.  Learn more about submitting to [evaluation queues]({{ site.baseurl }}{% link _articles/evaluation_queues.md %})
 
 
 ## Share Ideas and Ask Questions
 
 Every challenge has a discussion forum for participants (the `Discussion` tab on the Challenge Project page). The forum is a space for participants to ask any questions and raise ideas.
 
-Instructions on how to use the discussion forum can be found [here]({% link _articles/discussion.md %})
+Instructions on how to use the discussion forum can be found [here]({{ site.baseurl }}{% link _articles/discussion.md %})

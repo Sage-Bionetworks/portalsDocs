@@ -21,4 +21,4 @@ If you want to create new pages within an existing hierarchy rather than moving 
 
 ## See Also
 
-[Wikis]({% link _articles/wikis.md %})
+[Wikis]({{ site.baseurl }}{% link _articles/wikis.md %})
