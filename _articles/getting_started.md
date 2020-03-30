@@ -40,7 +40,7 @@ To create a new Project:
 
 Your Projects [dashboard](https://www.synapse.org/#!Profile:v/projects) stores your collection of Projects.
 
-Read about [Projects](making_a_project.md) in the User Guide.
+Read about [Projects]({{ site.baseurl }}{% link _articles/making_a_project.md %}) in the User Guide.
 
 ## Synapse IDs
 

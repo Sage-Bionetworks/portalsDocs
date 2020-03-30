@@ -96,9 +96,9 @@ See the 'Insert' list for the following widgets to customize your Wiki design.
 | **Table: Query on a Synapse `Table`** <br/> Provides a Query for any Synapse Table and displays the information in the Wiki. |  <img id="tableImage" src="../assets/images/wiki_queryonsyntable.png"> |
 | **Query on `Files`/`Folders`** <br/> Provides a Query based an annotations (need link) added to Files and Folders. Columns in the Query table can be renamed and ordered through the 'Add Column Renderer' | <img id="tableImage" src="../assets/images/wiki_tablequeryonfiles.png"> |
 | **Button Link** <br/> Insert a button that links to content within Synapse or elsewhere. **Tip:** buttons can be colored purple by adding `'&highlight=true'` to the end of the widget markdown |<img id="image" src="../assets/images/wiki_insertbutton.png">|
-| **Join Team Button** <br/> Provide a button for people to join Synapse [Teams](teams.md) | <img id="image" src="../assets/images/wiki_jointeambutton.png"> |
+| **Join Team Button** <br/> Provide a button for people to join Synapse [Teams]({{ site.baseurl }}{% link _articles/teams.md %}) | <img id="image" src="../assets/images/wiki_jointeambutton.png"> |
 | **Team Badge** <br/> Creates a link to the `Team` profile | <img id="image" src="../assets/images/wiki_teambadge.png"> |
-| **Genome Browser** <br/> You can add a [Biodalliance genome browser](http://www.biodalliance.org) using tracks from files uploaded to Synapse or from external sources. Choose between Human or Mouse and adjust your tracks for height and color. See the Biodalliance Setup page for [more information](genome_browser.md) | <img id="image" src="../assets/images/wiki_genomebrowser.png"> |
+| **Genome Browser** <br/> You can add a [Biodalliance genome browser](http://www.biodalliance.org) using tracks from files uploaded to Synapse or from external sources. Choose between Human or Mouse and adjust your tracks for height and color. See the Biodalliance Setup page for [more information]({{ site.baseurl }}{% link _articles/genome_browser.md %}) | <img id="image" src="../assets/images/wiki_genomebrowser.png"> |
 | **Video** <br/> Video, Vimeo Video, and YouTube Video insert a video from various sources. | <img id="image" src="../assets/images/wiki_video.png"> |
 
 ## Tagging Synapse Users
@@ -113,4 +113,4 @@ See the Synapse Data Use Procedure document for [details](https://s3.amazonaws.c
 
 ## See Also
 
-[Discussion](discussion.md)
+[Discussion]({{ site.baseurl }}{% link _articles/discussion.md %})

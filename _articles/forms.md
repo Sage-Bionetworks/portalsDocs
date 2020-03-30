@@ -15,7 +15,7 @@ With Forms, you can:
 
 ## Creating a Table
 
-In order to use Forms, you'll need to first create a `Table`. Read more about creating tables here: [Tables](tables.md)
+In order to use Forms, you'll need to first create a `Table`. Read more about creating tables here: [Tables]({{ site.baseurl }}{% link _articles/tables.md %})
 
 ## Activating and Deactivating 'Alpha' Mode
 
@@ -41,8 +41,8 @@ The form is also responsive, so it will render on both large and small screens.
 
 ## Allowing Others to Contribute
 
-Entering data into a `Form` is equivalent to editing the data in a `Table`, so users who wish to add data using the form will need to have "Edit" permissions on the Table. See [Sharing Settings](access_controls.md) for more information on controlling who can edit your Table.
+Entering data into a `Form` is equivalent to editing the data in a `Table`, so users who wish to add data using the form will need to have "Edit" permissions on the Table. See [Sharing Settings]({{ site.baseurl }}{% link _articles/access_controls.md %}) for more information on controlling who can edit your Table.
 
 ## See Also
 
-[Tables](tables.md), [Wikis](wikis.md), [Sharing Settings](access_controls.md)
+[Tables]({{ site.baseurl }}{% link _articles/tables.md %}), [Wikis]({{ site.baseurl }}{% link _articles/wikis.md %}), [Sharing Settings]({{ site.baseurl }}{% link _articles/access_controls.md %})

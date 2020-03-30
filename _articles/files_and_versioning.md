@@ -17,9 +17,9 @@ category: managing-data
 }
 </style>
 
-Synapse `Files` can be created by uploading or linking to digital files on the web. They are accessible to anyone who has [access](access_controls.md), can be annotated with custom metadata, can be embedded into Synapse `Wiki` pages, and can be associated with a [DOI](doi.md). `Files` carry the Conditions for Use of the Synapse `Folder` they are placed in, plus any additional specific Conditions for Use they have on their own.
+Synapse `Files` can be created by uploading or linking to digital files on the web. They are accessible to anyone who has [access]({{ site.baseurl }}{% link _articles/access_controls.md %}), can be annotated with custom metadata, can be embedded into Synapse `Wiki` pages, and can be associated with a [DOI]({{ site.baseurl }}{% link _articles/doi.md %}). `Files` carry the Conditions for Use of the Synapse `Folder` they are placed in, plus any additional specific Conditions for Use they have on their own.
 
-By default, `Files` uploaded to Synapse are stored in 'Synapse Storage', which is freely available to you. `Files` can also be stored on your own Amazon S3 bucket (see [Custom Storage Locations](custom_storage_location.md)) or other custom locations. Furthermore, if you don't want to upload a file (it has external restrictions on sharing, is really large, for example) you can also link to the file. In this way, the file will be accessible through the Synapse clients when you are on the computer that the file is stored, but can be annotated, queried, and documented with a Wiki through Synapse. Lastly, you can provide web-accessible links as Synapse files, which will redirect to that location. All of the same Synapse `File` features are available are available on external links as well.
+By default, `Files` uploaded to Synapse are stored in 'Synapse Storage', which is freely available to you. `Files` can also be stored on your own Amazon S3 bucket (see [Custom Storage Locations]({{ site.baseurl }}{% link _articles/custom_storage_location.md %})) or other custom locations. Furthermore, if you don't want to upload a file (it has external restrictions on sharing, is really large, for example) you can also link to the file. In this way, the file will be accessible through the Synapse clients when you are on the computer that the file is stored, but can be annotated, queried, and documented with a Wiki through Synapse. Lastly, you can provide web-accessible links as Synapse files, which will redirect to that location. All of the same Synapse `File` features are available are available on external links as well.
 
 Synapse `Files` (as well as `Folders` and `Projects`) are identified by a unique identifier called a Synapse ID. It takes the form `syn12345678`. This identifier can be used to refer to a specific file on the web and through the clients.
 
@@ -63,7 +63,7 @@ file <- synStore(file)
 
 ## Moving a File
 
-All Synapse clients offer a way to move files and folders. Please note that [File Views](views.md) and [sync manifests](uploading_in_bulk.md) **cannot** be used to move files.
+All Synapse clients offer a way to move files and folders. Please note that [File Views]({{ site.baseurl }}{% link _articles/views.md %}) and [sync manifests]({{ site.baseurl }}{% link _articles/uploading_in_bulk.md %}) **cannot** be used to move files.
 
 The command line client has a sub-command `mv` which can be used to move files and folders. The Python client provides the [syn.move](https://python-docs.synapse.org/build/html/Client.html#synapseclient.Synapse.move) command, and the R client has [synMove()](https://r-docs.synapse.org/reference/synMove.html).
 
@@ -229,7 +229,7 @@ Any change to a `File` will automatically update its version. If this isn't the 
 
 ##### Web
 
-Please refer to the [Annotations and Queries](annotation_and_query.md) article for instructions on adding/editing annotations via the web client.
+Please refer to the [Annotations and Queries]({{ site.baseurl }}{% link _articles/annotation_and_query.md %}) article for instructions on adding/editing annotations via the web client.
 
 ##### Command line
 
@@ -261,7 +261,7 @@ annotations <- synSetAnnotations(file, annotations=list(fileType = "bam", assay 
 **Setting provenance without changing version**
 
 ##### Web
-Please refer to the [Provenance](provenance.md) article for instructions on adding/editing annotations via the web client.
+Please refer to the [Provenance]({{ site.baseurl }}{% link _articles/provenance.md %}) article for instructions on adding/editing annotations via the web client.
 
 ##### Command line
 
@@ -348,4 +348,4 @@ Some files in Synapse are supported with previews to allow users to peek at the 
 
 ## See Also
 
-[Provenance](provenance.md), [Annotations and Queries](annotation_and_query.md), [Downloading Data](downloading_data.md)
+[Provenance]({{ site.baseurl }}{% link _articles/provenance.md %}), [Annotations and Queries]({{ site.baseurl }}{% link _articles/annotation_and_query.md %}), [Downloading Data]({{ site.baseurl }}{% link _articles/downloading_data.md %})

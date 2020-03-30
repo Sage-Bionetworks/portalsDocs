@@ -64,4 +64,4 @@ Moderators may also "pin" important threads using the **pin** icon located next 
 
 # See Also 
 
-[Wikis](wikis.md)
+[Wikis]({{ site.baseurl }}{% link _articles/wikis.md %})

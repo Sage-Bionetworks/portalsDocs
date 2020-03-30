@@ -7,7 +7,7 @@ category: collaboration-and-communication
 
 ## Creating Permissions Models for Synapse Projects
 
-Synapse supports several different kinds of project permissions. These are described in more detail as "sharing settings" in the article on [access controls](access_controls.md#sharing-settings). Additionally, Synapse supports setting "local sharing settings" that allow you to make your project public while keeping some folders, files, or tables private. To do this, you would use local sharing settings. Permissions and sharing settings within Synapse are otherwise hierarchical; that is, if you set permissions on a project, everything within that project inherits those permissions until local sharing settings have been created.
+Synapse supports several different kinds of project permissions. These are described in more detail as "sharing settings" in the article on [access controls]({{ site.baseurl }}{% link _articles/access_controls.md %}#sharing-settings). Additionally, Synapse supports setting "local sharing settings" that allow you to make your project public while keeping some folders, files, or tables private. To do this, you would use local sharing settings. Permissions and sharing settings within Synapse are otherwise hierarchical; that is, if you set permissions on a project, everything within that project inherits those permissions until local sharing settings have been created.
 
 When thinking through the process of creating a permissions model for your project, consider the following questions:
 
@@ -20,7 +20,7 @@ When thinking through the process of creating a permissions model for your proje
 
 ## Using Teams for Permissions
 
-Teams are groups of Synapse users; learn more about [managing teams here](teams.md). If you are working with a group of users, and you want to allow some users to view or download data, while other users should be in charge of managing the project or adding new data, you should consider using teams to grant users permission. For example, you can create a "project administrators" group and grant that team permission to administer the project. Then, when you need to modify permissions on the project, you can add or remove people from the team rather than modifying the sharing settings on the project. This is especially useful if you have more than one project that the same group of people will be working across; using teams for permissions can help prevent administrative errors like forgetting to remove someone from a project if they leave your collaboration.
+Teams are groups of Synapse users; learn more about [managing teams here]({{ site.baseurl }}{% link _articles/teams.md %}). If you are working with a group of users, and you want to allow some users to view or download data, while other users should be in charge of managing the project or adding new data, you should consider using teams to grant users permission. For example, you can create a "project administrators" group and grant that team permission to administer the project. Then, when you need to modify permissions on the project, you can add or remove people from the team rather than modifying the sharing settings on the project. This is especially useful if you have more than one project that the same group of people will be working across; using teams for permissions can help prevent administrative errors like forgetting to remove someone from a project if they leave your collaboration.
 
 ## Recommended Team Types
 
@@ -38,7 +38,7 @@ The folder with then be shared only with the specific user groups that the entir
 
 # Triaging Project Permissions Using Views
 
-Sometimes local sharing settings are accidentally created, and once created, they can be somewhat tricky to detect. One quick way to triage your project permissions is by using a [view](views.md) with a scope set to a single project, or across multiple projects with similar permissions models. The field that you will be using below is called
+Sometimes local sharing settings are accidentally created, and once created, they can be somewhat tricky to detect. One quick way to triage your project permissions is by using a [view]({{ site.baseurl }}{% link _articles/views.md %}) with a scope set to a single project, or across multiple projects with similar permissions models. The field that you will be using below is called
 "benefactorId" -- this is the unique set of permissions assigned to groups of things. When you first create a project, the project itself is the "benefactor" of permissions, and there is only one benefactor ID for all the things in the project.
 
 As soon as you create your first set of local sharing settings, there are now two benefactors; the project is still providing the permissions for most the content, but whatever you have set local sharing settings on (say, a folder) now is the benefactor for anything inside it; it's the new benefactor of permissions for that sub-hierarchy, and everything inside will share the same, new benefactorId.

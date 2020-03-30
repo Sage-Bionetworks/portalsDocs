@@ -250,4 +250,4 @@ finalList <- lapply(finalList, function(x) synStore(x, activity=act))
 
 ### See Also
 
-[Files and Versioning](versioning.md), [Annotations and Queries](annotation_and_query.md)
+[Files and Versioning]({{ site.baseurl }}{% link _articles/versioning.md %}), [Annotations and Queries]({{ site.baseurl }}{% link _articles/annotation_and_query.md %})

@@ -56,7 +56,7 @@ Administrator permissions allows a Synapse user to change the sharing settings a
 
 To adjust the sharing settings on a project, click the `Project Settings` button. This will open a window listing the Synapse users who have access to the `Project` and their roles. When you create a new `Project` you are the only Synapse user listed in this window, because projects are private by default, and your access level will be `Administrator`.
 
-Use the `Add People` feature to add collaborators individually or to add a [team of collaborators](teams.md).
+Use the `Add People` feature to add collaborators individually or to add a [team of collaborators]({{ site.baseurl }}{% link _articles/teams.md %}).
 
 <a name="share-files-folders-and-tables"></a>
 

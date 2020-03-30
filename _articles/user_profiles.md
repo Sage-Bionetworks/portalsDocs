@@ -9,7 +9,7 @@ Anyone can browse public content on the Synapse web site, but in order to downlo
 
 <a href="https://www.synapse.org/register" class="btn btn-primary">Register</a>
 
-Certain actions in Synapse require additional steps, such as Certification or Validation. Explore our [accounts, certification and profile validation](accounts_certified_users_and_profile_validation.md) page to find out more information on the different levels of users.
+Certain actions in Synapse require additional steps, such as Certification or Validation. Explore our [accounts, certification and profile validation]({{ site.baseurl }}{% link _articles/accounts_certified_users_and_profile_validation.md %}) page to find out more information on the different levels of users.
 
 ## Managing Your Profile
 
@@ -54,4 +54,4 @@ Please contact us to deactivate your Synapse account.
 
 # See Also
 
-[Accounts, Certification and Profile Validation](accounts_certified_users_and_profile_validation.md), [Discussion](discussion.md)
+[Accounts, Certification and Profile Validation]({{ site.baseurl }}{% link _articles/accounts_certified_users_and_profile_validation.md %}), [Discussion]({{ site.baseurl }}{% link _articles/discussion.md %})

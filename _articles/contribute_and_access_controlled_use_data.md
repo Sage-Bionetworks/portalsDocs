@@ -14,7 +14,7 @@ You must be a `Certified User` to contribute data to Synapse. You are responsibl
 
 If there are no ethical, legal or regulatory reasons to impose `Conditions for Use`, the data can be used for any lawful research purpose. All human data shared in Synapse, with or without `Conditions for Use`, must be de-identified according to **HIPAA standards** and comply with all applicable privacy laws and regulations. Guidance on de-identification according to HIPAA rules can be found [here](http://www.hhs.gov/ocr/privacy){:target="_blank"}.
 
-`Conditions for Use` can be set at the `Project`, `Folder`, `File` and `Table` level. We recommend grouping `Files` that require the same `Conditions for Use` in a dedicated `Folder` within your `Project`. For more information about setting `Conditions for Use` please see [Access Controls and Data Governance](access_controls.md).
+`Conditions for Use` can be set at the `Project`, `Folder`, `File` and `Table` level. We recommend grouping `Files` that require the same `Conditions for Use` in a dedicated `Folder` within your `Project`. For more information about setting `Conditions for Use` please see [Access Controls and Data Governance]({{ site.baseurl }}{% link _articles/access_controls.md %}).
 
 <a name="accessing-data"></a>
 
@@ -31,7 +31,7 @@ To access `Controlled Use` data you must fulfill the `Conditions for Use` set by
 ### Bridge Data
 
 Synapse houses data collected through research apps. This data is called Bridge data. This data has been donated by thousands of volunteers
-from around the world. Bridge data is only accessible to Users with a `Validated Profile`. To learn more see [Synapse User Credentials](accounts_certified_users_and_profile_validation.md#validated-profile).
+from around the world. Bridge data is only accessible to Users with a `Validated Profile`. To learn more see [Synapse User Credentials]({{ site.baseurl}}{% link _articles/accounts_certified_users_and_profile_validation.md %}#validated-profile).
 
 {% include warning.html content="Controlled and Bridge data may not be redistributed." %}
 Sharing a Synapse account violates the Synapse Terms of Use. Each user wishing to access `Controlled Data` must individually agree to the `Conditions for Use` to access the data. **Please be mindful when sharing information. Do not send data or metadata via email.**

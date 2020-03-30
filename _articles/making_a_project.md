@@ -8,7 +8,7 @@ order: 2
 
 `Projects` in Synapse are "containers" that groups relevant content and people together. Researchers using Synapse can work in private or collaborate in groups. Some users share their research across large consortia. Projects support the following:
 
-* **Organize Your Work**: With Synapse you can organize the parts in your workflow (data, code, etc) into a hierarchy like a file system. With the tabs across the top of each project, you can easily navigate to your [Wikis](wikis.md), [Files and Folders](files_and_versioning.md), SQL-based [Tables](tables.md), and even conduct conversations using [Discussion Forums](discussion.md).
+* **Organize Your Work**: With Synapse you can organize the parts in your workflow (data, code, etc) into a hierarchy like a file system. With the tabs across the top of each project, you can easily navigate to your [Wikis]({{ site.baseurl }}{% link _articles/wikis.md %}), [Files and Folders]({{ site.baseurl }}{% link _articles/files_and_versioning.md %}), SQL-based [Tables]({{ site.baseurl }}{% link _articles/tables.md %}), and even conduct conversations using [Discussion Forums]({{ site.baseurl }}{% link _articles/discussion.md %}).
 
 * **Store Data, Code, and Results**: You can upload your data, code, and results to Synapse, or store a reference to their location in your local computer system or on the web. Everything can be stored as Files, hosted by Synapse, in your own external cloud storage, or using [Docker Containers](http://docs.synapse.org/articles/docker.html).
 

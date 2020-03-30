@@ -5,7 +5,7 @@ excerpt: Use project and file views to query across multiple projects and folder
 category: managing-data
 ---
 
-A view is a type of Synapse [Table](tables.md) that queries across metadata ([Annotations](annotation_and_query.md)) for particular items (currently: projects or files) with a particular "scope". A `File View` lists all `Files` or `Tables` within one or more `Folders` or `Projects`. A `Project View` lists all `Projects` you've added to the view. Views can:
+A view is a type of Synapse [Table]({{ site.baseurl }}{% link _articles/tables.md %}) that queries across metadata ([Annotations]({{ site.baseurl }}{% link _articles/annotation_and_query.md %})) for particular items (currently: projects or files) with a particular "scope". A `File View` lists all `Files` or `Tables` within one or more `Folders` or `Projects`. A `Project View` lists all `Projects` you've added to the view. Views can:
 
 * Allow `Projects`, `Files`, and `Tables` to be easily searched and queried
 * Allow view/editing metadata attributes in bulk
@@ -32,7 +32,7 @@ Note that it may take a few moments for the updated View to rebuild as it querie
 
 ## Query a View
 
-A view can be queried exactly the same as any other `Table` in Synapse. Please see [Tables](tables.md) for more examples. See the [Using Simple Search](views.md#using-simple-search) and [Using Advanced Search](views.md#using-advanced-search) sections below.
+A view can be queried exactly the same as any other `Table` in Synapse. Please see [Tables]({{ site.baseurl }}{% link _articles/tables.md %}) for more examples. See the [Using Simple Search]({{ site.baseurl }}{% link _articles/views.md %}#using-simple-search) and [Using Advanced Search]({{ site.baseurl }}{% link _articles/views.md %}#using-advanced-search) sections below.
 
 For example, to query for everything in `syn123`:
 
@@ -56,7 +56,7 @@ query <- synTableQuery('SELECT * FROM syn123')
 
 ## Update Annotations in Bulk
 
-Views can be used to update annotations in bulk. To add new annotations, see the [Annotations](annotation_and_query.md#adding-annotations) article. To update other metadata in bulk, such as provenance, see the [Bulk Processing](uploading_in_bulk.md) article.
+Views can be used to update annotations in bulk. To add new annotations, see the [Annotations]({{ site.baseurl }}{% link _articles/annotation_and_query.md %}#adding-annotations) article. To update other metadata in bulk, such as provenance, see the [Bulk Processing]({{ site.baseurl }}{% link _articles/uploading_in_bulk.md %}) article.
 
 For example, if you would like to use the Python client to update the annotation `dogSays`:`bark` to `dogSays`:`woof` in every file in a `File View` with the synId syn456, you can do:
 
@@ -88,7 +88,7 @@ In advanced search, you can use a SQL-like query to search for items in that vie
 
 ## Insert a View into a Wiki
 
-Views can also be placed inside a [`Wiki`](wikis.md) once they have been created. You can embed the entire view or a subset of a query on it.
+Views can also be placed inside a [`Wiki`]({{ site.baseurl }}{% link _articles/wikis.md %}) once they have been created. You can embed the entire view or a subset of a query on it.
 
 To insert a file view with a synId of `syn8146547`:
 
@@ -102,4 +102,4 @@ Save the query and the edits to the `Wiki` to embed the view.
 
 # See Also
 
-[Annotations and Queries](annotation_and_query.md), [Tables](tables.md), [Wikis](wikis.md)
+[Annotations and Queries]({{ site.baseurl }}{% link _articles/annotation_and_query.md %}), [Tables]({{ site.baseurl }}{% link _articles/tables.md %}), [Wikis]({{ site.baseurl }}{% link _articles/wikis.md %})

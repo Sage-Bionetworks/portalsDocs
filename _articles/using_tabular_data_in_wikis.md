@@ -9,11 +9,11 @@ category: managing-data
 
 `Wiki` widgets are tools to support narrative content. Embedded `Wiki` `Tables` can enable quick access to `Files` of highest importance and orient users to the resources contained in a collaborative project. `Wiki` `Tables` accept queries of existing `Tables` or `File Views`, providing a strategy to restrict scope and focus content.
 
-More information on related concepts is available on the [Tables](tables.md), [Making a Project](making_a_project.md), [Views](views.md) and [Wikis](wikis.md) pages.
+More information on related concepts is available on the [Tables]({{ site.baseurl }}{% link _articles/tables.md %}), [Making a Project]({{ site.baseurl }}{% link _articles/making_a_project.md %}), [Views]({{ site.baseurl }}{% link _articles/views.md %}) and [Wikis]({{ site.baseurl }}{% link _articles/wikis.md %}) pages.
 
 ## Start with a File View or Table
 
-The [Views](views.md) page provides steps to list `Files` and `Folders` within `Views` and `Tables`. This will be the content embedded in the `Wiki`.
+The [Views]({{ site.baseurl }}{% link _articles/views.md %}) page provides steps to list `Files` and `Folders` within `Views` and `Tables`. This will be the content embedded in the `Wiki`.
 
 ## Focus Scope
 

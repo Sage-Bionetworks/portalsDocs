@@ -27,7 +27,7 @@ Maintence of both a **Staging** and **Live** `Project` enables `Wiki` content to
 
 {% include important.html content="All edits and changes should be made on the Staging site." %}
 
-For background on how to create and share `Projects`, `Files`, `Folders` and `Wiki` pages, please see our article [Making a Project](making_a_project.md).
+For background on how to create and share `Projects`, `Files`, `Folders` and `Wiki` pages, please see our article [Making a Project]({{ site.baseurl }}{% link _articles/making_a_project.md %}).
 
 ### Synapse Teams
 
@@ -39,7 +39,7 @@ The command `createchallenge` creates three Synapse `Teams`:
 
 * **Challenge pre-registration team** - This `Team` is recommended for when the challenge is under development.  It allows participants to join a mailing list to receive notification of challenge launch news.
 
-Please visit this [page](teams.md) to learn more about `Teams`.
+Please visit this [page]({{ site.baseurl }}{% link _articles/teams.md %}) to learn more about `Teams`.
 
 ### Activating Challenge Configuration
 
@@ -49,7 +49,7 @@ The command `createchallenge` also connects the **challenge participant team** t
 
 The challenge data (e.g. training dataset, scoring data...) are uploaded to the **Live** challenge `Project` when it is ready to be shared with participants.
 
-For background on how to create and share `Project`, `Files`, `Folders` and `Wiki` pages, please see our article [Making a Project](making_a_project.md).
+For background on how to create and share `Project`, `Files`, `Folders` and `Wiki` pages, please see our article [Making a Project](%{ link _articles/making_a_project.md %}).
 
 ### Adding Conditions for Use
 
@@ -57,13 +57,13 @@ Synapse has the ability to apply access restrictions to sensitive data (e.g. hum
 
 There are cases where there are no human data concerns and instead a pop-up agreement needs to be presented before the first data download. Contact the **Access and Compliance Team** to set up this agreement.
 
-Please view the [Access Controls page](access_controls.md) to learn how to add conditions for use on data.
+Please view the [Access Controls page]({{ site.baseurl }}{% link _articles/access_controls.md %}) to learn how to add conditions for use on data.
 
 ### Create an Evaluation Queue for Submissions
 
 Challenge participants can submit Synapse Entities (e.g. `File`, `Folder`, `Project`, `Docker`) to evaluation queues. Multiple Evaluation queues can be created to support challenges with more than one question.
 
-Please visit the [Evaluation Queue article](evaluation_queues.md) to learn more about queue configuration.
+Please visit the [Evaluation Queue article]({{ site.baseurl }}{% link _articles/evaluation_queues.md %}) to learn more about queue configuration.
 
 One of the features of Synapse for DREAM Challenges is the live compilation of submission statistics for all evaluation queues, including total submission count, count per individual/team, count per submission state (scored, invalid) and count per week.  You can see the statistics for various challenges [here](https://www.synapse.org/#!Synapse:syn2504723/wiki/65150).  In order to activate statistics for your evaluation queues, you must be an administrator of the challenge Project. Each queue needs to be configured to generate the statistics. To do this:
 
@@ -90,4 +90,4 @@ Throughout the challenge, participants will continuously submit to the evaluatio
 
 Organizers can create a leaderboard when scores are ready to be revealed to participants. Leaderboards are sorted, paginated, tabular forms that display submission annotations (e.g. scores from the scoring application and other metadata) and update as annotations or scores change. A leaderboard can provide real-time insight into the progress of a challenge.
 
-Learn more about adding leaderboards in the [Evaluation Queue article](evaluation_queues.md).
+Learn more about adding leaderboards in the [Evaluation Queue article]({{ site.baseurl }}{% link _articles/evaluation_queues.md %}).

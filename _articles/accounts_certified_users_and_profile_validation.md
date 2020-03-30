@@ -26,7 +26,7 @@ The table below summarizes the user privileges for each level.
 
 ## User Responsibilities
 
-You are solely responsible for your actions on Synapse. You are required to abide by the [Synapse Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4) and all policies and principles described in the [Synapse governance documents](governance.md). We strongly encourage you to familiarize yourself with these documents. Please contact the Synapse Access and Compliance Team (<mailto:act@synapse.org>) if you have any questions.
+You are solely responsible for your actions on Synapse. You are required to abide by the [Synapse Terms and Conditions of Use](https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=4) and all policies and principles described in the [Synapse governance documents]({{ site.baseurl }}{% link _articles/governance.md %}). We strongly encourage you to familiarize yourself with these documents. Please contact the Synapse Access and Compliance Team (<mailto:act@synapse.org>) if you have any questions.
 
 {% include important.html content="By using Synapse you consent to all Synapse governance policies and procedures." %}
 
@@ -69,11 +69,11 @@ Go to the settings area of your [Synapse profile homepage](https://www.synapse.o
 
 1. Confirm your user profile is complete including **your full name, current affiliation, and city/country.**
 1. Link to your ORCID profile. **Make sure your profile is public and populate it with at least one piece of information about yourself in addition to your name.**
-1. Physically sign (in ink), initial, and submit the Synapse [Oath](../assets/other/oath.md)
+1. Physically sign (in ink), initial, and submit the Synapse [Oath]({{ site.baseurl }}{% link assets/other/oath.md %})
 1. Submit recent (current within the past month) identity attestation documentation. Acceptable forms of documentation, in English, are:
 
-* A letter from a signing official on letterhead attesting to your identity. _Please note that you can not serve as your own signing official_ ([template here](../assets/other/signing_official_template.md)) OR
-* A notarized letter attesting to your identity ([template here](../assets/other/notarized_letter_template.md)) OR
+* A letter from a signing official on letterhead attesting to your identity. _Please note that you can not serve as your own signing official_ ([template here]({{ site.baseurl }}{% link assets/other/signing_official_template.md %})) OR
+* A notarized letter attesting to your identity ([template here]({{ site.baseurl }}{% link assets/other/notarized_letter_template.md %})) OR
 * A copy of your professional license (e.g., a photocopy of your medical license)
 _Please note that a copy of a work or university identification badge is not an accepted form of identity attestation documentation._
 
@@ -83,7 +83,7 @@ You will receive a notification email when your profile has been validated and a
 
 Acceptable forms of documentation, in English, are:
 
-* A letter from a signing official on letterhead attesting to your identity. _Please note that you can not serve as your own signing official_ ([template here](../assets/other/signing_official_template.md)) OR
-* A notarized letter attesting to your identity ([template here](../assets/other/notarized_letter_template.md)) OR
+* A letter from a signing official on letterhead attesting to your identity. _Please note that you can not serve as your own signing official_ ([template here]({{ site.baseurl }}{% link assets/other/signing_official_template.md %})) OR
+* A notarized letter attesting to your identity ([template here]({{ site.baseurl }}{% link assets/other/notarized_letter_template.md %})) OR
 * A copy of your professional license (e.g., a photocopy of your medical license)
 _Please note that a copy of a work or university identification badge is not an accepted form of identity attestation documentation._
