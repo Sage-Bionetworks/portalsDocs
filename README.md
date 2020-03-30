@@ -100,13 +100,13 @@ The docs may contain a high level overview of a feature, but should link to the 
 A page may link to other pages within the documentation site. To do this, use a `link` Liquid tag to properly render the URL:
 
 ```
-[link text]({% link _articles/getting_started.md %})
+[link text]({{ site.baseurl }}{% link _articles/getting_started.md %})
 ```
 
 If the link uses an anchor to jump to a specific part of the page, it must go outside the `link` tag:
 
 ```
-[Annotations]({% link _articles/annotation_and_query.md %}#adding-annotations)
+[Annotations]({{ site.baseurl }}{% link _articles/annotation_and_query.md %}#adding-annotations)
 ```
 
 ## License
