@@ -32,7 +32,7 @@ Note that it may take a few moments for the updated View to rebuild as it querie
 
 ## Query a View
 
-A view can be queried exactly the same as any other `Table` in Synapse. Please see [Tables]({% link _articles/tables.md %}) for more examples. See the [Using Simple Search]({% link _articles/views.md#using-simple-search %}) and [Using Advanced Search]({% link _articles/views.md#using-advanced-search %}) sections below.
+A view can be queried exactly the same as any other `Table` in Synapse. Please see [Tables]({% link _articles/tables.md %}) for more examples. See the [Using Simple Search]({% link _articles/views.md %}#using-simple-search) and [Using Advanced Search]({% link _articles/views.md %}#using-advanced-search) sections below.
 
 For example, to query for everything in `syn123`:
 
@@ -56,7 +56,7 @@ query <- synTableQuery('SELECT * FROM syn123')
 
 ## Update Annotations in Bulk
 
-Views can be used to update annotations in bulk. To add new annotations, see the [Annotations]({% link _articles/annotation_and_query.md#adding-annotations %}) article. To update other metadata in bulk, such as provenance, see the [Bulk Processing]({% link _articles/uploading_in_bulk.md %}) article.
+Views can be used to update annotations in bulk. To add new annotations, see the [Annotations]({% link _articles/annotation_and_query.md %}#adding-annotations) article. To update other metadata in bulk, such as provenance, see the [Bulk Processing]({% link _articles/uploading_in_bulk.md %}) article.
 
 For example, if you would like to use the Python client to update the annotation `dogSays`:`bark` to `dogSays`:`woof` in every file in a `File View` with the synId syn456, you can do:
 
