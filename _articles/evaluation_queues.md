@@ -10,7 +10,7 @@ An Evaluation queue allows for people to submit Synapse `Files`, `Docker` images
 
 ## Create an Evaluation Queue
 
-To create a queue, you must first create a Synapse `Project`. To create a Synapse Project, follow the instructions on the [Project and Data Management](getting_started.md#making-and-managing-projects-in-synapse) page. An Evaluation queue can take several parameters that you can use to customize your preferences. The minimum requirements to create a queue are:
+To create a queue, you must first create a Synapse `Project`. To create a Synapse Project, follow the instructions on the [Project and Data Management]({{ site.baseurl}}{% link _articles/getting_started.md %}#making-and-managing-projects-in-synapse) page. An Evaluation queue can take several parameters that you can use to customize your preferences. The minimum requirements to create a queue are:
 
 * name – Unique name of the evaluation
 * description – A short description of the evaluation

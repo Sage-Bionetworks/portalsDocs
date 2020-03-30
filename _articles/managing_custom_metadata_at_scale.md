@@ -32,7 +32,7 @@ Here it is in a visual example:
 | /local/path/to/velociraptor_b.fastq | syn123 | blue_1 | wholeGenomeSeq | Velociraptor mongoliensis | HoodDNASequencer | female | fastq |
 | /local/path/to/velociraptor_d.fastq | syn123 | delta_1 | wholeGenomeSeq | Velociraptor mongoliensis | HoodDNASequencer | female | fastq |
 
-See **Creating a Manifest** in [Uploading and Downloading Data in Bulk](uploading_in_bulk.md#Creating-a-Manifest) for additional details.
+See **Creating a Manifest** in [Uploading and Downloading Data in Bulk]({{ site.baseurl }}{% link _articles/uploading_in_bulk.md %}#Creating-a-Manifest) for additional details.
 
 **Save** this file in a tab-delimited format called `velociraptor_manifest.tsv`.
 

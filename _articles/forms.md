@@ -45,4 +45,4 @@ Entering data into a `Form` is equivalent to editing the data in a `Table`, so u
 
 ## See Also
 
-[Tables](tables.md), [Wikis](wikis.md), [Sharing Settings](access_controls.md)
+[Tables]({{ site.baseurl }}{% link _articles/tables.md %}), [Wikis]({{ site.baseurl }}{% link _articles/wikis.md %}), [Sharing Settings]({{ site.baseurl }}{% link _articles/access_controls.md %})

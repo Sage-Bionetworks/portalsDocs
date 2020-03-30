@@ -105,7 +105,7 @@ No. Use `Sharing settings` to control who can see the content you create. By def
 
 #### Can I store sensitive information about human subjects in Synapse?
 
-Yes. Synapse has an IRB-approved data governance procedure that employs `Conditions for Use` to allow for the sharing of sensitive data in a controlled manner. You can learn more by reading our [Sharing Settings and Conditions for Use](access_controls.md) documentation and [Governance documentation]({{ site.baseurl }}{% link _articles/governance.md %}). If you have questions or would like assistance in applying `Conditions of Use` to your data, please contact the Synapse Access and Compliance Team at [act@sagebase.org](mailto:act@sagebase.org).
+Yes. Synapse has an IRB-approved data governance procedure that employs `Conditions for Use` to allow for the sharing of sensitive data in a controlled manner. You can learn more by reading our [Sharing Settings and Conditions for Use]({{ site.baseurl}}{% link _articles/access_controls.md %}) documentation and [Governance documentation]({{ site.baseurl }}{% link _articles/governance.md %}). If you have questions or would like assistance in applying `Conditions of Use` to your data, please contact the Synapse Access and Compliance Team at [act@sagebase.org](mailto:act@sagebase.org).
 
 #### How do I know the content I put in Synapse will be secure? What security measures does Synapse have?
 
