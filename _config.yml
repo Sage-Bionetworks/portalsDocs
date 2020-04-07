@@ -8,4 +8,10 @@ toc:
 titles_from_headings:
   enabled:     true
   strip_title: true
- 
+collections:
+  articles:
+    output: true
+  categories:
+    output: false
+  sections:
+    output: false
