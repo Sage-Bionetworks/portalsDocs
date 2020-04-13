@@ -11,7 +11,7 @@ category: metadata-and-annotations
 
  In this case, the annotations you may want to add might look like this:
 
-![Annotation example]({../assets/images/annotationsComplete.png)
+![Annotation example](../assets/images/annotationsComplete.png)
 
 ## Types of Annotations
 
