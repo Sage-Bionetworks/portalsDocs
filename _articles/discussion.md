@@ -32,7 +32,7 @@ This opens a **New Thread** dialog box in which you can edit text, insert pictur
 
 <img style="width: 50%" src="../assets/images/FormattingGuide.png">
 
-{% include tip.html content="You may tag people by including an '@' symbol followed by their username; tagging users in discussion threads will send them a notification of the thread, so it can be used to invite others into the discussion." %}
+{% include tip.html content="You may tag people by including an '@' symbol followed by their username; tagging users in discussion threads will send them a notification of the thread, so it can be used to invite others into the discussion. Tagged users will only receive a notification if they were tagged in the initial thread creation. Tagging users after starting a thread will not send a notification." %}
 
 ## Responding to Existing Threads
 
