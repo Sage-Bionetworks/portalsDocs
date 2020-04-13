@@ -219,7 +219,7 @@ If you are happy with your leaderboard configurations, save both the configurati
 
 <img style="width: 80%;" src="/assets/images/add_submission_widget.png">
 
-Aside from directing people to submit to an evaluation queue by navigating to an Synapse Entity, you can also add a `Submit To Evaluation` widget on a wiki page. Here you will get an option of allowing people to submit to evaluation queues of a project or a single evaluation queue.
+Aside from directing people to submit to an evaluation queue by navigating to an Synapse Entity, you can also add a `Submit To Evaluation` widget on a wiki page. Here you will get an option of allowing people to submit to evaluation queues of a project or a single evaluation queue.  Currently this is the only way you can submit Synapse `Projects`, but you cannot submit Synapse Docker repositories.
 
 <img style="width: 80%;" src="/assets/images/submit_to_evaluation_widget.png">
 
