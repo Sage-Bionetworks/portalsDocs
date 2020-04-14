@@ -58,15 +58,15 @@ To allow authorized Synapse users to upload data to your bucket set read-write p
 }
 ```
 
-For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating a file named **[owner.txt](../assets/downloads/owner.txt)** that contains a **line separated** list of *user identifiers* that are allowed to register the bucket and uploading it to your bucket. Valid *user identifiers* are: a synapse user id or the id of a team the user is part of.
+For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating a file named **[owner.txt](../assets/downloads/owner.txt)** that contains a **line separated** list of *user identifiers* that are allowed to register and upload to the bucket. Valid *user identifiers* are a numeric synapse user id or the numeric id of a team the user is part of.
 
-The id of the user or the team can be obtained navigating to the user profile or to the team page, the id is the numeric value shown in the browser URL bar after the *Profile:* or *Team:* prefixes:
+The id of the user or the team can be obtained by navigating to the user profile or to the team page. The id is the numeric value shown in the browser URL bar after the *Profile:* or *Team:* prefixes:
 
 <img id="imageSmall" src="../assets/images/browserUserId.png">
 
 <img id="imageSmall" src="../assets/images/browserTeamId.png">
 
-You can upload the file with the Amazon Web Console or if you have the [AWS command line client](https://aws.amazon.com/cli/), you can upload using the command line.
+You can upload the file with the Amazon Web Console or the [AWS command line client](https://aws.amazon.com/cli/).
 
 ##### Command line
 
