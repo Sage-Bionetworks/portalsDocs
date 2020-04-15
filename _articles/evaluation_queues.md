@@ -215,7 +215,7 @@ If you are happy with your leaderboard configurations, save both the configurati
 <img style="width: 80%;" src="/assets/images/leaderboard_on_wiki.png">
 
 
-### Adding Submit to Evaluation Widget
+### Submit to an Evaluation Queue from a Wiki Page
 
 <img style="width: 20%;" src="/assets/images/add_submission_widget.png">
 
