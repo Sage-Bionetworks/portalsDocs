@@ -175,7 +175,7 @@ Every submission you make to an Evaluation queue has a unique ID. This ID should
 
 Navigate to a file in Synapse and click on **Tools** in the upper right-hand corner. Select **Submit To Challenge** to pick the challenge for your submission. Follow the provided steps to complete your submission.
 
-<img id="toobig" src="/assets/images/submit_file_to_challenge.png">
+<img style="width: 30%;" id="toobig" src="/assets/images/submit_file_to_challenge.png">
 
 ## View Submissions of an Evaluation Queue
 
