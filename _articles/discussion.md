@@ -22,11 +22,11 @@ category: collaboration-and-communication
 
 The `Discussion` tab can be found in the project navigation tabs on your project's main page. Anyone with `Project` access may view discussion threads contained in the project, create new threads, or reply to existing threads.
 
-<img style="width: 65%;" src="../assets/images/Discussion Main.png">
+<img style="width: 65%;" src="../assets/images/Discussion_Main.png">
 
 To create a new thread, click the `New Thread` button at the top of the `Discussion` tab.
 
-<img style="width: 50%" src="../assets/images/NewThread_Dialog.png">
+<img style="width: 50%" src="../assets/images/NewThread_Dialogue.png">
 
 This opens a **New Thread** dialog box in which you can edit text, insert pictures, code, TeX, Widgets, or Markdown script. As with `Wiki` editing, a Formatting Guide is available to show you what formatting features are available.
 
@@ -59,8 +59,6 @@ In case of accidental deletion, moderators may also undelete threads to restore 
 ## Pinning Threads
 
 Moderators may also "pin" important threads using the **pin** icon located next to the original post within the thread page. This causes the thread to be highlighted on the top of the thread list on the `Discussion` main page, and to remain at the top of the list even once newer threads are posted. Moderators may also "unpin" threads.
-
-<img style="width: 65%;" src="../assets/images/ModeratorButtons.png">
 
 # See Also 
 
