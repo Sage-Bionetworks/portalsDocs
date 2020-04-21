@@ -175,7 +175,7 @@ Every submission you make to an Evaluation queue has a unique ID. This ID should
 
 Navigate to a file in Synapse and click on **Tools** in the upper right-hand corner. Select **Submit To Challenge** to pick the challenge for your submission. Follow the provided steps to complete your submission.
 
-<img id="toobig" src="/assets/images/submit_file_to_challenge.png">
+<img style="width: 30%;" id="toobig" src="/assets/images/submit_file_to_challenge.png">
 
 ## View Submissions of an Evaluation Queue
 
@@ -213,6 +213,18 @@ The appearance of columns in a leaderboard can be modified by changing the rende
 If you are happy with your leaderboard configurations, save both the configurations and the Wiki page to visualize these updates.
 
 <img style="width: 80%;" src="/assets/images/leaderboard_on_wiki.png">
+
+
+### Submit to an Evaluation Queue from a Wiki Page
+
+<img style="width: 20%;" src="/assets/images/add_submission_widget.png">
+
+You may embed a `Submit To Evaluation` widget on a Wiki page to improve visibility of your Evaluation queue. The widget allows participants to submit to multiple Evaluation queues within a Project or a single Evaluation queue. 
+
+Currently, this Wiki widget is required to submit Synapse Projects to an Evaluation queue. Synapse Docker repositories can not be submitted through this widget.
+
+<img style="width: 80%;" src="/assets/images/submit_to_evaluation_widget.png">
+
 
 # See Also
 
