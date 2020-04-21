@@ -46,7 +46,7 @@ In case of accidental deletion, moderators may also undelete threads to restore 
 
 #### Pinning Threads
 
-Moderators may emphasize important threads by selecting the **pin** icon to bring the post to the top of the forum. The thread will remain at the top of the list even once newer threads are posted. Moderators may also unpin threads.
+Moderators may emphasize important threads by selecting the **pin** icon to bring the post to the top of the forum. The thread will remain at the top of the list even after newer threads are posted. Moderators may also unpin threads.
 
 # See Also 
 
