@@ -87,7 +87,7 @@ The Evaluation ID can be found under the **Challenge** tab of your project. Plea
 
 <img style="width: 80%;" src="/assets/images/evaluation_queue_id.png">
 
-Using the Evaluation ID, we can configure the `quota` parameters of this evaluation queue with the R or Python client. 
+Using the Evaluation ID, we can configure the `quota` parameters of this evaluation queue with the R or Python client.
 
 ##### Python
 
@@ -225,6 +225,11 @@ Currently, this Wiki widget is required to submit Synapse Projects to an Evaluat
 
 <img style="width: 80%;" src="/assets/images/submit_to_evaluation_widget.png">
 
+When an Evaluation queue is 'unavailable', you can customize the message to show users.  Here are the three ways that an Evaluation queue is unavailable to a user.
+
+* The specified Project doesn't actually have any Evaluation queues.
+* The user does not have permission to view a Project's Evaluation queues.
+* The Evaluation queue quota is set that a user can not submit to the queue.  Learn more about [quotas](#create-an-evaluation-queue).
 
 # See Also
 
