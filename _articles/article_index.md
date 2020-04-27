@@ -1,7 +1,7 @@
 ---
-title: Articles Index
+title: Articles
 layout: index
-description: All documentation articles about Synapse.
+description: An index of articles available about Synapse.
 ---
 
 <div class="col-xs-12 col-md-12 col-lg-12" id="subjects">

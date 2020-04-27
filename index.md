@@ -33,7 +33,7 @@ layout: index
     <div class="col-xs-12 col-md-6 col-lg-4">
         <a href="{{'articles/' | relative_url}}">
         <div class="subject-card">
-            <h5>Articles</h5>
+            <h5>Overview</h5>
             <hr>
             <span>Articles are categorized into topic areas describing the different components of Synapse and how to use them.</span>
         </div>
