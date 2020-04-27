@@ -12,7 +12,7 @@ An Evaluation queue allows for people to submit Synapse `Files`, `Docker` images
 
 To create a queue, you must first create a Synapse `Project`. To create a Synapse Project, follow the instructions on the [Project and Data Management]({{ site.baseurl}}{% link _articles/getting_started.md %}#making-and-managing-projects-in-synapse) page. 
 
-Once you've created your project, navigate to it and add `/admin` to the url (e.g. www.synapse.org/#!Synapse:syn12345/admin). Click **Tools** in the right corner and select **Add Evaluation Queue**.
+Once you've created your project, navigate to it and add `/challenge` to the url (e.g. www.synapse.org/#!Synapse:syn12345/challenge). Click **Tools** in the right corner and select **Add Evaluation Queue**.
 
 <img style="width: 80%;" src="/assets/images/create_evaluation_queues.png">
 
