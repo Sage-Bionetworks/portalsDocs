@@ -2,7 +2,7 @@
 
 title: Evaluation Queues
 layout: article
-excerpt: An queue accepts submission of Synapse entities for evaluation. 
+excerpt: A Synapse Queue contains user submitted models/files to execute to challenges and benchmarking.
 category: reproducible-research
 ---
 
