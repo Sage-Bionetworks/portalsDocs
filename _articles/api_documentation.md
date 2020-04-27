@@ -4,6 +4,7 @@ description: Technical documentation for interacting with Synapse using R, Pytho
 excerpt: Technical documentation for interacting with Synapse using R, Python, command line, and the REST API.
 layout: index
 category: API-client
+order: 3
 ---
 
 
