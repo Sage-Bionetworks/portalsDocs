@@ -1,5 +1,5 @@
 ---
-title: Articles
+title: Overview
 layout: index
 description: These are the main instructions for using Synapse. Pick an section that interests you or read them in order.
 ---
