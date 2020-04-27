@@ -10,108 +10,34 @@ An Evaluation queue allows for people to submit Synapse `Files`, `Docker` images
 
 ## Create an Evaluation Queue
 
-To create a queue, you must first create a Synapse `Project`. To create a Synapse Project, follow the instructions on the [Project and Data Management]({{ site.baseurl}}{% link _articles/getting_started.md %}#making-and-managing-projects-in-synapse) page. An Evaluation queue can take several parameters that you can use to customize your preferences. The minimum requirements to create a queue are:
+To create a queue, you must first create a Synapse `Project`. To create a Synapse Project, follow the instructions on the [Project and Data Management]({{ site.baseurl}}{% link _articles/getting_started.md %}#making-and-managing-projects-in-synapse) page. 
 
-* name – Unique name of the evaluation
-* description – A short description of the evaluation
-* contentSource – Synapse Project associated with the evaluation
-* submissionReceiptMessage – Message to display to users upon submission
-* submissionInstructionsMessage – Message to display to users detailing acceptable formatting for submissions.
-
-Optionally, you can restrict how things are submitted by using a quota. An Evaluation queue can only have one quota. If you want to change how long the queue is open, the start date (firstRoundStart), round duration (roundDurationMillis) and number of rounds (nunmberOfRounds) are required parameters. It is optional to set submission limit (submissionLimit).
-
-* firstRoundStart - The date/time at which the first round begins in UTC.
-* roundDurationMillis - The duration of each round in milliseconds.
-* numberOfRounds - The number of rounds, or null if there is no limit to set.
-* submissionLimit - The maximum number of submissions per team/participant per round. Please keep in mind that the system will prevent additional submissions by a user/team once they have hit this number of submissions.
-
-{% include note.html content="The name of your evaluation queue MUST be unique, otherwise the queue will not be created." %}
-
-The examples below shows how to create a queue and set the quota using all of the parameters in Python, R and the web client:
-
-##### Python
-
-```python
-import synapseclient
-
-syn = synapseclient.login()
-
-evaluation = synapseclient.Evaluation(name="My Unique Example Challenge Name",
-    description="Short description of challenge queue",
-    status="OPEN",
-    contentSource="syn12345", # Your Synapse Project synID
-    submissionInstructionsMessage="Instructions on submission format...",
-    submissionReceiptMessage="Thanks for submitting to My Example Challenge!",
-    quota={'submissionLimit':3, # The maximum number of submissions per team/participant per round.
-        'firstRoundStart':'2017-11-02T07:00:00.000Z', # The date/time ("%Y-%m-%dT%H:%M:%S%Z") at which the first round begins in UTC.
-        'roundDurationMillis':1645199000, #The duration of each round.
-        'numberOfRounds':1} # The number of rounds, or null if there is no end. (Based on the duration of each round)
-)
-
-syn.store(evaluation)
-```
-
-##### R
-
-```r
-library(synapser)
-
-synLogin()
-
-evaluation <- Evaluation(name="My Unique Example Challenge Name",
-    description="Short description of challenge queue",
-    status="OPEN",
-    contentSource="syn12345", # Your Synapse Project synID
-    submissionInstructionsMessage="Instructions on submission format...",
-    submissionReceiptMessage="Thanks for submitting to My Example Challenge!",
-    quota=c(submissionLimit=3, # The maximum number of submissions per team/participant per round.
-            firstRoundStart = '2017-11-02T07:00:00.000Z', # The date/time ("%Y-%m-%dT%H:%M:%S%Z") at which the first round begins in UTC.
-            roundDurationMillis = 1645199000, # The duration of each round.
-            numberOfRounds=1) # The number of rounds, or null if there is no end. (Based on the duration of each round)
-    )
-
-synStore(evaluation)
-```
-
-##### Web
-
-Navigate to your challenge site and add `/admin` to the url (e.g. www.synapse.org/#!Synapse:syn12345/admin). Click **Tools** in the right corner and select **Add Evaluation Queue**.
+Once you've created your project, navigate to it and add `/admin` to the url (e.g. www.synapse.org/#!Synapse:syn12345/admin). Click **Tools** in the right corner and select **Add Evaluation Queue**.
 
 ![Create evaluation queue](../assets/images/create_evaluation_queues.png)
 
-In the web client, the quota can be modified under the **Challenge** tab by clicking `Edit`. 
+An Evaluation queue can take several parameters that you can use to customize your preferences.
 
-## Set a Quota on an Existing Evaluation Queue
+* Name – Unique name of the evaluation
+* Description – A short description of the evaluation
+* Submission Instructions – Message to display to users detailing acceptable formatting for submissions.
+* Submission Receipt Message – Message to display to users upon submission
 
-The Evaluation ID can be found under the **Challenge** tab of your project. Please note that a Challenge tab will not appear on your project until you have created a Challenge (**Tools > Run Challenge**). In the case below, the Evaluation queue ID is `9610091`.
+{% include note.html content="The name of your evaluation queue MUST be unique, otherwise the queue will not be created." %}
 
-<img style="width: 80%;" src="/assets/images/evaluation_queue_id.png">
+### Setting a Quota
 
-Using the Evaluation ID, we can configure the `quota` parameters of this evaluation queue with the R or Python client. 
+Optionally, you can restrict how things are submitted by using a quota.
 
-##### Python
+![Set evaluation quota](../assets/images/evaluation_queue_quota.png)
 
-```python
-import synapseclient
-syn = synapseclient.login()
-evalId = 9610091
-evaluation = syn.getEvaluation(evalId)
-evaluation.quota = {'submissionLimit':3} #The maximum number of submissions per team/participant per round.
-syn.store(evaluation)
-```
+An Evaluation queue can only have one quota. If you want to change how long the queue is open, the start date, round duration, and number of rounds are required parameters. It is optional to set submission limit.
 
-##### R
+* First Round Start Date/Time - The date/time at which the first round begins.
+* Number of Rounds - The number of rounds, or null if there is no limit to set.
+* Submission Limit - The maximum number of submissions per team/participant per round. Please keep in mind that the system will prevent additional submissions by a user/team once they have hit this number of submissions.
+* Round Duration  - The duration of each round. If you set a round duration you will want to set the number of rounds or it will assume an infinite number of rounds.
 
-```r
-library(synapser)
-synLogin()
-
-evalId = 9610091
-evaluation <- synGetEvaluation(evalId)
-
-evaluation$quota <- c('submissionLimit'=3) #The maximum number of submissions per team/participant per round.
-synStore(evaluation)
-```
 
 ## Share an Evaluation Queue
 
