@@ -14,7 +14,7 @@ To create a queue, you must first create a Synapse `Project`. To create a Synaps
 
 Once you've created your project, navigate to it and add `/admin` to the url (e.g. www.synapse.org/#!Synapse:syn12345/admin). Click **Tools** in the right corner and select **Add Evaluation Queue**.
 
-![Create evaluation queue](../assets/images/create_evaluation_queues.png)
+<img style="width: 80%;" src="/assets/images/create_evaluation_queues.png">
 
 An Evaluation queue can take several parameters that you can use to customize your preferences.
 
@@ -29,7 +29,8 @@ An Evaluation queue can take several parameters that you can use to customize yo
 
 Optionally, you can restrict how things are submitted by using a quota.
 
-![Set evaluation quota](../assets/images/evaluation_queue_quota.png)
+<img style="width: 80%;" src="/assets/images/evaluation_queue_quota.png">
+
 
 An Evaluation queue can only have one quota. If you want to change how long the queue is open, the start date, round duration, and number of rounds are required parameters. It is optional to set submission limit.
 
