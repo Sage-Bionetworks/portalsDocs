@@ -25,7 +25,7 @@ An Evaluation queue can take several parameters that you can use to customize yo
 
 {% include note.html content="The name of your evaluation queue MUST be unique, otherwise the queue will not be created." %}
 
-### Setting a Quota
+### Setting Quotas on an Evaluation Queue
 
 Optionally, you can restrict how things are submitted by using a quota.
 
@@ -52,6 +52,14 @@ Each Evaluation has sharing settings, which limit who can interact with the Eval
 To set the sharing settings, go to the **Challenge** tab to view your list of Evaluations.  Click on the **Share** button per Evaluation and share it with the teams or individuals you would like.
 
 {% include important.html content="When someone submits to an Evaluation, a copy of the submission is made, so a person with Administrator or Can score access will be able to download the submission even if the submitter deletes the entity." %}
+
+## Close an Evaluation Queue
+While there isn't technically a way of "closing" an evaluation queue, there are multiple ways to discontinue submissions for users.
+
+* Users are only able to submit to a queue if they have `can submit` permissions to it. If you have the ability to modify the permissions of a Queue, you will still be able to submit to the queue due to your `administrator` access.
+* If the Quota is set so that the current date exceeds the the round start + round duration, no one will be able to submit to the queue (even administrators).
+* Deleting a queue will also discontinue the ability to submit to it. Be careful when doing this, as deleting a queue is irreversible - you will lose all its submissions.
+
 
 ## Submitting to an Evaluation Queue
 
