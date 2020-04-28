@@ -225,7 +225,7 @@ Currently, this Wiki widget is required to submit Synapse Projects to an Evaluat
 
 <img style="width: 80%;" src="/assets/images/submit_to_evaluation_widget.png">
 
-When an Evaluation queue is 'unavailable', you can customize the message to show users.  Here are the three ways that an Evaluation queue is unavailable to a user.
+The "Evaluation Queue unavailable message" is customizable.  A queue may appear unavailable to a user if: 
 
 * The specified Project doesn't actually have any Evaluation queues.
 * The user does not have permission to view a Project's Evaluation queues.
