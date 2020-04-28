@@ -2,7 +2,7 @@
 
 title: Evaluation Queues
 layout: article
-excerpt: A Synapse Queue contains user submitted models/files to execute for challenges and benchmarking.
+excerpt: A Synapse Queue contains user submitted models or files to execute for challenges and benchmarking.
 category: reproducible-research
 ---
 
