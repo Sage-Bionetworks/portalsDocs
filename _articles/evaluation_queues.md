@@ -29,7 +29,7 @@ An Evaluation queue can take several parameters that you can use to customize yo
 
 Optionally, you can restrict how things are submitted by using a quota.
 
-<img style="width: 80%;" src="/assets/images/evaluation_queue_quota.png">
+<img style="width: 40%;" src="/assets/images/evaluation_queue_quota.png">
 
 
 An Evaluation queue can only have one quota. If you want to change how long the queue is open, the start date, round duration, and number of rounds are required parameters. It is optional to set submission limit.
