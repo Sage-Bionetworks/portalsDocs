@@ -2,7 +2,7 @@
 
 title: Evaluation Queues
 layout: article
-excerpt: A Synapse Queue contains user submitted models/files to execute for challenges and benchmarking.
+excerpt: A Synapse Queue contains user submitted models or files to execute for challenges and benchmarking.
 category: reproducible-research
 ---
 
@@ -29,10 +29,10 @@ An Evaluation queue can take several parameters that you can use to customize yo
 
 Optionally, you can restrict how things are submitted by using a quota.
 
-<img style="width: 80%;" src="/assets/images/evaluation_queue_quota.png">
+<img style="width: 40%;" src="/assets/images/evaluation_queue_quota.png">
 
 
-An Evaluation queue can only have one quota. If you want to change how long the queue is open, the start date, round duration, and number of rounds are required parameters. It is optional to set submission limit.
+An Evaluation queue can only have one quota. You may specify the length of time the queue is open, the start date, round duration, and number of rounds. These are required parameters. It is optional to set submission limit.
 
 * First Round Start Date/Time - The date/time at which the first round begins.
 * Number of Rounds - The number of rounds, or null if there is no limit to set.
@@ -56,8 +56,8 @@ To set the sharing settings, go to the **Challenge** tab to view your list of Ev
 ## Close an Evaluation Queue
 While there isn't technically a way of "closing" an evaluation queue, there are multiple ways to discontinue submissions for users.
 
-* Users are only able to submit to a queue if they have `can submit` permissions to it. If you have the ability to modify the permissions of a Queue, you will still be able to submit to the queue due to your `administrator` access.
-* If the Quota is set so that the current date exceeds the the round start + round duration, no one will be able to submit to the queue (even administrators).
+* Users are only able to submit to a queue if they have `can submit` permissions to it. If you have the ability to modify the permissions of a queue, you will still be able to submit to the queue due to your `administrator` access.
+* If the quota is set so the current date exceeds the the round start + round duration, no one will be able to submit to the queue. This includes users with administrator permissions.
 * Deleting a queue will also discontinue the ability to submit to it. Be careful when doing this, as deleting a queue is irreversible - you will lose all its submissions.
 
 
