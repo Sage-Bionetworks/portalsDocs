@@ -229,7 +229,7 @@ The "Evaluation Queue unavailable message" is customizable.  A queue may appear 
 
 * The Project doesn't have any Evaluation queues.
 * The user does not have permission to view a Project's Evaluation queues. Learn more about [sharing settings]({{ site.baseurl }}{% link _articles/sharing_settings.md %}).
-* The Evaluation queue quota is set that a user can not submit to the queue.  Learn more about [quotas]({{ site.baseurl }}{% link _articles/evaluation_queues.md%}#create-an-evaluation-queue).
+* The Evaluation queue quota is set such that a user can not submit to the queue.  Learn more about [quotas]({{ site.baseurl }}{% link _articles/evaluation_queues.md%}#create-an-evaluation-queue).
 
 # See Also
 
