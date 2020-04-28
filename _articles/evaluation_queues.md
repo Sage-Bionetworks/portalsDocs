@@ -57,7 +57,7 @@ To set the sharing settings, go to the **Challenge** tab to view your list of Ev
 While there isn't technically a way of "closing" an evaluation queue, there are multiple ways to discontinue submissions for users.
 
 * Users are only able to submit to a queue if they have `can submit` permissions to it. If you have the ability to modify the permissions of a queue, you will still be able to submit to the queue due to your `administrator` access.
-* If the Quota is set so that the current date exceeds the the round start + round duration, no one will be able to submit to the queue (even administrators).
+* If the quota is set so the current date exceeds the the round start + round duration, no one will be able to submit to the queue. This includes users with administrator permissions.
 * Deleting a queue will also discontinue the ability to submit to it. Be careful when doing this, as deleting a queue is irreversible - you will lose all its submissions.
 
 
