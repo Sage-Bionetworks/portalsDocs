@@ -17,19 +17,17 @@ Synapse Docs is generated using [Github Pages](https://pages.github.com/). Follo
 
 To build locally, follow the instructions found [here](https://help.github.com/en/articles/testing-your-github-pages-site-locally-with-jekyll). You will need Jekyll, Ruby, and the Ruby package manager, Bundler.
 
-
 Internal development can be performed by branching from `gh-pages` to your own feature branch, making changes, pushing the branch to this repository, and opening a pull request. Pull requests against the `gh-pages` branch require a review before merging.
+
 ### Categories
 
-Pages are described by categories. These are stored in a Jekyll collection at [_categories](_categories/). The content that describes each category is defined in a YAML header in a file in that directory. The categories avaiable for reference elsewhere are named as the file or as present in the 'name' field of the YAML header.
+Pages are described by categories. These are stored in a Jekyll collection at [_categories](_categories/). The architecture of this repo is described in the [Jekyll collection documentation](https://jekyllrb.com/docs/collections/).  The content that describes each category is defined in a YAML header in a file in that directory. The categories avaiable for reference elsewhere are named as the file or as present in the 'name' field of the YAML header.
 
 For example, if you want to create a page with a governance category, you would look in [_categories/governance.md](_categories/governance.md) in the 'name' field and use that value.
 
 ### Creating a page
 
 To create a page using the article layout, start by specifying at the very beginning the title, layout, excerpt, and category in the YAML front matter. The title and excerpt will show up in the article's user guide thumbnail and the category tag will be used to sort the article into its corresponding user guide tab. If no category is specified, it will default into the "How-To" tab. 
-
-
 
 Note that the front matter needs to be enclosed between three dashed lines to work properly.
 
@@ -76,6 +74,7 @@ To include new paragraphs, just add the `<br/>` tag within the content, like thi
 ```
 
 ### Adding a table
+
 To add a table, use Liquid to call on the markdown-table css class. Then use the standard markdown table format.
 ```
 {:.markdown-table}
@@ -86,6 +85,7 @@ To add a table, use Liquid to call on the markdown-table css class. Then use the
 ```
 
 ### Inserting an image
+
 Images can be inserted using either Markdown or HTML, it all depends on your preference. The examples below will display the same thing:
 ```
 ![alt text](/assets/images/image1.jpg)
@@ -93,10 +93,11 @@ Images can be inserted using either Markdown or HTML, it all depends on your pre
 ```
 
 ### Inserting code 
+
 The docs may contain a high level overview of a feature, but should link to the [Python docs](https://python-docs.synapse.org/build/html/index.html) and [synapser](https://r-docs.synapse.org/articles/synapser.html) docs, pointing to the relevant anchor, for code examples. This is to ensure code is validated with the client release cycles. 
 
-
 ### Inserting relative links
+
 A page may link to other pages within the documentation site. To do this, use a `link` Liquid tag to properly render the URL:
 
 ```
@@ -108,6 +109,14 @@ If the link uses an anchor to jump to a specific part of the page, it must go ou
 ```
 [Annotations]({{ site.baseurl }}{% link _articles/annotation_and_query.md %}#adding-annotations)
 ```
+
+### Linking to Synapse client documentation 
+
+Code examples in the documentation should be minimal. Preferably, links are provided to the Python, R, commandline and REST documentation. 
+- [r-docs.synapse.org](https://r-docs.synapse.org/)
+- [python-docs.synapse.org](https://python-docs.synapse.org/)
+    - [command line client documented in Python docs](https://python-docs.synapse.org/build/html/CommandLineClient.html?highlight=command%20line) 
+- [rest-docs.synapse.org/rest](http://rest-docs.synapse.org/rest/)
 
 ## License
 
