@@ -35,7 +35,9 @@ Make the following adjustments to customize it to work with Synapse:
 * Select the newly created bucket and click the **Permissions** tab.
   * Select the **Bucket Policy** button and copy one of the below policies (read-only or read-write permissions). Change the name of `Resource` from “synapse-share.yourcompany.com” to the name of your new bucket (twice) and ensure that the `Principal` is `"AWS":"325565585839"`. This is Synapse's account number.
 
-{% include note.html content="Files in an external bucket will only be automatically added to Synapse if they are uploaded through Synapse. To add files to Synapse that are already in your bucket, see the section \"Adding Files in Your S3 Bucket to Synapse\" below." %}
+{% include note.html content="Files in an external bucket will not be automatically added to Synapse." %}
+
+To add files to Synapse that are already in your bucket, see [Adding Files in Your S3 Bucket to Synapse]({{ site.baseurl }}{% link _articles/custom_storage_location.md %}#adding-files-in-your-s3-bucket-to-synapse) below.
 
 ### Read-write permissions
 
@@ -60,7 +62,7 @@ To allow authorized Synapse users to upload data to your bucket set read-write p
 }
 ```
 
-For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating a file named **[owner.txt](../assets/downloads/owner.txt)** that contains a **line separated** list of *user identifiers* that are allowed to register and upload to the bucket. Valid *user identifiers* are a numeric Synapse user id or the numeric id of a team the user is part of.
+For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating a file named **[owner.txt](../assets/downloads/owner.txt)** that contains a **line separated** list of *user identifiers* that are allowed to register and upload to the bucket. Valid *user identifiers* are a numeric Synapse user id or the numeric id of a team the user is a member of.
 
 The id of the user or the team can be obtained by navigating to the user profile or to the team page. The id is the numeric value shown in the browser URL bar after the *Profile:* or *Team:* prefixes:
 
@@ -289,7 +291,7 @@ Make the following adjustments to customize it to work with Synapse:
 * Select the newly created bucket and click the **Permissions** tab.
 * Select the **Add members** button and enter the member `synapse-svc-prod@uplifted-crow-246820.iam.gserviceaccount.com`. This is Synapse's service account. Give the account the permissions "Storage Legacy Bucket Reader" and "Storage Object Viewer" for read permission. To allow Synapse to upload files, additionally grant the "Storage Legacy Bucket Writer" permission.
 
-For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating a file named **[owner.txt](../assets/downloads/owner.txt)** that contains a **line separated** list of *user identifiers* that are allowed to register the bucket and uploading it to your bucket. Valid *user identifiers* are: a Synapse user id or the id of a team the user is part of.
+For **read-write** permissions, you also need to create an object that proves to the Synapse service that you own this bucket. This can be done by creating a file named **[owner.txt](../assets/downloads/owner.txt)** that contains a **line separated** list of *user identifiers* that are allowed to register the bucket and uploading it to your bucket. Valid *user identifiers* are: a Synapse user id or the id of a team the user is a member of.
 
 The id of the user or the team can be obtained navigating to the user profile or to the team page, the id is the numeric value shown in the browser URL bar after the *Profile:* or *Team:* prefixes:
 
@@ -301,7 +303,8 @@ You can upload the file with the Google Cloud Platform Console, or using the com
 
 <img id="imageSmall" src="../assets/images/ownerTxt.png">
 
-{% include note.html content="Files in an external bucket will only be automatically added to Synapse if they are uploaded through Synapse. To add files to Synapse that are already in your bucket, see the section \"Adding Files in Your Google Cloud Bucket to Synapse\" below." %}
+{% include note.html content="Files in an external bucket will not be automatically added to Synapse." %}
+To add files to Synapse that are already in your bucket, see [Adding Files in Your S3 Bucket to Synapse]({{ site.baseurl }}{% link _articles/custom_storage_location.md %}#adding-files-in-your-s3-bucket-to-synapse) below.
 
 ##### Command line
 
