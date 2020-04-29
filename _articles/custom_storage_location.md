@@ -233,7 +233,7 @@ projectDestination <- synRestPOST('/projectSettings', body=toJSON(projectDestina
 
  Navigate to your **Project/Folder -> Tools -> Change Storage Location**. In the resulting pop-up, select the `Amazon S3 Bucket` option and fill in the relevant information, where Bucket is the name of your external bucket, Base Key is the name of the folder in your bucket to upload to, and Banner is a short description such as who owns the storage location:
 
-<img id="image" src="../assets/images/external_s3.png">
+<img id="image" style="width: 50%;" src="../assets/images/external_s3.png">
 
 ### Adding Files in Your S3 Bucket to Synapse
 
