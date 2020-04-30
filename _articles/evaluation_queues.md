@@ -25,6 +25,7 @@ An Evaluation queue can take several parameters that you can use to customize yo
 
 {% include note.html content="The name of your evaluation queue MUST be unique, otherwise the queue will not be created." %}
 
+
 ### Setting Quotas on an Evaluation Queue
 
 Optionally, you can restrict how things are submitted by using a quota.
@@ -160,6 +161,11 @@ Currently, this Wiki widget is required to submit Synapse Projects to an Evaluat
 
 <img style="width: 80%;" src="/assets/images/submit_to_evaluation_widget.png">
 
+The "Evaluation Queue unavailable message" is customizable.  A queue may appear unavailable to a user if: 
+
+* The Project doesn't have any Evaluation queues.
+* The user does not have permission to view a Project's Evaluation queues. Learn more about [sharing settings]({{ site.baseurl }}{% link _articles/sharing_settings.md %}).
+* The Evaluation queue quota is set such that a user can not submit to the queue.  Learn more about [quotas]({{ site.baseurl }}{% link _articles/evaluation_queues.md%}#create-an-evaluation-queue).
 
 # See Also
 

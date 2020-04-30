@@ -241,8 +241,8 @@ synapse set-annotations --id syn56789 --annotations '{"fileType":"bam", "assay":
 ##### Python
 
 ```python
-# Get file from Synapse, set download=False since we are only updating annotations
-file = syn.get('syn56789', download=False)
+# Get file from Synapse, set downloadFile=False since we are only updating annotations
+file = syn.get('syn56789', downloadFile=False)
 # Add annotations
 file.annotations = {"fileType":"bam", "assay":"RNA-seq"}
 # Store the file without creating a new version
@@ -272,8 +272,8 @@ synapse set-provenance -id syn56789 -executed ./path/to/example_code
 ##### Python
 
 ```python
-# Get file from Synapse, set download=False since we are only updating provenance
-file = syn.get('syn56789', download=False)
+# Get file from Synapse, set downloadFile=False since we are only updating provenance
+file = syn.get('syn56789', downloadFile=False)
 # Add provenance
 file = syn.setProvenance(file, activity = Activity(used = '/path/to/example_code'))
 # Store the file without creating a new version

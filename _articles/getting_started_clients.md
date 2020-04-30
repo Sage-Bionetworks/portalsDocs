@@ -27,8 +27,8 @@ pip install synapseclient
 ```
 
 ```console
-synapseclient login "username" "password"
-synapseclient -h
+synapse login "username" "password"
+synapse -h
 ```
 
 For more documentation on the command line client, see the [`synapseclient` docs](https://python-docs.synapse.org/build/html/CommandLineClient.html).
