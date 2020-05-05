@@ -2,7 +2,7 @@
 title: Links
 layout: article
 excerpt: Creating, and modifying links on Synapse.
-category: how-to
+category: managing-data
 ---
 
 <style>
