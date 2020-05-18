@@ -73,9 +73,14 @@ docker images
 #docker.synapse.org/syn12345/mytestrepo   version1            f8d79ba03c00        6 days ago          126.4 MB
 #ubuntu                                     latest              f8d79ba03c00        6 days ago          126.4 MB
 #docker.synapse.org/syn12345/my-repo	latest	df323sdf123d	2 days ago	200.3 MB
+
+
 docker push docker.synapse.org/syn12345/mytestrepo:version1
+
 docker push docker.synapse.org/syn12345/my-repo
 ```
+
+Note there is a 100GB limit per repository [image layer](https://docs.docker.com/storage/storagedriver/#images-and-layers).
 
 ## Using Docker images stored in the Synapse Docker registry
 
@@ -93,7 +98,7 @@ Docker tags can be assigned to later commits. If you want to be explicit about t
 docker pull docker.synapse.org/syn12345/mytestrepo@sha256:2e36829f986351042e28242ae386913645a7b41b25844fb39b29af0bdf8dcb63
 ```
 
-where the digest for a commit is printed to the command line after a successful Docker push. The Synapse web portal displays current digests for a repository's tags on the repository's Synapse page.
+where the digest for a commit is printed to the command line after a successful `docker push`. The Synapse web portal displays current digests for a repository's tags on the repository's Synapse page.
 
 {% include note.html content="You can add external repositories, i.e. repositories that live in other registries like DockerHub and quay.io. For these repositories there is no tight integration (Synapse doesn't contact these external registries) but it allows you to list Docker repositories that are relevant to the project but are not within Synapse.
 " %}
