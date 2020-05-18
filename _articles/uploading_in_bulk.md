@@ -43,7 +43,7 @@ Download the [template](../assets/downloads/example_manifest_template.tsv).
 
 ### Validate the Manifest and Upload Files
 
-The format of the manifest file (called 'filesToUpload.tsv' in this example) can be validated prior to upload by using the parameter `dryRun` in `syncToSynapse`. Note that this step will not upload the data specified in the manifest file. Instead, the client will check for any common problems in each row. This helps ensure your data upload does not end prematurely due to a typo in the file path or parent synId.
+The format of the manifest file (called 'filesToUpload.tsv' in this example) can be validated prior to upload by using the parameter `dryRun` in `syncToSynapse`. `dryRun` will not upload the data specified in the manifest file. Instead, the client checks the manifest file format, all file paths exist, all files are unique, Provenance can be set (optional) and the parent synId exists. The number of files and total upload size is also summarized in the `dryRun` output. This helps ensure your data upload does not end prematurely due to a typo in the file path or parent synId.
 
 * validate the manifest in the [Python client or command line](https://python-docs.synapse.org/build/html/synapseutils.html#synapseutils.sync.syncToSynapse).
 * validate the manifest in the [R client](https://github.com/Sage-Bionetworks/synapserutils#batch-process). 
