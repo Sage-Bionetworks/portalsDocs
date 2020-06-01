@@ -54,6 +54,8 @@ query = syn.tableQuery('SELECT * FROM syn123')
 query <- synTableQuery('SELECT * FROM syn123')
 ```
 
+{% include note.html content= "Currently, a view is updated only after a query is run against it.  If your query results appear to be stale, you will need to run your query again to see the expected updates." %}
+
 ## Update Annotations in Bulk
 
 Views can be used to update annotations in bulk. To add new annotations, see the [Annotations]({{ site.baseurl }}{% link _articles/annotation_and_query.md %}#adding-annotations) article. To update other metadata in bulk, such as provenance, see the [Bulk Processing]({{ site.baseurl }}{% link _articles/uploading_in_bulk.md %}) article.
