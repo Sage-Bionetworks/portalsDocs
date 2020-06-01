@@ -20,10 +20,6 @@ To create a `File View`, select the `Project` in which you would like to create 
 
 Instructions for creating `Views` using the clients can be found in the [Python docs](https://python-docs.synapse.org/build/html/Views.html) and in the [R docs](https://r-docs.synapse.org/articles/views.html).
 
-## When a View is Updated
-
-Currently, a 'View' is updated only after a query is run against it.  So if your 'View' query results appear to be stale, you will need to run your query again to see the expected updates.
-
 ## Create a Project View
 
 To create a `Project View`, select the `Project` in which you would like to create the view. You will select the projects of interest by defining the scope as above. The only notable difference between creating a `Project View` and a `File View` is that for project views, there is a 1:1 relationship between the projects you select in your scope and the projects that are shown in the view.
@@ -57,6 +53,8 @@ query = syn.tableQuery('SELECT * FROM syn123')
 ```r
 query <- synTableQuery('SELECT * FROM syn123')
 ```
+
+{% include note.html content= "Currently, a view is updated only after a query is run against it.  If your query results appear to be stale, you will need to run your query again to see the expected updates." %}
 
 ## Update Annotations in Bulk
 
