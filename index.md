@@ -1,6 +1,6 @@
 ---
-title: Synapse Documentation
-description: Synapse is a collaborative, open-source research platform that allows teams to share data, track analyses, and collaborate.
+title: Sage Portals Documentation
+description: Portals are swell. Learn how to create and manage your very own portal!
 layout: index
 ---
 
@@ -26,7 +26,7 @@ layout: index
         <div class="subject-card">
             <h5>Getting Started</h5>
             <hr>
-            <span>New to Synapse? Read this 10-minute guide that explains what it is, why you should use it, and how to get started!</span>
+            <span>New to portals? Read this 10-minute guide that explains what they are, why you should use them, and how to get started!</span>
         </div>
         </a>
     </div>
@@ -35,46 +35,8 @@ layout: index
         <div class="subject-card">
             <h5>Overview</h5>
             <hr>
-            <span>Articles are categorized into topic areas describing the different components of Synapse and how to use them.</span>
+            <span>Articles are categorized into topic areas describing the different components of portals and how to use them.</span>
         </div>
         </a>
     </div>
-    <div class="col-xs-12 col-md-6 col-lg-4">
-        <a href="{{'articles/article_index.html#API-client' | relative_url}}">
-        <div class="subject-card">
-            <h5>API Documentation</h5>
-            <hr>
-            <span>Technical documentation for interacting with Synapse using R, Python, command line, and the REST API.</span>
-        </div>
-        </a>
-    </div>
-    <div class="col-xs-12 col-md-6 col-lg-4">
-        <a href="{{'articles/article_index.html#governance' | relative_url}}">
-        <div class="subject-card">
-            <h5>Governance</h5>
-            <hr>
-            <span>Requirements and best practices for using Synapse in a compliant and ethical manner.</span>
-        </div>
-        </a>
-    </div>
-    <div class="col-xs-12 col-md-6 col-lg-4">
-        <a href="{{'articles/faq.html' | relative_url}}">
-        <div class="subject-card">
-            <h5>FAQ</h5>
-            <hr>
-            <span>Answers to common questions asked by Synapse users.</span>
-        </div>
-        </a>
-    </div>
-    <div class="col-xs-12 col-md-6 col-lg-4">
-        <a href="https://www.synapse.org/#!SynapseForum:default">
-
-        <div class="subject-card">
-            <h5>Forum</h5>
-            <hr>
-            <span>Interact with the Synapse community, including users and staff, to discuss questions, use cases, and best practices.</span>
-        </div>
-        </a>
-    </div>
-
 </div>
