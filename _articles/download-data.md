@@ -13,7 +13,7 @@ Synapse is designed to integrate seamlessly with your analytical workflow. There
 
 ## Find Files using Explore Data
 
-Search the available files via Explore Data in the navigation bar. The Explore Data section presents several ways to select data files of interest. The top of the page displays pie charts that summarize the number of files based on file annotations of interest, including *Study, Data Type, Assay, Organism, Tissue*, among others. Selection of one of these chart segments will filter the table below to select just that set of files. Alternatively, access the filters using the facet selection boxes to the left of the Data table. For this example, you will [download the *processed* data and *metadata* from the *MC-CAA* study in the Alzheimer's Disease (AD) Knowledge Portal](https://adknowledgeportal.synapse.org/Explore/Data?QueryWrapper0=%7B%22sql%22%3A%22SELECT%20*%20FROM%20syn11346063%22%2C%22limit%22%3A25%2C%22offset%22%3A0%2C%22selectedFacets%22%3A%5B%7B%22concreteType%22%3A%22org.sagebionetworks.repo.model.table.FacetColumnValuesRequest%22%2C%22columnName%22%3A%22study%22%2C%22facetValues%22%3A%5B%22MC-CAA%22%5D%7D%2C%7B%22concreteType%22%3A%22org.sagebionetworks.repo.model.table.FacetColumnValuesRequest%22%2C%22columnName%22%3A%22dataSubtype%22%2C%22facetValues%22%3A%5B%22processed%22%2C%22metadata%22%5D%7D%5D%7D).
+Search the available files via Explore Data in the navigation bar. The Explore Data section presents several ways to select data files of interest. The top of the page displays pie charts that summarize the number of files based on file annotations of interest, including *Study, Data Type, Assay, Organism, Tissue*, among others. Selection of one of these chart segments will filter the table below to subset the set of files. Alternatively, access the filters using the facet selection boxes to the left of the Data table. For this example, you will [download the *processed* data and *metadata* from the *MC-CAA* study in the Alzheimer's Disease (AD) Knowledge Portal](https://adknowledgeportal.synapse.org/Explore/Data?QueryWrapper0=%7B%22sql%22%3A%22SELECT%20*%20FROM%20syn11346063%22%2C%22limit%22%3A25%2C%22offset%22%3A0%2C%22selectedFacets%22%3A%5B%7B%22concreteType%22%3A%22org.sagebionetworks.repo.model.table.FacetColumnValuesRequest%22%2C%22columnName%22%3A%22study%22%2C%22facetValues%22%3A%5B%22MC-CAA%22%5D%7D%2C%7B%22concreteType%22%3A%22org.sagebionetworks.repo.model.table.FacetColumnValuesRequest%22%2C%22columnName%22%3A%22dataSubtype%22%2C%22facetValues%22%3A%5B%22processed%22%2C%22metadata%22%5D%7D%5D%7D).
 
 ## Download Files
 
@@ -47,7 +47,7 @@ Once you have identified the files you want to download from Explore Data, **Exp
 
 <img style="width: 25%;" src="/assets/images/export-table-viz.png" alt="alt text">
 
-You may choose to download the file as a *.csv* or *.tsv*. Files are named *Job-####.csv*, where # includes a long set of numbers. Move this file to your working directory to proceed with the following steps. 
+You may choose to download the file as a *.csv* or *.tsv*. Files are named *Job-####*, where # includes a long set of numbers. Move this file to your working directory to proceed with the following steps. 
 
 [Install the Synapse R client](https://r-docs.synapse.org/#installation) `synapser` to download data from Synapse. [Login](https://r-docs.synapse.org/articles/manageSynapseCredentials.html#manage-synapse-credentials) to Synapse.
 
@@ -70,9 +70,10 @@ The `exported_table` also includes experimental details relevant to how the data
 In order to download data programatically, you need a list of synIDs that correspond to the files.
 
 Once you have identified the files you want to download from Explore Data, **Export Table** from Download Options.
+
 <img style="width: 25%;" src="/assets/images/export-table-viz.png" alt="alt text">
 
-You may choose to download the file as a *.csv* or *.tsv*. Files are named *Job-####.csv*, where # includes a long set of numbers. Move this file to your working directory to proceed with the following steps. 
+You may choose to download the file as a *.csv* or *.tsv*. Files are named *Job-####*, where # includes a long set of numbers. Move this file to your working directory to proceed with the following steps. 
 
 [Install the Synapse Python client](http://python-docs.synapse.org/build/html/index.html#installation) `synapseclient` to download data from Synapse, the `pandas` library to read a csv file and the `os` module to make a directory. [Login](http://python-docs.synapse.org/build/html/index.html#connecting-to-synapse) to Synapse.
 ```
@@ -84,7 +85,7 @@ syn.login('my_username', 'my_password')
 Read the exported table into Python, create a directory to store files and download data using `syn.get`. If `downloadLocation` is not specified, the files are downloaded to a hidden directory called `/.synapseCache`.
 
 ```
-exported_table = pandas.read_csv("Job-1342324092830598.csv.csv")
+exported_table = pandas.read_csv("Job-1342324092830598.csv")
 os.mkdir("files")
 [syn.get(x, downloadLocation = "./files") for x in exported_table.id]
 ```
