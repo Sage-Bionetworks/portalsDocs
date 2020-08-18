@@ -19,7 +19,7 @@ Search the available files via Explore Data in the navigation bar. The Explore D
 
 ### Command Line
 
-The Synapse command line client is *recommended* for downloading data from the portal as all data and file annotations can be downloaded with a single command.
+The Synapse command line client can be used to download all data and file annotations with a single command.
 
 The command line client is installed with the Synapse Python client, therefore [Python 3](https://www.python.org/downloads/) is required to [install the Synapse command line client](http://python-docs.synapse.org/build/html/index.html#installation). [Login](https://python-docs.synapse.org/build/html/CommandLineClient.html#login) to Synapse.
 
@@ -91,6 +91,5 @@ os.mkdir("files")
 ```
 
 The `exported_table` also includes experimental details relevant to how the data was processed.
-
 
 
