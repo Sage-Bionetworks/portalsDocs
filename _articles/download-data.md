@@ -47,7 +47,7 @@ Once you have identified the files you want to download from Explore Data, **Exp
 
 <img style="width: 25%;" src="/assets/images/export-table-viz.png" alt="alt text">
 
-You may choose to download the file as a *.csv* or *.tsv*. Files are named *Job-####*, where # includes a long set of numbers. Move this file to your working directory to proceed with the following steps. 
+You may choose to download the file as a *.csv* or *.tsv*. Files are named *Job-####* (where # is a long set of numbers). Move this file to your working directory to proceed with the following steps. 
 
 [Install the Synapse R client](https://r-docs.synapse.org/#installation) `synapser` to download data from Synapse. [Login](https://r-docs.synapse.org/articles/manageSynapseCredentials.html#manage-synapse-credentials) to Synapse.
 
@@ -91,4 +91,3 @@ os.mkdir("files")
 ```
 
 The `exported_table` also includes experimental details relevant to how the data was processed.
-
