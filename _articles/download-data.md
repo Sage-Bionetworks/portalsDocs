@@ -37,7 +37,7 @@ The command [`synapse get`](https://python-docs.synapse.org/build/html/CommandLi
 synapse get -q "SELECT * FROM syn11346063 WHERE ( ( "study" = 'MC-CAA' ) AND ( "dataSubtype" = 'processed' OR "dataSubtype" = 'metadata' ) )" 
 ```
 
-Also in your working directory, you will find a *SYNAPSE_TABLE_QUERY_###.csv* file that lists the annotations associated with each downloaded file. Here, you might find helpful experimental details relevant to how the data was processed. Additionally, you will find important details about the file itself including the file version number.
+Also in your working directory, you will find a *SYNAPSE_TABLE_QUERY_###.csv* file that lists the annotations associated with each downloaded file. Here, you will find helpful experimental details relevant to how the data was processed. Additionally, you will find important details about the file itself including the file version number.
 
 ### R
 
@@ -91,5 +91,4 @@ os.mkdir("files")
 ```
 
 The `exported_table` also includes experimental details relevant to how the data was processed.
-
 
